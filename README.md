@@ -1,9 +1,12 @@
 # Padronizacoes
 ---
 ## Fonte 
-##### Fonte: *Montserrat* -> https://fonts.google.com/specimen/Montserrat
-##### Tamanho titulo: a
-##### Tamanho texto: a
+##### Fonte: *Montserrat* -> https://fonts.google.com/specimen/Montserrat -> `font-family: 'Montserrat', sans-serif;`
+##### Tamanho Titulo: 
+##### Tamanho Texto: 
+##### Tamanho Texto input: *17px*
+##### Tamanho Titulo input: *20px*
+##### 
 
 
 ## Cores
@@ -14,6 +17,8 @@
 ##### Vermelho: rgb(255, 0, 0)
 ##### Branco: rgb(255, 255, 255, 255)
 
+
+## Espacamento
 
 
 
