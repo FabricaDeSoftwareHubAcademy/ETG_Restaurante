@@ -12,7 +12,7 @@
 ####  `Margin: 7% auto;`
 
 ## Cores
-##### Laranja: 
+##### Laranja: `#f28920`
 ##### Azul: `rgba(6, 74, 140, 1)`
 ##### Amarelo: `rgba(255, 199, 0, 1)`
 ##### Verde: `rgb(0, 128, 0)`
