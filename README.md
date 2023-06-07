@@ -2,7 +2,7 @@
 ---
 ## Fonte 
 ##### Fonte: *Montserrat* -> https://fonts.google.com/specimen/Montserrat -> `font-family: 'Montserrat', sans-serif;`
-##### Tamanho Titulo: 45px
+##### Tamanho Titulo em H1: *30px*
 ##### Tamanho Texto: 
 ##### Tamanho Texto input : *17px*
 ##### Tamanho Titulo input (placeholder): *20px*
