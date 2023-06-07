@@ -8,6 +8,8 @@
 ##### Tamanho Titulo input (placeholder): *20px*
 ##### 
 
+## Margens
+####  
 
 ## Cores
 ##### Laranja: 
