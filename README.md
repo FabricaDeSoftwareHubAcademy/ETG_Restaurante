@@ -9,7 +9,7 @@
 ##### 
 
 ## Margens
-####  
+####  `Margin: 7% auto;`
 
 ## Cores
 ##### Laranja: 
