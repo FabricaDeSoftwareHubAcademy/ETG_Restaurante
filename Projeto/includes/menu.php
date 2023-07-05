@@ -5,17 +5,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>cadastro_perfil</title>
-    <link rel="stylesheet" href="estilo_perfil.css">
+    <link rel="stylesheet" href="../css/menu.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https/cdnjs.cloudflare.comlibs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
-   <link rel="stylesheet" href="menu.css">
-   <link rel="stylesheet" href="menu.js">
-    
+
+
 </head>
 
 <body>
 
+    <div class="cabecalho-menu">
         <div class="container-menu">
             <a href="#" class="toggleBox-menu">
               <span class="icon-menu"></span>
@@ -68,6 +68,17 @@
                 </div>        
             </ul>
         </div>
+        <script src="js.js"></script>    
+        <div class="container-logo">
+            <div class="logo">
+                <ul class="cabecalho_logo"><img src="../imgs/logos/MicrosoftTeams-image.png" alt="Carregando" id = "img-logo"></ul>
+            </div>
+            <div class="fitas">
+                <ul class="sub-fita"><div id="bloc1"></div></ul>
+                <ul class="sub-fita"><div id="bloc2"></div></ul>
+            </div>
+        </div>
+    </div> 
     
     </div>
     <script>
@@ -107,6 +118,6 @@ function closeSubmenu(){
   btn_submenu.setAttribute('onclick', 'openSubmenu()')
 
 }
-    </script>        
+    </script>       
 </body>
 </html>

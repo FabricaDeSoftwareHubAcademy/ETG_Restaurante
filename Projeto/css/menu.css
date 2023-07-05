@@ -203,24 +203,33 @@
 
 /* =============================================== POP UP ================================================================================ */
 .modal-container-menu{
-  display: none;
-  width: 100vw;
-  position: fixed;
-  top: 300px;
-  z-index: 999;
-  justify-content: center;
-  left: 17rem;
+    display: none;
+    width: 100vw;
+    position: fixed;
+    z-index: 999;
+    justify-content: center;
+    left: 40%;
+    top: 20%;
+
 }
 
+@media (max-width: 832px){
+
+    .modal-container-menu{
+      left: 30%;
+    }
+
+  }
+
 .modal-menu{
-  display: flex;
-  flex-direction: column;
-  padding: 30px;
-  background-color: #ffffff;
-  border-radius: 10px;
-  width: 350px;
-  height: 250px;
-  border: 2px solid black;
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    width: 350px;
+    height: 250px;
+    border: 2px solid black;
 }
 
 .active{
@@ -228,16 +237,23 @@
 }
 
 .btnOpenmodal-menu{
-  position: relative;
-  border: #fff;
-  text-decoration: none;
-  cursor: pointer;
-  background-color: #fff;
-  text-align: center;
-  /* top: 140px; */
+    position: relative;
+    border: #fff;
+    text-decoration: none;
+    cursor: pointer;
+    background-color: #fff;
+    text-align: center;
+    /* top: 140px; */
+}
 
+.modal-container-menu active{
+    align-items: center;
+    display: flex;
+    justify-content: center;
 }
  
+
+
 /* ===================================================== BOTÕES POP'UP MENU ==================================================== */
 
 .btnOk-menu{
@@ -285,3 +301,78 @@
   color: black;
   top: 20px;
 }
+
+
+
+/*==========================================================================Fitas==========================================================================*/
+
+.logo{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .cabecalho-menu{
+    height: 150px;
+    margin-top: 50px;
+  }
+  
+  .fitas{
+      display: flex;
+      position: absolute;
+      right: 3%;
+  
+  }
+  
+  #bloc1 {
+      width: 57px;
+      height: 100px;
+      background:#F28920 ;
+      position: relative;
+      animation-name: bloc1;
+      animation-duration: 2.5s;  
+      animation-delay: 0s;
+      animation-fill-mode: backwards;
+      box-shadow: 2px 2px 5px rgb(138, 137, 137);
+      
+    }
+    
+    @keyframes bloc1 {
+      from {height: 150px;top: 0px; background-color: #064A8C;}
+      to {height: 100px;}    
+    }
+  
+    #bloc2 {
+      width: 57px;
+      height: 137px;
+      background: #064A8C;
+      position: relative;
+      animation-name: bloc2;
+      animation-duration: 2.5s;  
+      animation-delay: 0s;
+      animation-fill-mode: backwards;
+      box-shadow: 2px 2px 5px rgb(138, 137, 137);
+  
+  
+    }
+    #img-logo{
+      width: 130px;
+      height: 80px;
+      
+    }
+    
+    @keyframes bloc2 {
+      from {height: 90px;top: 0px; background-color:  #F28920 ;}
+      to {height: 137px;}
+      
+    }
+  
+    .container-logo{
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      right: 0%;
+      background-color: white;
+      height: 150px;
+      z-index: 2;
+    }
