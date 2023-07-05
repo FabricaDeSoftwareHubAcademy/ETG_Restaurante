@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cadastro_perfil</title>
+    <link rel="stylesheet" href="estilo_perfil.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https/cdnjs.cloudflare.comlibs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
+   <link rel="stylesheet" href="menu.css">
+   <link rel="stylesheet" href="menu.js">
+    
+</head>
+
+<body>
+
+        <div class="container-menu">
+            <a href="#" class="toggleBox-menu">
+              <span class="icon-menu"></span>
+            </a>
+            <ul class="navItems-menu">
+                <li class="li-menu">
+                    <a href="#" class="link-menu">
+                        <i class="bi bi-bell" style="--i:1"></i>                
+                    </a>
+                </li>
+                <li class="li-menu">
+                    <a href="#" class="link-menu">
+                        <i class="bi bi-house-door" style="--i:2"></i>                    
+                    </a>
+                </li>            
+                <li class="li-menu">
+                    <a href="#" class="link-menu">
+                        <i class="bi bi-person" style="--i:3"></i>                
+                    </a>
+                </li>        
+                <li class="link_submenu">
+                    <a href="#" class="link-menu">
+                        <i class="bi bi-list-check" id="btnsubmenu" onclick="openSubmenu()" style="--i:4"></i>
+                    </a>
+                        <ul class="sub-menu">            
+                            <li class="iten-submenu"><a href="#" id="fonte-submenu">Cadastro de Salas</a></li>
+                            <li class="iten-submenu"><a href="#" id="fonte-submenu">Relatórios</a></li>
+                            <li class="iten-submenu"><a href="#" id="fonte-submenu">Cadastro Checklist</a></li>
+                            <li class="iten-submenu"><a href="#" id="fonte-submenu">Cadastro de Perguntas</a></li>                        
+                        </ul>
+                </li>         
+                <li class="saida">
+                    <button class="btnOpenmodal-menu" onclick="openModal()" >  
+                        <a href="#" class="link-menu">
+                            <i class="bi bi-box-arrow-left" style="--i:5"></i>
+                        </a>
+                    </button>
+                </li>        
+                <div class="modal-container-menu">
+                    <div class="modal-menu">
+                    
+                        <h3 class="text-popmenu">
+                        Tem Certeza que Deseja Sair?
+                        </h3>
+                        <div class="btns-menu">
+                            <button class="btnOk-menu" onclick="closeModal()" > NÃO</button>
+                            <button class="btnClose-menu" onclick="closeModal()" > SIM</button>
+                        </div>
+                    </div>
+                </div>        
+            </ul>
+        </div>
+    
+    </div>
+    <script>
+        var toggleClick = document.querySelector(".toggleBox-menu");
+        var container = document.querySelector(".container-menu");
+        toggleClick.addEventListener("click", ()=>{
+          toggleClick.classList.toggle("active");
+          container.classList.toggle("active");
+          submenu.classList.remove('active');
+          btn_submenu.setAttribute('onclick', 'openSubmenu()');
+          closeModal()
+        })
+
+
+        const modal = document.querySelector('.modal-container-menu')
+const submenu = document.querySelector('.sub-menu')
+const btn_submenu = document.getElementById('btnsubmenu')
+
+
+function openModal() {
+  modal.classList.add('active')
+     
+}
+
+function closeModal() {
+  modal.classList.remove('active')
+
+}
+
+function openSubmenu(){
+  submenu.classList.add('active')
+  btn_submenu.setAttribute('onclick', 'closeSubmenu()')
+}
+
+function closeSubmenu(){
+  submenu.classList.remove('active')
+  btn_submenu.setAttribute('onclick', 'openSubmenu()')
+
+}
+    </script>        
+</body>
+</html>
