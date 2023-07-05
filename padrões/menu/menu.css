@@ -1,0 +1,287 @@
+@import url(https://fonts.google.com/specimen/Montserrat);
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Montsserat";
+  
+}
+
+.container-menu{
+  height: 70px;
+  left: 2%;
+  width: 70px;
+  background-color: #fff;
+  border-radius: 50px;
+  position: absolute;
+  transition: 0.4s ease;
+  box-shadow: 2px 5px 5px rgb(103, 103, 103);
+  z-index: 3;
+}
+
+.container-menu.active {
+  height: 90vh;
+  border: 2px solid #FAA916;
+}
+
+.toggleBox-menu{
+  position: relative;
+  display: block;
+  height: 70px;
+  width: 70px;
+  border-radius: 50px;
+
+} 
+  
+.icon-menu{
+  position: absolute;
+  height: 4px;
+  width: 35px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #FAA916;
+  border-radius: 50px;
+}
+
+.toggleBox-menu.active .icon-menu{
+  width: 0;
+}
+  
+.icon-menu::before, .icon-menu::after{
+  position: absolute;
+  content: '';
+  height: 4px;
+  width: 35px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #FAA916;
+  border-radius: 50px;
+  transition: 0.3s;
+}
+  
+.icon-menu::before{
+  top: 12px;
+}
+  
+.icon-menu::after{
+  bottom: 8px;
+}
+  
+.toggleBox-menu.active .icon-menu::before{
+  width: 40px;
+  transform-origin: right;
+  transform: translate(-25px, 4px) rotate(45deg);
+}
+  
+.toggleBox-menu.active .icon-menu::after{
+  width: 40px;
+  transform-origin: right;
+  transform: translate(-25px, -6px) rotate(-45deg);
+}
+
+.navItems-menu{
+  width: 100%;
+  visibility: hidden;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+  
+.container-menu.active .navItems-menu{
+  visibility: visible;
+}
+  
+.li-menu{
+  list-style: none;
+  position: relative;
+  top: 14rem;
+}
+  
+.li-menu .link-menu i{
+  position: relative;
+  display: block;
+  font-size: 40px;
+  color: #FAA916;
+  padding: 5px;
+  width: 100%;
+  text-align: center;
+  transform: scale(0);
+  margin-top: 5px;
+}
+
+.saida .link-menu i{
+  position: relative;
+  display: block;
+  font-size: 40px;
+  color: #FAA916;
+  width: 100%;
+  text-align: center;
+  transform: scale(0);
+}
+
+.saida{
+  list-style: none;
+  bottom: 5%;
+  position: absolute;
+}
+
+ 
+
+
+.link_submenu{
+  list-style: none;
+  margin-top: 12.5rem;
+}
+
+.link_submenu .link-menu i{
+  position: relative;
+  display: block;
+  font-size: 40px;
+  color: #FAA916;
+  width: 100%;
+  text-align: center;
+  transform: scale(0); 
+  margin-top: 50px;
+  list-style: none;
+}
+.link-menu{ 
+  color: aqua;
+}
+.container-menu.active .navItems-menu .link-menu i{
+  transform: scale(1);
+  transition: 0.4s ease;
+  transition-delay: calc(0.08s * var(--i));
+}
+  
+.container-menu.active .navItems-menu li:hover .link-menu i{
+  transition: 0.2s ease;
+  color: rgba(6, 74, 140, 1);
+}
+/* ======================================================= SUB MENU DO MENU ========================================================*/
+.sub-menu{
+  background: rgb(255, 255, 255);
+  position: absolute;
+  transition: 0.5s;
+  width: 450px;
+  height: 0px;
+  padding: -50px;
+  align-items: center;
+  margin-left: 80px;
+  font-size: 15px;
+  top: 35rem;
+  overflow: hidden;
+  display: none;
+  border-radius: 7px;
+}
+
+#fonte-submenu{
+  text-decoration: none;
+  font-style: none;
+  color: #FAA916;
+}
+
+#fonte-submenu:hover{
+  color: rgba(6, 74, 140, 1);
+
+}
+
+.iten-submenu{
+  background-color: #fff;
+  padding: 6px;
+  font-size: 20px;
+  
+}
+
+.sub-menu.active{
+  height: 140px;
+  border: 2px solid #FAA916;
+}
+
+/* =============================================== POP UP ================================================================================ */
+.modal-container-menu{
+  display: none;
+  width: 100vw;
+  position: fixed;
+  top: 300px;
+  z-index: 999;
+  justify-content: center;
+  left: 17rem;
+}
+
+.modal-menu{
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  width: 350px;
+  height: 250px;
+  border: 2px solid black;
+}
+
+.active{
+  display: block;
+}
+
+.btnOpenmodal-menu{
+  position: relative;
+  border: #fff;
+  text-decoration: none;
+  cursor: pointer;
+  background-color: #fff;
+  text-align: center;
+  /* top: 140px; */
+
+}
+ 
+/* ===================================================== BOTÕES POP'UP MENU ==================================================== */
+
+.btnOk-menu{
+  position: relative;
+  background-color: red;
+  
+}
+
+.btnClose-menu{
+  position: relative;
+  background-color: green;
+  width: 50px;
+}
+
+.btns-menu button{
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+  display: flex;
+  font-style: normal;
+  font-size: 'Montserrat';
+  font-weight: 500;
+  text-align: center;
+  font-size: 15px;
+}
+
+.btns-menu{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 50%;
+  margin-left: 70px;
+  margin-top: 30%;
+}
+
+.text-popmenu{
+ position: relative;
+  display: flex;
+  margin: auto;
+  text-align: center;
+  width: 100%;
+  font-size: 22px;
+  color: black;
+  top: 20px;
+}
