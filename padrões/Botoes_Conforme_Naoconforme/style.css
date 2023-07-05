@@ -1,0 +1,26 @@
+.row{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.checkmark {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border-radius: 200px;
+    font-size: 40px;
+}
+
+.bi-check-circle{
+    color: #609437;
+}
+
+.bi-x-circle{
+    color: #CB1010;
+}
+
+li{
+    background: green;
+}
