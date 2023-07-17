@@ -1,0 +1,36 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: 0;
+    font-family:'Montserrat', sans-serif;
+}
+
+.titulo_alterar_senha{
+    font-family: 'Montserrat';
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    font-size: 150%;
+}
+
+.centralizar_input_alterar_senha{
+  max-width: 652px;
+  margin: 15% auto;
+  margin-top: 4%;
+}
+
+.centralizar_botoes_alterar_senha{
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+}
+
+@media (max-width: 882px) {
+  .centralizar_botoes_alterar_senha{
+    margin-top: 470px;
+  }
+
+  .centralizar_input_alterar_senha{
+    margin-top: 5%;
+  }
+}
