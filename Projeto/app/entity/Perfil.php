@@ -75,7 +75,7 @@ class Perfil{
     //Metodo responsavel por inserir dados no banco de dados
     public function cadastrar(){
         //variavel que conecta com o Banco e passa a tabela
-        $objBanco = new Banco('Cadastro_perfil');
+        $objBanco = new Banco('cadastro_perfil');
         /*Usando o metodo select do Banco para verificar se ja existe algum perfil cadastrado
         com o mesmo nome, concatenando o nome que foi passado para o objeto e o nome da coluna da tabela*/
         $teste = $objBanco -> select('nome_cargo = "'.$this -> nome_cargo.'"') -> fetchAll(PDO::FETCH_ASSOC);
@@ -106,7 +106,7 @@ class Perfil{
     public function getDados($where = null, $order = null, $limit = null){
         
         //variavel que conecta com o Banco e passa a tabela
-        $objBanco = new Banco('Cadastro_perfil');
+        $objBanco = new Banco('cadastro_perfil');
         //atribuindo o select para a variavel dados, usando o fetchObject 
         $dados = $objBanco -> select($where, $order, $limit) -> fetchAll(PDO::FETCH_ASSOC);
         

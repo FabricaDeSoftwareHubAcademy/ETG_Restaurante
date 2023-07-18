@@ -312,8 +312,10 @@
   }
   
   .cabecalho-menu{
+    position: relative;
+    margin: 50px auto;
+    width: 852px;
     height: 150px;
-    margin-top: 50px;
   }
   
   .fitas{
