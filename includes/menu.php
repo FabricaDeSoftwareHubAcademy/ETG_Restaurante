@@ -17,7 +17,7 @@
 
     <div class="cabecalho-menu">
         <div class="container-menu">
-            <a href="#" class="toggleBox-menu">
+            <a  class="toggleBox-menu">
               <span class="icon-menu"></span>
             </a>
             <ul class="navItems-menu">
@@ -61,8 +61,8 @@
                         Tem Certeza que Deseja Sair?
                         </h3>
                         <div class="btns-menu">
-                            <button class="btnOk-menu" onclick="closeModal()" > NÃO</button>
-                            <button class="btnClose-menu" onclick="closeModal()" > SIM</button>
+                            <button class="btnOk-menu" onclick="closeModal(0)" > NÃO</button>
+                            <button class="btnClose-menu" onclick="closeModal(1)" > SIM</button>
                         </div>
                     </div>
                 </div>        
@@ -103,7 +103,14 @@ function openModal() {
      
 }
 
-function closeModal() {
+function closeModal(valor) {
+
+  if(valor == 1){
+
+    window.location.href = "./sair.php";
+
+  }
+
   modal.classList.remove('active')
 
 }
