@@ -19,7 +19,7 @@ if(isset($_POST['btn_sub'])){
         // esta setado 
 
         
-       ;
+       
         $objUser = new Usuario($_POST['matricula'],$_POST['email'],$_POST['senha']);
         if($objUser->logar()){
 
@@ -35,7 +35,7 @@ if(isset($_POST['btn_sub'])){
 
     
     }else{
-        // nao esta setado 
+        // nao esta setado -> modal ou pop up, notificando que nao esta setado!
         
     
     }
