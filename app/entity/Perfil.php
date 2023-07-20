@@ -1,4 +1,6 @@
 <?php
+
+
 require_once("../app/db/Banco.php");
 
 
