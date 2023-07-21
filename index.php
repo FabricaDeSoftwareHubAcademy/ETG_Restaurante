@@ -3,8 +3,9 @@
 session_start();
 
 // require na class Usuario 
-require_once(__DIR__.'\app\entity\Usuario.php');
- 
+include_once("/app/entity/Usuario.php");
+
+
 
 if(isset($_SESSION['num_matricula_logado'])){
     header("Location: pages/listar_perfil.php");
