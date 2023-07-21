@@ -1,3 +1,20 @@
+<!-- 
+
+
+    propriedades CSS para suportar o Menu, uma TAG que irá conter todos as outras Tags da pagina, por exemplo as tags body ou main ou section ! 
+
+    EXEMPLO:
+
+    body ou nome da sua div Pai 
+    {
+        width: 100%;
+        height: 100%;
+        max-width: 832px;
+        position: relative;
+        margin: 0 auto;
+    }
+
+ -->
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -14,6 +31,7 @@
 </head>
 
 <body>
+
 
     <div class="cabecalho-menu">
         <div class="container-menu">

@@ -317,8 +317,8 @@
   
   .cabecalho-menu{
     position: relative;
-    margin: 50px auto;
-    width: 852px;
+    margin-top: 30px;
+    width: 100%;
     height: 150px;
   }
   
