@@ -24,7 +24,7 @@ if (isset($_POST['nome_sala'],
     <link rel="stylesheet" href="https/cdnjs.cloudflare.comlibs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
     <link rel="stylesheet" href="../assets/css/cadastro_edicao_salas.css"> 
-    <link rel="stylesheet" href="menu.js">
+    
 
     
 </head>
@@ -40,7 +40,7 @@ if (isset($_POST['nome_sala'],
             
             <div class="wrap-cadastro-salas">
 
-                <form class="cadastro-sala-form" method="POST" action="">
+                <form class="cadastro-sala-form">
                     <div class="titulo_de_cadastro">
 
                         <h1> Cadastro de salas </h1>
@@ -85,7 +85,10 @@ if (isset($_POST['nome_sala'],
                             <div onmouseover="show('Checklist 4')" class="ops" > Checklist 4</div>
                             <div onmouseover="show('Checklist 5')" class="ops" > Checklist 5</div>
                         </div>
-                        <script>
+                    
+                    </div>
+                       
+                    <script>
                         function show(anything){
                             document.querySelector('.textbox-ck').value = anything
                         }
@@ -94,8 +97,11 @@ if (isset($_POST['nome_sala'],
                             dropdown.classList.toggle('active');
                             
                         }
-                    </script> 
-                    </div>  
+                
+                        
+                    </script>   
+
+                    
                     
                     <div class="img-area">
                         
@@ -110,11 +116,11 @@ if (isset($_POST['nome_sala'],
                         <div class="cor-sala">
                             <div class="alinar-img">
                                 <span id="img-text"> Insira a imagem : </span>
-                                <div class="area-anexo"> <img src="../assets/imgs/others/camera.png" alt="" id="icon-fotos">  </div>
+                                <div class="area-anexo"> <img src="camera.png" alt="" id="icon-fotos">  </div>
                             </div>    
                             <div class="alinar-botao-cor">
                                 <span id="selecao-cor-text">Cor da sala : </span> 
-                                <input class="botao-cor" type="color" name="btn_cor">
+                                <input class="botao-cor" type="color">
                             </div>
                         </div>
                         
@@ -123,7 +129,7 @@ if (isset($_POST['nome_sala'],
                         
                         <label id="botão-img"for="arquivo" >Enviar Fotos</label>
 
-                        <input type="file" name="ft_sala" id="arquivo">
+                        <input type="file" name="" id="arquivo">
                             
 
                             
@@ -137,7 +143,7 @@ if (isset($_POST['nome_sala'],
                     <div class="alinar-botoes">
 
                         <div class="botao-padrao-voltar">
-                            <a href="#"><input type="reset" class="botao-voltar-submit"  value="VOLTAR"></a>
+                            <a href="#"><input type="submit" class="botao-voltar-submit"  value="VOLTAR"></a>
                         </div>
                         
                         <div class="botao-padrao-cadastrar">
