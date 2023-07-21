@@ -1,5 +1,5 @@
 <?php
-
+//teste
 session_start();
 
 // require na class Usuario 
