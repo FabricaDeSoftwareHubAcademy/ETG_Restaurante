@@ -3,7 +3,7 @@
 session_start();
 
 // require na class Usuario 
-include_once("/app/entity/Usuario.php");
+include_once("./app/entity/Usuario.php");
 
 
 
