@@ -1,4 +1,10 @@
 <?php
+
+namespace App\Db;
+
+use PDO;
+use PDOException;
+
 class Banco{
     //Variaveis referentes a conexao com o banco de dados
     const HOST = 'localhost';

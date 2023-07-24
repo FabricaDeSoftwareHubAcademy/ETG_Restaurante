@@ -1,0 +1,104 @@
+.body_mural{
+    max-width: 832px;
+    position: relative;
+    margin: 0 auto;
+}
+
+.geral{
+
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+
+}
+.content{
+
+    width: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+
+}
+
+.card{
+
+    width: 150px;
+    height: 200px;
+    background-color: #064A8C;
+    border-radius: 20px;
+    box-shadow: 0px 5px 5px 0px #F7941D;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+.msg_aviso{
+
+    color: white;
+    word-wrap:  break-word;
+    max-width: 150px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: bold;
+    position: absolute;
+
+}
+
+.area_btn_add{
+
+    width: 150px;
+    height: 200px;
+   
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.img_btn_add{
+
+    width: 70px;
+
+}
+.area_bot{
+
+     
+   height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: end;
+    justify-content: center;
+    opacity: 0;
+    transition: 0.2s linear;
+
+}
+.card:hover .area_bot{
+
+
+    opacity: 1;
+
+}
+
+.bloco_bot{
+
+    width: 100%;
+    height: 30%;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 0px 0px 20px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+}
+.area_cards_recados_mural{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}

@@ -45,7 +45,7 @@
                     </a>
                 </li>
                 <li class="li-menu">
-                    <a href="#" class="link-menu">
+                    <a href="mural.php" class="link-menu">
                         <i class="bi bi-house-door" style="--i:2"></i>                    
                     </a>
                 </li>            
