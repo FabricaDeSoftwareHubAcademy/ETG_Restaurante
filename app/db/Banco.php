@@ -1,6 +1,6 @@
 <?php
 class Banco{
-    //Variaveis referentes a conexao com o banco de dados
+    //Variaveis referentes a conexao com o banco de dados kkkkkkkkkkkkkkkkkkkkkkkkkk
     const HOST = 'localhost';
     const DB_NAME = 'etg_homologacao';
     const USER = 'root';
