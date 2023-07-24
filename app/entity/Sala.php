@@ -45,6 +45,7 @@ class Sala{
 
     public function cadastrar(){
         $objBanco = new Banco('Cadastro_sala');
+
         $query = $objBanco -> select() -> fetchAll();
 
         $objBanco -> insert(['id_cadastro_checklist' => $this -> id_cadastro_checklist,
@@ -61,6 +62,27 @@ class Sala{
                             ]
                         );
                         
+
+    }
+
+
+    public function getSalas(){
+
+        $objBanco = new Banco('Cadastro_sala');
+        $salas = $objBanco -> select() -> fetchAll(PDO::FETCH_ASSOC);
+        
+
+        if($salas->rowcont()>0){
+
+            return $salas;
+
+        }
+        else{
+
+            return false;
+
+        }
+
 
     }
 

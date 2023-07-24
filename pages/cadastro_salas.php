@@ -1,6 +1,19 @@
 <?php
 require_once("../includes/menu.php");
 require_once("../app/entity/Sala.php");
+include_once("../app/entity/CadastroChecklist.php");
+
+
+
+
+//Selecionando do banco
+$objCadastroChecklist = new CadastroChecklist();
+$dados = $objCadastroChecklist -> getDados();
+$options = '';
+foreach ($dados as $row_check ){
+    $options .= '<option  class="ops" value="'.$row_check['id_cadastro_checklist'].'"> '.$row_check['nome'].' </option>';
+}
+
 
 if (isset($_POST['nome_sala'],
         $_POST['andar_sala'],
@@ -30,11 +43,7 @@ if (isset($_POST['nome_sala'],
             //var_dump($_POST);
             //exit;
             $obj_sala -> cadastrar();
-
         }   
-
-
-
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -98,14 +107,11 @@ if (isset($_POST['nome_sala'],
                     
                     <div class="dropdown-ck">
 
-                    <select name="checklist" class="option">
-                        <option class="ops" value="1" selected disabled> Selecione o Checklist </option>
-                        <option class="ops" value="1"> Checklist 1 </option>
-                        <option  class="ops" value="2"> Checklist 2 </option>
-                        <option class="ops" value="3"> Checklist 3 </option>
-                        <option  class="ops" value="4"> Checklist 4 </option>
-                        <option  class="ops" value="5"> Checklist 5 </option>
-                    </select>
+                        <select name="checklist" class="option">
+                            
+                            <?=$options?>
+                            
+                        </select> 
                     
                     
                     </div>
