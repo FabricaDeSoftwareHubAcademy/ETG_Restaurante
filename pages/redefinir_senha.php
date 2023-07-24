@@ -1,7 +1,3 @@
-<?php
-require_once("../includes/menu.php")
-?>
-
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -16,52 +12,51 @@ require_once("../includes/menu.php")
     
 </head>
 <body>
-    
-    <section class='titulo_alterar_senha'>
-        <h1>Alterar Senha</h1>
-    </section>
+    <main class="pai-de-todos">
+        <?php include_once("../includes/menu.php"); ?>
+        <section class='titulo_alterar_senha'>
+            <h1>Alterar Senha</h1>
+        </section>
 
-    <section class="centralizar_input_alterar_senha"> 
+        <section class="centralizar_input_alterar_senha"> 
 
-            <!--Input Email-->
-        <div class="input_e-mail_group field">
-            <input type="email" class="input_e-mail_field" placeholder="Name" required="" autocomplete="on">
-            <label for="name" class="input_e-mail_label">E-mail</label> <!--Alterar para o nome do input-->
-        </div>
+                <!--Input Email-->
+                <div class="input_e-mail_group field">
+                    <input type="email" class="input_e-mail_field" placeholder="Name" required="" autocomplete="on">
+                    <label for="name" class="input_e-mail_label">E-mail</label> <!--Alterar para o nome do input-->
+                </div>
 
-            <!--Input Senha-->
-        <div class="input_senha_group field">
-            <input type="password" class="input_senha_field" placeholder="Name" required="">
-            <label for="name" class="input_senha_label">Senha antiga</label> <!--Alterar para o nome do input-->
-        </div>
+                <!--Input Senha-->
+            <div class="input_senha_group field">
+                <input type="password" class="input_senha_field" placeholder="Name" required="">
+                <label for="name" class="input_senha_label">Senha antiga</label> <!--Alterar para o nome do input-->
+            </div>
 
-        <div class="input_senha_group field2">
-            <input type="password" class="input_senha_field" placeholder="Name" required="">
-            <label for="name" class="input_senha_label">Criar nova senha</label> <!--Alterar para o nome do input-->
-        </div>
+            <div class="input_senha_group field2">
+                <input type="password" class="input_senha_field" placeholder="Name" required="">
+                <label for="name" class="input_senha_label">Criar nova senha</label> <!--Alterar para o nome do input-->
+            </div>
 
-        <div class="input_senha_group field3">
-            <input type="password" class="input_senha_field" placeholder="Name" required="">
-            <label for="name" class="input_senha_label">Confirmar nova senha</label> <!--Alterar para o nome do input-->
-        </div>
+            <div class="input_senha_group field3">
+                <input type="password" class="input_senha_field" placeholder="Name" required="">
+                <label for="name" class="input_senha_label">Confirmar nova senha</label> <!--Alterar para o nome do input-->
+            </div>
 
-    </section>   
+        </section>   
 
-    <section class="centralizar_botoes_alterar_senha">
+        <section class="centralizar_botoes_alterar_senha">
 
-            <!--Botão Voltar-->
-        <div class="botao-padrao-voltar">
-            <a href="#"><input type="submit" class="botao-voltar-submit"  value="VOLTAR"></a>
-        </div>
+                <!--Botão Voltar-->
+            <div class="botao-padrao-voltar">
+                <a href="#"><input type="submit" class="botao-voltar-submit"  value="VOLTAR"></a>
+            </div>
 
-            <!--Botão Confirmar-->
-        <div class="botao-padrao-confirmar">
-            <a href="#"><input type="submit" class="botao-confirmar-submit"  value="CONFIRMAR"></a>
-        </div>
+                <!--Botão Confirmar-->
+            <div class="botao-padrao-confirmar">
+                <a href="#"><input type="submit" class="botao-confirmar-submit"  value="CONFIRMAR"></a>
+            </div>
 
-    </section>
-
-
-
+        </section>
+    </main>
 </body>
 </html>

@@ -1,7 +1,5 @@
 <?php
-require_once("../includes/menu.php");
 require_once("../app/entity/Perfil.php");
-
 
 //Se o botao_salvar e o nome do cargo estiverem setados
 if (isset($_POST['botao_salvar'], $_POST['nome_cargo'])){
@@ -48,6 +46,11 @@ if (isset($_POST['botao_salvar'], $_POST['nome_cargo'])){
 </head>
 
 <body class="tela_cadastro_perfil">
+    <main class="pai-de-todos">
+        <?php
+        //toma essa gambiarra ass luiz
+        include_once("../includes/menu.php"); 
+        ?>
     <div class="container">
         <div class="titulo_cad" >
             <h1 class="titulo_cad_perfil" >
@@ -123,5 +126,6 @@ if (isset($_POST['botao_salvar'], $_POST['nome_cargo'])){
         </form>
         
     </div>     
+    </main>
 </body>
 </html>
