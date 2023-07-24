@@ -7,10 +7,10 @@ use PDOException;
 
 class Banco{
     //Variaveis referentes a conexao com o banco de dados
-    const HOST = 'localhost';
+    const HOST = '192.168.22.9';
     const DB_NAME = 'etg_homologacao';
-    const USER = 'root';
-    const PASS = '';
+    const USER = 'fabrica';
+    const PASS = 'fabrica@2022';
     private $table;//variavel que vai falar sobre qual tabela do banco esta sendo tratada
     private $conexao;
 
