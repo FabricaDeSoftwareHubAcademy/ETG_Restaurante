@@ -1,16 +1,39 @@
 <?php
-include_once("../includes/menu.php");
+require_once("../includes/menu.php");
+require_once("../app/entity/Sala.php");
 
 if (isset($_POST['nome_sala'],
-          $_POST['andar_sala'],
-          $_POST['nome_sala'],
-          $_POST['nome_sala'],
-          $_POST['nome_sala'],
-          $_POST['nome_sala'],
-          $_POST['nome_sala'],
-          $_POST['nome_sala'],
-          $_POST['nome_sala'],
-))
+        $_POST['andar_sala'],
+        $_POST['checklist'],
+        $_POST['descricao_sala'],
+        //$_POST['imagem_sala'],
+        $_POST['cor_sala']    
+
+        ))
+        {
+            $obj_sala = new Sala(
+                null,
+                $_POST['checklist'],
+                null,
+                $_POST['andar_sala'],
+                $_POST['descricao_sala'],
+                null,
+                $_POST['cor_sala'],
+                null,
+                $_POST['nome_sala'],
+                null,
+                null,
+                null
+                
+            );
+            //var_dump($_SERVER);exit
+            //var_dump($_POST);
+            //exit;
+            $obj_sala -> cadastrar();
+
+        }   
+
+
 
 ?>
 <!DOCTYPE html>
@@ -40,7 +63,7 @@ if (isset($_POST['nome_sala'],
             
             <div class="wrap-cadastro-salas">
 
-                <form class="cadastro-sala-form">
+                <form class="cadastro-sala-form" method="POST" enctype="multipart/form-data" >
                     <div class="titulo_de_cadastro">
 
                         <h1> Cadastro de salas </h1>
@@ -52,7 +75,7 @@ if (isset($_POST['nome_sala'],
 
 
                         <div class="input_group field">
-                            <input type="input" name="nome_sala" class="input_field" placeholder="Name" required="" name="nome_sala">
+                            <input type="input" class="input_field" placeholder="Name" required="" name="nome_sala">
                             <label for="name" class="input_label">Nome Da Sala </label> <!--Alterar para o nome do input-->
                         </div>
 
@@ -75,33 +98,19 @@ if (isset($_POST['nome_sala'],
                     
                     <div class="dropdown-ck">
 
-                        <input type="text" class="textbox-ck"
-                        placeholder="Selecione o Checklist" readonly>
-                        
-                        <div class="option">
-                            <div onmouseover="show('Checklist 1')" class="ops" > Checklist 1</div>
-                            <div onmouseover="show('Checklist 2')" class="ops" > Checklist 2</div>
-                            <div onmouseover="show('Checklist 3')" class="ops" > Checklist 3</div>
-                            <div onmouseover="show('Checklist 4')" class="ops" > Checklist 4</div>
-                            <div onmouseover="show('Checklist 5')" class="ops" > Checklist 5</div>
-                        </div>
+                    <select name="checklist" class="option">
+                        <option class="ops" value="1" selected disabled> Selecione o Checklist </option>
+                        <option class="ops" value="1"> Checklist 1 </option>
+                        <option  class="ops" value="2"> Checklist 2 </option>
+                        <option class="ops" value="3"> Checklist 3 </option>
+                        <option  class="ops" value="4"> Checklist 4 </option>
+                        <option  class="ops" value="5"> Checklist 5 </option>
+                    </select>
+                    
                     
                     </div>
                        
-                    <script>
-                        function show(anything){
-                            document.querySelector('.textbox-ck').value = anything
-                        }
-                        let dropdown = document.querySelector('.dropdown-ck');
-                        dropdown.onclick = function(){
-                            dropdown.classList.toggle('active');
-                            
-                        }
-                
-                        
-                    </script>   
 
-                    
                     
                     <div class="img-area">
                         
@@ -120,7 +129,7 @@ if (isset($_POST['nome_sala'],
                             </div>    
                             <div class="alinar-botao-cor">
                                 <span id="selecao-cor-text">Cor da sala : </span> 
-                                <input class="botao-cor" type="color">
+                                <input class="botao-cor" name="cor_sala" type="color">
                             </div>
                         </div>
                         
@@ -129,7 +138,7 @@ if (isset($_POST['nome_sala'],
                         
                         <label id="botão-img"for="arquivo" >Enviar Fotos</label>
 
-                        <input type="file" name="" id="arquivo">
+                        <input type="file" name="imagem_sala" id="arquivo">
                             
 
                             
@@ -147,7 +156,7 @@ if (isset($_POST['nome_sala'],
                         </div>
                         
                         <div class="botao-padrao-cadastrar">
-                            <a href="#"><input type="submit" class="botao-cadastrar-submit"  value="CADASTRAR"></a>
+                            <a href="#"><input name="btn_submit" type="submit" class="botao-cadastrar-submit"  value="CADASTRAR"></a>
                         </div>
                         
                     </div>

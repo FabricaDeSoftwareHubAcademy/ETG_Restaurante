@@ -30,6 +30,7 @@
   display: flex;
   justify-content: space-between;
   text-align: center;
+  margin-top: 30%;
 }
 
 @media (max-width: 882px) {
