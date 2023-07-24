@@ -108,13 +108,17 @@ if (isset($_POST['nome_sala'],
                     <div class="dropdown-ck">
 
                         <select name="checklist" class="option">
-                            
+
                             <?=$options?>
                             
                         </select> 
+
+                        
                     
                     
                     </div>
+
+                        <div class="barra"></div>
                        
 
                     
