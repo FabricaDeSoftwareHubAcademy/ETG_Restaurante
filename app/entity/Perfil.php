@@ -1,5 +1,10 @@
 <?php
-require_once("../app/db/Banco.php");
+
+namespace App\Entity;
+
+// require_once("../app/db/Banco.php");
+use App\Db\Banco;
+
 
 class Perfil{
     

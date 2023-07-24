@@ -1,5 +1,7 @@
 <?php
-require_once("../app/db/Banco.php");
+// require_once("../app/db/Banco.php");
+namespace App\Entity;
+
 
 class Sala{
     private $id_cadastro_sala,
