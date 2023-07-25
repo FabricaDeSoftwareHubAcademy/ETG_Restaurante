@@ -14,12 +14,13 @@ foreach ($dados as $row_check ){
     $options .= '<option  class="ops" value="'.$row_check['id_cadastro_checklist'].'"> '.$row_check['nome'].' </option>';
 }
 
+var_dump($_FILES['imagem_sala']);
 
 if (isset($_POST['nome_sala'],
         $_POST['andar_sala'],
         $_POST['checklist'],
         $_POST['descricao_sala'],
-        //$_POST['imagem_sala'],
+        
         $_POST['cor_sala']    
 
         ))
@@ -30,7 +31,7 @@ if (isset($_POST['nome_sala'],
                 null,
                 $_POST['andar_sala'],
                 $_POST['descricao_sala'],
-                null,
+                $_FILES['imagem_sala'],
                 $_POST['cor_sala'],
                 null,
                 $_POST['nome_sala'],

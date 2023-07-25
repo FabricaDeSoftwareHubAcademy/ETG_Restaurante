@@ -1,5 +1,50 @@
 <?php
-include_once("../includes/menu.php");
+require_once("../includes/menu.php");
+require_once("../app/entity/Sala.php");
+include_once("../app/entity/CadastroChecklist.php");
+
+
+
+
+//Selecionando do banco
+$objCadastroChecklist = new CadastroChecklist();
+$dados = $objCadastroChecklist -> getDados();
+$options = '';
+foreach ($dados as $row_check ){
+    $options .= '<option  class="ops" value="'.$row_check['id_cadastro_checklist'].'"> '.$row_check['nome'].' </option>';
+}
+
+var_dump($_FILES['imagem_sala']);
+
+if (isset($_POST['nome_sala'],
+        $_POST['andar_sala'],
+        $_POST['checklist'],
+        $_POST['descricao_sala'],
+        
+        $_POST['cor_sala']    
+
+        ))
+        {
+            $obj_sala = new Sala(
+                null,
+                $_POST['checklist'],
+                null,
+                $_POST['andar_sala'],
+                $_POST['descricao_sala'],
+                $_FILES['imagem_sala'],
+                $_POST['cor_sala'],
+                null,
+                $_POST['nome_sala'],
+                null,
+                null,
+                null
+                
+            );
+            //var_dump($_SERVER);exit
+            //var_dump($_POST);
+            //exit;
+            $obj_sala -> cadastrar();
+        }   
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -65,31 +110,18 @@ include_once("../includes/menu.php");
 
                     <div class="dropdown-ck">
 
-                        <input type="text" class="textbox-ck"
-                        placeholder="Selecione o Checklist" readonly>
+                        <select name="checklist" class="option">
+
+                            <?=$options?>
+                            
+                        </select> 
+
                         
-                        <div class="option">
-                            <div onmouseover="show('Checklist 1')" class="ops" > Checklist 1</div>
-                            <div onmouseover="show('Checklist 2')" class="ops" > Checklist 2</div>
-                            <div onmouseover="show('Checklist 3')" class="ops" > Checklist 3</div>
-                            <div onmouseover="show('Checklist 4')" class="ops" > Checklist 4</div>
-                            <div onmouseover="show('Checklist 5')" class="ops" > Checklist 5</div>
-                        </div>
+                    
                     
                     </div>
-                       
-                    <script>
-                        function show(anything){
-                            document.querySelector('.textbox-ck').value = anything
-                        }
-                        let dropdown = document.querySelector('.dropdown-ck');
-                        dropdown.onclick = function(){
-                            dropdown.classList.toggle('active');
-                            
-                        }
-                
-                        
-                    </script>   
+
+                        <div class="barra"></div>  
  
 
                     
