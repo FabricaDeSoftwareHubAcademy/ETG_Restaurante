@@ -9,10 +9,30 @@ $dados_perfil = $objPerfil -> getDados();
 
 //pegando dados usuario
 $objUsuario = new Usuario;
+
 $dados_usuario = $objUsuario -> getDados();
+
+
+$usuario_perfil = [];
+foreach ($dados_usuario as $row_usuario)
+{
+    foreach ($dados_perfil as $row_perfil)
+        {
+            try
+            {
+                $usuario_perfil[$row_usuario['nome']] = $row_perfil['nome_cargo'];
+            }
+            catch (Exception $e)
+            {
+                break;
+            }
+            
+        }
+}
 //var_dump($dados_perfil); exit;
+
 $imprimir = '';
-foreach ($dados_perfil as $linha)
+foreach ($usuario_perfil as $nome_usuario => $cargo)
 {
     $imprimir .= '
                     <li>
@@ -20,8 +40,12 @@ foreach ($dados_perfil as $linha)
                             <div class="card_perfil">
                                 <img src="../assets/imgs/icons/profile.png" alt="icone_perfil" id="icone_perfil">
                                 <div class="card_nome">
-                                <h2 class="tipo_perfil">'.$linha['nome_cargo'].'</h2>
-                                <h3 class="funcao">'.$linha['nome_cargo'].'</h3>
+                                    <h2 class="tipo_perfil">'.$cargo.'</h2>
+                                    <h3 class="funcao">'.$nome_usuario.'</h3>
+                                </div>
+                                <img src="../assets/imgs/icons/icon_editar.png" alt="icone_editar" class="icone_editar"> 
+                                <i class="bi bi-trash"></i> 
+                                </div>
                         </div>
                     </li>
                 ';

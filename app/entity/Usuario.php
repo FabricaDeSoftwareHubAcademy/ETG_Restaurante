@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Entity;
+//namespace App\Entity;
 
-use \App\Db\Banco; 
-use PDO;
-use PDOException;
+//use \App\Db\Banco; 
+//use PDO;
+//use PDOException;
 
 class Usuario{
 
@@ -17,9 +17,9 @@ class Usuario{
     // metodo construct 
     public function __construct(
         
-        $num_matricula ,
-        $email ,
-        $senha ,
+        $num_matricula = null,
+        $email = null,
+        $senha = null,
         
     ){
 
@@ -66,9 +66,13 @@ class Usuario{
 
     public function getDados() : array 
     {
-        $obBanco = new Banco('cadastro_usuario');
-        $objBanco -> select();
-        die('vou contiuar logo');
+        
+        $objBanco = new Banco('cadastro_usuario');
+        
+        $dados = $objBanco -> select() -> fetchAll(PDO::FETCH_ASSOC);
+        
+        
+        return $dados;
 
     }
 
