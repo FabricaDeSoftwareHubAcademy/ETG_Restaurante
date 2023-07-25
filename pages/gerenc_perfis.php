@@ -43,9 +43,9 @@ foreach ($usuario_perfil as $nome_usuario => $cargo)
                                     <h2 class="tipo_perfil">'.$cargo.'</h2>
                                     <h3 class="funcao">'.$nome_usuario.'</h3>
                                 </div>
-                                <img src="../assets/imgs/icons/icon_editar.png" alt="icone_editar" class="icone_editar"> 
+                                <a href="../pages/edicao_perfil.php"><img src="../assets/imgs/icons/icon_editar.png" alt="icone_editar" class="icone_editar"></a> 
                                 <i class="bi bi-trash"></i> 
-                                </div>
+                            </div>
                         </div>
                     </li>
                 ';
@@ -67,6 +67,7 @@ foreach ($usuario_perfil as $nome_usuario => $cargo)
    
 </head>
 <body class="tela_gerenciam_perfis">
+    <main class="pai-de-todos">
         <?php
         //toma essa gambiarra ass luiz
         include_once("../includes/menu.php"); 
@@ -89,8 +90,9 @@ foreach ($usuario_perfil as $nome_usuario => $cargo)
                 <!--Botão Cadastrar Novo Perfil-->
                 <div class="botao-padrao-novo-perfil">
                     <a href="../pages/cadastro_perfil.php"><input type="submit" class="botao-novo-perfil-submit"  value="CADASTRAR PERFIL"></a>
+                </div>
     </div>
- </div>
+    </main>
     
 </body>
 </html>

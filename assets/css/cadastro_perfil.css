@@ -341,11 +341,11 @@
 
 .botoes{
   display: flex;
-  justify-content: space-evenly;
-  width: 85%;
-  
-  margin-top: 23%;
- transition: all 0.5s;
+  justify-content: space-between;
+  flex-direction: row;
+  width: 100%;
+  margin-top: 20%;
+  transition: all 0.5s;
   
 }
 
