@@ -1,9 +1,8 @@
 <?php
 
-namespace App\Entity;
+//namespace App\Entity;
 
-// require_once("../app/db/Banco.php");
-use App\Db\Banco;
+require_once("../app/db/Banco.php");
 
 
 class Perfil{
@@ -111,6 +110,7 @@ class Perfil{
         
         //variavel que conecta com o Banco e passa a tabela
         $objBanco = new Banco('cadastro_perfil');
+        
         //atribuindo o select para a variavel dados, usando o fetchObject 
         $dados = $objBanco -> select($where, $order, $limit) -> fetchAll(PDO::FETCH_ASSOC);
         

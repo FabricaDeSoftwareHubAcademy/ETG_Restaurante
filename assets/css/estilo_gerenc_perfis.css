@@ -20,6 +20,9 @@
     font-family: 'Montserrat', sans-serif;
     margin-bottom: 10px;
 }
+li{
+    list-style: none;
+}
 
 .container_gp{
     margin-top: 30px;
