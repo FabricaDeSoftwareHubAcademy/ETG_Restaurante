@@ -1,7 +1,3 @@
-<?php
-require_once("../includes/menu.php");
-?>
-
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
@@ -19,6 +15,11 @@ require_once("../includes/menu.php");
 </head>
 
 <body class="tela_cadastro_perfil">
+    <main class="pai-de-todos">
+        <?php
+        //toma essa gambiarra ass luiz
+        include_once("../includes/menu.php"); 
+        ?>
     <div class="container">
         <div class="titulo_cad" >
             <h1 class="titulo_cad_perfil" >
@@ -93,6 +94,7 @@ require_once("../includes/menu.php");
             </div>
         </form>
         
-    </div>     
+    </div>
+</main>   
 </body>
 </html>
