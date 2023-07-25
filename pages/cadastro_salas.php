@@ -1,7 +1,6 @@
 <?php
 require_once("../includes/menu.php");
-require_once("../app/entity/Sala.php");
-
+//require_once("../app/entity/Sala.php");
 if (isset($_POST['nome_sala'],
         $_POST['andar_sala'],
         $_POST['checklist'],
@@ -29,6 +28,7 @@ if (isset($_POST['nome_sala'],
             //var_dump($_SERVER);exit
             //var_dump($_POST);
             //exit;
+
             $obj_sala -> cadastrar();
 
         }   

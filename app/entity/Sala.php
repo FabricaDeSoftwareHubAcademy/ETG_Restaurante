@@ -1,6 +1,9 @@
 <?php
-// require_once("../app/db/Banco.php");
 namespace App\Entity;
+require('vendor/autoload.php');
+use App\Db\Banco;
+
+
 
 
 class Sala{
