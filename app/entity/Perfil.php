@@ -1,7 +1,7 @@
 <?php
 
 //namespace App\Entity;
-
+//use PDO
 require_once("../app/db/Banco.php");
 
 

@@ -64,4 +64,12 @@ class Usuario{
 
     }
 
+    public function getDados() : array 
+    {
+        $obBanco = new Banco('cadastro_usuario');
+        $objBanco -> select();
+        die('vou contiuar logo');
+
+    }
+
 }
