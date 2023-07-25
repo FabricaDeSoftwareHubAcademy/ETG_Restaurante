@@ -52,7 +52,7 @@ class Sala{
                                 'id_cadastro_usuario'=> $this -> id_cadastro_usuario,
                                 'andar'  => $this -> andar,
                                 'descricao' => $this -> descricao,
-                                'imagem' => $this -> imagem,
+                                'imagem' => $this -> imagem['name'],
                                 'cor' => $this -> cor,
                                 'status_sala' => $this -> status_sala,
                                 'nome' => $this -> nome,
@@ -61,7 +61,9 @@ class Sala{
                                 'horario_noturno' => $this -> horario_noturno
                             ]
                         );
-                        
+
+                        move_uploaded_file($this -> imagem["name"],"../assets/imagens_salas/".$this->imagem['name']);
+                        var_dump($this->imagem);
 
     }
 
