@@ -43,11 +43,12 @@ class Sala{
     }
 
 
-    public function cadastrar(){
+    public function cadastrar() : bool
+    {
         $objBanco = new Banco('Cadastro_sala');
 
-        $query = $objBanco -> select() -> fetchAll();
-
+        //$query = $objBanco -> select() -> fetchAll();
+        
         $objBanco -> insert(['id_cadastro_checklist' => $this -> id_cadastro_checklist,
                                 'id_cadastro_usuario'=> $this -> id_cadastro_usuario,
                                 'andar'  => $this -> andar,
@@ -61,10 +62,7 @@ class Sala{
                                 'horario_noturno' => $this -> horario_noturno
                             ]
                         );
-
-                        move_uploaded_file($this -> imagem["name"],"../assets/imagens_salas/".$this->imagem['name']);
-                        var_dump($this->imagem);
-
+                        return true;
     }
 
 

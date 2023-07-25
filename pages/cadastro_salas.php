@@ -42,10 +42,18 @@ if (isset($_POST['nome_sala'],
                 null
                 
             );
-            //var_dump($_SERVER);exit
-            //var_dump($_POST);
-            //exit;
-            $obj_sala -> cadastrar();
+            if ($obj_sala -> cadastrar())
+            {
+                $nome = $_FILES['imagem_sala']['name'];
+                $from = $_FILES['imagem_sala']['tmp_name'];
+                $to = '../assets/imagens_salas/';
+                move_uploaded_file($from, $to.$nome);
+            }
+            
+
+
+
+
         }   
 ?>
 <!DOCTYPE html>
