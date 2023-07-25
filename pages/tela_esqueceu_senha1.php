@@ -44,6 +44,6 @@ include_once("../includes/menu.php")
 
         </section>
     </main>
-<!--  -->
+
 </body>
 </html>
