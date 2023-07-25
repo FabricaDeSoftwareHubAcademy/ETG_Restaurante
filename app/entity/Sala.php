@@ -45,23 +45,31 @@ class Sala{
     }
 
 
-    public function cadastrar(){
+    public function cadastrar() : bool{
         $objBanco = new Banco('Cadastro_sala');
         $query = $objBanco -> select() -> fetchAll();
+        
 
-        $objBanco -> insert(['id_cadastro_checklist' => $this -> id_cadastro_checklist,
-                                'id_cadastro_usuario'=> $this -> id_cadastro_usuario,
-                                'andar'  => $this -> andar,
-                                'descricao' => $this -> descricao,
-                                'imagem' => $this -> imagem,
-                                'cor' => $this -> cor,
-                                'status_sala' => $this -> status_sala,
-                                'nome' => $this -> nome,
-                                'horario_matutino' => $this -> horario_matutino,
-                                'horario_vespertino' => $this -> horario_vespertino,
-                                'horario_noturno' => $this -> horario_noturno
-                            ]
-                        );
+        if ($query){
+
+            $objBanco -> insert(['id_cadastro_checklist' => $this -> id_cadastro_checklist,
+            'id_cadastro_usuario'=> $this -> id_cadastro_usuario,
+            'andar'  => ucfirst($this -> andar),
+            'descricao' => ucfirst($this -> descricao),
+            'imagem' => $this -> imagem,
+            'cor' => $this -> cor,
+            'status_sala' => strtolower($this -> status_sala),
+            'nome' => ucfirst($this -> nome),
+            'horario_matutino' => $this -> horario_matutino,
+            'horario_vespertino' => $this -> horario_vespertino,
+            'horario_noturno' => $this -> horario_noturno
+                            ]);
+            return true;
+        } else{
+            return false;
+        }
+
+
                         
 
     }
