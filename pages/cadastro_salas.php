@@ -1,14 +1,15 @@
 <?php
-require_once("../includes/menu.php");
-require_once("../app/entity/Sala.php");
-include_once("../app/entity/CadastroChecklist.php");
-
 $_SESSION['id'] = '245';
 
 if (isset($_SESSION['id']))
 {
     session_start();
 }
+require_once("../includes/menu.php");
+require_once("../app/entity/Sala.php");
+include_once("../app/entity/CadastroChecklist.php");
+
+
 
 $objCadastroChecklist = new CadastroChecklist();
 $dados = $objCadastroChecklist -> getDados();
