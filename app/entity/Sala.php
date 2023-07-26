@@ -51,12 +51,12 @@ class Sala{
         
         $objBanco -> insert(['id_cadastro_checklist' => $this -> id_cadastro_checklist,
                             'id_cadastro_usuario'=> $this -> id_cadastro_usuario,
-                            'andar'  => ucfirst($this -> andar),
-                            'descricao' => ucfirst($this -> descricao),
+                            'andar'  => ucfirst(strtolower($this -> andar)),
+                            'descricao' => ucfirst(strtolower($this -> descricao)),
                             'imagem' => $this -> imagem['name'],
                             'cor' => $this -> cor,
                             'status_sala' => $this -> status_sala,
-                            'nome' => ucfirst($this -> nome),
+                            'nome' => ucfirst(strtolower($this -> nome)),
                             'horario_matutino' => $this -> horario_matutino,
                             'horario_vespertino' => $this -> horario_vespertino,
                             'horario_noturno' => $this -> horario_noturno
