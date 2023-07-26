@@ -45,7 +45,7 @@
                     </a>
                 </li>
                 <li class="li-menu">
-                    <a href="#" class="link-menu">
+                    <a href="mural.php" class="link-menu">
                         <i class="bi bi-house-door" style="--i:2"></i>                    
                     </a>
                 </li>            
@@ -89,7 +89,7 @@
         <script src="js.js"></script>    
         <div class="container-logo">
             <div class="logo">
-                <ul class="cabecalho_logo"><img src="../assets/imgs/logos/MicrosoftTeams-image.png" alt="Carregando" id = "img-logo"></ul>
+                <ul class="cabecalho_logo"><img src="MicrosoftTeams-image.png" alt="Carregando" id = "img-logo"></ul>
             </div>
             <div class="fitas">
                 <ul class="sub-fita"><div id="bloc1"></div></ul>

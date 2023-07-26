@@ -1,9 +1,13 @@
 <?php
-//teste
 session_start();
+// pull 
+ 
 
 // require na class Usuario 
-include_once("./app/entity/Usuario.php");
+// include_once("./app/entity/Usuario.php");
+
+require __DIR__.'/vendor/autoload.php';
+use App\Entity\Usuario;
 
 
 
@@ -19,9 +23,8 @@ if(isset($_POST['btn_sub'])){
     if(isset($_POST['email'],$_POST['matricula'],$_POST['senha'])){
         // esta setado 
 
-        
-       
         $objUser = new Usuario($_POST['matricula'],$_POST['email'],$_POST['senha']);
+
         if($objUser->logar()){
 
             $_SESSION['msg'] = 'logado com sucesso!';

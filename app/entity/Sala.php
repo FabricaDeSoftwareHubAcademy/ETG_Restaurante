@@ -1,5 +1,10 @@
 <?php
-require_once("../app/db/Banco.php");
+namespace App\Entity;
+require('vendor/autoload.php');
+use App\Db\Banco;
+
+
+
 
 class Sala{
     private $id_cadastro_sala,
@@ -38,13 +43,38 @@ class Sala{
         $this -> status_sala = $status_sala;
         $this -> nome = $nome;
         $this -> horario_matutino = $horario_matutino;
+        $this -> horario_vespertino = $horario_vespertino;
         $this -> horario_noturno = $horario_noturno;
     }
 
 
-    public function cadastrar(){
+    public function cadastrar() : bool{
         $objBanco = new Banco('Cadastro_sala');
-        $query = $objBanco -> select();
+        $query = $objBanco -> select() -> fetchAll();
+        
+
+        if ($query){
+
+            $objBanco -> insert(['id_cadastro_checklist' => $this -> id_cadastro_checklist,
+            'id_cadastro_usuario'=> $this -> id_cadastro_usuario,
+            'andar'  => ucfirst($this -> andar),
+            'descricao' => ucfirst($this -> descricao),
+            'imagem' => $this -> imagem,
+            'cor' => $this -> cor,
+            'status_sala' => strtolower($this -> status_sala),
+            'nome' => ucfirst($this -> nome),
+            'horario_matutino' => $this -> horario_matutino,
+            'horario_vespertino' => $this -> horario_vespertino,
+            'horario_noturno' => $this -> horario_noturno
+                            ]);
+            return true;
+        } else{
+            return false;
+        }
+
+
+                        
+
     }
 
 
