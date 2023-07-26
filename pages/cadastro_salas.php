@@ -1,11 +1,28 @@
 <?php
+$_SESSION['id'] = '245';
+
+if (isset($_SESSION['id']))
+{
+    session_start();
+}
 require_once("../includes/menu.php");
-//require_once("../app/entity/Sala.php");
+require_once("../app/entity/Sala.php");
+include_once("../app/entity/CadastroChecklist.php");
+
+
+
+$objCadastroChecklist = new CadastroChecklist();
+$dados = $objCadastroChecklist -> getDados();
+$options = '';
+foreach ($dados as $row_check ){
+    $options .= '<option  class="ops" value="'.$row_check['id_cadastro_checklist'].'"> '.$row_check['nome'].' </option>';
+}
+
 if (isset($_POST['nome_sala'],
         $_POST['andar_sala'],
         $_POST['checklist'],
         $_POST['descricao_sala'],
-        //$_POST['imagem_sala'],
+        
         $_POST['cor_sala']    
 
         ))
@@ -13,10 +30,12 @@ if (isset($_POST['nome_sala'],
             $obj_sala = new Sala(
                 null,
                 $_POST['checklist'],
-                null,
+                $_SESSION['id'],
                 $_POST['andar_sala'],
                 $_POST['descricao_sala'],
-                null,
+
+                $_FILES['imagem_sala'],
+               
                 $_POST['cor_sala'],
                 null,
                 $_POST['nome_sala'],
@@ -25,17 +44,46 @@ if (isset($_POST['nome_sala'],
                 null
                 
             );
-            //var_dump($_SERVER);exit
-            //var_dump($_POST);
-            //exit;
+            if ($obj_sala -> cadastrar())
+            {
+                //die('teste');
 
-            $obj_sala -> cadastrar();
-
+                //var_dump($_FILES);exit;
+                if (!empty($_FILES['imagem_sala']['name']))
+                {
+                    //var_dump($_FILES);exit;
+                    $nome_arquivo = $_FILES['imagem_sala']['name'];
+                    $nova_string = uniqid();
+                    
+                    //se o arquivo que o usuario inserir for valido (jpg, jpeg, png, gif)
+                    if (preg_match('/\.(png|jpe?g|gif)$/i', $nome_arquivo, $matches))
+                    {
+                        // $matches =  array(2) { [0]=> string(4) ".jpg" [1]=> string(3) "jpg" }
+                        // ela armazena a extensao da imagem 
+                        $extensao_encontrada = $matches[0]; // jpg, jpeg, png
+                        $aleatorizador = $nova_string.$extensao_encontrada;
+                        $novo_nome_arquivo = str_replace($extensao_encontrada,
+                                                         $aleatorizador,
+                                                         $nome_arquivo); //nome_da_imagem 
+                        
+                        $from = $_FILES['imagem_sala']['tmp_name'];
+                        //KKKKKKKKKKKKKKKKKKKKK nao tava funcionando por causa de uma barrafinal KKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK
+                        $to = '../storage/salas/';
+    
+                        //echo $from . '<br>' . $to . '<br>' . $novo_nome_arquivo;exit;
+                        move_uploaded_file($from, $to.$novo_nome_arquivo);//movendo o arquivo para pasta
+    
+                        //return true  
+                    }
+                    else
+                    {
+                        die('este tipo de arquivo nao e aceito');
+                    }
+                }
+                
+            }
         }   
-
-
-
-?>
+        ?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -98,17 +146,18 @@ if (isset($_POST['nome_sala'],
                     
                     <div class="dropdown-ck">
 
-                    <select name="checklist" class="option">
-                        <option class="ops" value="1" selected disabled> Selecione o Checklist </option>
-                        <option class="ops" value="1"> Checklist 1 </option>
-                        <option  class="ops" value="2"> Checklist 2 </option>
-                        <option class="ops" value="3"> Checklist 3 </option>
-                        <option  class="ops" value="4"> Checklist 4 </option>
-                        <option  class="ops" value="5"> Checklist 5 </option>
-                    </select>
+                        <select name="checklist" class="option">
+
+                            <?=$options?>
+                            
+                        </select> 
+
+                        
                     
                     
                     </div>
+
+                        <div class="barra"></div>
                        
 
                     
