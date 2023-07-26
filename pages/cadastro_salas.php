@@ -45,8 +45,10 @@ if (isset($_POST['nome_sala'],
             );
             if ($obj_sala -> cadastrar())
             {
+                
                 $nome_arquivo = $_FILES['imagem_sala']['name'];
                 $nova_string = uniqid();
+                
                 //se o arquivo que o usuario inserir for valido (jpg, jpeg, png, gif)
                 if (preg_match('/\.(png|jpe?g|gif)$/i', $nome_arquivo, $matches))
                 {
@@ -57,9 +59,11 @@ if (isset($_POST['nome_sala'],
                     $novo_nome_arquivo = str_replace($extensao_encontrada,
                                                      $aleatorizador,
                                                      $nome_arquivo); //nome_da_imagem 
+                    
                     $from = $_FILES['imagem_sala']['tmp_name'];
                     //KKKKKKKKKKKKKKKKKKKKK nao tava funcionando por causa de uma barrafinal KKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK
                     $to = '../storage/salas/';
+
                     //echo $from . '<br>' . $to . '<br>' . $novo_nome_arquivo;exit;
                     move_uploaded_file($from, $to.$novo_nome_arquivo);//movendo o arquivo para pasta
 
@@ -67,7 +71,7 @@ if (isset($_POST['nome_sala'],
                 }
                 else
                 {
-                    //return false
+                    die('este tipo de arquivo nao e aceito');
                 }
             }
         }   
