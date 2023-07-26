@@ -49,7 +49,7 @@ class Sala{
 
         //$query = $objBanco -> select() -> fetchAll();
         
-        $objBanco -> insert(['id_cadastro_checklist' => $this -> id_cadastro_checklist,
+        $x = $objBanco -> insert(['id_cadastro_checklist' => $this -> id_cadastro_checklist,
                                 'id_cadastro_usuario'=> $this -> id_cadastro_usuario,
                                 'andar'  => $this -> andar,
                                 'descricao' => $this -> descricao,
@@ -62,7 +62,9 @@ class Sala{
                                 'horario_noturno' => $this -> horario_noturno
                             ]
                         );
-                        return true;
+
+        
+        return true;
     }
 
 
@@ -85,6 +87,11 @@ class Sala{
 
 
     }
+
+/*     public function getLastInsertId()
+    {
+
+    } */
 
 
 }

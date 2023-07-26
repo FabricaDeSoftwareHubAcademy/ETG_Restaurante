@@ -28,6 +28,7 @@ class Banco{
             //criando statement e preparando a query que foi passada como argumento
             $statement = $this -> conexao -> prepare($query);
             $statement -> execute($valores);
+        
             
             //fechando conexao
             $this -> conexao = null;
@@ -69,6 +70,7 @@ class Banco{
         $query = 'INSERT INTO '.$this -> table.'('.implode(', ', $chaves).') VALUES('.implode(', ', $valores).')';
         //Chamando o metodo `executarQuery` e passando a $query montada e APENAS OS VALORES de `$dados`
         $this -> executarQuery($query, array_values($dados));
+
         return true;
         
     }
@@ -100,6 +102,17 @@ class Banco{
 
 
     }
-
+    //Organizar esta funcao direito
+/*     public function lastInsert()
+    {
+        $this -> conectar();
+        //die("teste");
+        $UltimoID = $this-> conexao -> lastInsertId('id_cadas');
+        
+        var_dump($UltimoID); exit;
+      //return $this -> executarQuery($query) -> fetchAll(PDO::FETCH_ASSOC);
+        
+    }
+ */
 }
 ?>

@@ -4,8 +4,6 @@ require_once("../app/entity/Sala.php");
 include_once("../app/entity/CadastroChecklist.php");
 
 
-
-
 //Selecionando do banco
 $objCadastroChecklist = new CadastroChecklist();
 $dados = $objCadastroChecklist -> getDados();
@@ -13,8 +11,6 @@ $options = '';
 foreach ($dados as $row_check ){
     $options .= '<option  class="ops" value="'.$row_check['id_cadastro_checklist'].'"> '.$row_check['nome'].' </option>';
 }
-
-
 
 if (isset($_POST['nome_sala'],
         $_POST['andar_sala'],
@@ -44,16 +40,26 @@ if (isset($_POST['nome_sala'],
             );
             if ($obj_sala -> cadastrar())
             {
-                $nome = $_FILES['imagem_sala']['name'];
+                $nome = $_FILES['imagem_sala']['name'];   
+                $nomeArquivo = $nome;
+                $novaString = uniqid();
+                //se o arquivo que o usuario inserir for valido (jpg, jpeg, png, gif)
+                if (preg_match('/\.(png|jpe?g|gif)$/i', $nomeArquivo, $matches))
+                {
+                // $matches =  array(2) { [0]=> string(4) ".jpg" [1]=> string(3) "jpg" }
+                // ela armazena a extensao da imagem 
+                $extensaoEncontrada = $matches[0]; // jpg, jpeg, png
+
+                $novo_nome_arquivo = str_replace($extensaoEncontrada, //jpg, jpeg, png
+                                        $novaString .$extensaoEncontrada, //uniquid + jpg, jpeg, png
+                                        $nomeArquivo); //nome_da_imagem 
                 $from = $_FILES['imagem_sala']['tmp_name'];
-                $to = '../assets/imagens_salas/';
-                move_uploaded_file($from, $to.$nome);
+                //KKKKKKKKKKKKKKKKKKKKK nao tava funcionando por causa de uma barrafinal KKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK
+                $to = '../storage/salas/';
+                //echo $from . '<br>' . $to . '<br>' . $novo_nome_arquivo;exit;
+                move_uploaded_file($from, $to.$novo_nome_arquivo);//movendo o arquivo para pasta
+                }
             }
-            
-
-
-
-
         }   
 ?>
 <!DOCTYPE html>
