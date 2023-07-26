@@ -34,6 +34,7 @@
     color: var(--cor-primaria-botao-green);
     font-family: 'Montserrat';
     font-style: normal;
+    font-weight: bold;
 }
 
 .botao-ok-submit:hover{
@@ -62,7 +63,7 @@
     color: var(--cor-primaria-botao-green);
     font-family: 'Montserrat';
     font-style: normal;
-    font-weight: 580;
+    font-weight: bold;
     font-size: 16px;
    
     
@@ -94,7 +95,7 @@
     color: var(--cor-primaria-botao-green);
     font-family: 'Montserrat';
     font-style: normal;
-    font-weight: 580;
+    font-weight: bold;
     font-size: 16px;
 }
 
@@ -124,7 +125,7 @@
     color: var(--cor-primaria-botao-green);
     font-family: 'Montserrat';
     font-style: normal;
-    font-weight: 580;
+    font-weight: bold;
     font-size: 16px;
 }
 
@@ -154,7 +155,7 @@
     color: var(--cor-primaria-botao-green);
     font-family: 'Montserrat';
     font-style: normal;
-    font-weight: 580;
+    font-weight: bold;
     font-size: 16px;
 }
 
@@ -184,7 +185,7 @@
     color: var(--cor-primaria-botao-red);
     font-family: 'Montserrat';
     font-style: normal;
-    font-weight: 580;
+    font-weight: bold;
     font-size: 16px;
 }
 
@@ -214,7 +215,7 @@
     color: var(--cor-primaria-botao-red);
     font-family: 'Montserrat';
     font-style: normal;
-    font-weight: 580;
+    font-weight: bold;
     font-size: 16px;
 }
 
@@ -244,7 +245,7 @@
     color: var(--cor-primaria-botao-yellow);
     font-family: 'Montserrat';
     font-style: normal;
-    font-weight: 580;
+    font-weight: bold;
     font-size: 16px;
 }
 
@@ -274,7 +275,7 @@
     color: var(--cor-primaria-botao-green);
     font-family: 'Montserrat';
     font-style: normal;
-    font-weight: 580;
+    font-weight: bold;
     font-size: 16px;
 }
 
@@ -304,7 +305,7 @@
     color: var(--cor-primaria-botao-white);
     font-family: 'Montserrat';
     font-style: normal;
-    font-weight: 400;
+    font-weight: bold;
     font-size: 20px;
 }
 
@@ -329,7 +330,7 @@
     color: var(--cor-primaria-botao-white);
     font-family: 'Montserrat';
     font-style: normal;
-    font-weight: 400;
+    font-weight: bold;
     font-size: 20px;
 }
 
@@ -354,7 +355,7 @@
     color: var(--cor-primaria-botao-white);
     font-family: 'Montserrat';
     font-style: normal;
-    font-weight: 400;
+    font-weight: bold;
     font-size: 24px;
 }
 
@@ -379,7 +380,7 @@
     color: var(--cor-primaria-botao-green);
     font-family: 'Montserrat';
     font-style: normal;
-    font-weight: 500;
+    font-weight: bold;
     font-size: 16px;
 }
 
@@ -409,7 +410,7 @@
     color: var(--cor-primaria-botao-green);
     font-family: 'Montserrat';
     font-style: normal;
-    font-weight: 580;
+    font-weight: bold;
     font-size: 16px;
 }
 
@@ -439,7 +440,7 @@
     color: var(--cor-primaria-botao-green);
     font-family: 'Montserrat';
     font-style: normal;
-    font-weight: 580;
+    font-weight: bold;
     font-size: 16px;
 }
 
@@ -469,7 +470,7 @@
     color: var(--cor-primaria-botao-green);
     font-family: 'Montserrat';
     font-style: normal;
-    font-weight: 580;
+    font-weight: bold;
     font-size: 16px;
 }
 
@@ -499,7 +500,7 @@
     color: var(--cor-primaria-botao-white);
     font-family: 'Montserrat';
     font-style: normal;
-    font-weight: 580;
+    font-weight: bold;
     font-size: 16px;
 }
 
@@ -524,7 +525,7 @@
     color: var(--cor-primaria-botao-green);
     font-family: 'Montserrat';
     font-style: normal;
-    font-weight: 580;
+    font-weight: bold;
     font-size: 16px;
 }
 
@@ -554,7 +555,7 @@
     color: var(--cor-primaria-botao-green);
     font-family: 'Montserrat';
     font-style: normal;
-    font-weight: 580;
+    font-weight: bold;
     font-size: 16px;
 }
 
@@ -584,7 +585,7 @@
     color: var(--cor-primaria-botao-green);
     font-family: 'Montserrat';
     font-style: normal;
-    font-weight: 580;
+    font-weight: bold;
     font-size: 16px;
 }
 
