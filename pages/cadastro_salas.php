@@ -46,34 +46,41 @@ if (isset($_POST['nome_sala'],
             );
             if ($obj_sala -> cadastrar())
             {
-                
-                $nome_arquivo = $_FILES['imagem_sala']['name'];
-                $nova_string = uniqid();
-                
-                //se o arquivo que o usuario inserir for valido (jpg, jpeg, png, gif)
-                if (preg_match('/\.(png|jpe?g|gif)$/i', $nome_arquivo, $matches))
+                //die('teste');
+
+                //var_dump($_FILES);exit;
+                if (!empty($_FILES['imagem_sala']['name']))
                 {
-                    // $matches =  array(2) { [0]=> string(4) ".jpg" [1]=> string(3) "jpg" }
-                    // ela armazena a extensao da imagem 
-                    $extensao_encontrada = $matches[0]; // jpg, jpeg, png
-                    $aleatorizador = $nova_string.$extensao_encontrada;
-                    $novo_nome_arquivo = str_replace($extensao_encontrada,
-                                                     $aleatorizador,
-                                                     $nome_arquivo); //nome_da_imagem 
+                    //var_dump($_FILES);exit;
+                    $nome_arquivo = $_FILES['imagem_sala']['name'];
+                    $nova_string = uniqid();
                     
-                    $from = $_FILES['imagem_sala']['tmp_name'];
-                    //KKKKKKKKKKKKKKKKKKKKK nao tava funcionando por causa de uma barrafinal KKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK
-                    $to = '../storage/salas/';
-
-                    //echo $from . '<br>' . $to . '<br>' . $novo_nome_arquivo;exit;
-                    move_uploaded_file($from, $to.$novo_nome_arquivo);//movendo o arquivo para pasta
-
-                    //return true
+                    //se o arquivo que o usuario inserir for valido (jpg, jpeg, png, gif)
+                    if (preg_match('/\.(png|jpe?g|gif)$/i', $nome_arquivo, $matches))
+                    {
+                        // $matches =  array(2) { [0]=> string(4) ".jpg" [1]=> string(3) "jpg" }
+                        // ela armazena a extensao da imagem 
+                        $extensao_encontrada = $matches[0]; // jpg, jpeg, png
+                        $aleatorizador = $nova_string.$extensao_encontrada;
+                        $novo_nome_arquivo = str_replace($extensao_encontrada,
+                                                         $aleatorizador,
+                                                         $nome_arquivo); //nome_da_imagem 
+                        
+                        $from = $_FILES['imagem_sala']['tmp_name'];
+                        //KKKKKKKKKKKKKKKKKKKKK nao tava funcionando por causa de uma barrafinal KKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK
+                        $to = '../storage/salas/';
+    
+                        //echo $from . '<br>' . $to . '<br>' . $novo_nome_arquivo;exit;
+                        move_uploaded_file($from, $to.$novo_nome_arquivo);//movendo o arquivo para pasta
+    
+                        //return true  
+                    }
+                    else
+                    {
+                        die('este tipo de arquivo nao e aceito');
+                    }
                 }
-                else
-                {
-                    die('este tipo de arquivo nao e aceito');
-                }
+                
             }
         }   
         ?>
