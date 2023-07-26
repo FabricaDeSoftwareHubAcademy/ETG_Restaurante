@@ -33,8 +33,7 @@
       background: transparent;
       transition: border-color 0.2s;
       font-family: 'Montserrat';
-      font-style: normal;
-      font-weight: 400;
+      font-weight: bold;
       font-size: 20px;
       left: 10px;
   }
@@ -58,8 +57,7 @@
     color: #9b9b9b;
     pointer-events: none;
     font-family: 'Montserrat';
-    font-style: normal;
-    font-weight: 400;
+    font-weight: bold;
     font-size: 20px;
     left: 10px;
   }
@@ -101,9 +99,8 @@
     border-radius: 20px;
     cursor: pointer;
     color: var(--cor-primaria-botao-green);
-    font-style: normal;
-    font-size: 'Montserrat';
-    font-weight: 580;
+    font-family: 'Montserrat';
+    font-weight: bold;
     font-size: 15px;
   }
   
@@ -130,9 +127,8 @@
     border-radius: 20px;
     cursor: pointer;
     color: var(--cor-primaria-botao-yellow);
-    font-style: normal;
-    font-size: 'Montserrat';
-    font-weight: 580;
+    font-family: 'Montserrat';
+    font-weight: bold;
     font-size: 15px;
   
   }
@@ -144,7 +140,7 @@
   }
   
 
-.tudo_esqueceu_senha1{
+.tudo_esqueceu_senha2{
     width: 100%;
     height: 100%;
     max-width: 832px;
@@ -153,16 +149,17 @@
     margin-top: 3%;
 }
 
-.titulo_esqueceu_senha{
-    font-family: 'Montserrat';
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    font-size: 130%;
-    margin-top: 20%;
+.titulo_esqueceu_senha2{
+  font-family: 'Montserrat';
+  font-weight: bold;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  font-size: 130%;
+  margin-top: 20%;
 }
 
-.centralizar_input_esqueceu_senha{
+.centralizar_input_esqueceu_senha2{
   max-width: 652px;
   margin: 15% auto;
   margin-top: 8%;
@@ -180,7 +177,7 @@
     margin-top: 470px;
   }
 
-  .centralizar_input_esqueceu_senha{
+  .centralizar_input_esqueceu_senha2{
     margin-top: 5%;
   }
 }
@@ -191,4 +188,33 @@
   max-width: 832px;
   position: relative;
   margin: 0 auto;
+}
+
+/* ============================================ TIMER ========================================================= */
+
+#timer{
+  margin-right: 36%;
+  padding-left: 5px;
+  color: rgb(0, 0, 0);
+  font-size: 22px;
+}
+
+.botao-enviar-dnv{
+  width: 151px;
+  font-size: 15px;
+  border-radius: 20px;
+  background-color: white;
+  font-family: 'Montserrat';
+  font-weight: bold;
+}
+
+#text-timer{
+  font-size: 22px;
+}
+
+.alinhar-item-timer{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
 }
