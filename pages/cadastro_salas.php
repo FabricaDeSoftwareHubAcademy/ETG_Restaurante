@@ -3,8 +3,13 @@ require_once("../includes/menu.php");
 require_once("../app/entity/Sala.php");
 include_once("../app/entity/CadastroChecklist.php");
 
+$_SESSION['id'] = '245';
 
-//Selecionando do banco
+if (isset($_SESSION['id']))
+{
+    session_start();
+}
+
 $objCadastroChecklist = new CadastroChecklist();
 $dados = $objCadastroChecklist -> getDados();
 $options = '';
@@ -24,7 +29,7 @@ if (isset($_POST['nome_sala'],
             $obj_sala = new Sala(
                 null,
                 $_POST['checklist'],
-                null,
+                $_SESSION['id'],
                 $_POST['andar_sala'],
                 $_POST['descricao_sala'],
 

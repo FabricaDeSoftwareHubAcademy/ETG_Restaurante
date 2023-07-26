@@ -25,6 +25,7 @@ if(isset($_POST['btn_sub'])){
         if($objUser->logar()){
 
             $_SESSION['msg'] = 'logado com sucesso!';
+            $_SESSION['id'] = '45';
             header("Location: pages/listar_perfil.php");
 
         }else{
