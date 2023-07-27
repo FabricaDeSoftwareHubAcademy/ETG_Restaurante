@@ -5,10 +5,6 @@ if (isset($_SESSION['id']))
 {
     session_start();
 }
-/* 
-include_once("../app/entity/Sala.php");
-include_once("../app/entity/CadastroChecklist.php");
-include_once("../app/entity/Imagens.php"); */
 require __DIR__."/../vendor/autoload.php";
 include_once("../includes/menu.php");
 use App\Entity\Perfil;
@@ -23,7 +19,6 @@ $options = '';
 foreach ($dados as $row_check ){
     $options .= '<option  class="ops" value="'.$row_check['id_cadastro_checklist'].'"> '.$row_check['nome'].' </option>';
 }
-var_dump($_POST); exit;
 
 if (isset($_POST      ['nome_sala'],
           $_POST      ['andar_sala'],
