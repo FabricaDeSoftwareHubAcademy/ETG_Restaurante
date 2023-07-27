@@ -503,8 +503,8 @@ input[type="file"] {
   cursor: pointer;
   color: var(--cor-primaria-botao-green);
   font-style: normal;
-  font-size: 'Montserrat';
-  font-weight: 580;
+  font-family: 'Montserrat';
+  font-weight: bold;
   font-size: 15px;
 }
 
@@ -533,8 +533,8 @@ input[type="file"] {
   cursor: pointer;
   color: var(--cor-primaria-botao-yellow);
   font-style: normal;
-  font-size: 'Montserrat';
-  font-weight: 580;
+  font-family: 'Montserrat';
+  font-weight: bold;
   font-size: 15px;
 
 }
