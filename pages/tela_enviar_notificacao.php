@@ -1,8 +1,4 @@
-<?php
 
-include_once("../includes/menu.php")
-
-?>
 
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -16,8 +12,14 @@ include_once("../includes/menu.php")
     <link rel="stylesheet" href="../assets/css/estilo_enviar_notificacao.css">
 
 </head>
-<body>
-<div class="tudo">     
+<body class="pai_de_todos">
+    <?php
+
+    include_once("../includes/menu.php")
+
+    ?> 
+<div class="tudo">   
+ 
     <div class="pagina">
         <section class="Enviar-notificacao">
             <h1>Enviar Notificação</h1>
@@ -40,7 +42,6 @@ include_once("../includes/menu.php")
 
         <!--Botão Voltar-->
         <section class="botao">
-
             <div class="botao-padrao-voltar">
                 <a href="#"><input type="submit" class="botao-voltar-submit"  value="VOLTAR"></a>
             </div>
@@ -49,7 +50,6 @@ include_once("../includes/menu.php")
             <div class="botao-padrao-enviar">
                 <a href="#"><input type="submit" class="botao-enviar-submit"  value="ENVIAR"></a>
             </div>
-
         </section>
 
     </div>
