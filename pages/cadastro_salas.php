@@ -29,7 +29,8 @@ if (isset($_POST      ['nome_sala'],
           $_POST      ['andar_sala'],
           $_POST      ['checklist'],
           $_POST      ['descricao_sala'],
-          $_POST      ['cor_sala']    
+          $_POST      ['cor_sala'],
+          $_POST      ['btn-submit']    
         ))
         {
             $obj_sala = new Sala(
