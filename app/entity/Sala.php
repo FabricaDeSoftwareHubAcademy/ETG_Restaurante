@@ -1,5 +1,6 @@
 <?php
 require_once("../app/db/Banco.php");
+require_once("../vendor/autoload.php");
 
 class Sala{
     private $id_cadastro_sala,
