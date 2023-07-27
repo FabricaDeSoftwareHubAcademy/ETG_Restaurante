@@ -1,6 +1,11 @@
 <?php
 require_once("../includes/menu.php");
-require_once("../app/entity/Perfil.php");
+
+
+require __DIR__."/../vendor/autoload.php";
+use App\Entity\Perfil;
+
+
 ?>
 
 <!DOCTYPE html>

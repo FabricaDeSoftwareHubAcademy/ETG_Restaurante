@@ -1,5 +1,9 @@
 <?php
-require_once("../db/Banco.php");
+
+namespace App\Entity;
+use PDO;
+use PDOException;
+
 
 class Usuario{
 
@@ -43,6 +47,22 @@ class Usuario{
             return false;
         }
 
+    }
+    
+    public function getRecados(){
+
+        $obBanco = new Banco("recado");
+        
+        $dados = $obBanco->select();
+        if($dados->rowCount() > 0){
+
+            return $dados;
+
+        }else{
+
+            return false;
+
+        }
     }
 
 }

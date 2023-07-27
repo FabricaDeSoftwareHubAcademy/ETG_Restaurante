@@ -1,6 +1,9 @@
 <?php
 
-require_once("../app/db/Banco.php");
+namespace App\Entity;
+use PDO;
+use PDOException;
+
 
 class CadastroChecklist{
     private 
