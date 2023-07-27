@@ -4,6 +4,8 @@
 require __DIR__."/../vendor/autoload.php";
 use App\Entity\Usuario;
 
+
+
 // teste 
 // $obUser = new Usuario(2,'joao@gmail.com',123);
 // $obUser->getRecados();

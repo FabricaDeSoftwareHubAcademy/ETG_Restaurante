@@ -1,5 +1,7 @@
 <?php
-require_once("../app/entity/Perfil.php");
+require __DIR__."/../vendor/autoload.php";
+use App\Entity\Perfil;
+
 
 //Se o botao_salvar e o nome do cargo estiverem setados
 if (isset($_POST['botao_salvar'], $_POST['nome_cargo'])){
@@ -119,7 +121,7 @@ if (isset($_POST['botao_salvar'], $_POST['nome_cargo'])){
                     <a href="cadastro_perfil.php"><input type="submit" class="botao-voltar-submit"  value="VOLTAR"></a>
                 </div>
                 <!--Botão Salvar-->
-                <div class="">
+                <div class="botao-padrao-voltar">
                     <a href=""><input name="botao_salvar" type="submit" class="botao-salvar-submit"  value="SALVAR"></a>
                 </div>
             </div>

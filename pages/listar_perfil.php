@@ -1,5 +1,9 @@
 <?php
 session_start();
+require __DIR__."/../vendor/autoload.php";
+
+use App\Entity\Perfil;
+
 if(!isset($_SESSION['num_matricula_logado'])){
     // se a sessio nao estiver setado redireciona para a index 
     header('Location: ../');

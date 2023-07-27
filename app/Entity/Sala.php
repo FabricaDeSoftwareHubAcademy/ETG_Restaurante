@@ -1,6 +1,10 @@
 <?php
-require_once("../app/db/Banco.php");
-require_once("../vendor/autoload.php");
+
+namespace App\Entity;
+use PDO;
+use PDOException;
+
+
 
 class Sala{
     private $id_cadastro_sala,
