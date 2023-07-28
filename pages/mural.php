@@ -28,13 +28,14 @@ $user = new Usuario('2','joao@gmail.com','123');
 
                                     <div class="bloco_bot">
 
-                                        <a href="editar.php?id_recado='.$row_recados['id_recado'].'"><img src="../assets/imgs/icons/btn_editar.png"></a>
+                                        <a href="editar_mural.php?id_recado='.$row_recados['id_recado'].'"><img src="../assets/imgs/icons/btn_editar.png"></a>
                                         <a href="excluir.php?id_recado='.$row_recados['id_recado'].'"><img src="../assets/imgs/icons/icon_trash.png"></a>
 
                                     </div>
 
                                 </div>
-                            </div>';
+                            </div>'
+                            ;
 
 
      }

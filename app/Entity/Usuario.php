@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Entity;
+use App\Db\Banco;
 use PDO;
 use PDOException;
 

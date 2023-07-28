@@ -4,12 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pop-up</title>
-  <link rel="stylesheet" href="style-pop-up-mural.css">
+  <link rel="stylesheet" href="../../../assets/css/style-pop-up-mural.css">
 </head>
 <body>
   <main class="main-pop-up-thays">
     <div class="btn-pop">
-      <button class="btn-popup-thays" onclick="openPopup()">Abrir Pop-up</button>
+      <button class="btn-popup-thays" onclick="openPopup(1)">Abrir Pop-up</button>
     </div>
 
     <section>
@@ -42,6 +42,6 @@
     </section>
   </main>
 
-  <script src="script-pop-up-mural.js"></script>
+  <script src="../../../assets/js/script-pop-up-mural.js"></script>
 </body>
 </html>
