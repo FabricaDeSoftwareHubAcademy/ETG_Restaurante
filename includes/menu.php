@@ -50,7 +50,7 @@
                     </a>
                 </li>            
                 <li class="li-menu">
-                    <a href="#" class="link-menu">
+                    <a href="../pages/gerenc_perfis.php" class="link-menu">
                         <i class="bi bi-person" style="--i:3"></i>                
                     </a>
                 </li>        
@@ -59,15 +59,15 @@
                         <i class="bi bi-list-check" id="btnsubmenu" onclick="openSubmenu()" style="--i:4"></i>
                     </a>
                         <ul class="sub-menu">            
-                            <li class="iten-submenu"><a href="#" id="fonte-submenu">Cadastro de Salas</a></li>
-                            <li class="iten-submenu"><a href="#" id="fonte-submenu">Relatórios</a></li>
+                            <li class="iten-submenu"><a href="../pages/cadastro_salas.php" id="fonte-submenu">Cadastro de Salas</a></li>
+                            <li class="iten-submenu"><a href="" id="fonte-submenu">Relatórios</a></li>
                             <li class="iten-submenu"><a href="#" id="fonte-submenu">Cadastro Checklist</a></li>
                             <li class="iten-submenu"><a href="#" id="fonte-submenu">Cadastro de Perguntas</a></li>                        
                         </ul>
                 </li>         
                 <li class="saida">
                     <button class="btnOpenmodal-menu" onclick="openModal()" >  
-                        <a href="#" class="link-menu">
+                        <a href="" class="link-menu">
                             <i class="bi bi-box-arrow-left" style="--i:5"></i>
                         </a>
                     </button>
