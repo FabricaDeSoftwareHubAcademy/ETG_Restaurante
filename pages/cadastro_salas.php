@@ -5,12 +5,12 @@ if (isset($_SESSION['id']))
 {
     session_start();
 }
-require __DIR__."/../vendor/autoload.php";
+
 include_once("../includes/menu.php");
-use App\Entity\Perfil;
+require("../vendor/autoload.php");
+use App\Entity\Sala;
 use App\Entity\CadastroChecklist;
 use App\Entity\Imagens;
-
 
 $objCadastroChecklist = new CadastroChecklist();
 $dados = $objCadastroChecklist -> getDados();
