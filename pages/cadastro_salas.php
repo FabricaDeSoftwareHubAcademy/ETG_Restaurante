@@ -50,11 +50,7 @@ if (isset($_POST      ['nome_sala'],
                 if (!empty($_FILES['imagem_sala']['name']))
                 {
                     $objImagem = new Imagens();
-                    $nome_imagem = $objImagem -> randomNumber($_FILES['imagem_sala']['name']);
-                    $from = $_FILES['imagem_sala']['tmp_name'];
-                    $to = '../storage/salas/';
-                    //echo $from . '<br>' . $to . '<br>' . $nome_imagem;exit;
-                    move_uploaded_file($from, $to.$nome_imagem);//movendo o arquivo para pasta
+                    $objImagem -> randomNumber($_FILES['imagem_sala']['name']);
                 }
                 
             }
