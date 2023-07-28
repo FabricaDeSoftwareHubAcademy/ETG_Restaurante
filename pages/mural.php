@@ -1,5 +1,6 @@
 <?php
- 
+//teste diff - jg diff?
+
 // require autoload = 0 bugs 
 require __DIR__."/../vendor/autoload.php";
 use App\Entity\Usuario;
@@ -32,6 +33,7 @@ $user = new Usuario('2','joao@gmail.com','123');
                                         <a href="excluir.php?id_recado='.$row_recados['id_recado'].'"><img src="../assets/imgs/icons/icon_trash.png"></a>
 
                                     </div>
+ 
 
                                 </div>
                             </div>';
@@ -41,7 +43,10 @@ $user = new Usuario('2','joao@gmail.com','123');
 
 
 
+
+
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
