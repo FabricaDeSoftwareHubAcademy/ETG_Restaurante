@@ -5,7 +5,7 @@ window.onload = function() {
 };
 
 function startTimer() {
-  var timer = 59; //  minuto em segundos
+  var timer = 5; //  minuto em segundos
   var display = document.getElementById('timer');
   var actionBtn = document.getElementById('actionBtn');
 
@@ -23,8 +23,14 @@ function startTimer() {
     if (--timer < 0) {
       clearInterval(interval);
       actionBtn.disabled = false; // Habilita o botão de ação quando o tempo acaba
+      actionBtn.style.display = '';
     }
   }, 1000);
+
+  if(--timer > 0){
+   actionBtn.style.display = 'none';
+
+   }
 }
 
 function performAction() {

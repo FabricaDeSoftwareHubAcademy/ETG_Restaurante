@@ -149,7 +149,7 @@
     margin-top: 3%;
 }
 
-.titulo_esqueceu_senha2{
+.titulo_esqueceu_senha2 h1{
   font-family: 'Montserrat';
   font-style: normal;
   text-align: center;
@@ -200,9 +200,9 @@
 }
 
 .botao-enviar-dnv{
-  width: 151px;
+  width: 150px;
   font-size: 15px;
-  border-radius: 20px;
+  border-radius: 10px;
   background-color: white;
   font-family: 'Montserrat';
   font-weight: bold;
@@ -210,12 +210,19 @@
 }
 
 #text-timer{
-  font-size: 22px;
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-size: 20px;
 }
 
 .alinhar-item-timer{
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   margin-top: 10px;
+}
+
+.item-timer{
+  display: flex;
+  width: 70%;
 }

@@ -29,9 +29,14 @@ include_once("../includes/menu.php")
                         </div>
                 
                         <div class="alinhar-item-timer">
-                            <h1 id="text-timer">Solicitar outro código:</h1>   
-                            <h1 id="timer">00:59</h1>
-                            <button  class="botao-enviar-dnv" id="actionBtn" onclick="performAction()" disabled>Enviar novamente</button>
+                            <div class="item-timer">
+                                <h1 id="text-timer">Solicitar outro código:</h1>   
+                                <h1 id="timer">00:59</h1>
+                            </div>
+
+                            <div>
+                                <button  class="botao-enviar-dnv" id="actionBtn" onclick="performAction()" disabled>Enviar novamente</button>
+                            </div>
                             <script src="../assets/js/tela_esqueceu_senha2.js"></script>
                         </div>
                     </section>
