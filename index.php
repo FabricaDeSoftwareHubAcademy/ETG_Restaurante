@@ -23,28 +23,17 @@ if(isset($_POST['btn_sub'])){
     // pegando email, matricula e senha 
     if(isset($_POST['email'],$_POST['matricula'],$_POST['senha'])){
         // esta setado 
-
         $objUser = new Usuario($_POST['matricula'],$_POST['email'],$_POST['senha']);
-
         if($objUser->logar()){
-
             $_SESSION['msg'] = 'logado com sucesso!';
             header("Location: pages/listar_perfil.php");
-
         }else{
-
             // mensagem de usuario ou senha invalidos
             echo("Senha IN VA LI DA !!!");
-
         }
-
-    
     }else{
         // nao esta setado -> modal ou pop up, notificando que nao esta setado!
-        
-    
     }
-
 }
 
 

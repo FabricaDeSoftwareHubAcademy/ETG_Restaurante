@@ -5,12 +5,13 @@ if (isset($_SESSION['id']))
 {
     session_start();
 }
-require __DIR__."/../vendor/autoload.php";
+
 include_once("../includes/menu.php");
-use App\Entity\Perfil;
+
+require __DIR__."/../vendor/autoload.php";
+use App\Entity\Sala;
 use App\Entity\CadastroChecklist;
 use App\Entity\Imagens;
-
 
 $objCadastroChecklist = new CadastroChecklist();
 $dados = $objCadastroChecklist -> getDados();
@@ -25,9 +26,10 @@ if (isset($_POST      ['nome_sala'],
           $_POST      ['checklist'],
           $_POST      ['descricao_sala'],
           $_POST      ['cor_sala'],
-          $_POST      ['btn-submit']    
+          $_POST      ['btn_submit']    
         ))
         {
+            
             $obj_sala = new Sala(
                 null,
                 $_POST['checklist'],
@@ -45,14 +47,11 @@ if (isset($_POST      ['nome_sala'],
             
             if ($obj_sala -> cadastrar())
             {
+                
                 if (!empty($_FILES['imagem_sala']['name']))
                 {
-                    $objImagem = new Imagens;
-                    $nome_imagem = $objImagem -> randomNumber($_FILES['imagem_sala']['name']);
-                    $from = $_FILES['imagem_sala']['tmp_name'];
-                    $to = '../storage/salas/';
-                    //echo $from . '<br>' . $to . '<br>' . $nome_imagem;exit;
-                    move_uploaded_file($from, $to.$nome_imagem);//movendo o arquivo para pasta
+                    $objImagem = new Imagens();
+                    $objImagem -> randomNumber($_FILES['imagem_sala']['name']);
                 }
                 
             }
@@ -68,21 +67,12 @@ if (isset($_POST      ['nome_sala'],
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https/cdnjs.cloudflare.comlibs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="../assets/css/cadastro_edicao_salas.css"> 
-    
-
-    
+    <link rel="stylesheet" href="../assets/css/cadastro_edicao_salas.css">   
 </head>
-<html>
 
 <body class="tela-cadastro-salas"> 
-
     <section class="container">
-        
         <div class="container-cadastro-salas">
-
-            
-            
             <div class="wrap-cadastro-salas">
 
                 <form class="cadastro-sala-form" method="POST" enctype="multipart/form-data" >
@@ -126,20 +116,12 @@ if (isset($_POST      ['nome_sala'],
                             
                         </select> 
 
-                        
-                    
-                    
                     </div>
 
                         <div class="barra"></div>
                        
-
-                    
                     <div class="img-area">
                         
-
-
-
                         <div class="text-area">
                             <span id=descrição>Descrição</span>
     
@@ -155,23 +137,11 @@ if (isset($_POST      ['nome_sala'],
                                 <input class="botao-cor" name="cor_sala" type="color">
                             </div>
                         </div>
-                        
-                        
-                        
-                        
+      
                         <label id="botão-img"for="arquivo" >Enviar Fotos</label>
 
                         <input type="file" name="imagem_sala" id="arquivo">
-                            
-
-                            
-
-                               
-        
-                                
-
-                    </div>
-                    
+                    </div>      
                     <div class="alinar-botoes">
 
                         <div class="botao-padrao-voltar">
@@ -182,25 +152,10 @@ if (isset($_POST      ['nome_sala'],
                             <a href="#"><input name="btn_submit" type="submit" class="botao-cadastrar-submit"  value="CADASTRAR"></a>
                         </div>
                         
-                    </div>
-
-
-
-
-
-                    
-                
+                    </div>  
                 </form>  
             </div>
         </div>
     </section>
-
-
-
-
-
-    
 </body>
-
-
 </html>
