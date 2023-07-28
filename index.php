@@ -2,6 +2,8 @@
 session_start();
 // pull 
  
+ 
+
 
 // require na class Usuario 
 // include_once("./app/entity/Usuario.php");

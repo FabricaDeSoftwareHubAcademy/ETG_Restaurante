@@ -1,41 +1,63 @@
 <?php
-require_once("../includes/menu.php");
-require_once("../app/entity/Sala.php");
+$_SESSION['id'] = '245';
 
-if (isset($_POST['nome_sala'],
-        $_POST['andar_sala'],
-        $_POST['checklist'],
-        $_POST['descricao_sala'],
-        //$_POST['imagem_sala'],
-        $_POST['cor_sala']    
+if (isset($_SESSION['id']))
+{
+    session_start();
+}
+require __DIR__."/../vendor/autoload.php";
+include_once("../includes/menu.php");
+use App\Entity\Perfil;
+use App\Entity\CadastroChecklist;
+use App\Entity\Imagens;
 
+
+$objCadastroChecklist = new CadastroChecklist();
+$dados = $objCadastroChecklist -> getDados();
+
+$options = '';
+foreach ($dados as $row_check ){
+    $options .= '<option  class="ops" value="'.$row_check['id_cadastro_checklist'].'"> '.$row_check['nome'].' </option>';
+}
+
+if (isset($_POST      ['nome_sala'],
+          $_POST      ['andar_sala'],
+          $_POST      ['checklist'],
+          $_POST      ['descricao_sala'],
+          $_POST      ['cor_sala'],
+          $_POST      ['btn-submit']    
         ))
         {
             $obj_sala = new Sala(
                 null,
                 $_POST['checklist'],
-                null,
+                $_SESSION['id'],
                 $_POST['andar_sala'],
                 $_POST['descricao_sala'],
-                null,
+                $_FILES['imagem_sala'],               
                 $_POST['cor_sala'],
                 null,
                 $_POST['nome_sala'],
                 null,
                 null,
                 null
-                
             );
-            //var_dump($_SERVER);exit
-            //var_dump($_POST);
-            //exit;
-            $obj_sala -> cadastrar();
-
+            
+            if ($obj_sala -> cadastrar())
+            {
+                if (!empty($_FILES['imagem_sala']['name']))
+                {
+                    $objImagem = new Imagens;
+                    $nome_imagem = $objImagem -> randomNumber($_FILES['imagem_sala']['name']);
+                    $from = $_FILES['imagem_sala']['tmp_name'];
+                    $to = '../storage/salas/';
+                    //echo $from . '<br>' . $to . '<br>' . $nome_imagem;exit;
+                    move_uploaded_file($from, $to.$nome_imagem);//movendo o arquivo para pasta
+                }
+                
+            }
         }   
-
-
-
-?>
+        ?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -98,17 +120,18 @@ if (isset($_POST['nome_sala'],
                     
                     <div class="dropdown-ck">
 
-                    <select name="checklist" class="option">
-                        <option class="ops" value="1" selected disabled> Selecione o Checklist </option>
-                        <option class="ops" value="1"> Checklist 1 </option>
-                        <option  class="ops" value="2"> Checklist 2 </option>
-                        <option class="ops" value="3"> Checklist 3 </option>
-                        <option  class="ops" value="4"> Checklist 4 </option>
-                        <option  class="ops" value="5"> Checklist 5 </option>
-                    </select>
+                        <select name="checklist" class="option">
+
+                            <?=$options?>
+                            
+                        </select> 
+
+                        
                     
                     
                     </div>
+
+                        <div class="barra"></div>
                        
 
                     

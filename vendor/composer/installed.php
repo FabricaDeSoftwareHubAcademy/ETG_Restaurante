@@ -1,19 +1,19 @@
 <?php return array(
     'root' => array(
-        'name' => 'etg/school',
+        'name' => 'arthur/etg',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => 'c7d1e2310ebeff47620f4e79df16301a91fe96a1',
+        'reference' => 'cde20c96128c0bbf231e42332afbd1d09a78602c',
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
         'dev' => true,
     ),
     'versions' => array(
-        'etg/school' => array(
+        'arthur/etg' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => 'c7d1e2310ebeff47620f4e79df16301a91fe96a1',
+            'reference' => 'cde20c96128c0bbf231e42332afbd1d09a78602c',
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),

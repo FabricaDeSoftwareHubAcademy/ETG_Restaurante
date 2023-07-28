@@ -1,6 +1,9 @@
 <?php
-// require_once("../app/db/Banco.php");
+
 namespace App\Entity;
+use PDO;
+use PDOException;
+
 
 
 class Sala{
@@ -45,26 +48,54 @@ class Sala{
     }
 
 
-    public function cadastrar(){
+    public function cadastrar() : bool
+    {
         $objBanco = new Banco('Cadastro_sala');
-        $query = $objBanco -> select() -> fetchAll();
 
+        //$query = $objBanco -> select() -> fetchAll();
+        
         $objBanco -> insert(['id_cadastro_checklist' => $this -> id_cadastro_checklist,
-                                'id_cadastro_usuario'=> $this -> id_cadastro_usuario,
-                                'andar'  => $this -> andar,
-                                'descricao' => $this -> descricao,
-                                'imagem' => $this -> imagem,
-                                'cor' => $this -> cor,
-                                'status_sala' => $this -> status_sala,
-                                'nome' => $this -> nome,
-                                'horario_matutino' => $this -> horario_matutino,
-                                'horario_vespertino' => $this -> horario_vespertino,
-                                'horario_noturno' => $this -> horario_noturno
-                            ]
-                        );
-                        
+                            'id_cadastro_usuario'=> $this -> id_cadastro_usuario,
+                            'andar'  => ucfirst(strtolower($this -> andar)),
+                            'descricao' => ucfirst(strtolower($this -> descricao)),
+                            'imagem' => $this -> imagem['name'],
+                            'cor' => $this -> cor,
+                            'status_sala' => $this -> status_sala,
+                            'nome' => ucfirst(strtolower($this -> nome)),
+                            'horario_matutino' => $this -> horario_matutino,
+                            'horario_vespertino' => $this -> horario_vespertino,
+                            'horario_noturno' => $this -> horario_noturno
+                        ]);
+
+        
+        return true;
+    }
+
+
+    public function getSalas(){
+
+        $objBanco = new Banco('Cadastro_sala');
+        $salas = $objBanco -> select() -> fetchAll(PDO::FETCH_ASSOC);
+        
+
+        if($salas->rowcont()>0){
+
+            return $salas;
+
+        }
+        else{
+
+            return false;
+
+        }
+
 
     }
+
+/*     public function getLastInsertId()
+    {
+
+    } */
 
 
 }

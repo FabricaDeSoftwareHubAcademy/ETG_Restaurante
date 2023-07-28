@@ -1,10 +1,9 @@
 <?php
 
+
 namespace App\Entity;
-
-// require_once("../app/db/Banco.php");
-use App\Db\Banco;
-
+use PDO;
+use PDOException;
 
 class Perfil{
     
