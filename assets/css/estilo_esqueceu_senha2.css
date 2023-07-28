@@ -206,6 +206,7 @@
   background-color: white;
   font-family: 'Montserrat';
   font-weight: bold;
+  cursor: pointer;
 }
 
 #text-timer{
