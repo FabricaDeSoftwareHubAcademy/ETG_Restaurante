@@ -1,10 +1,8 @@
 <?php
-
-
 namespace App\Entity;
 use PDO;
 use PDOException;
-
+use App\Db\Banco;
 class Perfil{
     
     /*Estes atributos sao respectivos aos atributos da tabela no banco de dados */
