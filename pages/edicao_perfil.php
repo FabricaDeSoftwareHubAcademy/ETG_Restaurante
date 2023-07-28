@@ -1,12 +1,19 @@
 <?php
 require_once("../app/entity/Perfil.php");
 
+if(isset($_GET['id'])){
+    $id = $_GET['id'];
+}
+
 $dadosPerfil = new Perfil();
 
-$dados = $dadosPerfil->getDados();
+$dados = $dadosPerfil->getDados($id);
+$cadastrar_salas = $dados[$id-1] ['cadastrar_sala'];
+$editar_salas = $dados[$id-1] ['editar_sala'];
+$remover_salas = $dados[$id-1] ['remover_sala'];
+
+
 ?>
-
-
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
@@ -37,24 +44,29 @@ $dados = $dadosPerfil->getDados();
         </div>
         <form method="POST" class="form_permissoes">
             <div class="input_group">
-                <input type="input" class="input_field" placeholder="Name" name="nome_cargo" value="<?=$dados[0]["nome_cargo"];?>" >
+                <input type="input" class="input_field" placeholder="Name" name="nome_cargo" value="<?=$dados[$id-1]["nome_cargo"];?>" >
                 <label for="name" class="input_label">Nome</label> <!--Alterar para o nome do input-->
             </div>
+
+            <div>
+                <?php echo $id; ?>
+            </div>
+
 
             <div class="permissoes_salas">
                 <label class="titulo_permissoes">Permissões da Sala:</label>
                 <div class="permissoes_salas_tipos">
                     <div class="permissoes_salas_itens">
                         <label class="label_permissao">Cadastrar Salas</label>
-                        <input type="checkbox" class="checkbox_permissoes" name="cadastrar_sala"  autocomplete="off"/>
+                        <input type="checkbox" class="checkbox_permissoes" name="cadastrar_sala" <?php echo $cadastrar_salas == 1 ? "checked" : "";?>  >
                     </div>
                     <div class="permissoes_salas_itens">
                         <label class="label_permissao">Edição de Salas</label>
-                        <input type="checkbox" class="checkbox_permissoes" name="editar_sala"   autocomplete="off" />
+                        <input type="checkbox" class="checkbox_permissoes" name="editar_sala"   <?php echo $editar_salas == 1 ? "checked" : "";?>  >
                     </div>
                     <div class="permissoes_salas_itens">
                         <label class="label_permissao">Remover Salas</label>
-                        <input type="checkbox" class="checkbox_permissoes" name="remover_sala"  autocomplete="off"/>
+                        <input type="checkbox" class="checkbox_permissoes" name="remover_sala"  <?php echo $remover_salas == 1 ? "checked" : "";?>  >
                     </div>
                 </div>
             </div>
