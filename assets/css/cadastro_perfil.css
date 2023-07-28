@@ -271,7 +271,7 @@ display: flex;
   color: var(--cor-primaria-botao-green);
   font-style: normal;
   font-family: 'Montserrat';
-  font-weight: 500;
+  font-weight: bold;
   font-size: 15px;
  
   
@@ -301,7 +301,7 @@ display: flex;
   color: var(--cor-primaria-botao-red);
   font-family: 'Montserrat';
   font-style: normal;
-  font-weight: 580;
+  font-weight: bold;
   font-size: 16px;
 }
 
@@ -331,7 +331,7 @@ display: flex;
   color: var(--cor-primaria-botao-yellow);
   font-style: normal;
   font-size: 'Montserrat';
-  font-weight: 500;
+  font-weight: bold;
   font-size: 15px;
 
 }

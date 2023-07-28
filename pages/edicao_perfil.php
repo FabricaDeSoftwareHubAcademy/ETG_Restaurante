@@ -1,3 +1,12 @@
+<?php
+require_once("../app/entity/Perfil.php");
+
+$dadosPerfil = new Perfil();
+
+$dados = $dadosPerfil->getDados();
+?>
+
+
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
@@ -28,9 +37,10 @@
         </div>
         <form method="POST" class="form_permissoes">
             <div class="input_group">
-                <input type="input" class="input_field" placeholder="Name" name="nome_cargo">
+                <input type="input" class="input_field" placeholder="Name" name="nome_cargo" value="<?=$dados[0]["nome_cargo"];?>" >
                 <label for="name" class="input_label">Nome</label> <!--Alterar para o nome do input-->
             </div>
+
             <div class="permissoes_salas">
                 <label class="titulo_permissoes">Permissões da Sala:</label>
                 <div class="permissoes_salas_tipos">
@@ -40,7 +50,7 @@
                     </div>
                     <div class="permissoes_salas_itens">
                         <label class="label_permissao">Edição de Salas</label>
-                        <input type="checkbox" class="checkbox_permissoes" name="editar_sala"  autocomplete="off" />
+                        <input type="checkbox" class="checkbox_permissoes" name="editar_sala"   autocomplete="off" />
                     </div>
                     <div class="permissoes_salas_itens">
                         <label class="label_permissao">Remover Salas</label>
