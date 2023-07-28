@@ -186,7 +186,6 @@
 
 .titulo_alterar_senha{
     font-family: 'Montserrat';
-    font-weight: bold;
     text-align: center;
     display: flex;
     justify-content: center;
@@ -196,7 +195,6 @@
 
 .titulo_alterar_senha h1{
   font-family: 'Montserrat';
-  font-weight: bold;
 }
 
 .centralizar_input_alterar_senha{
