@@ -3,7 +3,7 @@
 namespace App\Entity;
 use PDO;
 use PDOException;
-
+use App\Db\Banco;
 
 
 class Sala{

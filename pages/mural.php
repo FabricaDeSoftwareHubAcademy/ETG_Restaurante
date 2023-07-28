@@ -3,21 +3,26 @@
 
 // require autoload = 0 bugs 
 require __DIR__."/../vendor/autoload.php";
-use App\Entity\Usuario;
+use App\Entity\Recado;
 
+if(isset($_POST['btn_confirmar_submit'])){
 
+    if(isset($_POST['descricao_sala'])){
+      
+        $obRecado = new Recado($_SESSION['num_matricula_logado'],$_POST['descricao_sala']);
+        $obRecado->cadastrar();
 
-// teste 
-// $obUser = new Usuario(2,'joao@gmail.com',123);
-// $obUser->getRecados();
+    }
 
-// require menu 
+}
+
+ 
 require_once("../includes/menu.php");
 
 
 // pegando informações dos recados 
-$user = new Usuario('2','joao@gmail.com','123');
-    $recados = $user->getRecados()->fetchAll(PDO::FETCH_ASSOC) ?  $user->getRecados()->fetchAll(PDO::FETCH_ASSOC) : "";
+
+    $recados = Recado::getRecados()->fetchAll(PDO::FETCH_ASSOC) ?  Recado::getRecados()->fetchAll(PDO::FETCH_ASSOC) : "";
 
     $cards_recados = '';
 
@@ -29,14 +34,15 @@ $user = new Usuario('2','joao@gmail.com','123');
 
                                     <div class="bloco_bot">
 
-                                        <a href="editar.php?id_recado='.$row_recados['id_recado'].'"><img src="../assets/imgs/icons/btn_editar.png"></a>
-                                        <a href="excluir.php?id_recado='.$row_recados['id_recado'].'"><img src="../assets/imgs/icons/icon_trash.png"></a>
+                                        <a href="editar_mural.php?id_recado='.$row_recados['id_recado'].'"><img src="../assets/imgs/icons/btn_editar.png"></a>
+                                        <a href="recado_delete_action.php?id_recado='.$row_recados['id_recado'].'"><img src="../assets/imgs/icons/icon_trash.png"></a>
 
                                     </div>
  
 
                                 </div>
-                            </div>';
+                            </div>'
+                            ;
 
 
      }
@@ -54,9 +60,16 @@ $user = new Usuario('2','joao@gmail.com','123');
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mural de Recados</title>
+    <link rel="stylesheet" href="../assets/css/pop_ups_mural_recado.css">
     <link rel="stylesheet" href="../assets/css/mural.css"> 
 </head>
 <body class="body_mural">
+
+<?php
+include_once('../includes/pop-ups/pop_ups_mural_novo_recado/pop_ups_mural_recado.php');
+
+?>
+
 
 <div class="area_cards_recados_mural">
     
@@ -66,10 +79,11 @@ $user = new Usuario('2','joao@gmail.com','123');
     <!-- botão para add recado caso seja adm(requer condicional)   -->
     <div class="area_btn_add">
     
-        <a href="add_aviso.php"><img class="img_btn_add" src="../assets/imgs/icons/btn_add.png" alt=""></a>
+        <img onclick="openPopup_recado()" class="img_btn_add" src="../assets/imgs/icons/btn_add.png" alt=""> 
 
     </div>
 </div>
 
+<script src="../assets/js/pop_ups_mural_recado.js"></script>
 </body>
 </html>
