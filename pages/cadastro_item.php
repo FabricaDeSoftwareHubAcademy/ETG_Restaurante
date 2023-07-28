@@ -14,22 +14,22 @@
 <?php include_once("../includes/menu.php"); ?>
     <main class="container">
         <div class="pag_name">
-            <p>Cadastro de perguntas</p>
+            <p class="wanderley">Cadastro de perguntas</p>
         </div>
         <form class="content">
             <textarea name="descricao" id="descricao" cols="30" rows="10" placeholder="Descrição da nova pergunta"></textarea>
-            <p> A nova pergunta será cadastrada para: </p>
+            <p class="wanderley"> A nova pergunta será cadastrada para: </p>
             <div class="boxes">
-                <label>
+                <label class="wanderley">
                     Antes das aulas
                     <input type="checkbox" class="antes_aula">
                 </label>
-                <label>
+                <label class="wanderley">
                     Depois das aulas
                     <input type="checkbox" class="depois_aula">
                 </label>
             </div>
-            <p>Peguntas já cadastradas:</p>
+            <p class="wanderley">Peguntas já cadastradas:</p>
         </form>
         <div class="perguntas_cadastradas">
             <div class="titulo"></div>
