@@ -25,9 +25,10 @@ if (isset($_POST      ['nome_sala'],
           $_POST      ['checklist'],
           $_POST      ['descricao_sala'],
           $_POST      ['cor_sala'],
-          $_POST      ['btn-submit']    
+          $_POST      ['btn_submit']    
         ))
         {
+            
             $obj_sala = new Sala(
                 null,
                 $_POST['checklist'],
@@ -45,9 +46,10 @@ if (isset($_POST      ['nome_sala'],
             
             if ($obj_sala -> cadastrar())
             {
+                
                 if (!empty($_FILES['imagem_sala']['name']))
                 {
-                    $objImagem = new Imagens;
+                    $objImagem = new Imagens();
                     $nome_imagem = $objImagem -> randomNumber($_FILES['imagem_sala']['name']);
                     $from = $_FILES['imagem_sala']['tmp_name'];
                     $to = '../storage/salas/';
