@@ -61,8 +61,8 @@
                         <ul class="sub-menu">            
                             <li class="iten-submenu"><a href="../pages/cadastro_salas.php" id="fonte-submenu">Cadastro de Salas</a></li>
                             <li class="iten-submenu"><a href="" id="fonte-submenu">Relatórios</a></li>
-                            <li class="iten-submenu"><a href="#" id="fonte-submenu">Cadastro Checklist</a></li>
-                            <li class="iten-submenu"><a href="#" id="fonte-submenu">Cadastro de Perguntas</a></li>                        
+                            <li class="iten-submenu"><a href="" id="fonte-submenu">Cadastro Checklist</a></li>
+                            <li class="iten-submenu"><a href="" id="fonte-submenu">Cadastro de Perguntas</a></li>                        
                         </ul>
                 </li>         
                 <li class="saida">
