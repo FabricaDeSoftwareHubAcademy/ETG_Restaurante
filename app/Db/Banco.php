@@ -72,11 +72,20 @@ class Banco{
         substituindo as chaves usando a funcao implode(),
         substituindo os valores por `?` usando a funcao implode
         */ 
+        
         $query = 'INSERT INTO '.$this -> table.'('.implode(', ', $chaves).') VALUES('.implode(', ', $valores).')';
+         
         //Chamando o metodo `executarQuery` e passando a $query montada e APENAS OS VALORES de `$dados`
         $this -> executarQuery($query, array_values($dados));
         return true;
         
+    }
+
+    public function delete($id, $coluna){
+
+        $query = 'DELETE FROM '.$this->table.' WHERE '.$coluna. ' = '. $id;
+        echo($query);
+
     }
 
     //Metodo criado pra executar o comando SQL -> `SELECT`
