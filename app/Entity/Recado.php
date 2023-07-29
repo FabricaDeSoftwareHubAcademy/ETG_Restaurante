@@ -29,15 +29,18 @@ class Recado{
 
     }
 
-    public function excluir($id_recado){
+    public static function excluir($id_recado){
 
         $obBanco = new Banco('recado');
         $row_recado = $obBanco->select('id_recado = '.$id_recado);
         if($row_recado->rowCount() > 0){
 
-            $obBanco->delete('3','id_recado');
+            $obBanco->delete($id_recado,'id_recado');
 
+            return true;
 
+        }else{
+            return false;
         }
 
     }

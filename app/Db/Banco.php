@@ -83,10 +83,12 @@ class Banco{
         
     }
 
-    public function delete($id, $coluna){
+    public function delete($valor, $coluna){
 
-        $query = 'DELETE FROM '.$this->table.' WHERE '.$coluna. ' = '. $id;
+        $query = 'DELETE FROM '.$this->table.' WHERE ' . $coluna . ' = '. $valor;
         echo($query);
+
+        return $this->executarQuery($query);
 
     }
 

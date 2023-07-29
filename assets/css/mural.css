@@ -3,7 +3,14 @@
     position: relative;
     margin: 0 auto;
 }
-
+.title_principal{
+     
+    text-align: center;
+    font-size: 40px;
+}
+.icon_card_recado_excluir, .icon_card_recado_editar{
+    cursor: pointer;
+}
 .geral{
 
     width: 100%;
@@ -39,8 +46,9 @@
 .msg_aviso{
 
     color: white;
+   
     word-wrap:  break-word;
-    max-width: 150px;
+    max-width: 130px;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-weight: bold;
     position: absolute;
@@ -91,6 +99,8 @@
     background-color: rgba(0, 0, 0, 0.7);
     border-radius: 0px 0px 20px 20px;
     display: flex;
+    position: relative;
+    z-index: 3;
     align-items: center;
     justify-content: space-around;
 
@@ -106,4 +116,43 @@
     gap: 10px;
     margin-top: 50px;
     margin-bottom: 50px;
+}
+ 
+.area_modal_excluir_recado{
+
+   display: none;
+   flex-direction: column;
+   width: 500px;
+   border-radius: 15px;
+   height: 250px;
+   top: 50%;
+   
+   left: 50%;
+   transform: translate(-50% ,-50%);
+   position: fixed;
+   z-index: 9;
+   
+   background-color: rgb(225, 225, 225);
+
+}
+.area_modal_excluir_recado.active{
+
+    display: flex;
+
+}
+.title_modal_excluir{
+
+    font-size: 25px;
+    text-align: center;
+    margin-top: 50px;
+    width: 100%;
+    padding: 20px;
+
+}
+.area_btns_modal_excluir{
+    position: absolute;
+    width: 100%;
+    bottom: 30px;
+    display: flex;
+    justify-content: space-around;
 }

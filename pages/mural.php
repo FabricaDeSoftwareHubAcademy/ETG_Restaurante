@@ -1,6 +1,8 @@
 <?php
 //teste diff - jg diff?
 
+session_start();
+
 // require autoload = 0 bugs 
 require __DIR__."/../vendor/autoload.php";
 use App\Entity\Recado;
@@ -34,8 +36,8 @@ require_once("../includes/menu.php");
 
                                     <div class="bloco_bot">
 
-                                        <a href="editar_mural.php?id_recado='.$row_recados['id_recado'].'"><img src="../assets/imgs/icons/btn_editar.png"></a>
-                                        <a href="recado_delete_action.php?id_recado='.$row_recados['id_recado'].'"><img src="../assets/imgs/icons/icon_trash.png"></a>
+                                        <img class="icon_card_recado_editar" id_recado="'.$row_recados['id_recado'].'" src="../assets/imgs/icons/btn_editar.png">
+                                        <img class="icon_card_recado_excluir" id_recado="'.$row_recados['id_recado'].'" src="../assets/imgs/icons/icon_trash.png">
 
                                     </div>
  
@@ -65,11 +67,32 @@ require_once("../includes/menu.php");
 </head>
 <body class="body_mural">
 
+    <div class="area_modal_excluir_recado">
+
+        <h1 class="title_modal_excluir">Confirmar exclusão de recado?</h1>
+
+        <div class="area_btns_modal_excluir">
+
+            <div class="botao-padrao-confirmar">
+              <button    class="botao-confirmar-submit"  onclick="deletarRecado()">CONFIRMAR<button>
+            </div>
+    
+            <div class="botao-padrao-cancelar">
+                <button class="botao-cancelar-submit" onclick="closeModalExcluir()">CANCELAR<button>
+            </div>
+
+        
+        </div> 
+        
+    </div>
+
+
+
+<h1 class="title_principal">Mural de Recados</h1>
 <?php
 include_once('../includes/pop-ups/pop_ups_mural_novo_recado/pop_ups_mural_recado.php');
 
 ?>
-
 
 <div class="area_cards_recados_mural">
     
@@ -85,5 +108,6 @@ include_once('../includes/pop-ups/pop_ups_mural_novo_recado/pop_ups_mural_recado
 </div>
 
 <script src="../assets/js/pop_ups_mural_recado.js"></script>
+<script src="../assets/js/mural.js"></script>
 </body>
 </html>

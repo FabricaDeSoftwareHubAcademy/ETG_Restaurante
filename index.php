@@ -26,7 +26,7 @@ if(isset($_POST['btn_sub'])){
         $objUser = new Usuario($_POST['matricula'],$_POST['email'],$_POST['senha']);
         if($objUser->logar()){
             $_SESSION['msg'] = 'logado com sucesso!';
-            header("Location: pages/listar_perfil.php");
+            header("Location: pages/mural.php");
         }else{
             // mensagem de usuario ou senha invalidos
             echo("Senha IN VA LI DA !!!");
