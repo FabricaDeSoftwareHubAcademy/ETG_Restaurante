@@ -12,5 +12,16 @@ if(isset($_GET['id_recado'])){
 
 $action_excluir = Recado::excluir($id_recado) ? true : false;
 
-echo($action_excluir);
-// coming soon....
+if($action_excluir){
+
+    $response = [
+        'status'=>true  
+    ];
+}else{
+
+    $response = [
+        'status'=>false
+    ];
+}
+
+echo(json_encode($response));

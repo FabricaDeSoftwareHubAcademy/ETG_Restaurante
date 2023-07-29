@@ -21,7 +21,7 @@ if(isset($_POST['btn_confirmar_submit'])){
       
         $obRecado = new Recado($_SESSION['num_matricula_logado'],$_POST['descricao_sala']);
         $obRecado->cadastrar();
-        header("Location: mural.php");
+        header("Refresh: 0");
       
 
     }
@@ -80,12 +80,13 @@ require_once("../includes/menu.php");
     
             <div class="area_btns_modal_excluir">
     
-                <div class="botao-padrao-confirmar">
-                  <button    class="botao-confirmar-submit"  onclick="deletarRecado()">CONFIRMAR<button>
-                </div>
-        
+                
                 <div class="botao-padrao-cancelar">
                     <button class="botao-cancelar-submit" onclick="closeModalExcluir()">CANCELAR<button>
+                </div>
+                
+                <div class="botao-padrao-confirmar">
+                    <button    class="botao-confirmar-submit"  onclick="deletarRecado()">CONFIRMAR<button>
                 </div>
     
             </div> 

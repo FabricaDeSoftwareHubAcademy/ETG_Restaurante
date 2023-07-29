@@ -86,7 +86,7 @@ class Banco{
     public function delete($valor, $coluna){
 
         $query = 'DELETE FROM '.$this->table.' WHERE ' . $coluna . ' = '. $valor;
-        echo($query);
+        
 
         return $this->executarQuery($query);
 
@@ -105,11 +105,11 @@ class Banco{
             
             if($i == (count($chaves) - 1)){
 
-                $setter .= $chaves[$i] . " = ". $valores[$i];
+                $setter .= $chaves[$i] . " = '". $valores[$i]."'";
 
             }else{
 
-                $setter .= $chaves[$i] . " = ". $valores[$i].", ";
+                $setter .= $chaves[$i] . " = '". $valores[$i]."', ";
             }
         }
 
@@ -117,6 +117,7 @@ class Banco{
                   SET '. $setter . '
                   WHERE '. $where;
         
+        return $this->executarQuery($query);
         // terminar............ 
 
     }

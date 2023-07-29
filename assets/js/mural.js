@@ -13,6 +13,9 @@ overlay_excluir = document.querySelector(".overlay_modal_excluir_recado");
 const btn_salvar_editar = document.querySelector('.botao-salvar-submit');
 const btn_salvar_excluir = document.querySelector('.botao-excluir-submit');
 
+
+btn_salvar_excluir.addEventListener('click',deletarRecado);
+
 btn_salvar_editar.addEventListener('click',confirmarEditar);
 
  
@@ -30,7 +33,9 @@ async function openModalEditar(){
     openPopup()
     
     var id_recado = this.getAttribute('id_recado');
+    id_atual = id_recado
     
+
     dados = {
         id_recado: id_recado
     }
@@ -58,12 +63,12 @@ async function openModalEditar(){
 
 }
 
+// function salvar alterações 
 async function confirmarEditar(){
 
     var id_recado = btn_salvar_editar.getAttribute('id_recado');
     var descricao = textareaEditar.value;
-
-    dados = {
+     dados = {
 
         id_recado : id_recado,
         novaDescricao: descricao
@@ -79,8 +84,14 @@ async function confirmarEditar(){
 
     });
 
-    dados = await request.json();
-    console.log(dados)
+    response = await request.json();
+    if(response['status']){
+
+        location.reload();
+
+    }else{
+        // mensagem de erro 
+    }
 
 }
 
@@ -88,10 +99,10 @@ async function confirmarEditar(){
 function openModalExcluir(){
 
     var id_recado = this.getAttribute('id_recado');
-    console.log(id_recado);
+    id_atual = id_recado;
+    
      
     btn_confirmar.setAttribute('id_recado',id_recado);
-    var id_atual = id_recado;
     
     modalExcluirRecado.classList.add('active');
     overlay_excluir.classList.add('active');
@@ -101,8 +112,8 @@ function openModalExcluir(){
     })  
 
 }
-function retornaAlgo(algo){
-    console.log(algo)
+function retornaAlgo(){
+    console.log('algo')
 }
 
 function closeModalExcluir(){
@@ -112,20 +123,27 @@ function closeModalExcluir(){
     });
     modalExcluirRecado.classList.remove('active');
     overlay_excluir.classList.remove('active');
+    
 
 }
 
  
 async function deletarRecado(){
 
-    let id_recado_delete = btn_confirmar.getAttribute('id_recado');
+    let id_recado_delete = id_atual;
+   
     const dados = await fetch('./actions/recado_delete_action.php?id_recado='+id_recado_delete);
  
-    const response = await dados;
+    const response = await dados.json();
+    if(response['status']){
 
-    console.log(response);
+        location.reload()
+
+    }else{
+        console.log("Algo inesperado aconteceu")
+    }
+     
   
-    location.reload();
+     
  
-
 }

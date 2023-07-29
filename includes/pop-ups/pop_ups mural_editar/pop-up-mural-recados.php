@@ -9,13 +9,13 @@
         <div class="popup-mural">
           <p>Editar recado:</p>
           <div class="div-pop">
-              <textarea id="text-descricao-pop-up"  placeholder="Digite seu recado: " name="descricao_sala" id="" cols="70" rows="10" class="text-descricao-pop-up"></textarea>
+              <textarea maxlength="100" id="text-descricao-pop-up"  placeholder="Digite seu recado: " name="descricao_sala" id="" cols="70" rows="10" class="text-descricao-pop-up"></textarea>
               
             
           </div>
           <section class="container-pop-up-botaoes">
             <div class="botao-padrao-excluir">
-              <a href="#"><input type="submit" class="botao-excluir-submit"  value="EXCLUIR" onclick="closePopup()"></a>
+              <button class="botao-excluir-submit" onclick="closePopup()">EXCLUIR</button>
             </div>
             <div class="botao-padrao-voltar">
               <button class="botao-voltar-submit"  value="" onclick="closePopup()">VOLTAR</button>

@@ -10,6 +10,7 @@
 }
 .icon_card_recado_excluir, .icon_card_recado_editar{
     cursor: pointer;
+    
 }
 .geral{
 
@@ -29,7 +30,7 @@
     gap: 10px;
 
 }
-
+ 
 .card{
 
     width: 150px;
@@ -71,6 +72,12 @@
     z-index: 9;
     cursor: pointer;
     width: 70px;
+    transition: 0.4s;
+}
+.img_btn_add:hover{
+
+    transform: scale(1.1);
+    filter: drop-shadow(2px 2px 2px #6d6d6d);
 
 }
 .area_bot{
@@ -83,12 +90,14 @@
     justify-content: center;
     opacity: 0;
     transition: 0.2s linear;
+    pointer-events: none;
 
 }
 .card:hover .area_bot{
 
 
     opacity: 1;
+    pointer-events: all;
 
 }
 
@@ -103,12 +112,14 @@
     z-index: 3;
     align-items: center;
     justify-content: space-around;
+    
 
 }
 .area_cards_recados_mural{
     display: flex;
     align-items: center;
-    width: 630px;
+    justify-content: center;
+    width: 80%;
     flex-wrap: wrap;
     margin: 0 auto;
     position: relative;
@@ -132,7 +143,7 @@
    position: fixed;
    z-index: 9;
    
-   background-color: rgb(225, 225, 225);
+   background-color: rgb(255, 255, 255);
 
 }
 .area_modal_excluir_recado.active{

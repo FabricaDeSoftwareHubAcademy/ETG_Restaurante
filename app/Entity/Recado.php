@@ -21,9 +21,15 @@ class Recado{
         $dados = $obBanco->select('id_recado = "'.$id_recado.'" ');
         if($dados->rowCount() > 0){
 
-            
-        }
+            $values = [
+                'descricao'=>$this->descricao,
+                'num_matricula'=>$this->num_matricula
+            ];
+            return $obBanco->update('id_recado = "'.$id_recado.'" ',$values);
 
+        }else{
+            return false;
+        }
 
     }    
 
