@@ -3,7 +3,7 @@
 namespace App\Entity;
 use \App\Db\Banco;
 
-
+use PDO;
 
 class Recado{
 
@@ -14,6 +14,18 @@ class Recado{
         $this->descricao = $descricao;
 
     }
+
+    public function update($id_recado){
+
+        $obBanco = new Banco('recado');
+        $dados = $obBanco->select('id_recado = "'.$id_recado.'" ');
+        if($dados->rowCount() > 0){
+
+            
+        }
+
+
+    }    
 
     public function cadastrar(){
 
@@ -49,7 +61,7 @@ class Recado{
 
         $obBanco = new Banco("recado");
         
-        $dados = $obBanco->select();
+        $dados = $obBanco->select(null , ' id_recado DESC ');
         if($dados->rowCount() > 0){
 
             return $dados;
@@ -59,9 +71,21 @@ class Recado{
             return false;
 
         }
+    }
+    public static function getRecadosById($id){
 
+        $obBanco = new Banco("recado");
+        
+        $dados = $obBanco->select('id_recado = "'.$id.'" ' , ' id_recado DESC ');
+        if($dados->rowCount() > 0){
+            
+            return $dados;
+
+        }else{
+
+            return false;
+
+        }
 
     }
-
-
 }

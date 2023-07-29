@@ -156,3 +156,24 @@
     display: flex;
     justify-content: space-around;
 }
+.overlay_modal_excluir_recado{
+
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    z-index: 9999;
+    
+    top: 0;
+    left: 0;
+
+
+    display: none;
+    opacity: 0;
+
+}
+
+.overlay_modal_excluir_recado.active{
+    display: block;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 1;
+}

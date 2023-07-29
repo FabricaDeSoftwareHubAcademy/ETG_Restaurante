@@ -1,24 +1,15 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pop-up</title>
-  <link rel="stylesheet" href="../../../assets/css/style-pop-up-mural.css">
-</head>
-<body>
+ 
+  <!-- <link rel="stylesheet" href="../../../assets/css/style-pop-up-mural.css"> -->
+ 
+ 
   <main class="main-pop-up-thays">
-    <div class="btn-pop">
-      <button class="btn-popup-thays" onclick="openPopup(1)">Abrir Pop-up</button>
-    </div>
-
-    <section>
+   <section>
       <!-- Pop-up -->
       <div class="overlay" id="overlay">
         <div class="popup-mural">
           <p>Editar recado:</p>
           <div class="div-pop">
-              <textarea  placeholder="Digite seu recado: " name="descricao_sala" id="" cols="70" rows="10" class="text-descricao-pop-up"></textarea>
+              <textarea id="text-descricao-pop-up"  placeholder="Digite seu recado: " name="descricao_sala" id="" cols="70" rows="10" class="text-descricao-pop-up"></textarea>
               
             
           </div>
@@ -27,10 +18,10 @@
               <a href="#"><input type="submit" class="botao-excluir-submit"  value="EXCLUIR" onclick="closePopup()"></a>
             </div>
             <div class="botao-padrao-voltar">
-              <a href="#"><input type="submit" class="botao-voltar-submit"  value="VOLTAR" onclick="closePopup()"></a>
+              <button class="botao-voltar-submit"  value="" onclick="closePopup()">VOLTAR</button>
             </div>
             <div class="botao-padrao-salvar">
-              <a href="#"><input type="submit" class="botao-salvar-submit"  value="SALVAR" onclick="closePopup()"></a>
+              <button class="botao-salvar-submit"   onclick="closePopup()">SALVAR</button>
             </div>
             
             
@@ -42,6 +33,5 @@
     </section>
   </main>
 
-  <script src="../../../assets/js/script-pop-up-mural.js"></script>
-</body>
-</html>
+  <!-- <script src="../../../assets/js/script-pop-up-mural.js"></script> -->
+ 

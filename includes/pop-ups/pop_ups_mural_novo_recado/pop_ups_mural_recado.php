@@ -1,14 +1,6 @@
-<!-- NOVO MURAL -->
-
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pop-up</title>
-  <!-- <link rel="stylesheet" href="pop_ups_mural_recado.css">   -->
-</head>
-<body>
+ 
+ 
+ 
   <main class="main-pop-up-thays">
     <!-- <div class="btn-pop">
       <button class="btn-popup-thays" onclick="openPopup_recado()">Abrir Pop-up</button>
@@ -41,7 +33,4 @@
       </div>
     </section>
   </main>
-<!-- 
-  <script src="pop_ups_mural_recado.js"></script> -->
-</body>
-</html>
+ 
