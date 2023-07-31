@@ -1,13 +1,13 @@
 <?php
 
 require ("../vendor/autoload.php");
+include_once ("../includes/pop-ups/pop_ups_confirm_excluir_perfil/pop_ups_confirmacao.php");
 use App\Entity\Perfil;
-use App\Entity\Usuario;
+
 
 //pegando dados perfil
 $objPerfil = new Perfil;
 $dados_perfil = $objPerfil -> getDados();
-
 
 
 
@@ -22,10 +22,9 @@ foreach ($dados_perfil as $row_perfil)
                                 <img src="../assets/imgs/icons/profile.png" alt="icone_perfil" id="icone_perfil">
                                 <div class="card_nome">
                                     <h2 class="tipo_perfil">'.$row_perfil['nome_cargo'].'</h2>
-                                    <h3 class="funcao"></h3>
                                 </div>
                                 <a href="../pages/edicao_perfil.php?id='.$row_perfil['id_cadastro_perfil'].'"><img src="../assets/imgs/icons/icon_editar.png" alt="icone_editar" class="icone_editar"></a> 
-                                <i class="bi bi-trash"></i> 
+                                <a href="../includes/pop-ups/pop_ups_confirm_excluir_perfil/pop_ups_confirmacao.php" <i class="bi bi-trash" onclick="openPopup_Conf()"></i> </a>
                             </div>
                         </div>
                     </li>
@@ -45,6 +44,8 @@ foreach ($dados_perfil as $row_perfil)
         <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="../assets/css/estilo_gerenc_perfis.css">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
+        <link rel="stylesheet" href="../includes/pop-ups/pop_ups_confirm_excluir_perfil/pop_ups_confirmacao.css">
+        <script src="../includes/pop-ups/pop_ups_confirm_excluir_perfil/pop_ups_confirmacao.js"></script>
     
     </head>
     <body class="tela_gerenciam_perfis">
