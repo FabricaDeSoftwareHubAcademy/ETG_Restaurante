@@ -51,9 +51,9 @@ class Usuario{
 
     }
     
-    // public function getRecados(){
+    //  public function getDados(){
 
-    //     $obBanco = new Banco("recado");
+    //     $obBanco = new Banco("cadastro_usuario");
         
     //     $dados = $obBanco->select();
     //     if($dados->rowCount() > 0){

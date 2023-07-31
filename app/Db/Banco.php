@@ -120,5 +120,35 @@ class Banco{
 
     }
 
+    public function update($where ,$dados = []){
+        //lista chave valor($dados) 
+        //obs: chaves tem que ser o mesmo nome que o nome da coluna
+
+        $setter = "";
+
+        $chaves = array_keys($dados);
+        $valores = array_values($dados);
+
+        for ($i=0; $i < count($chaves); $i++) { 
+            
+            if($i == (count($chaves) - 1)){
+                
+                $setter .= $chaves[$i] . " = '". $valores[$i]."'";
+
+            }else{
+
+                $setter .= $chaves[$i] . " = '". $valores[$i]."', ";
+            }
+        }
+
+        $query = 'UPDATE '.$this->table.'
+                  SET '. $setter . '
+                  WHERE '. $where;
+        
+        return $this->executarQuery($query);
+        // terminar............ 
+
+    }
+
 }
 ?>
