@@ -176,8 +176,9 @@ if (isset($_POST['nome_sala'],
                             <div class="alinar-img">
                                 <span id="img-text"> Insira a imagem : </span>
                                 <div class="area-anexo">
+
                                     
-                                    <img  class="imagem_aparecer" src="" alt="">
+                                    <img  class="imagem_aparecer" src="../assets/imgs/others/camera.png" alt="">
                             
                                 </div>
                             </div>    
