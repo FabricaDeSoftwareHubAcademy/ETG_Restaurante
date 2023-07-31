@@ -87,6 +87,7 @@ if (isset($_POST['nome_sala'],
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
+
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -95,7 +96,7 @@ if (isset($_POST['nome_sala'],
     <link rel="stylesheet" href="https/cdnjs.cloudflare.comlibs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
     <link rel="stylesheet" href="../assets/css/cadastro_edicao_salas.css"> 
-    
+    <script src="https://code.jquery.com/jquery-3.7.0.js"integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM="crossorigin="anonymous"></script>
 
     
 </head>
@@ -161,7 +162,7 @@ if (isset($_POST['nome_sala'],
                        
 
                     
-                    <div class="img-area">
+                    <div class="img-area"> 
                         
 
 
@@ -174,7 +175,11 @@ if (isset($_POST['nome_sala'],
                         <div class="cor-sala">
                             <div class="alinar-img">
                                 <span id="img-text"> Insira a imagem : </span>
-                                <div class="area-anexo"> <img src="camera.png" alt="" id="icon-fotos">  </div>
+                                <div class="area-anexo">
+                                    
+                                    <img  class="imagem_aparecer" src="" alt="">
+                            
+                                </div>
                             </div>    
                             <div class="alinar-botao-cor">
                                 <span id="selecao-cor-text">Cor da sala : </span> 
@@ -187,8 +192,10 @@ if (isset($_POST['nome_sala'],
                         
                         <label id="botão-img"for="arquivo" >Enviar Fotos</label>
 
-                        <input type="file" name="imagem_sala" id="arquivo">
+                        <input type="file" name="imagem_sala" id="arquivo" onchange="previewImagem()">
                             
+                        
+                        
 
                             
 
@@ -222,7 +229,27 @@ if (isset($_POST['nome_sala'],
     </section>
 
 
+    <script>
 
+function previewImagem(){
+
+    var imagem = document.querySelector('input[name=imagem_sala]').files[0];
+    var preview = document.querySelector('img[class=imagem_aparecer]');
+    var reader = new FileReader();
+    
+    reader.onloadend = function(){
+        preview.src = reader.result;
+    } 
+    if(imagem){
+        reader.readAsDataURL(imagem);
+
+    }else{
+        preview.src = "";
+
+    }   
+}
+
+</script>
 
 
     
