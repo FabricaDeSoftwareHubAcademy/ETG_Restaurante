@@ -131,5 +131,3 @@ function closeSubmenu(){
 
 }
     </script>       
-</body>
-</html>
