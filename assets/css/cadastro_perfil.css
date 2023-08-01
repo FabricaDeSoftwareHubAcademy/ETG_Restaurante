@@ -51,16 +51,13 @@ display: flex;
     justify-content: center;
 }
 
-.tela_cadastro_perfil .form_permissoes
+.form_permissoes
 {
-  margin: 40px;
-  padding-left: 50px;
-  margin-top: 80px;
-}.form_permissoes{
- justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
-
-/* input */
 
   
   .input:placeholder-shown ~ .input {
@@ -117,7 +114,6 @@ display: flex;
     flex-direction: row;
     justify-content: space-evenly;
     align-items: center;
-    
   }
 
 /* input */
@@ -206,15 +202,12 @@ display: flex;
   justify-content: space-between;
 
 }
-
 .permissoes_salas{
+  max-width: 80% ;
     display: flex;
     flex-direction: column;
-    justify-content: left;
-    margin-top: 20px;
     font-family: 'Montserrat';
     margin-top: 20px;
-    
 }
 .label_permissao{
   display: flex;
@@ -342,15 +335,12 @@ display: flex;
   background-color: var(--cor-primaria-botao-yellow);
   color: var(--cor-primaria-botao-white);
 }
-
 .botoes{
+  width: 100%;
   display: flex;
-  justify-content: space-between;
-  padding-right: 110px;
-  margin-top: 20%;
-  
+  justify-content: space-evenly;
+  margin-top: 10%;
 }
-
 
 @media (min-width: 1100px) {
   .botoes{
