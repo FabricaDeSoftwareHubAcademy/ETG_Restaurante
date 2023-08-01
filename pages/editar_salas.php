@@ -6,17 +6,25 @@ if (isset($_SESSION['id']))
     session_start();
 }
 require_once("../includes/menu.php");
-require_once("../app/entity/Sala.php");
-include_once("../app/entity/CadastroChecklist.php");
+require __DIR__."/../vendor/autoload.php";
+use App\Entity\Sala;
+use App\Entity\CadastroChecklist; 
 
-
-
+$options = '';
 $objCadastroChecklist = new CadastroChecklist();
 $dados = $objCadastroChecklist -> getDados();
-$options = '';
+
 foreach ($dados as $row_check ){
     $options .= '<option  class="ops" value="'.$row_check['id_cadastro_checklist'].'"> '.$row_check['nome'].' </option>';
 }
+if (isset($_GET['id_sala'])){
+
+    $id_sala = $_GET['id_sala'];
+
+}
+
+$dados = Sala::getById($id_sala);
+print_r($dados);
 
 if (isset($_POST['nome_sala'],
         $_POST['andar_sala'],
@@ -33,7 +41,7 @@ if (isset($_POST['nome_sala'],
                 $_SESSION['id'],
                 $_POST['andar_sala'],
                 $_POST['descricao_sala'],
-
+                
                 $_FILES['imagem_sala'],
                
                 $_POST['cor_sala'],
@@ -115,7 +123,7 @@ if (isset($_POST['nome_sala'],
                 <form class="cadastro-sala-form" method="POST" enctype="multipart/form-data" >
                     <div class="titulo_de_cadastro">
 
-                        <h1> Cadastro de salas </h1>
+                        <h1> Editar salas </h1>
                         
                     </div>
                     

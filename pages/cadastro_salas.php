@@ -1,10 +1,6 @@
 <?php
-$_SESSION['id'] = '245';
+session_start();
 
-if (isset($_SESSION['id']))
-{
-    session_start();
-}
 
 include_once("../includes/menu.php");
 
@@ -33,7 +29,7 @@ if (isset($_POST      ['nome_sala'],
             $obj_sala = new Sala(
                 null,
                 $_POST['checklist'],
-                $_SESSION['id'],
+                $_SESSION['num_matricula_logado'],
                 $_POST['andar_sala'],
                 $_POST['descricao_sala'],
                 $_FILES['imagem_sala'],               
@@ -169,7 +165,7 @@ if (isset($_POST      ['nome_sala'],
                                 <div class="area-anexo">
 
                                     
-                                    <img  class="imagem_aparecer" src="../assets/imgs/others/camera.png" alt="">
+                                    <img id="camera_imagem" class="imagem_aparecer" src="../assets/imgs/others/camera.png" alt="">
                             
                                 </div>
                             </div>    
@@ -224,6 +220,7 @@ function previewImagem(){
     } 
     if(imagem){
         reader.readAsDataURL(imagem);
+        $(this).addClass('active');
 
     }else{
         preview.src = "";

@@ -72,22 +72,22 @@ class Sala{
     }
 
 
-    public function getSalas(){
+    public static function getSalas(){
 
         $objBanco = new Banco('Cadastro_sala');
         $salas = $objBanco -> select() -> fetchAll(PDO::FETCH_ASSOC);
         
 
-        if($salas->rowcont()>0){
+        // if($salas->rowcont()>0){
 
             return $salas;
 
-        }
-        else{
+        // }
+        // else{
 
-            return false;
+            // return false;
 
-        }
+        // }
 
 
     }
@@ -97,5 +97,11 @@ class Sala{
 
     } */
 
+    public static function getById($id_sala){
 
+        $objBanco = new Banco('Cadastro_sala');
+        $dados = $objBanco -> select("id_cadastro_sala = ".$id_sala) -> fetchAll(PDO::FETCH_ASSOC);
+        return $dados;
+
+    }
 }
