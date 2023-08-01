@@ -104,7 +104,7 @@
     display: flex;
     justify-content: space-between;
     text-align: center;
-    margin-top: 50%;
+    margin-top: 60%;
   }
   
 @media (max-width: 882px) {
@@ -113,7 +113,7 @@
     }
   
 .botao{
-      margin-top: 100%;
+      margin-top: 90%;
     }
   }
 
