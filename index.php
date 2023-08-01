@@ -13,7 +13,7 @@ use App\Entity\Usuario;
 
 
 if(isset($_SESSION['num_matricula_logado'])){
-    header("Location: pages/listar_perfil.php");
+    header("Location: pages/mural.php");
 }
     
 
