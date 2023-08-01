@@ -31,6 +31,7 @@ if (isset($_POST['botao_salvar'], $_POST['nome_cargo'])){
         // header('Location: cadastro_perfil.php');
     }
 }
+
 $dadosPerfil = new Perfil();
 
 $dados = $dadosPerfil->getDados($id);

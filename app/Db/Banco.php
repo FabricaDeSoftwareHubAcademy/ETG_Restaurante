@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Db;
+//namespace App\Db;
 
-use PDO;
-use PDOException;
-
+//use PDO;
+//use PDOException;
+//die('banco');
 class Banco{
   
     //Variaveis referentes a conexao com o banco de dados
@@ -50,6 +50,7 @@ class Banco{
 
     //Construtor que recebe uma tabela referente a tabela do banco de dados que ira trabalhar
     public function __construct($table = null){
+        
         $this -> table = $table; 
     }
 

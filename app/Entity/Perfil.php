@@ -108,6 +108,9 @@ class Perfil{
         
         //variavel que conecta com o Banco e passa a tabela
         $objBanco = new Banco('cadastro_perfil');
+
+        $where = "id_cadastro_perfil";
+        
         //atribuindo o select para a variavel dados, usando o fetchObject 
         $dados = $objBanco -> select($where, $order, $limit) -> fetchAll(PDO::FETCH_ASSOC);
         

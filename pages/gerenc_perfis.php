@@ -10,7 +10,6 @@ $dados_perfil = $objPerfil -> getDados();
 
 
 
-
 $imprimir = '';
 //var_dump($usuario_perfil);exit;
 foreach ($dados_perfil as $row_perfil)

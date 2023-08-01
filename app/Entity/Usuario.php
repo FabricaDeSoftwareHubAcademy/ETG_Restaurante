@@ -17,9 +17,9 @@ class Usuario{
     // metodo construct 
     public function __construct(
         
-        $num_matricula ,
-        $email ,
-        $senha ,
+        $num_matricula = null,
+        $email = null,
+        $senha = null,
         
     ){
 
@@ -66,5 +66,17 @@ class Usuario{
 
     //     }
     // }
+
+    public function getDados() : array 
+    {
+        
+        $objBanco = new Banco('cadastro_usuario');
+        
+        $dados = $objBanco -> select() -> fetchAll(PDO::FETCH_ASSOC);
+        
+        
+        return $dados;
+
+    }
 
 }
