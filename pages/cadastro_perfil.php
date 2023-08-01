@@ -48,12 +48,10 @@ if (isset($_POST['botao_salvar'], $_POST['nome_cargo'])){
 </head>
 
 <body class="tela_cadastro_perfil">
-    <main class="pai-de-todos">
-        <?php
-        //toma essa gambiarra ass luiz
-        include_once("../includes/menu.php"); 
-        ?>
-    </main>
+    <?php
+    //toma essa gambiarra ass luiz
+    include_once("../includes/menu.php"); 
+    ?>
     <div class="container">
         <div class="titulo_cad" >
             <h1 class="titulo_cad_perfil" >

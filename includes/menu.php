@@ -1,7 +1,14 @@
+<!-- 
+    width: 100%;
+    height: 100%;
+    max-width: 832px;
+    position: relative;
+    margin: 0 auto;
+    
 
- <?php
- 
- ?>
+
+
+-->
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
