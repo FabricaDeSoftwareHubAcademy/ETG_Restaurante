@@ -1,0 +1,28 @@
+/* Estilo da Caixa */
+
+.selecao-perguntas{
+  display: flex;
+  width: 100%;
+}
+
+.caixa-pergunta{
+  display: flex;
+  width: 100%;
+  height: 450px;
+  border-radius: 15px;
+  background-color: rgba(103, 162, 246, 0.157);
+}
+
+
+/* estilo de rolagem */
+
+.primeira-caixa::-webkit-scrollbar{
+    width: 8px;
+    background-color: #eeeeee;
+    border-radius: 10px;
+  }
+
+  .primeira-caixa::-webkit-scrollbar-thumb{
+    background-color: #F28920;
+    border-radius: 10px;
+}
