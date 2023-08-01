@@ -1,9 +1,9 @@
 <?php
 
-//namespace App\Db;
+namespace App\Db;
 
-//use PDO;
-//use PDOException;
+use PDO;
+use PDOException;
 //die('banco');
 class Banco{
   

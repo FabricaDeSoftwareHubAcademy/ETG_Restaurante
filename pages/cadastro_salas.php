@@ -6,8 +6,6 @@ if (isset($_SESSION['id']))
     session_start();
 }
 
-include_once("../includes/menu.php");
-
 require __DIR__."/../vendor/autoload.php";
 use App\Entity\Sala;
 use App\Entity\CadastroChecklist;
@@ -15,7 +13,7 @@ use App\Entity\Imagens;
 
 $objCadastroChecklist = new CadastroChecklist();
 $dados = $objCadastroChecklist -> getDados();
-
+die('teste');
 $options = '';
 foreach ($dados as $row_check ){
     $options .= '<option  class="ops" value="'.$row_check['id_cadastro_checklist'].'"> '.$row_check['nome'].' </option>';
@@ -70,7 +68,8 @@ if (isset($_POST      ['nome_sala'],
     <link rel="stylesheet" href="../assets/css/cadastro_edicao_salas.css">   
 </head>
 
-<body class="tela-cadastro-salas"> 
+<body class="tela-cadastro-salas">
+    <?php include_once("../includes/menu.php");?> 
     <section class="container">
         <div class="container-cadastro-salas">
             <div class="wrap-cadastro-salas">
