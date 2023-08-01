@@ -54,9 +54,7 @@ if (isset($_POST['botao_salvar'], $_POST['nome_cargo'])){
     ?>
     <div class="container">
         <div class="titulo_cad" >
-            <h1 class="titulo_cad_perfil" >
-                Cadastro de Perfil
-            </h1>
+            <h1 class="titulo_cad_perfil">Cadastro de Perfil</h1>
         </div>
         <form method="POST" class="form_permissoes">
             <div class="input_group">

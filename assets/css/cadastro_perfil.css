@@ -17,7 +17,9 @@
 }
 
 .container{
-display: flex;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .tela_cadastro_perfil
@@ -50,15 +52,6 @@ display: flex;
     font-family: 'Montserrat', sans-serif;
     justify-content: center;
 }
-
-.form_permissoes
-{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-}
-
   
   .input:placeholder-shown ~ .input {
     font-size: 17px;
@@ -119,9 +112,10 @@ display: flex;
 /* input */
 
 .input_group {
+  margin: 50px 0 0 0;
   position: relative;
   padding: 20px  0px;
-  width: 80%;
+  width: 592px;
 
   
 }
@@ -203,7 +197,7 @@ display: flex;
 
 }
 .permissoes_salas{
-  max-width: 80% ;
+    width: 592px;
     display: flex;
     flex-direction: column;
     font-family: 'Montserrat';
@@ -338,7 +332,7 @@ display: flex;
 .botoes{
   width: 100%;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
   margin-top: 10%;
 }
 
