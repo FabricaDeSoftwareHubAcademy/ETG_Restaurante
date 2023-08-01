@@ -24,15 +24,20 @@
     margin: 0 auto;
 }
 
+.container{
+display: flex;
+}
+
+
 .tela_cadastro_perfil .container{
- 
     width: 100%;
     display: flex;
     flex-direction: column; 
     align-items: center;
     margin: 5% auto;
-    /* margin-top: 70px; */
+    margin-top: 70px;
 }
+
 .tela_cadastro_perfil .titulo_cad{
     display: flex;
     padding: 0;
@@ -47,12 +52,12 @@
 
 .tela_cadastro_perfil .form_permissoes
 {
-  
-  margin-left: 40px;
+  margin: 40px;
   padding-left: 50px;
   margin-top: 80px;
+}.form_permissoes{
+ justify-content: center;
 }
-
 
 /* input */
 
@@ -66,7 +71,7 @@
   .input {
     position: absolute;
     top: 0;
-    display: block;
+    display: flex;
     transition: 0.3s;
     color: #9b9b9b;
     pointer-events: none;
@@ -87,7 +92,7 @@
   .input:focus ~ .input {
     position: absolute;
     top: 0;
-    display: block;
+    display: flex;
     transition: 0.3s;
     font-size: 17px;
     font-weight: 700;
@@ -156,7 +161,7 @@
 .input_label {
   position: absolute;
   top: 0;
-  display: block;
+  display: flex;
   transition: 0.3s;
   color: #9b9b9b;
   pointer-events: none;
@@ -177,7 +182,7 @@
 .input_field:focus ~ .input_label {
   position: absolute;
   top: 0;
-  display: block;
+  display: flex;
   transition: 0.3s;
   font-size: 17px;
   font-weight: 700;
@@ -249,8 +254,6 @@
 /* Css Botão Salvar */
 
 .botao-padrao-salvar{
-  
- 
   height: 40px;
   display: flex;
 
@@ -267,8 +270,8 @@
   cursor: pointer;
   color: var(--cor-primaria-botao-green);
   font-style: normal;
-  font-size: 'Montserrat';
-  font-weight: 500;
+  font-family: 'Montserrat';
+  font-weight: bold;
   font-size: 15px;
  
   
@@ -298,7 +301,7 @@
   color: var(--cor-primaria-botao-red);
   font-family: 'Montserrat';
   font-style: normal;
-  font-weight: 580;
+  font-weight: bold;
   font-size: 16px;
 }
 
@@ -328,7 +331,7 @@
   color: var(--cor-primaria-botao-yellow);
   font-style: normal;
   font-size: 'Montserrat';
-  font-weight: 500;
+  font-weight: bold;
   font-size: 15px;
 
 }
@@ -341,11 +344,9 @@
 
 .botoes{
   display: flex;
-  justify-content: space-evenly;
-  width: 85%;
-  
-  margin-top: 23%;
- transition: all 0.5s;
+  justify-content: space-between;
+  padding-right: 110px;
+  margin-top: 20%;
   
 }
 

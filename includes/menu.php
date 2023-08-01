@@ -1,20 +1,7 @@
-<!-- 
 
-
-    propriedades CSS para suportar o Menu, uma TAG que irá conter todos as outras Tags da pagina, por exemplo as tags body ou main ou section ! 
-
-    EXEMPLO:
-
-    body ou nome da sua div Pai 
-    {
-        width: 100%;
-        height: 100%;
-        max-width: 832px;
-        position: relative;
-        margin: 0 auto;
-    }
-
- -->
+ <?php
+ 
+ ?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -50,7 +37,7 @@
                     </a>
                 </li>            
                 <li class="li-menu">
-                    <a href="#" class="link-menu">
+                    <a href="../pages/gerenc_perfis.php" class="link-menu">
                         <i class="bi bi-person" style="--i:3"></i>                
                     </a>
                 </li>        
@@ -59,10 +46,10 @@
                         <i class="bi bi-list-check" id="btnsubmenu" onclick="openSubmenu()" style="--i:4"></i>
                     </a>
                         <ul class="sub-menu">            
-                            <li class="iten-submenu"><a href="#" id="fonte-submenu">Cadastro de Salas</a></li>
-                            <li class="iten-submenu"><a href="#" id="fonte-submenu">Relatórios</a></li>
-                            <li class="iten-submenu"><a href="#" id="fonte-submenu">Cadastro Checklist</a></li>
-                            <li class="iten-submenu"><a href="#" id="fonte-submenu">Cadastro de Perguntas</a></li>                        
+                            <li class="iten-submenu"><a href="../pages/cadastro_salas.php" id="fonte-submenu">Cadastro de Salas</a></li>
+                            <li class="iten-submenu"><a href="" id="fonte-submenu">Relatórios</a></li>
+                            <li class="iten-submenu"><a href="" id="fonte-submenu">Cadastro Checklist</a></li>
+                            <li class="iten-submenu"><a href="" id="fonte-submenu">Cadastro de Perguntas</a></li>                        
                         </ul>
                 </li>         
                 <li class="saida">

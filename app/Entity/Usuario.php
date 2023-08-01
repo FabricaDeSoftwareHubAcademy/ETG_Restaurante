@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Entity;
+use App\Db\Banco;
 use PDO;
 use PDOException;
 
@@ -37,6 +38,7 @@ class Usuario{
          
         $rowUser = $obBanco->select('email = "'.$this->email.'" AND senha = "'.$this->senha.'" AND num_matricula = "'.$this->num_matricula.'"')->fetchAll(PDO::FETCH_ASSOC);
         if($rowUser){
+            session_start();
             
             $_SESSION['num_matricula_logado'] = $rowUser[0]['num_matricula'];
             
@@ -49,20 +51,20 @@ class Usuario{
 
     }
     
-    public function getRecados(){
+    //  public function getDados(){
 
-        $obBanco = new Banco("recado");
+    //     $obBanco = new Banco("cadastro_usuario");
         
-        $dados = $obBanco->select();
-        if($dados->rowCount() > 0){
+    //     $dados = $obBanco->select();
+    //     if($dados->rowCount() > 0){
 
-            return $dados;
+    //         return $dados;
 
-        }else{
+    //     }else{
 
-            return false;
+    //         return false;
 
-        }
-    }
+    //     }
+    // }
 
 }

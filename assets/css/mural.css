@@ -3,7 +3,15 @@
     position: relative;
     margin: 0 auto;
 }
-
+.title_principal{
+     
+    text-align: center;
+    font-size: 40px;
+}
+.icon_card_recado_excluir, .icon_card_recado_editar{
+    cursor: pointer;
+    
+}
 .geral{
 
     width: 100%;
@@ -22,7 +30,7 @@
     gap: 10px;
 
 }
-
+ 
 .card{
 
     width: 150px;
@@ -39,8 +47,9 @@
 .msg_aviso{
 
     color: white;
+   
     word-wrap:  break-word;
-    max-width: 150px;
+    max-width: 130px;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-weight: bold;
     position: absolute;
@@ -51,7 +60,6 @@
 
     width: 150px;
     height: 200px;
-   
     text-align: center;
     display: flex;
     justify-content: center;
@@ -60,7 +68,16 @@
 }
 .img_btn_add{
 
+    position: relative;
+    z-index: 9;
+    cursor: pointer;
     width: 70px;
+    transition: 0.4s;
+}
+.img_btn_add:hover{
+
+    transform: scale(1.1);
+    filter: drop-shadow(2px 2px 2px #6d6d6d);
 
 }
 .area_bot{
@@ -73,12 +90,14 @@
     justify-content: center;
     opacity: 0;
     transition: 0.2s linear;
+    pointer-events: none;
 
 }
 .card:hover .area_bot{
 
 
     opacity: 1;
+    pointer-events: all;
 
 }
 
@@ -89,16 +108,117 @@
     background-color: rgba(0, 0, 0, 0.7);
     border-radius: 0px 0px 20px 20px;
     display: flex;
+    position: relative;
+    z-index: 3;
     align-items: center;
     justify-content: space-around;
+    
 
 }
 .area_cards_recados_mural{
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
+    width: 80%;
     flex-wrap: wrap;
+    margin: 0 auto;
+    position: relative;
+     
     gap: 10px;
     margin-top: 50px;
     margin-bottom: 50px;
+}
+ 
+.area_modal_excluir_recado{
+
+   display: none;
+   flex-direction: column;
+   width: 500px;
+   border-radius: 15px;
+   height: 250px;
+   top: 50%;
+   
+   left: 50%;
+   transform: translate(-50% ,-50%);
+   position: fixed;
+   z-index: 9;
+   
+   background-color: rgb(255, 255, 255);
+
+}
+.area_modal_excluir_recado.active{
+
+    display: flex;
+
+}
+.title_modal_excluir{
+
+    font-size: 25px;
+    text-align: center;
+    margin-top: 50px;
+    width: 100%;
+    padding: 20px;
+
+}
+.area_btns_modal_excluir{
+    position: absolute;
+    width: 100%;
+    bottom: 30px;
+    display: flex;
+    justify-content: space-around;
+}
+.overlay_modal_excluir_recado{
+
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    z-index: 9999;
+    
+    top: 0;
+    left: 0;
+
+
+    display: none;
+    opacity: 0;
+
+}
+
+.overlay_modal_excluir_recado.active{
+    display: block;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 1;
+}
+
+.botao-padrao-inicio{
+     
+    width: 80%;
+    position: relative;
+    margin: 0 auto;
+    display: flex;
+    align-items: end;
+    justify-content: end;
+}
+
+.botao-inicio-submit{
+    width: 180px;
+    margin-top: 100px;
+    margin-bottom: 40px;
+    height: 45px;
+    background-color: var(--cor-primaria-botao-white);
+    border: 3px solid var(--cor-primaria-botao-green);
+    border-radius: 20px;
+    cursor: pointer;
+    color: var(--cor-primaria-botao-green);
+    font-style: normal;
+    font-size: 'Montserrat';
+    font-weight: 580;
+    font-size: 15px;
+
+
+}
+
+.botao-inicio-submit:hover{
+    transition: all 0.4s;
+    background-color: var(--cor-primaria-botao-green);
+    color: var(--cor-primaria-botao-white);
 }

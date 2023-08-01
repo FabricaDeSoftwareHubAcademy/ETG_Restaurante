@@ -1,10 +1,8 @@
 <?php
-
-
 namespace App\Entity;
 use PDO;
 use PDOException;
-
+use App\Db\Banco;
 class Perfil{
     
     /*Estes atributos sao respectivos aos atributos da tabela no banco de dados */
@@ -114,6 +112,23 @@ class Perfil{
         $dados = $objBanco -> select($where, $order, $limit) -> fetchAll(PDO::FETCH_ASSOC);
         
         return $dados;
+    }
+
+    public function update($id){
+        $objBanco = new Banco('cadastro_perfil');
+        $dados = [
+            'nome_cargo'                 => $this -> nome_cargo,
+            'cadastrar_sala'             => $this -> cadastrar_sala,
+            'editar_sala'                => $this -> editar_sala,
+            'remover_sala'               => $this -> remover_sala,
+            'validar_checklist'          => $this -> validar_checklist,
+            'inserir_item_checklist'     => $this -> inserir_item_checklist,
+            'remover_item_checklist'     => $this -> remover_item_checklist,
+            'desbloquear_checklist'      => $this -> desbloquear_checklist,
+            'descricao_nao_conformidade' => $this -> descricao_nao_conformidade,
+            'enviar_notificacao'         => $this -> enviar_notificacao
+        ];
+        $objBanco -> update('id_cadastro_perfil = '. $id, $dados );
     }
 }
 

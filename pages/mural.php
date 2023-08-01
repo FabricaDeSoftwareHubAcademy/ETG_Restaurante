@@ -1,22 +1,38 @@
 <?php
+//teste diff - jg diff?
+
+session_start();
+ob_start();
  
+
+if(!isset($_SESSION['num_matricula_logado'])){
+ 
+    header('Location: ../');
+}
+ 
+
 // require autoload = 0 bugs 
 require __DIR__."/../vendor/autoload.php";
-use App\Entity\Usuario;
+use App\Entity\Recado;
 
+if(isset($_POST['btn_confirmar_submit'])){
 
+    if(isset($_POST['descricao_sala'])){
+      
+        $obRecado = new Recado($_SESSION['num_matricula_logado'],$_POST['descricao_sala']);
+        $obRecado->cadastrar();
+        header("Refresh: 0");
+      
 
-// teste 
-// $obUser = new Usuario(2,'joao@gmail.com',123);
-// $obUser->getRecados();
+    }
 
-// require menu 
+}
 require_once("../includes/menu.php");
-
+ 
 
 // pegando informações dos recados 
-$user = new Usuario('2','joao@gmail.com','123');
-    $recados = $user->getRecados()->fetchAll(PDO::FETCH_ASSOC) ?  $user->getRecados()->fetchAll(PDO::FETCH_ASSOC) : "";
+
+    $recados = Recado::getRecados()->fetchAll(PDO::FETCH_ASSOC)  ?  Recado::getRecados()->fetchAll(PDO::FETCH_ASSOC) : "";
 
     $cards_recados = '';
 
@@ -28,20 +44,20 @@ $user = new Usuario('2','joao@gmail.com','123');
 
                                     <div class="bloco_bot">
 
-                                        <a href="editar.php?id_recado='.$row_recados['id_recado'].'"><img src="../assets/imgs/icons/btn_editar.png"></a>
-                                        <a href="excluir.php?id_recado='.$row_recados['id_recado'].'"><img src="../assets/imgs/icons/icon_trash.png"></a>
+                                        <img class="icon_card_recado_editar" id_recado="'.$row_recados['id_recado'].'" src="../assets/imgs/icons/btn_editar.png">
+                                        <img class="icon_card_recado_excluir" id_recado="'.$row_recados['id_recado'].'" src="../assets/imgs/icons/icon_trash.png">
 
                                     </div>
+ 
 
                                 </div>
-                            </div>';
-
+                            </div>'
+                            ;
 
      }
 
-
-
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -49,9 +65,48 @@ $user = new Usuario('2','joao@gmail.com','123');
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mural de Recados</title>
+    <link rel="stylesheet" href="../assets/css/pop_ups_mural_recado.css">
+    <link rel="stylesheet" href="../assets/css/style-pop-up-mural.css">
     <link rel="stylesheet" href="../assets/css/mural.css"> 
+
 </head>
 <body class="body_mural">
+    
+    <div class="overlay_modal_excluir_recado">
+
+        <div class="area_modal_excluir_recado">
+    
+            <h1 class="title_modal_excluir">Confirmar exclusão de recado?</h1>
+    
+            <div class="area_btns_modal_excluir">
+    
+                
+                <div class="botao-padrao-cancelar">
+                    <button class="botao-cancelar-submit" onclick="closeModalExcluir()">CANCELAR<button>
+                </div>
+                
+                <div class="botao-padrao-confirmar">
+                    <button    class="botao-confirmar-submit"  onclick="deletarRecado()">CONFIRMAR<button>
+                </div>
+    
+            </div> 
+            
+        </div>
+
+    </div>
+
+
+<?php
+ 
+?>
+
+
+<h1 class="title_principal">Mural de Recados</h1>
+<?php
+include_once('../includes/pop-ups/pop_ups_mural_novo_recado/pop_ups_mural_recado.php');
+include_once('../includes/pop-ups/pop_ups mural_editar/pop-up-mural-recados.php');
+
+?>
 
 <div class="area_cards_recados_mural">
     
@@ -61,10 +116,18 @@ $user = new Usuario('2','joao@gmail.com','123');
     <!-- botão para add recado caso seja adm(requer condicional)   -->
     <div class="area_btn_add">
     
-        <a href="add_aviso.php"><img class="img_btn_add" src="../assets/imgs/icons/btn_add.png" alt=""></a>
+        <img onclick="openPopup_recado()" class="img_btn_add" src="../assets/imgs/icons/btn_add.png" alt=""> 
 
     </div>
 </div>
 
+
+<div class="botao-padrao-inicio">
+        <a href="cadastro_salas.php"><input type="submit" class="botao-inicio-submit"  value="SALAS"></a>
+</div>
+
+<script src="../assets/js/script-pop-up-mural.js"></script>
+<script src="../assets/js/pop_ups_mural_recado.js"></script>
+<script src="../assets/js/mural.js"></script>
 </body>
 </html>
