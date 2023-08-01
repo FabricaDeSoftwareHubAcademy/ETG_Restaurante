@@ -117,7 +117,7 @@
   }
 }
 
-.centralizar_botoes_alterar_senha{
+.centralizar_botoes_enviar_notificacao{
   display: flex;
   justify-content: space-between;
   text-align: center;
@@ -125,12 +125,8 @@
 }
 
 @media (max-width: 882px) {
-  .centralizar_botoes_alterar_senha{
+  .centralizar_botoes_enviar_notificacao{
     margin-top: 470px;
-  }
-
-  .centralizar_input_alterar_senha{
-    margin-top: 5%;
   }
 }
 

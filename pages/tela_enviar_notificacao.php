@@ -41,7 +41,7 @@
         </section>
 
         <!--Botão Voltar-->
-        <section class="centralizar_botoes_alterar_senha">
+        <section class="centralizar_botoes_enviar_notificacao">
 
             <div class="botao-padrao-voltar">
                 <a href="#"><input type="submit" class="botao-voltar-submit"  value="VOLTAR"></a>
