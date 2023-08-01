@@ -35,6 +35,7 @@ class Banco{
             //criando statement e preparando a query que foi passada como argumento
             $statement = $this -> conexao -> prepare($query);
             $statement -> execute($valores);
+        
             
             //fechando conexao
             $this -> conexao = null;
@@ -79,6 +80,7 @@ class Banco{
          
         //Chamando o metodo `executarQuery` e passando a $query montada e APENAS OS VALORES de `$dados`
         $this -> executarQuery($query, array_values($dados));
+
         return true;
         
     }
@@ -149,7 +151,5 @@ class Banco{
 
 
     }
-
-
 }
 ?>
