@@ -181,15 +181,7 @@ if (isset($_POST      ['nome_sala'],
 
                         <input type="file" name="imagem_sala" id="arquivo" >
                             
-                        
-                        
-
-                            
-
-                               
-        
-                                
-
+                                                                                                           
                     </div>
                     
                     <div class="alinar-botoes">
@@ -209,46 +201,7 @@ if (isset($_POST      ['nome_sala'],
     </section>
 
 
-    <script>
-
-// function previewImagem(){
-//     reader = null
-//     var imagem = document.querySelector('input[name=imagem_sala]').files[0];
-//     var preview = document.querySelector('img[class=imagem_agora_vai]');
-//     var reader = new FileReader();
-//     const camera = document.querySelector(".imagem_aparecer");
-
-//     alert(reader.result);
-    
-//     reader.onloadend = function(){
-//         preview.src = reader.result;
-//         camera.classList.add("active");
-//         preview.classList.add("active");
-//     } 
-//     if(imagem){
-//         reader.readAsDataURL(imagem);
-        
-        
-//     }else{
-//         preview.src = "";
-
-//     }   
-
-    
-// }
-
-// function removerCSS(){
-
-//     var remover = document.getElementById("camera_imagem");
-//     remover.classList.remove("imagem_aparecer");
-
-// }
-
-// function adicionarCSS(){
-
-//     var adicionarCSS = document.getElementsByClassName("imagem_agora_vai")
-//     adicionarCSS.classList.add("novo_css");
-// }
+<script>
 const remover = document.querySelector(".imagem_aparecer");
 const novo_css = document.querySelector(".novo_css_imagem");
 $(document).ready(function() {

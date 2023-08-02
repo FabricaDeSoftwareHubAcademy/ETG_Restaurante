@@ -186,10 +186,12 @@ if (isset($_POST['nome_sala'],
                                 <div class="area-anexo">
 
                                     
-                                    <img  class="imagem_aparecer" src="../assets/imgs/others/camera.png" alt="">
-                            
+                                    <img id="camera_imagem" class="imagem_aparecer" src="../assets/imgs/others/camera.png" alt="">
+
+                                    <img  id="imagem_agora_vai" class="novo_css_imagem" src="" alt="">
+
                                 </div>
-                            </div>    
+                            </div>  
                             <div class="alinar-botao-cor">
                                 <span id="selecao-cor-text">Cor da sala : </span> 
                                 <input class="botao-cor" name="cor_sala" type="color">
@@ -248,26 +250,28 @@ if (isset($_POST['nome_sala'],
     </section>
 
 
-    <script>
-
-function previewImagem(){
-
-    var imagem = document.querySelector('input[name=imagem_sala]').files[0];
-    var preview = document.querySelector('img[class=imagem_aparecer]');
-    var reader = new FileReader();
-    
-    reader.onloadend = function(){
-        preview.src = reader.result;
-    } 
-    if(imagem){
-        reader.readAsDataURL(imagem);
-
-    }else{
-        preview.src = "";
-
-    }   
-}
-
+<script>
+const remover = document.querySelector(".imagem_aparecer");
+const novo_css = document.querySelector(".novo_css_imagem");
+$(document).ready(function() {
+    $('#arquivo').on('change', function(e) {
+        var file = e.target.files[0];
+        var reader = new FileReader();
+        reader.onload = function(e) {
+            var fileExtension = file.name.split('.').pop().toLowerCase();
+            var aceitados = ['jpg', 'jpeg', 'gif', 'png'];
+            if (aceitados.includes(fileExtension)) {
+                $('#imagem_agora_vai').attr('src', e.target.result);
+                remover.classList.add("active");
+                novo_css.classList.add("active");
+            } else {
+                // Caso a extensão do arquivo não seja suportada, você pode adicionar um comportamento específico aqui, como exibir uma mensagem de erro.
+                console.log('Extensão de arquivo não suportada.');
+            }
+        }
+        reader.readAsDataURL(file);
+    });
+});
 </script>
 
 
