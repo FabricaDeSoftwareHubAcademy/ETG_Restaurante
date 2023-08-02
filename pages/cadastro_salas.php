@@ -29,7 +29,7 @@ if (isset($_POST      ['nome_sala'],
             $obj_sala = new Sala(
                 null,
                 $_POST['checklist'],
-                null,
+                $_SESSION['num_matricula_logado'],
                 $_POST['andar_sala'],
                 $_POST['descricao_sala'],
                 $_FILES['imagem_sala'],               
