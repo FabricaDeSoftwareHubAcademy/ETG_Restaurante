@@ -25,19 +25,21 @@
             <h1>Enviar Notificação</h1>
         </section>
         
-        <!--Inputs-->
+        <!--Input-->
 
         <section class="centralizar-inputs-tela-enviar-notificacao">
+
             <div class="input_group field">
                 <input type="input" class="input_field" placeholder="Name" required="">
                 <label for="name" class="input_label">Para:</label> <!--Alterar para o nome do input-->
             </div>
 
-            <!--Input Email-->
-            <div class="input_e-mail_group field">
-                <input type="email" class="input_e-mail_field" placeholder="Name" required="" autocomplete="on">
-                <label for="name" class="input_e-mail_label">Notificação:</label> <!--Alterar para o nome do input-->
+            <!--Textarea-->
+            <div class="textarea">
+                <label class="titulo-notificacao" for="story">Notificação:</label>
+                <textarea class="quadrado_text" name="story" rows="5" cols="33"></textarea>
             </div>
+
         </section>
 
         <!--Botões-->
