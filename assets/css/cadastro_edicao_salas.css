@@ -396,7 +396,7 @@ input[type="file"] {
   cursor: pointer;
   border-radius: 50px;
   font-style: normal;
-  font-weight: 500;
+  font-weight: 600;
   font-size: 16px; 
 
   opacity: 0.7;
@@ -1095,7 +1095,22 @@ box-shadow: none;
     /*object-fit: cover;*/ 
 }
 
-.imagem_aparece :active{
-  height: 50px;
+.imagem_aparecer.active{
+  display: none;
 }
 
+.imagem_agora_vai{
+
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: none;
+
+}
+
+
+.imagem_agora_vai.active{
+
+  display: block;
+
+}

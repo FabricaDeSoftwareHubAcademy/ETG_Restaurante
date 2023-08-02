@@ -216,12 +216,16 @@ function previewImagem(){
     var imagem = document.querySelector('input[name=imagem_sala]').files[0];
     var preview = document.querySelector('img[class=imagem_agora_vai]');
     var reader = new FileReader();
+    const camera = document.querySelector(".imagem_aparecer");
     
     reader.onloadend = function(){
         preview.src = reader.result;
+        camera.classList.add("active");
+        preview.classList.add("active");
     } 
     if(imagem){
         reader.readAsDataURL(imagem);
+        
         
     }else{
         preview.src = "";
@@ -229,18 +233,18 @@ function previewImagem(){
     }   
 }
 
-function removerCSS(){
+// function removerCSS(){
 
-    var remover = document.getElementById("camera_imagem");
-    remover.classList.remove("imagem_aparecer");
+//     var remover = document.getElementById("camera_imagem");
+//     remover.classList.remove("imagem_aparecer");
 
-}
+// }
 
-function adicionarCSS(){
+// function adicionarCSS(){
 
-    var adicionarCSS = document.getElementsByClassName("imagem_agora_vai")
-    adicionarCSS.classList.add("novo_css");
-}
+//     var adicionarCSS = document.getElementsByClassName("imagem_agora_vai")
+//     adicionarCSS.classList.add("novo_css");
+// }
 
 </script>
 
