@@ -41,7 +41,7 @@
     font-size: 40px; 
     font-family: 'Montserrat';
     font-weight: bold;
-    margin-top: 60px;
+    margin-top: 90px;
   }
 
 
@@ -109,6 +109,25 @@
   justify-content: space-between;
   text-align: center;
   margin-top: 40%;
+}
+
+
+
+.botao{
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    margin-top: 50%;
+  }
+  
+@media (max-width: 882px) {
+    .botao{
+      margin-top: 470px;
+    }
+  
+.botao{
+      margin-top: 65%;
+    }
 }
 
 @media (max-width: 882px) {
