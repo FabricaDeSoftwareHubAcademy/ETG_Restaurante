@@ -22,7 +22,7 @@ class Imagens
             
             $from = $_FILES['imagem_sala']['tmp_name'];
             $to = '../storage/salas/';
-            echo $from . '<br>' . $to . '<br>' . $novo_nome_arquivo;exit;
+            //echo $from . '<br>' . $to . '<br>' . $novo_nome_arquivo;exit;
             move_uploaded_file($from, $to.$novo_nome_arquivo);//movendo o arquivo para pasta
         }
     }
