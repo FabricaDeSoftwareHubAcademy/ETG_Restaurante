@@ -330,20 +330,14 @@
   color: var(--cor-primaria-botao-white);
 }
 
-/* .botoes{
-  display: flex;
-  justify-content: space-between;
-  padding-right: 110px;
-  margin-top: 20%;
-  
-} */
-
-.alinar-botoes{
+.botoes{
   width: 100%;
   display: flex;
-  justify-content: space-evenly;
-  margin: 50px;
+  justify-content: space-between;
+  margin: 10% 0 0 0;
+  
 }
+
 
 @media (min-width: 1100px) {
   .botoes{
