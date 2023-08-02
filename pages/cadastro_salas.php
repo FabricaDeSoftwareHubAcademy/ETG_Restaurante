@@ -1,44 +1,65 @@
 <?php
-require_once("../includes/menu.php");
-//require_once("../app/entity/Sala.php");
-if (isset($_POST['nome_sala'],
-        $_POST['andar_sala'],
-        $_POST['checklist'],
-        $_POST['descricao_sala'],
-        //$_POST['imagem_sala'],
-        $_POST['cor_sala']    
+session_start();
 
+
+require __DIR__."/../vendor/autoload.php";
+use App\Entity\Sala;
+use App\Entity\CadastroChecklist;
+use App\Entity\Imagens;
+
+$objCadastroChecklist = new CadastroChecklist();
+$dados = $objCadastroChecklist -> getDados();
+$options = '';
+foreach ($dados as $row_check ){
+    $options .= '<option  class="ops" value="'.$row_check['id_cadastro_checklist'].'"> '.$row_check['nome'].' </option>';
+}
+
+if (isset($_POST      ['nome_sala'],
+          $_POST      ['andar_sala'],
+          $_POST      ['checklist'],
+          $_POST      ['descricao_sala'],
+          $_POST      ['cor_sala'],
+          $_POST      ['btn_submit']    
         ))
         {
+            
             $obj_sala = new Sala(
                 null,
                 $_POST['checklist'],
-                null,
+                $_SESSION['num_matricula_logado'],
                 $_POST['andar_sala'],
                 $_POST['descricao_sala'],
-                null,
+                $_FILES['imagem_sala'],               
                 $_POST['cor_sala'],
                 null,
                 $_POST['nome_sala'],
                 null,
                 null,
                 null
-                
             );
-            //var_dump($_SERVER);exit
-            //var_dump($_POST);
-            //exit;
+            if ($obj_sala -> cadastrar())
+            {
+                //die('teste');
 
-            $obj_sala -> cadastrar();
-
+                //var_dump($_FILES);exit;
+                if (!empty($_FILES['imagem_sala']['name']))
+                {
+                    $objImagem = new Imagens;
+                    $objImagem -> storeImg($_FILES['imagem_sala']['name']);
+                    
+                }
+                else
+                {
+                    die('a imagem nao foi armazenada!');
+                }
+                
+            }
         }   
-
-
-
-?>
+        ?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
+
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -47,20 +68,15 @@ if (isset($_POST['nome_sala'],
     <link rel="stylesheet" href="https/cdnjs.cloudflare.comlibs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
     <link rel="stylesheet" href="../assets/css/cadastro_edicao_salas.css"> 
-    
+    <script src="https://code.jquery.com/jquery-3.7.0.js"integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM="crossorigin="anonymous"></script>
 
     
 </head>
-<html>
 
-<body class="tela-cadastro-salas"> 
-
+<body class="tela-cadastro-salas">
+    <?php include_once("../includes/menu.php");?> 
     <section class="container">
-        
         <div class="container-cadastro-salas">
-
-            
-            
             <div class="wrap-cadastro-salas">
 
                 <form class="cadastro-sala-form" method="POST" enctype="multipart/form-data" >
@@ -98,25 +114,23 @@ if (isset($_POST['nome_sala'],
                     
                     <div class="dropdown-ck">
 
-                    <select name="checklist" class="option">
-                        <option class="ops" value="1" selected disabled> Selecione o Checklist </option>
-                        <option class="ops" value="1"> Checklist 1 </option>
-                        <option  class="ops" value="2"> Checklist 2 </option>
-                        <option class="ops" value="3"> Checklist 3 </option>
-                        <option  class="ops" value="4"> Checklist 4 </option>
-                        <option  class="ops" value="5"> Checklist 5 </option>
-                    </select>
+                        <select name="checklist" class="option">
+
+                            <?=$options?>
+                            
+                        </select> 
+
+                        
                     
                     
                     </div>
+
+                        <div class="barra"></div>
                        
 
                     
-                    <div class="img-area">
+                    <div class="img-area"> 
                         
-
-
-
                         <div class="text-area">
                             <span id=descrição>Descrição</span>
     
@@ -125,21 +139,27 @@ if (isset($_POST['nome_sala'],
                         <div class="cor-sala">
                             <div class="alinar-img">
                                 <span id="img-text"> Insira a imagem : </span>
-                                <div class="area-anexo"> <img src="camera.png" alt="" id="icon-fotos">  </div>
+                                <div class="area-anexo">
+
+                                    
+                                    <img id="camera_imagem" class="imagem_aparecer" src="../assets/imgs/others/camera.png" alt="">
+
+                                    <img  class="imagem_agora_vai" src="" alt="">
+
+                                </div>
                             </div>    
                             <div class="alinar-botao-cor">
                                 <span id="selecao-cor-text">Cor da sala : </span> 
                                 <input class="botao-cor" name="cor_sala" type="color">
                             </div>
                         </div>
-                        
-                        
-                        
-                        
-                        <label id="botão-img"for="arquivo" >Enviar Fotos</label>
+      
+                        <label id="botão-img" for="arquivo" onclick="removerCSS()" >Enviar Fotos</label>
 
-                        <input type="file" name="imagem_sala" id="arquivo">
+                        <input type="file" name="imagem_sala" id="arquivo" onchange="previewImagem()">
                             
+                        
+                        
 
                             
 
@@ -159,25 +179,53 @@ if (isset($_POST['nome_sala'],
                             <a href="#"><input name="btn_submit" type="submit" class="botao-cadastrar-submit"  value="CADASTRAR"></a>
                         </div>
                         
-                    </div>
-
-
-
-
-
-                    
-                
+                    </div>  
                 </form>  
             </div>
         </div>
     </section>
 
 
+    <script>
 
+function previewImagem(){
+
+    var imagem = document.querySelector('input[name=imagem_sala]').files[0];
+    var preview = document.querySelector('img[class=imagem_agora_vai]');
+    var reader = new FileReader();
+    const camera = document.querySelector(".imagem_aparecer");
+    
+    reader.onloadend = function(){
+        preview.src = reader.result;
+        camera.classList.add("active");
+        preview.classList.add("active");
+    } 
+    if(imagem){
+        reader.readAsDataURL(imagem);
+        
+        
+    }else{
+        preview.src = "";
+
+    }   
+}
+
+// function removerCSS(){
+
+//     var remover = document.getElementById("camera_imagem");
+//     remover.classList.remove("imagem_aparecer");
+
+// }
+
+// function adicionarCSS(){
+
+//     var adicionarCSS = document.getElementsByClassName("imagem_agora_vai")
+//     adicionarCSS.classList.add("novo_css");
+// }
+
+</script>
 
 
     
 </body>
-
-
 </html>

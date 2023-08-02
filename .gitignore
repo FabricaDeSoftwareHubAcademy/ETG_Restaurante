@@ -1,0 +1,5 @@
+/vendor/
+vendor/composer/ClassLoader.php
+vendor/composer/installed.php
+vendor/composer/InstalledVersions.php
+vendor/composer/LICENSE

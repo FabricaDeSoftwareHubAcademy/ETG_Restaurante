@@ -1,5 +1,7 @@
 <?php
-require_once("../app/entity/Perfil.php");
+require("../vendor/autoload.php");
+use App\Entity\Perfil;
+
 
 //Se o botao_salvar e o nome do cargo estiverem setados
 if (isset($_POST['botao_salvar'], $_POST['nome_cargo'])){
@@ -34,7 +36,7 @@ if (isset($_POST['botao_salvar'], $_POST['nome_cargo'])){
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro_perfil</title>
+    <title>C7adastro_perfil</title>
     
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https/cdnjs.cloudflare.comlibs/font-awesome/6.4.0/css/all.min.css">
@@ -46,16 +48,13 @@ if (isset($_POST['botao_salvar'], $_POST['nome_cargo'])){
 </head>
 
 <body class="tela_cadastro_perfil">
-    <main class="pai-de-todos">
-        <?php
-        //toma essa gambiarra ass luiz
-        include_once("../includes/menu.php"); 
-        ?>
+    <?php
+    //toma essa gambiarra ass luiz
+    include_once("../includes/menu.php"); 
+    ?>
     <div class="container">
         <div class="titulo_cad" >
-            <h1 class="titulo_cad_perfil" >
-                Cadastro de Perfil
-            </h1>
+            <h1 class="titulo_cad_perfil">Cadastro de Perfil</h1>
         </div>
         <form method="POST" class="form_permissoes">
             <div class="input_group">
@@ -119,13 +118,13 @@ if (isset($_POST['botao_salvar'], $_POST['nome_cargo'])){
                     <a href="cadastro_perfil.php"><input type="submit" class="botao-voltar-submit"  value="VOLTAR"></a>
                 </div>
                 <!--Botão Salvar-->
-                <div class="">
+                <div class="botao-padrao-salvar">
                     <a href=""><input name="botao_salvar" type="submit" class="botao-salvar-submit"  value="SALVAR"></a>
                 </div>
             </div>
         </form>
         
     </div>     
-    </main>
+    
 </body>
 </html>
