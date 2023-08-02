@@ -3,6 +3,7 @@ session_start();
 // pull 
  
 
+
 // require na class Usuario 
 // include_once("./app/entity/Usuario.php");
 
@@ -12,7 +13,7 @@ use App\Entity\Usuario;
 
 
 if(isset($_SESSION['num_matricula_logado'])){
-    header("Location: pages/listar_perfil.php");
+    header("Location: pages/mural.php");
 }
     
 
@@ -22,28 +23,17 @@ if(isset($_POST['btn_sub'])){
     // pegando email, matricula e senha 
     if(isset($_POST['email'],$_POST['matricula'],$_POST['senha'])){
         // esta setado 
-
         $objUser = new Usuario($_POST['matricula'],$_POST['email'],$_POST['senha']);
-
         if($objUser->logar()){
-
             $_SESSION['msg'] = 'logado com sucesso!';
-            header("Location: pages/listar_perfil.php");
-
+            header("Location: pages/mural.php");
         }else{
-
             // mensagem de usuario ou senha invalidos
             echo("Senha IN VA LI DA !!!");
-
         }
-
-    
     }else{
         // nao esta setado -> modal ou pop up, notificando que nao esta setado!
-        
-    
     }
-
 }
 
 

@@ -16,23 +16,31 @@
   --cor-label:black;
 }
 
-.pai-de-todos{
-    width: 100%;
-    height: 100%;
-    max-width: 832px;
-    position: relative;
-    margin: 0 auto;
+.container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.tela_cadastro_perfil
+{
+  width: 100%;
+  height: 100%;
+  max-width: 832px;
+  position: relative;
+  margin: 0 auto;
+  
 }
 
 .tela_cadastro_perfil .container{
- 
     width: 100%;
     display: flex;
     flex-direction: column; 
     align-items: center;
     margin: 5% auto;
-    /* margin-top: 70px; */
+    margin-top: 70px;
 }
+
 .tela_cadastro_perfil .titulo_cad{
     display: flex;
     padding: 0;
@@ -44,18 +52,6 @@
     font-family: 'Montserrat', sans-serif;
     justify-content: center;
 }
-
-.tela_cadastro_perfil .form_permissoes
-{
-  
-  margin-left: 40px;
-  padding-left: 50px;
-  margin-top: 80px;
-}
-
-
-/* input */
-
   
   .input:placeholder-shown ~ .input {
     font-size: 17px;
@@ -66,7 +62,7 @@
   .input {
     position: absolute;
     top: 0;
-    display: block;
+    display: flex;
     transition: 0.3s;
     color: #9b9b9b;
     pointer-events: none;
@@ -87,7 +83,7 @@
   .input:focus ~ .input {
     position: absolute;
     top: 0;
-    display: block;
+    display: flex;
     transition: 0.3s;
     font-size: 17px;
     font-weight: 700;
@@ -111,15 +107,15 @@
     flex-direction: row;
     justify-content: space-evenly;
     align-items: center;
-    
   }
 
 /* input */
 
 .input_group {
+  margin: 50px 0 0 0;
   position: relative;
   padding: 20px  0px;
-  width: 80%;
+  width: 592px;
 
   
 }
@@ -156,7 +152,7 @@
 .input_label {
   position: absolute;
   top: 0;
-  display: block;
+  display: flex;
   transition: 0.3s;
   color: #9b9b9b;
   pointer-events: none;
@@ -177,7 +173,7 @@
 .input_field:focus ~ .input_label {
   position: absolute;
   top: 0;
-  display: block;
+  display: flex;
   transition: 0.3s;
   font-size: 17px;
   font-weight: 700;
@@ -200,15 +196,12 @@
   justify-content: space-between;
 
 }
-
 .permissoes_salas{
+    width: 592px;
     display: flex;
     flex-direction: column;
-    justify-content: left;
-    margin-top: 20px;
     font-family: 'Montserrat';
     margin-top: 20px;
-    
 }
 .label_permissao{
   display: flex;
@@ -249,8 +242,6 @@
 /* Css Botão Salvar */
 
 .botao-padrao-salvar{
-  
- 
   height: 40px;
   display: flex;
 
@@ -267,8 +258,8 @@
   cursor: pointer;
   color: var(--cor-primaria-botao-green);
   font-style: normal;
-  font-size: 'Montserrat';
-  font-weight: 500;
+  font-family: 'Montserrat';
+  font-weight: bold;
   font-size: 15px;
  
   
@@ -298,7 +289,7 @@
   color: var(--cor-primaria-botao-red);
   font-family: 'Montserrat';
   font-style: normal;
-  font-weight: 580;
+  font-weight: bold;
   font-size: 16px;
 }
 
@@ -328,7 +319,7 @@
   color: var(--cor-primaria-botao-yellow);
   font-style: normal;
   font-size: 'Montserrat';
-  font-weight: 500;
+  font-weight: bold;
   font-size: 15px;
 
 }
@@ -339,16 +330,20 @@
   color: var(--cor-primaria-botao-white);
 }
 
-.botoes{
+/* .botoes{
+  display: flex;
+  justify-content: space-between;
+  padding-right: 110px;
+  margin-top: 20%;
+  
+} */
+
+.alinar-botoes{
+  width: 100%;
   display: flex;
   justify-content: space-evenly;
-  width: 85%;
-  
-  margin-top: 23%;
- transition: all 0.5s;
-  
+  margin: 50px;
 }
-
 
 @media (min-width: 1100px) {
   .botoes{

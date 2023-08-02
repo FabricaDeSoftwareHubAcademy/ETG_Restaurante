@@ -1,0 +1,163 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --cor-primaria-botao-white: white; 
+    --cor-primaria-botao-green: green;
+    --cor-primaria-botao-red:   red;
+    --cor-primaria-botao-yellow:rgba(255, 199, 0, 1);
+    --cor-primaria-botao-blue:  rgba(6, 74, 140, 1);
+    ;
+}
+
+.visualizar_sala{
+    width: 100%;
+    height: 100%;
+    max-width: 832px;
+    position: relative;
+    margin: 0 auto;
+}
+
+.area_card{
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 832px;
+    min-width: 407px;
+    margin: 0 auto;
+    
+}
+
+.card{
+    display: flex;
+    height: 80%;
+    width: 80%;
+    border: solid #FF0000 2px;
+    border-radius: 10px;
+    background-color: #e7e7e7;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.imagem_card{
+    display: flex;
+    width: 100%;
+    height: 300px;
+    border: solid black 0px;
+
+
+}
+
+#img_config{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    
+}
+
+.titulo_card{
+    display: flex;
+    margin-top: 30px;
+    justify-content: center;
+}
+
+
+.texto_card{
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+
+p{
+    display: flex;
+    text-align: justify;
+    width: 100%;
+    height: 100px;
+}
+
+#paragrafo_descricao{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    display: flex;
+}
+
+#paragrafo_horarios{
+    margin-top: 20px;
+    margin-bottom: 40px;
+    display: flex;
+}
+
+/* CSS Botão Voltar */
+.botao-padrao-voltar{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.botao-voltar-submit{
+    width: 180px;
+    height: 45px;
+    background-color: var(--cor-primaria-botao-white);
+    border: 3px solid var(--cor-primaria-botao-yellow);
+    border-radius: 20px;
+    cursor: pointer;
+    color: var(--cor-primaria-botao-yellow);
+    font-style: normal;
+    font-family: 'Montserrat';
+    font-weight: bold;
+    font-size: 15px;
+
+}
+
+.botao-voltar-submit:hover{
+    transition: all 0.4s;
+    background-color: var(--cor-primaria-botao-yellow);
+    color: var(--cor-primaria-botao-white);
+}
+
+
+/* Css Botão Fazer Checklist */
+
+.botao-padrao-fazer-checklist{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.botao-fazer-checklist-submit{
+    width: 180px;
+    height: 45px;
+    background-color: var(--cor-primaria-botao-white);
+    border: 3px solid var(--cor-primaria-botao-green);
+    border-radius: 20px;
+    cursor: pointer;
+    color: var(--cor-primaria-botao-green);
+    font-style: normal;
+    font-family: 'Montserrat';
+    font-weight: bold;
+    font-size: 15px;
+    
+    
+}
+
+.botao-fazer-checklist-submit:hover{
+    transition: all 0.4s;
+    background-color: var(--cor-primaria-botao-green);
+    color: var(--cor-primaria-botao-white);
+}
+
+.alinhar_botoes{
+    display: flex;
+    padding-top: 15px;
+    width: 80%;
+    justify-content: space-between;
+}

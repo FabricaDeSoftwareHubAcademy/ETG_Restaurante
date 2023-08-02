@@ -36,85 +36,6 @@
 
 }
 
-
-
-.logo{
-  display: flex;
-  width: 100%;
-  justify-content: center;
-}
-
-.cabecalho-menu{
-  height: 150px;
-  
-  
-}
-
-.fitas{
-    display: flex;
-    position: absolute;
-    right: 3%;
-
-}
-
-.sub-fita{
-  padding: 0px;
-}
-
-#bloc1 {
-    width: 57px;
-    height: 100px;
-    background:#F28920 ;
-    position: relative;
-    animation-name: bloc1;
-    animation-duration: 2.5s;  
-    animation-delay: 0s;
-    animation-fill-mode: backwards;
-    box-shadow: 2px 2px 5px rgb(138, 137, 137);
-    
-  }
-  
-  @keyframes bloc1 {
-    from {height: 150px;top: 0px; background-color: #064A8C;}
-    to {height: 100px;}    
-  }
-
-  #bloc2 {
-    width: 57px;
-    height: 137px;
-    background: #064A8C;
-    position: relative;
-    animation-name: bloc2;
-    animation-duration: 2.5s;  
-    animation-delay: 0s;
-    animation-fill-mode: backwards;
-    box-shadow: 2px 2px 5px rgb(138, 137, 137);
-
-
-  }
-  #img-logo{
-    width: 130px;
-    height: 80px;
-    
-  }
-  
-  @keyframes bloc2 {
-    from {height: 90px;top: 0px; background-color:  #F28920 ;}
-    to {height: 137px;}
-    
-  }
-
-  .container-logo{
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    right: 0%;
-    background-color: white;
-    height: 150px;
-    z-index: 2;
-    position: relative;
-  }
-
 .tela-cadastro-salas .container-cadastro-salas{
   
     display: flex;
@@ -125,11 +46,6 @@
     align-items: center;
     justify-content: center;
     
-   
-    
-    
-    
-  
   }
   .container{
     display: flex;
@@ -395,7 +311,7 @@
   font-size: 17px;
   text-align: justify;
   padding: 5px; 
-  border: solid black 1px;
+  border: solid rgba(0, 0, 0, 0.589) 1px;
   opacity: 0.7;
   outline: none 
   
@@ -451,9 +367,10 @@
   display: flex;
 
   margin: 30px auto;
+  padding: 2px;
 
   width: 45px;
-  height: 45px;
+  height: 50px;
   box-shadow: #F7941D 0px 5px 10px 0px;
   border-radius: 9px;
   border: solid beige 3px;
@@ -479,7 +396,7 @@ input[type="file"] {
   cursor: pointer;
   border-radius: 50px;
   font-style: normal;
-  font-weight: 500;
+  font-weight: 600;
   font-size: 16px; 
 
   opacity: 0.7;
@@ -502,8 +419,8 @@ input[type="file"] {
   cursor: pointer;
   color: var(--cor-primaria-botao-green);
   font-style: normal;
-  font-size: 'Montserrat';
-  font-weight: 580;
+  font-family: 'Montserrat';
+  font-weight: bold;
   font-size: 15px;
 }
 
@@ -532,8 +449,8 @@ input[type="file"] {
   cursor: pointer;
   color: var(--cor-primaria-botao-yellow);
   font-style: normal;
-  font-size: 'Montserrat';
-  font-weight: 580;
+  font-family: 'Montserrat';
+  font-weight: bold;
   font-size: 15px;
 
 }
@@ -587,15 +504,23 @@ input[type="file"] {
 .dropdown-ck{
   display: flex;
   position: relative;
-  padding-bottom: 80px;
-  padding-top: 30px;
-  
+  margin-top: 30px;
   width: 100%;
   height: 30px;
   font-size: 'Montserrat';
   color: #9b9b9b;
   
 }
+
+.barra{
+
+  width: 99%;
+  border-bottom: solid black 2px;
+  opacity: 0.4;
+  margin-bottom: 40px;
+  margin-right: 5px;
+}
+
 
 
 .dropdown-ck .textbox-ck {
@@ -616,16 +541,16 @@ input[type="file"] {
 } 
 
 .dropdown-ck .option{
-  z-index: 9999999999;
-  position: absolute;
-  top: 55%;
-  width: 100%;
-  background-color: rgb(255, 255, 255);
-  
-  overflow: hidden; 
- 
-  font-size: 'Montserrat';
-  
+    font-weight: 600;  
+    border: none;
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+    font-size: 'Montserrat';
+    border-bottom: black;
+    height: 35px;
+    font-size: 19px;
+    padding-left: 7px;
+    opacity: 0.4;
   
 }
 
@@ -646,33 +571,8 @@ input[type="file"] {
 
 
 
-.dropdown-ck::before{
 
-  content: '';
-  position: absolute;
-  z-index: 10000;
-  width: 8px;
-  height: 8px;
-  right: 20px;
-  top: 55px;
-  border: solid black 2px;
-  border-top: 2px solid aliceblue;
-  border-right: 2px solid aliceblue;
-  transform: rotate(-45deg);
-  transition: 0.5s;
-  pointer-events: none;
-  
-} 
 
-.dropdown-ck.active::before{
-  top: 55px;
-  transform: rotate(-225deg);
-}
-
-.dropdown-ck.active .option{
-  
-  display: block;
-}
 
 
 
@@ -1160,7 +1060,7 @@ box-shadow: none;
   display: flex;
   font-style: normal;
   font-size: 'Montserrat';
-  font-weight: 500;
+  font-weight: 600;
   text-align: center;
   font-size: 15px;
 }
@@ -1183,4 +1083,34 @@ box-shadow: none;
   font-size: 22px;
   color: black;
   top: 20px;
+}
+
+
+
+
+.imagem_aparecer{
+    width: 70%;
+    height: 100%;
+    border-radius: 10px;
+    /*object-fit: cover;*/ 
+}
+
+.imagem_aparecer.active{
+  display: none;
+}
+
+.imagem_agora_vai{
+
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: none;
+
+}
+
+
+.imagem_agora_vai.active{
+
+  display: block;
+
 }
