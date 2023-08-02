@@ -1,3 +1,6 @@
+<?php
+    $dados
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -39,7 +42,7 @@
 
                 <section class="selecao-pergunta">
                     <table class="tabela-perguntas">
-                        <tr>
+                        <tr class="topo-tabela">
                             <th>Selecione</th>
                             <th>Pergunta</th>
                         </tr>
