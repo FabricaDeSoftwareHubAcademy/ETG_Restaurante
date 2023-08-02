@@ -4,6 +4,10 @@
     box-sizing: 0;
     font-family:'Montserrat', sans-serif;
   }
+
+  .pagina{
+    width: 832px;
+  }
     
   :root{
       --cor-primaria-botao-white: white; 
@@ -37,7 +41,7 @@
     font-size: 40px; 
     font-family: 'Montserrat';
     font-weight: bold;
-    margin-top: 60px;
+    margin-top: 90px;
   }
 
 
@@ -106,7 +110,7 @@
     display: flex;
     justify-content: space-between;
     text-align: center;
-    margin-top: 60%;
+    margin-top: 50%;
   }
   
 @media (max-width: 882px) {
@@ -115,7 +119,7 @@
     }
   
 .botao{
-      margin-top: 90%;
+      margin-top: 65%;
     }
   }
 
