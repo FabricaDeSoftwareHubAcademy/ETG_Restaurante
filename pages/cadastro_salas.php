@@ -166,7 +166,9 @@ if (isset($_POST      ['nome_sala'],
 
                                     
                                     <img id="camera_imagem" class="imagem_aparecer" src="../assets/imgs/others/camera.png" alt="">
-                            
+
+                                    <img  class="imagem_agora_vai" src="" alt="">
+
                                 </div>
                             </div>    
                             <div class="alinar-botao-cor">
@@ -175,7 +177,7 @@ if (isset($_POST      ['nome_sala'],
                             </div>
                         </div>
       
-                        <label id="botão-img"for="arquivo" >Enviar Fotos</label>
+                        <label id="botão-img" for="arquivo" onclick="removerCSS()" >Enviar Fotos</label>
 
                         <input type="file" name="imagem_sala" id="arquivo" onchange="previewImagem()">
                             
@@ -212,7 +214,7 @@ if (isset($_POST      ['nome_sala'],
 function previewImagem(){
 
     var imagem = document.querySelector('input[name=imagem_sala]').files[0];
-    var preview = document.querySelector('img[class=imagem_aparecer]');
+    var preview = document.querySelector('img[class=imagem_agora_vai]');
     var reader = new FileReader();
     
     reader.onloadend = function(){
@@ -220,12 +222,24 @@ function previewImagem(){
     } 
     if(imagem){
         reader.readAsDataURL(imagem);
-        $(this).addClass('active');
-
+        
     }else{
         preview.src = "";
 
     }   
+}
+
+function removerCSS(){
+
+    var remover = document.getElementById("camera_imagem");
+    remover.classList.remove("imagem_aparecer");
+
+}
+
+function adicionarCSS(){
+
+    var adicionarCSS = document.getElementsByClassName("imagem_agora_vai")
+    adicionarCSS.classList.add("novo_css");
 }
 
 </script>
