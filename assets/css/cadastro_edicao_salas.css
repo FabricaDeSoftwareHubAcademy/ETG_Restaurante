@@ -1099,6 +1099,20 @@ box-shadow: none;
   display: none;
 }
 
+
+.novo_css_imagem{
+  display: none;
+}
+
+.novo_css_imagem.active{
+  display: block;
+  height: 100%;
+  width: 100%;
+  border-radius: 11px;
+}
+
+
+
 .imagem_agora_vai{
 
   width: 100%;
@@ -1113,4 +1127,10 @@ box-shadow: none;
 
   display: block;
 
+}
+
+.imagem_aparecer.active{
+
+  width: 100%;
+  height: 100%;
 }
