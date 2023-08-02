@@ -54,6 +54,7 @@
                     </a>
                         <ul class="sub-menu">            
                             <li class="iten-submenu"><a href="../pages/cadastro_salas.php" id="fonte-submenu">Cadastro de Salas</a></li>
+<<<<<<< Updated upstream
                             <li class="iten-submenu"><a href="" id="fonte-submenu">Relatórios</a></li>
                             <li class="iten-submenu"><a href="../pages/cadastro_checklist.php" id="fonte-submenu">Cadastro Checklist</a></li>
                             <li class="iten-submenu"><a href="../pages/cadastro_item.php" id="fonte-submenu">Cadastro de Perguntas</a></li>                        
@@ -62,6 +63,16 @@
                 <li class="saida">
                     <button class="btnOpenmodal-menu" onclick="openModal()" >  
                         <a href="#" class="link-menu">
+=======
+                            <li class="iten-submenu"><a href="../pages/editar_salas.php" id="fonte-submenu">Relatórios</a></li>
+                            <li class="iten-submenu"><a href="../pages/mural.php" id="fonte-submenu">Cadastro Checklist</a></li>
+                            <li class="iten-submenu"><a href="../pages/redefinir_senha.php" id="fonte-submenu">Cadastro de Perguntas</a></li>                        
+                        </ul>
+                </li>         
+                <li class="saida">
+                    <button class="btnOpenmodal-menu" onclick="openModalmenu()" >  
+                        <a href="" class="link-menu">
+>>>>>>> Stashed changes
                             <i class="bi bi-box-arrow-left" style="--i:5"></i>
                         </a>
                     </button>
@@ -73,8 +84,8 @@
                         Tem Certeza que Deseja Sair?
                         </h3>
                         <div class="btns-menu">
-                            <button class="btnOk-menu" onclick="closeModal(0)" > NÃO</button>
-                            <button class="btnClose-menu" onclick="closeModal(1)" > SIM</button>
+                            <button class="btnOk-menu" onclick="menuOpen(0)" > NÃO</button>
+                            <button class="btnClose-menu" onclick="menuOpen(1)" > SIM</button>
                         </div>
                     </div>
                 </div>        
@@ -101,7 +112,7 @@
           container.classList.toggle("active");
           submenu.classList.remove('active');
           btn_submenu.setAttribute('onclick', 'openSubmenu()');
-          closeModal()
+          menuOpen()
         })
 
 
@@ -110,12 +121,12 @@ const submenu = document.querySelector('.sub-menu')
 const btn_submenu = document.getElementById('btnsubmenu')
 
 
-function openModal() {
+function openModalmenu() {
   modal.classList.add('active')
      
 }
 
-function closeModal(valor) {
+function menuOpen(valor) {
 
   if(valor == 1){
 
