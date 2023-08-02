@@ -92,13 +92,6 @@
         </form>
     </main>
 
-    <div>
-        <?php
-        if (isset($_POST['cadastrar'])) {
-            var_dump($_POST);
-        }
-        ?>
-    </div>
 
     <!----------------- Sanduiche------------------>
     <script>
