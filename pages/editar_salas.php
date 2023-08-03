@@ -162,9 +162,7 @@ if (isset($_POST['nome_sala'],
                             <script>
                                    
                             </script>
-                            <textarea value="<?php echo $text_area;?>" placeholder="Area de texto " name="descricao_sala" id="textareajs" cols="70" rows="10" class="text-descricao">
-
-                            </textarea>
+                            <textarea placeholder="Area de texto " name="descricao_sala" id="textareajs" cols="70" rows="10" class="text-descricao"><?=$text_area?></textarea>
                         </div>
                         <div class="cor-sala">
                             <div class="alinar-img">
