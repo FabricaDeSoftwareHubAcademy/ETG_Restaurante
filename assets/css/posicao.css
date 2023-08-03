@@ -96,7 +96,6 @@
 
 .tabela-perguntas{
     border-collapse: collapse;
-    border: 1px solid rgb(16, 15, 15);
     border-radius: 15px;
     
 }
@@ -105,18 +104,24 @@ th {
     height: 25px;
     background-color: #064A8C;
     color: rgb(255, 255, 255);
-    border: 2px solid rgb(16, 15, 15);
     font-family: 'Montserrat';
 }
 
+.topo-tabela{
+    position: sticky;
+    top: 0px;
+
+}
+
+
 td {
    
-    border: 2px solid rgb(16, 15, 15);
+    border-bottom: 2px solid rgb(166, 166, 166);
     font-family: 'Montserrat';
     border-radius: 8px;
     padding: 8px;
     text-align: center;
-    color: black;
+    color: rgb(0, 0, 0);
     font-weight: bold;    
 }
 
