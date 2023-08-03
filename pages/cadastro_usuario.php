@@ -30,6 +30,9 @@ foreach ($dados as $row_check ){
 
 }
 
+if(isset($_POST['nome'], ['email'], ['num_matricula'], ['senha']))
+
+
 ?>
 
     <main class="tudo_esqueceu_senha1">
@@ -41,13 +44,13 @@ foreach ($dados as $row_check ){
 
             <!-- input nome -->
         <div class="input_group field">
-            <input type="input" class="input_field" placeholder="Name" required="">
+            <input type="input" class="input_field" name="nome" placeholder="Name" required="">
             <label for="name" class="input_label">Nome</label> <!--Alterar para o nome do input-->
         </div>
         
              <!--Input Email-->
              <div class="input_e-mail_group field">
-                    <input type="email" class="input_e-mail_field" placeholder="Name" required="" autocomplete="on">
+                    <input type="email" class="input_e-mail_field" name="email" placeholder="Name" required="" autocomplete="on">
                     <label for="name" class="input_e-mail_label">E-mail</label> <!--Alterar para o nome do input-->
                 </div>
 
@@ -63,7 +66,7 @@ foreach ($dados as $row_check ){
 
         <div class="mover_input">
             <div class="input_group field matricula">
-                <input type="input" class="input_field_matricula" placeholder="Name" required="">
+                <input type="input" class="input_field_matricula" name="num_matricula" placeholder="Name" required="">
                 <label for="name" class="input_label_matricula">N° de Matricula</label> <!--Alterar para o nome do input-->
             </div>
         </div>
@@ -73,7 +76,7 @@ foreach ($dados as $row_check ){
         
             <!--Input Senha-->
         <div class="input_senha_group field">
-            <input type="password" class="input_senha_field" placeholder="Name" required="">
+            <input type="password" class="input_senha_field" name="senha" placeholder="Name" required="">
             <label for="name" class="input_senha_label">Senha</label> <!--Alterar para o nome do input-->
         </div>
 
