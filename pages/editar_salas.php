@@ -46,10 +46,7 @@ if (isset($_POST['nome_sala'],
                
                 $_POST['cor_sala'],
                 null,
-                $_POST['nome_sala'],
-                null,
-                null,
-                null
+                $_POST['nome_sala']
                 
             );
             if ($obj_sala -> cadastrar())
@@ -140,18 +137,23 @@ if (isset($_POST['nome_sala'],
 
                     </div>
 
-                    <div class="wrap-input margin-top-35 margin-bottom-35">
+                    <div class="dropdown-ck">
 
+                        <select name="andar_sala" class="option">
 
+                            <option type="input" name="andar_sala">Primeiro Andar</option>
+                            <option type="input" name="andar_sala">Segundo Andar</option>
+                            <option type="input" name="andar_sala">Terceiro Andar</option>
+                            <option type="input" name="andar_sala">Quarto Andar</option>
+                            <option type="input" name="andar_sala">Quinto Andar</option>
 
-                        <div class="input_group field">
-                            <input type="input" class="input_field" placeholder="Name" required="" name="andar_sala">
-                            <label for="name" class="input_label">Andar Da Sala</label> <!--Alterar para o nome do input-->
-                        </div>
-
-
-
+                            
+                        </select> 
+                    
+                    
                     </div>
+
+                    <div class="barra"></div>
                     
                     <div class="dropdown-ck">
 
