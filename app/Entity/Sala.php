@@ -15,7 +15,7 @@ class Sala{
             $imagem,
             $cor,
             $status_sala,
-            $nome,
+            $nome
             ;
     public function __construct($id_cadastro_sala = null,
                                 $id_cadastro_checklist = null,
