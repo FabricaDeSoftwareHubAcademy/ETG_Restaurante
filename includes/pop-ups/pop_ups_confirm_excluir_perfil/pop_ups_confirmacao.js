@@ -1,7 +1,9 @@
-function openPopup_Conf() {
+var id_atual = 0;
+// const botao_excluir = document.querySelectorAll(".botao_excluir");
+function openPopup_Conf(id_perfil) {
     var overlay_conf = document.getElementById("overlay_conf");
     var popup = document.querySelector(".popup");
-  
+    alert(id_perfil);
     overlay_conf.style.opacity = 1;
     overlay_conf.style.visibility = "visible";
   
