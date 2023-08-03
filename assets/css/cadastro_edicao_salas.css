@@ -110,7 +110,7 @@
     
   }
   .tela-cadastro-salas .margin-bottom-35{
-    margin-bottom: 35px;
+    margin-bottom: 15px;
   }
  
   
@@ -285,7 +285,8 @@
 
 }
 .img-area{
-  width: 100%;
+  margin-top: 50px;
+  width: 99%;
   height: 15%;
   display: flex;
   flex-direction: column;
@@ -303,7 +304,7 @@
 }
 .text-descricao{
   resize: none;
-  width: 85%;
+  width: 70%;
   padding-left: 10px;
   border-radius: 12px;
   display: flex;
@@ -517,7 +518,7 @@ input[type="file"] {
   width: 99%;
   border-bottom: solid black 2px;
   opacity: 0.4;
-  margin-bottom: 40px;
+ 
   margin-right: 5px;
 }
 
@@ -596,7 +597,7 @@ input[type="file"] {
 
 }
 .input_field {
-  width: 100%;
+  width: 99%;
   border: none;
   border-bottom: 2px solid #9b9b9b;
   outline: 0;
@@ -630,11 +631,11 @@ input[type="file"] {
   top: 0;
   
   transition: 0.3s;
-  color: #9b9b9b;
+  color: #9b9b9bd8;
   pointer-events: none;
   font-family: 'Montserrat';
   font-style: normal;
-  font-weight: 400;
+  font-weight: 600;
   font-size: 20px;
   left: 10px;
   
