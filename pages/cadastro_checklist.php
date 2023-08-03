@@ -1,3 +1,18 @@
+<?php
+    require __DIR__."/../vendor/autoload.php";
+    use App\Entity\Pergunta;
+    $dados = Pergunta::getPerguntas()->fetchAll(PDO::FETCH_ASSOC);
+    $tr = "";
+    foreach ($dados as $rowdados){
+        $tr .= "<tr> 
+                    <td><input type='checkbox'  id='checkbox' name='pergunta[]' value='" . $rowdados['id_cadastro_pergunta'] . "'></td>
+                    <td>" . $rowdados['descricao'] . "</td>   
+                </tr>";
+        
+
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -39,39 +54,13 @@
 
                 <section class="selecao-pergunta">
                     <table class="tabela-perguntas">
-                        <tr>
+                        <tr class="topo-tabela">
                             <th>Selecione</th>
                             <th>Pergunta</th>
                         </tr>
+                        <?=$tr?>
 
-                        <?php
-                        // Faz a conexão com o banco de dados
-                        $host = '192.168.22.9';
-                        $usuario = 'fabrica';
-                        $senha = 'fabrica@2022';
-                        $banco = 'etg_homologacao';
 
-                        $conexao = mysqli_connect($host, $usuario, $senha, $banco);
-
-                        // Verifica se a conexão foi bem sucedida
-                        if (mysqli_connect_errno()) {
-                            die('Falha na conexão: ' . mysqli_connect_error());
-                        }
-
-                        // Busca as perguntas do banco de dados
-                        $query = "SELECT id_cadastro_pergunta,descricao FROM cadastro_pergunta";
-                        $resultado = mysqli_query($conexao, $query);
-
-                        // Loop através dos resultados e cria as linhas da tabela
-                        while ($linha = mysqli_fetch_assoc($resultado)) {
-                            echo "<tr>";
-                            echo "<td><input type='checkbox'  id='checkbox' name='pergunta[]' value='" . $linha['id_cadastro_pergunta'] . "'></td>";
-                            echo "<td>" . $linha['descricao'] . "</td>";
-                        }
-
-                        // Fecha a conexão com o banco de dados
-                        mysqli_close($conexao);
-                        ?>
                     </table>
                 </section>
             </div>
