@@ -21,12 +21,12 @@
 
 
 .titulo_de_cadastro{
-  font-size: 30px;
+  font-size: 26px;
 
 }
 
 .titulo_edicao_de_sala{
-  font-size: 30px;
+  font-size: 26px;
 }
 
 
@@ -543,6 +543,7 @@ input[type="file"] {
 .dropdown-ck .option{
     font-weight: 600;  
     border: none;
+    outline: none;
     width: 100%;
     background-color: rgb(255, 255, 255);
     font-size: 'Montserrat';
@@ -1099,6 +1100,20 @@ box-shadow: none;
   display: none;
 }
 
+
+.novo_css_imagem{
+  display: none;
+}
+
+.novo_css_imagem.active{
+  display: block;
+  height: 100%;
+  width: 100%;
+  border-radius: 11px;
+}
+
+
+
 .imagem_agora_vai{
 
   width: 100%;
@@ -1113,4 +1128,10 @@ box-shadow: none;
 
   display: block;
 
+}
+
+.imagem_aparecer.active{
+
+  width: 100%;
+  height: 100%;
 }
