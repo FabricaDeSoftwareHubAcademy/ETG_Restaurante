@@ -56,11 +56,8 @@ class Sala{
                             'imagem' => $this -> imagem['name'],
                             'cor' => $this -> cor,
                             'status_sala' => $this -> status_sala,
-                            'nome' => ucfirst(strtolower($this -> nome)),
-                            'horario_matutino' => $this -> horario_matutino,
-                            'horario_vespertino' => $this -> horario_vespertino,
-                            'horario_noturno' => $this -> horario_noturno
-                        ]);
+                            'nome' => ucfirst(strtolower($this -> nome))
+                            ]);
 
         
         return true;
