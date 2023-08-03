@@ -1,7 +1,6 @@
 <?php
 
 require ("../vendor/autoload.php");
-include_once ("../includes/pop-ups/pop_ups_confirm_excluir_perfil/pop_ups_confirmacao.php");
 use App\Entity\Perfil;
 
 //pegando dados perfil
@@ -22,7 +21,7 @@ foreach ($dados_perfil as $row_perfil)
                                 </div>
                                 
                                 <a href="../pages/edicao_perfil.php?id='.$row_perfil['id_cadastro_perfil'].'"><img src="../assets/imgs/icons/icon_editar.png" alt="icone_editar" class="icone_editar"></a> 
-                                <a button="../includes/pop-ups/pop_ups_confirm_excluir_perfil/pop_ups_confirmacao.php" <i class="bi bi-trash" onclick="openPopup_Conf()"></i> </a>
+                                <i class="bi bi-trash" onclick="openPopup_Conf('.$row_perfil['id_cadastro_perfil'].')"></i>
                             </div>
                         </div>
                     </li>
@@ -51,6 +50,7 @@ foreach ($dados_perfil as $row_perfil)
                 <?php
                 //toma essa gambiarra ass luiz
                 include_once("../includes/menu.php"); 
+                include_once ("../includes/pop-ups/pop_ups_confirm_excluir_perfil/pop_ups_confirmacao.php");
                 ?>
             <form action="" method="GET">
                 <div class="container_gp">
