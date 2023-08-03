@@ -35,7 +35,7 @@
 
                 <!--Botão Voltar-->
             <div class="botao-padrao-voltar">
-                <a href="#"><input type="submit" class="botao-voltar-submit"  value="VOLTAR"></a>
+                <a href="tela_esqueceu_senha2.php"><input type="submit" class="botao-voltar-submit"  value="VOLTAR"></a>
             </div>
 
                 <!--Botão Confirmar-->

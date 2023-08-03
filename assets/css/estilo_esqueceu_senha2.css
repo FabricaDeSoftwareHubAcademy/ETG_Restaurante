@@ -195,18 +195,22 @@
 #timer{
   margin-right: 36%;
   padding-left: 5px;
-  color: rgb(0, 0, 0);
   font-size: 22px;
 }
 
 .botao-enviar-dnv{
   width: 150px;
   font-size: 15px;
-  border-radius: 10px;
+  border: none;
   background-color: white;
+  color: rgb(6, 151, 255);
   font-family: 'Montserrat';
   font-weight: bold;
   cursor: pointer;
+}
+
+.botao-enviar-dnv:hover{
+  color: #064A8C;
 }
 
 #text-timer{

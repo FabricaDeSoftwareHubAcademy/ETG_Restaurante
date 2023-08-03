@@ -49,12 +49,12 @@ include_once("../includes/menu.php")
 
         <!--Botão Voltar-->
             <div class="botao-padrao-voltar">
-                <a href="#"><input type="submit" class="botao-voltar-submit"  value="VOLTAR"></a>
+                <a href="tela_esqueceu_senha1.php"><input type="submit" class="botao-voltar-submit"  value="VOLTAR"></a>
             </div>
 
         <!--Botão Confirmar-->
             <div class="botao-padrao-confirmar">
-                <a href="#"><input type="submit" class="botao-confirmar-submit"  value="CONFIRMAR"></a>
+                <a href="tela_esqueceu_senha3.php"><input type="submit" class="botao-confirmar-submit"  value="CONFIRMAR"></a>
             </div>
 
         </section>
