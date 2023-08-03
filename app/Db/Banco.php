@@ -35,6 +35,7 @@ class Banco{
             //criando statement e preparando a query que foi passada como argumento
             $statement = $this -> conexao -> prepare($query);
             $statement -> execute($valores);
+        
             
             //fechando conexao
             $this -> conexao = null;
@@ -79,6 +80,7 @@ class Banco{
          
         //Chamando o metodo `executarQuery` e passando a $query montada e APENAS OS VALORES de `$dados`
         $this -> executarQuery($query, array_values($dados));
+
         return true;
         
     }
@@ -92,7 +94,8 @@ class Banco{
 
     }
 
-    public function update($where ,$dados = []){
+    public function update($where = '',$dados = []){
+        
         //lista chave valor($dados) 
         //obs: chaves tem que ser o mesmo nome que o nome da coluna
 
@@ -116,7 +119,7 @@ class Banco{
         $query = 'UPDATE '.$this->table.'
                   SET '. $setter . '
                   WHERE '. $where;
-        
+        //echo $query;exit;
         return $this->executarQuery($query);
         // terminar............ 
 
@@ -141,7 +144,7 @@ class Banco{
         concatenando os parametros por ALGO ou por ''
         */
         $query = 'SELECT '.$campos.' FROM '.$this->table.''.$where.''.$order.''.$limit.'';
-
+        //echo $query;exit;
         
         //preciso usar o fetch all aqui, ainda nao terminei!
         return $this ->  executarQuery($query);
@@ -149,7 +152,5 @@ class Banco{
 
 
     }
-
-
 }
 ?>

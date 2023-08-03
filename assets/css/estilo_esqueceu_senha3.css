@@ -9,77 +9,97 @@
     --cor-primaria-botao-yellow:rgba(255, 199, 0, 1);
   }
   
-  /* Css input Email */
+  /* Css input Senha */
   
-  .input_e-mail_group.field{
+  .input_senha_group.field{
     width: 100%;
     max-width: 700px;
     min-width: 300px;
+    margin-top: 15px;
+    
+  }
+    
+  .input_senha_group.field2{
+    width: 100%;
+    max-width: 700px;
+    min-width: 300px;
+    margin-top: 15px;
+  
   }
   
-  .input_e-mail_group {
+  .input_senha_group.field3{
+    width: 100%;
+    max-width: 700px;
+    min-width: 300px;
+    margin-top: 15px;
+  
+  }
+  
+  .input_senha_group {
     position: relative;
     padding: 20px 0 0;
     width: 100%;
   }
   
-  .input_e-mail_field {
-      width: 100%;
-      border: none;
-      border-bottom: 2px solid #9b9b9b;
-      outline: 0;
-      color: black;
-      padding: 7px 0;
-      background: transparent;
-      transition: border-color 0.2s;
-      font-family: 'Montserrat';
-      font-weight: bold;
-      font-size: 20px;
-      left: 10px;
+  .input_senha_field {
+    width: 100%;
+    border: none;
+    border-bottom: 2px solid #9b9b9b;
+    outline: 0;
+    color: black;
+    padding: 7px 0;
+    background: transparent;
+    transition: border-color 0.2s;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    left: 10px;
   }
   
-  .input_e-mail_field::placeholder {
+  .input_senha_field::placeholder {
     color: transparent;
   }
   
-  .input_e-mail_field:placeholder-shown ~ .input_e-mail_label {
+  .input_senha_field:placeholder-shown ~ .input_senha_label {
     font-size: 17px;
     cursor: text;
     top: 37px;
     left: 10px;
   }
   
-  .input_e-mail_label {
+  .input_senha_label {
     position: absolute;
     top: 0;
     display: block;
-    transition: 0.3s;
+    transition: 0.2s;
     color: #9b9b9b;
-    pointer-events: none;
+    pointer-events: none; 
     font-family: 'Montserrat';
-    font-weight: bold;
+    font-style: normal;
+    font-weight: 400;
     font-size: 20px;
     left: 10px;
   }
   
-  .input_e-mail_field:focus {
+  .input_senha_field:focus {
     padding-bottom: 6px;
     font-weight: 700;
     border-width: 3px;
     border-image-slice: 1;
   }
   
-  .input_e-mail_field:focus ~ .input_e-mail_label {
+  .input_senha_field:focus ~ .input_senha_label {
     position: absolute;
     top: 0;
     display: block;
-    transition: 0.3s;
+    transition: 0.2s;
     font-size: 17px;
     font-weight: 700;
     left: 10px;
   }
-  
-  .input_e-mail_field:required, .input_e-mail_field:invalid {
+    
+  .input_senha_field:required, .input_senha_field:invalid {
     box-shadow: none;
   }
   
@@ -91,6 +111,7 @@
     align-items: center;
     justify-content: center;
   }
+  
   .botao-confirmar-submit{
     width: 180px;
     height: 45px;
@@ -99,6 +120,7 @@
     border-radius: 20px;
     cursor: pointer;
     color: var(--cor-primaria-botao-green);
+    font-style: normal;
     font-family: 'Montserrat';
     font-weight: bold;
     font-size: 15px;
@@ -127,6 +149,7 @@
     border-radius: 20px;
     cursor: pointer;
     color: var(--cor-primaria-botao-yellow);
+    font-style: normal;
     font-family: 'Montserrat';
     font-weight: bold;
     font-size: 15px;
@@ -139,33 +162,48 @@
     color: var(--cor-primaria-botao-white);
   }
   
+  @media (max-width: 882px){
+    .input_senha_group.field{
+      margin-top: 25px;
+    }
+      
+    .input_senha_group.field2{
+      margin-top: 25px;
+    }
+    
+    .input_senha_group.field3{
+      margin-top: 25px;
+    }
+  }
 
-.tudo_esqueceu_senha1{
+.pai-de-todos{
     width: 100%;
     height: 100%;
     max-width: 832px;
     position: relative;
     margin: 0 auto;
-    margin-top: 3%;
 }
 
-.titulo_esqueceu_senha h1{
+.titulo_alterar_senha{
     font-family: 'Montserrat';
-    font-style: normal;
     text-align: center;
     display: flex;
     justify-content: center;
-    font-size: 130%;
-    margin-top: 20%;
+    font-size: 150%;
+    margin-top: 15%;
 }
 
-.centralizar_input_esqueceu_senha{
+.titulo_alterar_senha h1{
+  font-family: 'Montserrat';
+}
+
+.centralizar_input_alterar_senha{
   max-width: 652px;
   margin: 15% auto;
-  margin-top: 8%;
+  margin-top: 4%;
 }
 
-.centralizar_botoes_esqueceu_senha{
+.centralizar_botoes_alterar_senha{
   display: flex;
   justify-content: space-between;
   text-align: center;
@@ -173,19 +211,11 @@
 }
 
 @media (max-width: 882px) {
-  .centralizar_botoes_esqueceu_senha{
+  .centralizar_botoes_alterar_senha{
     margin-top: 470px;
   }
 
-  .centralizar_input_esqueceu_senha{
+  .centralizar_input_alterar_senha{
     margin-top: 5%;
   }
-}
-
-.Pai-de-todos{
-  width: 100%;
-  height: 100%;
-  max-width: 832px;
-  position: relative;
-  margin: 0 auto;
 }

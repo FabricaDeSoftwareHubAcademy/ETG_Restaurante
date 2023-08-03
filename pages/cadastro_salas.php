@@ -1,10 +1,6 @@
 <?php
-$_SESSION['id'] = '245';
+session_start();
 
-if (isset($_SESSION['id']))
-{
-    session_start();
-}
 
 require __DIR__."/../vendor/autoload.php";
 use App\Entity\Sala;
@@ -13,7 +9,6 @@ use App\Entity\Imagens;
 
 $objCadastroChecklist = new CadastroChecklist();
 $dados = $objCadastroChecklist -> getDados();
-die('teste');
 $options = '';
 foreach ($dados as $row_check ){
     $options .= '<option  class="ops" value="'.$row_check['id_cadastro_checklist'].'"> '.$row_check['nome'].' </option>';
@@ -31,7 +26,7 @@ if (isset($_POST      ['nome_sala'],
             $obj_sala = new Sala(
                 null,
                 $_POST['checklist'],
-                $_SESSION['id'],
+                $_SESSION['num_matricula_logado'],
                 $_POST['andar_sala'],
                 $_POST['descricao_sala'],
                 $_FILES['imagem_sala'],               
@@ -42,14 +37,20 @@ if (isset($_POST      ['nome_sala'],
                 null,
                 null
             );
-            
             if ($obj_sala -> cadastrar())
             {
-                
+                //die('teste');
+
+                //var_dump($_FILES);exit;
                 if (!empty($_FILES['imagem_sala']['name']))
                 {
-                    $objImagem = new Imagens();
-                    $objImagem -> randomNumber($_FILES['imagem_sala']['name']);
+                    $objImagem = new Imagens;
+                    $objImagem -> storeImg($_FILES['imagem_sala']['name']);
+                    
+                }
+                else
+                {
+                    die('a imagem nao foi armazenada!');
                 }
                 
             }
@@ -58,6 +59,7 @@ if (isset($_POST      ['nome_sala'],
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
+
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -65,7 +67,10 @@ if (isset($_POST      ['nome_sala'],
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https/cdnjs.cloudflare.comlibs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="../assets/css/cadastro_edicao_salas.css">   
+    <link rel="stylesheet" href="../assets/css/cadastro_edicao_salas.css"> 
+    <script src="https://code.jquery.com/jquery-3.7.0.js"integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM="crossorigin="anonymous"></script>
+
+    
 </head>
 
 <body class="tela-cadastro-salas">
@@ -115,11 +120,16 @@ if (isset($_POST      ['nome_sala'],
                             
                         </select> 
 
+                        
+                    
+                    
                     </div>
 
                         <div class="barra"></div>
                        
-                    <div class="img-area">
+
+                    
+                    <div class="img-area"> 
                         
                         <div class="text-area">
                             <span id=descrição>Descrição</span>
@@ -129,7 +139,14 @@ if (isset($_POST      ['nome_sala'],
                         <div class="cor-sala">
                             <div class="alinar-img">
                                 <span id="img-text"> Insira a imagem : </span>
-                                <div class="area-anexo"> <img src="camera.png" alt="" id="icon-fotos">  </div>
+                                <div class="area-anexo">
+
+                                    
+                                    <img id="camera_imagem" class="imagem_aparecer" src="../assets/imgs/others/camera.png" alt="">
+
+                                    <img  id="imagem_agora_vai" class="novo_css_imagem" src="" alt="">
+
+                                </div>
                             </div>    
                             <div class="alinar-botao-cor">
                                 <span id="selecao-cor-text">Cor da sala : </span> 
@@ -137,10 +154,13 @@ if (isset($_POST      ['nome_sala'],
                             </div>
                         </div>
       
-                        <label id="botão-img"for="arquivo" >Enviar Fotos</label>
+                        <label id="botão-img" for="arquivo" >Enviar Fotos</label>
 
-                        <input type="file" name="imagem_sala" id="arquivo">
-                    </div>      
+                        <input type="file" name="imagem_sala" id="arquivo" >
+                            
+                                                                                                           
+                    </div>
+                    
                     <div class="alinar-botoes">
 
                         <div class="botao-padrao-voltar">
@@ -156,5 +176,33 @@ if (isset($_POST      ['nome_sala'],
             </div>
         </div>
     </section>
+
+
+<script>
+const remover = document.querySelector(".imagem_aparecer");
+const novo_css = document.querySelector(".novo_css_imagem");
+$(document).ready(function() {
+    $('#arquivo').on('change', function(e) {
+        var file = e.target.files[0];
+        var reader = new FileReader();
+        reader.onload = function(e) {
+            var fileExtension = file.name.split('.').pop().toLowerCase();
+            var aceitados = ['jpg', 'jpeg', 'gif', 'png'];
+            if (aceitados.includes(fileExtension)) {
+                $('#imagem_agora_vai').attr('src', e.target.result);
+                remover.classList.add("active");
+                novo_css.classList.add("active");
+            } else {
+                // Caso a extensão do arquivo não seja suportada, você pode adicionar um comportamento específico aqui, como exibir uma mensagem de erro.
+                console.log('Extensão de arquivo não suportada.');
+            }
+        }
+        reader.readAsDataURL(file);
+    });
+});
+</script>
+
+
+    
 </body>
 </html>

@@ -39,7 +39,7 @@ include_once("../includes/menu.php")
 
         <!--Botão Confirmar-->
             <div class="botao-padrao-confirmar">
-                <a href="#"><input type="submit" class="botao-confirmar-submit"  value="CONFIRMAR"></a>
+                <a href="tela_esqueceu_senha2.php"><input type="submit" class="botao-confirmar-submit"  value="CONFIRMAR"></a>
             </div>
 
         </section>
