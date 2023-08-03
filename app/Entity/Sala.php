@@ -16,9 +16,6 @@ class Sala{
             $cor,
             $status_sala,
             $nome,
-            $horario_matutino,
-            $horario_vespertino,
-            $horario_noturno
             ;
     public function __construct($id_cadastro_sala = null,
                                 $id_cadastro_checklist = null,
@@ -29,9 +26,6 @@ class Sala{
                                 $cor = null,
                                 $status_sala = null,
                                 $nome = null,
-                                $horario_matutino = null,
-                                $horario_vespertino = null,
-                                $horario_noturno = null
                                 ){
         $this -> id_cadastro_sala = $id_cadastro_sala;
         $this -> id_cadastro_checklist = $id_cadastro_checklist;
@@ -42,9 +36,6 @@ class Sala{
         $this -> cor = $cor;
         $this -> status_sala = $status_sala;
         $this -> nome = $nome;
-        $this -> horario_matutino = $horario_matutino;
-        $this -> horario_vespertino = $horario_vespertino;
-        $this -> horario_noturno = $horario_noturno;
     }
 
 
@@ -62,9 +53,6 @@ class Sala{
                             'cor' => $this -> cor,
                             'status_sala' => $this -> status_sala,
                             'nome' => ucfirst(strtolower($this -> nome)),
-                            'horario_matutino' => $this -> horario_matutino,
-                            'horario_vespertino' => $this -> horario_vespertino,
-                            'horario_noturno' => $this -> horario_noturno
                         ]);
 
         

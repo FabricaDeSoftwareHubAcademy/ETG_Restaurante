@@ -1,4 +1,5 @@
 <?php
+//var_dump($_GET); exit;
 $_SESSION['id'] = '245';
 
 if (isset($_SESSION['id']))
@@ -7,24 +8,30 @@ if (isset($_SESSION['id']))
 }
 require_once("../includes/menu.php");
 require __DIR__."/../vendor/autoload.php";
+
+
 use App\Entity\Sala;
+
 use App\Entity\CadastroChecklist; 
+$objCadastroChecklist = new CadastroChecklist();
+
+
+if (isset($_GET['id_sala']))
+{
+    $dados_sala = Sala::getById($_GET['id_sala']);
+    //var_dump($dados_sala);exit;
+}        
+
+
 
 $options = '';
-$objCadastroChecklist = new CadastroChecklist();
 $dados = $objCadastroChecklist -> getDados();
 
-foreach ($dados as $row_check ){
+foreach ($dados as $row_check )
+{
     $options .= '<option  class="ops" value="'.$row_check['id_cadastro_checklist'].'"> '.$row_check['nome'].' </option>';
 }
-if (isset($_GET['id_sala'])){
 
-    $id_sala = $_GET['id_sala'];
-
-    $dados = Sala::getById($id_sala);
-}
-
-print_r($dados);
 
 if (isset($_POST['nome_sala'],
         $_POST['andar_sala'],
@@ -59,39 +66,13 @@ if (isset($_POST['nome_sala'],
                 //var_dump($_FILES);exit;
                 if (!empty($_FILES['imagem_sala']['name']))
                 {
-                    //var_dump($_FILES);exit;
-                    $nome_arquivo = $_FILES['imagem_sala']['name'];
-                    $nova_string = uniqid();
-                    
-                    //se o arquivo que o usuario inserir for valido (jpg, jpeg, png, gif)
-                    if (preg_match('/\.(png|jpe?g|gif)$/i', $nome_arquivo, $matches))
-                    {
-                        // $matches =  array(2) { [0]=> string(4) ".jpg" [1]=> string(3) "jpg" }
-                        // ela armazena a extensao da imagem 
-                        $extensao_encontrada = $matches[0]; // jpg, jpeg, png
-                        $aleatorizador = $nova_string.$extensao_encontrada;
-                        $novo_nome_arquivo = str_replace($extensao_encontrada,
-                                                         $aleatorizador,
-                                                         $nome_arquivo); //nome_da_imagem 
-                        
-                        $from = $_FILES['imagem_sala']['tmp_name'];
-                        //KKKKKKKKKKKKKKKKKKKKK nao tava funcionando por causa de uma barrafinal KKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK
-                        $to = '../storage/salas/';
-    
-                        //echo $from . '<br>' . $to . '<br>' . $novo_nome_arquivo;exit;
-                        move_uploaded_file($from, $to.$novo_nome_arquivo);//movendo o arquivo para pasta
-    
-                        //return true  
-                    }
-                    else
-                    {
-                        die('este tipo de arquivo nao e aceito');
-                    }
+                 $objImagem = new App\Entity\Imagens;
+                 $objImagem -> storeImg($_FILES['imagem_sala']['name']);
                 }
                 
             }
-        }   
-        ?>
+        }
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -132,8 +113,8 @@ if (isset($_POST['nome_sala'],
 
 
                         <div class="input_group field">
-                            <input type="input" class="input_field" placeholder="Name" required="" name="nome_sala">
-                            <label for="name" class="input_label">Nome Da Sala </label> <!--Alterar para o nome do input-->
+                            <input value="<?=$dados_sala[0]['nome']?>" type="input" class="input_field" placeholder="Name" required="" name="nome_sala">
+                            <label for="name" class="input_label">Nome Da Sala</label> <!--Alterar para o nome do input-->
                         </div>
 
 
@@ -145,7 +126,7 @@ if (isset($_POST['nome_sala'],
 
 
                         <div class="input_group field">
-                            <input type="input" class="input_field" placeholder="Name" required="" name="andar_sala">
+                            <input value="" type="input" class="input_field" placeholder="Name" required="" name="andar_sala">
                             <label for="name" class="input_label">Andar Da Sala</label> <!--Alterar para o nome do input-->
                         </div>
 
@@ -178,7 +159,9 @@ if (isset($_POST['nome_sala'],
                         <div class="text-area">
                             <span id=descrição>Descrição</span>
     
-                            <textarea  placeholder="Area de texto " name="descricao_sala" id="" cols="70" rows="10" class="text-descricao"></textarea>
+                            <textarea placeholder="Area de texto " name="descricao_sala" id="" cols="70" rows="10" class="text-descricao">
+                                <?php echo $dados_sala[0]['descricao'];?>
+                            </textarea>
                         </div>
                         <div class="cor-sala">
                             <div class="alinar-img">
