@@ -19,6 +19,7 @@ $objCadastroChecklist = new CadastroChecklist();
 if (isset($_GET['id_sala']))
 {
     $dados_sala = Sala::getById($_GET['id_sala']);
+    $text_area = $dados_sala[0]['descricao'];
     //var_dump($dados_sala);exit;
 }        
 
@@ -158,9 +159,11 @@ if (isset($_POST['nome_sala'],
 
                         <div class="text-area">
                             <span id=descrição>Descrição</span>
-    
-                            <textarea placeholder="Area de texto " name="descricao_sala" id="" cols="70" rows="10" class="text-descricao">
-                                <?php echo $dados_sala[0]['descricao'];?>
+                            <script>
+                                   
+                            </script>
+                            <textarea value="<?php echo $text_area;?>" placeholder="Area de texto " name="descricao_sala" id="textareajs" cols="70" rows="10" class="text-descricao">
+
                             </textarea>
                         </div>
                         <div class="cor-sala">
