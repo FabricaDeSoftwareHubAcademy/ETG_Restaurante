@@ -144,7 +144,7 @@ if (isset($_POST      ['nome_sala'],
                                     
                                     <img id="camera_imagem" class="imagem_aparecer" src="../assets/imgs/others/camera.png" alt="">
 
-                                    <img  class="imagem_agora_vai" src="" alt="">
+                                    <img  id="imagem_agora_vai" class="novo_css_imagem" src="" alt="">
 
                                 </div>
                             </div>    
@@ -154,10 +154,11 @@ if (isset($_POST      ['nome_sala'],
                             </div>
                         </div>
       
-                        <label id="botão-img" for="arquivo" onclick="removerCSS()" >Enviar Fotos</label>
+                        <label id="botão-img" for="arquivo" >Enviar Fotos</label>
 
-                        <input type="file" name="imagem_sala" id="arquivo" onchange="previewImagem()">
+                        <input type="file" name="imagem_sala" id="arquivo" >
                             
+                                                                                                           
                     </div>
                     
                     <div class="alinar-botoes">
@@ -177,43 +178,28 @@ if (isset($_POST      ['nome_sala'],
     </section>
 
 
-    <script>
-
-function previewImagem(){
-
-    var imagem = document.querySelector('input[name=imagem_sala]').files[0];
-    var preview = document.querySelector('img[class=imagem_agora_vai]');
-    var reader = new FileReader();
-    const camera = document.querySelector(".imagem_aparecer");
-    
-    reader.onloadend = function(){
-        preview.src = reader.result;
-        camera.classList.add("active");
-        preview.classList.add("active");
-    } 
-    if(imagem){
-        reader.readAsDataURL(imagem);
-        
-        
-    }else{
-        preview.src = "";
-
-    }   
-}
-
-// function removerCSS(){
-
-//     var remover = document.getElementById("camera_imagem");
-//     remover.classList.remove("imagem_aparecer");
-
-// }
-
-// function adicionarCSS(){
-
-//     var adicionarCSS = document.getElementsByClassName("imagem_agora_vai")
-//     adicionarCSS.classList.add("novo_css");
-// }
-
+<script>
+const remover = document.querySelector(".imagem_aparecer");
+const novo_css = document.querySelector(".novo_css_imagem");
+$(document).ready(function() {
+    $('#arquivo').on('change', function(e) {
+        var file = e.target.files[0];
+        var reader = new FileReader();
+        reader.onload = function(e) {
+            var fileExtension = file.name.split('.').pop().toLowerCase();
+            var aceitados = ['jpg', 'jpeg', 'gif', 'png'];
+            if (aceitados.includes(fileExtension)) {
+                $('#imagem_agora_vai').attr('src', e.target.result);
+                remover.classList.add("active");
+                novo_css.classList.add("active");
+            } else {
+                // Caso a extensão do arquivo não seja suportada, você pode adicionar um comportamento específico aqui, como exibir uma mensagem de erro.
+                console.log('Extensão de arquivo não suportada.');
+            }
+        }
+        reader.readAsDataURL(file);
+    });
+});
 </script>
 
 
