@@ -158,15 +158,6 @@ if (isset($_POST      ['nome_sala'],
 
                         <input type="file" name="imagem_sala" id="arquivo" onchange="previewImagem()">
                             
-                        
-                        
-
-                            
-
-                               
-        
-                                
-
                     </div>
                     
                     <div class="alinar-botoes">
