@@ -85,6 +85,30 @@ class Banco{
         
     }
 
+    public function insertRecoverId($dados = []){
+
+        $chaves = array_keys($dados);
+
+        /*atribuindo uma lista a variavel $valores,
+        do tamanho da array $chaves,
+        preenchida por `?`.
+        */
+        $valores = array_pad([], count($chaves), '?');
+
+        /*Montando a $query, substituindo o nome da tabela,
+        substituindo as chaves usando a funcao implode(),
+        substituindo os valores por `?` usando a funcao implode
+        */ 
+        
+        $query = 'INSERT INTO '.$this -> table.'('.implode(', ', $chaves).') VALUES('.implode(', ', $valores).')';
+        $query->execute();
+
+        $lastId = $query->lastInsertId();
+         
+        echo "ID INSERDO ". $lastId;
+        
+    }
+
     public function delete($valor, $coluna){
 
         $query = 'DELETE FROM '.$this->table.' WHERE ' . $coluna . ' = '. $valor;
