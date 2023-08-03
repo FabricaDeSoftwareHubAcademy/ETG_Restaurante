@@ -12,7 +12,7 @@
                 <button class="botao-cancelar-submit"  value="CANCELAR" onclick="closePopup_Conf()">CANCELAR</button>
             </div>
             <div class="botao-padrao-confirmar">
-                <button class="botao-confirmar-submit"  value="CONFIRMAR" onclick="closePopup_Conf()">CONFIRMAR</button>
+                <button class="botao-confirmar-submit"  value="CONFIRMAR" onclick="deletarPerfil()">CONFIRMAR</button>
             </div>
           </section>
         </div>
@@ -21,4 +21,7 @@
   </main>
 
   <script src="pop_ups_confirmacao.js"></script>
+  <script src="deletar_perfil.js"></script>
 
+
+    

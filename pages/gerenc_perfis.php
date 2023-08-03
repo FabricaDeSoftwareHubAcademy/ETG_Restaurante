@@ -58,9 +58,7 @@ foreach ($dados_perfil as $row_perfil)
                             <ul class="cardsgerenc">
                                 <?=$imprimir?>
                             </ul>
-                </div>
-                    
-                </div> 
+                
             </form>
             <div class="container_gp2">
                        

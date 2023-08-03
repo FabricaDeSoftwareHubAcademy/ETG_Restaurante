@@ -23,3 +23,4 @@ function openPopup_Conf(id_perfil) {
     popup.style.transform = "scale(0.8)";
   }
   
+ 
