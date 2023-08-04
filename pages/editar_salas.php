@@ -107,8 +107,16 @@ include_once("../includes/menu.php");
                         <div class="cor-sala">
                             <div class="alinar-img">
                                 <span id="img-text"> Insira a imagem : </span>
-                                <div class="area-anexo"> <img src="../assets/imgs/others/camera.png" alt="" id="icon-fotos">  </div>
-                            </div>    
+
+
+                                
+                                <div class="area-anexo">
+                                    <img id="camera_imagem" class="imagem_aparecer" src="../storage/salas/<?=$dados_sala[0]['imagem']?>" alt="">
+                                    <img  id="imagem_agora_vai" class="novo_css_imagem" src="" alt="">
+                                </div>
+
+                            </div>  
+
                             <div class="alinar-botao-cor">
                                 <span id="selecao-cor-text">Cor da sala : </span> 
                                 <input class="botao-cor" type="color">
@@ -151,9 +159,40 @@ include_once("../includes/menu.php");
                             <a href="#"><input type="submit" class="botao-cadastrar-submit"  value="CADASTRAR"></a>
                         </div>
                         
-                    </div>
+
+                    </div>                    
+
+
                 </form>  
             </div>
         </div>
     </section>
+
+    <script>
+const remover = document.querySelector(".imagem_aparecer");
+const novo_css = document.querySelector(".novo_css_imagem");
+$(document).ready(function() {
+    $('#arquivo').on('change', function(e) {
+        var file = e.target.files[0];
+        var reader = new FileReader();
+        reader.onload = function(e) {
+            var fileExtension = file.name.split('.').pop().toLowerCase();
+            var aceitados = ['jpg', 'jpeg', 'gif', 'png'];
+            if (aceitados.includes(fileExtension)) {
+                $('#imagem_agora_vai').attr('src', e.target.result);
+                remover.classList.add("active");
+                novo_css.classList.add("active");
+            } else {
+                // Caso a extensão do arquivo não seja suportada, você pode adicionar um comportamento específico aqui, como exibir uma mensagem de erro.
+                console.log('Extensão de arquivo não suportada.');
+            }
+        }
+        reader.readAsDataURL(file);
+    });
+});
+</script>
 </body>
+
+
+</html>
+
