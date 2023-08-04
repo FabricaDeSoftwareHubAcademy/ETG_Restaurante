@@ -17,7 +17,7 @@ include_once("../includes/menu.php")
 
     <main class="tudo_esqueceu_senha1">
         <section class='titulo_esqueceu_senha'>
-            <h1>Insira o E-mail para enviar o código de confirmação:</h1>
+            <h1 id="tt">Insira o E-mail para enviar o código de confirmação:</h1>
         </section>
 
         <section class="centralizar_input_esqueceu_senha"> 
