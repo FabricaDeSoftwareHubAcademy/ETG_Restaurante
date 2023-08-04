@@ -1,19 +1,18 @@
 <?php
 
-//namespace App\Db;
-
-//use PDO;
-//use PDOException;
+namespace App\Db;
+use PDO;
+use PDOException;
 //die('banco');
 class Banco{
   
     //Variaveis referentes a conexao com o banco de dados
-    const HOST = 'localhost';
+    const HOST = '192.168.22.9';
   
 
     const DB_NAME = 'etg_homologacao';
-    const USER = 'root';
-    const PASS = '';
+    const USER = 'fabrica';
+    const PASS = 'fabrica@2022';
     private $table;//variavel que vai falar sobre qual tabela do banco esta sendo tratada
     private $conexao;
 
@@ -36,6 +35,7 @@ class Banco{
             //criando statement e preparando a query que foi passada como argumento
             $statement = $this -> conexao -> prepare($query);
             $statement -> execute($valores);
+        
             
             //fechando conexao
             $this -> conexao = null;
@@ -80,6 +80,7 @@ class Banco{
          
         //Chamando o metodo `executarQuery` e passando a $query montada e APENAS OS VALORES de `$dados`
         $this -> executarQuery($query, array_values($dados));
+
         return true;
         
     }
@@ -93,7 +94,8 @@ class Banco{
 
     }
 
-    public function update($where ,$dados = []){
+    public function update($where = '',$dados = []){
+        
         //lista chave valor($dados) 
         //obs: chaves tem que ser o mesmo nome que o nome da coluna
 
@@ -117,7 +119,7 @@ class Banco{
         $query = 'UPDATE '.$this->table.'
                   SET '. $setter . '
                   WHERE '. $where;
-        
+        //echo $query;exit;
         return $this->executarQuery($query);
         // terminar............ 
 
@@ -142,7 +144,7 @@ class Banco{
         concatenando os parametros por ALGO ou por ''
         */
         $query = 'SELECT '.$campos.' FROM '.$this->table.''.$where.''.$order.''.$limit.'';
-
+        //echo $query;exit;
         
         //preciso usar o fetch all aqui, ainda nao terminei!
         return $this ->  executarQuery($query);
@@ -150,36 +152,5 @@ class Banco{
 
 
     }
-
-    public function update($where ,$dados = []){
-        //lista chave valor($dados) 
-        //obs: chaves tem que ser o mesmo nome que o nome da coluna
-
-        $setter = "";
-
-        $chaves = array_keys($dados);
-        $valores = array_values($dados);
-
-        for ($i=0; $i < count($chaves); $i++) { 
-            
-            if($i == (count($chaves) - 1)){
-                
-                $setter .= $chaves[$i] . " = '". $valores[$i]."'";
-
-            }else{
-
-                $setter .= $chaves[$i] . " = '". $valores[$i]."', ";
-            }
-        }
-
-        $query = 'UPDATE '.$this->table.'
-                  SET '. $setter . '
-                  WHERE '. $where;
-        
-        return $this->executarQuery($query);
-        // terminar............ 
-
-    }
-
 }
 ?>

@@ -329,12 +329,15 @@
   background-color: var(--cor-primaria-botao-yellow);
   color: var(--cor-primaria-botao-white);
 }
+
 .botoes{
   width: 100%;
   display: flex;
   justify-content: space-between;
-  margin-top: 10%;
+  margin: 10% 0 0 0;
+  
 }
+
 
 @media (min-width: 1100px) {
   .botoes{

@@ -2,10 +2,6 @@
 session_start();
 
 
-include_once("../includes/menu.php");
-require_once("../includes/pop-ups/pop_ups_verification_sala/pop_ups_verification_sala.php");
-
-
 require __DIR__."/../vendor/autoload.php";
 use App\Entity\Sala;
 use App\Entity\CadastroChecklist;
@@ -13,7 +9,6 @@ use App\Entity\Imagens;
 
 $objCadastroChecklist = new CadastroChecklist();
 $dados = $objCadastroChecklist -> getDados();
-
 $options = '';
 foreach ($dados as $row_check ){
     $options .= '<option  class="ops" value="'.$row_check['id_cadastro_checklist'].'"> '.$row_check['nome'].' </option>';
@@ -47,44 +42,18 @@ if (isset($_POST      ['nome_sala'],
                 //var_dump($_FILES);exit;
                 if (!empty($_FILES['imagem_sala']['name']))
                 {
-                    //var_dump($_FILES);exit;
-                    $nome_arquivo = $_FILES['imagem_sala']['name'];
-                    $nova_string = uniqid();
+                    $objImagem = new Imagens;
+                    $objImagem -> storeImg($_FILES['imagem_sala']['name']);
                     
-                    //se o arquivo que o usuario inserir for valido (jpg, jpeg, png, gif)
-                    if (preg_match('/\.(png|jpe?g|gif)$/i', $nome_arquivo, $matches))
-                    {
-                        // $matches =  array(2) { [0]=> string(4) ".jpg" [1]=> string(3) "jpg" }
-                        // ela armazena a extensao da imagem 
-                        $extensao_encontrada = $matches[0]; // jpg, jpeg, png
-                        $aleatorizador = $nova_string.$extensao_encontrada;
-                        $novo_nome_arquivo = str_replace($extensao_encontrada,
-                                                         $aleatorizador,
-                                                         $nome_arquivo); //nome_da_imagem 
-                        
-                        $from = $_FILES['imagem_sala']['tmp_name'];
-                        //KKKKKKKKKKKKKKKKKKKKK nao tava funcionando por causa de uma barrafinal KKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK
-                        $to = '../storage/salas/';
-    
-                        //echo $from . '<br>' . $to . '<br>' . $novo_nome_arquivo;exit;
-                        move_uploaded_file($from, $to.$novo_nome_arquivo);//movendo o arquivo para pasta
-    
-                        //return true  
-                    }
-                    else
-                    {
-                        die('este tipo de arquivo nao e aceito');
-                    }
+                }
+                else
+                {
+                    die('a imagem nao foi armazenada!');
                 }
                 
             }
         }   
         ?>
-
-
-
-
-
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -98,12 +67,12 @@ if (isset($_POST      ['nome_sala'],
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
     <link rel="stylesheet" href="../assets/css/cadastro_edicao_salas.css"> 
     <script src="https://code.jquery.com/jquery-3.7.0.js"integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM="crossorigin="anonymous"></script>
-    <script src="../includes/pop-ups/pop_ups_verification_sala/pop_ups_verification_sala.js"></script>
-    <link rel="stylesheet" href="../includes/pop-ups/pop_ups_verification_sala/pop_ups_verification_sala.css">
+
     
 </head>
 
-<body class="tela-cadastro-salas"> 
+<body class="tela-cadastro-salas">
+    <?php include_once("../includes/menu.php");?> 
     <section class="container">
         <div class="container-cadastro-salas">
             <div class="wrap-cadastro-salas">
@@ -182,7 +151,7 @@ if (isset($_POST      ['nome_sala'],
                         <div class="text-area">
                             <span id=descrição>Descrição</span>
     
-                            <textarea  placeholder="Area de texto " name="descricao_sala" id="" cols="70" rows="10" class="text-descricao" maxLength="255" ></textarea>
+                            <textarea  placeholder="Area de texto " name="descricao_sala" id="" cols="70" rows="10" class="text-descricao"></textarea>
                         </div>
                         <div class="cor-sala">
                             <div class="alinar-img">
