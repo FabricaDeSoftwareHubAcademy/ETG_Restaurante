@@ -15,52 +15,53 @@
     
 </head>
 <body class="visualizar_sala">
-    
-    <section class="area_card">
-        <div class="card">
-            <div class="imagem_card">
+    <div class="pagina-visualizar-sala">
+        <section class="area_card">
+            <div class="card">
+                <div class="imagem_card">
 
-                <img src="../assets/imgs/others/cozinha_etg.jpg" alt="" id="img_config">
-            </div>
-            <div class="texto_card">
-
-                <div class="titulo_card">
-                    <h1>COZINHA DIDÁTICA I</h1>
+                    <img src="../assets/imgs/others/cozinha_etg.jpg" alt="" id="img_config">
                 </div>
-      
+                <div class="texto_card">
 
-                    <div class="paragrafo_card">
-                        <h2 id="paragrafo_descricao">
-                            Descrição
-                        </h2>
-
-                        <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum eget ante scelerisque, scelerisque nibh et, placerat risus. Integer suscipit, arcu sit amet finibus commodo, lectus diam suscipit leo, eu tempor turpis sem sit amet nibh</p>
-                        
-                        <h2 id="paragrafo_horarios">
-                            Horários
-                        </h2>
-                        <p>7:30 - 11:30</p>
+                    <div class="titulo_card">
+                        <h1>COZINHA DIDÁTICA I</h1>
                     </div>
+        
+
+                        <div class="paragrafo_card">
+                            <h2 id="paragrafo_descricao">
+                                Descrição
+                            </h2>
+
+                            <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum eget ante scelerisque, scelerisque nibh et, placerat risus. Integer suscipit, arcu sit amet finibus commodo, lectus diam suscipit leo, eu tempor turpis sem sit amet nibh</p>
+                            
+                            <h2 id="paragrafo_horarios">
+                                Horários
+                            </h2>
+                            <p>7:30 - 11:30</p>
+                        </div>
 
 
-                
-                
+                    
+                    
+                </div>
             </div>
-        </div>
 
-        <div class="alinhar_botoes">
+            <div class="alinhar_botoes">
 
-            <!--Botão Voltar-->
-            <div class="botao-padrao-voltar">
-                <a href="mural.php"><input type="submit" class="botao-voltar-submit"  value="VOLTAR"></a>
+                <!--Botão Voltar-->
+                <div class="botao-padrao-voltar">
+                    <a href="mural.php"><input type="submit" class="botao-voltar-submit"  value="VOLTAR"></a>
+                </div>
+
+                <div class="botao-padrao-fazer-checklist">
+                    <a href="#"><input type="submit" class="botao-fazer-checklist-submit"  value="FAZER CHECKLIST"></a>
+                </div>
+
             </div>
-
-            <div class="botao-padrao-fazer-checklist">
-                <a href="#"><input type="submit" class="botao-fazer-checklist-submit"  value="FAZER CHECKLIST"></a>
-            </div>
-
-        </div>
-    </section>
+        </section>
+    </div>
     
 </body>
 </html>
