@@ -178,7 +178,7 @@ if (isset($_POST['nome_sala'],
                             </div>  
                             <div class="alinar-botao-cor">
                                 <span id="selecao-cor-text">Cor da sala : </span> 
-                                <input class="botao-cor" name="cor_sala" type="color">
+                                <input value="<?=$dados_sala[0]['cor']?>" class="botao-cor" name="cor_sala" type="color">
                             </div>
                         </div>
                         
@@ -187,7 +187,7 @@ if (isset($_POST['nome_sala'],
                         
                         <label id="botão-img"for="arquivo" >Enviar Fotos</label>
 
-                        <input type="file" name="imagem_sala" id="arquivo" onchange="previewImagem()">
+                        <input value="<?=$dados_sala[0]['imagem']?>" type="file" name="imagem_sala" id="arquivo" onchange="previewImagem()">
                             
                         <div class="botao-on-off">
 
@@ -227,7 +227,7 @@ if (isset($_POST['nome_sala'],
 
 
                     
-                
+
                 </form>  
             </div>
         </div>
