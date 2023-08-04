@@ -22,6 +22,16 @@ if (isset($_POST      ['nome_sala'],
           $_POST      ['btn_submit']    
         ))
         {
+            if (!empty($_FILES['imagem_sala']['name']))
+            {
+                $objImagem = new Imagens;
+                $imagem = $objImagem -> storeImg($_FILES['imagem_sala']['name']);
+                
+            }
+            else
+            {
+                die('a imagem nao foi armazenada!');
+            }
             
             $obj_sala = new Sala(
                 null,
@@ -29,7 +39,7 @@ if (isset($_POST      ['nome_sala'],
                 $_SESSION['num_matricula_logado'],
                 $_POST['andar_sala'],
                 $_POST['descricao_sala'],
-                $_FILES['imagem_sala'],               
+                $imagem,
                 $_POST['cor_sala'],
                 null,
                 $_POST['nome_sala']
@@ -40,16 +50,6 @@ if (isset($_POST      ['nome_sala'],
                 //die('teste');
 
                 //var_dump($_FILES);exit;
-                if (!empty($_FILES['imagem_sala']['name']))
-                {
-                    $objImagem = new Imagens;
-                    $objImagem -> storeImg($_FILES['imagem_sala']['name']);
-                    
-                }
-                else
-                {
-                    die('a imagem nao foi armazenada!');
-                }
                 
             }
         }   
