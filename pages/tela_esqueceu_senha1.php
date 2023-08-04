@@ -17,7 +17,7 @@ include_once("../includes/menu.php")
 
     <main class="tudo_esqueceu_senha1">
         <section class='titulo_esqueceu_senha'>
-            <h1 id="tt">Insira o E-mail para enviar o código de confirmação:</h1>
+            <h1>Insira o E-mail para enviar o código de confirmação:</h1>
         </section>
 
         <section class="centralizar_input_esqueceu_senha"> 
@@ -39,7 +39,7 @@ include_once("../includes/menu.php")
 
         <!--Botão Confirmar-->
             <div class="botao-padrao-confirmar">
-                <a href="tela_esqueceu_senha2.php"><input type="submit" class="botao-confirmar-submit"  value="CONFIRMAR"></a>
+                <a href="#"><input type="submit" class="botao-confirmar-submit"  value="CONFIRMAR"></a>
             </div>
 
         </section>

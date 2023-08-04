@@ -2,8 +2,7 @@
 session_start();
 require __DIR__.'/vendor/autoload.php';
 
-use App\Entity\Pergunta;
+use App\Entity\Recado;
 
-$recado = new Pergunta('Simões');
-
-print_r($recado->getPerguntasById(12)->fetchAll(PDO::FETCH_ASSOC));
+$recado = new Recado($_SESSION['num_matricula_logado'],'ugauga?');
+$recado->update(50);
