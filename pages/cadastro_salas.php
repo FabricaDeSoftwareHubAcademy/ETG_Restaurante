@@ -4,8 +4,6 @@ session_start();
 
 include_once("../includes/menu.php");
 require_once("../includes/pop-ups/pop_ups_verification_sala/pop_ups_verification_sala.php");
-require_once("../includes/pop-ups/pop_ups_verification_sala/pop_ups_verification_sala.js");
-require_once("../includes/pop-ups/pop_ups_verification_sala/pop_ups_verification_sala.css");
 
 
 require __DIR__."/../vendor/autoload.php";
@@ -82,6 +80,8 @@ if (isset($_POST      ['nome_sala'],
             }
         }   
         ?>
+
+
 
 
 
@@ -182,7 +182,7 @@ if (isset($_POST      ['nome_sala'],
                         <div class="text-area">
                             <span id=descrição>Descrição</span>
     
-                            <textarea  placeholder="Area de texto " name="descricao_sala" id="" cols="70" rows="10" class="text-descricao"></textarea>
+                            <textarea  placeholder="Area de texto " name="descricao_sala" id="" cols="70" rows="10" class="text-descricao" maxLength="255" ></textarea>
                         </div>
                         <div class="cor-sala">
                             <div class="alinar-img">
