@@ -126,9 +126,14 @@ if (isset($_POST['nome_sala'],
 
 
 
-                        <div class="input_group field">
-                            <input value="" type="input" class="input_field" placeholder="Name" required="" name="andar_sala">
-                            <label for="name" class="input_label">Andar Da Sala</label> <!--Alterar para o nome do input-->
+                        <div class="dropdown-ck">
+                            <select name="andar_sala" class="option">
+                                <option type="input" name="andar_sala">Primeiro Andar</option>
+                                <option type="input" name="andar_sala">Segundo Andar</option>
+                                <option type="input" name="andar_sala">Terceiro Andar</option>
+                                <option type="input" name="andar_sala">Quarto Andar</option>
+                                <option type="input" name="andar_sala">Quinto Andar</option>
+                            </select> 
                         </div>
 
 
