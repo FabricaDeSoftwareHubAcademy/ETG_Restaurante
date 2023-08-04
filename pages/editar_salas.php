@@ -22,48 +22,39 @@ if (isset($_GET['id_sala']))
     //var_dump($dados_sala);exit;
 }        
 
-
-
 $options = '';
 $dados = $objCadastroChecklist -> getDados();
 
-foreach ($dados as $row_check )
+foreach ($dados as $row_check)
 {
     $options .= '<option  class="ops" value="'.$row_check['id_cadastro_checklist'].'"> '.$row_check['nome'].' </option>';
 }
 
 
 if (isset($_POST['nome_sala'],
-$_POST['andar_sala'],
-$_POST['checklist'],
-$_POST['descricao_sala'],
-        
-$_POST['cor_sala']    
-
-))
+    $_POST['andar_sala'],
+    $_POST['checklist'],
+    $_POST['descricao_sala'],
+    $_POST['cor_sala']    
+    ))
 {
-            if (!empty($_FILES['imagem_sala']['name']))
-            {
-             $objImagem = new App\Entity\Imagens;
-             $objImagem -> storeImg($_FILES['imagem_sala']['name']);
-            }
-
-            $obj_sala = new Sala(
-                null,
-                $_POST['checklist'],
-                $_SESSION['id'],
-                $_POST['andar_sala'],
-                $_POST['descricao_sala'],
-                
-                $imagem,
-               
-                $_POST['cor_sala'],
-                null,
-                $_POST['nome_sala']
-                
-            );
-            $obj_sala -> cadastrar();
-        }
+    var_dump($_POST);exit;
+    if (!empty($_FILES['imagem_sala']['name']))
+    {
+        $objImagem = new App\Entity\Imagens;
+        $objImagem -> storeImg($_FILES['imagem_sala']['name']);
+    }
+    $obj_sala -> setData($_GET['id_sala'],
+                        [
+                        $_POST['nome_sala'],
+                        $_POST['andar_sala'],
+                        $_POST['checklist'],
+                        $_POST['descricao_sala'],
+                        ''/**nova imagem */,
+                        $_POST['cor_sala'],
+                        (isset($_POST['ativo_desativo']) ? 1 : 0)
+                        ]);
+}
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -186,7 +177,7 @@ $_POST['cor_sala']
                                 Ativar/Desativar
                             </div>
                             <label class="switch">
-                                <input type="checkbox">
+                                <input name="ativo_desativo" type="checkbox">
                                 <span class="slider"></span>
                             </label>
 
