@@ -65,7 +65,8 @@ if (isset($_POST['email'],$_POST['senhaantiga'],$_POST['novasenha'],$_POST['conf
             </h1>
         </section>
 
-        <form method="POST" class="centralizar_input_alterar_senha"> 
+        <form method="POST" class="centralizar-back"> 
+            <section class="centralizar_input_alterar_senha">
 
                 <!--Input Email-->
                 <div class="input_e-mail_group field">
@@ -73,21 +74,22 @@ if (isset($_POST['email'],$_POST['senhaantiga'],$_POST['novasenha'],$_POST['conf
                     <label for="name" class="input_e-mail_label">E-mail</label> <!--Alterar para o nome do input-->
                 </div>
 
-                <!--Input Senha-->
-            <div class="input_senha_group field">
-                <input name="senhaantiga" type="password" class="input_senha_field" placeholder="Name" required="">
-                <label for="name" class="input_senha_label">Senha antiga</label> <!--Alterar para o nome do input-->
-            </div>
+                    <!--Input Senha-->
+                <div class="input_senha_group field">
+                    <input name="senhaantiga" type="password" class="input_senha_field" placeholder="Name" required="">
+                    <label for="name" class="input_senha_label">Senha antiga</label> <!--Alterar para o nome do input-->
+                </div>
 
-            <div class="input_senha_group field2">
-                <input name="novasenha" type="password" class="input_senha_field" placeholder="Name" required="">
-                <label for="name" class="input_senha_label">Criar nova senha</label> <!--Alterar para o nome do input-->
-            </div>
+                <div class="input_senha_group field2">
+                    <input name="novasenha" type="password" class="input_senha_field" placeholder="Name" required="">
+                    <label for="name" class="input_senha_label">Criar nova senha</label> <!--Alterar para o nome do input-->
+                </div>
 
-            <div class="input_senha_group field3">
-                <input name="confirmarnovasenha" type="password" class="input_senha_field" placeholder="Name" required="">
-                <label for="name" class="input_senha_label">Confirmar nova senha</label> <!--Alterar para o nome do input-->
-            </div>
+                <div class="input_senha_group field3">
+                    <input name="confirmarnovasenha" type="password" class="input_senha_field" placeholder="Name" required="">
+                    <label for="name" class="input_senha_label">Confirmar nova senha</label> <!--Alterar para o nome do input-->
+                </div>
+            </section>
 
         
 
