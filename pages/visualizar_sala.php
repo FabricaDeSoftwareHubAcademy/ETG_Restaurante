@@ -36,6 +36,10 @@
 
                         <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum eget ante scelerisque, scelerisque nibh et, placerat risus. Integer suscipit, arcu sit amet finibus commodo, lectus diam suscipit leo, eu tempor turpis sem sit amet nibh</p>
                         
+                        <h2 id="paragrafo_horarios">
+                            Horários
+                        </h2>
+                        <p>7:30 - 11:30</p>
                     </div>
 
 

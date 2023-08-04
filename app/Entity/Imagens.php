@@ -3,7 +3,7 @@ namespace App\Entity;
 use App\Db\Banco;
 class Imagens
 {
-    public function randomNumber($param_nome_arquivo = null)
+    public function storeImg($param_nome_arquivo = null)
     {
         //var_dump($_FILES);exit;
         $nome_arquivo = $param_nome_arquivo;
@@ -24,7 +24,6 @@ class Imagens
             $to = '../storage/salas/';
             //echo $from . '<br>' . $to . '<br>' . $novo_nome_arquivo;exit;
             move_uploaded_file($from, $to.$novo_nome_arquivo);//movendo o arquivo para pasta
-            
         }
     }
 }
