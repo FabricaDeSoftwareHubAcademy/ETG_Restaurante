@@ -126,9 +126,14 @@ if (isset($_POST['nome_sala'],
 
 
 
-                        <div class="input_group field">
-                            <input value="" type="input" class="input_field" placeholder="Name" required="" name="andar_sala">
-                            <label for="name" class="input_label">Andar Da Sala</label> <!--Alterar para o nome do input-->
+                        <div class="dropdown-ck">
+                            <select name="andar_sala" class="option">
+                                <option type="input" name="andar_sala">Primeiro Andar</option>
+                                <option type="input" name="andar_sala">Segundo Andar</option>
+                                <option type="input" name="andar_sala">Terceiro Andar</option>
+                                <option type="input" name="andar_sala">Quarto Andar</option>
+                                <option type="input" name="andar_sala">Quinto Andar</option>
+                            </select> 
                         </div>
 
 
@@ -178,7 +183,7 @@ if (isset($_POST['nome_sala'],
                             </div>  
                             <div class="alinar-botao-cor">
                                 <span id="selecao-cor-text">Cor da sala : </span> 
-                                <input class="botao-cor" name="cor_sala" type="color">
+                                <input value="<?=$dados_sala[0]['cor']?>" class="botao-cor" name="cor_sala" type="color">
                             </div>
                         </div>
                         
@@ -187,7 +192,7 @@ if (isset($_POST['nome_sala'],
                         
                         <label id="botão-img"for="arquivo" >Enviar Fotos</label>
 
-                        <input type="file" name="imagem_sala" id="arquivo" onchange="previewImagem()">
+                        <input value="<?=$dados_sala[0]['imagem']?>" type="file" name="imagem_sala" id="arquivo" onchange="previewImagem()">
                             
                         <div class="botao-on-off">
 
@@ -227,7 +232,7 @@ if (isset($_POST['nome_sala'],
 
 
                     
-                
+
                 </form>  
             </div>
         </div>
