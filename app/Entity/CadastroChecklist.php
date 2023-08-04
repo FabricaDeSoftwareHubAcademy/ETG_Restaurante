@@ -18,11 +18,12 @@ class CadastroChecklist{
     }
 
 
-    public function cadastrar() : bool{
+    public function cadastrar(){
         $objDatabase = new Banco('checklist_test');
-        $objDatabase -> insertRecoverId(['descricao' => $this -> nome]);
 
-        return true;
+        $ultimoId = $objDatabase -> insertRecoverId(['descricao' => $this -> nome]);
+
+        return $ultimoId;
     }
 
 
