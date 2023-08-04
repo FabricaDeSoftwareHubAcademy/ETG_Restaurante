@@ -8,11 +8,9 @@
         $id_sala = $_GET['id_sala'];
 
         $dados = Sala::getById($id_sala);
-        
-
+ 
     }
-    
-
+ 
 ?>
 
 <!DOCTYPE html>
@@ -23,7 +21,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Visualizar Sala</title>
     <link rel="stylesheet" href="../assets/css/visualizar_sala.css">
+    <style>
 
+
+ 
+.card{
+    border: solid <?=$dados[0]['cor']?>;
+}
+
+    </style>
 
     
 </head>
@@ -32,8 +38,8 @@
         <section class="area_card">
             <div class="card">
                 <div class="imagem_card">
-
-                    <img src="../assets/imgs/others/cozinha_etg.jpg" alt="" id="img_config">
+                        
+                    <img src="../storage/salas/<?= $dados[0]['imagem']?>" alt="" id="img_config">
                 </div>
                 <div class="texto_card">
 
