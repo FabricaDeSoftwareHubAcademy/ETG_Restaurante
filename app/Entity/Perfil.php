@@ -133,5 +133,19 @@ class Perfil{
         ];
         $objBanco -> update('id_cadastro_perfil = '. $id, $dados );
     }
-}
 
+    public static function excluir($id){
+
+        $obBanco = new Banco('cadastro_perfil');
+        $row_perfil = $obBanco->select('id_cadastro_perfil = '.$id);
+        if($row_perfil->rowCount() > 0){
+
+            $obBanco->delete($id,'id_cadastro_perfil');
+
+            return true;
+
+        }else{
+            return false;
+        }
+    }
+}
