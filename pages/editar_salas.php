@@ -6,6 +6,7 @@ if (isset($_SESSION['id']))
     session_start();
 }
 require_once("../includes/menu.php");
+
 require __DIR__."/../vendor/autoload.php";
 use App\Entity\Sala;
 use App\Entity\CadastroChecklist; 
