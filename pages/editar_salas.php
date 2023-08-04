@@ -32,7 +32,7 @@ foreach ($dados as $row_check)
     $options .= '<option  class="ops" value="'.$row_check['id_cadastro_checklist'].'"> '.$row_check['nome'].' </option>';
 }
 
-
+//var_dump($_FILES);exit;
 if (isset($_POST['nome_sala'],
         $_POST['andar_sala'],
         $_POST['checklist'],
@@ -41,12 +41,11 @@ if (isset($_POST['nome_sala'],
         $_POST['btn_submit']  
     ))
 {
-    /*var_dump($_POST);exit;
+
     if (!empty($_FILES['imagem_sala']['name']))
     {
-        $objImagem = new App\Entity\Imagens;
         $objImagem -> storeImg($_FILES['imagem_sala']['name']);
-    }*/
+    }
 
     if($obj_sala -> setData($_GET['id_sala'],
     [
@@ -74,7 +73,7 @@ if (isset($_POST['nome_sala'],
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro de salas</title>
+    <title>Editar salas</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https/cdnjs.cloudflare.comlibs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
