@@ -15,8 +15,8 @@ class Sala{
             $imagem,
             $cor,
             $status_sala,
-            $nome
-            
+            $nome,
+            $ativo_desativo
             ;
     public function __construct($id_cadastro_sala = null,
                                 $id_cadastro_checklist = null,
@@ -26,7 +26,8 @@ class Sala{
                                 $imagem = null,
                                 $cor = null,
                                 $status_sala = null,
-                                $nome = null
+                                $nome = null,
+                                $ativo_desativo = null
                                 ){
         $this -> id_cadastro_sala = $id_cadastro_sala;
         $this -> id_cadastro_checklist = $id_cadastro_checklist;
@@ -37,6 +38,7 @@ class Sala{
         $this -> cor = $cor;
         $this -> status_sala = $status_sala;
         $this -> nome = $nome;
+        $this -> ativo_desativo = $ativo_desativo;
     }
 
 
@@ -53,7 +55,8 @@ class Sala{
                             'imagem' => $this -> imagem,
                             'cor' => $this -> cor,
                             'status_sala' => $this -> status_sala,
-                            'nome' => ucfirst(strtolower($this -> nome))
+                            'nome' => ucfirst(strtolower($this -> nome)),
+                            'ativo_desativo' => $this -> ativo_desativo
                             ]);
 
         
