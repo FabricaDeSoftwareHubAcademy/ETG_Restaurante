@@ -20,7 +20,7 @@ if (isset($_GET['id_sala']))
 {
     $dados_sala = Sala::getById($_GET['id_sala']);
     $text_area = $dados_sala[0]['descricao'];
-    //var_dump($dados_sala);exit;
+    //var_dump($dados_sala[0]['imagem']);exit;
 }        
 
 
@@ -172,14 +172,12 @@ if (isset($_POST['nome_sala'],
                         <div class="cor-sala">
                             <div class="alinar-img">
                                 <span id="img-text"> Insira a imagem : </span>
+
+                                
                                 <div class="area-anexo">
-
-                                    
-                                    <img id="camera_imagem" class="imagem_aparecer" src="../assets/imgs/others/camera.png" alt="">
-
-                                    <img  id="imagem_agora_vai" class="novo_css_imagem" src="" alt="">
-
+                                    <img id="camera_imagem" class="imagem_aparecer" src="../storage/salas/<?=$dados_sala[0]['imagem']?>" alt="">
                                 </div>
+
                             </div>  
                             <div class="alinar-botao-cor">
                                 <span id="selecao-cor-text">Cor da sala : </span> 
@@ -192,7 +190,7 @@ if (isset($_POST['nome_sala'],
                         
                         <label id="botão-img"for="arquivo" >Enviar Fotos</label>
 
-                        <input value="<?=$dados_sala[0]['imagem']?>" type="file" name="imagem_sala" id="arquivo" onchange="previewImagem()">
+                        <input  type="file" name="imagem_sala" id="arquivo" onchange="previewImagem()">
                             
                         <div class="botao-on-off">
 
@@ -206,12 +204,6 @@ if (isset($_POST['nome_sala'],
 
 
                         </div>
-                         
-                            
-
-                               
-        
-                                
 
                     </div>
                     
@@ -237,31 +229,6 @@ if (isset($_POST['nome_sala'],
             </div>
         </div>
     </section>
-
-
-<script>
-const remover = document.querySelector(".imagem_aparecer");
-const novo_css = document.querySelector(".novo_css_imagem");
-$(document).ready(function() {
-    $('#arquivo').on('change', function(e) {
-        var file = e.target.files[0];
-        var reader = new FileReader();
-        reader.onload = function(e) {
-            var fileExtension = file.name.split('.').pop().toLowerCase();
-            var aceitados = ['jpg', 'jpeg', 'gif', 'png'];
-            if (aceitados.includes(fileExtension)) {
-                $('#imagem_agora_vai').attr('src', e.target.result);
-                remover.classList.add("active");
-                novo_css.classList.add("active");
-            } else {
-                // Caso a extensão do arquivo não seja suportada, você pode adicionar um comportamento específico aqui, como exibir uma mensagem de erro.
-                console.log('Extensão de arquivo não suportada.');
-            }
-        }
-        reader.readAsDataURL(file);
-    });
-});
-</script>
 
 
     
