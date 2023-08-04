@@ -100,14 +100,14 @@ class Sala{
     public function setData($id = null, $dados = []) : bool
     {
         $objBanco = new Banco('Cadastro_sala');
-        $objBanco -> update('id_cadastro_sala = "'.$id.'"',   ['nome'                 => $dados['nome'],
-                                                'andar'                 => $dados['andar'],
-                                                'id_cadastro_checklist' => $dados['checklist'],
-                                                'descricao'             => $dados['descricao'],
-                                                'imagem'                => $dados['imagem'],
-                                                'cor'                   => $dados['cor'],
-                                                'ativo_desativo'        => $dados['ativo_desativo']
-                                                ]);
+        $objBanco -> update('id_cadastro_sala = "'.$id.'"', ['nome'                       => $dados['nome'],
+                                                            'andar'                       => $dados['andar'],
+                                                            'id_cadastro_checklist'       => $dados['checklist'],
+                                                            'descricao'                   => $dados['descricao'],
+                                                            'imagem'                      => $dados['imagem'],
+                                                            'cor'                         => $dados['cor'],
+                                                            'ativo_desativo'              => $dados['ativo_desativo']
+                                ]);
         return true;
     }
 }

@@ -48,7 +48,7 @@ if (isset($_POST['nome_sala'],
         $objImagem -> storeImg($_FILES['imagem_sala']['name']);
     }*/
 
-    $obj_sala -> setData($_GET['id_sala'],
+    if($obj_sala -> setData($_GET['id_sala'],
     [
         'nome'              => $_POST['nome_sala'],
         'andar'             => $_POST['andar_sala'],
@@ -57,8 +57,14 @@ if (isset($_POST['nome_sala'],
         'imagem'            => 'teste'/**nova imagem */,
         'cor'               => $_POST['cor_sala'],
         'ativo_desativo'    =>(isset($_POST['ativo_desativo']) ? 1 : 0)
-    ]);
-    die('alterou');
+    ]))
+    {
+        header("Location: editar_salas.php");
+    }
+    else
+    {
+        die('algo deu errado -> POP UP');
+    }
 }
 ?>
 <!DOCTYPE html>
