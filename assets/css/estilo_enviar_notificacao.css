@@ -34,14 +34,12 @@
 .Enviar-notificacao h1{
     display: flex;
     justify-content: center;
-    font-size: 40px; 
+    font-size: 35px; 
     font-family: 'Montserrat';
-    font-weight: bold;
-    margin-top: 60px;
+    margin-top: 9%;
   }
 
-
-/* Css Botão Enviar */
+/* Css Botão Confirmar */
 
 .botao-padrao-enviar{
     width: 100%;
@@ -100,23 +98,9 @@
     color: var(--cor-primaria-botao-white);
   }
 
-
-
-.botao{
-    display: flex;
-    justify-content: space-between;
-    text-align: center;
-    margin-top: 60%;
-  }
-  
 @media (max-width: 882px) {
-    .botao{
-      margin-top: 470px;
-    }
-  
-.botao{
-      margin-top: 90%;
-    }
+  .centralizar_botoes_enviar_notificacao{
+    margin-top: 300px;
   }
 
 /* Css input */
