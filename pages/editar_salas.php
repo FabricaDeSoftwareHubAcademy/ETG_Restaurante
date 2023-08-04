@@ -19,7 +19,6 @@ $objCadastroChecklist = new CadastroChecklist();
 if (isset($_GET['id_sala']))
 {
     $dados_sala = Sala::getById($_GET['id_sala']);
-    $text_area = $dados_sala[0]['descricao'];
     //var_dump($dados_sala);exit;
 }        
 
@@ -35,14 +34,20 @@ foreach ($dados as $row_check )
 
 
 if (isset($_POST['nome_sala'],
-        $_POST['andar_sala'],
-        $_POST['checklist'],
-        $_POST['descricao_sala'],
+$_POST['andar_sala'],
+$_POST['checklist'],
+$_POST['descricao_sala'],
         
-        $_POST['cor_sala']    
+$_POST['cor_sala']    
 
-        ))
-        {
+))
+{
+            if (!empty($_FILES['imagem_sala']['name']))
+            {
+             $objImagem = new App\Entity\Imagens;
+             $objImagem -> storeImg($_FILES['imagem_sala']['name']);
+            }
+
             $obj_sala = new Sala(
                 null,
                 $_POST['checklist'],
@@ -50,28 +55,14 @@ if (isset($_POST['nome_sala'],
                 $_POST['andar_sala'],
                 $_POST['descricao_sala'],
                 
-                $_FILES['imagem_sala'],
+                $imagem,
                
                 $_POST['cor_sala'],
                 null,
-                $_POST['nome_sala'],
-                null,
-                null,
-                null
+                $_POST['nome_sala']
                 
             );
-            if ($obj_sala -> cadastrar())
-            {
-                //die('teste');
-
-                //var_dump($_FILES);exit;
-                if (!empty($_FILES['imagem_sala']['name']))
-                {
-                 $objImagem = new App\Entity\Imagens;
-                 $objImagem -> storeImg($_FILES['imagem_sala']['name']);
-                }
-                
-            }
+            $obj_sala -> cadastrar();
         }
 ?>
 <!DOCTYPE html>
@@ -162,18 +153,14 @@ if (isset($_POST['nome_sala'],
                             <script>
                                    
                             </script>
-                            <textarea placeholder="Area de texto " name="descricao_sala" id="textareajs" cols="70" rows="10" class="text-descricao"><?=$text_area?></textarea>
+                            <textarea placeholder="Area de texto " name="descricao_sala" id="textareajs" cols="70" rows="10" class="text-descricao"><?=$dados_sala[0]['descricao']?></textarea>
                         </div>
                         <div class="cor-sala">
                             <div class="alinar-img">
                                 <span id="img-text"> Insira a imagem : </span>
                                 <div class="area-anexo">
-
-                                    
-                                    <img id="camera_imagem" class="imagem_aparecer" src="../assets/imgs/others/camera.png" alt="">
-
+                                    <img id="camera_imagem" class="imagem_aparecer_editar" src="../storage/salas/JPG-Alta-Qualidade64cd5d111c1cd.jpg" alt="">
                                     <img  id="imagem_agora_vai" class="novo_css_imagem" src="" alt="">
-
                                 </div>
                             </div>  
                             <div class="alinar-botao-cor">
@@ -232,10 +219,8 @@ if (isset($_POST['nome_sala'],
             </div>
         </div>
     </section>
-
-
-<script>
-const remover = document.querySelector(".imagem_aparecer");
+    <script>
+const remover = document.querySelector(".imagem_aparecer_editar");
 const novo_css = document.querySelector(".novo_css_imagem");
 $(document).ready(function() {
     $('#arquivo').on('change', function(e) {
@@ -257,8 +242,6 @@ $(document).ready(function() {
     });
 });
 </script>
-
-
     
 </body>
 

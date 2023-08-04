@@ -26,10 +26,7 @@ class Sala{
                                 $imagem = null,
                                 $cor = null,
                                 $status_sala = null,
-                                $nome = null,
-                                $horario_matutino = null,
-                                $horario_vespertino = null,
-                                $horario_noturno = null
+                                $nome = null
                                 ){
         $this -> id_cadastro_sala = $id_cadastro_sala;
         $this -> id_cadastro_checklist = $id_cadastro_checklist;
@@ -53,7 +50,7 @@ class Sala{
                             'id_cadastro_usuario'=> $this -> id_cadastro_usuario,
                             'andar'  => ucfirst(strtolower($this -> andar)),
                             'descricao' => ucfirst(strtolower($this -> descricao)),
-                            'imagem' => $this -> imagem['name'],
+                            'imagem' => $this -> imagem,
                             'cor' => $this -> cor,
                             'status_sala' => $this -> status_sala,
                             'nome' => ucfirst(strtolower($this -> nome))
