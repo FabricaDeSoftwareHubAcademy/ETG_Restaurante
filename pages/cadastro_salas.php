@@ -4,7 +4,8 @@ session_start();
 
 include_once("../includes/menu.php");
 
-
+require_once("../includes/pop-ups/pop_ups_verification_sala/pop_ups_verification_sala.php");
+                    
 
 require __DIR__."/../vendor/autoload.php";
 use App\Entity\Sala;
@@ -217,15 +218,13 @@ if (isset($_POST      ['nome_sala'],
                         </div>
                         
                         <div class="botao-padrao-cadastrar">
-                            <a href="#"><input name="btn_submit" type="submit" class="botao-cadastrar-submit"  value="CADASTRAR" onclick="openPopupSala()"></a>
+                            <a href="#"><input name="btn_submit" type="submit" class="botao-cadastrar-submit" id="botao-cadastrar-submit" value="CADASTRAR" onclick="openPopupSala()"></a>
                         </div>
                         
 
                     </div>  
 
-                    <?php
-                        require_once("../includes/pop-ups/pop_ups_verification_sala/pop_ups_verification_sala.php");
-                     ?>
+                    
                 </form>  
             </div>
         </div>

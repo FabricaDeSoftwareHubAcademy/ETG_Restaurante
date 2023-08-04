@@ -14,8 +14,7 @@
     --cor-primaria-botao-blue:  rgba(6, 74, 140, 1);
 }
 .container-pop-up-sala{
-    width: 100%;
-    height: 100vh;
+    
     background: #fff;
     display: flex;
     align-items: center;
