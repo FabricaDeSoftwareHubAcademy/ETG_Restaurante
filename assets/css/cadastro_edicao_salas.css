@@ -1104,7 +1104,7 @@ box-shadow: none;
   border-radius: 10px;
 }
 
-.imagem_aparecer_editar
+.imagem_aparecer_editar.active
 {
   display: none;
 }

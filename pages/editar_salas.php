@@ -19,7 +19,6 @@ $objCadastroChecklist = new CadastroChecklist();
 if (isset($_GET['id_sala']))
 {
     $dados_sala = Sala::getById($_GET['id_sala']);
-    $text_area = $dados_sala[0]['descricao'];
     //var_dump($dados_sala);exit;
 }        
 
@@ -154,23 +153,19 @@ $_POST['cor_sala']
                             <script>
                                    
                             </script>
-                            <textarea placeholder="Area de texto " name="descricao_sala" id="textareajs" cols="70" rows="10" class="text-descricao"><?=$text_area?></textarea>
+                            <textarea placeholder="Area de texto " name="descricao_sala" id="textareajs" cols="70" rows="10" class="text-descricao"><?=$dados_sala[0]['descricao']?></textarea>
                         </div>
                         <div class="cor-sala">
                             <div class="alinar-img">
                                 <span id="img-text"> Insira a imagem : </span>
                                 <div class="area-anexo">
-
-                                    
-                                    <img id="camera_imagem" class="imagem_aparecer_editar" src="../storage/salas/<?=$dados_sala[0]['imagem']?>" alt="">
-
+                                    <img id="camera_imagem" class="imagem_aparecer_editar" src="../storage/salas/JPG-Alta-Qualidade64cd5d111c1cd.jpg" alt="">
                                     <img  id="imagem_agora_vai" class="novo_css_imagem" src="" alt="">
-
                                 </div>
                             </div>  
                             <div class="alinar-botao-cor">
                                 <span id="selecao-cor-text">Cor da sala : </span> 
-                                <input value="<?=$dados_sala[0]['cor']?>" class="botao-cor" name="cor_sala" type="color">
+                                <input class="botao-cor" name="cor_sala" type="color">
                             </div>
                         </div>
                         
@@ -224,9 +219,7 @@ $_POST['cor_sala']
             </div>
         </div>
     </section>
-
-
-<script>
+    <script>
 const remover = document.querySelector(".imagem_aparecer_editar");
 const novo_css = document.querySelector(".novo_css_imagem");
 $(document).ready(function() {
@@ -249,8 +242,6 @@ $(document).ready(function() {
     });
 });
 </script>
-
-
     
 </body>
 
