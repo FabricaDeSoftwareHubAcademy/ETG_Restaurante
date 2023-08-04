@@ -60,9 +60,7 @@ if (isset($_POST['email'],$_POST['senhaantiga'],$_POST['novasenha'],$_POST['conf
     <main class="pai-de-todos">
         <?php include_once("../includes/menu.php"); ?>
         <section class='titulo_alterar_senha'>
-            <h1>Alterar Senha #
-                paçoca
-            </h1>
+            <h1>Alterar Senha</h1>
         </section>
 
         <form method="POST" class="centralizar-back"> 
