@@ -35,14 +35,20 @@ foreach ($dados as $row_check )
 
 
 if (isset($_POST['nome_sala'],
-        $_POST['andar_sala'],
-        $_POST['checklist'],
-        $_POST['descricao_sala'],
+$_POST['andar_sala'],
+$_POST['checklist'],
+$_POST['descricao_sala'],
         
-        $_POST['cor_sala']    
+$_POST['cor_sala']    
 
-        ))
-        {
+))
+{
+            if (!empty($_FILES['imagem_sala']['name']))
+            {
+             $objImagem = new App\Entity\Imagens;
+             $objImagem -> storeImg($_FILES['imagem_sala']['name']);
+            }
+
             $obj_sala = new Sala(
                 null,
                 $_POST['checklist'],
@@ -50,28 +56,14 @@ if (isset($_POST['nome_sala'],
                 $_POST['andar_sala'],
                 $_POST['descricao_sala'],
                 
-                $_FILES['imagem_sala'],
+                $imagem,
                
                 $_POST['cor_sala'],
                 null,
-                $_POST['nome_sala'],
-                null,
-                null,
-                null
+                $_POST['nome_sala']
                 
             );
-            if ($obj_sala -> cadastrar())
-            {
-                //die('teste');
-
-                //var_dump($_FILES);exit;
-                if (!empty($_FILES['imagem_sala']['name']))
-                {
-                 $objImagem = new App\Entity\Imagens;
-                 $objImagem -> storeImg($_FILES['imagem_sala']['name']);
-                }
-                
-            }
+            $obj_sala -> cadastrar();
         }
 ?>
 <!DOCTYPE html>
@@ -170,7 +162,7 @@ if (isset($_POST['nome_sala'],
                                 <div class="area-anexo">
 
                                     
-                                    <img id="camera_imagem" class="imagem_aparecer" src="../assets/imgs/others/camera.png" alt="">
+                                    <img id="camera_imagem" class="imagem_aparecer_editar" src="../storage/salas/<?=$dados_sala[0]['imagem']?>" alt="">
 
                                     <img  id="imagem_agora_vai" class="novo_css_imagem" src="" alt="">
 
@@ -178,7 +170,7 @@ if (isset($_POST['nome_sala'],
                             </div>  
                             <div class="alinar-botao-cor">
                                 <span id="selecao-cor-text">Cor da sala : </span> 
-                                <input class="botao-cor" name="cor_sala" type="color">
+                                <input value="<?=$dados_sala[0]['cor']?>" class="botao-cor" name="cor_sala" type="color">
                             </div>
                         </div>
                         
@@ -235,7 +227,7 @@ if (isset($_POST['nome_sala'],
 
 
 <script>
-const remover = document.querySelector(".imagem_aparecer");
+const remover = document.querySelector(".imagem_aparecer_editar");
 const novo_css = document.querySelector(".novo_css_imagem");
 $(document).ready(function() {
     $('#arquivo').on('change', function(e) {
