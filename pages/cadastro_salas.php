@@ -45,13 +45,8 @@ if (isset($_POST      ['nome_sala'],
                 $_POST['nome_sala']
                
             );
-            if ($obj_sala -> cadastrar())
-            {
-                //die('teste');
+            $obj_sala -> cadastrar();
 
-                //var_dump($_FILES);exit;
-                
-            }
         }   
         ?>
 <!DOCTYPE html>
