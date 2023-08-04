@@ -10,7 +10,8 @@ require_once("../includes/menu.php");
 require __DIR__."/../vendor/autoload.php";
 
 
-use App\Entity\Sala;
+$obj_sala = new App\Entity\Sala;
+
 
 use App\Entity\CadastroChecklist; 
 $objCadastroChecklist = new CadastroChecklist();
@@ -18,7 +19,8 @@ $objCadastroChecklist = new CadastroChecklist();
 
 if (isset($_GET['id_sala']))
 {
-    $dados_sala = Sala::getById($_GET['id_sala']);
+    $dados_sala = $obj_sala::getById($_GET['id_sala']);
+    //$dados_sala = Sala::getById($_GET['id_sala']);
     //var_dump($dados_sala);exit;
 }        
 
@@ -32,28 +34,37 @@ foreach ($dados as $row_check)
 
 
 if (isset($_POST['nome_sala'],
-    $_POST['andar_sala'],
-    $_POST['checklist'],
-    $_POST['descricao_sala'],
-    $_POST['cor_sala']    
+        $_POST['andar_sala'],
+        $_POST['checklist'],
+        $_POST['descricao_sala'],
+        $_POST['cor_sala'],
+        $_POST['btn_submit']  
     ))
 {
-    var_dump($_POST);exit;
+    /*var_dump($_POST);exit;
     if (!empty($_FILES['imagem_sala']['name']))
     {
         $objImagem = new App\Entity\Imagens;
         $objImagem -> storeImg($_FILES['imagem_sala']['name']);
+    }*/
+
+    if($obj_sala -> setData($_GET['id_sala'],
+    [
+        'nome'              => $_POST['nome_sala'],
+        'andar'             => $_POST['andar_sala'],
+        'checklist'         => $_POST['checklist'],
+        'descricao'         => $_POST['descricao_sala'],
+        'imagem'            => 'teste'/**nova imagem */,
+        'cor'               => $_POST['cor_sala'],
+        'ativo_desativo'    =>(isset($_POST['ativo_desativo']) ? 1 : 0)
+    ]))
+    {
+        header("Location: editar_salas.php");
     }
-    $obj_sala -> setData($_GET['id_sala'],
-                        [
-                        $_POST['nome_sala'],
-                        $_POST['andar_sala'],
-                        $_POST['checklist'],
-                        $_POST['descricao_sala'],
-                        ''/**nova imagem */,
-                        $_POST['cor_sala'],
-                        (isset($_POST['ativo_desativo']) ? 1 : 0)
-                        ]);
+    else
+    {
+        die('algo deu errado -> POP UP');
+    }
 }
 ?>
 <!DOCTYPE html>
@@ -132,7 +143,7 @@ if (isset($_POST['nome_sala'],
                         
                     
                     
-                    </div>
+                        Churrasco        </div>
 
                         <div class="barra"></div>
                        
@@ -160,7 +171,7 @@ if (isset($_POST['nome_sala'],
                             </div>  
                             <div class="alinar-botao-cor">
                                 <span id="selecao-cor-text">Cor da sala : </span> 
-                                <input class="botao-cor" name="cor_sala" type="color">
+                                <input value="<?=$dados_sala[0]['cor']?>" class="botao-cor" name="cor_sala" type="color">
                             </div>
                         </div>
                         
