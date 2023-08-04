@@ -9,7 +9,7 @@
 <body>
 
     <div class="container-pop-up-sala">
-        <button type="submit" class="btn-pop-up-sala" id="submit-btn-sala" onclick="openPopupSala()">Submit</button>
+        
         <div class="popup-sala" id="popup-up-sala">
             <img src="imgs/Check_ring.png" alt="carregando">
             <p>Sala criada com sucesso </p>

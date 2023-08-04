@@ -3,7 +3,7 @@ session_start();
 
 
 include_once("../includes/menu.php");
-require_once("../includes/pop-ups/pop_ups_verification_sala/pop_ups_verification_sala.php");
+
 
 
 require __DIR__."/../vendor/autoload.php";
@@ -94,7 +94,7 @@ if (isset($_POST      ['nome_sala'],
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro de salas</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https/cdnjs.cloudflare.comlibs/font-awesome/6.4.0/css/all.min.css">
+
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
     <link rel="stylesheet" href="../assets/css/cadastro_edicao_salas.css"> 
     <script src="https://code.jquery.com/jquery-3.7.0.js"integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM="crossorigin="anonymous"></script>
@@ -105,6 +105,7 @@ if (isset($_POST      ['nome_sala'],
 
 <body class="tela-cadastro-salas"> 
     <section class="container">
+   
         <div class="container-cadastro-salas">
             <div class="wrap-cadastro-salas">
 
@@ -216,10 +217,15 @@ if (isset($_POST      ['nome_sala'],
                         </div>
                         
                         <div class="botao-padrao-cadastrar">
-                            <a href="#"><input name="btn_submit" type="submit" class="botao-cadastrar-submit"  value="CADASTRAR"></a>
+                            <a href="#"><input name="btn_submit" type="submit" class="botao-cadastrar-submit"  value="CADASTRAR" onclick="openPopupSala()"></a>
                         </div>
                         
+
                     </div>  
+
+                    <?php
+                        require_once("../includes/pop-ups/pop_ups_verification_sala/pop_ups_verification_sala.php");
+                     ?>
                 </form>  
             </div>
         </div>
@@ -227,6 +233,10 @@ if (isset($_POST      ['nome_sala'],
 
 
 <script>
+
+
+
+
 const remover = document.querySelector(".imagem_aparecer");
 const novo_css = document.querySelector(".novo_css_imagem");
 $(document).ready(function() {
