@@ -1,5 +1,18 @@
 <?php
     require_once("../includes/menu.php");
+
+    require __DIR__."/../vendor/autoload.php";
+    use App\Entity\Sala;
+
+    if(isset($_GET['id_sala'])){
+        $id_sala = $_GET['id_sala'];
+
+        $dados = Sala::getById($id_sala);
+        
+
+    }
+    
+
 ?>
 
 <!DOCTYPE html>
@@ -25,7 +38,7 @@
                 <div class="texto_card">
 
                     <div class="titulo_card">
-                        <h1>COZINHA DIDÁTICA I</h1>
+                        <h1><?=$dados[0]['nome']?></h1>
                     </div>
         
 
@@ -34,7 +47,7 @@
                                 Descrição
                             </h2>
 
-                            <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum eget ante scelerisque, scelerisque nibh et, placerat risus. Integer suscipit, arcu sit amet finibus commodo, lectus diam suscipit leo, eu tempor turpis sem sit amet nibh</p>
+                            <p> <?=$dados[0]['descricao']?></p>
                             
                             
                         </div>
