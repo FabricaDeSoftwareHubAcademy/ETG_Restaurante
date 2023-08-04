@@ -1,7 +1,14 @@
+<!-- 
+    width: 100%;
+    height: 100%;
+    max-width: 832px;
+    position: relative;
+    margin: 0 auto;
+    
 
-<?php
- 
- ?>
+
+
+-->
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -54,7 +61,7 @@
                 </li>         
                 <li class="saida">
                     <button class="btnOpenmodal-menu" onclick="openModal()" >  
-                        <a href="" class="link-menu">
+                        <a href="#" class="link-menu">
                             <i class="bi bi-box-arrow-left" style="--i:5"></i>
                         </a>
                     </button>
@@ -133,15 +140,3 @@ function closeSubmenu(){
     </script>       
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-    
