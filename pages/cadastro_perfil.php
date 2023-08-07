@@ -119,7 +119,7 @@ if (isset($_POST['botao_salvar'], $_POST['nome_cargo'])){
                 </div>
                 <!--Botão Salvar-->
                 <div class="botao-padrao-salvar">
-                    <a href=""><input name="botao_salvar" type="submit" class="botao-salvar-submit"  value="SALVAR"></a>
+                    <a href=""><input name="botao_salvar" type="submit" class="botao-salvar-submit" value="SALVAR"></a>
                 </div>
             </div>
         </form>

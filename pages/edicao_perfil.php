@@ -33,17 +33,17 @@ if (isset($_POST['botao_salvar'], $_POST['nome_cargo'])){
 }
 
 $dadosPerfil = new Perfil();
-
-$dados = $dadosPerfil->getDados($id);
-$cadastrar_salas = $dados[$id-1] ['cadastrar_sala'];
-$editar_salas = $dados[$id-1] ['editar_sala'];
-$remover_salas = $dados[$id-1] ['remover_sala'];
-$validar_checklist = $dados[$id-1] ['validar_checklist'];
-$inserir_item_checklist = $dados[$id-1] ['inserir_item_checklist'];
-$remover_item_checklist = $dados[$id-1] ['remover_item_checklist'];
-$desbloquear_checklist = $dados[$id-1] ['desbloquear_checklist'];
-$descricao_nao_conformidade = $dados[$id-1] ['descricao_nao_conformidade'];
-$enviar_notificacao = $dados[$id-1] ['enviar_notificacao'];
+$dados = $dadosPerfil->getDadosById($id);
+//print_r($dados);exit;
+$cadastrar_salas = $dados[0] ['cadastrar_sala'];
+$editar_salas = $dados[0] ['editar_sala'];
+$remover_salas = $dados[0] ['remover_sala'];
+$validar_checklist = $dados[0] ['validar_checklist'];
+$inserir_item_checklist = $dados[0] ['inserir_item_checklist'];
+$remover_item_checklist = $dados[0] ['remover_item_checklist'];
+$desbloquear_checklist = $dados[0] ['desbloquear_checklist'];
+$descricao_nao_conformidade = $dados[0] ['descricao_nao_conformidade'];
+$enviar_notificacao = $dados[0] ['enviar_notificacao'];
 
 ?>
 <html lang="pt-br">
@@ -76,7 +76,7 @@ $enviar_notificacao = $dados[$id-1] ['enviar_notificacao'];
         </div>
         <form method="POST" class="form_permissoes">
             <div class="input_group">
-                <input type="input" class="input_field" placeholder="Name" name="nome_cargo" value="<?=$dados[$id-1]["nome_cargo"];?>" >
+                <input type="input" class="input_field" placeholder="Name" name="nome_cargo" value="<?=$dados[0]["nome_cargo"];?>" >
                 <label for="name" class="input_label">Nome</label> <!--Alterar para o nome do input-->
             </div>
 

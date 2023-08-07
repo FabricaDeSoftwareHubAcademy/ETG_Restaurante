@@ -104,7 +104,7 @@ class Perfil{
 
     //Metodo que puxa todos, ou alguns dados do Banco
     //sera usado futuramente para listar os perfis
-    public function getDados($where = null, $order = null, $limit = null){
+    public function getDados(){
         
         //variavel que conecta com o Banco e passa a tabela
         $objBanco = new Banco('cadastro_perfil');
@@ -112,11 +112,20 @@ class Perfil{
         $where = "id_cadastro_perfil";
         
         //atribuindo o select para a variavel dados, usando o fetchObject 
-        $dados = $objBanco -> select($where, $order, $limit) -> fetchAll(PDO::FETCH_ASSOC);
+        $dados = $objBanco -> select('id_cadastro_perfil') -> fetchAll(PDO::FETCH_ASSOC);
         
         return $dados;
     }
 
+    public function getDadosById($id_cadastro_perfil){
+        
+        //variavel que conecta com o Banco e passa a tabela
+        $objBanco = new Banco('cadastro_perfil');        
+        //atribuindo o select para a variavel dados, usando o fetchObject 
+        $dados = $objBanco -> select('id_cadastro_perfil = '.$id_cadastro_perfil) -> fetchAll(PDO::FETCH_ASSOC);
+        
+        return $dados;
+    }
     public function update($id){
         $objBanco = new Banco('cadastro_perfil');
         $dados = [
@@ -143,9 +152,10 @@ class Perfil{
             $obBanco->delete($id,'id_cadastro_perfil');
 
             return true;
-
+            
         }else{
             return false;
         }
     }
 }
+?>

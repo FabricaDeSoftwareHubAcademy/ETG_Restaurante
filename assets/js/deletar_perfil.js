@@ -10,9 +10,8 @@ async function deletarPerfil(){
   
     const response = await dados.json();
     if(response['status']){
-
+    
     location.reload()
-
     }else{
         console.log("Algo inesperado aconteceu")
     }

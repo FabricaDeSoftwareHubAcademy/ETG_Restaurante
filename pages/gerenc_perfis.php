@@ -53,29 +53,29 @@ foreach ($dados_perfil as $row_perfil)
                 include_once("../includes/menu.php"); 
                 include_once ("../includes/pop-ups/pop_ups_confirm_excluir_perfil/pop_ups_confirmacao.php");
                 ?>
-            <form action="" method="GET">
+            <form action="cadastro_perfil.php" method="GET">
                 <div class="container_gp">
                         <h1 class="Perfis">Perfis</h1>
                             <ul class="cardsgerenc">
                                 <?=$imprimir?>
                             </ul>
                 
+                </div>
+                <div class="container_gp2">
+                        
+                    <div class="alinar-botoes">
+
+                        <div class="botao-padrao-voltar">
+                            <a href="#"><input type="submit" class="botao-voltar-submit"  value="VOLTAR"></a>
+                        </div>
+
+                        <div class="botao-padrao-cadastrar">
+                            <a href="./cadastro_perfil.php"><input name="btn_submit" type="submit" class="botao-cadastrar-submit"  value="CADASTRAR"></a>
+                        </div>
+                    </div>  
+                        
+                </div> 
             </form>
-            <div class="container_gp2">
-                       
-                <div class="alinar-botoes">
-
-                    <div class="botao-padrao-voltar">
-                        <a href="#"><input type="submit" class="botao-voltar-submit"  value="VOLTAR"></a>
-                    </div>
-
-                    <div                            class="botao-padrao-cadastrar">
-                        <a href="#"><input name="btn_submit" type="submit" class="botao-cadastrar-submit"  value="CADASTRAR"></a>
-                    </div>
-                </div>  
-                    
-            </div> 
-            
         </main>
     </body>
 </html>
