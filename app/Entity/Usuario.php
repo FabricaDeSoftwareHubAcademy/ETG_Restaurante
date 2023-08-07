@@ -17,9 +17,9 @@ class Usuario{
     // metodo construct 
     public function __construct(
         
-        $num_matricula ,
-        $email ,
-        $senha ,
+        $num_matricula = null,
+        $email = null ,
+        $senha = null,
         
     ){
 
@@ -51,6 +51,36 @@ class Usuario{
 
     }
     
+    public function cadastrar($nome = null , $email = null, $id_perfil = null, $num_matricula = null, $senha = null)
+    {
+        $objBanco = new Banco('cadastro_usuario');
+
+
+        $validacao_email = $objBanco -> select('email = "'.$email.'"') -> fetchAll(PDO::FETCH_ASSOC);
+        if ($validacao_email)
+        {
+            die('email ja existe'); //modal para email errado return false
+        }
+
+        $validacao_matricula = $objBanco -> select('num_matricula = '.$num_matricula) -> fetchAll(PDO::FETCH_ASSOC);
+        if ($validacao_matricula)
+        {
+            die('num_matricula ja existe'); //modal para num_matricula errado return false
+        }
+        else if (!$validacao_email && !$validacao_matricula)
+        {
+            $objBanco -> insert(['num_matricula'    =>      $num_matricula, 
+                                'id_perfil'         =>      $id_perfil,
+                                'email'             =>      $email,
+                                'senha'             =>      $senha,
+                                'nome'              =>      $nome
+                                ]);
+            return true;
+        }
+
+
+    }
+
     // public function getRecados(){
 
     //     $obBanco = new Banco("recado");
