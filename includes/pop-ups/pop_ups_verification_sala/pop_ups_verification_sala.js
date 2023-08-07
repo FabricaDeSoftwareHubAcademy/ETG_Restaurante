@@ -2,7 +2,7 @@
 
 function openPopupSala(){
     let popup = document.getElementById('popup-up-sala');
-    let btn = document.getElementById("botao-cadastrar-submit").style.display = "none";
+    let btn = document.getElementById("botao-cadastrar-submit");
 
     popup.classList.add("open-popup");
     

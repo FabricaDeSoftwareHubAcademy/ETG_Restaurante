@@ -4,7 +4,7 @@ session_start();
 
 include_once("../includes/menu.php");
 
-require_once("../includes/pop-ups/pop_ups_verification_sala/pop_ups_verification_sala.php");
+
                     
 
 require __DIR__."/../vendor/autoload.php";
@@ -111,6 +111,11 @@ if (isset($_POST      ['nome_sala'],
             <div class="wrap-cadastro-salas">
 
                 <form class="cadastro-sala-form" method="POST" enctype="multipart/form-data" >
+
+                    <?php
+                        require_once("../includes/pop-ups/pop_ups_verification_sala/pop_ups_verification_sala.php");
+                    ?>
+
                     <div class="titulo_de_cadastro">
 
                         <h1> Cadastro de salas </h1>
@@ -169,15 +174,75 @@ if (isset($_POST      ['nome_sala'],
                             <?=$options?>
                             
                         </select> 
-
-                        
-                    
-                    
+                                     
                     </div>
 
-                        <div class="barra"></div>
-                       
+                    <div class="barra"></div>
 
+                    <h3 class="alinar_titulo_h3">Dias de funcionamento </h3>
+
+                    <div class="area_Dos_check_box">
+                        
+                        <div class="Check_Box_individual">
+                            <p>Segunda</p>
+                            <input class="espaco_check_box" type="checkbox" />
+                        </div>
+
+                        <div class="Check_Box_individual">
+                            <p>Terça</p>
+                            <input class="espaco_check_box" type="checkbox" />
+                        </div>
+
+                        <div class="Check_Box_individual">
+                            <p>Quarta</p>
+                            <input class="espaco_check_box" type="checkbox" />
+                        </div>
+
+                        <div class="Check_Box_individual">
+                            <p>Quinta</p>
+                            <input class="espaco_check_box" type="checkbox" />
+                        </div>
+
+                        <div class="Check_Box_individual">
+                            <p>Sexta</p>
+                            <input class="espaco_check_box" type="checkbox" />
+                        </div>
+
+                        <div class="Check_Box_individual">
+                            <p>Sabado</p>
+                            <input class="espaco_check_box" type="checkbox" />
+                        </div>
+
+                        <div class="Check_Box_individual">
+                            <p>Domingo</p>
+                            <input class="espaco_check_box" type="checkbox" />
+                        </div>
+
+                    
+
+
+                    </div>
+
+
+                    <h3 class="alinar_titulo_h3">Turnos de funcionamento </h3>
+                    <div class="area_Dos_check_box">
+                        
+                        <div class="Check_Box_individual">
+                            <p>matutino</p>
+                            <input class="espaco_check_box" type="checkbox" />
+                        </div>
+
+                        <div class="Check_Box_individual">
+                            <p>vespertino</p>
+                            <input class="espaco_check_box" type="checkbox" />
+                        </div>
+
+                        <div class="Check_Box_individual">
+                            <p>noturno</p>
+                            <input class="espaco_check_box" type="checkbox" />
+                        </div>
+
+                    </div>
                     
                     <div class="img-area"> 
                         
@@ -223,7 +288,7 @@ if (isset($_POST      ['nome_sala'],
                         
 
                     </div>  
-
+                
                     
                 </form>  
             </div>

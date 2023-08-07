@@ -1136,3 +1136,44 @@ box-shadow: none;
   width: 100%;
   height: 100%;
 }
+
+.alinar_titulo_h3{
+  margin-top: 3%;
+}
+
+
+.Check_Box_individual{
+
+  display: flex;
+  flex-direction: row;
+  margin-left: 2%;
+  margin-right: 2%;
+  margin-top: 4%;
+  font-size: 18px;
+}
+
+.area_Dos_check_box{
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+
+}
+
+
+.espaco_check_box{
+  border-radius: 500px;
+  margin-left: 5%;
+  appearance: none;
+  border: 2px solid #064A8C;
+  border-radius: 50px;
+  background-color: transparent;
+  padding: 8px;
+  cursor: pointer;
+  color: #064A8C;
+}
+
+.espaco_check_box::after{
+  background-color: red;
+} 
+
+
