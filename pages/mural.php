@@ -1,5 +1,5 @@
 <?php
-//teste diff - jg diff?
+ 
 
 session_start();
 ob_start();
