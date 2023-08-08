@@ -331,8 +331,8 @@
 .alinar-img{
   display: flex;
   flex-direction: column;
-  width: 75%;
-  min-width: 400px;
+  width: 67%;
+  
   
 }
 .alinar-botao-cor{
@@ -347,7 +347,7 @@
 .area-anexo{
   background-color: aliceblue;
   height: 200px;
-  width: 70%;
+  width: 280PX;;
   border-radius: 12px;
   display: flex;
   justify-content: center;
@@ -1151,6 +1151,7 @@ box-shadow: none;
 
 .alinar_titulo_h3{
   margin-top: 3%;
+  font-size: 22px;
 }
 
 
@@ -1169,6 +1170,7 @@ box-shadow: none;
   width: 100%;
   display: flex;
   flex-wrap: wrap;
+  JUSTIFY-CONTENT: SPACE-AROUND;
 
 }
 
