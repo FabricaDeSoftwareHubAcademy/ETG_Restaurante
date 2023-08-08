@@ -25,17 +25,15 @@ if (isset($_GET['id_sala']))
 }        
 
 $options = '';
+$checklists = array();
 $dados = $objCadastroChecklist -> getDados();
 
 foreach ($dados as $row_check)
 {
+    $checklists[] = $row_check['nome']; 
     $options .= '<option  class="ops" value="'.$row_check['id_cadastro_checklist'].'"> '.$row_check['nome'].' </option>';
 }
-if ()
-{
-    
-}
-
+//var_dump($checklists);exit;
 //var_dump($_FILES);exit;
 if (isset($_POST['nome_sala'],
         $_POST['andar_sala'],
@@ -122,13 +120,19 @@ if (isset($_POST['nome_sala'],
                     <div class="dropdown-ck">
 
                         <select name="andar_sala" class="option">
-                            
-                            <option type="input" name="andar_sala">Primeiro Andar</option>
-                            <option type="input" name="andar_sala">Segundo Andar</option>
-                            <option type="input" name="andar_sala">Terceiro Andar</option>
-                            <option type="input" name="andar_sala">Quarto Andar</option>
-                            <option type="input" name="andar_sala">Quinto Andar</option>
-
+                            <?php
+                                foreach ($checklists as $nome_checklist)
+                                {
+                                    if ($nome_checklist == $dados_sala[0]['andar'])
+                                    {
+                                        echo "<option value='$nome_checklist' selected>$nome_checklist</option>";
+                                    }
+                                    else
+                                    {
+                                        echo "<option value='$nome_checklist'>$nome_checklist</option>";
+                                    }
+                                }
+                            ?>
                             
                         </select> 
                     
@@ -140,9 +144,20 @@ if (isset($_POST['nome_sala'],
                     <div class="dropdown-ck">
 
                         <select name="checklist" class="option">
-
-                            <?=$options?>
-                            
+                            <?php
+                                $andares = ['Primeiro andar', 'Segundo andar', 'Terceiro andar', 'Quarto andar', 'Quinto andar'];
+                                foreach ($andares as $andar)
+                                {
+                                    if ($andar == $dados_sala[0]['andar'])
+                                    {
+                                        echo "<option value='$andar' selected>$andar</option>";
+                                    }
+                                    else
+                                    {
+                                        echo "<option value='$andar'>$andar</option>";
+                                    }
+                                }
+                                ?>
                         </select> 
 
                     </div>
