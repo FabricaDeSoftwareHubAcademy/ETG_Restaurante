@@ -13,8 +13,12 @@ use App\Entity\Sala;
 
 require_once("../includes/menu.php");
 
+
+
+
 $salas = "";
 $dados = Sala::getSalas();
+ 
 $count = 0;
 foreach($dados as $sala){
 
@@ -25,8 +29,8 @@ foreach($dados as $sala){
     
                         <div class="border_card_sala" style="
                         border: 2px solid '.$sala['cor'].'"></div>
-                        <img class="img_card_sala" src="../storage/salas/'.$sala['imagem'].'" alt="">
-                        <a href="editar_salas.php?id='.$sala['id_sala'].'"><img class="icon_editar_sala" src="../assets/imgs/icons/btn_editar.png" alt=""></a>
+                        <a class="click_sala" href="visualizar_sala.php?id_sala='.$sala['id_cadastro_sala'].'"><img class="img_card_sala" src="../storage/salas/'.$sala['imagem'].'" alt=""></a>
+                        <a href="editar_salas.php?id_sala='.$sala['id_cadastro_sala'].'"><img class="icon_editar_sala" src="../assets/imgs/icons/btn_editar.png" alt=""></a>
                         <div class="area_title_sala">
     
                             <h1 class="title_sala">Laboratório 303 da cozinha par d</h1>
@@ -39,16 +43,16 @@ foreach($dados as $sala){
 
         $salas .= '<div class="card_sala">
     
-        <div class="border_card_sala2" style="
-        border: 2px solid '.$sala['cor'].'"></div>
-        <img class="img_card_sala" src="../storage/salas/'.$sala['imagem'].'" alt="">
-        <img class="icon_editar_sala" src="../assets/imgs/icons/btn_editar.png" alt="">
-        <div class="area_title_sala2">
+                    <div class="border_card_sala2" style="
+                    border: 2px solid '.$sala['cor'].'"></div>
+                    <a class="click_sala" href="visualizar_sala.php?id_sala='.$sala['id_cadastro_sala'].'"><img class="img_card_sala" src="../storage/salas/'.$sala['imagem'].'" alt=""></a>
+                    <a href="editar_salas.php?id_sala='.$sala['id_cadastro_sala'].'"><img class="icon_editar_sala" src="../assets/imgs/icons/btn_editar.png" alt=""></a>
+                    <div class="area_title_sala2">
 
-            <h1 class="title_sala2">Laboratório 303 da cozinha par d</h1>
-        </div>
+                        <h1 class="title_sala2">Laboratório 303 da cozinha par d</h1>
+                    </div>
 
-    </div>';
+                </div>';
         $count = 0;
     }
 
@@ -76,6 +80,14 @@ foreach($dados as $sala){
         <?=$salas?>
 
     </div>
+
+        <!--Botão IR PARA MURAL DE AVISOS-->
+        <div class="centralizar_btn">
+            <div class="botao-padrao-mural-aviso">
+                <a href="#"><input type="submit" class="botao-mural-aviso-submit"  value="MURAL DE AVISOS"></a>
+            </div>
+        </div>
+
 
     
 </body>

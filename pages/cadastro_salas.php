@@ -45,7 +45,11 @@ if (isset($_POST      ['nome_sala'],
                 $_POST['nome_sala']
                
             );
-            $obj_sala -> cadastrar();
+            if($obj_sala -> cadastrar()){
+
+                header("Location: listar_salas.php");
+
+            }
 
         }   
         ?>
