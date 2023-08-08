@@ -26,7 +26,7 @@ foreach($dados as $sala){
                         <div class="border_card_sala" style="
                         border: 2px solid '.$sala['cor'].'"></div>
                         <img class="img_card_sala" src="../storage/salas/'.$sala['imagem'].'" alt="">
-                        <img class="icon_editar_sala" src="../assets/imgs/icons/btn_editar.png" alt="">
+                        <a href="editar_salas.php?id='.$sala['id_sala'].'"><img class="icon_editar_sala" src="../assets/imgs/icons/btn_editar.png" alt=""></a>
                         <div class="area_title_sala">
     
                             <h1 class="title_sala">Laboratório 303 da cozinha par d</h1>
