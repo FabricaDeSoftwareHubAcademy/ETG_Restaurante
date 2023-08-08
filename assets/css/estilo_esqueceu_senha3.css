@@ -207,12 +207,12 @@
   display: flex;
   justify-content: space-between;
   text-align: center;
-  margin-top: 30%;
+  margin-top: 33%;
 }
 
 @media (max-width: 882px) {
   .centralizar_botoes_alterar_senha{
-    margin-top: 470px;
+    margin-top: 501px;
   }
 
   .centralizar_input_alterar_senha{
