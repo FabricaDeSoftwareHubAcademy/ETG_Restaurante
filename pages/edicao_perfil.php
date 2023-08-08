@@ -57,13 +57,13 @@ $enviar_notificacao = $dados[0] ['enviar_notificacao'];
     <link rel="stylesheet" href="https/cdnjs.cloudflare.comlibs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
 
-    <link rel="stylesheet" href="../assets/css/estilo_botoes_padronizados.css">
+    <!-- <link rel="stylesheet" href="../assets/css/estilo_botoes_padronizados.css"> -->
     <link rel="stylesheet" href="../assets/css/cadastro_perfil.css">
     
 </head>
 
 <body class="tela_cadastro_perfil">
-    <main class="pai-de-todos">
+    <!-- <main class="pai-de-todos"> -->
         <?php
         //toma essa gambiarra ass luiz
         include_once("../includes/menu.php"); 
@@ -134,7 +134,7 @@ $enviar_notificacao = $dados[0] ['enviar_notificacao'];
             <div class="botoes">
                 <!--Botão Voltar-->
                 <div class="botao-padrao-voltar">
-                    <a href="cadastro_perfil.php"><input type="submit" class="botao-voltar-submit"  value="VOLTAR"></a>
+                    <a href="gerenc_perfis.php"class="botao-voltar-submit">VOLTAR</a>
                 </div>
                 <!--Botão Salvar-->
                 <div class="botao-padrao-voltar">
@@ -144,6 +144,6 @@ $enviar_notificacao = $dados[0] ['enviar_notificacao'];
         </form>
         
     </div>
-</main>   
+<!-- </main>    -->
 </body>
 </html>

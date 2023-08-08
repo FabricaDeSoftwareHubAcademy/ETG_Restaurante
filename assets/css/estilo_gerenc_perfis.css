@@ -193,7 +193,10 @@ font-family: 'Montserrat';
     font-family: 'Montserrat';
     font-weight: bold;
     font-size: 15px;
-  
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
   }
   
   .botao-voltar-submit:hover{
