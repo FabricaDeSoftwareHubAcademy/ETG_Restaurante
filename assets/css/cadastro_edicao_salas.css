@@ -331,7 +331,8 @@
 .alinar-img{
   display: flex;
   flex-direction: column;
-  width: 75%;
+  width: 67%;
+  
   
 }
 .alinar-botao-cor{
@@ -346,7 +347,7 @@
 .area-anexo{
   background-color: aliceblue;
   height: 200px;
-  width: 70%;
+  width: 280PX;;
   border-radius: 12px;
   display: flex;
   justify-content: center;
@@ -550,7 +551,7 @@ input[type="file"] {
     font-size: 'Montserrat';
     border-bottom: black;
     height: 35px;
-    font-size: 19px;
+    font-size: 18px;
     padding-left: 7px;
     opacity: 0.4;
   
@@ -633,7 +634,7 @@ input[type="file"] {
   transition: 0.3s;
   color: #9b9b9bd8;
   pointer-events: none;
-  font-family: 'Montserrat';
+  
   font-style: normal;
   font-weight: 600;
   font-size: 20px;
@@ -1147,3 +1148,39 @@ box-shadow: none;
   width: 100%;
   height: 100%;
 }
+
+.alinar_titulo_h3{
+  margin-top: 3%;
+  font-size: 22px;
+}
+
+
+.Check_Box_individual{
+
+  display: flex;
+  flex-direction: row;
+  
+  margin-right: 2%;
+  margin-top: 4%;
+  font-size: 22px;
+  opacity: 0.8;
+}
+
+.area_Dos_check_box{
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  JUSTIFY-CONTENT: SPACE-AROUND;
+
+}
+
+
+.espaco_check_box{
+  border-radius: 500px;
+  width: 20px;
+}
+
+.coisa_tag_p{
+  padding-right: 10px;
+}
+

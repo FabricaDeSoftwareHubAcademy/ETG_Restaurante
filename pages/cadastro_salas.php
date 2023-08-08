@@ -2,6 +2,11 @@
 session_start();
 
 
+include_once("../includes/menu.php");
+
+
+                    
+
 require __DIR__."/../vendor/autoload.php";
 use App\Entity\Sala;
 use App\Entity\CadastroChecklist;
@@ -45,7 +50,11 @@ if (isset($_POST      ['nome_sala'],
                 $_POST['nome_sala']
                
             );
-            $obj_sala -> cadastrar();
+            if($obj_sala -> cadastrar()){
+
+                header("Location: listar_salas.php");
+
+            }
 
         }   
         ?>
@@ -58,7 +67,7 @@ if (isset($_POST      ['nome_sala'],
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro de salas</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https/cdnjs.cloudflare.comlibs/font-awesome/6.4.0/css/all.min.css">
+
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
     <link rel="stylesheet" href="../assets/css/cadastro_edicao_salas.css"> 
     <script src="https://code.jquery.com/jquery-3.7.0.js"integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM="crossorigin="anonymous"></script>
@@ -69,13 +78,19 @@ if (isset($_POST      ['nome_sala'],
 <body class="tela-cadastro-salas">
     <?php include_once("../includes/menu.php");?> 
     <section class="container">
+   
         <div class="container-cadastro-salas">
             <div class="wrap-cadastro-salas">
 
                 <form class="cadastro-sala-form" method="POST" enctype="multipart/form-data" >
+
+                    <?php
+                        require_once("../includes/pop-ups/pop_ups_verification_sala/pop_ups_verification_sala.php");
+                    ?>
+
                     <div class="titulo_de_cadastro">
 
-                        <h1> Cadastro de salas </h1>
+                        <h1> Cadastro De Salas </h1>
                         
                     </div>
                     
@@ -84,7 +99,7 @@ if (isset($_POST      ['nome_sala'],
 
 
                         <div class="input_group field">
-                            <input type="input" class="input_field" placeholder="Name" required="" name="nome_sala">
+                            <input type="input" class="input_field" placeholder="Name" required="" name="nome_sala" maxLength="32">
                             <label for="name" class="input_label">Nome Da Sala </label> <!--Alterar para o nome do input-->
                         </div>
 
@@ -127,19 +142,75 @@ if (isset($_POST      ['nome_sala'],
                     <div class="dropdown-ck">
 
                         <select name="checklist" class="option">
+                        <option>Selecione O Checklist </option>
 
                             <?=$options?>
                             
                         </select> 
-
-                        
-                    
-                    
+                                     
                     </div>
 
-                        <div class="barra"></div>
-                       
+                    <div class="barra"></div>
 
+                    <h3 class="alinar_titulo_h3">Dias De Funcionamento </h3>
+
+                    <div class="area_Dos_check_box">
+                        
+                        <div class="Check_Box_individual">
+                            <p class="coisa_tag_p">Segunda</p>
+                            <input class="espaco_check_box" type="checkbox" />
+                        </div>
+
+                        <div class="Check_Box_individual">
+                            <p class="coisa_tag_p">Terça</p>
+                            <input class="espaco_check_box" type="checkbox" />
+                        </div>
+
+                        <div class="Check_Box_individual">
+                            <p class="coisa_tag_p">Quarta</p>
+                            <input class="espaco_check_box" type="checkbox" />
+                        </div>
+
+                        <div class="Check_Box_individual">
+                            <p class="coisa_tag_p">Quinta</p>
+                            <input class="espaco_check_box" type="checkbox" />
+                        </div>
+
+                        <div class="Check_Box_individual">
+                            <p class="coisa_tag_p">Sexta</p>
+                            <input class="espaco_check_box" type="checkbox" />
+                        </div>
+
+                        <div class="Check_Box_individual">
+                            <p class="coisa_tag_p">Sabado</p>
+                            <input class="espaco_check_box" type="checkbox" />
+                        </div>
+
+                        
+                    </div>
+
+
+                    <h3 class="alinar_titulo_h3">Turnos De Funcionamento </h3>
+                    <div class="area_Dos_check_box">
+
+                        
+                        
+                        <div class="Check_Box_individual">
+                            <p class="coisa_tag_p">Matutino</p>
+                            <input class="espaco_check_box" type="checkbox" />
+                        </div>
+
+                        <div class="Check_Box_individual">
+                            <p class="coisa_tag_p">Vespertino</p>
+                            <input class="espaco_check_box" type="checkbox" />
+                        </div>
+
+                        <div class="Check_Box_individual">
+                            <p class="coisa_tag_p">Noturno</p>
+                            <input class="espaco_check_box" type="checkbox" />
+                        </div>
+
+                    </div>
                     
                     <div class="img-area"> 
                         
@@ -180,10 +251,13 @@ if (isset($_POST      ['nome_sala'],
                         </div>
                         
                         <div class="botao-padrao-cadastrar">
-                            <a href="#"><input name="btn_submit" type="submit" class="botao-cadastrar-submit"  value="CADASTRAR"></a>
+                            <a href="#"><input name="btn_submit" type="submit" class="botao-cadastrar-submit" id="botao-cadastrar-submit" value="CADASTRAR" onclick="openPopupSala()"></a>
                         </div>
                         
+
                     </div>  
+                
+                    
                 </form>  
             </div>
         </div>
@@ -191,6 +265,10 @@ if (isset($_POST      ['nome_sala'],
 
 
 <script>
+
+
+
+
 const remover = document.querySelector(".imagem_aparecer");
 const novo_css = document.querySelector(".novo_css_imagem");
 $(document).ready(function() {

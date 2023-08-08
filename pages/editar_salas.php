@@ -31,6 +31,10 @@ foreach ($dados as $row_check)
 {
     $options .= '<option  class="ops" value="'.$row_check['id_cadastro_checklist'].'"> '.$row_check['nome'].' </option>';
 }
+if ()
+{
+    
+}
 
 //var_dump($_FILES);exit;
 if (isset($_POST['nome_sala'],
@@ -78,6 +82,8 @@ if (isset($_POST['nome_sala'],
     <link rel="stylesheet" href="https/cdnjs.cloudflare.comlibs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
     <link rel="stylesheet" href="../assets/css/cadastro_edicao_salas.css"> 
+    <link rel="stylesheet" href="../includes/pop-ups/pop_ups_verification_sala/pop_ups_verification_sala.css">
+    <script src="../includes/pop-ups/pop_ups_verification_sala/pop_ups_verification_sala.js"></script>
     <script src="https://code.jquery.com/jquery-3.7.0.js"integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM="crossorigin="anonymous"></script>
 
     
@@ -97,7 +103,7 @@ if (isset($_POST['nome_sala'],
                 <form class="cadastro-sala-form" method="POST" enctype="multipart/form-data" >
                     <div class="titulo_de_cadastro">
 
-                        <h1> Editar salas </h1>
+                        <h1> Editar Sala </h1>
                         
                     </div>
                     
@@ -116,7 +122,7 @@ if (isset($_POST['nome_sala'],
                     <div class="dropdown-ck">
 
                         <select name="andar_sala" class="option">
-
+                            
                             <option type="input" name="andar_sala">Primeiro Andar</option>
                             <option type="input" name="andar_sala">Segundo Andar</option>
                             <option type="input" name="andar_sala">Terceiro Andar</option>
@@ -139,10 +145,7 @@ if (isset($_POST['nome_sala'],
                             
                         </select> 
 
-                        
-                    
-                    
-                        Churrasco        </div>
+                    </div>
 
                         <div class="barra"></div>
                        
@@ -164,7 +167,7 @@ if (isset($_POST['nome_sala'],
                             <div class="alinar-img">
                                 <span id="img-text"> Insira a imagem : </span>
                                 <div class="area-anexo">
-                                    <img id="camera_imagem" class="imagem_aparecer_editar" src="../storage/salas/JPG-Alta-Qualidade64cd5d111c1cd.jpg" alt="">
+                                    <img id="camera_imagem" class="imagem_aparecer_editar" src="../storage/salas/<?=$dados_sala[0]['imagem']?>" alt="">
                                     <img  id="imagem_agora_vai" class="novo_css_imagem" src="" alt="">
                                 </div>
                             </div>  

@@ -169,12 +169,12 @@
   display: flex;
   justify-content: space-between;
   text-align: center;
-  margin-top: 30%;
+  margin-top: 34%;
 }
 
 @media (max-width: 882px) {
   .centralizar_botoes_esqueceu_senha{
-    margin-top: 470px;
+    margin-top: 501px;
   }
 
   .centralizar_input_esqueceu_senha{
