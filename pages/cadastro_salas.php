@@ -180,7 +180,7 @@ if (isset($_POST      ['nome_sala'],
 
                     <div class="barra"></div>
 
-                    <h3 class="alinar_titulo_h3">Dias de funcionamento </h3>
+                    <h3 class="alinar_titulo_h3">Dias De Funcionamento </h3>
 
                     <div class="area_Dos_check_box">
                         
@@ -214,34 +214,27 @@ if (isset($_POST      ['nome_sala'],
                             <input class="espaco_check_box" type="checkbox" />
                         </div>
 
-                        <div class="Check_Box_individual">
-                            <p class="coisa_tag_p">Domingo</p>
-                            <input class="espaco_check_box" type="checkbox" />
-                        </div>
-
-                    
-
-
+                        
                     </div>
 
 
-                    <h3 class="alinar_titulo_h3">Turnos de funcionamento </h3>
+                    <h3 class="alinar_titulo_h3">Turnos De Funcionamento </h3>
                     <div class="area_Dos_check_box">
 
                         
                         
                         <div class="Check_Box_individual">
-                            <p class="coisa_tag_p">matutino</p>
+                            <p class="coisa_tag_p">Matutino</p>
                             <input class="espaco_check_box" type="checkbox" />
                         </div>
 
                         <div class="Check_Box_individual">
-                            <p class="coisa_tag_p">vespertino</p>
+                            <p class="coisa_tag_p">Vespertino</p>
                             <input class="espaco_check_box" type="checkbox" />
                         </div>
 
                         <div class="Check_Box_individual">
-                            <p class="coisa_tag_p">noturno</p>
+                            <p class="coisa_tag_p">Noturno</p>
                             <input class="espaco_check_box" type="checkbox" />
                         </div>
 
