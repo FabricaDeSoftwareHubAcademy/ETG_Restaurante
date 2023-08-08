@@ -163,7 +163,7 @@ if (isset($_POST['nome_sala'],
                             <div class="alinar-img">
                                 <span id="img-text"> Insira a imagem : </span>
                                 <div class="area-anexo">
-                                    <img id="camera_imagem" class="imagem_aparecer_editar" src="../storage/salas/JPG-Alta-Qualidade64cd5d111c1cd.jpg" alt="">
+                                    <img id="camera_imagem" class="imagem_aparecer_editar" src="../storage/salas/<?=$dados_sala[0]['imagem']?>" alt="">
                                     <img  id="imagem_agora_vai" class="novo_css_imagem" src="" alt="">
                                 </div>
                             </div>  
