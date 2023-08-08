@@ -118,7 +118,7 @@ if (isset($_POST      ['nome_sala'],
 
                     <div class="titulo_de_cadastro">
 
-                        <h1> Cadastro de salas </h1>
+                        <h1> Cadastro De Salas </h1>
                         
                     </div>
                     
@@ -127,7 +127,7 @@ if (isset($_POST      ['nome_sala'],
 
 
                         <div class="input_group field">
-                            <input type="input" class="input_field" placeholder="Name" required="" name="nome_sala">
+                            <input type="input" class="input_field" placeholder="Name" required="" name="nome_sala" maxLength="32">
                             <label for="name" class="input_label">Nome Da Sala </label> <!--Alterar para o nome do input-->
                         </div>
 
@@ -170,6 +170,7 @@ if (isset($_POST      ['nome_sala'],
                     <div class="dropdown-ck">
 
                         <select name="checklist" class="option">
+                        <option>Selecione O Checklist </option>
 
                             <?=$options?>
                             
@@ -184,37 +185,37 @@ if (isset($_POST      ['nome_sala'],
                     <div class="area_Dos_check_box">
                         
                         <div class="Check_Box_individual">
-                            <p>Segunda</p>
+                            <p class="coisa_tag_p">Segunda</p>
                             <input class="espaco_check_box" type="checkbox" />
                         </div>
 
                         <div class="Check_Box_individual">
-                            <p>Terça</p>
+                            <p class="coisa_tag_p">Terça</p>
                             <input class="espaco_check_box" type="checkbox" />
                         </div>
 
                         <div class="Check_Box_individual">
-                            <p>Quarta</p>
+                            <p class="coisa_tag_p">Quarta</p>
                             <input class="espaco_check_box" type="checkbox" />
                         </div>
 
                         <div class="Check_Box_individual">
-                            <p>Quinta</p>
+                            <p class="coisa_tag_p">Quinta</p>
                             <input class="espaco_check_box" type="checkbox" />
                         </div>
 
                         <div class="Check_Box_individual">
-                            <p>Sexta</p>
+                            <p class="coisa_tag_p">Sexta</p>
                             <input class="espaco_check_box" type="checkbox" />
                         </div>
 
                         <div class="Check_Box_individual">
-                            <p>Sabado</p>
+                            <p class="coisa_tag_p">Sabado</p>
                             <input class="espaco_check_box" type="checkbox" />
                         </div>
 
                         <div class="Check_Box_individual">
-                            <p>Domingo</p>
+                            <p class="coisa_tag_p">Domingo</p>
                             <input class="espaco_check_box" type="checkbox" />
                         </div>
 
@@ -226,19 +227,21 @@ if (isset($_POST      ['nome_sala'],
 
                     <h3 class="alinar_titulo_h3">Turnos de funcionamento </h3>
                     <div class="area_Dos_check_box">
+
+                        
                         
                         <div class="Check_Box_individual">
-                            <p>matutino</p>
+                            <p class="coisa_tag_p">matutino</p>
                             <input class="espaco_check_box" type="checkbox" />
                         </div>
 
                         <div class="Check_Box_individual">
-                            <p>vespertino</p>
+                            <p class="coisa_tag_p">vespertino</p>
                             <input class="espaco_check_box" type="checkbox" />
                         </div>
 
                         <div class="Check_Box_individual">
-                            <p>noturno</p>
+                            <p class="coisa_tag_p">noturno</p>
                             <input class="espaco_check_box" type="checkbox" />
                         </div>
 
