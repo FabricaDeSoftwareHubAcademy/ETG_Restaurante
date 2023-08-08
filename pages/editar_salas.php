@@ -31,6 +31,10 @@ foreach ($dados as $row_check)
 {
     $options .= '<option  class="ops" value="'.$row_check['id_cadastro_checklist'].'"> '.$row_check['nome'].' </option>';
 }
+if ()
+{
+    
+}
 
 //var_dump($_FILES);exit;
 if (isset($_POST['nome_sala'],
@@ -118,7 +122,7 @@ if (isset($_POST['nome_sala'],
                     <div class="dropdown-ck">
 
                         <select name="andar_sala" class="option">
-
+                            
                             <option type="input" name="andar_sala">Primeiro Andar</option>
                             <option type="input" name="andar_sala">Segundo Andar</option>
                             <option type="input" name="andar_sala">Terceiro Andar</option>
