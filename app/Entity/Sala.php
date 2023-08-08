@@ -99,6 +99,7 @@ class Sala{
 
     public function setData($id = null, $dados = []) : bool
     {
+        var_dump($dados);exit;
         $objBanco = new Banco('Cadastro_sala');
         $objBanco -> update('id_cadastro_sala = "'.$id.'"', ['nome'                       => $dados['nome'],
                                                             'andar'                       => $dados['andar'],
