@@ -139,10 +139,7 @@ if (isset($_POST['nome_sala'],
                             
                         </select> 
 
-                        
-                    
-                    
-                        Churrasco        </div>
+                    </div>
 
                         <div class="barra"></div>
                        
