@@ -264,11 +264,14 @@
     
 }
 #descrição{
-    display: flex;
-    align-items: center;
-    font-size: 20px; 
-    opacity: 0.7;
-    padding-right: 30px;
+  display: flex;
+  align-items: center;
+  font-size: 20px;
+  opacity: 0.7;
+  /* padding-right: 30px; */
+  width: 100%;
+  margin-bottom: 15px;
+  text-align: left;
 }
 
 .area-anexo{
@@ -305,7 +308,7 @@
 }
 .text-descricao{
   resize: none;
-  width: 70%;
+  width: 100%;
   padding-left: 10px;
   border-radius: 12px;
   display: flex;
