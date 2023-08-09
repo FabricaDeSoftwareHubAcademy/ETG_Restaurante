@@ -1,11 +1,7 @@
 <?php
-session_start();
 
 
 include_once("../includes/menu.php");
-
-
-                    
 
 require __DIR__."/../vendor/autoload.php";
 use App\Entity\Sala;
@@ -19,14 +15,15 @@ foreach ($dados as $row_check ){
     $options .= '<option  class="ops" value="'.$row_check['id_cadastro_checklist'].'"> '.$row_check['nome'].' </option>';
 }
 
-if (isset($_POST      ['nome_sala'],
-          $_POST      ['andar_sala'],
-          $_POST      ['checklist'],
-          $_POST      ['descricao_sala'],
-          $_POST      ['cor_sala'],
-          $_POST      ['btn_submit']    
-        ))
-        {
+if (isset(  $_POST      ['nome_sala'],
+            $_POST      ['andar_sala'],
+            $_POST      ['checklist'],
+            $_POST      ['descricao_sala'],
+            $_POST      ['cor_sala'],
+            $_POST      ['btn_submit']    
+))
+{
+            //die('teste');
             if (!empty($_FILES['imagem_sala']['name']))
             {
                 $objImagem = new Imagens;
@@ -57,7 +54,7 @@ if (isset($_POST      ['nome_sala'],
             }
 
         }   
-        ?>
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -105,18 +102,6 @@ if (isset($_POST      ['nome_sala'],
 
                     </div>
 
-                    <!-- <div class="wrap-input margin-top-35 margin-bottom-35">
-
-
-
-                        <div class="input_group field">
-                            <input type="input" name="andar_sala">
-                            <label for="name" class="input_label">Andar Da Sala</label> <!--Alterar para o nome do input-->
-                        <!-- </div>
-
-
-
-                    </div> --> 
 
                     <div class="dropdown-ck">
 

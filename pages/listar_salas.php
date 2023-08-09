@@ -33,7 +33,7 @@ foreach($dados as $sala){
                         <a href="editar_salas.php?id_sala='.$sala['id_cadastro_sala'].'"><img class="icon_editar_sala" src="../assets/imgs/icons/btn_editar.png" alt=""></a>
                         <div class="area_title_sala">
     
-                            <h1 class="title_sala">Laboratório 303 da cozinha par d</h1>
+                            <h1 class="title_sala">'.$sala['nome'].'</h1>
                         </div>
     
                     </div>';
@@ -49,7 +49,7 @@ foreach($dados as $sala){
                     <a href="editar_salas.php?id_sala='.$sala['id_cadastro_sala'].'"><img class="icon_editar_sala" src="../assets/imgs/icons/btn_editar.png" alt=""></a>
                     <div class="area_title_sala2">
 
-                        <h1 class="title_sala2">Laboratório 303 da cozinha par d</h1>
+                        <h1 class="title_sala2">'.$sala['nome'].'</h1>
                     </div>
 
                 </div>';
