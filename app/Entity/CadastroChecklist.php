@@ -14,7 +14,7 @@ class CadastroChecklist{
                                 $nome = null
                                 ){
         $this -> id_cadastro_checklist = $id_cadastro_checklist;
-        $this -> $nome = $nome;
+        $this -> nome = $nome;
     }
 
 
