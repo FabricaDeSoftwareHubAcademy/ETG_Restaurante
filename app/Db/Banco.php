@@ -182,12 +182,13 @@ class Banco{
         string `WHERE`
         Senao $where = ''
         */ 
+        //echo $where;exit;
         $where = strlen($where) ? ' WHERE '.$where: '';
         //Mesma logica
         $order = strlen($order) ? ' ORDER BY '.$order: '';
         //Mesma logica
         $limit = strlen($limit) ? ' LIMIT '.$limit: '';
-
+        
         /*Montando a query do `SELECT`,
         concatenando o nome da tabela,
         concatenando os parametros por ALGO ou por ''
