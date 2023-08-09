@@ -6,6 +6,8 @@ use App\Entity\Usuario;
 
 $objUsuario = new Usuario();
 
+include_once('../includes/pop-ups/pop_ups senha_alterada/pop_ups verification_senha_alterada.php');
+
 if (isset($_POST['email'],$_POST['senhaantiga'],$_POST['novasenha'],$_POST['confirmarnovasenha'],$_POST['btn_submit'])){
     if ($objUsuario -> emailValidate($_POST['email']))
     {
@@ -52,9 +54,11 @@ if (isset($_POST['email'],$_POST['senhaantiga'],$_POST['novasenha'],$_POST['conf
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../assets/css/estilo_redefinir_senha.css">
     <link rel="stylesheet" href="../assets/css/input_button_redefinir_senha.css">
+    <link rel="stylesheet" href="../includes/pop-ups/pop_ups senha_alterada/pop_ups verification_senha_alterada.css">
     <!--Alterar Cabeçalho pelo novo-->
     <title>Alterar Senha</title>
-    
+    <script src="../includes/pop-ups/pop_ups senha_alterada/pop_ups verification_senha_alterada.js"></script>
+
 </head>
 <body>
     <main class="pai-de-todos">
