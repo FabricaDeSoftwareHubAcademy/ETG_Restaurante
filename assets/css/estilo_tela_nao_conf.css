@@ -161,6 +161,11 @@ textarea{
     justify-content: flex-end;
     align-items: center;
 }
+
+.bi::before{
+    font-size: 30px
+}
+
 input[type="file"]{
     display: none;
 }
