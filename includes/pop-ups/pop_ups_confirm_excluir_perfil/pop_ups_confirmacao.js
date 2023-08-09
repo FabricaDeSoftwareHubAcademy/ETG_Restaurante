@@ -18,5 +18,5 @@ function openPopup_Conf(id_perfil) {
   
     overlay_conf.style.opacity = 0;
     overlay_conf.style.visibility = "hidden";
-    openPopupAlterar();
+  
   }
