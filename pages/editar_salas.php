@@ -245,7 +245,7 @@ if (isset($_POST['nome_sala'],
                         
                         
                         
-                        <label id="botão-img"for="arquivo" >Enviar Fotos</label>
+                        <label id="botão-img"for="arquivo" >Selecionar Foto</label>
 
                         <input type="file" name="imagem_sala" id="arquivo" onchange="previewImagem()">
                             
