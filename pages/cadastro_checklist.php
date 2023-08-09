@@ -1,6 +1,7 @@
 <?php
     require __DIR__."/../vendor/autoload.php";
     use App\Entity\Pergunta;
+    use App\Entity\CadastroChecklist;
     $dados = Pergunta::getPerguntas()->fetchAll(PDO::FETCH_ASSOC);
     $tr = "";
     foreach ($dados as $rowdados){
@@ -11,6 +12,18 @@
         
 
     }
+
+    if(isset($_POST['cadastrar'])){
+
+        $check = new CadastroChecklist();
+        $nome = $_POST['nome-checklist'];
+
+       $id = $check->cadastrar();
+
+        echo "ultimo id ".$id;
+
+    }
+
 ?>
 
 <!DOCTYPE html>
