@@ -231,6 +231,7 @@ figcaption{
     display: flex;
     margin-top: 10px;
     justify-content: right;
+    gap: 15px;
 }
 
 /* Css Botão Cancelar */
