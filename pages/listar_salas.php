@@ -84,7 +84,7 @@ foreach($dados as $sala){
         <!--Botão IR PARA MURAL DE AVISOS-->
         <div class="centralizar_btn">
             <div class="botao-padrao-mural-aviso">
-                <a href="#"><input type="submit" class="botao-mural-aviso-submit"  value="MURAL DE AVISOS"></a>
+            <a href="mural.php" class="botao-mural-aviso-submit">MURAL DE AVISOS</a>
             </div>
         </div>
 

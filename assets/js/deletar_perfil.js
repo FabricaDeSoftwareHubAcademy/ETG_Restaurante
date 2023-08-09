@@ -10,8 +10,12 @@ async function deletarPerfil(){
   
     const response = await dados.json();
     if(response['status']){
+        openPopupexcluir();
+
+        // setTimeout(function(){
+        //     location.reload()
+        // },2000);
     
-    location.reload()
     }else{
         console.log("Algo inesperado aconteceu")
     }

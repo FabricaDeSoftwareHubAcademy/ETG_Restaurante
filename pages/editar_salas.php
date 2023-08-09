@@ -35,15 +35,21 @@ foreach ($dados as $row_check)
 }
 //var_dump($checklists);exit;
 //var_dump($_FILES);exit;
-if (isset($_POST['btn_submit']))
+if (isset($_POST['nome_sala'],
+        $_POST['andar_sala'],
+        $_POST['checklist'],
+        $_POST['descricao_sala'],
+        $_POST['cor_sala'],
+        $_POST['btn_submit']  
+    ))
 {
-    //var_dump($_POST['ativo_desativo']); echo '<br>'; var_dump($checklists); echo '<br>'; var_dump($dados_sala[0]); exit;  
+    //var_dump($_POST);exit;  
 
     if (!empty($_FILES['imagem_sala']['name']))
     {
         $novo_nome_imagem = $objImagem -> storeImg($_FILES['imagem_sala']['name']);
     }
-    //var_dump($_POST);exit;
+    var_dump($_POST);exit;
     if($obj_sala -> setData($_GET['id_sala'],
     [
         'nome'              => $_POST['nome_sala'],
@@ -138,17 +144,17 @@ if (isset($_POST['btn_submit']))
                     
                     <div class="dropdown-ck">
 
-                        <select name='checklist' class="option">
+                        <select name="checklist" class="option">
                         <?php
-                                foreach ($checklists as $id => $nome)
+                                foreach ($checklists as $id_checklist => $nome_checklist)
                                 {
-                                    if ($id == $dados_sala[0]['id_cadastro_checklist'])
+                                    if ($id_checklist == $dados_sala[0]['id_cadastro_checklist'])
                                     {
-                                        echo "<option name='checklist' value='$id' selected>$nome</option>";
+                                        echo "<option name=\"checklist\" value='$id_cadastro_checklist' selected>$nome_checklist</option>";
                                     }
                                     else
                                     {
-                                        echo "<option name='checklist' value='$id'>$nome</option>";
+                                        echo "<option name=\"checklist\" value='$id_cadastro_checklist'>$nome_checklist</option>";
                                     }
                                 }
                             ?>
@@ -157,6 +163,71 @@ if (isset($_POST['btn_submit']))
                     </div>
 
                         <div class="barra"></div>
+
+
+
+                    
+                        <h3 class="alinar_titulo_h3">Dias De Funcionamento </h3>
+
+                        <div class="area_Dos_check_box">
+                            
+                            <div class="Check_Box_individual">
+                                <p class="coisa_tag_p">Segunda</p>
+                                <input class="espaco_check_box" type="checkbox" />
+                            </div>
+
+                            <div class="Check_Box_individual">
+                                <p class="coisa_tag_p">Terça</p>
+                                <input class="espaco_check_box" type="checkbox" />
+                            </div>
+
+                            <div class="Check_Box_individual">
+                                <p class="coisa_tag_p">Quarta</p>
+                                <input class="espaco_check_box" type="checkbox" />
+                            </div>
+
+                            <div class="Check_Box_individual">
+                                <p class="coisa_tag_p">Quinta</p>
+                                <input class="espaco_check_box" type="checkbox" />
+                            </div>
+
+                            <div class="Check_Box_individual">
+                                <p class="coisa_tag_p">Sexta</p>
+                                <input class="espaco_check_box" type="checkbox" />
+                            </div>
+
+                            <div class="Check_Box_individual">
+                                <p class="coisa_tag_p">Sabado</p>
+                                <input class="espaco_check_box" type="checkbox" />
+                            </div>
+
+                            
+                        </div>
+
+
+                        <h3 class="alinar_titulo_h3">Turnos De Funcionamento </h3>
+                        <div class="area_Dos_check_box">
+
+                            
+                            
+                            <div class="Check_Box_individual">
+                                <p class="coisa_tag_p">Matutino</p>
+                                <input class="espaco_check_box" type="checkbox" />
+                            </div>
+
+                            <div class="Check_Box_individual">
+                                <p class="coisa_tag_p">Vespertino</p>
+                                <input class="espaco_check_box" type="checkbox" />
+                            </div>
+
+                            <div class="Check_Box_individual">
+                                <p class="coisa_tag_p">Noturno</p>
+                                <input class="espaco_check_box" type="checkbox" />
+                            </div>
+
+                        </div>
+                        
+                
                        
 
                     

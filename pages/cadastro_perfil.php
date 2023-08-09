@@ -36,7 +36,7 @@ if (isset($_POST['botao_salvar'], $_POST['nome_cargo'])){
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>C7adastro_perfil</title>
+    <title>Cadastro Perfil</title>
     
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https/cdnjs.cloudflare.comlibs/font-awesome/6.4.0/css/all.min.css">
@@ -115,7 +115,7 @@ if (isset($_POST['botao_salvar'], $_POST['nome_cargo'])){
             <div class="botoes">
                 <!--Botão Voltar-->
                 <div class="botao-padrao-voltar">
-                    <a href="cadastro_perfil.php"><input type="submit" class="botao-voltar-submit"  value="VOLTAR"></a>
+                    <a href="gerenc_perfis.php" class="botao-voltar-submit">VOLTAR</a>
                 </div>
                 <!--Botão Salvar-->
                 <div class="botao-padrao-salvar">

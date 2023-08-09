@@ -80,6 +80,9 @@ if (isset(  $_POST      ['nome_sala'],
             <div class="wrap-cadastro-salas">
 
                 <form class="cadastro-sala-form" method="POST" enctype="multipart/form-data" >
+
+                    
+
                     <div class="titulo_de_cadastro">
 
                         <h1> Cadastro De Salas </h1>
