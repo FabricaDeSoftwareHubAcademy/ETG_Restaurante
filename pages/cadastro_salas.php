@@ -210,6 +210,7 @@ if (isset(  $_POST      ['nome_sala'],
 
                                     <label id="botão-img" for="arquivo" >Selecionar Foto</label>
                                 </div>
+                                
                                 <input type="file" name="imagem_sala" id="arquivo" >
 
                                 <div class="area-anexo">

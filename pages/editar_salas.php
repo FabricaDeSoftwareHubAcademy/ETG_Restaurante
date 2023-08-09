@@ -245,24 +245,29 @@ if (isset($_POST['nome_sala'],
                         </div>
                         <div class="cor-sala">
                             <div class="alinar-img">
-                                <span id="img-text"> Insira a imagem : </span>
-                                <div class="area-anexo">
-                                    <img id="camera_imagem" class="imagem_aparecer_editar" src="../storage/salas/<?=$dados_sala[0]['imagem']?>" alt="">
-                                    <img  id="imagem_agora_vai" class="novo_css_imagem" src="" alt="">
+
+                                <div class="coisas_enilda">
+                                    <span id="img-text"> Insira a imagem : </span>
+
+                                    <label id="botão-img" for="arquivo" >Selecionar Foto</label>
                                 </div>
-                            </div>  
+                                
+                                <input type="file" name="imagem_sala" id="arquivo" >
+
+                                <div class="area-anexo">
+
+                                    
+                                    <img id="camera_imagem" class="imagem_aparecer" src="../assets/imgs/others/camera.png" alt="">
+
+                                    <img  id="imagem_agora_vai" class="novo_css_imagem" src="" alt="">
+
+                                </div>
+                            </div>    
                             <div class="alinar-botao-cor">
                                 <span id="selecao-cor-text">Cor da sala : </span> 
-                                <input value="<?=$dados_sala[0]['cor']?>" class="botao-cor" name="cor_sala" type="color">
+                                <input class="botao-cor" name="cor_sala" type="color">
                             </div>
                         </div>
-                        
-                        
-                        
-                        
-                        <label id="botão-img"for="arquivo" >Selecionar Foto</label>
-
-                        <input type="file" name="imagem_sala" id="arquivo" onchange="previewImagem()">
                             
                         <div class="botao-on-off">
 
