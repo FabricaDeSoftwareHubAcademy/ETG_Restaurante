@@ -6,7 +6,7 @@ use PDOException;
 use App\Db\Banco;
 
 class CadastroChecklist{
-    private 
+    public 
     $id_cadastro_checklist,
     $nome;
 
@@ -14,8 +14,19 @@ class CadastroChecklist{
                                 $nome = null
                                 ){
         $this -> id_cadastro_checklist = $id_cadastro_checklist;
-        $this -> $nome = $nome;
+        $this -> nome = $nome;
     }
+
+
+    public function cadastrar(){
+        $objDatabase = new Banco('checklist_test');
+
+        $ultimoId = $objDatabase -> insertRecoverId(['descricao' => $this -> nome]);
+
+        return $ultimoId;
+    }
+
+
     public function getDados() : array{
         $objDatabase = new Banco('cadastro_checklist');
         $query = $objDatabase -> select();

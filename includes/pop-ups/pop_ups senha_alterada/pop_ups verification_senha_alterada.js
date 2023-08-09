@@ -1,6 +1,6 @@
 function openPopupsenha(){
     let popup = document.getElementById('popup-up-senha');
-    let btn = document.getElementById("submit-btn-senha").style.display = "none";
+    //let btn = document.getElementById("submit-btn-senha").style.display = "none";
 
     popup.classList.add("open-popup");
     
