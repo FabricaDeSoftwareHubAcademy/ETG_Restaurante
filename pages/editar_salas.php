@@ -31,7 +31,7 @@ foreach ($dados as $row_check)
 {
     $options .= '<option  class="ops" value="'.$row_check['id_cadastro_checklist'].'"> '.$row_check['nome'].' </option>';
 }
-if ()
+
 {
     
 }
