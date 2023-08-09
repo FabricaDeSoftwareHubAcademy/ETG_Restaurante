@@ -122,8 +122,10 @@ header{
 .xis{
     display: flex;
     fill: red;
-    width: 60px;
-    height: 8vh;
+    width: 75px;
+    height: 10vh;
+    padding-left: 10px;
+
 }
 
 /* parte do mei (descrição) */
@@ -183,6 +185,10 @@ label{
     height: 20px;
 }
 
+.bi::before{
+    font-size: 20px;
+}
+
 #images{
     width: 100%;
     position: relative;
@@ -231,6 +237,7 @@ figcaption{
     display: flex;
     margin-top: 10px;
     justify-content: right;
+    gap: 15px;
 }
 
 /* Css Botão Cancelar */
