@@ -1,14 +1,9 @@
+/* Estilo da Caixa */
 
-.selecao-pergunta {
-  display: flex;
-  border-bottom: 1px solid rgb(208, 208, 208);
+.selecao-pergunta{
+  border: 1px solid rgb(208, 208, 208);
   border-radius: 8px;
-  width: 100%;
-  flex-direction: column;
-  overflow: hidden;
-  overflow-y: scroll;
-  max-width: 800px;
-  max-height: 400px;
+
 }
 
 .selecao-pergunta::-webkit-scrollbar{
@@ -44,9 +39,16 @@ th {
 
 }
 
+th {
+  
+  height: 25px;
+  background-color: #064A8C;
+  color: rgb(255, 255, 255);
+  font-family: 'Montserrat';
+}
 
 td {
- 
+  
   border-bottom: 2px solid rgb(166, 166, 166);
   font-family: 'Montserrat';
   border-radius: 8px;
@@ -56,6 +58,7 @@ td {
   font-weight: bold;    
 }
 
+/* Estilizando CheckBox */
 
 
 #checkbox{
@@ -89,3 +92,17 @@ td {
 #checkbox:checked::after{
   display: block;
 }
+
+
+/* estilo de rolagem */
+
+.primeira-caixa::-webkit-scrollbar{
+    width: 8px;
+    background-color: #eeeeee;
+    border-radius: 10px;
+  }
+
+  .primeira-caixa::-webkit-scrollbar-thumb{
+    background-color: #F28920;
+    border-radius: 10px; 
+} 
