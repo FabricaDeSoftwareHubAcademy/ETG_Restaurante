@@ -84,9 +84,7 @@ if (isset($_POST      ['nome_sala'],
 
                 <form class="cadastro-sala-form" method="POST" enctype="multipart/form-data" >
 
-                    <?php
-                        require_once("../includes/pop-ups/pop_ups_verification_sala/pop_ups_verification_sala.php");
-                    ?>
+                    
 
                     <div class="titulo_de_cadastro">
 
