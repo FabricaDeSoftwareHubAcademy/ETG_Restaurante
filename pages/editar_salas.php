@@ -35,7 +35,7 @@ foreach ($dados as $row_check)
  
 if (isset($_POST['btn_submit']))
 {
-     
+
     if (!empty($_FILES['imagem_sala']['name']))
     {   
         //var_dump($_FILES);
@@ -212,17 +212,17 @@ if (isset($_POST['btn_submit']))
                             
                             <div class="Check_Box_individual">
                                 <p class="coisa_tag_p">Matutino</p>
-                                <input class="espaco_check_box" type="checkbox" />
+                                <input name="matutino" class="espaco_check_box" type="checkbox" />
                             </div>
 
                             <div class="Check_Box_individual">
                                 <p class="coisa_tag_p">Vespertino</p>
-                                <input class="espaco_check_box" type="checkbox" />
+                                <input name="vespertino" class="espaco_check_box" type="checkbox" />
                             </div>
 
                             <div class="Check_Box_individual">
                                 <p class="coisa_tag_p">Noturno</p>
-                                <input class="espaco_check_box" type="checkbox" />
+                                <input name="matutino" class="espaco_check_box" type="checkbox" />
                             </div>
 
                         </div>
