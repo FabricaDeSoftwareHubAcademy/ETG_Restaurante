@@ -1,3 +1,12 @@
+.tela_notificacao{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    max-width: 832px;
+    flex-direction: column;
+    margin: 0 auto;
+}
+
 
 .titulo_tela_notificacao{
 
@@ -14,6 +23,7 @@
     flex-direction: column;
     width: 100%;
     align-items: center;
+    
 
 }
 
@@ -22,14 +32,53 @@
     display: flex;
     width: 80%;
     height: 90px;
-    background-color: red;
+    background-color: rgb(201, 201, 201);
     border-radius: 12px;
+    justify-content: space-around;
 }
 
 .texto_notificacao{
-
-    margin-left: 7%;
+    height: 100%;
+    margin-left: 3%;
     width: 75%;
     text-align: justify;
+    display: flex;
+    align-items: center;
 
 }
+
+.tempo{
+
+    width: 100%;
+    height: 50%
+}
+
+
+.coracao{
+    width: 100%;
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+
+}
+
+.coracao.active{
+    display: none;
+}
+
+.coracaov2{
+    display: none;
+}
+
+.coracaov2.active{
+    display: block; 
+    width: 100%;
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
