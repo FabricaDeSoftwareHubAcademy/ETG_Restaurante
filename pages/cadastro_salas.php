@@ -25,41 +25,22 @@ if (isset(  $_POST      ['nome_sala'],
 {
             //logica do Json das checkbox de periodo
             $dias_funcionamento = array("segunda" => ($_POST['segunda'] == 'on' ? 'sim' : 'nao'),
-                                        "segunda_turnos" => array(
-                                            ($_POST['matutino'] == 'on' ? 'sim' : 'nao'),
-                                            ($_POST['vespertino'] == 'on' ? 'sim' : 'nao'),
-                                            ($_POST['noturno'] == 'on' ? 'sim' : 'nao'),
-                                                        ),
+
                                         "terca" => ($_POST['terca'] == 'on' ? 'sim' : 'nao'),
-                                        "terca_turnos" => array(
-                                            ($_POST['matutino'] == 'on' ? 'sim' : 'nao'),
-                                            ($_POST['vespertino'] == 'on' ? 'sim' : 'nao'),
-                                            ($_POST['noturno'] == 'on' ? 'sim' : 'nao'),
-                                                        ),
+
                                         "quarta" => ($_POST['quarta'] == 'on' ? 'sim' : 'nao'),
-                                        "quarta_turnos" => array(
-                                            ($_POST['matutino'] == 'on' ? 'sim' : 'nao'),
-                                            ($_POST['vespertino'] == 'on' ? 'sim' : 'nao'),
-                                            ($_POST['noturno'] == 'on' ? 'sim' : 'nao'),
-                                                        ),
+
                                         "quinta" => ($_POST['quinta'] == 'on' ? 'sim' : 'nao'),
-                                        "quinta_turnos" => array(
-                                            ($_POST['matutino'] == 'on' ? 'sim' : 'nao'),
-                                            ($_POST['vespertino'] == 'on' ? 'sim' : 'nao'),
-                                            ($_POST['noturno'] == 'on' ? 'sim' : 'nao'),
-                                                        ),
+
                                         "sexta" => ($_POST['sexta'] == 'on' ? 'sim' : 'nao'),
-                                        "sexta_turnos" => array(
-                                            ($_POST['matutino'] == 'on' ? 'sim' : 'nao'),
-                                            ($_POST['vespertino'] == 'on' ? 'sim' : 'nao'),
-                                            ($_POST['noturno'] == 'on' ? 'sim' : 'nao'),
-                                                        ),
+
                                         "sabado" => ($_POST['sabado'] == 'on' ? 'sim' : 'nao'),
-                                        "sabado_turnos" => array(
-                                            ($_POST['matutino'] == 'on' ? 'sim' : 'nao'),
-                                            ($_POST['vespertino'] == 'on' ? 'sim' : 'nao'),
-                                            ($_POST['noturno'] == 'on' ? 'sim' : 'nao'),
-                                                        ),
+
+                                        "turnos" => array(
+                                            'matutino'          => ($_POST['matutino'] == 'on' ? 'sim' : 'nao'),
+                                            'vespertino'        => ($_POST['vespertino'] == 'on' ? 'sim' : 'nao'),
+                                            'noturno'           => ($_POST['noturno'] == 'on' ? 'sim' : 'nao')
+                                                        )
                                         );
             $dias_funcionamentoJson = json_encode($dias_funcionamento);
 
