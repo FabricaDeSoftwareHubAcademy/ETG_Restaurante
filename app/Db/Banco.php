@@ -124,7 +124,7 @@ class Banco{
         */ 
         
         $query = 'INSERT INTO '.$this -> table.'('.implode(', ', $chaves).') VALUES('.implode(', ', $valores).')';
-         
+        //  echo $query;var_dump($dados); exit;
         //Chamando o metodo `executarQuery` e passando a $query montada e APENAS OS VALORES de `$dados`
         $id = $this -> executeLastId ($query, array_values($dados));
 

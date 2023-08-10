@@ -33,5 +33,10 @@ class CadastroChecklist{
         $dados = $query -> fetchAll(PDO::FETCH_ASSOC);
         return $dados;
     }
+
+
+    public static function cadastroPerunta($dados,$idCheck){
+
+    }
 }
 

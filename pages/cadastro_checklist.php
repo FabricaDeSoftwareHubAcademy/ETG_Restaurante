@@ -1,24 +1,36 @@
 <?php
+
     require __DIR__."/../vendor/autoload.php";
     use App\Entity\Pergunta;
     use App\Entity\CadastroChecklist;
     $dados = Pergunta::getPerguntas()->fetchAll(PDO::FETCH_ASSOC);
     $tr = "";
+    var_dump($_POST['pergunta']);
     foreach ($dados as $rowdados){
         $tr .= "<tr> 
                     <td><input type='checkbox'  id='checkbox' name='pergunta[]' value='" . $rowdados['id_cadastro_pergunta'] . "'></td>
                     <td>" . $rowdados['descricao'] . "</td>   
                 </tr>";
         
+                
 
     }
 
     if(isset($_POST['cadastrar'])){
 
         $check = new CadastroChecklist();
-        $nome = $_POST['nome-checklist'];
+        $check -> nome = $_POST['nome-checklist'];
+        $id = $check->cadastrar();
 
-       $id = $check->cadastrar();
+        echo "ultimo id ".$id;
+
+    }
+
+    if(isset($_POST[''])){
+
+        $check = new CadastroChecklist();
+        $check   = $_POST['id_cadastro_pergunta'];
+        $id = $check->cadastrar();
 
         echo "ultimo id ".$id;
 
