@@ -112,14 +112,16 @@ if (isset($_POST['botao_salvar'], $_POST['nome_cargo'])){
                     </div>
                 </div>
             </div>
-            <div class="botoes">
-                <!--Botão Voltar-->
-                <div class="botao-padrao-voltar">
-                    <a href="gerenc_perfis.php" class="botao-voltar-submit">VOLTAR</a>
-                </div>
-                <!--Botão Salvar-->
-                <div class="botao-padrao-salvar">
-                    <a href=""><input name="botao_salvar" type="submit" class="botao-salvar-submit" value="SALVAR"></a>
+            <div class="container_gp2">
+                <div class="botoes">
+                    <!--Botão Voltar-->
+                    <div class="botao-padrao-voltar">
+                        <a href="gerenc_perfis.php" class="botao-voltar-submit">VOLTAR</a>
+                    </div>
+                    <!--Botão Salvar-->
+                    <div class="botao-padrao-salvar">
+                        <a href=""><input name="botao_salvar" type="submit" class="botao-salvar-submit" value="SALVAR"></a>
+                    </div>
                 </div>
             </div>
         </form>
