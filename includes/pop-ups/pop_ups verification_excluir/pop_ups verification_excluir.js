@@ -1,14 +1,16 @@
 function openPopupexcluir(){
     let popup = document.getElementById('popup-up-excluir');
-    let btn = document.getElementById("submit-btn-excluir").style.display = "none";
+    let popup_excluir = document.querySelector('.container-pop-up-excluir');
+  
 
     popup.classList.add("open-popup");
+    popup_excluir.classList.add("active");
     
 }
 
 function closePopupexcluir(){
-    document.getElementById("popup-up-excluir").style.display = "none";
-    document.getElementById("submit-btn-excluir").style.display = "block";
 
+    let popup = document.getElementById('popup-up-excluir');
     popup.classList.remove("open-popup");
+    popup_excluir.classList.remove("active");
 }
