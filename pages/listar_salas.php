@@ -25,7 +25,7 @@ foreach($dados as $sala){
     if($count == 0){
 
 
-        $salas .= '<div class="card_sala">
+        $salas .= '<div class="card_sala move" animation="right" >
     
                         <div class="border_card_sala" style="
                         border: 2px solid '.$sala['cor'].'"></div>
@@ -41,7 +41,7 @@ foreach($dados as $sala){
         $count = 1;
     }else{
 
-        $salas .= '<div class="card_sala">
+        $salas .= '<div class="card_sala move" animation="left">
     
                     <div class="border_card_sala2" style="
                     border: 2px solid '.$sala['cor'].'"></div>
@@ -70,6 +70,7 @@ foreach($dados as $sala){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="../assets/css/listar_salas.css"> 
+    <script defer src="../assets/js/effect_scroll.js"></script>
 </head>
 <body class="body_listar_salas">
 
@@ -89,6 +90,7 @@ foreach($dados as $sala){
         </div>
 
 
-    
+
+
 </body>
 </html>
