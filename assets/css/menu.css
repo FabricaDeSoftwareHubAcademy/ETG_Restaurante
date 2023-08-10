@@ -157,6 +157,10 @@
   transition: 0.2s ease;
   color: rgba(6, 74, 140, 1);
 }
+
+.li-menu .link-menubi bi-person-video3 {
+  font-size: 50px;
+}
 /* ======================================================= SUB MENU DO MENU ========================================================*/
 .sub-menu{
   background: rgb(255, 255, 255);

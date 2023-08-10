@@ -29,21 +29,21 @@
                     <a href="mural.php" class="link-menu">
                         <i class="bi bi-house-door" style="--i:2"></i>                    
                     </a>
-                </li>          
-                <li class="li-menu">
-                    <a href="listar_salas.php" class="link-menu">
-                    <i id="icn" class="bi bi-journal-plus"></i>               
-                    </a>
-                <li class="li-menu">
-                    <a href="#" class="link-menu">
-                        <i class="bi bi-bell" style="--i:1"></i>                
-                    </a>
-                </li>  
+                </li>   
                 <li class="li-menu">
                     <a href="../pages/gerenc_perfis.php" class="link-menu">
                         <i class="bi bi-person" style="--i:3"></i>                
                     </a>
-                </li>        
+                </li>   
+                <li class="li-menu">
+                    <a href="#" class="link-menu">
+                        <i class="bi bi-bell" style="--i:1"></i>                
+                    </a>
+                </li>     
+                <li class="li-menu">
+                    <a href="listar_salas.php" class="link-menu">
+                    <i class="bi bi-person-video3"></i>              
+                    </a>         
                 <li class="link_submenu">
                     <a href="#" class="link-menu">
                         <i class="bi bi-list-check" id="btnsubmenu" onclick="openSubmenu()" style="--i:4"></i>
