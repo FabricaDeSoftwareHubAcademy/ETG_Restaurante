@@ -29,20 +29,6 @@ foreach ($dados as $row_check)
 //var_dump($_FILES);exit;
 if (isset($_POST['btn_submit']))
 {
-
-
-    //var_dump($_POST);exit;
-    $dias = ['seg', 'ter', 'qua', 'qui', 'sex', 'sab'];
-    $horarios = [];
-    $json_dias_funcionamento = array();
-
-    foreach ($_POST as $name)
-    {
-        if (in_array($name, $dias, true))
-        {
-            $json_dias_funcionamento[$dias[$name]] = 
-        }
-    }  
      
     if (!empty($_FILES['imagem_sala']['name']))
     {   
