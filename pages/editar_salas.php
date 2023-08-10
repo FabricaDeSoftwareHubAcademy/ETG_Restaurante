@@ -14,6 +14,13 @@ if (isset($_GET['id_sala']))
     //var_dump($TESTE);exit;  
     $dados_sala = $obj_sala::getById($_GET['id_sala']);
     //var_dump($dados_sala[0]['ativo_desativo']);exit;
+
+    $status_ativo_desativo = "";
+    if($dados_sala[0]['ativo_desativo'] == 1){
+
+        $status_ativo_desativo = 'checked';
+
+    }
 }        
 
 $options = '';
@@ -25,8 +32,7 @@ foreach ($dados as $row_check)
     $checklists[$row_check['id_cadastro_checklist']] = $row_check['nome']; 
     $options .= '<option  class="ops" value="'.$row_check['id_cadastro_checklist'].'"> '.$row_check['nome'].' </option>';
 }
-//var_dump($checklists);exit;
-//var_dump($_FILES);exit;
+ 
 if (isset($_POST['btn_submit']))
 {
      
@@ -37,10 +43,12 @@ if (isset($_POST['btn_submit']))
         
         
     }
-    //var_dump($dados_sala[0]['ativo_desativo']);exit;
+   
+
+    
     
     if($obj_sala -> setData($_GET['id_sala'],
-    [
+    [   
         'nome'              =>  $_POST['nome_sala'],
         'andar'             =>  $_POST['andar_sala'],
         'checklist'         =>  $_POST['checklist'],
@@ -52,6 +60,7 @@ if (isset($_POST['btn_submit']))
         'ativo_desativo'    =>  (isset($_POST['ativo_desativo']) ? 1 : 0)
     ]))
     {
+        
         die('funcionou');
     }
     else
@@ -263,10 +272,11 @@ if (isset($_POST['btn_submit']))
                         <div class="botao-on-off">
 
                             <div class="text-on-off">
-                                Ativar/Desativar
+                                    Desativar/Ativar
                             </div>
                             <label class="switch">
-                                <input name="ativo_desativo" type="checkbox">
+                                <!-- lugar para printar  -->
+                                <input name="ativo_desativo" <?= $status_ativo_desativo ?> type="checkbox">
                                 <span class="slider"></span>
                             </label>
 
@@ -287,7 +297,7 @@ if (isset($_POST['btn_submit']))
                         </div>
                         
                         <div class="botao-padrao-cadastrar">
-                            <a href="#"><input name="btn_submit" type="submit" class="botao-cadastrar-submit"  value="CADASTRAR"></a>
+                            <a href="#"><input name="btn_submit" type="submit" class="botao-cadastrar-submit"  value="EDITAR"></a>
                         </div>
                         
                     </div>
