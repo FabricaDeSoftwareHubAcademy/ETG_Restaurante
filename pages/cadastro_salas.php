@@ -204,7 +204,15 @@ if (isset(  $_POST      ['nome_sala'],
                         </div>
                         <div class="cor-sala">
                             <div class="alinar-img">
-                                <span id="img-text"> Insira a imagem : </span>
+
+                                <div class="coisas_enilda">
+                                    <span id="img-text"> Insira a imagem : </span>
+
+                                    <label id="botão-img" for="arquivo" >Selecionar Foto</label>
+                                </div>
+                                
+                                <input type="file" name="imagem_sala" id="arquivo" >
+
                                 <div class="area-anexo">
 
                                     
@@ -220,9 +228,7 @@ if (isset(  $_POST      ['nome_sala'],
                             </div>
                         </div>
       
-                        <label id="botão-img" for="arquivo" >Enviar Fotos</label>
-
-                        <input type="file" name="imagem_sala" id="arquivo" >
+                        
                             
                                                                                                            
                     </div>

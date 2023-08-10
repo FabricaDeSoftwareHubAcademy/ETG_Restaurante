@@ -55,7 +55,7 @@
 
             <div class="inputs-cadastro-checklist">
                 <div class="input_group field">
-                    <input type="input" class="input_field" placeholder="Name" required="" name="nome-checklist">
+                    <input type="input" class="input_field" placeholder="Name" required="" name='nome-checklist'>
                     <label for="name" class="input_label">Nome do CheckList</label> <!--Alterar para o nome do input-->
                 </div>
 
