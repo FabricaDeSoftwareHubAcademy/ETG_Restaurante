@@ -32,7 +32,7 @@
                 </li>          
                 <li class="li-menu">
                     <a href="listar_salas.php" class="link-menu">
-                    <i class="bi bi-journal-plus"></i>               
+                    <i id="icn" class="bi bi-journal-plus"></i>               
                     </a>
                 <li class="li-menu">
                     <a href="#" class="link-menu">
