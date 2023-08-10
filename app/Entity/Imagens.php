@@ -1,6 +1,5 @@
 <?php
 namespace App\Entity;
-use App\Db\Banco;
 class Imagens
 {
     public function storeImg($param_nome_arquivo = null)

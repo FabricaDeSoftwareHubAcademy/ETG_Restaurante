@@ -1,17 +1,9 @@
 <?php
-//var_dump($_GET); exit;
-$_SESSION['id'] = '245';
-
-if (isset($_SESSION['id']))
-{
-    session_start();
-}
 require_once("../includes/menu.php");
 require __DIR__."/../vendor/autoload.php";
 
-
 $obj_sala = new App\Entity\Sala;
-
+$obj_imagem = new App\Entity\Imagens;
 
 use App\Entity\CadastroChecklist; 
 $objCadastroChecklist = new CadastroChecklist();
@@ -19,13 +11,20 @@ $objCadastroChecklist = new CadastroChecklist();
 
 if (isset($_GET['id_sala']))
 {
+    //var_dump($TESTE);exit;  
     $dados_sala = $obj_sala::getById($_GET['id_sala']);
-    //$dados_sala = Sala::getById($_GET['id_sala']);
-    //var_dump($dados_sala[0]['imagem']);exit;
+    //var_dump($dados_sala[0]['ativo_desativo']);exit;
+
+    $status_ativo_desativo = "";
+    if($dados_sala[0]['ativo_desativo'] == 1){
+
+        $status_ativo_desativo = 'checked';
+
+    }
 }        
 
 $options = '';
-$checklists = array();
+$checklists = array();  
 $dados = $objCadastroChecklist -> getDados();
 
 foreach ($dados as $row_check)
@@ -33,35 +32,36 @@ foreach ($dados as $row_check)
     $checklists[$row_check['id_cadastro_checklist']] = $row_check['nome']; 
     $options .= '<option  class="ops" value="'.$row_check['id_cadastro_checklist'].'"> '.$row_check['nome'].' </option>';
 }
-//var_dump($checklists);exit;
-//var_dump($_FILES);exit;
-if (isset($_POST['nome_sala'],
-        $_POST['andar_sala'],
-        $_POST['checklist'],
-        $_POST['descricao_sala'],
-        $_POST['cor_sala'],
-        $_POST['btn_submit']  
-    ))
+ 
+if (isset($_POST['btn_submit']))
 {
-    //var_dump($_POST);exit;  
 
     if (!empty($_FILES['imagem_sala']['name']))
-    {
-        $novo_nome_imagem = $objImagem -> storeImg($_FILES['imagem_sala']['name']);
+    {   
+        //var_dump($_FILES);
+        $novo_nome_imagem = $obj_imagem -> storeImg($_FILES['imagem_sala']['name']);
+        
+        
     }
-    var_dump($_POST);exit;
+   
+
+    
+    
     if($obj_sala -> setData($_GET['id_sala'],
-    [
-        'nome'              => $_POST['nome_sala'],
-        'andar'             => $_POST['andar_sala'],
-        'checklist'         => $_POST['checklist'],
-        'descricao'         => $_POST['descricao_sala'],
-        'imagem'            => ''/*(isset($_FILES['imagem_sala']['tmp_name']) ? $novo_nome_imagem : $dados_sala[0]['imagem'])*/,
-        'cor'               => $_POST['cor_sala'],
-        'ativo_desativo'    =>(isset($_POST['ativo_desativo']) ? 1 : 0)
+    [   
+        'nome'              =>  $_POST['nome_sala'],
+        'andar'             =>  $_POST['andar_sala'],
+        'checklist'         =>  $_POST['checklist'],
+        'dias_de_funcionamento' => '',
+        'turnos_de_funcionamento' => '',
+        'descricao'         =>  $_POST['descricao_sala'],
+        'imagem'            =>  (strlen($_FILES['imagem_sala']['tmp_name']) ? $novo_nome_imagem : $dados_sala[0]['imagem']),
+        'cor'               =>  $_POST['cor_sala'],
+        'ativo_desativo'    =>  (isset($_POST['ativo_desativo']) ? 1 : 0)
     ]))
     {
-        header("Location: editar_salas.php");
+        
+        die('funcionou');
     }
     else
     {
@@ -146,15 +146,15 @@ if (isset($_POST['nome_sala'],
 
                         <select name="checklist" class="option">
                         <?php
-                                foreach ($checklists as $id_checklist => $nome_checklist)
+                                foreach ($checklists as $id => $nome)
                                 {
-                                    if ($id_checklist == $dados_sala[0]['id_cadastro_checklist'])
+                                    if ($id == $dados_sala[0]['id_cadastro_checklist'])
                                     {
-                                        echo "<option name=\"checklist\" value='$id_cadastro_checklist' selected>$nome_checklist</option>";
+                                        echo "<option name=\"checklist\" value='$id' selected>$nome</option>";
                                     }
                                     else
                                     {
-                                        echo "<option name=\"checklist\" value='$id_cadastro_checklist'>$nome_checklist</option>";
+                                        echo "<option name=\"checklist\" value='$id'>$nome</option>";
                                     }
                                 }
                             ?>
@@ -173,32 +173,32 @@ if (isset($_POST['nome_sala'],
                             
                             <div class="Check_Box_individual">
                                 <p class="coisa_tag_p">Segunda</p>
-                                <input class="espaco_check_box" type="checkbox" />
+                                <input name="seg" class="espaco_check_box" type="checkbox" />
                             </div>
 
                             <div class="Check_Box_individual">
                                 <p class="coisa_tag_p">Terça</p>
-                                <input class="espaco_check_box" type="checkbox" />
+                                <input name="ter" class="espaco_check_box" type="checkbox" />
                             </div>
 
                             <div class="Check_Box_individual">
                                 <p class="coisa_tag_p">Quarta</p>
-                                <input class="espaco_check_box" type="checkbox" />
+                                <input name="qua" class="espaco_check_box" type="checkbox" />
                             </div>
 
                             <div class="Check_Box_individual">
                                 <p class="coisa_tag_p">Quinta</p>
-                                <input class="espaco_check_box" type="checkbox" />
+                                <input name="qui" class="espaco_check_box" type="checkbox" />
                             </div>
 
                             <div class="Check_Box_individual">
                                 <p class="coisa_tag_p">Sexta</p>
-                                <input class="espaco_check_box" type="checkbox" />
+                                <input name="sex" class="espaco_check_box" type="checkbox" />
                             </div>
 
                             <div class="Check_Box_individual">
                                 <p class="coisa_tag_p">Sabado</p>
-                                <input class="espaco_check_box" type="checkbox" />
+                                <input name="sab    " class="espaco_check_box" type="checkbox" />
                             </div>
 
                             
@@ -212,17 +212,17 @@ if (isset($_POST['nome_sala'],
                             
                             <div class="Check_Box_individual">
                                 <p class="coisa_tag_p">Matutino</p>
-                                <input class="espaco_check_box" type="checkbox" />
+                                <input name="matutino" class="espaco_check_box" type="checkbox" />
                             </div>
 
                             <div class="Check_Box_individual">
                                 <p class="coisa_tag_p">Vespertino</p>
-                                <input class="espaco_check_box" type="checkbox" />
+                                <input name="vespertino" class="espaco_check_box" type="checkbox" />
                             </div>
 
                             <div class="Check_Box_individual">
                                 <p class="coisa_tag_p">Noturno</p>
-                                <input class="espaco_check_box" type="checkbox" />
+                                <input name="matutino" class="espaco_check_box" type="checkbox" />
                             </div>
 
                         </div>
@@ -245,35 +245,40 @@ if (isset($_POST['nome_sala'],
                         </div>
                         <div class="cor-sala">
                             <div class="alinar-img">
-                                <span id="img-text"> Insira a imagem : </span>
-                                <div class="area-anexo">
-                                    <img id="camera_imagem" class="imagem_aparecer_editar" src="../storage/salas/<?=$dados_sala[0]['imagem']?>" alt="">
-                                    <img  id="imagem_agora_vai" class="novo_css_imagem" src="" alt="">
+
+                                <div class="coisas_enilda">
+                                    <span id="img-text"> Insira a imagem : </span>
+
+                                    <label id="botão-img" for="arquivo" >Selecionar Foto</label>
                                 </div>
-                            </div>  
+                                
+                                <input type="file" name="imagem_sala" id="arquivo" >
+
+                                <div class="area-anexo">
+
+                                    
+                                    <img id="camera_imagem" class="imagem_aparecer" src="../assets/imgs/others/camera.png" alt="">
+
+                                    <img  id="imagem_agora_vai" class="novo_css_imagem" src="" alt="">
+
+                                </div>
+                            </div>    
                             <div class="alinar-botao-cor">
                                 <span id="selecao-cor-text">Cor da sala : </span> 
-                                <input value="<?=$dados_sala[0]['cor']?>" class="botao-cor" name="cor_sala" type="color">
+                                <input class="botao-cor" name="cor_sala" type="color">
                             </div>
                         </div>
-                        
-                        
-                        
-                        
-                        <label id="botão-img"for="arquivo" >Enviar Fotos</label>
-
-                        <input type="file" name="imagem_sala" id="arquivo" onchange="previewImagem()">
                             
                         <div class="botao-on-off">
 
                             <div class="text-on-off">
-                                Ativar/Desativar
+                                    Desativar/Ativar
                             </div>
                             <label class="switch">
-                                <input name="ativo_desativo" type="checkbox">
+                                <!-- lugar para printar  -->
+                                <input name="ativo_desativo" <?= $status_ativo_desativo ?> type="checkbox">
                                 <span class="slider"></span>
                             </label>
-
 
                         </div>
                          
@@ -292,7 +297,7 @@ if (isset($_POST['nome_sala'],
                         </div>
                         
                         <div class="botao-padrao-cadastrar">
-                            <a href="#"><input name="btn_submit" type="submit" class="botao-cadastrar-submit"  value="CADASTRAR"></a>
+                            <a href="#"><input name="btn_submit" type="submit" class="botao-cadastrar-submit"  value="EDITAR"></a>
                         </div>
                         
                     </div>
