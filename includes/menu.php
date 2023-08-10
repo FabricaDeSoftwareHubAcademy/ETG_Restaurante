@@ -1,4 +1,3 @@
-
 <?php
  
  ?>
@@ -27,15 +26,19 @@
             </a>
             <ul class="navItems-menu">
                 <li class="li-menu">
-                    <a href="#" class="link-menu">
-                        <i class="bi bi-bell" style="--i:1"></i>                
-                    </a>
-                </li>
-                <li class="li-menu">
                     <a href="mural.php" class="link-menu">
                         <i class="bi bi-house-door" style="--i:2"></i>                    
                     </a>
-                </li>            
+                </li>          
+                <li class="li-menu">
+                    <a href="listar_salas.php" class="link-menu">
+                    <i class="bi bi-journal-plus"></i>               
+                    </a>
+                <li class="li-menu">
+                    <a href="#" class="link-menu">
+                        <i class="bi bi-bell" style="--i:1"></i>                
+                    </a>
+                </li>  
                 <li class="li-menu">
                     <a href="../pages/gerenc_perfis.php" class="link-menu">
                         <i class="bi bi-person" style="--i:3"></i>                
@@ -48,8 +51,9 @@
                         <ul class="sub-menu">            
                             <li class="iten-submenu"><a href="../pages/cadastro_salas.php" id="fonte-submenu">Cadastro de Salas</a></li>
                             <li class="iten-submenu"><a href="" id="fonte-submenu">Relatórios</a></li>
-                            <li class="iten-submenu"><a href="" id="fonte-submenu">Cadastro Checklist</a></li>
-                            <li class="iten-submenu"><a href="" id="fonte-submenu">Cadastro de Perguntas</a></li>                        
+                            <li class="iten-submenu"><a href="cadastro_checklist.php" id="fonte-submenu">Cadastro Checklist</a></li>
+                            <li class="iten-submenu"><a href="cadastro_item.php" id="fonte-submenu">Cadastro de Perguntas</a></li>
+                            <li class="iten-submenu"><a href="cadastro_usuario.php" id="fonte-submenu">Cadastro de Usuario</a></li>                        
                         </ul>
                 </li>         
                 <li class="saida">
@@ -133,15 +137,3 @@ function closeSubmenu(){
     </script>       
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-    

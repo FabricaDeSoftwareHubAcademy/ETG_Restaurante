@@ -168,7 +168,7 @@
   align-items: center;
   margin-left: 70px;
   font-size: 15px;
-  top: 60%;
+  top: 56%;
   overflow: hidden;
   display: none;
   border-radius: 7px;
@@ -193,13 +193,13 @@
 }
 
 .sub-menu.active{
-  height: 140px;
+  height: 184px;
   border: 2px solid #FAA916;
 }
 
 @media (max-width: 832px){
   .sub-menu{
-    top: 48%;
+    top: 46%;
   }
 
 }
