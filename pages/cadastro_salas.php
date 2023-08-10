@@ -25,50 +25,50 @@ if (isset(  $_POST      ['nome_sala'],
 {
             //logica do Json das checkbox de periodo
             $dias_funcionamento = array("segunda" => array(
-                                            $_POST['matutino'],
-                                            $_POST['vespertino'],
-                                            $_POST['noturno'],
+                                            ($_POST['matutino'] == 'on' ? 'sim' : 'nao'),
+                                            ($_POST['vespertino'] == 'on' ? 'sim' : 'nao'),
+                                            ($_POST['noturno'] == 'on' ? 'sim' : 'nao'),
                                                         ),
                                         "terca" => array(
-                                            $_POST['matutino'],
-                                            $_POST['vespertino'],
-                                            $_POST['noturno'],
+                                            ($_POST['matutino'] == 'on' ? 'sim' : 'nao'),
+                                            ($_POST['vespertino'] == 'on' ? 'sim' : 'nao'),
+                                            ($_POST['noturno'] == 'on' ? 'sim' : 'nao'),
                                                         ),
                                         "quarta" => array(
-                                            $_POST['matutino'],
-                                            $_POST['vespertino'],
-                                            $_POST['noturno'],
+                                            ($_POST['matutino'] == 'on' ? 'sim' : 'nao'),
+                                            ($_POST['vespertino'] == 'on' ? 'sim' : 'nao'),
+                                            ($_POST['noturno'] == 'on' ? 'sim' : 'nao'),
                                                         ),
                                         "quinta" => array(
-                                            $_POST['matutino'],
-                                            $_POST['vespertino'],
-                                            $_POST['noturno'],
+                                            ($_POST['matutino'] == 'on' ? 'sim' : 'nao'),
+                                            ($_POST['vespertino'] == 'on' ? 'sim' : 'nao'),
+                                            ($_POST['noturno'] == 'on' ? 'sim' : 'nao'),
                                                         ),
                                         "sexta" => array(
-                                            $_POST['matutino'],
-                                            $_POST['vespertino'],
-                                            $_POST['noturno'],
+                                            ($_POST['matutino'] == 'on' ? 'sim' : 'nao'),
+                                            ($_POST['vespertino'] == 'on' ? 'sim' : 'nao'),
+                                            ($_POST['noturno'] == 'on' ? 'sim' : 'nao'),
                                                         ),
                                         "sabado" => array(
-                                            $_POST['matutino'],
-                                            $_POST['vespertino'],
-                                            $_POST['noturno'],
+                                            ($_POST['matutino'] == 'on' ? 'sim' : 'nao'),
+                                            ($_POST['vespertino'] == 'on' ? 'sim' : 'nao'),
+                                            ($_POST['noturno'] == 'on' ? 'sim' : 'nao'),
                                                         ),
-                                                        
-
                                         );
+            $dias_funcionamentoJson = json_encode($dias_funcionamento);
 
-            //die('teste');
+            //var_dump($dias_funcionamentoJson);exit;
             if (!empty($_FILES['imagem_sala']['name']))
             {
                 $objImagem = new Imagens;
                 $imagem = $objImagem -> storeImg($_FILES['imagem_sala']['name']);
                 
             }
-            else
+/*             else
             {
+                
                 die('a imagem nao foi armazenada!');
-            }
+            } */
             
             $obj_sala = new Sala(
                 null,
@@ -79,17 +79,20 @@ if (isset(  $_POST      ['nome_sala'],
                 $imagem,
                 $_POST['cor_sala'],
                 null,
-                $_POST['nome_sala']
-               
+                $_POST['nome_sala'],
+                null,
+                $dias_funcionamentoJson
+                
             );
             if($obj_sala -> cadastrar()){
-
+                
+                //die('teste');
                 header("Location: listar_salas.php");
-
+                
             }
-
+            
         }   
-?>
+        ?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
