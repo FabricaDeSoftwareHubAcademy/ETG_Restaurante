@@ -51,11 +51,6 @@ if (isset(  $_POST      ['nome_sala'],
                 $imagem = $objImagem -> storeImg($_FILES['imagem_sala']['name']);
                 
             }
-/*             else
-            {
-                
-                die('a imagem nao foi armazenada!');
-            } */
             
             $obj_sala = new Sala(
                 null,
@@ -74,7 +69,7 @@ if (isset(  $_POST      ['nome_sala'],
             if($obj_sala -> cadastrar()){
                 
                 //die('teste');
-                header("Location: listar_salas.php");
+                header("Location: cadastro_salas");
                 
             }
             

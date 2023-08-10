@@ -13,19 +13,13 @@ if (isset($_GET['id_sala']))
 {
     //var_dump($TESTE);exit;  
     $dados_sala = $obj_sala::getById($_GET['id_sala']);
-
+    //var_dump($dados_sala);exit;
     //pegando o Json
     $funcionamento = json_decode($dados_sala[0]['funcionamento'], true);
 
 
     //var_dump($funcionamento);exit;
 
-    $status_ativo_desativo = "";
-    if($dados_sala[0]['ativo_desativo'] == 1){
-
-        $status_ativo_desativo = 'checked';
-
-    }
 }        
 
 $options = '';
@@ -38,6 +32,7 @@ foreach ($dados as $row_check)
     $options .= '<option  class="ops" value="'.$row_check['id_cadastro_checklist'].'"> '.$row_check['nome'].' </option>';
 }
  
+
 if (isset($_POST['btn_submit']))
 {
     //novo JSON de turnos para UPDATE
@@ -61,7 +56,6 @@ if (isset($_POST['btn_submit']))
                                                 )
     );
     $dias_funcionamentoJson = json_encode($dias_funcionamento);
-    //var_dump($dias_funcionamentoJson);exit;
     if (!empty($_FILES['imagem_sala']['name']))
     {   
         //var_dump($_FILES);
@@ -279,7 +273,7 @@ if (isset($_POST['btn_submit']))
                                 <div class="area-anexo">
 
                                     
-                                    <img id="camera_imagem" class="imagem_aparecer" src="../assets/imgs/others/camera.png" alt="">
+                                    <img id="camera_imagem" class="imagem_aparecer" src="../storage/salas/<?=$dados_sala[0]['imagem']?>" alt="">
 
                                     <img  id="imagem_agora_vai" class="novo_css_imagem" src="" alt="">
 
@@ -287,7 +281,7 @@ if (isset($_POST['btn_submit']))
                             </div>    
                             <div class="alinar-botao-cor">
                                 <span id="selecao-cor-text">Cor da sala : </span> 
-                                <input class="botao-cor" name="cor_sala" type="color">
+                                <input value="<?=$dados_sala[0]['cor']?>" class="botao-cor" name="cor_sala" type="color">
                             </div>
                         </div>
                             
@@ -298,7 +292,7 @@ if (isset($_POST['btn_submit']))
                             </div>
                             <label class="switch">
                                 <!-- lugar para printar  -->
-                                <input name="ativo_desativo" <?= $status_ativo_desativo ?> type="checkbox">
+                                <input name="ativo_desativo" <?=($dados_sala[0]['ativo_desativo'] == '1' ? 'checked' : NULL)?> type="checkbox">
                                 <span class="slider"></span>
                             </label>
 
