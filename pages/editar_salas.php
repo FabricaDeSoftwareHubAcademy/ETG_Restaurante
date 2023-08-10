@@ -13,7 +13,12 @@ if (isset($_GET['id_sala']))
 {
     //var_dump($TESTE);exit;  
     $dados_sala = $obj_sala::getById($_GET['id_sala']);
-    //var_dump($dados_sala[0]['ativo_desativo']);exit;
+
+    //pegando o Json
+    $funcionamento = json_decode($dados_sala[0]['funcionamento'], true);
+
+
+    //var_dump($funcionamento);exit;
 
     $status_ativo_desativo = "";
     if($dados_sala[0]['ativo_desativo'] == 1){
@@ -173,32 +178,32 @@ if (isset($_POST['btn_submit']))
                             
                             <div class="Check_Box_individual">
                                 <p class="coisa_tag_p">Segunda</p>
-                                <input name="seg" class="espaco_check_box" type="checkbox" />
+                                <input name="seg" class="espaco_check_box" type="checkbox" <?=($funcionamento['segunda'] == 'sim' ? 'checked' : NULL)?>/>
                             </div>
 
                             <div class="Check_Box_individual">
                                 <p class="coisa_tag_p">Terça</p>
-                                <input name="ter" class="espaco_check_box" type="checkbox" />
+                                <input name="ter" class="espaco_check_box" type="checkbox" <?=($funcionamento['terca'] == 'sim' ? 'checked' : NULL)?>/>
                             </div>
 
                             <div class="Check_Box_individual">
                                 <p class="coisa_tag_p">Quarta</p>
-                                <input name="qua" class="espaco_check_box" type="checkbox" />
+                                <input name="qua" class="espaco_check_box" type="checkbox" <?=($funcionamento['quarta'] == 'sim' ? 'checked' : NULL)?>/>
                             </div>
 
                             <div class="Check_Box_individual">
                                 <p class="coisa_tag_p">Quinta</p>
-                                <input name="qui" class="espaco_check_box" type="checkbox" />
+                                <input name="qui" class="espaco_check_box" type="checkbox" <?=($funcionamento['quinta'] == 'sim' ? 'checked' : NULL)?>/>
                             </div>
 
                             <div class="Check_Box_individual">
                                 <p class="coisa_tag_p">Sexta</p>
-                                <input name="sex" class="espaco_check_box" type="checkbox" />
+                                <input name="sex" class="espaco_check_box" type="checkbox" <?=($funcionamento['sexta'] == 'sim' ? 'checked' : NULL)?>/>
                             </div>
 
                             <div class="Check_Box_individual">
                                 <p class="coisa_tag_p">Sabado</p>
-                                <input name="sab    " class="espaco_check_box" type="checkbox" />
+                                <input name="sab    " class="espaco_check_box" type="checkbox" <?=($funcionamento['sabado'] == 'sim' ? 'checked' : NULL)?>/>
                             </div>
 
                             
@@ -212,17 +217,17 @@ if (isset($_POST['btn_submit']))
                             
                             <div class="Check_Box_individual">
                                 <p class="coisa_tag_p">Matutino</p>
-                                <input name="matutino" class="espaco_check_box" type="checkbox" />
+                                <input name="matutino" class="espaco_check_box" type="checkbox" <?=($funcionamento['segunda_turnos']['0'] == 'sim' ? 'checked' : NULL)?>/>
                             </div>
 
                             <div class="Check_Box_individual">
                                 <p class="coisa_tag_p">Vespertino</p>
-                                <input name="vespertino" class="espaco_check_box" type="checkbox" />
+                                <input name="vespertino" class="espaco_check_box" type="checkbox" <?=($funcionamento['segunda_turnos']['1'] == 'sim' ? 'checked' : NULL)?>/>
                             </div>
 
                             <div class="Check_Box_individual">
                                 <p class="coisa_tag_p">Noturno</p>
-                                <input name="matutino" class="espaco_check_box" type="checkbox" />
+                                <input name="matutino" class="espaco_check_box" type="checkbox" <?=($funcionamento['segunda_turnos']['2'] == 'sim' ? 'checked' : NULL)?>/>
                             </div>
 
                         </div>

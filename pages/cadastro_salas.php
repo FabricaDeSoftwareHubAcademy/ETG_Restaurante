@@ -24,32 +24,38 @@ if (isset(  $_POST      ['nome_sala'],
 ))
 {
             //logica do Json das checkbox de periodo
-            $dias_funcionamento = array("segunda" => array(
+            $dias_funcionamento = array("segunda" => ($_POST['segunda'] == 'on' ? 'sim' : 'nao'),
+                                        "segunda_turnos" => array(
                                             ($_POST['matutino'] == 'on' ? 'sim' : 'nao'),
                                             ($_POST['vespertino'] == 'on' ? 'sim' : 'nao'),
                                             ($_POST['noturno'] == 'on' ? 'sim' : 'nao'),
                                                         ),
-                                        "terca" => array(
+                                        "terca" => ($_POST['terca'] == 'on' ? 'sim' : 'nao'),
+                                        "terca_turnos" => array(
                                             ($_POST['matutino'] == 'on' ? 'sim' : 'nao'),
                                             ($_POST['vespertino'] == 'on' ? 'sim' : 'nao'),
                                             ($_POST['noturno'] == 'on' ? 'sim' : 'nao'),
                                                         ),
-                                        "quarta" => array(
+                                        "quarta" => ($_POST['quarta'] == 'on' ? 'sim' : 'nao'),
+                                        "quarta_turnos" => array(
                                             ($_POST['matutino'] == 'on' ? 'sim' : 'nao'),
                                             ($_POST['vespertino'] == 'on' ? 'sim' : 'nao'),
                                             ($_POST['noturno'] == 'on' ? 'sim' : 'nao'),
                                                         ),
-                                        "quinta" => array(
+                                        "quinta" => ($_POST['quinta'] == 'on' ? 'sim' : 'nao'),
+                                        "quinta_turnos" => array(
                                             ($_POST['matutino'] == 'on' ? 'sim' : 'nao'),
                                             ($_POST['vespertino'] == 'on' ? 'sim' : 'nao'),
                                             ($_POST['noturno'] == 'on' ? 'sim' : 'nao'),
                                                         ),
-                                        "sexta" => array(
+                                        "sexta" => ($_POST['sexta'] == 'on' ? 'sim' : 'nao'),
+                                        "sexta_turnos" => array(
                                             ($_POST['matutino'] == 'on' ? 'sim' : 'nao'),
                                             ($_POST['vespertino'] == 'on' ? 'sim' : 'nao'),
                                             ($_POST['noturno'] == 'on' ? 'sim' : 'nao'),
                                                         ),
-                                        "sabado" => array(
+                                        "sabado" => ($_POST['sabado'] == 'on' ? 'sim' : 'nao'),
+                                        "sabado_turnos" => array(
                                             ($_POST['matutino'] == 'on' ? 'sim' : 'nao'),
                                             ($_POST['vespertino'] == 'on' ? 'sim' : 'nao'),
                                             ($_POST['noturno'] == 'on' ? 'sim' : 'nao'),
@@ -179,32 +185,32 @@ if (isset(  $_POST      ['nome_sala'],
                         
                         <div class="Check_Box_individual">
                             <p class="coisa_tag_p">Segunda</p>
-                            <input class="espaco_check_box" type="checkbox" />
+                            <input name="segunda" class="espaco_check_box" type="checkbox" />
                         </div>
 
                         <div class="Check_Box_individual">
                             <p class="coisa_tag_p">Terça</p>
-                            <input class="espaco_check_box" type="checkbox" />
+                            <input name="terca" class="espaco_check_box" type="checkbox" />
                         </div>
 
                         <div class="Check_Box_individual">
                             <p class="coisa_tag_p">Quarta</p>
-                            <input class="espaco_check_box" type="checkbox" />
+                            <input name="quarta" class="espaco_check_box" type="checkbox" />
                         </div>
 
                         <div class="Check_Box_individual">
                             <p class="coisa_tag_p">Quinta</p>
-                            <input class="espaco_check_box" type="checkbox" />
+                            <input name="quinta" class="espaco_check_box" type="checkbox" />
                         </div>
 
                         <div class="Check_Box_individual">
                             <p class="coisa_tag_p">Sexta</p>
-                            <input class="espaco_check_box" type="checkbox" />
+                            <input name="sexta" class="espaco_check_box" type="checkbox" />
                         </div>
 
                         <div class="Check_Box_individual">
                             <p class="coisa_tag_p">Sabado</p>
-                            <input class="espaco_check_box" type="checkbox" />
+                            <input name="sabado" class="espaco_check_box" type="checkbox" />
                         </div>
 
                         
