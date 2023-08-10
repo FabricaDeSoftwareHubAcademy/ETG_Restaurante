@@ -23,6 +23,41 @@ if (isset(  $_POST      ['nome_sala'],
             $_POST      ['btn_submit']    
 ))
 {
+            //logica do Json das checkbox de periodo
+            $dias_funcionamento = array("segunda" => array(
+                                            $_POST['matutino'],
+                                            $_POST['vespertino'],
+                                            $_POST['noturno'],
+                                                        ),
+                                        "terca" => array(
+                                            $_POST['matutino'],
+                                            $_POST['vespertino'],
+                                            $_POST['noturno'],
+                                                        ),
+                                        "quarta" => array(
+                                            $_POST['matutino'],
+                                            $_POST['vespertino'],
+                                            $_POST['noturno'],
+                                                        ),
+                                        "quinta" => array(
+                                            $_POST['matutino'],
+                                            $_POST['vespertino'],
+                                            $_POST['noturno'],
+                                                        ),
+                                        "sexta" => array(
+                                            $_POST['matutino'],
+                                            $_POST['vespertino'],
+                                            $_POST['noturno'],
+                                                        ),
+                                        "sabado" => array(
+                                            $_POST['matutino'],
+                                            $_POST['vespertino'],
+                                            $_POST['noturno'],
+                                                        ),
+                                                        
+
+                                        );
+
             //die('teste');
             if (!empty($_FILES['imagem_sala']['name']))
             {
@@ -180,17 +215,17 @@ if (isset(  $_POST      ['nome_sala'],
                         
                         <div class="Check_Box_individual">
                             <p class="coisa_tag_p">Matutino</p>
-                            <input class="espaco_check_box" type="checkbox" />
+                            <input name="matutino" class="espaco_check_box" type="checkbox" />
                         </div>
 
                         <div class="Check_Box_individual">
                             <p class="coisa_tag_p">Vespertino</p>
-                            <input class="espaco_check_box" type="checkbox" />
+                            <input name="vespertino" class="espaco_check_box" type="checkbox" />
                         </div>
 
                         <div class="Check_Box_individual">
                             <p class="coisa_tag_p">Noturno</p>
-                            <input class="espaco_check_box" type="checkbox" />
+                            <input name="noturno" class="espaco_check_box" type="checkbox" />
                         </div>
 
                     </div>
