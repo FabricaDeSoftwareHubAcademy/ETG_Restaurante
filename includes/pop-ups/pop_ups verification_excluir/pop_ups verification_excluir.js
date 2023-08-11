@@ -9,6 +9,7 @@ function openPopupexcluir(){
 }
 
 function closePopupexcluir(){
+    let popup_excluir = document.querySelector('.container-pop-up-excluir');
 
     let popup = document.getElementById('popup-up-excluir');
     popup.classList.remove("open-popup");
