@@ -78,7 +78,7 @@ if(isset(
 
                 <div class="dropdown-ck">
                     <select name="id_perfil" class="option">
-
+                        <option value="">Selecione seu Perfil</option>
                         <?=$options?>
         
                     </select> 
