@@ -105,7 +105,6 @@ if (isset(  $_POST      ['nome_sala'],
 <body class="tela-cadastro-salas">
         <?php 
             include_once("../includes/menu.php");
-            include_once("../modal/modal_verification.php");
         ?> 
 
     <section class="container">
