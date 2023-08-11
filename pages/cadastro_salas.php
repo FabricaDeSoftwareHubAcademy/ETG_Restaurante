@@ -1,5 +1,12 @@
+
 <?php
 
+
+if(!isset($_SESSION['num_matricula_logado'])){
+ 
+    header('Location: ../');
+}
+include_once("../includes/menu.php");
 
 include_once("../includes/menu.php");
 
@@ -66,11 +73,13 @@ if (isset(  $_POST      ['nome_sala'],
                 $dias_funcionamentoJson
                 
             );
-            if($obj_sala -> cadastrar()){
-                
-                //die('teste');
-                header("Location: cadastro_salas");
-                
+            if($obj_sala -> cadastrar())
+            {
+                die('cadastrou');
+            }
+            else
+            {
+                die('nao cadastrou');
             }
             
         }   
@@ -88,19 +97,15 @@ if (isset(  $_POST      ['nome_sala'],
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
     <link rel="stylesheet" href="../assets/css/cadastro_edicao_salas.css"> 
     <script src="https://code.jquery.com/jquery-3.7.0.js"integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM="crossorigin="anonymous"></script>
-
-
-
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.18/dist/sweetalert2.min.css">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.18/dist/sweetalert2.all.min.js"></script>
 
     
 </head>
 
 <body class="tela-cadastro-salas">
-    <?php include_once("../includes/menu.php");
-    include_once("../modal/modal_verification.php");
+        <?php 
+            include_once("../includes/menu.php");
+            include_once("../modal/modal_verification.php");
         ?> 
 
     <section class="container">
@@ -269,7 +274,7 @@ if (isset(  $_POST      ['nome_sala'],
                         </div>
                         
                         <div class="botao-padrao-cadastrar">
-                            <a href="#"><input name="btn_submit" type="submit" class="botao-cadastrar-submit" id="botao-cadastrar-submit" value="CADASTRAR" onclick="abrir_modal()"></a>
+                            <a href="#"><input name="btn_submit" type="submit" class="botao-cadastrar-submit" id="botao-cadastrar-submit" value="CADASTRAR"></a>
                         </div>
                         
 
