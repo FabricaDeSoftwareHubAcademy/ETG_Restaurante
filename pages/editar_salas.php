@@ -18,7 +18,7 @@ if (isset($_GET['id_sala']))
     $funcionamento = json_decode($dados_sala[0]['funcionamento'], true);
 
 
-    //var_dump($funcionamento);exit;
+    //var_dump($dados_sala[0]['imagem']   );exit;
 
 }        
 
@@ -54,12 +54,15 @@ if (isset($_POST['btn_submit']))
                                     'vespertino'        => ($_POST['vespertino'] == 'on' ? 'sim' : 'nao'),
                                     'noturno'           => ($_POST['noturno'] == 'on' ? 'sim' : 'nao')
                                                 )
-    );
+                            );
     $dias_funcionamentoJson = json_encode($dias_funcionamento);
     if (!empty($_FILES['imagem_sala']['name']))
     {   
         //var_dump($_FILES);
         $novo_nome_imagem = $obj_imagem -> storeImg($_FILES['imagem_sala']['name']);
+        $antigo_nome_imagem = '../storage/salas/'.$dados_sala[0]['imagem'];
+        //echo $antigo_nome_imagem;exit;
+        unlink($antigo_nome_imagem);
         
         
     }
@@ -273,7 +276,7 @@ if (isset($_POST['btn_submit']))
                                 <div class="area-anexo">
 
                                     
-                                    <img id="camera_imagem" class="imagem_aparecer" src="../storage/salas/<?=$dados_sala[0]['imagem']?>" alt="">
+                                    <img id="camera_imagem" class="imagem_aparecer_editar" src="../storage/salas/<?=$dados_sala[0]['imagem']?>" alt="">
 
                                     <img  id="imagem_agora_vai" class="novo_css_imagem" src="" alt="">
 
