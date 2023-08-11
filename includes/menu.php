@@ -32,7 +32,7 @@
                 </li>   
                 <li class="li-menu">
                     <a href="../pages/gerenc_perfis.php" class="link-menu">
-                        <i class="bi bi-person" style="--i:3"></i>                
+                        <i id="icon-pessoa" class="bi bi-person" style="--i:3"></i>                
                     </a>
                 </li>   
                 <li class="li-menu">
@@ -42,7 +42,7 @@
                 </li>     
                 <li class="li-menu">
                     <a href="listar_salas.php" class="link-menu">
-                    <i class="bi bi-person-video3"></i>              
+                    <i id="icon-grande" class="bi bi-person-video3"></i>              
                     </a>         
                 <li class="link_submenu">
                     <a href="#" class="link-menu">
