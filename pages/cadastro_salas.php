@@ -1,8 +1,12 @@
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.18/dist/sweetalert2.all.min.js"></script> 
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.18/dist/sweetalert2.min.css">
+
 <?php
 
+
+if(!isset($_SESSION['num_matricula_logado'])){
+ 
+    header('Location: ../');
+}
+include_once("../includes/menu.php");
 
 include_once("../includes/menu.php");
 
