@@ -108,12 +108,11 @@ class Sala{
         $objBanco -> update('id_cadastro_sala = "'.$id.'"', ['nome'                       => $dados['nome'],
                                                             'andar'                       => $dados['andar'],
                                                             'id_cadastro_checklist'       => $dados['checklist'],
-                                                            'dia_funcionamento'           => '',
-                                                            'turno_funcionamento'     => '',
                                                             'descricao'                   => $dados['descricao'],
                                                             'imagem'                      => $dados['imagem'],
                                                             'cor'                         => $dados['cor'],
-                                                            'ativo_desativo'              => $dados['ativo_desativo']
+                                                            'ativo_desativo'              => $dados['ativo_desativo'],
+                                                            'funcionamento'               => $dados['funcionamento']
                                 ]);
         return true;
     }

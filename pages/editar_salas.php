@@ -13,14 +13,13 @@ if (isset($_GET['id_sala']))
 {
     //var_dump($TESTE);exit;  
     $dados_sala = $obj_sala::getById($_GET['id_sala']);
-    //var_dump($dados_sala[0]['ativo_desativo']);exit;
+    //var_dump($dados_sala);exit;
+    //pegando o Json
+    $funcionamento = json_decode($dados_sala[0]['funcionamento'], true);
 
-    $status_ativo_desativo = "";
-    if($dados_sala[0]['ativo_desativo'] == 1){
 
-        $status_ativo_desativo = 'checked';
+    //var_dump($dados_sala[0]['imagem']   );exit;
 
-    }
 }        
 
 $options = '';
@@ -33,31 +32,51 @@ foreach ($dados as $row_check)
     $options .= '<option  class="ops" value="'.$row_check['id_cadastro_checklist'].'"> '.$row_check['nome'].' </option>';
 }
  
+
 if (isset($_POST['btn_submit']))
 {
+    //novo JSON de turnos para UPDATE
 
+    $dias_funcionamento = array("segunda" => ($_POST['segunda'] == 'on' ? 'sim' : 'nao'),
+
+                                "terca" => ($_POST['terca'] == 'on' ? 'sim' : 'nao'),
+
+                                "quarta" => ($_POST['quarta'] == 'on' ? 'sim' : 'nao'),
+
+                                "quinta" => ($_POST['quinta'] == 'on' ? 'sim' : 'nao'),
+
+                                "sexta" => ($_POST['sexta'] == 'on' ? 'sim' : 'nao'),
+
+                                "sabado" => ($_POST['sabado'] == 'on' ? 'sim' : 'nao'),
+
+                                "turnos" => array(
+                                    'matutino'          => ($_POST['matutino'] == 'on' ? 'sim' : 'nao'),
+                                    'vespertino'        => ($_POST['vespertino'] == 'on' ? 'sim' : 'nao'),
+                                    'noturno'           => ($_POST['noturno'] == 'on' ? 'sim' : 'nao')
+                                                )
+                            );
+    $dias_funcionamentoJson = json_encode($dias_funcionamento);
     if (!empty($_FILES['imagem_sala']['name']))
     {   
         //var_dump($_FILES);
         $novo_nome_imagem = $obj_imagem -> storeImg($_FILES['imagem_sala']['name']);
+        $antigo_nome_imagem = '../storage/salas/'.$dados_sala[0]['imagem'];
+        //echo $antigo_nome_imagem;exit;
+        unlink($antigo_nome_imagem);
         
         
     }
-   
-
-    
     
     if($obj_sala -> setData($_GET['id_sala'],
     [   
         'nome'              =>  $_POST['nome_sala'],
         'andar'             =>  $_POST['andar_sala'],
         'checklist'         =>  $_POST['checklist'],
-        'dias_de_funcionamento' => '',
-        'turnos_de_funcionamento' => '',
         'descricao'         =>  $_POST['descricao_sala'],
         'imagem'            =>  (strlen($_FILES['imagem_sala']['tmp_name']) ? $novo_nome_imagem : $dados_sala[0]['imagem']),
         'cor'               =>  $_POST['cor_sala'],
-        'ativo_desativo'    =>  (isset($_POST['ativo_desativo']) ? 1 : 0)
+        'ativo_desativo'    =>  (isset($_POST['ativo_desativo']) ? 1 : 0),
+        'funcionamento'     =>  $dias_funcionamentoJson
     ]))
     {
         
@@ -127,11 +146,11 @@ if (isset($_POST['btn_submit']))
                                 {
                                     if ($andar == $dados_sala[0]['andar'])
                                     {
-                                        echo "<option value='$andar' selected>$andar</option>";
+                                        echo "<option name=\"andar_sala\" value='$andar' selected>$andar</option>";
                                     }
                                     else
                                     {
-                                        echo "<option value='$andar'>$andar</option>";
+                                        echo "<option name=\"andar_sala\" value='$andar'>$andar</option>";
                                     }
                                 }
                             ?>
@@ -173,32 +192,32 @@ if (isset($_POST['btn_submit']))
                             
                             <div class="Check_Box_individual">
                                 <p class="coisa_tag_p">Segunda</p>
-                                <input name="seg" class="espaco_check_box" type="checkbox" />
+                                <input name="segunda" class="espaco_check_box" type="checkbox" <?=($funcionamento['segunda'] == 'sim' ? 'checked' : NULL)?>/>
                             </div>
 
                             <div class="Check_Box_individual">
                                 <p class="coisa_tag_p">Terça</p>
-                                <input name="ter" class="espaco_check_box" type="checkbox" />
+                                <input name="terca" class="espaco_check_box" type="checkbox" <?=($funcionamento['terca'] == 'sim' ? 'checked' : NULL)?>/>
                             </div>
 
                             <div class="Check_Box_individual">
                                 <p class="coisa_tag_p">Quarta</p>
-                                <input name="qua" class="espaco_check_box" type="checkbox" />
+                                <input name="quarta" class="espaco_check_box" type="checkbox" <?=($funcionamento['quarta'] == 'sim' ? 'checked' : NULL)?>/>
                             </div>
 
                             <div class="Check_Box_individual">
                                 <p class="coisa_tag_p">Quinta</p>
-                                <input name="qui" class="espaco_check_box" type="checkbox" />
+                                <input name="quinta" class="espaco_check_box" type="checkbox" <?=($funcionamento['quinta'] == 'sim' ? 'checked' : NULL)?>/>
                             </div>
 
                             <div class="Check_Box_individual">
                                 <p class="coisa_tag_p">Sexta</p>
-                                <input name="sex" class="espaco_check_box" type="checkbox" />
+                                <input name="sexta" class="espaco_check_box" type="checkbox" <?=($funcionamento['sexta'] == 'sim' ? 'checked' : NULL)?>/>
                             </div>
 
                             <div class="Check_Box_individual">
                                 <p class="coisa_tag_p">Sabado</p>
-                                <input name="sab    " class="espaco_check_box" type="checkbox" />
+                                <input name="sabado" class="espaco_check_box" type="checkbox" <?=($funcionamento['sabado'] == 'sim' ? 'checked' : NULL)?>/>
                             </div>
 
                             
@@ -212,17 +231,17 @@ if (isset($_POST['btn_submit']))
                             
                             <div class="Check_Box_individual">
                                 <p class="coisa_tag_p">Matutino</p>
-                                <input name="matutino" class="espaco_check_box" type="checkbox" />
+                                <input name="matutino" class="espaco_check_box" type="checkbox" <?=($funcionamento['turnos']['matutino'] == 'sim' ? 'checked' : NULL)?>/>
                             </div>
 
                             <div class="Check_Box_individual">
                                 <p class="coisa_tag_p">Vespertino</p>
-                                <input name="vespertino" class="espaco_check_box" type="checkbox" />
+                                <input name="vespertino" class="espaco_check_box" type="checkbox" <?=($funcionamento['turnos']['vespertino'] == 'sim' ? 'checked' : NULL)?>/>
                             </div>
 
                             <div class="Check_Box_individual">
                                 <p class="coisa_tag_p">Noturno</p>
-                                <input name="matutino" class="espaco_check_box" type="checkbox" />
+                                <input name="noturno" class="espaco_check_box" type="checkbox" <?=($funcionamento['turnos']['noturno'] == 'sim' ? 'checked' : NULL)?>/>
                             </div>
 
                         </div>
@@ -257,7 +276,7 @@ if (isset($_POST['btn_submit']))
                                 <div class="area-anexo">
 
                                     
-                                    <img id="camera_imagem" class="imagem_aparecer" src="../assets/imgs/others/camera.png" alt="">
+                                    <img id="camera_imagem" class="imagem_aparecer_editar" src="../storage/salas/<?=$dados_sala[0]['imagem']?>" alt="">
 
                                     <img  id="imagem_agora_vai" class="novo_css_imagem" src="" alt="">
 
@@ -265,7 +284,7 @@ if (isset($_POST['btn_submit']))
                             </div>    
                             <div class="alinar-botao-cor">
                                 <span id="selecao-cor-text">Cor da sala : </span> 
-                                <input class="botao-cor" name="cor_sala" type="color">
+                                <input value="<?=$dados_sala[0]['cor']?>" class="botao-cor" name="cor_sala" type="color">
                             </div>
                         </div>
                             
@@ -276,7 +295,7 @@ if (isset($_POST['btn_submit']))
                             </div>
                             <label class="switch">
                                 <!-- lugar para printar  -->
-                                <input name="ativo_desativo" <?= $status_ativo_desativo ?> type="checkbox">
+                                <input name="ativo_desativo" <?=($dados_sala[0]['ativo_desativo'] == '1' ? 'checked' : NULL)?> type="checkbox">
                                 <span class="slider"></span>
                             </label>
 

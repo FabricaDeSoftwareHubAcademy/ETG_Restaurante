@@ -24,36 +24,23 @@ if (isset(  $_POST      ['nome_sala'],
 ))
 {
             //logica do Json das checkbox de periodo
-            $dias_funcionamento = array("segunda" => array(
-                                            ($_POST['matutino'] == 'on' ? 'sim' : 'nao'),
-                                            ($_POST['vespertino'] == 'on' ? 'sim' : 'nao'),
-                                            ($_POST['noturno'] == 'on' ? 'sim' : 'nao'),
-                                                        ),
-                                        "terca" => array(
-                                            ($_POST['matutino'] == 'on' ? 'sim' : 'nao'),
-                                            ($_POST['vespertino'] == 'on' ? 'sim' : 'nao'),
-                                            ($_POST['noturno'] == 'on' ? 'sim' : 'nao'),
-                                                        ),
-                                        "quarta" => array(
-                                            ($_POST['matutino'] == 'on' ? 'sim' : 'nao'),
-                                            ($_POST['vespertino'] == 'on' ? 'sim' : 'nao'),
-                                            ($_POST['noturno'] == 'on' ? 'sim' : 'nao'),
-                                                        ),
-                                        "quinta" => array(
-                                            ($_POST['matutino'] == 'on' ? 'sim' : 'nao'),
-                                            ($_POST['vespertino'] == 'on' ? 'sim' : 'nao'),
-                                            ($_POST['noturno'] == 'on' ? 'sim' : 'nao'),
-                                                        ),
-                                        "sexta" => array(
-                                            ($_POST['matutino'] == 'on' ? 'sim' : 'nao'),
-                                            ($_POST['vespertino'] == 'on' ? 'sim' : 'nao'),
-                                            ($_POST['noturno'] == 'on' ? 'sim' : 'nao'),
-                                                        ),
-                                        "sabado" => array(
-                                            ($_POST['matutino'] == 'on' ? 'sim' : 'nao'),
-                                            ($_POST['vespertino'] == 'on' ? 'sim' : 'nao'),
-                                            ($_POST['noturno'] == 'on' ? 'sim' : 'nao'),
-                                                        ),
+            $dias_funcionamento = array("segunda" => ($_POST['segunda'] == 'on' ? 'sim' : 'nao'),
+
+                                        "terca" => ($_POST['terca'] == 'on' ? 'sim' : 'nao'),
+
+                                        "quarta" => ($_POST['quarta'] == 'on' ? 'sim' : 'nao'),
+
+                                        "quinta" => ($_POST['quinta'] == 'on' ? 'sim' : 'nao'),
+
+                                        "sexta" => ($_POST['sexta'] == 'on' ? 'sim' : 'nao'),
+
+                                        "sabado" => ($_POST['sabado'] == 'on' ? 'sim' : 'nao'),
+
+                                        "turnos" => array(
+                                            'matutino'          => ($_POST['matutino'] == 'on' ? 'sim' : 'nao'),
+                                            'vespertino'        => ($_POST['vespertino'] == 'on' ? 'sim' : 'nao'),
+                                            'noturno'           => ($_POST['noturno'] == 'on' ? 'sim' : 'nao')
+                                                        )
                                         );
             $dias_funcionamentoJson = json_encode($dias_funcionamento);
 
@@ -64,11 +51,6 @@ if (isset(  $_POST      ['nome_sala'],
                 $imagem = $objImagem -> storeImg($_FILES['imagem_sala']['name']);
                 
             }
-/*             else
-            {
-                
-                die('a imagem nao foi armazenada!');
-            } */
             
             $obj_sala = new Sala(
                 null,
@@ -87,7 +69,7 @@ if (isset(  $_POST      ['nome_sala'],
             if($obj_sala -> cadastrar()){
                 
                 //die('teste');
-                header("Location: listar_salas.php");
+                header("Location: cadastro_salas");
                 
             }
             
@@ -188,32 +170,32 @@ if (isset(  $_POST      ['nome_sala'],
                         
                         <div class="Check_Box_individual">
                             <p class="coisa_tag_p">Segunda</p>
-                            <input class="espaco_check_box" type="checkbox" />
+                            <input name="segunda" class="espaco_check_box" type="checkbox" />
                         </div>
 
                         <div class="Check_Box_individual">
                             <p class="coisa_tag_p">Terça</p>
-                            <input class="espaco_check_box" type="checkbox" />
+                            <input name="terca" class="espaco_check_box" type="checkbox" />
                         </div>
 
                         <div class="Check_Box_individual">
                             <p class="coisa_tag_p">Quarta</p>
-                            <input class="espaco_check_box" type="checkbox" />
+                            <input name="quarta" class="espaco_check_box" type="checkbox" />
                         </div>
 
                         <div class="Check_Box_individual">
                             <p class="coisa_tag_p">Quinta</p>
-                            <input class="espaco_check_box" type="checkbox" />
+                            <input name="quinta" class="espaco_check_box" type="checkbox" />
                         </div>
 
                         <div class="Check_Box_individual">
                             <p class="coisa_tag_p">Sexta</p>
-                            <input class="espaco_check_box" type="checkbox" />
+                            <input name="sexta" class="espaco_check_box" type="checkbox" />
                         </div>
 
                         <div class="Check_Box_individual">
                             <p class="coisa_tag_p">Sabado</p>
-                            <input class="espaco_check_box" type="checkbox" />
+                            <input name="sabado" class="espaco_check_box" type="checkbox" />
                         </div>
 
                         
