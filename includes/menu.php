@@ -52,8 +52,8 @@
 
 
                 <li class="li-menu">
-                    <a href="listar_salas.php" class="link-menu">
-                        <i id="icon-cadeado" class="bi bi-shield-lock" style="--i:5"></i>              
+                    <a href="redefinir_senha.php" class="link-menu">
+                        <i id="icon-cadeado" class="bi bi-key" style="--i:5"></i>              
                     </a>  
                 </li>  
 
