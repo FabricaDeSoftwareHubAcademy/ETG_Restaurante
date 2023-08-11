@@ -114,7 +114,6 @@
 .saida .link-menu i{
   position: relative;
   display: block;
-  font-size: 40px;
   color: #FAA916;
   width: 100%;
   text-align: center;
@@ -127,22 +126,6 @@
   position: absolute;
 }
 
-.link_submenu{
-  list-style: none;
-  margin-top: 180px;
-}
-
-.link_submenu .link-menu i{
-  position: relative;
-  display: block;
-  font-size: 40px;
-  color: #FAA916;
-  width: 100%;
-  text-align: center;
-  transform: scale(0); 
-  margin-top: 50px;
-  list-style: none;
-}
 
 .link-menu{ 
   color: aqua;
@@ -157,7 +140,54 @@
   transition: 0.2s ease;
   color: rgba(6, 74, 140, 1);
 }
+
+
+/* ========================================================== TAMANHO DOS ICONES ========================================================== */
+
+#icon-vizualizar{
+  font-size: 30px;
+}
+
+#icon-pessoa{
+  font-size: 35px;
+}
+
+#icon-casa{
+  font-size: 30px;
+}
+
+#icon-notificacao{
+  font-size: 30px;
+}
+
+.link_submenu .link-menu i{
+  font-size: 30px;
+}
+
+.saida .link-menu i{
+  font-size: 30px;
+}
+
+#icon-cadeado{
+  font-size: 34px;
+}
 /* ======================================================= SUB MENU DO MENU ========================================================*/
+.link_submenu{
+  list-style: none;
+  margin-top: 180px;
+}
+
+.link_submenu .link-menu i{
+  position: relative;
+  display: block;
+  color: #FAA916;
+  width: 100%;
+  text-align: center;
+  transform: scale(0); 
+  margin-top: 50px;
+  list-style: none;
+}
+
 .sub-menu{
   background: rgb(255, 255, 255);
   position: absolute;
@@ -168,7 +198,7 @@
   align-items: center;
   margin-left: 70px;
   font-size: 15px;
-  top: 60%;
+  top: 56%;
   overflow: hidden;
   display: none;
   border-radius: 7px;
@@ -193,13 +223,13 @@
 }
 
 .sub-menu.active{
-  height: 140px;
+  height: 184px;
   border: 2px solid #FAA916;
 }
 
 @media (max-width: 832px){
   .sub-menu{
-    top: 48%;
+    top: 46%;
   }
 
 }
