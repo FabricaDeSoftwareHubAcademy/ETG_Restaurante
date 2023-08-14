@@ -321,18 +321,18 @@
   display: flex;
  flex-direction: row;
  
- justify-content: space-evenly;
+ 
  padding-top: 20px
 
 }
 
-@media screen and (max-width: 550px) { 
+@media screen and (max-width: 700px) { 
 
     .cor-sala {
       width: 100%;
       display: flex;
       flex-direction: column;
-      justify-content: space-evenly;
+      
       padding-top: 20px;
     }
 
@@ -383,8 +383,8 @@
 }
 .area-anexo{
   background-color: aliceblue;
-  height: 200px;
-  width: 280PX;;
+  height: 150px;
+  width: 416PX;;
   border-radius: 12px;
   display: flex;
   justify-content: center;
@@ -1129,9 +1129,10 @@ box-shadow: none;
 
 
 .imagem_aparecer{
-    width: 70%;
+    width: 40%;
     height: 100%;
     border-radius: 10px;
+    object-fit: cover;
     /*object-fit: cover;*/ 
 }
 
@@ -1140,6 +1141,7 @@ box-shadow: none;
   width: 100%;
   height: 100%;
   border-radius: 10px;
+  object-fit: cover;
 }
 
 .imagem_aparecer_editar.active
