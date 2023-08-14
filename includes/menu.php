@@ -32,11 +32,18 @@
                     </a>
                 </li>  
 
-                <li class="li-menu">
-                    <a href="../pages/gerenc_perfis.php" class="link-menu">
+            
+                <li class="link_submenu2">
+                    <a href="#" class="link-menu2">
                         <i id="icon-pessoa" class="bi bi-person"  style="--i:2"></i>                
                     </a>
+                
+                    <ul class="sub-menu2" id="btnsubmenu2" onclick="openSubmenu2()">
+                        <li class="iten-submenu2"><a href="#" id="fonte-submenu">Gerenciar Perfil</a></li>
+                        <li class="iten-submenu2"><a href="#" id="fonte-submenu">Editar Usuario</a></li>
+                    </ul>
                 </li>   
+
 
                 <li class="li-menu">
                     <a href="#" class="link-menu">
@@ -48,16 +55,9 @@
                     <a href="listar_salas.php" class="link-menu">
                         <i id="icon-vizualizar" class="bi bi-person-video3"  style="--i:4"></i>              
                     </a>  
-                </li>     
+                </li>      
 
-
-                <li class="li-menu">
-                    <a href="redefinir_senha.php" class="link-menu">
-                        <i id="icon-cadeado" class="bi bi-key" style="--i:5"></i>              
-                    </a>  
-                </li>  
-
-
+                
                 <li class="link_submenu">
                     <a href="#" class="link-menu">
                         <i class="bi bi-list-check" id="btnsubmenu" onclick="openSubmenu()" style="--i:6"></i>
@@ -65,13 +65,13 @@
 
                         <ul class="sub-menu">            
                             <li class="iten-submenu"><a href="../pages/cadastro_salas.php" id="fonte-submenu">Cadastro de Salas</a></li>
-                            <li class="iten-submenu"><a href="" id="fonte-submenu">Relatórios</a></li>
                             <li class="iten-submenu"><a href="cadastro_checklist.php" id="fonte-submenu">Cadastro Checklist</a></li>
                             <li class="iten-submenu"><a href="cadastro_item.php" id="fonte-submenu">Cadastro de Perguntas</a></li>
                             <li class="iten-submenu"><a href="cadastro_usuario.php" id="fonte-submenu">Cadastro de Usuario</a></li>                        
                         </ul>
 
                 </li>         
+
 
                 <li class="saida">
                     <button class="btnOpenmodal-menu" onclick="openModal()" >  
@@ -115,14 +115,18 @@
           toggleClick.classList.toggle("active");
           container.classList.toggle("active");
           submenu.classList.remove('active');
+          submenu2.classList.remove('active');
           btn_submenu.setAttribute('onclick', 'openSubmenu()');
+          btn_submenu2.setAttribute('onclick', 'openSubmenu2()');
           closeModal()
         })
 
 
         const modal = document.querySelector('.modal-container-menu')
 const submenu = document.querySelector('.sub-menu')
+const submenu2 = document.querySelector('.sub-menu2')
 const btn_submenu = document.getElementById('btnsubmenu')
+const btn_submenu2 = document.getElementById('btnsubmenu2')
 
 
 function openModal() {
@@ -150,6 +154,17 @@ function openSubmenu(){
 function closeSubmenu(){
   submenu.classList.remove('active')
   btn_submenu.setAttribute('onclick', 'openSubmenu()')
+
+}
+
+function openSubmenu2(){
+  submenu2.classList.add('active')
+  btn_submenu2.setAttribute('onclick', 'closeSubmenu2()')
+} 
+
+function closeSubmenu2(){
+  submenu2.classList.remove('active')
+  btn_submenu2.setAttribute('onclick', 'openSubmenu2()')
 
 }
     </script>       

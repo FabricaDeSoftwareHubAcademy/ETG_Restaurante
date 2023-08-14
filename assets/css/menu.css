@@ -171,7 +171,7 @@
 #icon-cadeado{
   font-size: 34px;
 }
-/* ======================================================= SUB MENU DO MENU ========================================================*/
+/* ======================================================= SUB MENU DE CADASTROS  ============================================================================*/
 .link_submenu{
   list-style: none;
   margin-top: 180px;
@@ -192,8 +192,7 @@
   background: rgb(255, 255, 255);
   position: absolute;
   transition: 0.5s;
-  width: 450px;
-  height: 0px;
+  width: 350px;
   padding: -50px;
   align-items: center;
   margin-left: 70px;
@@ -223,7 +222,7 @@
 }
 
 .sub-menu.active{
-  height: 184px;
+  height: 145px;
   border: 2px solid #FAA916;
 }
 
@@ -233,6 +232,66 @@
   }
 
 }
+
+/* ========================================================================= SUB MENU DE PERFIS ===================================================================================*/
+.link_submenu2{
+  background-color: aqua;
+  list-style: none; 
+}
+
+.link_submenu2 .link-menu2{
+  position: relative;
+  color: #FAA916;
+  width: 100%;
+
+  text-align: center;
+  transform: scale(0); 
+  list-style: none;
+}
+
+.sub-menu2{
+  background: rgb(255, 255, 255);
+  position: absolute;
+  transition: 0.5s;
+  width: 650px;
+  align-items: center;
+  font-size: 15px;
+  overflow: hidden;
+  display: none;
+  border-radius: 7px;
+}
+
+#fonte-submenu2{
+  text-decoration: none;
+  font-style: none;
+  color: #FAA916;
+}
+
+#fonte-submenu2:hover{
+  color: rgba(6, 74, 140, 1);
+
+}
+
+.iten-submenu2{
+  background-color: #fff;
+  padding: 6px;
+  font-size: 20px;
+  
+}
+
+.sub-menu2.active{
+  height: 145px;
+  border: 2px solid #FAA916;
+}
+
+@media (max-width: 832px){
+  .sub-menu2{
+    top: 46%;
+  }
+
+}
+
+
 
 /* =============================================== POP UP ================================================================================ */
 .modal-container-menu{
