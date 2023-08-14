@@ -76,10 +76,20 @@ if (isset($_POST['btn_submit']))
         'cor'               =>  $_POST['cor_sala'],
         'ativo_desativo'    =>  (isset($_POST['ativo_desativo']) ? 1 : 0),
         'funcionamento'     =>  $dias_funcionamentoJson
-    ])){
-
+    ]))
+    
+    if($obj_sala -> setData()){
+        echo('cadastrou');
+        echo("<script>function abrir_modal(){
+            Swal.fire({
+                title: 'Cadastrado com sucesso!', //TITULO DO POP_UP DE ACORDO COM SUA TELA 
+                icon: 'success', // success, error e warning
+                confirmButtonColor: '#609437', // DEFINE A COR DO BOTÃO OK
+                confirmButtonText: 'OK'
+            });
+        }</script>");
+        sleep(2);
         header("Location: listar_salas.php");
-
     }
     else
     {
@@ -318,7 +328,7 @@ if (isset($_POST['btn_submit']))
                         </div>
                         
                         <div class="botao-padrao-cadastrar">
-                            <a><input name="btn_submit" type="submit" class="botao-cadastrar-submit"  value="EDITAR" onclick="abrir_modal()"></a>
+                            <a><input name="btn_submit" type="submit" class="botao-cadastrar-submit"  value="EDITAR" ></a>
                         </div>
                         
                     </div>
