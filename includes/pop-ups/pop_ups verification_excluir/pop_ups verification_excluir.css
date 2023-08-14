@@ -14,12 +14,21 @@
 }
 .container-pop-up-excluir{
     width: 100%;
- 
-     
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
     display: flex;
     align-items: center;
     justify-content: center;
+    z-index: 999999999;
+    pointer-events: none;
 }
+
+.container-pop-up-excluir.active{
+    pointer-events: all;
+}
+
 .btn-pop-up-excluir{
     padding: 10px 60px;
     background: #6fd649;
@@ -31,6 +40,23 @@
     font-weight:500;
     border-radius: 30px;
 }
+
+.btn-pop-up-excluir1{
+    padding: 10px 60px;
+    background: #6fd649;
+    color: white;
+    border: 0;
+    outline: none;
+    cursor: pointer;
+    font-size: 22px;
+    font-weight:500;
+    border-radius: 30px;
+}
+
+#popup-up-excluir{
+    background-color: white;
+}
+
 .popup-excluir{
     width: 400px;
     border-radius: 6px;
@@ -88,3 +114,4 @@
     background-color: var(--cor-primaria-botao-red);
     color: var(--cor-primaria-botao-white);
 }
+

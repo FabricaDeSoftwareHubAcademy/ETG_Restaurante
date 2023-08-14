@@ -38,19 +38,21 @@
     flex-direction: column; 
     align-items: center;
     margin: 5% auto;
-    margin-top: 70px;
+    margin-top: 20px;
 }
 
 .tela_cadastro_perfil .titulo_cad{
     display: flex;
     padding: 0;
-
 }
 .tela_cadastro_perfil .titulo_cad_perfil{
     color: var(--cor-label);
     font-size: 40px;
+
+
     font-style: normal;
     font-family: 'Montserrat';
+
     justify-content: center;
 }
   
@@ -148,6 +150,8 @@
   cursor: text;
   top: 20px;
   margin-left: 12px;
+  left: 20px;
+
 }
 
 .input_label {
@@ -161,6 +165,8 @@
   font-style: normal;
   font-weight: 400;
   font-size: 20px;
+  left: 15px;
+
 }
 
 .input_field:focus {
@@ -178,11 +184,11 @@
   transition: 0.3s;
   font-size: 17px;
   font-weight: 700;
-  margin-left: 12px;
 }
 
 .input_field:required, .input_field:invalid {
   box-shadow: none;
+
 }
 
 /* input */
@@ -214,7 +220,7 @@
     
 }
 .titulo_permissoes{
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Montserrat';
     font-size: 20px;
     font-weight: bold;
     text-shadow: 0px 0px 1px black;
@@ -337,9 +343,24 @@
 .botoes{
   width: 100%;
   display: flex;
-  justify-content: space-between;
-  margin: 10% 0 0 0;
-  
+  flex-direction: row;
+  align-items: center;
+  position: fixed;
+  margin: 0 auto;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 25px;
+  justify-content: space-around;
+}
+
+.container_gp2{
+ 
+  width: 100%;
+  position: absolute;
+  /* bottom: 0; */
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 

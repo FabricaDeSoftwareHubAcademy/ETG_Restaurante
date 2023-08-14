@@ -1,4 +1,11 @@
 <?php
+session_start();
+if(!isset($_SESSION['num_matricula_logado'])){
+ 
+    header('Location: ../');
+}
+include_once("../includes/menu.php");
+
 require_once("../includes/menu.php");
 require __DIR__."/../vendor/autoload.php";
 
@@ -10,16 +17,9 @@ $objCadastroChecklist = new CadastroChecklist();
 
 
 if (isset($_GET['id_sala']))
-{
-    //var_dump($TESTE);exit;  
+{  
     $dados_sala = $obj_sala::getById($_GET['id_sala']);
-    //var_dump($dados_sala);exit;
-    //pegando o Json
     $funcionamento = json_decode($dados_sala[0]['funcionamento'], true);
-
-
-    //var_dump($dados_sala[0]['imagem']   );exit;
-
 }        
 
 $options = '';
@@ -36,7 +36,6 @@ foreach ($dados as $row_check)
 if (isset($_POST['btn_submit']))
 {
     //novo JSON de turnos para UPDATE
-
     $dias_funcionamento = array("segunda" => ($_POST['segunda'] == 'on' ? 'sim' : 'nao'),
 
                                 "terca" => ($_POST['terca'] == 'on' ? 'sim' : 'nao'),
@@ -80,11 +79,11 @@ if (isset($_POST['btn_submit']))
     ]))
     {
         
-        die('funcionou');
+        die('Update funcionou');
     }
     else
     {
-        die('algo deu errado -> POP UP');
+        die('Update nao funcionou');
     }
 }
 ?>

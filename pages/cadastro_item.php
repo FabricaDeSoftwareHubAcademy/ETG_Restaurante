@@ -1,3 +1,12 @@
+<?php
+session_start();
+if(!isset($_SESSION['num_matricula_logado'])){
+ 
+    header('Location: ../');
+}
+include_once("../includes/menu.php");
+
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>

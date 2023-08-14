@@ -13,13 +13,26 @@
     --cor-primaria-botao-blue:  rgba(6, 74, 140, 1);
 }
 .container-pop-up-senha{
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100vh;
-    background: #fff;
-    display: flex;
+   
     align-items: center;
     justify-content: center;
+    background-color: transparent;
+    display: none;
+    z-index: 99999999999999999;
+    pointer-events: none;
 }
+
+.container-pop-up-senha.active{
+    background-color: #33333359;
+    pointer-events: all;
+    display: flex;
+}
+
 .btn-pop-up-senha{
     padding: 10px 60px;
     background: #6fd649;
@@ -38,6 +51,7 @@
     top: 0;
     left: 50%;
     transform: translate(-50%, -50%) scale(0.1);
+    background-color: white;
     text-align: center;
     padding: 0 30px 30px;
     color: #333;
@@ -79,8 +93,28 @@
     font-weight: 580;
 }
 
+.botao-ok-submit1{
+    width: 180px;
+    height: 45px;
+    background-color: var(--cor-primaria-botao-white);
+    border: 3px solid rgb(172, 8, 8);
+    border-radius: 20px;
+    cursor: pointer;
+    color: red;
+    font-style: normal;
+    font-size: 15px;
+    font-weight: 580;
+}
+
 .botao-ok-submit:hover{
     transition: all 0.4s;
     background-color: var(--cor-primaria-botao-green);
     color: var(--cor-primaria-botao-white);
 }
+
+.botao-ok-submit1:hover{
+    transition: all 0.4s;
+    background-color: red;
+    color: var(--cor-primaria-botao-white);
+}
+
