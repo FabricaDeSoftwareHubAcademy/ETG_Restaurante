@@ -141,8 +141,7 @@ $enviar_notificacao = $dados[0] ['enviar_notificacao'];
                     <a href=""><input name="botao_salvar" type="submit" class="botao-salvar-submit"  value="SALVAR"></a>
                 </div>
             </div>
-        </form>
-        
+        </form>  
     </div>
 <!-- </main>    -->
 </body>
