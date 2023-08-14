@@ -12,7 +12,9 @@
 }
 
 .tela_gerenciam_perfis{
-    width: 100vw;
+    width: 832px;
+    position: relative;
+    margin: 0 auto;
     height: 100vh;
     display: flex;
     flex-direction: column;
