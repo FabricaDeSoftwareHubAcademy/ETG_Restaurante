@@ -1,3 +1,12 @@
+<?php
+session_start();
+if(!isset($_SESSION['num_matricula_logado'])){
+ 
+    header('Location: ../');
+}
+include_once("../includes/menu.php");
+
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -14,7 +23,7 @@
 <?php include_once("../includes/menu.php"); ?>
     <main class="container">
         <div class="pag_name">
-            <p class="wanderley">Cadastro de perguntas</p>
+            <p class="wanderley-titulo">Cadastro de perguntas</p>
         </div>
         <form class="content">
             <textarea name="descricao" id="descricao" cols="30" rows="10" placeholder="Descrição da nova pergunta"></textarea>

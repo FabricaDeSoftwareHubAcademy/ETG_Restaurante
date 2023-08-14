@@ -17,17 +17,10 @@
   margin: 0 auto;
 }
 
-
-
-
 .titulo_de_cadastro{
-  font-size: 26px;
-
+  font-size: 26.7px;
 }
 
-.titulo_edicao_de_sala{
-  font-size: 26px;
-}
 
 
 *{
@@ -332,6 +325,46 @@
  padding-top: 20px
 
 }
+
+@media screen and (max-width: 550px) { 
+
+    .cor-sala {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      padding-top: 20px;
+    }
+
+    .cor-sala .alinar-botao-cor {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      align-items: center;
+      margin-top: 20px;
+    }
+    .cor-sala .alinar-img {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      align-items: center;
+    }
+    .coisas_enilda{
+      width: 100%;
+      justify-content: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    
+}
+
+
+.coisas_enilda{
+  width: 100%;
+ 
+}
 .alinar-img{
   display: flex;
   flex-direction: column;
@@ -387,7 +420,7 @@ input[type="file"] {
   
 }
 #botão-img{
-  margin-top: 25px;
+  
   margin-bottom: 25px;
   display: flex;
   width: 120px;
@@ -400,10 +433,10 @@ input[type="file"] {
   
   font-size: 24px;
   cursor: pointer;
-  border-radius: 50px;
+  border-radius: 20px;
   font-style: normal;
   font-weight: 600;
-  font-size: 16px; 
+  font-size: 12px; 
 
   opacity: 0.7;
   
@@ -1127,6 +1160,7 @@ box-shadow: none;
   height: 100%;
   width: 100%;
   border-radius: 11px;
+  object-fit: cover;
 }
 
 

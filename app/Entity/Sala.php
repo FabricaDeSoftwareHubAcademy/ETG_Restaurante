@@ -16,7 +16,8 @@ class Sala{
             $cor,
             $status_sala,
             $nome,
-            $ativo_desativo
+            $ativo_desativo,
+            $funcionamento
             ;
     public function __construct($id_cadastro_sala = null,
                                 $id_cadastro_checklist = null,
@@ -27,7 +28,8 @@ class Sala{
                                 $cor = null,
                                 $status_sala = null,
                                 $nome = null,
-                                $ativo_desativo = null
+                                $ativo_desativo = null,
+                                $funcionamento = null
                                 ){
         $this -> id_cadastro_sala = $id_cadastro_sala;
         $this -> id_cadastro_checklist = $id_cadastro_checklist;
@@ -39,6 +41,7 @@ class Sala{
         $this -> status_sala = $status_sala;
         $this -> nome = $nome;
         $this -> ativo_desativo = $ativo_desativo;
+        $this -> funcionamento = $funcionamento;
     }
 
 
@@ -56,10 +59,11 @@ class Sala{
                             'cor' => $this -> cor,
                             'status_sala' => $this -> status_sala,
                             'nome' => ucfirst(strtolower($this -> nome)),
-                            'ativo_desativo' => $this -> ativo_desativo
+                            'ativo_desativo' => $this -> ativo_desativo,
+                            'funcionamento' => $this -> funcionamento
                             ]);
 
-        
+        //die('testecadastrosala');
         return true;
     }
 
@@ -99,7 +103,7 @@ class Sala{
 
     public function setData($id = null, $dados = []) : bool
     {
-        var_dump($dados);exit;
+        //var_dump($dados);exit;
         $objBanco = new Banco('Cadastro_sala');
         $objBanco -> update('id_cadastro_sala = "'.$id.'"', ['nome'                       => $dados['nome'],
                                                             'andar'                       => $dados['andar'],
@@ -107,7 +111,8 @@ class Sala{
                                                             'descricao'                   => $dados['descricao'],
                                                             'imagem'                      => $dados['imagem'],
                                                             'cor'                         => $dados['cor'],
-                                                            'ativo_desativo'              => $dados['ativo_desativo']
+                                                            'ativo_desativo'              => $dados['ativo_desativo'],
+                                                            'funcionamento'               => $dados['funcionamento']
                                 ]);
         return true;
     }

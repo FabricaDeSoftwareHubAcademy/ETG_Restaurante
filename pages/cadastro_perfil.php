@@ -1,4 +1,11 @@
 <?php
+session_start();
+if(!isset($_SESSION['num_matricula_logado'])){
+ 
+    header('Location: ../');
+}
+include_once("../includes/menu.php");
+
 require("../vendor/autoload.php");
 use App\Entity\Perfil;
 

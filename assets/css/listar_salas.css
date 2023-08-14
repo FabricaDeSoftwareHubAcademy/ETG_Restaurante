@@ -6,7 +6,11 @@
     --cor-primaria-botao-blue:  rgba(6, 74, 140, 1);
     ;
 }
+:root{
+    --move_low: 75px;
+    --move_low_reverse: -75px;
 
+}
 *{
     margin: 0;
     padding: 0;
@@ -24,6 +28,7 @@
     width: 100%;
     text-align: center;
     margin-top: 30px;
+    font-size: 40px;
 }
 
 .area_salas{
@@ -48,6 +53,7 @@
     object-fit: cover;
     position: relative;
     box-shadow: 2px 4px 10px 5px #a5a5a5;
+    background-color: white;
 }
 .icon_editar_sala{
 
@@ -171,3 +177,47 @@
     text-decoration: none;
     width: 50%;
 }
+
+
+/* animations */
+
+[data-anime]{
+
+    opacity: 0;
+
+}
+ 
+[animation="left"]{
+
+    transform: translateX(var(--move_low_reverse)) ;
+
+}
+
+[animation="right"]{
+
+   
+    transform: translateX(var(--move_low)) ;
+     
+
+}
+[animation="top"]{
+    
+    transform: translateY(var(--move_low_reverse)) ;
+
+
+}
+
+.move    {
+    opacity: 0;
+    transition: all 1s;
+    position: relative;
+}
+
+.show{
+    transform: translateX(-0) ;
+    
+    opacity: 1;
+}
+
+ 
+/* ======================= */

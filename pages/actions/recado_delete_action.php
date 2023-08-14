@@ -4,10 +4,10 @@ require __DIR__."/../../vendor/autoload.php";
 use \App\Entity\Recado;
 
 
-if(isset($_GET['id_cadastro_perfil'])){
-    $id_perfil = $_GET['id_perfil'];
+if(isset($_GET['id_recado'])){
+    $id_perfil = $_GET['id_recado'];
 }else{
-    header("Location: ../../pages/gerenc_perfis");
+    header("Location: ../../pages/gerenc_perfis.php");
 }
 
 $action_excluir = Recado::excluir($id_perfil) ? true : false;
