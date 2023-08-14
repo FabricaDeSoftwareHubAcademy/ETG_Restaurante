@@ -4,9 +4,9 @@ if(!isset($_SESSION['num_matricula_logado'])){
  
     header('Location: ../');
 }
-include_once("../includes/menu.php");
 
-require_once("../includes/menu.php");
+
+ 
 require __DIR__."/../vendor/autoload.php";
 
 $obj_sala = new App\Entity\Sala;
@@ -76,16 +76,19 @@ if (isset($_POST['btn_submit']))
         'cor'               =>  $_POST['cor_sala'],
         'ativo_desativo'    =>  (isset($_POST['ativo_desativo']) ? 1 : 0),
         'funcionamento'     =>  $dias_funcionamentoJson
-    ]))
-    {
-        
-        die('Update funcionou');
+    ])){
+
+        header("Location: listar_salas.php");
+
     }
     else
     {
         die('Update nao funcionou');
     }
+
+
 }
+
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -129,7 +132,7 @@ if (isset($_POST['btn_submit']))
 
 
                         <div class="input_group field">
-                            <input value="<?=$dados_sala[0]['nome']?>" type="input" class="input_field" placeholder="Name" required="" name="nome_sala">
+                            <input value="<?=$dados_sala[0]['nome']?>" type="input" class="input_field" placeholder="Name" required="" name="nome_sala" maxLength="32">
                             <label for="name" class="input_label">Nome Da Sala</label> <!--Alterar para o nome do input-->
                         </div>
 
@@ -311,11 +314,11 @@ if (isset($_POST['btn_submit']))
                     <div class="alinar-botoes">
 
                         <div class="botao-padrao-voltar">
-                            <a href="#"><input type="submit" class="botao-voltar-submit"  value="VOLTAR"></a>
+                            <a href="listar_salas.php"><input type="reset" class="botao-voltar-submit"  value="VOLTAR"></a>
                         </div>
                         
                         <div class="botao-padrao-cadastrar">
-                            <a href="#"><input name="btn_submit" type="submit" class="botao-cadastrar-submit"  value="EDITAR"></a>
+                            <a><input name="btn_submit" type="submit" class="botao-cadastrar-submit"  value="EDITAR" onclick="abrir_modal()"></a>
                         </div>
                         
                     </div>
@@ -352,6 +355,18 @@ $(document).ready(function() {
         reader.readAsDataURL(file);
     });
 });
+
+function abrir_modal(){
+            Swal.fire({
+                title: 'editado com sucesso!', //TITULO DO POP_UP DE ACORDO COM SUA TELA 
+                icon: 'success', // success, error e warning
+                confirmButtonColor: '#609437', // DEFINE A COR DO BOTÃO OK
+                confirmButtonText: 'OK'
+            });
+        }
+
+
+
 </script>
     
 </body>
