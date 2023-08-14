@@ -127,9 +127,9 @@ function closeModalExcluir(){
 
 }
 
- 
 async function deletarRecado(){
-
+    
+ 
     let id_recado_delete = id_atual;
    
     const dados = await fetch('./actions/recado_delete_action.php?id_recado='+id_recado_delete);
