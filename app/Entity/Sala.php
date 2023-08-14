@@ -15,8 +15,9 @@ class Sala{
             $imagem,
             $cor,
             $status_sala,
-            $nome
-            
+            $nome,
+            $ativo_desativo,
+            $funcionamento
             ;
     public function __construct($id_cadastro_sala = null,
                                 $id_cadastro_checklist = null,
@@ -27,9 +28,8 @@ class Sala{
                                 $cor = null,
                                 $status_sala = null,
                                 $nome = null,
-                                $horario_matutino = null,
-                                $horario_vespertino = null,
-                                $horario_noturno = null
+                                $ativo_desativo = null,
+                                $funcionamento = null
                                 ){
         $this -> id_cadastro_sala = $id_cadastro_sala;
         $this -> id_cadastro_checklist = $id_cadastro_checklist;
@@ -40,6 +40,8 @@ class Sala{
         $this -> cor = $cor;
         $this -> status_sala = $status_sala;
         $this -> nome = $nome;
+        $this -> ativo_desativo = $ativo_desativo;
+        $this -> funcionamento = $funcionamento;
     }
 
 
@@ -53,13 +55,15 @@ class Sala{
                             'id_cadastro_usuario'=> $this -> id_cadastro_usuario,
                             'andar'  => ucfirst(strtolower($this -> andar)),
                             'descricao' => ucfirst(strtolower($this -> descricao)),
-                            'imagem' => $this -> imagem['name'],
+                            'imagem' => $this -> imagem,
                             'cor' => $this -> cor,
                             'status_sala' => $this -> status_sala,
-                            'nome' => ucfirst(strtolower($this -> nome))
+                            'nome' => ucfirst(strtolower($this -> nome)),
+                            'ativo_desativo' => $this -> ativo_desativo,
+                            'funcionamento' => $this -> funcionamento
                             ]);
 
-        
+        //die('testecadastrosala');
         return true;
     }
 
@@ -88,12 +92,28 @@ class Sala{
     {
 
     } */
-
+ 
     public static function getById($id_sala){
 
         $objBanco = new Banco('Cadastro_sala');
         $dados = $objBanco -> select("id_cadastro_sala = ".$id_sala) -> fetchAll(PDO::FETCH_ASSOC);
         return $dados;
 
+    }
+
+    public function setData($id = null, $dados = []) : bool
+    {
+        //var_dump($dados);exit;
+        $objBanco = new Banco('Cadastro_sala');
+        $objBanco -> update('id_cadastro_sala = "'.$id.'"', ['nome'                       => $dados['nome'],
+                                                            'andar'                       => $dados['andar'],
+                                                            'id_cadastro_checklist'       => $dados['checklist'],
+                                                            'descricao'                   => $dados['descricao'],
+                                                            'imagem'                      => $dados['imagem'],
+                                                            'cor'                         => $dados['cor'],
+                                                            'ativo_desativo'              => $dados['ativo_desativo'],
+                                                            'funcionamento'               => $dados['funcionamento']
+                                ]);
+        return true;
     }
 }

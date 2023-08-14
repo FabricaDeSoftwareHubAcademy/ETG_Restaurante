@@ -1,4 +1,10 @@
 <?php
+session_start();
+if(!isset($_SESSION['num_matricula_logado'])){
+ 
+    header('Location: ../');
+}
+include_once("../includes/menu.php");
 
 require ("../vendor/autoload.php");
 use App\Entity\Perfil;
@@ -24,7 +30,7 @@ foreach ($dados_perfil as $row_perfil)
                                 <i class="bi bi-trash" onclick="openPopup_Conf('.$row_perfil['id_cadastro_perfil'].')"></i>
                             </div>
                         </div>
-                    </li>
+                    </li> 
                 ';
 }
 
@@ -43,6 +49,9 @@ foreach ($dados_perfil as $row_perfil)
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
         <link rel="stylesheet" href="../includes/pop-ups/pop_ups_confirm_excluir_perfil/pop_ups_confirmacao.css">
         <script src="../includes/pop-ups/pop_ups_confirm_excluir_perfil/pop_ups_confirmacao.js"></script>
+        <script src="../assets/js/deletar_perfil.js"></script>
+        <link rel="stylesheet" href="../includes/pop-ups/pop_ups verification_excluir/pop_ups verification_excluir.css">
+        <script src="../includes/pop-ups/pop_ups verification_excluir/pop_ups verification_excluir.js"></script>
     
     </head>
     <body class="tela_gerenciam_perfis">
@@ -51,32 +60,31 @@ foreach ($dados_perfil as $row_perfil)
                 //toma essa gambiarra ass luiz
                 include_once("../includes/menu.php"); 
                 include_once ("../includes/pop-ups/pop_ups_confirm_excluir_perfil/pop_ups_confirmacao.php");
+                include_once("../includes/pop-ups/pop_ups verification_excluir/pop_ups verification_excluir.php")
                 ?>
-            <form action="" method="GET">
+            <form action="cadastro_perfil.php" method="GET">
                 <div class="container_gp">
                         <h1 class="Perfis">Perfis</h1>
                             <ul class="cardsgerenc">
                                 <?=$imprimir?>
                             </ul>
+                
                 </div>
-                    
+                <div class="container_gp2">
+                        
+                    <div class="alinar-botoes">
+
+                        <div class="botao-padrao-voltar">
+                        <a href="listar_salas.php" class="botao-voltar-submit">VOLTAR</a>
+                        </div>
+
+                        <div class="botao-padrao-cadastrar">
+                            <a href="./cadastro_perfil.php"><input name="btn_submit" type="submit" class="botao-cadastrar-submit"  value="CADASTRAR"></a>
+                        </div>
+                    </div>  
+                        
                 </div> 
             </form>
-            <div class="container_gp2">
-                       
-                <div class="alinar-botoes">
-
-                    <div class="botao-padrao-voltar">
-                        <a href="#"><input type="submit" class="botao-voltar-submit"  value="VOLTAR"></a>
-                    </div>
-
-                    <div class="botao-padrao-cadastrar">
-                        <a href="#"><input name="btn_submit" type="submit" class="botao-cadastrar-submit"  value="CADASTRAR"></a>
-                    </div>
-                </div>  
-                    
-            </div> 
-            
         </main>
     </body>
 </html>

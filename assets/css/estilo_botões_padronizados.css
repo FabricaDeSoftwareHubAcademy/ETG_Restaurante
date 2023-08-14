@@ -41,7 +41,7 @@
 }
 
 /* Css Botão Fazer Checklist */
-
+ 
 .botao-padrao-fazer-checklist{
     width: 100%;
     height: 100vh;
@@ -230,7 +230,7 @@
 
 .botao-padrao-voltar{
     width: 100%;
-    height: 100vh;
+    
     display: flex;
     align-items: center;
     justify-content: center;

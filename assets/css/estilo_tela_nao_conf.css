@@ -26,8 +26,8 @@ body{
     --cor-da-descricao: rgb(29, 27, 27);
     --cor--fotos-fundo: rgb(255, 255, 255);
 
-    ;
-}
+    
+    }
 
 header{
     width: 100%;
@@ -122,10 +122,8 @@ header{
 .xis{
     display: flex;
     fill: red;
-    width: 75px;
-    height: 10vh;
-    padding-left: 10px;
-
+    width: 60px;
+    height: 8vh;
 }
 
 /* parte do mei (descrição) */
@@ -163,6 +161,11 @@ textarea{
     justify-content: flex-end;
     align-items: center;
 }
+
+.bi::before{
+    font-size: 30px
+}
+
 input[type="file"]{
     display: none;
 }
@@ -183,10 +186,6 @@ label{
 .bi.bi-camera{
     width: 20px;
     height: 20px;
-}
-
-.bi::before{
-    font-size: 20px;
 }
 
 #images{
@@ -224,7 +223,6 @@ figure{
     height: 200px;
     border-radius: 25px;
     object-fit: cover;
-    border: black solid 3px;
 }
     
 figcaption{

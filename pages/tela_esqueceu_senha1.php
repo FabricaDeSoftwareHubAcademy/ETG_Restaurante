@@ -1,3 +1,14 @@
+<?php
+session_start();
+ob_start();
+ 
+
+if(!isset($_SESSION['num_matricula_logado'])){
+ 
+    header('Location: ../');
+}
+ 
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,7 +30,7 @@ include_once("../includes/menu.php")
         <section class='titulo_esqueceu_senha'>
             <h1>Insira o E-mail para enviar o código de confirmação:</h1>
         </section>
-
+ 
         <section class="centralizar_input_esqueceu_senha"> 
 
                 <!--Input Email-->

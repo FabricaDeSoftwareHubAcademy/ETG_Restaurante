@@ -1,4 +1,14 @@
+<?php
+session_start();
+ob_start();
+ 
 
+if(!isset($_SESSION['num_matricula_logado'])){
+ 
+    header('Location: ../');
+}
+ 
+?>
 
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -20,7 +30,7 @@
     ?> 
 <div class="tudo">   
  
-    <div class="pagina">
+    <div class="pagina"> 
         <section class="Enviar-notificacao">
             <h1>Enviar Notificação</h1>
         </section>

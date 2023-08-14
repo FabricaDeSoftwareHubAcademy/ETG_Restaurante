@@ -1,0 +1,223 @@
+:root{
+    --cor-primaria-botao-white: white; 
+    --cor-primaria-botao-green: green;
+    --cor-primaria-botao-red:   red;
+    --cor-primaria-botao-yellow:rgba(255, 199, 0, 1);
+    --cor-primaria-botao-blue:  rgba(6, 74, 140, 1);
+    ;
+}
+:root{
+    --move_low: 75px;
+    --move_low_reverse: -75px;
+
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Montserrat";
+}
+
+.body_listar_salas{
+    width: 832px;
+    position: relative;
+    margin: 0 auto;
+    
+}
+.title_listar_salas{
+    width: 100%;
+    text-align: center;
+    margin-top: 30px;
+    font-size: 40px;
+}
+ 
+.area_salas{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.card_sala{
+    position: relative;
+    width: 100%;
+    
+    display: flex;
+    align-items: center;
+    margin-top: 100px;
+    justify-content: center;
+}
+.img_card_sala{
+    height: 150px;
+    width: 100%;
+    border-radius: 15px;
+    object-fit: cover;
+    position: relative;
+    box-shadow: 2px 4px 10px 5px #a5a5a5;
+    background-color: white;
+}
+.icon_editar_sala{
+
+    top: -63px;
+    left: 30px;
+    position: relative;
+    
+}
+.border_card_sala{
+
+    height: 150px;
+    width: 50%;
+    position: absolute;
+    border-radius: 20px;
+    border: 2px solid green;
+    top: 50px;
+    right: 100px;
+
+}
+.area_title_sala{
+
+    position: absolute;
+    width: calc(50% - 15px);
+    height: 40px;
+    top: 166px;
+    text-align: end;
+   
+     font-weight: 600;
+
+    
+    left: 320px;
+
+}
+.title_sala{
+    text-transform: uppercase;
+    font-size: 20px;
+    font-weight: 600;
+
+
+}
+
+/* =============================2  */
+
+
+.border_card_sala2{
+
+    height: 150px;
+    width: 50%;
+    position: absolute;
+    border-radius: 20px;
+    border: 2px solid green;
+    top: 50px;
+    left: 100px;
+
+}
+.area_title_sala2{
+
+    position: absolute;
+    width: calc(50% - 15px);
+    height: 40px;
+    top: 166px;
+    text-align: start;
+   
+     font-weight: 600;
+
+    
+    right: 320px;
+
+}
+.title_sala2{
+    text-transform: uppercase;
+    font-size: 20px;
+    font-weight: 600;
+
+}
+
+/* margin-top: 150px; */
+
+/* ==================botao==================== */
+.botao-padrao-mural-aviso{
+     
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.botao-mural-aviso-submit{
+    width: 180px;
+    height: 45px;
+    background-color: var(--cor-primaria-botao-white);
+    border: 3px solid var(--cor-primaria-botao-green);
+    border-radius: 20px;
+    cursor: pointer;
+    color: var(--cor-primaria-botao-green);
+    font-style: normal;
+    font-size: 'Montserrat';
+    font-weight: bold;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+
+}
+
+.botao-mural-aviso-submit:hover{
+    transition: all 0.4s;
+    background-color: var(--cor-primaria-botao-green);
+    color: var(--cor-primaria-botao-white);
+}
+.centralizar_btn{
+    width: 90%;
+    display: flex;
+    justify-content: end;
+    margin-top: 150px;
+    margin-bottom: 30px;
+}
+.click_sala{
+  
+    text-decoration: none;
+    width: 50%;
+}
+
+
+/* animations */
+
+[data-anime]{
+
+    opacity: 0;
+
+}
+ 
+[animation="left"]{
+
+    transform: translateX(var(--move_low_reverse)) ;
+
+}
+
+[animation="right"]{
+
+   
+    transform: translateX(var(--move_low)) ;
+     
+
+}
+[animation="top"]{
+    
+    transform: translateY(var(--move_low_reverse)) ;
+
+
+}
+
+.move    {
+    opacity: 0;
+    transition: all 1s;
+    position: relative;
+}
+
+.show{
+    transform: translateX(-0) ;
+    
+    opacity: 1;
+}
+
+ 
+/* ======================= */

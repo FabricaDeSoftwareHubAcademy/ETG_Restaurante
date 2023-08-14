@@ -26,7 +26,7 @@
     margin-top: 15px;
   
   }
-  
+   
   .input_senha_group.field3{
     width: 100%;
     max-width: 700px;
@@ -189,7 +189,7 @@
     text-align: center;
     display: flex;
     justify-content: center;
-    font-size: 150%;
+    font-size: 26.7px;
     margin-top: 15%;
 }
 
@@ -207,12 +207,12 @@
   display: flex;
   justify-content: space-between;
   text-align: center;
-  margin-top: 30%;
+  margin-top: 33%;
 }
 
 @media (max-width: 882px) {
   .centralizar_botoes_alterar_senha{
-    margin-top: 470px;
+    margin-top: 501px;
   }
 
   .centralizar_input_alterar_senha{

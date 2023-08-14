@@ -12,7 +12,9 @@
 }
 
 .tela_gerenciam_perfis{
-    width: 100vw;
+    width: 832px;
+    position: relative;
+    margin: 0 auto;
     height: 100vh;
     display: flex;
     flex-direction: column;
@@ -24,26 +26,54 @@
 li{
     list-style: none;
 }
-
+ 
 .container_gp{
-    margin-top: 30px;
+    margin-top: 5px;
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     display: flex;
-    padding: 90px;
+    padding: 20px;
 }
 
 .cardsgerenc{
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    flex-wrap: wrap;
-    font-family: 'Montserrat';
+  max-width: 810px;
+  max-height: 500px;
+  font-family: 'Montserrat';
+  overflow: hidden;
+  overflow-y: scroll;
+  padding: 40px;
 }
 
+.cardsgerenc-content{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+  font-family: 'Montserrat';
+  font-size: 50px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+  padding: 20px;
+  border-radius: 28px;
+  border: 1px solid #FFF;
+  background: #FFF;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.cardsgerenc::-webkit-scrollbar{
+  width: 8px;
+  background-color: #eeeeee;
+  border-radius: 10px;
+}
+
+.cardsgerenc::-webkit-scrollbar-thumb{
+  background-color: #F28920;
+  border-radius: 10px; 
+} 
 .titulo_gp{
     font-size: 30px;
     font-weight: bold;
@@ -57,25 +87,31 @@ li{
     justify-content: center;
     flex-wrap: wrap;
     font-family: 'Montserrat';
-    font-size: 50px;
+    font-size: 40px;
 }
 
 .card_perfil{
-    padding: 20px;
-    width: 648px;
-    height: 123px;
-    margin-top: 40px;
-    display: flex;
-    align-items: center;
-    flex-direction: row;
-    justify-content: center;
-    border-radius: 28px;
-    border: 1px solid #FFF;
-    background: #FFF;
-    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-    cursor: pointer;
-    display: flex;
+  padding: 20px;
+  width: 50vh;
+  height: 123px;
+  margin-top: 40px;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: center;
+  border-radius: 28px;
+  border: 1px solid #FFF;
+  background: #FFF;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
 
+
+}
+@media (max-width: 600px) {
+  .card_perfil {
+      max-width: 100%; /* O card ocupará a largura total em telas pequenas */
+      margin: 10px;
+  }
 }
 .tipo_perfil{
 color: #000;
@@ -117,13 +153,13 @@ font-family: 'Montserrat';
 }
 
 .card_nome{
-    width: 830px;
-    height: 100px;
-    margin: 80px;
-    display: flex;
-    align-items: flex-start;
-    flex-direction: column;
-    justify-content: center;
+  width: 830px;
+  height: 100px;
+  margin: 10px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
 
 }
 
@@ -136,11 +172,17 @@ font-family: 'Montserrat';
 }
 
 .container_gp2{
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    display: flex;
+  max-width: 810px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  margin: 0 auto;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 10px;
 }
 
 
@@ -175,7 +217,6 @@ font-family: 'Montserrat';
   
   .botao-padrao-voltar{
     width: 100%;
-    
     display: flex;
     align-items: center;
     justify-content: center;
@@ -193,7 +234,10 @@ font-family: 'Montserrat';
     font-family: 'Montserrat';
     font-weight: bold;
     font-size: 15px;
-  
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
   }
   
   .botao-voltar-submit:hover{

@@ -21,19 +21,19 @@
 
 #titulo {
     font-family: 'Montserrat';
+    font-size: 40px;
     margin-top: 40px;
 }
 .titulo-topo{
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-}
+} 
 
 .selecao-pergunta {
     display: flex;
-    border-bottom: 1px solid rgb(208, 208, 208);
-    border-radius: 8px;
     width: 100%;
     flex-direction: column;
     overflow: hidden;
@@ -88,23 +88,18 @@
 
 .botoes-cadastro-checklist {
     display: flex;
+
     justify-content: space-between;
     width: 1000px;
 }
 
+/* Tabela de perguntas */
 
 
 .tabela-perguntas{
     border-collapse: collapse;
     border-radius: 15px;
     
-}
-th {
-    
-    height: 25px;
-    background-color: #064A8C;
-    color: rgb(255, 255, 255);
-    font-family: 'Montserrat';
 }
 
 .topo-tabela{
@@ -113,48 +108,3 @@ th {
 
 }
 
-
-td {
-   
-    border-bottom: 2px solid rgb(166, 166, 166);
-    font-family: 'Montserrat';
-    border-radius: 8px;
-    padding: 8px;
-    text-align: center;
-    color: rgb(0, 0, 0);
-    font-weight: bold;    
-}
-
-
-
-#checkbox{
-    appearance: none;
-    border: 2px solid #064A8C;
-    border-radius: 50px;
-    background-color: transparent;
-    padding: 4px;
-    cursor: pointer;
-    color: #064A8C;
-}
-
-#checkbox::after{
-    font-family: "Font Awesome 5 Free";
-    font-weight: 900;
-    content: "\f00c";
-    font-size: 15px;
-    color: white;
-    display: block;
-}
-
-#checkbox:hover{
-    background-color: rgb(236, 236, 236);
-    
-}
-
-#checkbox:checked{
-    background-color: #064A8C;
-
-}
-#checkbox:checked::after{
-    display: block;
-}

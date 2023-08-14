@@ -14,12 +14,13 @@
   --cor-primaria-botao-yellow:rgba(255, 199, 0, 1);
   --cor-primaria-botao-blue:  rgba(6, 74, 140, 1);
   --cor-label:black;
-}
+} 
 
 .container{
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 20px;
 }
 
 .tela_cadastro_perfil
@@ -38,18 +39,21 @@
     flex-direction: column; 
     align-items: center;
     margin: 5% auto;
-    margin-top: 70px;
+    margin-top: 20px;
 }
 
 .tela_cadastro_perfil .titulo_cad{
     display: flex;
     padding: 0;
-
 }
 .tela_cadastro_perfil .titulo_cad_perfil{
     color: var(--cor-label);
-    font-size: 50px;
-    font-family: 'Montserrat', sans-serif;
+    font-size: 40px;
+
+
+    font-style: normal;
+    font-family: 'Montserrat';
+
     justify-content: center;
 }
   
@@ -126,8 +130,8 @@
   border-bottom: 2px solid #9b9b9b;
   outline: 0;
   color: black;
-  padding: 7px 0;
-  margin-left: 12px;
+  padding: 2px 0;
+  /* margin-left: 12px; */
   background: transparent;
   transition: border-color 0.2s;
   font-family: 'Montserrat';
@@ -147,6 +151,8 @@
   cursor: text;
   top: 20px;
   margin-left: 12px;
+  left: 20px;
+
 }
 
 .input_label {
@@ -160,6 +166,8 @@
   font-style: normal;
   font-weight: 400;
   font-size: 20px;
+  left: 15px;
+
 }
 
 .input_field:focus {
@@ -177,11 +185,11 @@
   transition: 0.3s;
   font-size: 17px;
   font-weight: 700;
-  margin-left: 12px;
 }
 
 .input_field:required, .input_field:invalid {
   box-shadow: none;
+
 }
 
 /* input */
@@ -213,13 +221,13 @@
     
 }
 .titulo_permissoes{
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Montserrat';
     font-size: 20px;
     font-weight: bold;
     text-shadow: 0px 0px 1px black;
     margin-right: 10px;
     margin-top: 25px;
-    margin-left: 10px;
+    /* margin-left: 10px; */
     flex-direction: row;
     display: flex;
     color: black;
@@ -321,7 +329,10 @@
   font-size: 'Montserrat';
   font-weight: bold;
   font-size: 15px;
-
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
 }
 
 .botao-voltar-submit:hover{
@@ -331,16 +342,35 @@
 }
 
 .botoes{
+  max-width: 811px;
   width: 100%;
   display: flex;
-  justify-content: space-between;
-  margin: 10% 0 0 0;
-  
+  flex-direction: row;
+  align-items: center;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 10px;
+  justify-content: space-around;
+  top: 60rem;
+}
+
+.container_gp2{
+ 
+  /* /* width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 50%; */
+  /* transform: translateX(-50%); */
+    margin-bottom: 180px;
+
 }
 
 
-@media (min-width: 1100px) {
+@media (max-width: 832px) {
   .botoes{
-    margin-top: 100px;
+    
+    top: 80%;
   }
 }

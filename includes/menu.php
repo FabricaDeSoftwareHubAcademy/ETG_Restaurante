@@ -1,4 +1,3 @@
-
 <?php
  
  ?>
@@ -25,37 +24,59 @@
             <a  class="toggleBox-menu">
               <span class="icon-menu"></span>
             </a>
+
             <ul class="navItems-menu">
                 <li class="li-menu">
-                    <a href="#" class="link-menu">
-                        <i class="bi bi-bell" style="--i:1"></i>                
-                    </a>
-                </li>
-                <li class="li-menu">
                     <a href="mural.php" class="link-menu">
-                        <i class="bi bi-house-door" style="--i:2"></i>                    
+                        <i id="icon-casa" class="bi bi-house-door"  style="--i:1"></i>                    
                     </a>
-                </li>            
+                </li>  
+
                 <li class="li-menu">
                     <a href="../pages/gerenc_perfis.php" class="link-menu">
-                        <i class="bi bi-person" style="--i:3"></i>                
+                        <i id="icon-pessoa" class="bi bi-person"  style="--i:2"></i>                
                     </a>
-                </li>        
+                </li>   
+
+                <li class="li-menu">
+                    <a href="#" class="link-menu">
+                        <i id="icon-notificacao" class="bi bi-bell"  style="--i:3"></i>                
+                    </a>
+                </li>   
+
+                <li class="li-menu">
+                    <a href="listar_salas.php" class="link-menu">
+                        <i id="icon-vizualizar" class="bi bi-person-video3"  style="--i:4"></i>              
+                    </a>  
+                </li>     
+
+
+                <li class="li-menu">
+                    <a href="redefinir_senha.php" class="link-menu">
+                        <i id="icon-cadeado" class="bi bi-key" style="--i:5"></i>              
+                    </a>  
+                </li>  
+
+
                 <li class="link_submenu">
                     <a href="#" class="link-menu">
-                        <i class="bi bi-list-check" id="btnsubmenu" onclick="openSubmenu()" style="--i:4"></i>
+                        <i class="bi bi-list-check" id="btnsubmenu" onclick="openSubmenu()" style="--i:6"></i>
                     </a>
+
                         <ul class="sub-menu">            
                             <li class="iten-submenu"><a href="../pages/cadastro_salas.php" id="fonte-submenu">Cadastro de Salas</a></li>
                             <li class="iten-submenu"><a href="" id="fonte-submenu">Relatórios</a></li>
-                            <li class="iten-submenu"><a href="" id="fonte-submenu">Cadastro Checklist</a></li>
-                            <li class="iten-submenu"><a href="" id="fonte-submenu">Cadastro de Perguntas</a></li>                        
+                            <li class="iten-submenu"><a href="cadastro_checklist.php" id="fonte-submenu">Cadastro Checklist</a></li>
+                            <li class="iten-submenu"><a href="cadastro_item.php" id="fonte-submenu">Cadastro de Perguntas</a></li>
+                            <li class="iten-submenu"><a href="cadastro_usuario.php" id="fonte-submenu">Cadastro de Usuario</a></li>                        
                         </ul>
+
                 </li>         
+
                 <li class="saida">
                     <button class="btnOpenmodal-menu" onclick="openModal()" >  
-                        <a href="" class="link-menu">
-                            <i class="bi bi-box-arrow-left" style="--i:5"></i>
+                        <a href="#" class="link-menu">
+                            <i class="bi bi-box-arrow-left" style="--i:7"></i>
                         </a>
                     </button>
                 </li>        
@@ -72,6 +93,7 @@
                     </div>
                 </div>        
             </ul>
+
         </div>
         <script src="js.js"></script>    
         <div class="container-logo">
@@ -133,15 +155,3 @@ function closeSubmenu(){
     </script>       
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-    

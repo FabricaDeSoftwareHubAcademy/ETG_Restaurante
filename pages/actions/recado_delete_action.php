@@ -5,12 +5,12 @@ use \App\Entity\Recado;
 
 
 if(isset($_GET['id_recado'])){
-    $id_recado = $_GET['id_recado'];
+    $id_perfil = $_GET['id_recado'];
 }else{
-    header("Location: ../mural.php");
+    header("Location: ../../pages/gerenc_perfis.php");
 }
 
-$action_excluir = Recado::excluir($id_recado) ? true : false;
+$action_excluir = Recado::excluir($id_perfil) ? true : false;
 
 if($action_excluir){
 

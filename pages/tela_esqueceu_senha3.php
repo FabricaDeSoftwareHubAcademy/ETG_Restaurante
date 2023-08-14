@@ -1,3 +1,14 @@
+<?php
+session_start();
+ob_start();
+ 
+
+if(!isset($_SESSION['num_matricula_logado'])){
+ 
+    header('Location: ../');
+}
+ 
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -7,18 +18,18 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../assets/css/estilo_esqueceu_senha3.css">
     <!--Alterar Cabeçalho pelo novo-->
-    <title>Alterar Senha</title>
+    <title>Redefinir Senha</title>
     
 </head>
 <body>
     <main class="pai-de-todos">
         <?php include_once("../includes/menu.php"); ?>
         <section class='titulo_alterar_senha'>
-            <h1>Alterar Senha</h1>
+            <h1>Redefinir Senha</h1>
         </section>
 
         <section class="centralizar_input_alterar_senha"> 
-            
+             
             <div class="input_senha_group field2">
                 <input type="password" class="input_senha_field" placeholder="Name" required="">
                 <label for="name" class="input_senha_label">Criar nova senha</label> <!--Alterar para o nome do input-->

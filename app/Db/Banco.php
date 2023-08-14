@@ -3,7 +3,7 @@
 namespace App\Db;
 use PDO;
 use PDOException;
-//die('banco');
+//die('banco'); 
 class Banco{
   
     //Variaveis referentes a conexao com o banco de dados
@@ -48,6 +48,29 @@ class Banco{
         }
     }
 
+
+    private function executeLastId($query, $valores = []){
+        try{
+            
+            //abrindo conexao
+            $this -> conectar();
+
+            //criando statement e preparando a query que foi passada como argumento
+            $statement = $this -> conexao -> prepare($query);
+            $statement -> execute($valores);
+            $id = $this->conexao->lastInsertId();
+    
+            //fechando conexao
+            $this -> conexao = null;
+            //var_dump($statement); exit;
+            //retornando o resultado da query
+            return $id;
+        } catch (PDOException $e){
+            echo('Erro3: ' . $e -> getMessage());
+            return false;
+        }
+    }
+
     //Construtor que recebe uma tabela referente a tabela do banco de dados que ira trabalhar
     public function __construct($table = null){
         
@@ -83,6 +106,32 @@ class Banco{
 
         return true;
         
+    }
+
+    public function insertRecoverId($dados = []){
+
+        $chaves = array_keys($dados);
+
+        /*atribuindo uma lista a variavel $valores,
+        do tamanho da array $chaves,
+        preenchida por `?`.
+        */
+        $valores = array_pad([], count($chaves), '?');
+
+        /*Montando a $query, substituindo o nome da tabela,
+        substituindo as chaves usando a funcao implode(),
+        substituindo os valores por `?` usando a funcao implode
+        */ 
+        
+        $query = 'INSERT INTO '.$this -> table.'('.implode(', ', $chaves).') VALUES('.implode(', ', $valores).')';
+         
+        //Chamando o metodo `executarQuery` e passando a $query montada e APENAS OS VALORES de `$dados`
+        $id = $this -> executeLastId ($query, array_values($dados));
+
+        return $id;
+
+        
+         
     }
 
     public function delete($valor, $coluna){
@@ -133,12 +182,13 @@ class Banco{
         string `WHERE`
         Senao $where = ''
         */ 
+        //echo $where;exit;
         $where = strlen($where) ? ' WHERE '.$where: '';
         //Mesma logica
         $order = strlen($order) ? ' ORDER BY '.$order: '';
         //Mesma logica
         $limit = strlen($limit) ? ' LIMIT '.$limit: '';
-
+        
         /*Montando a query do `SELECT`,
         concatenando o nome da tabela,
         concatenando os parametros por ALGO ou por ''

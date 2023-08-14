@@ -1,4 +1,11 @@
 <?php
+session_start();
+if(!isset($_SESSION['num_matricula_logado'])){
+ 
+    header('Location: ../');
+}
+include_once("../includes/menu.php");
+
 require ("../vendor/autoload.php");
 use App\Entity\Perfil;
 
@@ -33,17 +40,17 @@ if (isset($_POST['botao_salvar'], $_POST['nome_cargo'])){
 }
 
 $dadosPerfil = new Perfil();
-
-$dados = $dadosPerfil->getDados($id);
-$cadastrar_salas = $dados[$id-1] ['cadastrar_sala'];
-$editar_salas = $dados[$id-1] ['editar_sala'];
-$remover_salas = $dados[$id-1] ['remover_sala'];
-$validar_checklist = $dados[$id-1] ['validar_checklist'];
-$inserir_item_checklist = $dados[$id-1] ['inserir_item_checklist'];
-$remover_item_checklist = $dados[$id-1] ['remover_item_checklist'];
-$desbloquear_checklist = $dados[$id-1] ['desbloquear_checklist'];
-$descricao_nao_conformidade = $dados[$id-1] ['descricao_nao_conformidade'];
-$enviar_notificacao = $dados[$id-1] ['enviar_notificacao'];
+$dados = $dadosPerfil->getDadosById($id);
+//print_r($dados);exit;
+$cadastrar_salas = $dados[0] ['cadastrar_sala'];
+$editar_salas = $dados[0] ['editar_sala'];
+$remover_salas = $dados[0] ['remover_sala'];
+$validar_checklist = $dados[0] ['validar_checklist'];
+$inserir_item_checklist = $dados[0] ['inserir_item_checklist'];
+$remover_item_checklist = $dados[0] ['remover_item_checklist'];
+$desbloquear_checklist = $dados[0] ['desbloquear_checklist'];
+$descricao_nao_conformidade = $dados[0] ['descricao_nao_conformidade'];
+$enviar_notificacao = $dados[0] ['enviar_notificacao'];
 
 ?>
 <html lang="pt-br">
@@ -56,17 +63,22 @@ $enviar_notificacao = $dados[$id-1] ['enviar_notificacao'];
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https/cdnjs.cloudflare.comlibs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
+    <!-- POP_UP -->
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.18/dist/sweetalert2.min.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.18/dist/sweetalert2.all.min.js"></script>  -->
 
-    <link rel="stylesheet" href="../assets/css/estilo_botoes_padronizados.css">
+    <!-- <link rel="stylesheet" href="../assets/css/estilo_botoes_padronizados.css"> -->
     <link rel="stylesheet" href="../assets/css/cadastro_perfil.css">
     
 </head>
 
 <body class="tela_cadastro_perfil">
-    <main class="pai-de-todos">
+    <!-- <main class="pai-de-todos"> -->
         <?php
         //toma essa gambiarra ass luiz
         include_once("../includes/menu.php"); 
+        // include_once("../modal/modal_verification.php");
         ?>
     <div class="container">
         <div class="titulo_cad" >
@@ -76,14 +88,14 @@ $enviar_notificacao = $dados[$id-1] ['enviar_notificacao'];
         </div>
         <form method="POST" class="form_permissoes">
             <div class="input_group">
-                <input type="input" class="input_field" placeholder="Name" name="nome_cargo" value="<?=$dados[$id-1]["nome_cargo"];?>" >
+                <input type="input" class="input_field" placeholder="Name" name="nome_cargo" value="<?=$dados[0]["nome_cargo"];?>" >
                 <label for="name" class="input_label">Nome</label> <!--Alterar para o nome do input-->
             </div>
 
             <div class="permissoes_salas">
                 <label class="titulo_permissoes">Permissões da Sala:</label>
                 <div class="permissoes_salas_tipos">
-                    <div class="permissoes_salas_itens">
+                    <div class="permissoes_salas_itens"> 
                         <label class="label_permissao">Cadastrar Salas</label>
                         <input type="checkbox" class="checkbox_permissoes" name="cadastrar_sala" <?php echo $cadastrar_salas == 1 ? "checked" : "";?>  />
                     </div>
@@ -134,16 +146,15 @@ $enviar_notificacao = $dados[$id-1] ['enviar_notificacao'];
             <div class="botoes">
                 <!--Botão Voltar-->
                 <div class="botao-padrao-voltar">
-                    <a href="cadastro_perfil.php"><input type="submit" class="botao-voltar-submit"  value="VOLTAR"></a>
+                    <a href="gerenc_perfis.php"class="botao-voltar-submit">VOLTAR</a>
                 </div>
                 <!--Botão Salvar-->
                 <div class="botao-padrao-voltar">
-                    <a href=""><input name="botao_salvar" type="submit" class="botao-salvar-submit"  value="SALVAR"></a>
+                    <a href=""><input name="botao_salvar" type="submit" class="botao-salvar-submit"  value="SALVAR" ></a>
                 </div>
             </div>
-        </form>
-        
+        </form>  
     </div>
-</main>   
+<!-- </main>    -->
 </body>
 </html>

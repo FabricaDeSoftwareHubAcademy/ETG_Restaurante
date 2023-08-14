@@ -1,6 +1,12 @@
 <?php
+session_start();
+if(!isset($_SESSION['num_matricula_logado'])){
+ 
+    header('Location: ../');
+}
     require __DIR__."/../vendor/autoload.php";
     use App\Entity\Pergunta;
+    use App\Entity\CadastroChecklist;
     $dados = Pergunta::getPerguntas()->fetchAll(PDO::FETCH_ASSOC);
     $tr = "";
     foreach ($dados as $rowdados){
@@ -11,7 +17,19 @@
         
 
     }
-?>
+
+    if(isset($_POST['cadastrar'])){
+
+        $check = new CadastroChecklist();
+        $nome = $_POST['nome-checklist'];
+
+       $id = $check->cadastrar();
+
+        echo "ultimo id ".$id;
+
+    }
+
+?> 
 
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -42,7 +60,7 @@
 
             <div class="inputs-cadastro-checklist">
                 <div class="input_group field">
-                    <input type="input" class="input_field" placeholder="Name" required="">
+                    <input type="input" class="input_field" placeholder="Name" required="" name='nome-checklist'>
                     <label for="name" class="input_label">Nome do CheckList</label> <!--Alterar para o nome do input-->
                 </div>
 

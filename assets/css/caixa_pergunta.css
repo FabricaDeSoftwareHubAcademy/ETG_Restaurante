@@ -1,21 +1,101 @@
-Estilo da Caixa
+/* Estilo da Caixa */
 
-/* .selecao-perguntas{
-  display: flex;
-  width: 100%;
+.selecao-pergunta{
+  border: 1px solid rgb(208, 208, 208);
+  border-radius: 8px;
+
 }
 
-.caixa-pergunta{
-  display: flex;
-  width: 100%;
-  height: 450px;
+.selecao-pergunta::-webkit-scrollbar{
+  background-color: #e7e7e7;
+  border-radius: 5px;
+  width: 8px;
+  
+}
+.selecao-pergunta::-webkit-scrollbar-thumb{
+  border-radius: 5px;
+  background-color: #F28920;
+}
+ 
+
+
+.tabela-perguntas{
+  border-collapse: collapse;
   border-radius: 15px;
-  background-color: rgba(103, 162, 246, 0.157);
+  border: 5px solid black;
+  
+}
+th {
+  
+  height: 25px;
+  background-color: #064A8C;
+  color: rgb(255, 255, 255);
+  font-family: 'Montserrat';
+}
+
+.topo-tabela{
+  position: sticky;
+  top: 0px;
+
+}
+
+th {
+  
+  height: 25px;
+  background-color: #064A8C;
+  color: rgb(255, 255, 255);
+  font-family: 'Montserrat';
+}
+
+td {
+  
+  border-bottom: 2px solid rgb(166, 166, 166);
+  font-family: 'Montserrat';
+  border-radius: 8px;
+  padding: 8px;
+  text-align: center;
+  color: rgb(0, 0, 0);
+  font-weight: bold;    
+}
+
+/* Estilizando CheckBox */
+
+
+#checkbox{
+  appearance: none;
+  border: 2px solid #064A8C;
+  border-radius: 50px;
+  background-color: transparent;
+  padding: 4px;
+  cursor: pointer;
+  color: #064A8C;
+}
+
+#checkbox::after{
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: "\f00c";
+  font-size: 15px;
+  color: white;
+  display: block;
+}
+
+#checkbox:hover{
+  background-color: rgb(236, 236, 236);
+  
+}
+
+#checkbox:checked{
+  background-color: #064A8C;
+
+}
+#checkbox:checked::after{
+  display: block;
 }
 
 
 /* estilo de rolagem */
-/* 
+
 .primeira-caixa::-webkit-scrollbar{
     width: 8px;
     background-color: #eeeeee;
@@ -24,5 +104,5 @@ Estilo da Caixa
 
   .primeira-caixa::-webkit-scrollbar-thumb{
     background-color: #F28920;
-    border-radius: 10px; */
-} */
+    border-radius: 10px; 
+} 

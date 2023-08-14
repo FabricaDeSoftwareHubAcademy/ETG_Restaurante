@@ -29,7 +29,7 @@
     align-items: center;
     justify-content: center; 
 }
-
+ 
 .pag_name{
     display: flex;
     width: 70%;
@@ -90,11 +90,11 @@ label{
 }
 
 .botoes{
-    width: 70%;
+    width: 100%;
     height: 15vh;
     background-color: rgb(255, 255, 255);
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-around;
     align-items: center;
 }
 
@@ -170,3 +170,9 @@ label{
 .wanderley{
     font-family: 'Montserrat', sans-serif;
 }
+
+.wanderley-titulo{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 40px;
+}
+
