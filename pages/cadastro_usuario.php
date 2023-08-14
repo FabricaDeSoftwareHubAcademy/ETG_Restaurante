@@ -26,7 +26,7 @@ $dados = $objCadastroPerfil -> getDados();
 $options = '';
 foreach ($dados as $row_check ){
     $options .= '<option  class="ops" value="'.$row_check['id_cadastro_perfil'].'"> '.$row_check['nome_cargo'].' </option>'; 
-}
+} 
 // }
 if(isset(
         $_POST['btn_submit'],

@@ -29,7 +29,7 @@ if(!isset($_SESSION['num_matricula_logado'])){
 
     }
 
-?>
+?> 
 
 <!DOCTYPE html>
 <html lang="pt-br">

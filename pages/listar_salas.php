@@ -35,7 +35,7 @@ foreach($dados as $sala){
     
                             <h1 class="title_sala">'.$sala['nome'].'</h1>
                         </div>
-    
+     
                     </div>';
 
         $count = 1;

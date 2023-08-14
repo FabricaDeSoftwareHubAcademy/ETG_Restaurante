@@ -30,7 +30,7 @@ if(!isset($_SESSION['num_matricula_logado'])){
     ?> 
 <div class="tudo">   
  
-    <div class="pagina">
+    <div class="pagina"> 
         <section class="Enviar-notificacao">
             <h1>Enviar Notificação</h1>
         </section>

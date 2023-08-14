@@ -95,7 +95,7 @@ $enviar_notificacao = $dados[0] ['enviar_notificacao'];
             <div class="permissoes_salas">
                 <label class="titulo_permissoes">Permissões da Sala:</label>
                 <div class="permissoes_salas_tipos">
-                    <div class="permissoes_salas_itens">
+                    <div class="permissoes_salas_itens"> 
                         <label class="label_permissao">Cadastrar Salas</label>
                         <input type="checkbox" class="checkbox_permissoes" name="cadastrar_sala" <?php echo $cadastrar_salas == 1 ? "checked" : "";?>  />
                     </div>

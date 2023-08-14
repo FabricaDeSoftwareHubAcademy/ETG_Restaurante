@@ -272,7 +272,7 @@ if (isset($_POST['btn_submit']))
                                 
                                 <input type="file" name="imagem_sala" id="arquivo" >
 
-                                <div class="area-anexo">
+                                <div class="area-anexo"> 
 
                                     
                                     <img id="camera_imagem" class="imagem_aparecer_editar" src="../storage/salas/<?=$dados_sala[0]['imagem']?>" alt="">

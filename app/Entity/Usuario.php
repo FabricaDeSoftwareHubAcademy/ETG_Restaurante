@@ -12,7 +12,7 @@ class Usuario{
     private $num_matricula,
             $email,
             $senha;
-            
+             
 
     // metodo construct 
     public function __construct(

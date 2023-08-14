@@ -30,7 +30,7 @@ foreach ($dados_perfil as $row_perfil)
                                 <i class="bi bi-trash" onclick="openPopup_Conf('.$row_perfil['id_cadastro_perfil'].')"></i>
                             </div>
                         </div>
-                    </li>
+                    </li> 
                 ';
 }
 

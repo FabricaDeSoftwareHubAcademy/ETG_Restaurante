@@ -125,7 +125,7 @@ include_once('../includes/pop-ups/pop_ups mural_editar/pop-up-mural-recados.php'
 <div class="botao-padrao-inicio">
         <a href="listar_salas.php"><input type="submit" class="botao-inicio-submit"  value="SALAS"></a>
 </div>
-
+ 
 <script src="../assets/js/script-pop-up-mural.js"></script>
 <script src="../assets/js/pop_ups_mural_recado.js"></script>
 <script src="../assets/js/mural.js"></script>

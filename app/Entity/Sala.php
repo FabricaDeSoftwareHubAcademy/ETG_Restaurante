@@ -92,7 +92,7 @@ class Sala{
     {
 
     } */
-
+ 
     public static function getById($id_sala){
 
         $objBanco = new Banco('Cadastro_sala');

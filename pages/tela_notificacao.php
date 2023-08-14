@@ -27,7 +27,7 @@ include_once("../includes/menu.php");
 <body class="tela_notificacao">  
 
 
-
+ 
     <main class="area_not">
 
         <h1 class="titulo_tela_notificacao">Notificações</h1>

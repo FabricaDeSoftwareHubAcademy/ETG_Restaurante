@@ -25,7 +25,7 @@ if (isset($_POST['botao_salvar'], $_POST['nome_cargo'])){
     (isset($_POST['desbloquear_checklist']) ? 1 : 0),
     (isset($_POST['descricao_nao_conformidade']) ? 1 : 0),
     (isset($_POST['enviar_notificacao']) ? 1 : 0)
-    );
+    ); 
     
     /*Chamando o metodo cadastrar da classe Perfil, essa funcao primeiramente vai verificar se ja existe
     algum perfil com este nome, se sim vai retornar false, senao true, logo, vai cadastrar no banco.*/ 

@@ -24,7 +24,7 @@
     <style>
 
 
- 
+  
 .card{
     border: solid <?=$dados[0]['cor']?>;
 }

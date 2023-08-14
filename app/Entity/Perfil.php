@@ -11,7 +11,7 @@ class Perfil{
             $cadastrar_sala,
             $editar_sala,
             $remover_sala,
-            $validar_checklist,
+            $validar_checklist, 
             $inserir_item_checklist,
             $remover_item_checklist,
             $desbloquear_checklist,

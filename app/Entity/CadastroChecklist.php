@@ -9,7 +9,7 @@ class CadastroChecklist{
     public 
     $id_cadastro_checklist,
     $nome;
-
+ 
     public function __construct($id_cadastro_checklist = null,
                                 $nome = null
                                 ){
