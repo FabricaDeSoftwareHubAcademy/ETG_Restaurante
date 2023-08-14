@@ -141,6 +141,7 @@ class Perfil{
             'enviar_notificacao'         => $this -> enviar_notificacao
         ];
         $objBanco -> update('id_cadastro_perfil = '. $id, $dados );
+        return true;
     }
 
     public static function excluir($id){

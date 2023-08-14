@@ -27,7 +27,7 @@
                 title: 'Cadastrado com sucesso!', //TITULO DO POP_UP DE ACORDO COM SUA TELA 
                 icon: 'success', // success, error e warning
                 confirmButtonColor: '#609437', // DEFINE A COR DO BOTÃO OK
-                confirmButtonText: 'OK'
+                confirmButtonText: 'ok'
             });
         }
     </script>

@@ -35,6 +35,7 @@ if(isset(
         $_POST['num_matricula'],
         $_POST['senha'],
         ))
+        
 {
     //die('qwghkglda');
 
@@ -44,7 +45,18 @@ if(isset(
                             $_POST['num_matricula'],
                             $_POST['senha']
     );
+    echo("   <script>
+    
+    Swal.fire({
+        title: 'Perfil alterado com sucesso!', //TITULO DO POP_UP DE ACORDO COM SUA TELA 
+        icon: 'success', // success, error e warning
+        confirmButtonColor: '#609437', // DEFINE A COR DO BOTÃO OK
+        confirmButtonText: 'OK'
+    });
 
+</script>");
+sleep(2);
+header('Location: gerenc_perfis.php');
 }
 
 
@@ -120,12 +132,21 @@ if(isset(
 
             <!--Botão Confirmar-->
                 <div class="botao-padrao-confirmar">
-                    <a href=""><input type="submit" class="botao-confirmar-submit" name="btn_submit" value="CONFIRMAR"></a>
+                    <a href=""><input type="submit" class="botao-confirmar-submit" name="btn_submit" value="CONFIRMAR" onclick="abrir_modal()"></a>
                 </div>
 
             </section>
         </form>
     </main>
-
+    <script>
+        function abrir_modal(){
+            Swal.fire({
+                 title: 'Perfil alterado com sucesso!', //TITULO DO POP_UP DE ACORDO COM SUA TELA 
+                 icon: 'success', // success, error e warning
+                 confirmButtonColor: '#609437', // DEFINE A COR DO BOTÃO OK
+                 confirmButtonText: 'OK'
+            });
+        }
+    </script>
 </body>
 </html>

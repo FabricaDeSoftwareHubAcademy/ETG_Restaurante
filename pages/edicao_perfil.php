@@ -4,7 +4,6 @@ if(!isset($_SESSION['num_matricula_logado'])){
  
     header('Location: ../');
 }
-include_once("../includes/menu.php");
 
 require ("../vendor/autoload.php");
 use App\Entity\Perfil;
@@ -15,7 +14,7 @@ if(isset($_GET['id'])){
 }
 //Se o botao_salvar e o nome do cargo estiverem setados
 if (isset($_POST['botao_salvar'], $_POST['nome_cargo'])){
-    
+
     /*Chamando o metodo setDados que vai alterar os dados do objeto em questao
     Lembrando que o unico obrigatorio e o nome do cargo*/
     $objPerfil = new Perfil($_POST['nome_cargo'], 
@@ -33,7 +32,18 @@ if (isset($_POST['botao_salvar'], $_POST['nome_cargo'])){
     /*Chamando o metodo cadastrar da classe Perfil, essa funcao primeiramente vai verificar se ja existe
     algum perfil com este nome, se sim vai retornar false, senao true, logo, vai cadastrar no banco.*/ 
     if ($objPerfil -> update($id)){
+        echo("   <script>
+    
+            Swal.fire({
+                title: 'Perfil alterado com sucesso!', //TITULO DO POP_UP DE ACORDO COM SUA TELA 
+                icon: 'success', // success, error e warning
+                confirmButtonColor: '#609437', // DEFINE A COR DO BOTÃO OK
+                confirmButtonText: 'OK'
+            });
         
+</script>");
+sleep(2);
+header('Location: gerenc_perfis.php');
         //recarregando para a mesma pagina depois de cadastrar, futuramente: um popup ou modal
         // header('Location: cadastro_perfil.php');
     }
@@ -41,7 +51,6 @@ if (isset($_POST['botao_salvar'], $_POST['nome_cargo'])){
 
 $dadosPerfil = new Perfil();
 $dados = $dadosPerfil->getDadosById($id);
-//print_r($dados);exit;
 $cadastrar_salas = $dados[0] ['cadastrar_sala'];
 $editar_salas = $dados[0] ['editar_sala'];
 $remover_salas = $dados[0] ['remover_sala'];
@@ -64,10 +73,11 @@ $enviar_notificacao = $dados[0] ['enviar_notificacao'];
     <link rel="stylesheet" href="https/cdnjs.cloudflare.comlibs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
     <!-- POP_UP -->
-    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.18/dist/sweetalert2.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.18/dist/sweetalert2.min.css">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.18/dist/sweetalert2.all.min.js"></script>  -->
-
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.18/dist/sweetalert2.all.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200&display=swap" rel="stylesheet">
     <!-- <link rel="stylesheet" href="../assets/css/estilo_botoes_padronizados.css"> -->
     <link rel="stylesheet" href="../assets/css/cadastro_perfil.css">
     
@@ -91,7 +101,6 @@ $enviar_notificacao = $dados[0] ['enviar_notificacao'];
                 <input type="input" class="input_field" placeholder="Name" name="nome_cargo" value="<?=$dados[0]["nome_cargo"];?>" >
                 <label for="name" class="input_label">Nome</label> <!--Alterar para o nome do input-->
             </div>
-
             <div class="permissoes_salas">
                 <label class="titulo_permissoes">Permissões da Sala:</label>
                 <div class="permissoes_salas_tipos">
@@ -150,11 +159,22 @@ $enviar_notificacao = $dados[0] ['enviar_notificacao'];
                 </div>
                 <!--Botão Salvar-->
                 <div class="botao-padrao-voltar">
-                    <a href=""><input name="botao_salvar" type="submit" class="botao-salvar-submit"  value="SALVAR" ></a>
+                    <a href="#"><input name="botao_salvar" type="submit" class="botao-salvar-submit"  value="SALVAR" onclick="abrir_modal()"></a>
                 </div>
             </div>
         </form>  
     </div>
 <!-- </main>    -->
+
+    <script>
+        function abrir_modal(){
+            Swal.fire({
+                 title: 'Perfil alterado com sucesso!', //TITULO DO POP_UP DE ACORDO COM SUA TELA 
+                 icon: 'success', // success, error e warning
+                 confirmButtonColor: '#609437', // DEFINE A COR DO BOTÃO OK
+                 confirmButtonText: 'OK'
+            });
+        }
+</script>
 </body>
 </html>
