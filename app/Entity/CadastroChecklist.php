@@ -36,6 +36,21 @@ class CadastroChecklist{
 
 
     public static function cadastroPerunta($dados,$idCheck){
+        if (isset($_POST['pergunta'])) {
+            $pergunta = $_POST['pergunta'];
+        
+            foreach ($pergunta as $interesse) {
+                // Inserir cada interesse no banco de dados
+                $sql = "INSERT INTO relacao_pergunta_checklist () VALUES ('$interesse')";
+        
+                if ($conn->query($sql) === false) {
+                    echo "Erro ao inserir interesse: " . $conn->error;
+                }
+            }
+        
+            echo "Interesses inseridos com sucesso!";
+        }
+        
 
     }
 }

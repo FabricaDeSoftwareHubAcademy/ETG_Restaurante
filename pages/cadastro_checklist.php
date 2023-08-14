@@ -5,14 +5,17 @@
     use App\Entity\CadastroChecklist;
     $dados = Pergunta::getPerguntas()->fetchAll(PDO::FETCH_ASSOC);
     $tr = "";
-    var_dump($_POST['pergunta']);
+    $perguntas = $_POST['pergunta']; 
+    foreach($perguntas as $id){
+        
+    }
     foreach ($dados as $rowdados){
         $tr .= "<tr> 
                     <td><input type='checkbox'  id='checkbox' name='pergunta[]' value='" . $rowdados['id_cadastro_pergunta'] . "'></td>
                     <td>" . $rowdados['descricao'] . "</td>   
                 </tr>";
         
-                
+
 
     }
 
