@@ -1,12 +1,29 @@
 <?php
 session_start();
 ob_start();
+
+require __DIR__."/../vendor/autoload.php";
+
+use App\Entity\Usuario;
+
+$objUsuario = new Usuario();
+$logado = false;
+$erro = false;
  
 
 if(!isset($_SESSION['num_matricula_logado'])){
  
     header('Location: ../');
+
+    
 }
+
+if (isset($_POST['email'],$_POST['btn_submit'])){
+    if ($objUsuario -> emailValidate($_POST['email']))
+    {
+            //var_dump($_POST);exit;
+
+        }}
  
 ?>
 <!DOCTYPE html>
@@ -30,30 +47,31 @@ include_once("../includes/menu.php")
         <section class='titulo_esqueceu_senha'>
             <h1>Insira o E-mail para enviar o código de confirmação:</h1>
         </section>
- 
-        <section class="centralizar_input_esqueceu_senha"> 
+        <form method="POST" class="centralizar-back">
+            <section class="centralizar_input_esqueceu_senha"> 
 
-                <!--Input Email-->
-                <div class="input_e-mail_group field">
-                    <input type="email" class="input_e-mail_field" placeholder="Name" required="" autocomplete="on">
-                    <label for="name" class="input_e-mail_label">E-mail</label> <!--Alterar para o nome do input-->
+                    <!--Input Email-->
+                    <div class="input_e-mail_group field">
+                        <input type="email" class="input_e-mail_field" placeholder="Name" required="" autocomplete="on">
+                        <label for="name" class="input_e-mail_label">E-mail</label> <!--Alterar para o nome do input-->
+                    </div>
+
+            </section>   
+
+            <section class="centralizar_botoes_esqueceu_senha">
+
+            <!--Botão Voltar-->
+                <div class="botao-padrao-voltar">
+                    <a href="#"><input type="submit" class="botao-voltar-submit"  value="VOLTAR"></a>
                 </div>
 
-        </section>   
+            <!--Botão Confirmar-->
+                <div class="botao-padrao-confirmar">
+                    <a href="tela_esqueceu_senha2.php"><input name="btn_submit" type="submit" class="botao-confirmar-submit"  value="CONFIRMAR"></a>
+                </div>
 
-        <section class="centralizar_botoes_esqueceu_senha">
-
-        <!--Botão Voltar-->
-            <div class="botao-padrao-voltar">
-                <a href="#"><input type="submit" class="botao-voltar-submit"  value="VOLTAR"></a>
-            </div>
-
-        <!--Botão Confirmar-->
-            <div class="botao-padrao-confirmar">
-                <a href="tela_esqueceu_senha2.php"><input type="submit" class="botao-confirmar-submit"  value="CONFIRMAR"></a>
-            </div>
-
-        </section>
+            </section>
+        </form>
     </main>
 
 </body>
