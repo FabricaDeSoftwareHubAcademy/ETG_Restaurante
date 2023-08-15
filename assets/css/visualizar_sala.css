@@ -2,7 +2,6 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-family: "Montserrat";
 }
 
 :root{
@@ -33,13 +32,13 @@
     min-width: 407px;
     margin: 0 auto;
     
-} 
+}
 
 .card{
     display: flex;
     height: 80%;
- 
- 
+    width: 80%;
+    border: solid #FF0000 2px;
     border-radius: 10px;
     background-color: white;
     flex-direction: column;
@@ -59,12 +58,13 @@
 #img_config{
     display: flex;
     width: 100%;
-    height: 100%;
-    border-radius: 7px 7px 0 0;
+    height: 99%;
     
 }
 
+
 .titulo_card{
+    flex-direction: column;
     display: flex;
     margin-top: 30px;
     justify-content: center;
@@ -74,30 +74,81 @@
 .texto_card{
     padding-left: 30px;
     padding-right: 30px;
+    width: 90%;
 }
 
+p.label-sala{
+    font-style: normal;
+    font-family: 'Montserrat';
+}
 
-p{
+h1.nome-sala{
+    text-align: center;
+    font-style: normal;
+    font-family: 'Montserrat';
+    margin-top: 10px;
+
+}
+
+.dias_funcionamento{
+    font-style: normal;
+    font-family: 'Montserrat';
+    word-spacing: 25px;
+    margin-top: 10px;
+}
+
+.turnos_funcionamento{
+    font-style: normal;
+    font-family: 'Montserrat';
+    word-spacing: 25px;
+    margin-top: 10px;
+}
+
+h2#dias-funcionamento{
+    font-style: normal;
+    font-family: 'Montserrat';
+    font-size: 20px;
+}
+
+h2#turnos-funcionamento{
+    font-style: normal;
+    font-family: 'Montserrat';
+    font-size: 20px;
+    margin-top: 30px;
+}
+
+.texto-descricao{
     display: flex;
-    text-align: justify;
-    word-break: break-all;
+    text-align: start;
     width: 100%;
     height: 100px;
+    margin-top: 10px;
+
 }
 
 #paragrafo_descricao{
     margin-top: 20px;
-    margin-bottom: 20px;
+    margin-bottom: 5px;
     display: flex;
+    font-family: 'Montserrat';
+    font-size: 22px;
+    margin-top: 60px;
+    
 }
 
+p.texto-descricao{
+    text-align: start;
+    font-style: normal;
+    font-family: 'Montserrat';
+    font-size: 18px;
+}
+ 
 #paragrafo_horarios{
     margin-top: 20px;
     margin-bottom: 40px;
     display: flex;
-}
-.paragrafo_card{
-    width: 550px;
+    font-style: normal;
+    font-family: 'Montserrat';
 }
 
 /* CSS Botão Voltar */
@@ -164,10 +215,6 @@ p{
 .alinhar_botoes{
     display: flex;
     padding-top: 15px;
-    width: 100%;
+    width: 80%;
     justify-content: space-between;
-}
-
-.pagina-visualizar-sala{
-    width: 832px;
 }
