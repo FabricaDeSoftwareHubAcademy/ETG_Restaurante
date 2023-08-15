@@ -1,24 +1,11 @@
 <?php
-session_start();
-ob_start();
-
 require __DIR__."/../vendor/autoload.php";
 
-use App\Entity\Usuario;
 $obj_email = new App\Entity\Mailer;
 
-
+use App\Entity\Usuario;
 $objUsuario = new Usuario();
-$logado = false;
-$erro = false;
- 
 
-if(!isset($_SESSION['num_matricula_logado'])){
- 
-    header('Location: ../');
-
-    
-}
 
 if (isset($_POST['email'], $_POST['btn_submit'])){
     if ($objUsuario -> emailValidate($_POST['email']))
