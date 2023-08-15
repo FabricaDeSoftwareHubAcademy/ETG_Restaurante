@@ -31,6 +31,7 @@ if(isset(
         $_POST['num_matricula'],
         $_POST['senha'],
         ))
+        
 {
     //die('qwghkglda');
 
@@ -40,10 +41,7 @@ if(isset(
                             $_POST['num_matricula'],
                             $_POST['senha']
     );
-
 }
-
-
 ?>
 
 <!DOCTYPE html>
@@ -95,10 +93,6 @@ if(isset(
                     <label for="name" class="input_label_matricula">N° de Matricula</label> <!--Alterar para o nome do input-->
                 </div>
             </div>
-
-
-
-            
                 <!--Input Senha-->
             <div class="input_senha_group field">
                 <input type="password" class="input_senha_field" name="senha" placeholder="Name" required="">
@@ -122,6 +116,6 @@ if(isset(
             </section>
         </form>
     </main>
-
+    </script>
 </body>
 </html>

@@ -16,4 +16,5 @@ function closePopupexcluir(){
     let popup = document.getElementById('popup-up-excluir');
     popup.classList.remove("open-popup");
     popup_excluir.classList.remove("active");
+    location.reload();
 }
