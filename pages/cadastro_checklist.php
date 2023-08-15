@@ -21,9 +21,6 @@
         $check = new CadastroChecklist();
         $check -> nome = $_POST['nome-checklist'];
         $id = $check->cadastrar();
-
-        echo "ultimo id ".$id;
-
     }
 
     if(isset($_POST[''])){
