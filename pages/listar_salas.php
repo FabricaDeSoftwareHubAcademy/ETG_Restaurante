@@ -1,12 +1,4 @@
 <?php
-session_start();
-ob_start();
- 
-
-if(!isset($_SESSION['num_matricula_logado'])){
- 
-    header('Location: ../');
-}
  
 require __DIR__."/../vendor/autoload.php";
 use App\Entity\Sala;
