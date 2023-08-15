@@ -33,16 +33,10 @@
                 </li>  
 
             
-                <li class="link_submenu2">
-                    <a href="#" class="link-menu2">
+                <li class="li-menu">
+                    <a href="mural.php" class="link-menu">
                         <i id="icon-pessoa" class="bi bi-person"  style="--i:2"></i>                    
                     </a>
-
-                        <ul class="sub-menu2">            
-                            <li class="iten-submenu2"><a href="#" id="fonte-submenu">Gerenciar Perfil</a></li>
-                            <li class="iten-submenu2"><a href="#" id="fonte-submenu">Editar Usuario</a></li>                    
-                        </ul>
-
                 </li>  
 
 
@@ -52,7 +46,7 @@
                     </a>
                 </li>   
 
-
+                
                 <li class="li-menu">
                     <a href="listar_salas.php" class="link-menu">
                         <i id="icon-vizualizar" class="bi bi-person-video3"  style="--i:4"></i>              
@@ -71,6 +65,7 @@
                             <li class="iten-submenu"><a href="cadastro_item.php" id="fonte-submenu">Cadastro de Perguntas</a></li>
                             <li class="iten-submenu"><a href="cadastro_usuario.php" id="fonte-submenu">Cadastro de Usuario</a></li>                        
                         </ul>
+
                 </li>         
 
 
