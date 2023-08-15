@@ -48,7 +48,7 @@ if (isset(  $_POST      ['nome_sala'],
             if (!empty($_FILES['imagem_sala']['name']))
             {
                 $objImagem = new Imagens;
-                $imagem = $objImagem -> storeImg($_FILES['imagem_sala']['name']);
+                $imagem = $objImagem::storeImg($_FILES['imagem_sala']['name']);
                 
             }
             

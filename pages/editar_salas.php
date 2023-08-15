@@ -53,7 +53,7 @@ if (isset($_POST['btn_submit']))
     if (!empty($_FILES['imagem_sala']['name']))
     {   
         //var_dump($_FILES);
-        $novo_nome_imagem = $obj_imagem -> storeImg($_FILES['imagem_sala']['name']);
+        $novo_nome_imagem = $obj_imagem::storeImg($_FILES['imagem_sala']['name']);
         $antigo_nome_imagem = '../storage/salas/'.$dados_sala[0]['imagem'];
         //echo $antigo_nome_imagem;exit;
         unlink($antigo_nome_imagem);

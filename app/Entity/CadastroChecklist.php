@@ -18,7 +18,9 @@ class CadastroChecklist{
     }
 
 
-    public function cadastrar(){
+    //
+    public function cadastrar() : string
+    {
         $objDatabase = new Banco('checklist_test');
 
         $ultimoId = $objDatabase -> insertRecoverId(['descricao' => $this -> nome]);
@@ -27,10 +29,12 @@ class CadastroChecklist{
     }
 
 
-    public function getDados() : array{
+
+    public function getDados() : array
+    {
         $objDatabase = new Banco('cadastro_checklist');
-        $query = $objDatabase -> select();
-        $dados = $query -> fetchAll(PDO::FETCH_ASSOC);
+
+        $dados = $query = $objDatabase -> select() -> fetchAll(PDO::FETCH_ASSOC);
         return $dados;
     }
 }
