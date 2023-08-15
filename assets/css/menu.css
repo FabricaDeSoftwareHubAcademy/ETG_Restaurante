@@ -126,10 +126,6 @@
   position: absolute;
 }
 
-
-.link-menu{ 
-  color: aqua;
-}
 .container-menu.active .navItems-menu .link-menu i{
   transform: scale(1);
   transition: 0.4s ease;
@@ -149,7 +145,14 @@
 }
 
 #icon-pessoa{
+  top: 225px;
   font-size: 35px;
+  left: 2px;
+}
+
+#icon-pessoa:hover{
+  transition: 0.2s ease;
+  color: rgba(6, 74, 140, 1);
 }
 
 #icon-casa{
@@ -171,6 +174,7 @@
 #icon-cadeado{
   font-size: 34px;
 }
+
 /* ======================================================= SUB MENU DE CADASTROS  ============================================================================*/
 .link_submenu{
   list-style: none;
@@ -235,41 +239,31 @@
 
 /* ========================================================================= SUB MENU DE PERFIS ===================================================================================*/
 .link_submenu2{
-  background-color: aqua;
-  list-style: none; 
+  list-style: none;
 }
 
-.link_submenu2 .link-menu2{
+.link_submenu2 .link-menu2 i{
   position: relative;
   color: #FAA916;
   width: 100%;
-
   text-align: center;
   transform: scale(0); 
   list-style: none;
 }
 
 .sub-menu2{
-  background: rgb(255, 255, 255);
+  background: rgb(223, 13, 13);
   position: absolute;
   transition: 0.5s;
-  width: 650px;
+  width: 350px;
+  padding: -50px;
   align-items: center;
+  margin-left: 70px;
   font-size: 15px;
   overflow: hidden;
   display: none;
+  margin-top: 200px;
   border-radius: 7px;
-}
-
-#fonte-submenu2{
-  text-decoration: none;
-  font-style: none;
-  color: #FAA916;
-}
-
-#fonte-submenu2:hover{
-  color: rgba(6, 74, 140, 1);
-
 }
 
 .iten-submenu2{
@@ -284,24 +278,23 @@
   border: 2px solid #FAA916;
 }
 
+/* 
 @media (max-width: 832px){
   .sub-menu2{
-    top: 46%;
   }
 
-}
-
+} */
 
 
 /* =============================================== POP UP ================================================================================ */
 .modal-container-menu{
-    display: none;
-    width: 100vw;
-    position: fixed;
-    z-index: 999;
-    justify-content: center;
-    left: 40%;
-    top: 20%;
+  display: none;
+  width: 100vw;
+  position: fixed;
+  z-index: 999;
+  justify-content: center;
+  left: 40%;
+  top: 20%;
 
 }
 
@@ -314,14 +307,14 @@
   }
 
 .modal-menu{
-    display: flex;
-    flex-direction: column;
-    padding: 30px;
-    background-color: #ffffff;
-    border-radius: 10px;
-    width: 350px;
-    height: 250px;
-    border: 2px solid black;
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  width: 350px;
+  height: 250px;
+  border: 2px solid black;
 }
 
 .active{
@@ -329,22 +322,20 @@
 }
 
 .btnOpenmodal-menu{
-    position: relative;
-    border: #fff;
-    text-decoration: none;
-    cursor: pointer;
-    background-color: #fff;
-    text-align: center;
-    /* top: 140px; */
+  position: relative;
+  border: #fff;
+  text-decoration: none;
+  cursor: pointer;
+  background-color: #fff;
+  text-align: center;
+  /* top: 140px; */
 }
 
 .modal-container-menu active{
-    align-items: center;
-    display: flex;
-    justify-content: center;
+  align-items: center;
+  display: flex;
+  justify-content: center;
 }
- 
-
 
 /* ===================================================== BOTÕES POP'UP MENU ==================================================== */
 
@@ -395,79 +386,76 @@
   justify-content: center;
 }
 
-
-
 /*==========================================================================Fitas==========================================================================*/
 
 .logo{
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+
+.cabecalho-menu{
+  position: relative;
+  margin-top: 30px;
+  width: 100%;
+  height: 150px;
+}
+
+.fitas{
     display: flex;
-    width: 100%;
-    justify-content: center;
-  }
+    position: absolute;
+    right: 3%;
+
+}
   
-  .cabecalho-menu{
-    position: relative;
-    margin-top: 30px;
-    width: 100%;
-    height: 150px;
-  }
-  
-  .fitas{
-      display: flex;
-      position: absolute;
-      right: 3%;
-  
-  }
-  
-  #bloc1 {
-      width: 57px;
-      height: 100px;
-      background:#F28920 ;
-      position: relative;
-      animation-name: bloc1;
-      animation-duration: 2.5s;  
-      animation-delay: 0s;
-      animation-fill-mode: backwards;
-      box-shadow: 2px 2px 5px rgb(138, 137, 137);
-      
-    }
+#bloc1 {
+  width: 57px;
+  height: 100px;
+  background:#F28920 ;
+  position: relative;
+  animation-name: bloc1;
+  animation-duration: 2.5s;  
+  animation-delay: 0s;
+  animation-fill-mode: backwards;
+  box-shadow: 2px 2px 5px rgb(138, 137, 137);
+}
     
-    @keyframes bloc1 {
-      from {height: 150px;top: 0px; background-color: #064A8C;}
-      to {height: 100px;}    
-    }
+@keyframes bloc1 {
+  from {height: 150px;top: 0px; background-color: #064A8C;}
+  to {height: 100px;}    
+}
   
-    #bloc2 {
-      width: 57px;
-      height: 137px;
-      background: #064A8C;
-      position: relative;
-      animation-name: bloc2;
-      animation-duration: 2.5s;  
-      animation-delay: 0s;
-      animation-fill-mode: backwards;
-      box-shadow: 2px 2px 5px rgb(138, 137, 137);
+#bloc2 {
+  width: 57px;
+  height: 137px;
+  background: #064A8C;
+  position: relative;
+  animation-name: bloc2;
+  animation-duration: 2.5s;  
+  animation-delay: 0s;
+  animation-fill-mode: backwards;
+  box-shadow: 2px 2px 5px rgb(138, 137, 137);
+
+
+}
+#img-logo{
+  width: 130px;
+  height: 80px;
   
+}
+
+@keyframes bloc2 {
+  from {height: 90px;top: 0px; background-color:  #F28920 ;}
+  to {height: 137px;}
   
-    }
-    #img-logo{
-      width: 130px;
-      height: 80px;
-      
-    }
-    
-    @keyframes bloc2 {
-      from {height: 90px;top: 0px; background-color:  #F28920 ;}
-      to {height: 137px;}
-      
-    }
-  
-    .container-logo{
-      width: 100%;
-      display: flex;
-      flex-direction: row;
-      right: 0%;
-      background-color: white;
-      height: 150px;
-      z-index: 2;
-    }
+}
+
+.container-logo{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  right: 0%;
+  background-color: white;
+  height: 150px;
+  z-index: 2;
+}
