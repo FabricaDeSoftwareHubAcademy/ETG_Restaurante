@@ -29,13 +29,23 @@
         $check   = $_POST['id_cadastro_pergunta'];
         $id = $check->cadastrar();
 
-        echo "ultimo id ".$id;
 
     }
     if (isset($_POST['pergunta'])){
     $perguntas = $_POST['pergunta'];
-    $check -> cadastroPergunta($perguntas,$id) ;
-
+    $check -> cadastroPergunta($perguntas,$id);
+    
+    echo ("<script>
+    function abrir_modal(){
+        Swal.fire({
+            title: 'Cadastrado com sucesso!', //TITULO DO POP_UP DE ACORDO COM SUA TELA 
+            icon: 'success', // success, error e warning
+            confirmButtonColor: '#609437', // DEFINE A COR DO BOTÃO OK
+            confirmButtonText: 'OK'
+        });
+    }
+        </script>");
+    
     }
 
 ?>
@@ -55,6 +65,9 @@
     <link rel="stylesheet" href="../assets/css/posicao.css">
     <link rel="stylesheet" href="../assets/css/caixa_pergunta.css">
     <link rel="stylesheet" href="../assets/css/botões-checklist.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.18/dist/sweetalert2.all.min.js"></script>
 </head>
 
 <body class="pai_de_todos">
@@ -101,7 +114,7 @@
 
                     <!--Botão Cadastrar-->
                     <div class="botao-padrao-cadastrar">
-                        <a href="#"><input type="submit" class="botao-cadastrar-submit" name="cadastrar" value="CADASTRAR"></a>
+                        <a href="#"><input type="submit" class="botao-cadastrar-submit" name="cadastrar" value="CADASTRAR" onclick="abrir_modal()"></a>
                     </div>
                 </div>
             </div>
@@ -143,5 +156,21 @@
             btn_submenu.setAttribute('onclick', 'openSubmenu()')
         }
     </script>
+
+    <!-- pop-up -->
+
+  
+    <script>
+    function abrir_modal(){
+        Swal.fire({
+            title: 'Cadastrado com sucesso!', //TITULO DO POP_UP DE ACORDO COM SUA TELA 
+            icon: 'success', // success, error e warning
+            confirmButtonColor: '#609437', // DEFINE A COR DO BOTÃO OK
+            confirmButtonText: 'OK'
+        });
+    }
+    </script>
+
+
 </body>
 </html>
