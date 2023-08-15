@@ -16,7 +16,7 @@
 <body class="pai_de_todos">
     <?php
 
-    include_once("../includes/menu.php")
+    include_once("../includes/menu.php");
 
     ?> 
 <div class="tudo">   
