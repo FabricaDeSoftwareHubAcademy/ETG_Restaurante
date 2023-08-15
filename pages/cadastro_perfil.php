@@ -4,7 +4,6 @@ if(!isset($_SESSION['num_matricula_logado'])){
  
     header('Location: ../');
 }
-include_once("../includes/menu.php");
 
 require("../vendor/autoload.php");
 use App\Entity\Perfil;
@@ -39,10 +38,10 @@ if (isset($_POST['botao_salvar'], $_POST['nome_cargo'])){
                     confirmButtonColor: '#609437', // DEFINE A COR DO BOTÃO OK
                     confirmButtonText: 'OK'
                 });
-            
+
     </script>");
     sleep(2);
-            
+    header('Location: gerenc_perfis.php');
         //recarregando para a mesma pagina depois de cadastrar, futuramente: um popup ou modal
       
     } 

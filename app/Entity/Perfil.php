@@ -153,8 +153,9 @@ class Perfil{
             $obBanco->delete($id,'id_cadastro_perfil');
 
             return true;
-            
-        }else{
+
+        }else
+        {
             return false;
         }
     }

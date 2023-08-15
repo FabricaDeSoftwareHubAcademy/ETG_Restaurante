@@ -40,12 +40,11 @@ if (isset($_POST['botao_salvar'], $_POST['nome_cargo'])){
                 confirmButtonColor: '#609437', // DEFINE A COR DO BOTÃO OK
                 confirmButtonText: 'OK'
             });
-        
+           
 </script>");
 sleep(2);
 header('Location: gerenc_perfis.php');
-        //recarregando para a mesma pagina depois de cadastrar, futuramente: um popup ou modal
-        // header('Location: cadastro_perfil.php');
+
     }
 }
 
