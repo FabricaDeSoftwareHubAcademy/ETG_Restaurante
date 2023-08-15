@@ -11,6 +11,7 @@ if (isset($_POST['email'], $_POST['btn_submit'])){
     if ($objUsuario -> emailValidate($_POST['email']))
     {
         $obj_email::sendEmail($_POST['email']);
+        
         die('enviou');
 
     }
