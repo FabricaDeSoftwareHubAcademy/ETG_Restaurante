@@ -1,3 +1,4 @@
+
 *{
     margin: 0;
     padding: 0;
@@ -26,8 +27,8 @@ body{
     --cor-da-descricao: rgb(29, 27, 27);
     --cor--fotos-fundo: rgb(255, 255, 255);
 
-    
-    }
+    ;
+}
 
 header{
     width: 100%;
@@ -122,8 +123,10 @@ header{
 .xis{
     display: flex;
     fill: red;
-    width: 60px;
-    height: 8vh;
+    width: 75px;
+    height: 10vh;
+    padding-left: 10px;
+
 }
 
 /* parte do mei (descrição) */
@@ -163,29 +166,7 @@ textarea{
 }
 
 .bi::before{
-    font-size: 30px
-}
-
-input[type="file"]{
-    display: none;
-}
-label{
-    display: flex;
-    position: relative;
-    background-color: #000000;
-    color: #ffffff;
-    font-size: 17px;
-    justify-content: center;
-    align-items: center;
-    height: 70%;
-    width: 10%;
-    border-radius: 13px;
-    cursor: pointer;
-}
-
-.bi.bi-camera{
-    width: 20px;
-    height: 20px;
+    font-size: 20px;
 }
 
 #images{
@@ -196,35 +177,114 @@ label{
     flex-wrap: nowrap;
 }
 
+.upload-info{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    margin-top: 3vh;
+}
+
 figure{
     display: flex;
-    width: 45%;
+    /* width: 45%; */
     flex-direction: column;
     align-items: center;
+    position: relative;
 }
 
 
-/* pra_onde_vai??????? */
-.pra_onde_vai{
-    background-color: var(--cor--fotos-fundo);
-    width: 100%;
-    height: 30vh;
-}
-
-.pra_onde_vai p{
-    text-align: center;
-    margin: 20px 0 30px 0;
-}
-
-.card-item img{
+img{
     display: flex;
     max-width: 80%;
     width: 500px;
     height: 200px;
     border-radius: 25px;
     object-fit: cover;
+    border: rgb(0, 0, 0) solid 3px;
 }
-    
+
+.upload-info p{
+    opacity: 0.6;
+    font-weight: 600;
+    margin-top: 10px;
+}
+
+.bi.bi-camera{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.upload-img{
+    width: 100%;
+    height: 30vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: rgb(255, 255, 255);
+}
+
+.upload-area{
+    width: 5vw;
+    height: 5vh;
+    background-color: rgb(37, 37, 37);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: var(--transition);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    color: white;
+}
+
+.upload-area:hover{
+    background-color: rgba(0, 0, 0, 0.945);
+}
+.upload-area-img img{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.upload-area-text{
+    font-weight: 700;
+    color: var(--black-50-color);
+}
+.upload-area-text span{
+    color: var(--primary-color);
+}
+.visually-hidden{
+    visibility: hidden;
+    opacity: 0;
+}
+
+.uploaded-img{
+    padding: 4px 0;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* remove image button */
+.remove-btn{
+    position: absolute;
+    background-color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+    right: 10%;
+    top: 2%;
+    height: 3vh;
+    width: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border-radius: 0 20px 0 10px;
+}
+
 figcaption{
     text-align: center;
     font-size: 1.5vmin;
@@ -298,4 +358,5 @@ figcaption{
     background-color: var(--cor-primaria-botao-green);
     color: var(--cor-primaria-botao-white);
 }
+
 
