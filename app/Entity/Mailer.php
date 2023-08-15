@@ -1,9 +1,12 @@
 <?php
 namespace App\Entity;
-
-require 'PHPMailer/src/Exception.php';
-require 'PHPMailer/src/PHPMailer.php';
-require 'PHPMailer/src/SMTP.php';
+// require '../../PHPMailer/src/Exception.php';
+// require '../../PHPMailer/src/PHPMailer.php';
+// require '../../PHPMailer/src/SMTP.php';
+//require __DIR__."/../../PHPMailer";
+include_once("../../PHPMailer/src/Exception.php");
+include_once("../../PHPMailer/src/PHPMailer.php");
+include_once("../../PHPMailer/src/SMTP.php");
 
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;

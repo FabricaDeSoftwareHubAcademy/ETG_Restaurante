@@ -5,6 +5,8 @@ ob_start();
 require __DIR__."/../vendor/autoload.php";
 
 use App\Entity\Usuario;
+$obj_email = new App\Entity\Mailer;
+
 
 $objUsuario = new Usuario();
 $logado = false;
@@ -18,12 +20,20 @@ if(!isset($_SESSION['num_matricula_logado'])){
     
 }
 
-if (isset($_POST['email'],$_POST['btn_submit'])){
+if (isset($_POST['email'], $_POST['btn_submit'])){
     if ($objUsuario -> emailValidate($_POST['email']))
     {
-            //var_dump($_POST);exit;
+        $obj_email::sendEmail($_POST['email']);
+        die('enviou');
 
-        }}
+    }
+    else
+    {
+
+            die ("email n ecx");
+
+    }
+    }
  
 ?>
 <!DOCTYPE html>
@@ -52,7 +62,7 @@ include_once("../includes/menu.php")
 
                     <!--Input Email-->
                     <div class="input_e-mail_group field">
-                        <input type="email" class="input_e-mail_field" placeholder="Name" required="" autocomplete="on">
+                        <input name="email" type="email" class="input_e-mail_field" placeholder="Name" required="" autocomplete="on">
                         <label for="name" class="input_e-mail_label">E-mail</label> <!--Alterar para o nome do input-->
                     </div>
 
