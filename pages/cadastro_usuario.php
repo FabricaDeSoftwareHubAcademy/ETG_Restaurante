@@ -45,21 +45,7 @@ if(isset(
                             $_POST['num_matricula'],
                             $_POST['senha']
     );
-    echo("   <script>
-    
-    Swal.fire({
-        title: 'Perfil alterado com sucesso!', //TITULO DO POP_UP DE ACORDO COM SUA TELA 
-        icon: 'success', // success, error e warning
-        confirmButtonColor: '#609437', // DEFINE A COR DO BOTÃO OK
-        confirmButtonText: 'OK'
-    });
-
-</script>");
-sleep(2);
-header('Location: gerenc_perfis.php');
 }
-
-
 ?>
 
 <!DOCTYPE html>
@@ -111,10 +97,6 @@ header('Location: gerenc_perfis.php');
                     <label for="name" class="input_label_matricula">N° de Matricula</label> <!--Alterar para o nome do input-->
                 </div>
             </div>
-
-
-
-            
                 <!--Input Senha-->
             <div class="input_senha_group field">
                 <input type="password" class="input_senha_field" name="senha" placeholder="Name" required="">
@@ -132,21 +114,12 @@ header('Location: gerenc_perfis.php');
 
             <!--Botão Confirmar-->
                 <div class="botao-padrao-confirmar">
-                    <a href=""><input type="submit" class="botao-confirmar-submit" name="btn_submit" value="CONFIRMAR" onclick="abrir_modal()"></a>
+                    <a href=""><input type="submit" class="botao-confirmar-submit" name="btn_submit" value="CONFIRMAR"></a>
                 </div>
 
             </section>
         </form>
     </main>
-    <script>
-        function abrir_modal(){
-            Swal.fire({
-                 title: 'Perfil alterado com sucesso!', //TITULO DO POP_UP DE ACORDO COM SUA TELA 
-                 icon: 'success', // success, error e warning
-                 confirmButtonColor: '#609437', // DEFINE A COR DO BOTÃO OK
-                 confirmButtonText: 'OK'
-            });
-        }
     </script>
 </body>
 </html>
