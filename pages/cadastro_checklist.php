@@ -4,11 +4,8 @@
     use App\Entity\Pergunta;
     use App\Entity\CadastroChecklist;
     $dados = Pergunta::getPerguntas()->fetchAll(PDO::FETCH_ASSOC);
-    $tr = "";
-    $perguntas = $_POST['pergunta']; 
-    foreach($perguntas as $id){
-        
-    }
+    $tr = ""; 
+    
     foreach ($dados as $rowdados){
         $tr .= "<tr> 
                     <td><input type='checkbox'  id='checkbox' name='pergunta[]' value='" . $rowdados['id_cadastro_pergunta'] . "'></td>
@@ -36,6 +33,11 @@
         $id = $check->cadastrar();
 
         echo "ultimo id ".$id;
+
+    }
+    if (isset($_POST['pergunta'])){
+    $perguntas = $_POST['pergunta'];
+    $check -> cadastroPergunta($perguntas,$id) ;
 
     }
 
