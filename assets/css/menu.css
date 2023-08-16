@@ -182,8 +182,7 @@
 /*====================================================== TITULO DE INFORMAÇÃO DA TELA   =============================================================================*/
 
 
-a, #titulo{
-  
+.link-menu, .titulo-info{
   list-style: none;
   text-decoration: none;
   color: inherit;
@@ -191,7 +190,41 @@ a, #titulo{
   color: #F28920;
 }
 
+.container-menu.active .navItems-menu .link-menu h5 {
+  transform: scale(1);
+  transition: 0.4s ease;
+  transition-delay: calc(0.08s * var(--i));
+}
+  
+.container-menu.active .navItems-menu li:hover .link-menu h5{
+  transition: 0.2s ease;
+  color: rgba(6, 74, 140, 1);
+}
 
+
+#titulo-home{
+  margin-left: 1px;
+}
+
+#titulo-perf{
+  margin-left: 4px;
+}
+
+#titulo-not{
+  margin-left: 2px;
+}
+
+#titulo-sala{
+  margin-left: 3px;
+}
+
+#titulo-cad{
+  margin-right: 4px;
+}
+
+#titulo-sair{
+  margin-left: 8px;
+}
 
 
 /* ======================================================= SUB MENU DE CADASTROS  ============================================================================*/
@@ -220,7 +253,7 @@ a, #titulo{
   align-items: center;
   margin-left: 70px;
   font-size: 15px;
-  top: 57%;
+  top: 62%;
   overflow: hidden;
   display: none;
   border-radius: 7px;
@@ -246,6 +279,7 @@ a, #titulo{
 .sub-menu.active{
   height: 120px;
   border: 2px solid #FAA916;
+  margin-left: 65px;
 }
 /* ========================================================================= SUB MENU DE PERFIS ===================================================================================*/
 
@@ -260,7 +294,7 @@ a, #titulo{
   overflow: hidden;
   display: none;
   border-radius: 7px;
-  margin-top: -20px;
+  top: 30px;
 }
 
 .link-menu2, .iten-submenu2 {
@@ -275,7 +309,7 @@ a, #titulo{
 .submenu2.active {
   height: 110px;
   border: 2px solid #FAA916;
-  margin-left: 77px;
+  margin-left: 65px;
 }
 
 .link_submenu2 .link-menu2 i{
@@ -298,7 +332,6 @@ a, #titulo{
 
 #fonte-submenu2:hover{
   color: rgba(6, 74, 140, 1);
-
 }
 
 .iten-submenu2{
