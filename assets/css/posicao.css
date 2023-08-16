@@ -14,14 +14,20 @@
     align-items: center; /* Centraliza na horizontal */
 }
 
-#titulo-pergunta {
+#titulo-pergunta-pre, #titulo-pergunta-pos {
     font-size: medium;
     font-family: 'Montserrat';
+
 }
 
 #titulo {
     font-family: 'Montserrat';
-    margin-top: 40px;
+    
+}
+.titulo-selecione-pergunta{
+    height:30px ;
+    display: flex;
+    text-align: center;
 }
 .titulo-topo{
     width: 100%;
@@ -38,7 +44,7 @@
     overflow: hidden;
     overflow-y: scroll;
     max-width: 800px;
-    max-height: 400px;
+    max-height: 250px;
 }
 
 .selecao-pergunta::-webkit-scrollbar{

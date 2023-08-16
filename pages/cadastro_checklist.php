@@ -86,12 +86,24 @@
                     <label for="name" class="input_label">Nome do CheckList</label> <!--Alterar para o nome do input-->
                 </div>
 
-                <div class="input_group field">
                     <div class="titulo-selecione-pergunta">
-                        <h1 id="titulo-pergunta">Selecione as Perguntas:</h1>
+                        <h1 id="titulo-pergunta-pos">Selecione as Perguntas:</h1>
                     </div>
-                </div>
 
+                <section class="selecao-pergunta">
+                    <table class="tabela-perguntas">
+                        <tr class="topo-tabela">
+                            <th>Selecione</th>
+                            <th>Pergunta</th>
+                        </tr>
+                        <?=$tr?>
+
+
+                    </table>
+                </section>
+                <div class="titulo-selecione-pergunta">
+                        <h1 id="titulo-pergunta-pos">Selecione as Perguntas:</h1>
+                    </div>
                 <section class="selecao-pergunta">
                     <table class="tabela-perguntas">
                         <tr class="topo-tabela">
