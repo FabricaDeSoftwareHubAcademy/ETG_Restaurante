@@ -33,11 +33,17 @@
                 </li>  
 
             
-                <li class="li-menu">
-                    <a href="mural.php" class="link-menu">
-                        <i id="icon-pessoa" class="bi bi-person"  style="--i:2"></i>                    
+            <li class="link-submenu2">
+                    <a href="#" class="link-menu2">
+                        <i id="icon-pessoa" class="bi bi-person" style="--i:2"></i>                    
                     </a>
-                </li>  
+
+                    <ul class="submenu2" id="submenu-icon-pessoa">
+                        <li><a  class="iten-submenu2" href="#" id="fonte-submenu2">Gerenciar Perfil</a></li>
+                        <li><a  class="iten-submenu2" href="#" id="fonte-submenu2">Editar Usuário</a></li>
+                    </ul>
+
+            </li>
 
 
                 <li class="li-menu">
@@ -105,6 +111,8 @@
     
     </div>
     <script>
+
+// ================================================  JAVA SCRIPT DO SUB-MENU DE CADASTRO/MENU ==============================================================
         var toggleClick = document.querySelector(".toggleBox-menu");
         var container = document.querySelector(".container-menu");
         toggleClick.addEventListener("click", ()=>{
@@ -149,6 +157,45 @@ function closeSubmenu(){
   btn_submenu.setAttribute('onclick', 'openSubmenu()')
 
 }
+
+document.addEventListener("click", function(event) {
+            // Fechar o submenu quando clicar fora dele
+            if (!submenu.contains(event.target) && !btn_submenu.contains(event.target)) {
+                closeSubmenu();
+            }
+
+            // Fechar a modal quando clicar fora dela
+            if (!modal.contains(event.target) && event.target !== document.querySelector('button[onclick="openModal()"]')) {
+                closeModal(0);
+            }
+        });
+
+// ================================================  JAVA SCRIPT DO SUB-MENU DOS PERFIS  ==============================================================
+
+document.addEventListener("DOMContentLoaded", function() {
+        const submenuIconPessoa = document.getElementById("submenu-icon-pessoa");
+
+        function toggleSubmenu(submenu) {
+            submenu.classList.toggle("active");
+        }
+
+        document.getElementById("icon-pessoa").addEventListener("click", function(event) {
+            event.preventDefault();
+            toggleSubmenu(submenuIconPessoa);
+        });
+
+        document.getElementById("icon-outro").addEventListener("click", function(event) {
+            event.preventDefault();
+            toggleSubmenu(submenuIconPessoa); 
+        });
+
+        document.addEventListener("click", function(event) {
+            if (!submenuIconPessoa.contains(event.target) && !document.getElementById("icon-pessoa").contains(event.target)) {
+                submenuIconPessoa.classList.remove("active");
+            }
+
+        });
+    });
 
     </script>       
 </body>
