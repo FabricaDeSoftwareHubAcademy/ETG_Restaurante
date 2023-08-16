@@ -95,7 +95,7 @@
 .li-menu{
   list-style: none;
   position: relative;
-  top: 14rem;
+  top: 150px;
   margin-left: -6px;
 }
   
@@ -104,11 +104,10 @@
   display: block;
   font-size: 40px;
   color: #FAA916;
-  padding: 5px;
+  padding-top: 25px;
   width: 100%;
   text-align: center;
   transform: scale(0);
-  margin-top: 5px;
 }
 
 .saida .link-menu i{
@@ -167,7 +166,8 @@
 }
 
 .link_submenu .link-menu i{
-  font-size: 30px;
+  font-size: 33px;
+  margin-left: -5px;
 }
 
 .saida .link-menu i{
@@ -177,11 +177,28 @@
 #icon-cadeado{
   font-size: 34px;
 }
+
+
+/*====================================================== TITULO DE INFORMAÇÃO DA TELA   =============================================================================*/
+
+
+a, #titulo{
+  
+  list-style: none;
+  text-decoration: none;
+  color: inherit;
+  font-size: 11px; 
+  color: #F28920;
+}
+
+
+
+
 /* ======================================================= SUB MENU DE CADASTROS  ============================================================================*/
 
 .link_submenu{
   list-style: none;
-  margin-top: 180px;
+  margin-top: 130px;
 }
 
 .link_submenu .link-menu i{
@@ -200,11 +217,10 @@
   position: absolute;
   transition: 0.5s;
   width: 350px;
-  padding: -50px;
   align-items: center;
   margin-left: 70px;
   font-size: 15px;
-  top: 56%;
+  top: 57%;
   overflow: hidden;
   display: none;
   border-radius: 7px;
@@ -216,11 +232,6 @@
   color: #FAA916;
 }
 
-#fonte-submenu:hover{
-  color: rgba(6, 74, 140, 1);
-
-}
-
 .iten-submenu{
   background-color: #fff;
   padding: 6px;
@@ -228,18 +239,14 @@
   
 }
 
+#fonte-submenu:hover{
+  color: rgba(6, 74, 140, 1);
+}
+
 .sub-menu.active{
-  height: 145px;
+  height: 120px;
   border: 2px solid #FAA916;
 }
-
-@media (max-width: 832px){
-  .sub-menu{
-    top: 46%;
-  }
-
-}
-
 /* ========================================================================= SUB MENU DE PERFIS ===================================================================================*/
 
 .submenu2 {
@@ -247,13 +254,13 @@
   position: absolute;
   transition: 0.5s;
   width: 350px;
-  padding: -50px;
   align-items: center;
-  margin-left: 70px;
+  margin-left: 60px;
   font-size: 15px;
   overflow: hidden;
   display: none;
   border-radius: 7px;
+  margin-top: -20px;
 }
 
 .link-menu2, .iten-submenu2 {
@@ -261,13 +268,14 @@
   color: inherit; 
 }
 
-.submenu2.active {
-  height: 120px;
-  border: 2px solid #FAA916;
+.link-submenu2{
+  list-style: none;
 }
 
-.link_submenu2{
-  list-style: none;
+.submenu2.active {
+  height: 110px;
+  border: 2px solid #FAA916;
+  margin-left: 77px;
 }
 
 .link_submenu2 .link-menu2 i{
@@ -277,13 +285,14 @@
   width: 100%;
   text-align: center;
   transform: scale(0); 
-  margin-top: 50px;
+  margin-top: 70px;
   list-style: none;
 }
 
 #fonte-submenu2{
   text-decoration: none;
   font-style: none;
+  list-style: none;
   color: #FAA916;
 }
 
@@ -294,7 +303,7 @@
 
 .iten-submenu2{
   background-color: #fff;
-  padding: 5px;
+  padding: 6px;
   font-size: 20px;
 }
 /* =============================================== POP UP ================================================================================ */

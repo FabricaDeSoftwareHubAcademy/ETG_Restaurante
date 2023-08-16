@@ -27,35 +27,41 @@
 
             <ul class="navItems-menu">
                 <li class="li-menu">
-                    <a href="mural.php" class="link-menu">
-                        <i id="icon-casa" class="bi bi-house-door"  style="--i:1"></i>                    
+                    <a href="../pages/mural.php" class="link-menu">
+                        <i id="icon-casa" class="bi bi-house-door"  style="--i:1"></i>   
+                        <h5 id="titulo">Home</h5>                 
                     </a>
                 </li>  
 
             
             <li class="link-submenu2">
-                    <a href="#" class="link-menu2">
-                        <i id="icon-pessoa" class="bi bi-person" style="--i:2"></i>                    
+                <li class="li-menu">
+                    <a href="#" class="link-menu">
+                        <i id="icon-pessoa" class="bi bi-person" style="--i:2"></i>
+                        <h5 id="titulo">Perfil</h5>                    
                     </a>
 
                     <ul class="submenu2" id="submenu-icon-pessoa">
-                        <li><a  class="iten-submenu2" href="#" id="fonte-submenu2">Gerenciar Perfil</a></li>
-                        <li><a  class="iten-submenu2" href="#" id="fonte-submenu2">Editar Usuário</a></li>
-                    </ul>
-
+                        <li class="iten-submenu2"><a href="../pages/gerenc_perfis.php" id="fonte-submenu2">Gerenciar Perfil</a></li>
+                        <li class="iten-submenu2"><a href="#" id="fonte-submenu2">Editar Usuário</a></li>
+                        <li class="iten-submenu"><a href="../pages/cadastro_usuario.php" id="fonte-submenu2">Cadastro de Usuario</a></li> 
+                    </ul>    
+                </li>
             </li>
 
 
                 <li class="li-menu">
                     <a href="#" class="link-menu">
-                        <i id="icon-notificacao" class="bi bi-bell"  style="--i:3"></i>                
+                        <i id="icon-notificacao" class="bi bi-bell"  style="--i:3"></i>  
+                        <h5 id="titulo">Notificações</h5>              
                     </a>
                 </li>   
 
                 
                 <li class="li-menu">
-                    <a href="listar_salas.php" class="link-menu">
-                        <i id="icon-vizualizar" class="bi bi-person-video3"  style="--i:4"></i>              
+                    <a href="../pages/listar_salas.php" class="link-menu">
+                        <i id="icon-vizualizar" class="bi bi-person-video3"  style="--i:4"></i>  
+                        <h5 id="titulo">Sala</h5>            
                     </a>  
                 </li>      
 
@@ -63,15 +69,15 @@
                 <li class="link_submenu">
                     <a href="#" class="link-menu">
                         <i class="bi bi-list-check" id="btnsubmenu" onclick="openSubmenu()" style="--i:6"></i>
+                        <h5 id="titulo">Cadastro</h5>
                     </a>
 
                         <ul class="sub-menu">            
                             <li class="iten-submenu"><a href="../pages/cadastro_salas.php" id="fonte-submenu">Cadastro de Salas</a></li>
-                            <li class="iten-submenu"><a href="cadastro_checklist.php" id="fonte-submenu">Cadastro Checklist</a></li>
-                            <li class="iten-submenu"><a href="cadastro_item.php" id="fonte-submenu">Cadastro de Perguntas</a></li>
-                            <li class="iten-submenu"><a href="cadastro_usuario.php" id="fonte-submenu">Cadastro de Usuario</a></li>                        
+                            <li class="iten-submenu"><a href="../pages/cadastro_checklist.php" id="fonte-submenu">Cadastro Checklist</a></li>
+                            <li class="iten-submenu"><a href="../pages/cadastro_item.php" id="fonte-submenu">Cadastro de Perguntas</a></li>                       
                         </ul>
-
+                        
                 </li>         
 
 
@@ -182,11 +188,6 @@ document.addEventListener("DOMContentLoaded", function() {
         document.getElementById("icon-pessoa").addEventListener("click", function(event) {
             event.preventDefault();
             toggleSubmenu(submenuIconPessoa);
-        });
-
-        document.getElementById("icon-outro").addEventListener("click", function(event) {
-            event.preventDefault();
-            toggleSubmenu(submenuIconPessoa); 
         });
 
         document.addEventListener("click", function(event) {
