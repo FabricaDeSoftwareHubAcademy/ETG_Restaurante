@@ -1,8 +1,6 @@
 <?php
 
-include_once("../includes/menu.php");
-
-
+// include_once("../includes/menu.php");
 require ("../vendor/autoload.php");
 use App\Entity\Perfil;
 
@@ -41,7 +39,7 @@ if (isset($_POST['botao_salvar'], $_POST['nome_cargo'])){
            
 </script>");
 sleep(2);
-header('Location: gerenc_perfis.php');
+// header('Location: gerenc_perfis.php');
 
     }
 }
