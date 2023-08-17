@@ -1,7 +1,27 @@
 <?php
 session_start();
 
- 
+if (isset($_POST['btn_submit']) && isset($_SESSION['cod_redef_senha']))
+{
+    if ($_POST['email'] == $_SESSION['cod_redef_senha'])
+    {
+        unset($_SESSION['cod_redef_senha']);
+        header("Location: tela_esqueceu_senha3.php");
+    }
+    else
+    {
+        die('ta errado!');
+    }
+}
+var_dump($_POST);
+if (isset($_POST['teste']))
+{
+    die('IGORZAO DAMASSA');
+}
+
+
+
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -23,13 +43,16 @@ include_once("../includes/menu.php")
     <main class="tudo_esqueceu_senha2">
         <section class='titulo_esqueceu_senha2'>
             <h1>Insira o código enviado em seu E-mail:</h1>
+    <form method="POST" action="">
+        
         </section>
+            
 
  
                     <section class="centralizar_input_esqueceu_senha2"> 
                 <!--Input Email-->
                         <div class="input_e-mail_group field">
-                            <input type="email" class="input_e-mail_field" placeholder="_" required="" autocomplete="on">
+                            <input name="email" type="" class="input_e-mail_field" placeholder="_" required="" autocomplete="on">
                             <label for="name" class="input_e-mail_label">Código Enviado </label><!--Alterar para o nome do input-->
                         </div>
                 
@@ -40,12 +63,12 @@ include_once("../includes/menu.php")
                             </div>
 
                             <div>
-                                <button  class="botao-enviar-dnv" id="actionBtn" onclick="performAction()" disabled>Enviar novamente</button>
+                                <input type="submit" name="teste" class="botao-enviar-dnv" id="actionBtn" value="Enviar novamente">
                             </div>
                             <script src="../assets/js/tela_esqueceu_senha2.js"></script>
                         </div>
                     </section>
-
+                
 
         </section>   
 
@@ -59,12 +82,12 @@ include_once("../includes/menu.php")
 
         <!--Botão Confirmar-->
             <div class="botao-padrao-confirmar">
-                <a href="tela_esqueceu_senha3.php"><input type="submit" class="botao-confirmar-submit"  value="CONFIRMAR"></a>
+                <input name="btn_submit" type="submit" class="botao-confirmar-submit"  value="CONFIRMAR">
             </div>
 
         </section>
 
-
+    </form>
     </main>
 
 </body>
