@@ -95,7 +95,7 @@
 .li-menu{
   list-style: none;
   position: relative;
-  top: 14rem;
+  top: 150px;
   margin-left: -6px;
 }
   
@@ -104,11 +104,10 @@
   display: block;
   font-size: 40px;
   color: #FAA916;
-  padding: 5px;
+  padding-top: 25px;
   width: 100%;
   text-align: center;
   transform: scale(0);
-  margin-top: 5px;
 }
 
 .saida .link-menu i{
@@ -149,8 +148,14 @@
 }
 
 #icon-pessoa{
+  color: #FAA916;
   font-size: 35px;
 }
+
+#icon-pessoa:hover{
+  color: rgba(6, 74, 140, 1);
+}
+
 
 #icon-casa{
   font-size: 30px;
@@ -161,7 +166,8 @@
 }
 
 .link_submenu .link-menu i{
-  font-size: 30px;
+  font-size: 33px;
+  margin-left: -5px;
 }
 
 .saida .link-menu i{
@@ -171,10 +177,61 @@
 #icon-cadeado{
   font-size: 34px;
 }
-/* ======================================================= SUB MENU DO MENU ========================================================*/
+
+
+/*====================================================== TITULO DE INFORMAÇÃO DA TELA   =============================================================================*/
+
+
+.link-menu, .titulo-info{
+  list-style: none;
+  text-decoration: none;
+  color: inherit;
+  font-size: 11px; 
+  color: #F28920;
+}
+
+.container-menu.active .navItems-menu .link-menu h5 {
+  transform: scale(1);
+  transition: 0.4s ease;
+  transition-delay: calc(0.08s * var(--i));
+}
+  
+.container-menu.active .navItems-menu li:hover .link-menu h5{
+  transition: 0.2s ease;
+  color: rgba(6, 74, 140, 1);
+}
+
+
+#titulo-home{
+  margin-left: 1px;
+}
+
+#titulo-perf{
+  margin-left: 4px;
+}
+
+#titulo-not{
+  margin-left: 2px;
+}
+
+#titulo-sala{
+  margin-left: 3px;
+}
+
+#titulo-cad{
+  margin-right: 4px;
+}
+
+#titulo-sair{
+  margin-left: 8px;
+}
+
+
+/* ======================================================= SUB MENU DE CADASTROS  ============================================================================*/
+
 .link_submenu{
   list-style: none;
-  margin-top: 180px;
+  margin-top: 130px;
 }
 
 .link_submenu .link-menu i{
@@ -192,13 +249,11 @@
   background: rgb(255, 255, 255);
   position: absolute;
   transition: 0.5s;
-  width: 450px;
-  height: 0px;
-  padding: -50px;
+  width: 350px;
   align-items: center;
   margin-left: 70px;
   font-size: 15px;
-  top: 56%;
+  top: 62%;
   overflow: hidden;
   display: none;
   border-radius: 7px;
@@ -210,11 +265,6 @@
   color: #FAA916;
 }
 
-#fonte-submenu:hover{
-  color: rgba(6, 74, 140, 1);
-
-}
-
 .iten-submenu{
   background-color: #fff;
   padding: 6px;
@@ -222,18 +272,73 @@
   
 }
 
+#fonte-submenu:hover{
+  color: rgba(6, 74, 140, 1);
+}
+
 .sub-menu.active{
-  height: 184px;
+  height: 120px;
   border: 2px solid #FAA916;
+  margin-left: 65px;
+}
+/* ========================================================================= SUB MENU DE PERFIS ===================================================================================*/
+
+.submenu2 {
+  background: rgb(255, 255, 255);
+  position: absolute;
+  transition: 0.5s;
+  width: 350px;
+  align-items: center;
+  margin-left: 60px;
+  font-size: 15px;
+  overflow: hidden;
+  display: none;
+  border-radius: 7px;
+  top: 30px;
 }
 
-@media (max-width: 832px){
-  .sub-menu{
-    top: 46%;
-  }
-
+.link-menu2, .iten-submenu2 {
+  text-decoration: none; 
+  color: inherit; 
 }
 
+.link-submenu2{
+  list-style: none;
+}
+
+.submenu2.active {
+  height: 110px;
+  border: 2px solid #FAA916;
+  margin-left: 65px;
+}
+
+.link_submenu2 .link-menu2 i{
+  position: relative;
+  display: block;
+  color: #FAA916;
+  width: 100%;
+  text-align: center;
+  transform: scale(0); 
+  margin-top: 70px;
+  list-style: none;
+}
+
+#fonte-submenu2{
+  text-decoration: none;
+  font-style: none;
+  list-style: none;
+  color: #FAA916;
+}
+
+#fonte-submenu2:hover{
+  color: rgba(6, 74, 140, 1);
+}
+
+.iten-submenu2{
+  background-color: #fff;
+  padding: 6px;
+  font-size: 20px;
+}
 /* =============================================== POP UP ================================================================================ */
 .modal-container-menu{
     display: none;

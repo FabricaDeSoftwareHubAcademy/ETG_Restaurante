@@ -27,56 +27,65 @@
 
             <ul class="navItems-menu">
                 <li class="li-menu">
-                    <a href="mural.php" class="link-menu">
-                        <i id="icon-casa" class="bi bi-house-door"  style="--i:1"></i>                    
+                    <a href="../pages/mural.php" class="link-menu">
+                        <i id="icon-casa" class="bi bi-house-door"  style="--i:1"></i>   
+                        <h5 class="titulo-info" id="titulo-home" style="--i:1">Home</h5>                 
                     </a>
                 </li>  
 
+            
+            <li class="link-submenu2">
                 <li class="li-menu">
-                    <a href="../pages/gerenc_perfis.php" class="link-menu">
-                        <i id="icon-pessoa" class="bi bi-person"  style="--i:2"></i>                
+                    <a href="#" class="link-menu">
+                        <i id="icon-pessoa" class="bi bi-person" style="--i:2"></i>
+                        <h5 class="titulo-info" id="titulo-perf" style="--i:2">Usuários</h5>                    
                     </a>
-                </li>   
+
+                    <ul class="submenu2" id="submenu-icon-pessoa">
+                        <li class="iten-submenu2"><a href="../pages/gerenc_perfis.php" id="fonte-submenu2">Gerenciar Perfil</a></li>
+                        <li class="iten-submenu2"><a href="#" id="fonte-submenu2">Editar Usuário</a></li>
+                        <li class="iten-submenu"><a href="../pages/cadastro_usuario.php" id="fonte-submenu2">Cadastro de Usuario</a></li> 
+                    </ul>    
+                </li>
+            </li>
+
 
                 <li class="li-menu">
                     <a href="#" class="link-menu">
-                        <i id="icon-notificacao" class="bi bi-bell"  style="--i:3"></i>                
+                        <i id="icon-notificacao" class="bi bi-bell"  style="--i:3"></i>  
+                        <h5 class="titulo-info" id="titulo-not" style="--i:3">Notificações</h5>              
                     </a>
                 </li>   
 
+                
                 <li class="li-menu">
-                    <a href="listar_salas.php" class="link-menu">
-                        <i id="icon-vizualizar" class="bi bi-person-video3"  style="--i:4"></i>              
+                    <a href="../pages/listar_salas.php" class="link-menu">
+                        <i id="icon-vizualizar" class="bi bi-person-video3"  style="--i:4"></i>  
+                        <h5 class="titulo-info" id="titulo-sala" style="--i:4">Salas</h5>            
                     </a>  
-                </li>     
+                </li>      
 
-
-                <li class="li-menu">
-                    <a href="redefinir_senha.php" class="link-menu">
-                        <i id="icon-cadeado" class="bi bi-key" style="--i:5"></i>              
-                    </a>  
-                </li>  
-
-
+                
                 <li class="link_submenu">
                     <a href="#" class="link-menu">
-                        <i class="bi bi-list-check" id="btnsubmenu" onclick="openSubmenu()" style="--i:6"></i>
+                        <i class="bi bi-list-check" id="btnsubmenu" onclick="openSubmenu()" style="--i:5"></i>
+                        <h5 class="titulo-info" id="titulo-cad" style="--i:5">Cadastros</h5>
                     </a>
 
                         <ul class="sub-menu">            
                             <li class="iten-submenu"><a href="../pages/cadastro_salas.php" id="fonte-submenu">Cadastro de Salas</a></li>
-                            <li class="iten-submenu"><a href="" id="fonte-submenu">Relatórios</a></li>
-                            <li class="iten-submenu"><a href="cadastro_checklist.php" id="fonte-submenu">Cadastro Checklist</a></li>
-                            <li class="iten-submenu"><a href="cadastro_item.php" id="fonte-submenu">Cadastro de Perguntas</a></li>
-                            <li class="iten-submenu"><a href="cadastro_usuario.php" id="fonte-submenu">Cadastro de Usuario</a></li>                        
+                            <li class="iten-submenu"><a href="../pages/cadastro_checklist.php" id="fonte-submenu">Cadastro Checklist</a></li>
+                            <li class="iten-submenu"><a href="../pages/cadastro_item.php" id="fonte-submenu">Cadastro de Perguntas</a></li>                       
                         </ul>
-
+                        
                 </li>         
+
 
                 <li class="saida">
                     <button class="btnOpenmodal-menu" onclick="openModal()" >  
-                        <a href="#" class="link-menu">
-                            <i class="bi bi-box-arrow-left" style="--i:7"></i>
+                        <a href="" class="link-menu">
+                            <i class="bi bi-box-arrow-left" style="--i:6"></i>
+                            <h5 class="titulo-info" id="titulo-sair" style="--i:6">Sair</h5>
                         </a>
                     </button>
                 </li>        
@@ -109,6 +118,8 @@
     
     </div>
     <script>
+
+// ================================================  JAVA SCRIPT DO SUB-MENU DE CADASTRO/MENU ==============================================================
         var toggleClick = document.querySelector(".toggleBox-menu");
         var container = document.querySelector(".container-menu");
         toggleClick.addEventListener("click", ()=>{
@@ -123,6 +134,7 @@
         const modal = document.querySelector('.modal-container-menu')
 const submenu = document.querySelector('.sub-menu')
 const btn_submenu = document.getElementById('btnsubmenu')
+
 
 
 function openModal() {
@@ -152,6 +164,41 @@ function closeSubmenu(){
   btn_submenu.setAttribute('onclick', 'openSubmenu()')
 
 }
+
+document.addEventListener("click", function(event) {
+            // Fechar o submenu quando clicar fora dele
+            if (!submenu.contains(event.target) && !btn_submenu.contains(event.target)) {
+                closeSubmenu();
+            }
+
+            // Fechar a modal quando clicar fora dela
+            if (!modal.contains(event.target) && event.target !== document.querySelector('button[onclick="openModal()"]')) {
+                closeModal(0);
+            }
+        });
+
+// ================================================  JAVA SCRIPT DO SUB-MENU DOS PERFIS  ==============================================================
+
+document.addEventListener("DOMContentLoaded", function() {
+        const submenuIconPessoa = document.getElementById("submenu-icon-pessoa");
+
+        function toggleSubmenu(submenu) {
+            submenu.classList.toggle("active");
+        }
+
+        document.getElementById("icon-pessoa").addEventListener("click", function(event) {
+            event.preventDefault();
+            toggleSubmenu(submenuIconPessoa);
+        });
+
+        document.addEventListener("click", function(event) {
+            if (!submenuIconPessoa.contains(event.target) && !document.getElementById("icon-pessoa").contains(event.target)) {
+                submenuIconPessoa.classList.remove("active");
+            }
+
+        });
+    });
+
     </script>       
 </body>
 </html>
