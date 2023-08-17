@@ -41,7 +41,8 @@
 
  
 .card{
-    border: solid <?=$dados[0]['cor']?>;
+    border: solid  <?=$dados[0]['cor']?>;
+    box-shadow: 0 0 1em <?=$dados[0]['cor']?>;
 }
 
     </style>
