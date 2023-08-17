@@ -70,6 +70,24 @@ class Notificacao{
 
     return $dados;
     }
+
+
+    public static function visualizar($id){
+
+        $banco = new Banco ('notificacao');
+        $dados = [
+            'visualizado' => 1 
+        ];
+        if($banco->update('id_notificacao = "'.$id.'"',$dados)){
+
+            return true;
+        }else{
+            return false;
+        }
+
+
+
+    }
 }
 
 
