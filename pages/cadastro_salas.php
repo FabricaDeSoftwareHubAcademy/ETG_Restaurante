@@ -243,7 +243,7 @@ if (isset(  $_POST      ['nome_sala'],
                         <div class="text-area">
                             <span id=descrição>Descrição</span>
     
-                            <textarea  placeholder="Area de texto " name="descricao_sala" id="" cols="70" rows="10" class="text-descricao"></textarea>
+                            <textarea  placeholder="Area de texto " name="descricao_sala" id="" cols="70" rows="10" class="text-descricao" maxLength="255"></textarea>
                         </div>
                         <div class="cor-sala">
                             <div class="alinar-img">
