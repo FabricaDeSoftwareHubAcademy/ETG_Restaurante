@@ -13,7 +13,6 @@ class Notificacao{
             $id_destinatario,
             $descricao;
             
-            
     public function __construct(
             $id_notificacao = null,
             $id_remetente = null,
@@ -26,19 +25,15 @@ class Notificacao{
             $this -> id_remetente = $id_remetente;
             $this -> id_destinatario = $id_destinatario;
             $this -> descricao = $descricao;
-               
-
-
         }
 
 
     
-    public function cadastrar_notificacao() : bool
+    public function cadastrar() : bool
     {
+        $obj_banco = new Banco ('notificacao');
 
-        $notificacao = new Banco ('notificacao');
-
-        $verificacao = $notificacao -> select('id_notificacao ="'.$this -> id_notificacao.'"') -> fetchAll(PDO::FETCH_ASSOC);
+        $verificacao = $obj_banco -> select('id_notificacao ="'.$this -> id_notificacao.'"') -> fetchAll(PDO::FETCH_ASSOC);
 
         //caso ja exista o nome no banco
         if ($verificacao)
@@ -48,11 +43,10 @@ class Notificacao{
         else
         {
 
-
-            $notificacao -> insert(['id_notificacao' => $this -> id_notificacao,
-                                             'id_remetente' => $this -> id_remetente,
-                                             'id_destinatario' => $this -> id_destinatario,
-                                             'descricao' => $this -> descricao
+            $obj_banco -> insert(['id_notificacao' => $this -> id_notificacao,
+                                    'id_remetente' => $this -> id_remetente,
+                                    'id_destinatario' => $this -> id_destinatario,
+                                    'descricao' => $this -> descricao
                                                ]);
 
             return true;
@@ -62,8 +56,8 @@ class Notificacao{
 
     } 
 
-    public function getNotificacao(){
-    
+    public function getNotificacao()
+    {
     $notificacao = new Banco ('notificacao');
 
     $dados=$notificacao->select()->fetchAll(PDO::FETCH_ASSOC)[0]; 

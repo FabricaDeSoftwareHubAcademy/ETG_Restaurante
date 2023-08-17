@@ -12,7 +12,7 @@ if (isset($_POST['email'], $_POST['btn_submit'])){
     {
         $obj_email::sendEmail($_POST['email']);
         
-        die('enviou');
+        header("Location: tela_esqueceu_senha2.php");
 
     }
     else
