@@ -12,8 +12,6 @@ if (isset($_POST['email'], $_POST['btn_submit'])){
     {
         if ($obj_email::sendEmail($_POST['email']))
         {
-            session_start();
-            $_SESSION['cod_redef_senha'] = 123;
             header("Location: tela_esqueceu_senha2.php");
         }
         else
