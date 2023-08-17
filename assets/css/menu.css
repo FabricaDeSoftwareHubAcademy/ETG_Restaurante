@@ -197,6 +197,7 @@
   display: flex;
   justify-content: center;
   text-align: center;
+  font-size: 13px;
 }
 
 /* ======================================================= SUB MENU DE CADASTROS  ============================================================================*/
@@ -232,8 +233,9 @@
 }
 
 #fonte-submenu{
+  font-family: "Montsserat";
+  font-style: normal;
   text-decoration: none;
-  font-style: none;
   color: #FAA916;
 }
 
@@ -296,8 +298,9 @@
 }
 
 #fonte-submenu2{
+  font-family: "Montsserat";
+  font-style: normal;
   text-decoration: none;
-  font-style: none;
   list-style: none;
   color: #FAA916;
 }
