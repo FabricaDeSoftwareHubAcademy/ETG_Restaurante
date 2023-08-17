@@ -62,7 +62,7 @@ class Notificacao{
 
     } 
 
-    public function getNotificacao(){
+    public static function getNotificacao(){
     
     $notificacao = new Banco ('notificacao');
 
