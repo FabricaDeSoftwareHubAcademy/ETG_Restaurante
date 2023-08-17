@@ -35,13 +35,13 @@ class Mailer
         
         if($email->Send())
         {
-            //echo"Email envidado";
-            die('funcionou');
+            $email->smtpClose();
+            return true;
         }
         else
         {
-            echo "nao enviado";
+            $email->smtpClose();
+            return false;
         }
-        $email->smtpClose();
     } 
 }
