@@ -2,6 +2,7 @@
     margin: 0;
     box-sizing: 0;
     padding: 0;
+    text-decoration: none;
 }
 
 .pai-de-todos{
@@ -66,11 +67,16 @@
 
  .alinhar-input{
     margin-top: 2%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 
 } 
 
 .name{
   margin-top: 10%;
+  padding-left: 8%;
 }
 
 .name-name{
@@ -87,7 +93,38 @@
 .alterar-senha{
   margin-top: 3%;
   font-size: 20px;
+  display: flex;
+  justify-content: start;
+  width: 83%;
+}
+
+.alterar-senha a{
   font-family: 'Montserrat';
   font-weight: bold;
 }
 
+#icon-input{
+  position: absolute;
+  top: 24px;
+  right: 3%;
+}
+
+@media (max-width: 832px) {
+  .name-name{
+    font-family: 'Montserrat';
+    font-weight: bold;
+    margin-top: 16%;
+    padding-left: 3%;
+  }
+
+  .alinhar-input{
+    margin-top: 2%;
+    padding-left: 3%;
+} 
+  
+.alinhar-botao{
+  margin-top: 30%;
+
+}
+
+  }

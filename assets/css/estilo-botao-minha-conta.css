@@ -51,7 +51,7 @@
 .input_field:placeholder-shown ~ .input_label {
     font-size: 17px;
     cursor: text;
-    top: 37px;
+    top: 28px;
     left: 10px;
 }
 
@@ -67,6 +67,7 @@
     font-weight: 400;
     font-size: 20px;
     left: 10px;
+    
     
 }
 
