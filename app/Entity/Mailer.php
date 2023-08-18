@@ -26,22 +26,29 @@ class Mailer
         $email->Port ="587";
         $email->Username = "fabrica.hub.academy@gmail.com";
         $email->Password = "ciaiabsuzjimabht";
-        $email->Subject = "Email de teste from localhost";
+
+        $email->Subject = "Codigo Redefinicao Senac";
         $email->setFrom("fabrica.hub.academy@gmail.com");
         $email->addStringAttachment(file_get_contents("https://miro.medium.com/v2/resize:fit:1400/1*m0H6-tUbW6grMlezlb52yw.png"), "qr.jpg");
-        $email->Body = 'Texto que vai no gmail';
+        
+        $codigo = rand(100000, 999999);
+        session_start();
+        $_SESSION['cod_redef_senha'] = $codigo;
+        $codigo = json_encode($codigo);
+
+        $email->Body = 'O codigo e: '.$codigo;
         $email->addAddress($emailparam);
         
         
         if($email->Send())
         {
-            //echo"Email envidado";
-            die('funcionou');
+            $email->smtpClose();
+            return true;
         }
         else
         {
-            echo "nao enviado";
+            $email->smtpClose();
+            return false;
         }
-        $email->smtpClose();
     } 
 }
