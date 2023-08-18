@@ -56,13 +56,31 @@ class Notificacao{
 
     } 
 
-    public function getNotificacao()
-    {
+    public static function getNotificacao(){
+    
     $notificacao = new Banco ('notificacao');
 
-    $dados=$notificacao->select()->fetchAll(PDO::FETCH_ASSOC)[0]; 
+    $dados=$notificacao->select("","id_notificacao desc")->fetchAll(PDO::FETCH_ASSOC); 
 
     return $dados;
+    }
+
+
+    public static function visualizar($id){
+
+        $banco = new Banco ('notificacao');
+        $dados = [
+            'visualizado' => 1 
+        ];
+        if($banco->update('id_notificacao = "'.$id.'"',$dados)){
+
+            return true;
+        }else{
+            return false;
+        }
+
+
+
     }
 }
 

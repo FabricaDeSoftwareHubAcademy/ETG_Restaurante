@@ -59,9 +59,14 @@
 
                 
                 <li class="li-menu">
-                    <a href="../pages/listar_salas.php" class="link-menu">
-                        <i id="icon-vizualizar" class="bi bi-person-video3"  style="--i:4"></i>  
-                        <h5 class="titulo-info" id="titulo-sala" style="--i:4">Salas</h5>            
+                    <a href="tela_notificacao.php" class="link-menu">
+                        <i id="icon-notificacao" class="bi bi-bell"  style="--i:3"></i>                
+                    </a>
+                </li>   
+
+                <li class="li-menu">
+                    <a href="listar_salas.php" class="link-menu">
+                        <i id="icon-vizualizar" class="bi bi-person-video3"  style="--i:4"></i>              
                     </a>  
                 </li>      
 
