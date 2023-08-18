@@ -7,7 +7,7 @@
     if(isset($_GET['id_sala'])){
         $id_sala = $_GET['id_sala'];
 
-        $dados = Sala::getById($id_sala);
+        $dados = Sala::getDadosById($id_sala);
        
  
     }

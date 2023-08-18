@@ -1,12 +1,11 @@
 <?php 
-
 namespace App\Entity;
 use PDO;
 use PDOException;
 use App\Db\Banco; 
 
-
-class Notificacao{
+class Notificacao
+{
 
     public  $id_notificacao,
             $id_remetente,
@@ -21,10 +20,10 @@ class Notificacao{
             )        
 
         {
-            $this -> id_notificacao = $id_notificacao;
-            $this -> id_remetente = $id_remetente;
-            $this -> id_destinatario = $id_destinatario;
-            $this -> descricao = $descricao;
+            $this -> id_notificacao     = $id_notificacao;
+            $this -> id_remetente       = $id_remetente;
+            $this -> id_destinatario    = $id_destinatario;
+            $this -> descricao          = $descricao;
         }
 
 
@@ -43,25 +42,21 @@ class Notificacao{
         else
         {
 
-            $obj_banco -> insert(['id_notificacao' => $this -> id_notificacao,
-                                    'id_remetente' => $this -> id_remetente,
-                                    'id_destinatario' => $this -> id_destinatario,
-                                    'descricao' => $this -> descricao
-                                               ]);
+            $obj_banco -> insert(['id_notificacao'      => $this -> id_notificacao,
+                                    'id_remetente'      => $this -> id_remetente,
+                                    'id_destinatario'   => $this -> id_destinatario,
+                                    'descricao'         => $this -> descricao
+                                ]);
 
             return true;
         }
-
-
-
     } 
 
-    public static function getNotificacao(){
-    
+    public function getNotificacao()
+    {
+    $obj_banco = new Banco ('notificacao');
 
-    $notificacao = new Banco ('notificacao');
-
-    $dados=$notificacao->select("","id_notificacao desc")->fetchAll(PDO::FETCH_ASSOC); 
+    $dados = $obj_banco -> select() -> fetchAll(PDO::FETCH_ASSOC); 
 
     return $dados;
     }
@@ -84,13 +79,4 @@ class Notificacao{
 
     }
 }
-
-
-
-
-
-
-
-
-
 ?>

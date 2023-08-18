@@ -3,7 +3,7 @@
     require __DIR__."/../vendor/autoload.php";
     use App\Entity\Pergunta;
     use App\Entity\CadastroChecklist;
-    $dados = Pergunta::getPerguntas()->fetchAll(PDO::FETCH_ASSOC);
+    $dados = Pergunta::getDados()->fetchAll(PDO::FETCH_ASSOC);
     $tr = "";
     foreach ($dados as $rowdados){
         $tr .= "<tr> 

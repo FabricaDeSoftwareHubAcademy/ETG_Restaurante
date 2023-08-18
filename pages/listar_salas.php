@@ -9,7 +9,7 @@ require_once("../includes/menu.php");
 
 
 $salas = "";
-$dados = Sala::getSalas();
+$dados = Sala::getDados();
  
 $count = 0;
 foreach($dados as $sala){

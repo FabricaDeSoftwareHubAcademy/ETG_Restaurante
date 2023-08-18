@@ -1,61 +1,65 @@
 <?php
 namespace App\Entity;
+use PDO;
+use PDOException;
 use \App\Db\Banco;
 
-
-
-class Pergunta{
+class Pergunta
+{
 
     private $descricao;
 
-    public function __construct($descricao){
- 
-        $this->descricao = $descricao;
-
+    public function __construct($descricao = null)
+    {
+        $this -> descricao = $descricao;
     }
-    public static function getPerguntas(){
+    public static function getDados()
+    {
+        $obj_banco = new Banco('cadastro_pergunta');
 
-        $obBanco = new Banco('cadastro_pergunta');
-        $dados = $obBanco->select();
-        if($dados->rowCount() > 0){
+        $dados = $obj_banco -> select();
+
+        if($dados -> rowCount() > 0){
 
             return $dados;
-        }else{
+        }
+        else
+        {
             return false;
         }
 
     }
-    
-    public static function getPerguntasById($id){
+    //de GetPerguntasById para GetDadosById
+    public static function getDadosById($id)
+    {
+        $obj_banco = new Banco('cadastro_pergunta');
 
-        $obBanco = new Banco('cadastro_pergunta');
-        $dados = $obBanco->select('id_cadastro_pergunta = '.$id);
+        $dados = $obj_banco->select('id_cadastro_pergunta = '.$id);
 
-        if($dados->rowCount() > 0){
-
+        if($dados -> rowCount() > 0)
+        {
             return $dados;
         }
-        else{
+        else
+        {
             return false;
         }
 
     }
-    public function cadastrar(){
-
-        $obBanco = new Banco('cadastro_pergunta');
+    public function cadastrar()
+    {
+        $obj_banco = new Banco('cadastro_pergunta');
         $dados = [
-            'descricao'=>$this->descricao
-        ];
+            'descricao' => $this -> descricao
+                ];
         // atualmente retonando true or false  
-         
-        if($obBanco->insert($dados)){
+        if($obj_banco -> insert($dados))
+        {
             return true;
-        }else{
+        }
+        else
+        {
             return false;
         }
-        
-        
-
     }
-
 }
