@@ -74,18 +74,17 @@ class Sala
 
     public static function getDadosById($id_sala)
     {
-
         $objBanco = new Banco('Cadastro_sala');
         $dados = $objBanco -> select("id_cadastro_sala = ".$id_sala) -> fetchAll(PDO::FETCH_ASSOC);
         return $dados;
-
     }
 
-    public function setData($id = null, $dados = []) : bool
+    public function setDados($id = null, $dados = []) : bool
     {
         //var_dump($dados);exit;
-        $objBanco = new Banco('Cadastro_sala');
-        $objBanco -> update('id_cadastro_sala = "'.$id.'"', ['nome'                       => $dados['nome'],
+        $obj_banco = new Banco('Cadastro_sala');
+
+        $obj_banco -> update('id_cadastro_sala = "'.$id.'"', ['nome'                      => $dados['nome'],
                                                             'andar'                       => $dados['andar'],
                                                             'id_cadastro_checklist'       => $dados['checklist'],
                                                             'descricao'                   => $dados['descricao'],
@@ -93,7 +92,7 @@ class Sala
                                                             'cor'                         => $dados['cor'],
                                                             'ativo_desativo'              => $dados['ativo_desativo'],
                                                             'funcionamento'               => $dados['funcionamento']
-                                ]);
+                                                            ]);
         return true;
     }
 }

@@ -20,7 +20,7 @@ if (isset($_POST['email'],$_POST['senhaantiga'],$_POST['novasenha'],$_POST['conf
             if ($_POST['novasenha'] == $_POST['confirmarnovasenha'])
             {
 
-                $objUsuario -> updateData($_POST['email'] ,$_POST['novasenha']);
+                $objUsuario -> setDados($_POST['email'] ,$_POST['novasenha']);
 
                 $logado = true;
 
