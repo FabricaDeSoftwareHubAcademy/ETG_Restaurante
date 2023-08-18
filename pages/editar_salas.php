@@ -327,12 +327,6 @@ if (isset($_POST['btn_submit']))
                         </div>
                         
                     </div>
-
-
-
-
-
-                    
                 
                 </form>  
             </div>
