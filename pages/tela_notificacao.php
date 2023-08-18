@@ -106,7 +106,7 @@ foreach ($dados as $contador){
 
     }else{
 
-        $todas_notificacao .='                              <div class="notificacao_individual" onclick="trocar_coracao('.$contador['id_notificacao'].')">
+        $todas_notificacao .='                              <div class="notificacao_individual" id="card_notificacao'.$contador['id_notificacao'].'" onclick="trocar_coracao('.$contador['id_notificacao'].')">
     
                                                                 <p class="texto_notificacao">
     
@@ -219,12 +219,16 @@ foreach ($dados as $contador){
         async function trocar_coracao(id){
             console.log(id)
             const coracaoVazio = document.getElementById("coracaoVazio"+id);
-
             const coracaoPreenchido = document.getElementById("coracaoPreenchido"+id);
+            const card_notificacao =document.getElementById("card_notificacao"+id);
+
 
             coracaoVazio.classList.add("active");
-
             coracaoPreenchido.classList.add("active");
+            
+            // removendo função onclick do card clickado 
+            card_notificacao.removeAttribute("onclick");
+
 
             const dados = await fetch('./actions/visualizar_notificacao.php?id_notificacao='+id);
 
