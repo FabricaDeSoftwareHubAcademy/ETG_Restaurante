@@ -1,12 +1,12 @@
 <?php
-
 namespace App\Entity;
 use PDO;
 use PDOException;
 use App\Db\Banco;
 
 
-class Sala{
+class Sala
+{
     private $id_cadastro_sala,
             $id_cadastro_checklist,
             $id_cadastro_usuario,
@@ -30,70 +30,50 @@ class Sala{
                                 $nome = null,
                                 $ativo_desativo = null,
                                 $funcionamento = null
-                                ){
-        $this -> id_cadastro_sala = $id_cadastro_sala;
-        $this -> id_cadastro_checklist = $id_cadastro_checklist;
-        $this -> id_cadastro_usuario = $id_cadastro_usuario;
-        $this -> andar = $andar;
-        $this -> descricao = $descricao;
-        $this -> imagem = $imagem;
-        $this -> cor = $cor;
-        $this -> status_sala = $status_sala;
-        $this -> nome = $nome;
-        $this -> ativo_desativo = $ativo_desativo;
-        $this -> funcionamento = $funcionamento;
+                                )
+    {
+        $this -> id_cadastro_sala       = $id_cadastro_sala;
+        $this -> id_cadastro_checklist  = $id_cadastro_checklist;
+        $this -> id_cadastro_usuario    = $id_cadastro_usuario;
+        $this -> andar                  = $andar;
+        $this -> descricao              = $descricao;
+        $this -> imagem                 = $imagem;
+        $this -> cor                    = $cor;
+        $this -> status_sala            = $status_sala;
+        $this -> nome                   = $nome;
+        $this -> ativo_desativo         = $ativo_desativo;
+        $this -> funcionamento          = $funcionamento;
     }
 
 
     public function cadastrar() : bool
     {
         $objBanco = new Banco('Cadastro_sala');
-
-        //$query = $objBanco -> select() -> fetchAll();
-        
         $objBanco -> insert(['id_cadastro_checklist' => $this -> id_cadastro_checklist,
-                            'id_cadastro_usuario'=> $this -> id_cadastro_usuario,
-                            'andar'  => ucfirst(strtolower($this -> andar)),
-                            'descricao' => ucfirst(strtolower($this -> descricao)),
-                            'imagem' => $this -> imagem,
-                            'cor' => $this -> cor,
-                            'status_sala' => $this -> status_sala,
-                            'nome' => ucfirst(strtolower($this -> nome)),
-                            'ativo_desativo' => $this -> ativo_desativo,
-                            'funcionamento' => $this -> funcionamento
+                            'id_cadastro_usuario'    => $this -> id_cadastro_usuario,
+                            'andar'                  => ucfirst(strtolower($this -> andar)),
+                            'descricao'              => ucfirst(strtolower($this -> descricao)),
+                            'imagem'                 => $this -> imagem,
+                            'cor'                    => $this -> cor,
+                            'status_sala'            => $this -> status_sala,
+                            'nome'                   => ucfirst(strtolower($this -> nome)),
+                            'ativo_desativo'         => $this -> ativo_desativo,
+                            'funcionamento'          => $this -> funcionamento
                             ]);
-
-        //die('testecadastrosala');
         return true;
     }
 
+    public static function getDados()
+    {
+        $obj_banco = new Banco('Cadastro_sala');
 
-    public static function getSalas(){
+        $salas = $obj_banco -> select() -> fetchAll(PDO::FETCH_ASSOC);
 
-        $objBanco = new Banco('Cadastro_sala');
-        $salas = $objBanco -> select() -> fetchAll(PDO::FETCH_ASSOC);
-        
-
-        // if($salas->rowcont()>0){
-
-            return $salas;
-
-        // }
-        // else{
-
-            // return false;
-
-        // }
-
-
+        return $salas;
     }
 
-/*     public function getLastInsertId()
+    public static function getDadosById($id_sala)
     {
-
-    } */
- 
-    public static function getById($id_sala){
 
         $objBanco = new Banco('Cadastro_sala');
         $dados = $objBanco -> select("id_cadastro_sala = ".$id_sala) -> fetchAll(PDO::FETCH_ASSOC);
