@@ -13,7 +13,7 @@ $dados = json_decode(file_get_contents('php://input'), true);
  
 $obRecado = new Recado($_SESSION['num_matricula_logado'],$dados['novaDescricao']);
 
-if($obRecado->update($dados['id_recado'])
+if($obRecado->setDados($dados['id_recado'])
 ){
 
     $response = [

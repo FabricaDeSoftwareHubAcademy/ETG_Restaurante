@@ -1,12 +1,11 @@
 <?php 
-
 namespace App\Entity;
 use PDO;
 use PDOException;
 use App\Db\Banco; 
 
-
-class Notificacao{
+class Notificacao
+{
 
     public  $id_notificacao,
             $id_remetente,
@@ -21,10 +20,10 @@ class Notificacao{
             )        
 
         {
-            $this -> id_notificacao = $id_notificacao;
-            $this -> id_remetente = $id_remetente;
-            $this -> id_destinatario = $id_destinatario;
-            $this -> descricao = $descricao;
+            $this -> id_notificacao     = $id_notificacao;
+            $this -> id_remetente       = $id_remetente;
+            $this -> id_destinatario    = $id_destinatario;
+            $this -> descricao          = $descricao;
         }
 
 
@@ -43,35 +42,23 @@ class Notificacao{
         else
         {
 
-            $obj_banco -> insert(['id_notificacao' => $this -> id_notificacao,
-                                    'id_remetente' => $this -> id_remetente,
-                                    'id_destinatario' => $this -> id_destinatario,
-                                    'descricao' => $this -> descricao
-                                               ]);
+            $obj_banco -> insert(['id_notificacao'      => $this -> id_notificacao,
+                                    'id_remetente'      => $this -> id_remetente,
+                                    'id_destinatario'   => $this -> id_destinatario,
+                                    'descricao'         => $this -> descricao
+                                ]);
 
             return true;
         }
-
-
-
     } 
 
     public function getNotificacao()
     {
-    $notificacao = new Banco ('notificacao');
+    $obj_banco = new Banco ('notificacao');
 
-    $dados=$notificacao->select()->fetchAll(PDO::FETCH_ASSOC)[0]; 
+    $dados = $obj_banco -> select() -> fetchAll(PDO::FETCH_ASSOC); 
 
     return $dados;
     }
 }
-
-
-
-
-
-
-
-
-
 ?>
