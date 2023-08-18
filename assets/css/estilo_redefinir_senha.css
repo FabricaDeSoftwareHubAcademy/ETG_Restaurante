@@ -44,7 +44,7 @@ text-align: center;
 margin-top: 20%;
 }
 
-@media (max-width: 882px) {
+@media (max-width: 832px) {
 .centralizar_botoes_alterar_senha{
   margin-top: 300px;
 }

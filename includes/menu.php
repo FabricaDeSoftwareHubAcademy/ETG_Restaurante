@@ -43,7 +43,7 @@
 
                     <ul class="submenu2" id="submenu-icon-pessoa">
                         <li class="iten-submenu2"><a href="../pages/gerenc_perfis.php" id="fonte-submenu2">Gerenciar Perfis</a></li>
-                        <li class="iten-submenu2"><a href="#" id="fonte-submenu2">Minha Conta</a></li>
+                        <li class="iten-submenu2"><a href="user_editar_perfil.php" id="fonte-submenu2">Minha Conta</a></li>
                         <li class="iten-submenu"><a href="../pages/cadastro_usuario.php" id="fonte-submenu2">Cadastro de Usuário</a></li> 
                     </ul>    
                 </li>
@@ -51,14 +51,15 @@
 
 
                 <li class="li-menu">
+
                     <a href="../pages/tela_notificacao.php" class="link-menu">
                         <i id="icon-notificacao" class="bi bi-bell"  style="--i:3"></i>  
                         <h5 class="titulo-info" id="titulo-not" style="--i:3">Alertas</h5>              
                     </a>
                 </li>   
- 
-
+            
                 <li class="li-menu">
+
                     <a href="listar_salas.php" class="link-menu">
                         <i id="icon-vizualizar" class="bi bi-person-video3"  style="--i:4"></i>     
                         <h5 class="titulo-info" id="titulo-not" style="--i:3">Salas</h5>              
@@ -84,7 +85,7 @@
 
                 <li class="saida">
                     <button class="btnOpenmodal-menu" onclick="openModal()" >  
-                        <a href="" class="link-menu">
+                        <a href="#" class="link-menu">
                             <i class="bi bi-box-arrow-left" style="--i:6"></i>
                             <h5 class="titulo-info" id="titulo-sair" style="--i:6">Sair</h5>
                         </a>

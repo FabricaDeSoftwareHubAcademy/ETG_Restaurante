@@ -1,10 +1,10 @@
 <?php
- 
+session_start();
 
 // require autoload = 0 bugs 
 require __DIR__."/../vendor/autoload.php";
 use App\Entity\Recado;
-
+ 
 if(isset($_POST['btn_confirmar_submit'])){
 
     if(isset($_POST['descricao_sala'])){

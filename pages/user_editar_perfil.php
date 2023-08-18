@@ -32,8 +32,9 @@
 
             <section class="alinhar-input">
                 <div class="input_group field">
-                    <input type="input" class="input_field" placeholder="Name" required="" name="nome_sala" maxLength="32">
-                    <label for="name" class="input_label">Nome do usuario</label> <!--Alterar para o nome do input-->
+                    <input type="input" class="input_field" placeholder="Name" required="" name="nome_sala" maxLength="105">
+                    <label for="name" class="input_label">Nome do usuario</label><!--Alterar para o nome do input-->
+                    <i class="bi bi-pencil-square" id="icon-input"></i>
                 </div>
                 <div class="alterar-senha">
                     <a href="redefinir_senha.php">Alterar Senha</a>
