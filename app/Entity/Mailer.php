@@ -31,7 +31,7 @@ class Mailer
         $email->setFrom("fabrica.hub.academy@gmail.com");
         $email->addStringAttachment(file_get_contents("https://miro.medium.com/v2/resize:fit:1400/1*m0H6-tUbW6grMlezlb52yw.png"), "qr.jpg");
         
-        $codigo = rand(0, 100000);
+        $codigo = rand(100000, 999999);
         session_start();
         $_SESSION['cod_redef_senha'] = $codigo;
         $codigo = json_encode($codigo);
