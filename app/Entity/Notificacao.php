@@ -58,6 +58,7 @@ class Notificacao{
 
     public static function getNotificacao(){
     
+
     $notificacao = new Banco ('notificacao');
 
     $dados=$notificacao->select("","id_notificacao desc")->fetchAll(PDO::FETCH_ASSOC); 

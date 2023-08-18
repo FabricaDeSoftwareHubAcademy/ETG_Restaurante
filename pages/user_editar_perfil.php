@@ -32,7 +32,7 @@
 
             <section class="alinhar-input">
                 <div class="input_group field">
-                    <input type="input" class="input_field" placeholder="Name" required="" name="nome_sala" maxLength="32">
+                    <input type="input" class="input_field" placeholder="Name" required="" name="nome_sala" maxLength="105">
                     <label for="name" class="input_label">Nome do usuario</label><!--Alterar para o nome do input-->
                     <i class="bi bi-pencil-square" id="icon-input"></i>
                 </div>

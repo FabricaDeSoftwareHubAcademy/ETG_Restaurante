@@ -51,14 +51,15 @@
 
 
                 <li class="li-menu">
+
                     <a href="../pages/tela_notificacao.php" class="link-menu">
                         <i id="icon-notificacao" class="bi bi-bell"  style="--i:3"></i>  
                         <h5 class="titulo-info" id="titulo-not" style="--i:3">Alertas</h5>              
                     </a>
                 </li>   
- 
-
+            
                 <li class="li-menu">
+
                     <a href="listar_salas.php" class="link-menu">
                         <i id="icon-vizualizar" class="bi bi-person-video3"  style="--i:4"></i>     
                         <h5 class="titulo-info" id="titulo-not" style="--i:3">Salas</h5>              
