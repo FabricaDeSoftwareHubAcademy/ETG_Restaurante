@@ -51,9 +51,9 @@
 
 
                 <li class="li-menu">
-                    <a href="#" class="link-menu">
-                        <i id="icon-notificacao" class="bi bi-bell"  style="--i:3"></i>  
-                        <h5 class="titulo-info" id="titulo-not" style="--i:3">Alertas</h5>              
+
+                    <a href="tela_notificacao.php" class="link-menu">
+                        <i id="icon-notificacao" class="bi bi-bell"  style="--i:3"></i>                
                     </a>
                 </li>   
 
