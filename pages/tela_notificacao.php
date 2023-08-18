@@ -41,20 +41,40 @@ foreach ($dados as $contador){
     $unidadeTempo = "";
 
     $diferenca = $segundaData->getTimestamp() - $primeiraData->getTimestamp();
-    if(($diferenca/60) > 59){
 
-        $diferenca = ($diferenca /60)/60;
-        $unidadeTempo = ' Horas ';
+    $minutes = round($diferenca/60);
+    $hours = round($diferenca/60/60);
+    $days = round($diferenca/60/60/24);
+
+    
+    if($diferenca < 60){
+
+        $tempoAtras = $diferenca." Segundos";
+
     }
-    else if(($diferenca/60) < 60){
+    else if(($diferenca/60) > 59 and $diferenca/60/60 < 24){
 
-        $diferenca = $diferenca /60;
-        $unidadeTempo = " Minutos ";
+        // $diferenca = ($diferenca /60)/60;
+        // $unidadeTempo = ' Horas ';
+
+        $tempoAtras = $hours." Horas";
+    }
+    else if(($diferenca/60) < 60 and $diferenca/60/60 < 59){
+
+        // $diferenca = $diferenca /60;
+        // $unidadeTempo = " Minutos ";
+
+        $tempoAtras = $minutes." Minutos";
+
+    }
+    else if($diferenca/60/60 > 59){
+
+        $tempoAtras = $days." Dias";
 
     }
 
     $diferenca = round($diferenca);
-     
+    
     
 
 
@@ -71,7 +91,7 @@ foreach ($dados as $contador){
 
                                                             <div class="area_temp_coracao">
 
-                                                                <div class="tempo">'.$diferenca.$unidadeTempo.'</div>
+                                                                <div class="tempo">'.$tempoAtras.'</div>
 
 
                                                                  
@@ -96,7 +116,7 @@ foreach ($dados as $contador){
     
                                                                 <div class="area_temp_coracao">
                         
-                                                                    <div class="tempo"> '.$diferenca.$unidadeTempo.' </div>
+                                                                    <div class="tempo"> '.$tempoAtras.' </div>
     
     
                                                                     <div class="coracao" id="coracaoVazio'.$contador['id_notificacao'].'"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-heart" viewBox="0 0 16 16">

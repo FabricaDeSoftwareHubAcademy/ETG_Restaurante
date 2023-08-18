@@ -66,7 +66,7 @@ class Notificacao{
     
     $notificacao = new Banco ('notificacao');
 
-    $dados=$notificacao->select()->fetchAll(PDO::FETCH_ASSOC); 
+    $dados=$notificacao->select("","id_notificacao desc")->fetchAll(PDO::FETCH_ASSOC); 
 
     return $dados;
     }
