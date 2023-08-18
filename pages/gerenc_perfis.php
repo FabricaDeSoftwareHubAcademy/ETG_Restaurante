@@ -1,9 +1,5 @@
 <?php
-session_start();
-if(!isset($_SESSION['num_matricula_logado'])){
- 
-    header('Location: ../');
-}
+
 include_once("../includes/menu.php");
 
 require ("../vendor/autoload.php");
@@ -30,7 +26,7 @@ foreach ($dados_perfil as $row_perfil)
                                 <i class="bi bi-trash" onclick="openPopup_Conf('.$row_perfil['id_cadastro_perfil'].')"></i>
                             </div>
                         </div>
-                    </li>
+                    </li> 
                 ';
 }
 

@@ -11,7 +11,7 @@ class Recado{
     public function __construct($num_matricula,$descricao){
 
         $this->num_matricula = $num_matricula;
-        $this->descricao = $descricao;
+        $this->descricao = $descricao; 
 
     }
 

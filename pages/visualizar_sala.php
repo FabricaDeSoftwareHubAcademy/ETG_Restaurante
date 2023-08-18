@@ -8,8 +8,23 @@
         $id_sala = $_GET['id_sala'];
 
         $dados = Sala::getById($id_sala);
+       
  
     }
+    // print_r($dados);
+//  echo($dados['funcionamento']);
+ $funcionamento = json_decode($dados[0]['funcionamento'],true);
+//  print_r($funcionamento);
+
+ $segunda = $funcionamento['segunda'] == 'sim' ? 'Segunda' : '';
+ $terca = $funcionamento['terca'] == 'sim' ? 'Terça' : '';
+ $quarta = $funcionamento['quarta'] == 'sim' ? 'Quarta' : '';
+ $quinta = $funcionamento['quinta'] == 'sim' ? 'Quinta' : '';
+ $sexta = $funcionamento['sexta'] == 'sim' ? 'Sexta' : '';
+ $sabado = $funcionamento['sabado'] == 'sim' ? 'Sábado' : '';
+ $matutino = $funcionamento['turnos']['matutino'] == 'sim' ? 'Matutino' : ' ';
+ $vespertino = $funcionamento['turnos']['vespertino'] == 'sim' ? 'Vespertino' : ' ';
+ $noturno = $funcionamento['turnos']['noturno'] == 'sim' ? 'Noturno' : ' ';
  
 ?>
 
@@ -26,7 +41,8 @@
 
  
 .card{
-    border: solid <?=$dados[0]['cor']?>;
+    border: solid  <?=$dados[0]['cor']?>;
+    box-shadow: 0 0 1em <?=$dados[0]['cor']?>;
 }
 
     </style>
@@ -44,7 +60,8 @@
                 <div class="texto_card">
 
                     <div class="titulo_card">
-                        <h1><?=$dados[0]['nome']?></h1>
+                        <p class="label-sala">Nome da Sala</p>
+                        <h1 class="nome-sala"><?=$dados[0]['nome']?></h1>
                     </div>
         
 
@@ -53,7 +70,42 @@
                                 Descrição
                             </h2>
 
-                            <p> <?=$dados[0]['descricao']?></p>
+                            <p class="texto-descricao"> <?=$dados[0]['descricao']?></p>
+                            
+                            
+                        </div>
+                        <div class="dias-de-funcionamento">
+                            <h2 id="dias-funcionamento">
+                                Dias de Funcionamento
+                            </h2>
+
+                            <p class="dias_funcionamento"> <?php
+                            
+                                echo $segunda.'  ';
+                                echo $terca.' ';
+                                echo $quarta.' ';
+                                echo $quinta.' ';
+                                echo $sexta.' ';
+                                echo $sabado.' ';
+
+
+                            ?></p>
+                            
+                            
+                        </div>
+                        <div class="turnos-de-funcionamento">
+                            <h2 id="turnos-funcionamento">
+                                Turnos de Funcionamento
+                            </h2>
+
+                            <p class="turnos_funcionamento"> <?php
+                            
+                                echo $matutino.' ';
+                                echo $vespertino.' ';
+                                echo $noturno.' ';
+
+                            
+                            ?></p>
                             
                             
                         </div>

@@ -1,12 +1,6 @@
 <?php
 session_start();
-ob_start();
- 
 
-if(!isset($_SESSION['num_matricula_logado'])){
- 
-    header('Location: ../');
-}
  
 ?>
 <!DOCTYPE html>
@@ -29,7 +23,7 @@ if(!isset($_SESSION['num_matricula_logado'])){
         </section>
 
         <section class="centralizar_input_alterar_senha"> 
-            
+             
             <div class="input_senha_group field2">
                 <input type="password" class="input_senha_field" placeholder="Name" required="">
                 <label for="name" class="input_senha_label">Criar nova senha</label> <!--Alterar para o nome do input-->

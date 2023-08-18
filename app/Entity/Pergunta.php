@@ -9,7 +9,7 @@ class Pergunta{
     private $descricao;
 
     public function __construct($descricao){
-
+ 
         $this->descricao = $descricao;
 
     }

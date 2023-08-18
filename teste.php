@@ -2,8 +2,21 @@
 session_start();
 require __DIR__.'/vendor/autoload.php';
 
-use App\Entity\Pergunta;
+use App\Entity\Notificacao;
 
-$recado = new Pergunta('Simões');
 
-print_r($recado->getPerguntasById(12)->fetchAll(PDO::FETCH_ASSOC));
+$pacoca = new Notificacao (null,1552,6792,"paçoca123");
+
+// var_dump($pacoca);
+
+
+
+// $pacoca -> cadastrar_notificacao ();
+
+// echo(date('h/d/m/y'));
+
+
+$dados = $pacoca -> getNotificacao();
+
+var_dump($dados);
+

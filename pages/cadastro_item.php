@@ -1,9 +1,5 @@
 <?php
-session_start();
-if(!isset($_SESSION['num_matricula_logado'])){
- 
-    header('Location: ../');
-}
+
 include_once("../includes/menu.php");
 
 ?>
@@ -21,7 +17,7 @@ include_once("../includes/menu.php");
 </head>
 <body class="pai-de-todos">
 <?php include_once("../includes/menu.php"); ?>
-    <main class="container">
+    <main class="container"> 
         <div class="pag_name">
             <p class="wanderley-titulo">Cadastro de perguntas</p>
         </div>

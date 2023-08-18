@@ -1,12 +1,5 @@
 <?php
-session_start();
-ob_start();
- 
 
-if(!isset($_SESSION['num_matricula_logado'])){
- 
-    header('Location: ../');
-}
  
 ?>
 <!DOCTYPE html>
@@ -31,7 +24,7 @@ include_once("../includes/menu.php")
             <h1>Insira o código enviado em seu E-mail:</h1>
         </section>
 
-
+ 
                     <section class="centralizar_input_esqueceu_senha2"> 
                 <!--Input Email-->
                         <div class="input_e-mail_group field">

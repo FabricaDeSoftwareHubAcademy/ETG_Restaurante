@@ -32,7 +32,7 @@ if (isset($_POST['email'],$_POST['senhaantiga'],$_POST['novasenha'],$_POST['conf
 
             }
 
-        }
+        } 
         else
         {
             $erro = true;

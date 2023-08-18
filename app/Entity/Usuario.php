@@ -12,14 +12,14 @@ class Usuario{
     private $num_matricula,
             $email,
             $senha;
-            
+             
 
     // metodo construct 
     public function __construct(
         
         $num_matricula = null,
         $email = null,
-        $senha = null,
+        $senha = null
         
     ){
 
@@ -50,6 +50,7 @@ class Usuario{
         }
 
     }
+
     
     public function cadastrar($nome = null , $email = null, $id_perfil = null, $num_matricula = null, $senha = null)
     {

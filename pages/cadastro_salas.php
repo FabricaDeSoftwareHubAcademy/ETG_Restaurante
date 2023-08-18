@@ -1,14 +1,7 @@
 
 <?php
 
-session_start();
-if(!isset($_SESSION['num_matricula_logado'])){
- 
-    header('Location: ../');
-}
-include_once("../includes/menu.php");
 
-include_once("../includes/menu.php");
 
 require __DIR__."/../vendor/autoload.php";
 use App\Entity\Sala;
@@ -21,7 +14,7 @@ $options = '';
 foreach ($dados as $row_check ){
     $options .= '<option  class="ops" value="'.$row_check['id_cadastro_checklist'].'"> '.$row_check['nome'].' </option>';
 }
-
+ 
 if (isset(  $_POST      ['nome_sala'],
             $_POST      ['andar_sala'],
             $_POST      ['checklist'],
@@ -55,7 +48,7 @@ if (isset(  $_POST      ['nome_sala'],
             if (!empty($_FILES['imagem_sala']['name']))
             {
                 $objImagem = new Imagens;
-                $imagem = $objImagem -> storeImg($_FILES['imagem_sala']['name']);
+                $imagem = $objImagem::storeImg($_FILES['imagem_sala']['name']);
                 
             }
             
@@ -75,7 +68,17 @@ if (isset(  $_POST      ['nome_sala'],
             );
             if($obj_sala -> cadastrar())
             {
-                die('cadastrou');
+                echo('cadastrou');
+                echo("<script>function abrir_modal(){
+                    Swal.fire({
+                        title: 'Cadastrado com sucesso!', //TITULO DO POP_UP DE ACORDO COM SUA TELA 
+                        icon: 'success', // success, error e warning
+                        confirmButtonColor: '#609437', // DEFINE A COR DO BOTÃO OK
+                        confirmButtonText: 'OK'
+                    });
+                }</script>");
+                sleep(2);
+                header("Location: listar_salas.php");
             }
             else
             {
@@ -83,6 +86,7 @@ if (isset(  $_POST      ['nome_sala'],
             }
             
         }   
+        include_once("../includes/menu.php");
         ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -99,13 +103,19 @@ if (isset(  $_POST      ['nome_sala'],
     <script src="https://code.jquery.com/jquery-3.7.0.js"integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM="crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.18/dist/sweetalert2.all.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200&display=swap" rel="stylesheet">
+
     
 </head>
 
 <body class="tela-cadastro-salas">
-        <?php 
-            include_once("../includes/menu.php");
-        ?> 
+       
 
     <section class="container">
    
@@ -233,7 +243,7 @@ if (isset(  $_POST      ['nome_sala'],
                         <div class="text-area">
                             <span id=descrição>Descrição</span>
     
-                            <textarea  placeholder="Area de texto " name="descricao_sala" id="" cols="70" rows="10" class="text-descricao"></textarea>
+                            <textarea  placeholder="Area de texto " name="descricao_sala" id="" cols="70" rows="10" class="text-descricao" maxLength="255"></textarea>
                         </div>
                         <div class="cor-sala">
                             <div class="alinar-img">
@@ -273,7 +283,7 @@ if (isset(  $_POST      ['nome_sala'],
                         </div>
                         
                         <div class="botao-padrao-cadastrar">
-                            <a href="#"><input name="btn_submit" type="submit" class="botao-cadastrar-submit" id="botao-cadastrar-submit" value="CADASTRAR"></a>
+                            <a href="#"><input name="btn_submit" type="submit" class="botao-cadastrar-submit" id="botao-cadastrar-submit" value="CADASTRAR" onclick="abrir_modal()" ></a>
                         </div>
                         
 
@@ -312,6 +322,20 @@ $(document).ready(function() {
         reader.readAsDataURL(file);
     });
 });
+
+
+
+
+
+        function abrir_modal(){
+            Swal.fire({
+                title: 'Cadastrado com sucesso!', //TITULO DO POP_UP DE ACORDO COM SUA TELA 
+                icon: 'success', // success, error e warning
+                confirmButtonColor: '#609437', // DEFINE A COR DO BOTÃO OK
+                confirmButtonText: 'OK'
+            });
+        }
+    
 </script>
 
 

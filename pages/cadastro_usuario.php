@@ -1,9 +1,5 @@
 <?php
-session_start();
-if(!isset($_SESSION['num_matricula_logado'])){
- 
-    header('Location: ../');
-}
+
 include_once("../includes/menu.php");
 
 //var_dump($server); exit;
@@ -26,7 +22,7 @@ $dados = $objCadastroPerfil -> getDados();
 $options = '';
 foreach ($dados as $row_check ){
     $options .= '<option  class="ops" value="'.$row_check['id_cadastro_perfil'].'"> '.$row_check['nome_cargo'].' </option>'; 
-}
+} 
 // }
 if(isset(
         $_POST['btn_submit'],
@@ -35,6 +31,7 @@ if(isset(
         $_POST['num_matricula'],
         $_POST['senha'],
         ))
+        
 {
     //die('qwghkglda');
 
@@ -44,10 +41,7 @@ if(isset(
                             $_POST['num_matricula'],
                             $_POST['senha']
     );
-
 }
-
-
 ?>
 
 <!DOCTYPE html>
@@ -99,10 +93,6 @@ if(isset(
                     <label for="name" class="input_label_matricula">N° de Matricula</label> <!--Alterar para o nome do input-->
                 </div>
             </div>
-
-
-
-            
                 <!--Input Senha-->
             <div class="input_senha_group field">
                 <input type="password" class="input_senha_field" name="senha" placeholder="Name" required="">
@@ -126,6 +116,6 @@ if(isset(
             </section>
         </form>
     </main>
-
+    </script>
 </body>
 </html>

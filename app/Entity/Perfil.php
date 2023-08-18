@@ -11,13 +11,12 @@ class Perfil{
             $cadastrar_sala,
             $editar_sala,
             $remover_sala,
-            $validar_checklist,
+            $validar_checklist, 
             $inserir_item_checklist,
             $remover_item_checklist,
             $desbloquear_checklist,
             $descricao_nao_conformidade,
-            $enviar_notificacao
-            ;
+            $enviar_notificacao;
 
     //Metodo construtor usado para receber os atributos do novo cargo
     public function __construct($nome_cargo = '',
@@ -30,17 +29,18 @@ class Perfil{
                                 $desbloquear_checklist = null,
                                 $descricao_nao_conformidade = null,
                                 $enviar_notificacao = null
-                                ){
-        $this -> nome_cargo = $nome_cargo;
-        $this -> cadastrar_sala = $cadastrar_sala;
-        $this -> editar_sala = $editar_sala;
-        $this -> remover_sala = $remover_sala;
-        $this -> validar_checklist = $validar_checklist;
-        $this -> inserir_item_checklist = $inserir_item_checklist;
-        $this -> remover_item_checklist = $remover_item_checklist;
-        $this -> desbloquear_checklist = $desbloquear_checklist;
+                                )
+    {
+        $this -> nome_cargo                 = $nome_cargo;
+        $this -> cadastrar_sala             = $cadastrar_sala;
+        $this -> editar_sala                = $editar_sala;
+        $this -> remover_sala               = $remover_sala;
+        $this -> validar_checklist          = $validar_checklist;
+        $this -> inserir_item_checklist     = $inserir_item_checklist;
+        $this -> remover_item_checklist     = $remover_item_checklist;
+        $this -> desbloquear_checklist      = $desbloquear_checklist;
         $this -> descricao_nao_conformidade = $descricao_nao_conformidade;
-        $this -> enviar_notificacao = $enviar_notificacao;
+        $this -> enviar_notificacao         = $enviar_notificacao;
         
 
     }
@@ -73,20 +73,20 @@ class Perfil{
         return true;
     }*/
 
-    //Metodo responsavel por inserir dados no banco de dados
-    public function cadastrar(){
-        //variavel que conecta com o Banco e passa a tabela
+    public function cadastrar() : bool
+    {
         $objBanco = new Banco('cadastro_perfil');
-        /*Usando o metodo select do Banco para verificar se ja existe algum perfil cadastrado
-        com o mesmo nome, concatenando o nome que foi passado para o objeto e o nome da coluna da tabela*/
+        //select * from tabela where nome_cargo = nome_cargo
         $teste = $objBanco -> select('nome_cargo = "'.$this -> nome_cargo.'"') -> fetchAll(PDO::FETCH_ASSOC);
-        
-        //condicao (se a variavel $teste conter algo, ou seja, ja existe um nome_cargo na tabela com este nome)
-        if ($teste){
-            //mensagem de erro/modal/sweet-alert
+
+        //caso ja exista o nome no banco
+        if ($teste)
+        {
             return false;
-        } else{
-            //Passando para o metodo insert do Banco uma array com todos os atributos do objeto em questao
+        } 
+        else
+        {
+            //cadastrando no banco
             $this -> id_cadastro_perfil = $objBanco -> insert(['nome_cargo'                 => $this -> nome_cargo,
                                                                'cadastrar_sala'             => $this -> cadastrar_sala,
                                                                'editar_sala'                => $this -> editar_sala,
@@ -102,16 +102,10 @@ class Perfil{
         }
     }
 
-    //Metodo que puxa todos, ou alguns dados do Banco
-    //sera usado futuramente para listar os perfis
     public function getDados(){
         
-        //variavel que conecta com o Banco e passa a tabela
         $objBanco = new Banco('cadastro_perfil');
-
-        $where = "id_cadastro_perfil";
         
-        //atribuindo o select para a variavel dados, usando o fetchObject 
         $dados = $objBanco -> select('id_cadastro_perfil') -> fetchAll(PDO::FETCH_ASSOC);
         
         return $dados;
@@ -141,6 +135,7 @@ class Perfil{
             'enviar_notificacao'         => $this -> enviar_notificacao
         ];
         $objBanco -> update('id_cadastro_perfil = '. $id, $dados );
+        return true;
     }
 
     public static function excluir($id){
@@ -152,8 +147,9 @@ class Perfil{
             $obBanco->delete($id,'id_cadastro_perfil');
 
             return true;
-            
-        }else{
+
+        }else
+        {
             return false;
         }
     }

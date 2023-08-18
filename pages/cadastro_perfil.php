@@ -1,10 +1,4 @@
 <?php
-session_start();
-if(!isset($_SESSION['num_matricula_logado'])){
- 
-    header('Location: ../');
-}
-include_once("../includes/menu.php");
 
 require("../vendor/autoload.php");
 use App\Entity\Perfil;
@@ -25,15 +19,27 @@ if (isset($_POST['botao_salvar'], $_POST['nome_cargo'])){
     (isset($_POST['desbloquear_checklist']) ? 1 : 0),
     (isset($_POST['descricao_nao_conformidade']) ? 1 : 0),
     (isset($_POST['enviar_notificacao']) ? 1 : 0)
-    );
+    ); 
     
     /*Chamando o metodo cadastrar da classe Perfil, essa funcao primeiramente vai verificar se ja existe
     algum perfil com este nome, se sim vai retornar false, senao true, logo, vai cadastrar no banco.*/ 
     if ($objPerfil -> cadastrar()){
+       
+            echo("   <script>
         
+                Swal.fire({
+                    title: 'Perfil alterado com sucesso!', //TITULO DO POP_UP DE ACORDO COM SUA TELA 
+                    icon: 'success', // success, error e warning
+                    confirmButtonColor: '#609437', // DEFINE A COR DO BOTÃO OK
+                    confirmButtonText: 'OK'
+                });
+
+    </script>");
+    sleep(2);
+    header('Location: gerenc_perfis.php');
         //recarregando para a mesma pagina depois de cadastrar, futuramente: um popup ou modal
-        header('Location: cadastro_perfil.php');
-    }
+      
+    } 
 }
 
 ?>
@@ -48,6 +54,12 @@ if (isset($_POST['botao_salvar'], $_POST['nome_cargo'])){
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https/cdnjs.cloudflare.comlibs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
+<!-- POP_UP -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.18/dist/sweetalert2.min.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.18/dist/sweetalert2.all.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<!-- POP_UP -->
 
     <link rel="stylesheet" href="../assets/css/estilo_botoes_padronizados.css">
     <link rel="stylesheet" href="../assets/css/cadastro_perfil.css">
@@ -119,19 +131,29 @@ if (isset($_POST['botao_salvar'], $_POST['nome_cargo'])){
                     </div>
                 </div>
             </div>
-            <div class="botoes">
-                <!--Botão Voltar-->
-                <div class="botao-padrao-voltar">
-                    <a href="gerenc_perfis.php" class="botao-voltar-submit">VOLTAR</a>
-                </div>
-                <!--Botão Salvar-->
-                <div class="botao-padrao-salvar">
-                    <a href=""><input name="botao_salvar" type="submit" class="botao-salvar-submit" value="SALVAR"></a>
+            <div class="container_gp2">
+                <div class="botoes">
+                    <!--Botão Voltar-->
+                    <div class="botao-padrao-voltar">
+                        <a href="gerenc_perfis.php" class="botao-voltar-submit">VOLTAR</a>
+                    </div>
+                    <!--Botão Salvar-->
+                    <div class="botao-padrao-salvar">
+                        <a href="../pages/gerenc_perfis.php"><input name="botao_salvar" type="submit" class="botao-salvar-submit" value="SALVAR" onclick="abrir_modal()"></a>
+                    </div>
                 </div>
             </div>
         </form>
-        
     </div>     
-    
+    <script>
+        function abrir_modal(){
+            Swal.fire({
+                 title: 'Perfil cadastrado com sucesso!', //TITULO DO POP_UP DE ACORDO COM SUA TELA 
+                 icon: 'success', // success, error e warning
+                 confirmButtonColor: '#609437', // DEFINE A COR DO BOTÃO OK
+                 confirmButtonText: 'OK'
+            });
+        }
+    </script>
 </body>
 </html>

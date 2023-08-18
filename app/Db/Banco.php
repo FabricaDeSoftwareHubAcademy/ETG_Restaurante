@@ -3,7 +3,7 @@
 namespace App\Db;
 use PDO;
 use PDOException;
-//die('banco');
+//die('banco'); 
 class Banco{
   
     //Variaveis referentes a conexao com o banco de dados

@@ -1,16 +1,6 @@
 <?php
  
 
-session_start();
-ob_start();
- 
-
-if(!isset($_SESSION['num_matricula_logado'])){
- 
-    header('Location: ../');
-}
- 
-
 // require autoload = 0 bugs 
 require __DIR__."/../vendor/autoload.php";
 use App\Entity\Recado;
@@ -60,7 +50,7 @@ require_once("../includes/menu.php");
 
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -125,7 +115,7 @@ include_once('../includes/pop-ups/pop_ups mural_editar/pop-up-mural-recados.php'
 <div class="botao-padrao-inicio">
         <a href="listar_salas.php"><input type="submit" class="botao-inicio-submit"  value="SALAS"></a>
 </div>
-
+ 
 <script src="../assets/js/script-pop-up-mural.js"></script>
 <script src="../assets/js/pop_ups_mural_recado.js"></script>
 <script src="../assets/js/mural.js"></script>
