@@ -43,7 +43,7 @@
 
                     <ul class="submenu2" id="submenu-icon-pessoa">
                         <li class="iten-submenu2"><a href="../pages/gerenc_perfis.php" id="fonte-submenu2">Gerenciar Perfis</a></li>
-                        <li class="iten-submenu2"><a href="#" id="fonte-submenu2">Minha Conta</a></li>
+                        <li class="iten-submenu2"><a href="user_editar_perfil.php" id="fonte-submenu2">Minha Conta</a></li>
                         <li class="iten-submenu"><a href="../pages/cadastro_usuario.php" id="fonte-submenu2">Cadastro de Usuário</a></li> 
                     </ul>    
                 </li>
