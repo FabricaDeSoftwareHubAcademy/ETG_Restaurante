@@ -102,7 +102,7 @@
 .li-menu .link-menu i{
   position: relative;
   display: block;
-  font-size: 40px;
+  font-size: 30px;
   color: #FAA916;
   padding-top: 25px;
   width: 100%;
@@ -141,41 +141,28 @@
 }
 
 
-/* ========================================================== TAMANHO DOS ICONES ========================================================== */
+/* ========================================================== AJUSTES NOS ICONES ========================================================== */
 
-#icon-vizualizar{
-  font-size: 30px;
-}
 
 #icon-pessoa{
+  display: flex;
+  justify-content: center;
+  align-items: center;
   color: #FAA916;
-  font-size: 35px;
-}
+} 
 
 #icon-pessoa:hover{
   color: rgba(6, 74, 140, 1);
-}
-
-
-#icon-casa{
-  font-size: 30px;
-}
-
-#icon-notificacao{
-  font-size: 30px;
-}
-
-.link_submenu .link-menu i{
-  font-size: 33px;
-  margin-left: -5px;
 }
 
 .saida .link-menu i{
   font-size: 30px;
 }
 
-#icon-cadeado{
-  font-size: 34px;
+#icon-cad{
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 
@@ -186,6 +173,8 @@
   list-style: none;
   text-decoration: none;
   color: inherit;
+  font-family: "Montsserat";
+  font-style: normal;
   font-size: 11px; 
   color: #F28920;
 }
@@ -202,36 +191,20 @@
 }
 
 
-#titulo-home{
-  margin-left: 1px;
+.titulo-info{
+  font-family: "Montsserat";
+  font-style: normal;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  font-size: 13px;
 }
-
-#titulo-perf{
-  margin-left: 4px;
-}
-
-#titulo-not{
-  margin-left: 2px;
-}
-
-#titulo-sala{
-  margin-left: 3px;
-}
-
-#titulo-cad{
-  margin-right: 4px;
-}
-
-#titulo-sair{
-  margin-left: 8px;
-}
-
 
 /* ======================================================= SUB MENU DE CADASTROS  ============================================================================*/
 
 .link_submenu{
   list-style: none;
-  margin-top: 130px;
+  /* margin-top: 130px; */
 }
 
 .link_submenu .link-menu i{
@@ -253,15 +226,16 @@
   align-items: center;
   margin-left: 70px;
   font-size: 15px;
-  top: 62%;
+  top: 60%;
   overflow: hidden;
   display: none;
   border-radius: 7px;
 }
 
 #fonte-submenu{
+  font-family: "Montsserat";
+  font-style: normal;
   text-decoration: none;
-  font-style: none;
   color: #FAA916;
 }
 
@@ -324,8 +298,9 @@
 }
 
 #fonte-submenu2{
+  font-family: "Montsserat";
+  font-style: normal;
   text-decoration: none;
-  font-style: none;
   list-style: none;
   color: #FAA916;
 }
