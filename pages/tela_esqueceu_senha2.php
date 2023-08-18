@@ -1,5 +1,7 @@
 <?php
 session_start();
+require __DIR__."/../vendor/autoload.php";
+
 
 if (isset($_POST['btn_submit']) && isset($_SESSION['cod_redef_senha']))
 {
@@ -13,12 +15,11 @@ if (isset($_POST['btn_submit']) && isset($_SESSION['cod_redef_senha']))
         die('ta errado!');
     }
 }
-var_dump($_POST);
-if (isset($_POST['teste']))
-{
-    die('IGORZAO DAMASSA');
-}
 
+if (isset($_POST['btn_resend']))
+{
+    App\Entity\Mailer::sendEmail($_SESSION['email_to_redef_secret']);
+}
 
 
 
@@ -52,18 +53,18 @@ include_once("../includes/menu.php")
                     <section class="centralizar_input_esqueceu_senha2"> 
                 <!--Input Email-->
                         <div class="input_e-mail_group field">
-                            <input name="email" type="" class="input_e-mail_field" placeholder="_" required="" autocomplete="on">
+                            <input name="email" type="" class="input_e-mail_field" placeholder="_" autocomplete="on">
                             <label for="name" class="input_e-mail_label">Código Enviado </label><!--Alterar para o nome do input-->
                         </div>
                 
                         <div class="alinhar-item-timer">
                             <div class="item-timer">
                                 <h1 id="text-timer">Solicitar outro código:</h1>   
-                                <h1 id="timer">00:59</h1>
+                                <h1 id="timer">00:60</h1>
                             </div>
 
                             <div>
-                                <input type="submit" name="teste" class="botao-enviar-dnv" id="actionBtn" value="Enviar novamente">
+                                <input type="submit" class="botao-enviar-dnv" id="actionBtn" name="btn_resend" value="Enviar novamente">
                             </div>
                             <script src="../assets/js/tela_esqueceu_senha2.js"></script>
                         </div>

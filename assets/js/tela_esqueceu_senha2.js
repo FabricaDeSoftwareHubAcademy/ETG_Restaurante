@@ -1,9 +1,11 @@
+var interval; // Variável global para armazenar o intervalo do timer
+
 window.onload = function() {
   startTimer(); // Inicia o timer automaticamente quando a página carrega
 };
 
 function startTimer() {
-  var timer = 3; //  minuto em segundos
+  var timer = 60; //  minuto em segundos
   var display = document.getElementById('timer');
   var actionBtn = document.getElementById('actionBtn');
 
@@ -31,15 +33,7 @@ function startTimer() {
    }
 }
 
-var actionBtn = document.getElementById("actionBtn");
-
-actionBtn.addEventListener("click",(
-  
-))
-
-
-
-document.addEventListener("click",(
+function performAction() {
   clearInterval(interval); // Limpa o intervalo anterior (se houver)
   startTimer(); // Reinicia o timer ao clicar no botão "Clique-me"
-));
+}
