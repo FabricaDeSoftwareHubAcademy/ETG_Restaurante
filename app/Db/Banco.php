@@ -11,6 +11,10 @@ class Banco
     const PASS = 'fabrica@2022';
     private $table;
     private $conexao;
+    public function __construct($table = null)
+    { 
+        $this -> table = $table; 
+    }
     private function conectar(){
         try
         {
@@ -70,10 +74,6 @@ class Banco
         }
     }
 
-    public function __construct($table = null)
-    { 
-        $this -> table = $table; 
-    }
 
     public function insert($dados = [])
     {
