@@ -87,7 +87,7 @@
                 </div>
 
                     <div class="titulo-selecione-pergunta">
-                        <h1 id="titulo-pergunta-pos">Selecione as Perguntas:</h1>
+                        <h1 id="titulo-pergunta-pos">Selecione as Perguntas Pré-Aula:</h1>
                     </div>
 
                 <section class="selecao-pergunta">
@@ -102,7 +102,7 @@
                     </table>
                 </section>
                 <div class="titulo-selecione-pergunta">
-                        <h1 id="titulo-pergunta-pos">Selecione as Perguntas:</h1>
+                        <h1 id="titulo-pergunta-pos">Selecione as Perguntas Pós-Aula:</h1>
                     </div>
                 <section class="selecao-pergunta">
                     <table class="tabela-perguntas">

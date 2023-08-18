@@ -8,7 +8,6 @@ class Banco{
   
     //Variaveis referentes a conexao com o banco de dados
     const HOST = '192.168.22.9';
-  
 
     const DB_NAME = 'etg_homologacao';
     const USER = 'fabrica';
