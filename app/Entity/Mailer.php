@@ -26,8 +26,16 @@ class Mailer
         $email->Port ="587";
         $email->Username = "fabrica.hub.academy@gmail.com";
         $email->Password = "ciaiabsuzjimabht";
+<<<<<<< Updated upstream
 
         $email->Subject = "Codigo Redefinicao Senac";
+=======
+        $codigo = rand(0, 10000);
+        $_SESSION['cod_redef_senha'] = $codigo;
+        $codigo = json_encode($codigo);
+        
+        $email->Subject = $codigo;
+>>>>>>> Stashed changes
         $email->setFrom("fabrica.hub.academy@gmail.com");
         $email->addStringAttachment(file_get_contents("https://miro.medium.com/v2/resize:fit:1400/1*m0H6-tUbW6grMlezlb52yw.png"), "qr.jpg");
         
