@@ -157,5 +157,10 @@ class Usuario{
        }
    
   }
+  public function setPasswordByEmail($email, $senha)
+  {
+    $obj_banco = new Banco('cadastro_usuario');
+    $obj_banco -> update('email = "'.$email.'"', ['senha' => $senha]);
+  }
 
 }

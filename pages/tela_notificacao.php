@@ -13,7 +13,7 @@ $dados = $notificacao -> getNotificacao();
  
 
 
-date_default_timezone_set('America/Brasilia');
+date_default_timezone_set('America/Sao_paulo');
 
 // $dataBanco = Notificacao::getNotificacao()[0]['data_hora'];
  
