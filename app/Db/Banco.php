@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Db;
 use PDO;
 use PDOException;
@@ -14,43 +13,48 @@ class Banco{
     const PASS = '#Lui5159357';
     private $table;//variavel que vai falar sobre qual tabela do banco esta sendo tratada
     private $conexao;
-
-    //Metodo responsavel por conectar com o banco de dados
+    public function __construct($table = null)
+    { 
+        $this -> table = $table; 
+    }
     private function conectar(){
-        try{
+        try
+        {
             $this -> conexao = new PDO('mysql:host='.self::HOST.';dbname='.self::DB_NAME, self::USER, self::PASS);
-        } catch(PDOException $e){
+        }
+        catch(PDOException $e)
+        {
             die("ERRO: " . $e -> getMessage());
         }
     }
 
-    //Metodo que recebe um comando sql, e valores se necessario e os executa
-    private function executarQuery($query, $valores = []){
-        try{
-            
+    private function executarQuery($query, $valores = [])
+    {
+        try
+        {
             //abrindo conexao
             $this -> conectar();
-
             //criando statement e preparando a query que foi passada como argumento
             $statement = $this -> conexao -> prepare($query);
             $statement -> execute($valores);
         
-            
             //fechando conexao
             $this -> conexao = null;
             //var_dump($statement); exit;
             //retornando o resultado da query
             return $statement;
-        } catch (PDOException $e){
+        }
+        catch (PDOException $e)
+        {
             echo('Erro3: ' . $e -> getMessage());
             return false;
         }
     }
 
-
-    private function executeLastId($query, $valores = []){
-        try{
-            
+    private function executeLastId($query, $valores = [])
+    {
+        try
+        {
             //abrindo conexao
             $this -> conectar();
 
@@ -64,20 +68,17 @@ class Banco{
             //var_dump($statement); exit;
             //retornando o resultado da query
             return $id;
-        } catch (PDOException $e){
+        }
+        catch (PDOException $e)
+        {
             echo('Erro3: ' . $e -> getMessage());
             return false;
         }
     }
 
-    //Construtor que recebe uma tabela referente a tabela do banco de dados que ira trabalhar
-    public function __construct($table = null){
-        
-        $this -> table = $table; 
-    }
 
-    //Metodo criado para executar o comando SQL -> `INSERT`
-    public function insert($dados = []){
+    public function insert($dados = [])
+    {
         /*
         recebendo as chaves da array $dados
         ATENCAO!!
@@ -99,16 +100,15 @@ class Banco{
         */ 
         
         $query = 'INSERT INTO '.$this -> table.'('.implode(', ', $chaves).') VALUES('.implode(', ', $valores).')';
-         
+
         //Chamando o metodo `executarQuery` e passando a $query montada e APENAS OS VALORES de `$dados`
         $this -> executarQuery($query, array_values($dados));
 
         return true;
-        
     }
 
-    public function insertRecoverId($dados = []){
-
+    public function insertRecoverId($dados = [])
+    {
         $chaves = array_keys($dados);
 
         /*atribuindo uma lista a variavel $valores,
@@ -126,29 +126,20 @@ class Banco{
          
         //Chamando o metodo `executarQuery` e passando a $query montada e APENAS OS VALORES de `$dados`
         $id = $this -> executeLastId ($query, array_values($dados));
-
         return $id;
-
-        
-         
     }
 
-    public function delete($valor, $coluna){
-
+    public function delete($valor, $coluna)
+    {
         $query = 'DELETE FROM '.$this->table.' WHERE ' . $coluna . ' = '. $valor;
-        
-
         return $this->executarQuery($query);
-
     }
 
-    public function update($where = '',$dados = []){
-        
+    public function update($where = '',$dados = [])
+    {
         //lista chave valor($dados) 
         //obs: chaves tem que ser o mesmo nome que o nome da coluna
-
         $setter = "";
-
         $chaves = array_keys($dados);
         $valores = array_values($dados);
 
@@ -170,12 +161,11 @@ class Banco{
         //echo $query;exit;
         return $this->executarQuery($query);
         // terminar............ 
-
     }
 
     //Metodo criado pra executar o comando SQL -> `SELECT`
-    public function select($where = null, $order = null, $limit = null, $campos = '*'){
-        
+    public function select($where = null, $order = null, $limit = null, $campos = '*')
+    {
         /*Usando OPERADOR TERNARIO para concatenar ou nao
         Se o parametro $where tiver mais que uma string, sera concatenado com uma
         string `WHERE`
@@ -197,9 +187,6 @@ class Banco{
         
         //preciso usar o fetch all aqui, ainda nao terminei!
         return $this ->  executarQuery($query);
-
-
-
     }
 }
 ?>

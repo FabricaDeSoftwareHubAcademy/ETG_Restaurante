@@ -1,0 +1,130 @@
+*{
+    margin: 0;
+    box-sizing: 0;
+    padding: 0;
+    text-decoration: none;
+}
+
+.pai-de-todos{
+    width: 100%;
+    height: 100%;
+    max-width: 832px;
+    position: relative;
+    margin: 0 auto;
+  }
+
+  .titulo-perfil{
+    margin-top: 7%;
+    font-family: 'Montserrat';
+    font-weight: bold;
+    font-size: 240%;
+  }
+
+  .foto-perfil{
+    margin-top: 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 158px;
+    height: 133px;
+    flex-shrink: 0;
+    background-color: aqua;
+    border-radius: 15px;
+    border: 1px solid #FFF;
+    background: url(<path-to-image>), lightgray 50% / cover no-repeat;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  }
+
+  .bi-person-circle::before {
+    font-size: 100px;
+  }
+
+  .bi-pencil-square::before {
+    font-size: 25px;
+}
+
+  .icon-edit{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 3%;
+  }
+
+  .titulo-perfil{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .quadrado-perfil{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+ .alinhar-input{
+    margin-top: 2%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+} 
+
+.name{
+  margin-top: 10%;
+  padding-left: 8%;
+}
+
+.name-name{
+  font-family: 'Montserrat';
+  font-weight: bold;
+  margin-top: 2%;
+}
+
+.alinhar-botao{
+  margin-top: 20%;
+
+}
+
+.alterar-senha{
+  margin-top: 3%;
+  font-size: 20px;
+  display: flex;
+  justify-content: start;
+  width: 83%;
+}
+
+.alterar-senha a{
+  font-family: 'Montserrat';
+  font-weight: bold;
+}
+
+#icon-input{
+  position: absolute;
+  top: 24px;
+  right: 3%;
+}
+
+@media (max-width: 832px) {
+  .name-name{
+    font-family: 'Montserrat';
+    font-weight: bold;
+    margin-top: 16%;
+    padding-left: 3%;
+  }
+
+  .alinhar-input{
+    margin-top: 2%;
+    padding-left: 3%;
+} 
+  
+.alinhar-botao{
+  margin-top: 30%;
+
+}
+
+  }

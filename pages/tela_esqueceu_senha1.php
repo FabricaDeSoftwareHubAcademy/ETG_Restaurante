@@ -10,16 +10,25 @@ $objUsuario = new Usuario();
 if (isset($_POST['email'], $_POST['btn_submit'])){
     if ($objUsuario -> emailValidate($_POST['email']))
     {
-        $obj_email::sendEmail($_POST['email']);
+        if ($obj_email::sendEmail($_POST['email']))
+        {
+            session_start();
+            $_SESSION['email_to_redef_secret'] = $_POST['email'];
+            header("Location: tela_esqueceu_senha2.php");
+        }
+        else
+        {
+            die('algo deu errado com a classe ou algo relacionado');
+        }
         
-        header("Location: tela_esqueceu_senha2.php");
-
+        
+        
     }
     else
     {
-
-            die ("email n ecx");
-
+        
+        die ("email n existe");
+        
     }
     }
  

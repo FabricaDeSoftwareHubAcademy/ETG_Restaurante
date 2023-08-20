@@ -61,7 +61,7 @@ if (isset($_POST['btn_submit']))
         
     }
     
-    if($obj_sala -> setData($_GET['id_sala'],
+    if($obj_sala -> setDados($_GET['id_sala'],
     [   
         'nome'              =>  $_POST['nome_sala'],
         'andar'             =>  $_POST['andar_sala'],
@@ -73,7 +73,7 @@ if (isset($_POST['btn_submit']))
         'funcionamento'     =>  $dias_funcionamentoJson
     ]))
     
-    if($obj_sala -> setData()){
+    if($obj_sala -> setDados()){
         echo('cadastrou');
         echo("<script>function abrir_modal(){
             Swal.fire({
@@ -327,12 +327,6 @@ if (isset($_POST['btn_submit']))
                         </div>
                         
                     </div>
-
-
-
-
-
-                    
                 
                 </form>  
             </div>

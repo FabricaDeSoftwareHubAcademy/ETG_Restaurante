@@ -42,48 +42,50 @@
                     </a>
 
                     <ul class="submenu2" id="submenu-icon-pessoa">
-                        <li class="iten-submenu2"><a href="../pages/gerenc_perfis.php" id="fonte-submenu2">Gerenciar Perfil</a></li>
-                        <li class="iten-submenu2"><a href="#" id="fonte-submenu2">Editar Usuário</a></li>
-                        <li class="iten-submenu"><a href="../pages/cadastro_usuario.php" id="fonte-submenu2">Cadastro de Usuario</a></li> 
+                        <li class="iten-submenu2"><a href="../pages/gerenc_perfis.php" id="fonte-submenu2">Gerenciar Perfis</a></li>
+                        <li class="iten-submenu2"><a href="user_editar_perfil.php" id="fonte-submenu2">Minha Conta</a></li>
+                        <li class="iten-submenu"><a href="../pages/cadastro_usuario.php" id="fonte-submenu2">Cadastro de Usuário</a></li> 
                     </ul>    
                 </li>
             </li>
 
 
                 <li class="li-menu">
-                    <a href="#" class="link-menu">
+
+                    <a href="../pages/tela_notificacao.php" class="link-menu">
                         <i id="icon-notificacao" class="bi bi-bell"  style="--i:3"></i>  
-                        <h5 class="titulo-info" id="titulo-not" style="--i:3">Notificações</h5>              
+                        <h5 class="titulo-info" id="titulo-not" style="--i:3">Alertas</h5>              
                     </a>
                 </li>   
-
-                
+            
                 <li class="li-menu">
-                    <a href="../pages/listar_salas.php" class="link-menu">
-                        <i id="icon-vizualizar" class="bi bi-person-video3"  style="--i:4"></i>  
-                        <h5 class="titulo-info" id="titulo-sala" style="--i:4">Salas</h5>            
+
+                    <a href="listar_salas.php" class="link-menu">
+                        <i id="icon-vizualizar" class="bi bi-person-video3"  style="--i:4"></i>     
+                        <h5 class="titulo-info" id="titulo-not" style="--i:3">Salas</h5>              
                     </a>  
                 </li>      
 
                 
-                <li class="link_submenu">
-                    <a href="#" class="link-menu">
-                        <i class="bi bi-list-check" id="btnsubmenu" onclick="openSubmenu()" style="--i:5"></i>
-                        <h5 class="titulo-info" id="titulo-cad" style="--i:5">Cadastros</h5>
-                    </a>
+                <li class="link_submenu"> 
+                    <li class="li-menu">   
+                        <a href="#" class="link-menu">
+                            <i class="bi bi-list-check" id="btnsubmenu" onclick="openSubmenu()" style="--i:5"></i>
+                            <h5 class="titulo-info" id="titulo-cad" style="--i:5">Cadastros</h5>
+                        </a>
 
                         <ul class="sub-menu">            
                             <li class="iten-submenu"><a href="../pages/cadastro_salas.php" id="fonte-submenu">Cadastro de Salas</a></li>
                             <li class="iten-submenu"><a href="../pages/cadastro_checklist.php" id="fonte-submenu">Cadastro Checklist</a></li>
                             <li class="iten-submenu"><a href="../pages/cadastro_item.php" id="fonte-submenu">Cadastro de Perguntas</a></li>                       
                         </ul>
-                        
+                    </li> 
                 </li>         
 
 
                 <li class="saida">
                     <button class="btnOpenmodal-menu" onclick="openModal()" >  
-                        <a href="" class="link-menu">
+                        <a href="#" class="link-menu">
                             <i class="bi bi-box-arrow-left" style="--i:6"></i>
                             <h5 class="titulo-info" id="titulo-sair" style="--i:6">Sair</h5>
                         </a>

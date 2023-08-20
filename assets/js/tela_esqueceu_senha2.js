@@ -5,7 +5,7 @@ window.onload = function() {
 };
 
 function startTimer() {
-  var timer = 59; //  minuto em segundos
+  var timer = 60; //  minuto em segundos
   var display = document.getElementById('timer');
   var actionBtn = document.getElementById('actionBtn');
 

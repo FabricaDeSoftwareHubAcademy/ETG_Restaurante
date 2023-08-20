@@ -1,29 +1,30 @@
 <?php
-
 namespace App\Entity;
 use PDO;
 use PDOException;
 use App\Db\Banco;
 
-class CadastroChecklist{
+class CadastroChecklist
+{
     public 
     $id_cadastro_checklist,
     $nome;
  
     public function __construct($id_cadastro_checklist = null,
                                 $nome = null
-                                ){
+                                )
+    {
         $this -> id_cadastro_checklist = $id_cadastro_checklist;
-        $this -> nome = $nome;
+        $this -> nome                  = $nome;
     }
 
 
     //
     public function cadastrar() : string
     {
-        $objDatabase = new Banco('checklist_test');
+        $obj_banco = new Banco('checklist_test');
 
-        $ultimoId = $objDatabase -> insertRecoverId(['descricao' => $this -> nome]);
+        $ultimoId = $obj_banco -> insertRecoverId(['descricao' => $this -> nome]);
 
         return $ultimoId;
     }
@@ -32,9 +33,9 @@ class CadastroChecklist{
 
     public function getDados() : array
     {
-        $objDatabase = new Banco('cadastro_checklist');
+        $obj_banco = new Banco('cadastro_checklist');
 
-        $dados = $query = $objDatabase -> select() -> fetchAll(PDO::FETCH_ASSOC);
+        $dados = $obj_banco -> select() -> fetchAll(PDO::FETCH_ASSOC);
         return $dados;
     }
 }

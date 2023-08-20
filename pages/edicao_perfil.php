@@ -1,8 +1,6 @@
 <?php
 
-include_once("../includes/menu.php");
-
-
+// include_once("../includes/menu.php");
 require ("../vendor/autoload.php");
 use App\Entity\Perfil;
 
@@ -29,7 +27,7 @@ if (isset($_POST['botao_salvar'], $_POST['nome_cargo'])){
     
     /*Chamando o metodo cadastrar da classe Perfil, essa funcao primeiramente vai verificar se ja existe
     algum perfil com este nome, se sim vai retornar false, senao true, logo, vai cadastrar no banco.*/ 
-    if ($objPerfil -> update($id)){
+    if ($objPerfil -> setDados($id)){
         echo("   <script>
     
             Swal.fire({
@@ -41,7 +39,7 @@ if (isset($_POST['botao_salvar'], $_POST['nome_cargo'])){
            
 </script>");
 sleep(2);
-header('Location: gerenc_perfis.php');
+// header('Location: gerenc_perfis.php');
 
     }
 }
