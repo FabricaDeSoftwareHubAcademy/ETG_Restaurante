@@ -70,7 +70,35 @@ require ("../vendor/autoload.php");
 
                         </div>
                 </div>
+                <div class="input_checklist">
+                    <label class="label_checklist" for="data">Os equipamentos e /ou utensílios estão limpos, organizados e em condições de uso?</label>
+
+                        <div class="row">
+                            <div class="checkmark" onclick="check(false)">
+                                <i id="red" class="bi bi-x"></i>
+                            </div>
+
+                            <div class="checkmark" onclick="check(true)">
+                                <i id="green" class="bi bi-check"></i>
+                            </div>
+
+                        </div>
+                </div>
               
+                </div>
+                <div class="input_checklist">
+                    <label class="label_checklist" for="data">Os equipamentos e /ou utensílios estão limpos, organizados e em condições de uso?</label>
+
+                        <div class="row">
+                            <div class="checkmark" onclick="check(false)">
+                                <i id="red" class="bi bi-x"></i>
+                            </div>
+
+                            <div class="checkmark" onclick="check(true)">
+                                <i id="green" class="bi bi-check"></i>
+                            </div>
+
+                        </div>
                 </div>
                 <div class="input_checklist">
                     <label class="label_checklist" for="data">Os equipamentos e /ou utensílios estão limpos, organizados e em condições de uso?</label>
@@ -95,12 +123,12 @@ require ("../vendor/autoload.php");
 
                     <!--Botão Voltar-->
                     <div class="botao-padrao-voltar">
-                        <a href="gerenc_perfis.php"class="botao-voltar-submit">CONFIRMAR</a>
+                        <a href="gerenc_perfis.php"class="botao-voltar-submit">CANCELAR</a>
                     </div>
 
                     <!--Botão Salvar-->
                     <div class="botao-padrao-voltar">
-                        <a href="#"><input name="botao_salvar" type="submit" class="botao-salvar-submit"  value="CANCELAR" onclick="abrir_modal()"></a>
+                        <a href="#"><input name="botao_salvar" type="submit" class="botao-salvar-submit"  value="CONFIRMAR" onclick="abrir_modal()"></a>
                     </div>
         </main>
 
