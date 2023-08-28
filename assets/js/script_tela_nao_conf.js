@@ -1,43 +1,60 @@
 
-let fileInput = document.getElementById("file-input");
-let imageContainer = document.getElementById("images");
-let numOfFiles = document.getElementById("num-of-files");
+$(document).ready(function(){
+    $(".upload-area").click(function(){
+        $('#upload-input').trigger('click');
+    });
 
-function preview(){
-    imageContainer.innerHTML = "";
-    numOfFiles.textContent = `${fileInput.files.length} Arquivos escolhidos`;
+    $('#upload-input').change(event => {
+        if(event.target.files){
+            let filesAmount = event.target.files.length;
+            if (filesAmount < 4 && filesAmount > 0){
+                $('.upload-img').html("");
+                for(let i = 0; i < filesAmount; i++){
+                    let reader = new FileReader();
+                    let figCap = document.createElement("figcaption");
+                    reader.onload = function(event){
+                        let html = `
+                            <div class = "uploaded-img">
+                                <img src = "${event.target.result}">
+                                <button type = "button" class = "remove-btn">
+                                    <i class = "fas fa-times"></i>
+                                </button>
+                            </div>
+                        `;
+                        $(".upload-img").append(html);
+                    }
+                    reader.readAsDataURL(event.target.files[i]);
+                }
+                
+                $('.upload-img').css('padding', "20px");
+            }
 
-    for(i of fileInput.files){
-        let reader = new FileReader();
-        let figure = document.createElement("figure");
-        let figCap = document.createElement("figcaption");
-        figCap.innerText = i.name;
-        figure.appendChild(figCap);
-        reader.onload=()=>{
-            let img = document.createElement("img");
-            img.setAttribute("src",reader.result);
-            figure.insertBefore(img,figCap);
+            else {
+                let modal = document.querySelector('.mensagem')
+                modal.classList.remove('active');
+            }
+            
         }
-        imageContainer.appendChild(figure);
-        reader.readAsDataURL(i);
-    }
-}
+    });
+
+    $(window).click(function(event){
+        if($(event.target).hasClass('remove-btn')){
+            $(event.target).parent().remove();
+        } else if($(event.target).parent().hasClass('remove-btn')){
+            $(event.target).parent().parent().remove();
+        }
+    })
+
+    $
+});
 
 function acao(){
-    
     let modal = document.querySelector('.mom')
-
-    // modal.style.display = 'flex';
-
-    let modala = document.querySelector('.bi.bi-x-circle')
-    modal.classList.add('active');
-
-
-    // modala.style.display = 'none';    
+    modal.classList.add('active');   
 }
 
 function fechar(){
-
     let modal = document.querySelector('.mom')
     modal.classList.remove('active');
 }
+
