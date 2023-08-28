@@ -69,17 +69,7 @@ if (isset(  $_POST      ['nome_sala'],
             );
             if($obj_sala -> cadastrar())
             {
-                echo('cadastrou');
-                echo("<script>function abrir_modal(){
-                    Swal.fire({
-                        title: 'Cadastrado com sucesso!', //TITULO DO POP_UP DE ACORDO COM SUA TELA 
-                        icon: 'success', // success, error e warning
-                        confirmButtonColor: '#609437', // DEFINE A COR DO BOTÃO OK
-                        confirmButtonText: 'OK'
-                    });
-                }</script>");
-                sleep(2);
-                header("Location: listar_salas.php");
+                include_once("")
             }
             else
             {
