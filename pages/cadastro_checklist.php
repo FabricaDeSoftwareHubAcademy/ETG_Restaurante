@@ -86,7 +86,7 @@
                     <label for="name" class="input_label">Nome do CheckList</label> <!--Alterar para o nome do input-->
                 </div>
 
-                    <div class="titulo-selecione-pergunta">
+                    <div class="titulo-selecione-pergunta-pre">
                         <h1 id="titulo-pergunta-pos">Selecione as Perguntas Pré-Aula:</h1>
                     </div>
 
@@ -101,7 +101,7 @@
 
                     </table>
                 </section>
-                <div class="titulo-selecione-pergunta">
+                <div class="titulo-selecione-pergunta-pos">
                         <h1 id="titulo-pergunta-pos">Selecione as Perguntas Pós-Aula:</h1>
                     </div>
                 <section class="selecao-pergunta">
