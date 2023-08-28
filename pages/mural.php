@@ -8,8 +8,9 @@ use App\Entity\Recado;
 if(isset($_POST['btn_confirmar_submit'])){
 
     if(isset($_POST['descricao_sala'])){
+         
       
-        $obRecado = new Recado($_SESSION['num_matricula_logado'],$_POST['descricao_sala']);
+        $obRecado = new Recado($_SESSION['id_user'],$_POST['descricao_sala']);
         $obRecado->cadastrar();
         header("Refresh: 0");
       
@@ -27,7 +28,7 @@ require_once("../includes/menu.php");
     $cards_recados = '';
 
     foreach($recados as $row_recados){
-
+        
         $cards_recados .= '<div class="card">
                                 <p class="msg_aviso">'.$row_recados['descricao'].'</p>
                                 <div class="area_bot">
@@ -55,8 +56,9 @@ require_once("../includes/menu.php");
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mural de Recados</title>
-    <link rel="stylesheet" href="../assets/css/pop_ups_mural_recado.css">
-    <link rel="stylesheet" href="../assets/css/style-pop-up-mural.css">
+    <link rel="stylesheet" href="../includes/pop-ups/pop_ups_mural_recados/pop_ups mural_editar/style-pop-up-mural.css">
+    <link rel="stylesheet" href="../includes/pop-ups/pop_ups_mural_recados/pop_ups_mural_novo_recado/pop_ups_mural_recado.css">
+    
     <link rel="stylesheet" href="../assets/css/mural.css"> 
 
 </head>
@@ -69,7 +71,7 @@ require_once("../includes/menu.php");
             <h1 class="title_modal_excluir">Confirmar exclusão de recado?</h1>
     
             <div class="area_btns_modal_excluir">
-    
+
                 
                 <div class="botao-padrao-cancelar">
                     <button class="botao-cancelar-submit" onclick="closeModalExcluir()">CANCELAR<button>
@@ -93,8 +95,10 @@ require_once("../includes/menu.php");
 
 <h1 class="title_principal">Mural de Recados</h1>
 <?php
-include_once('../includes/pop-ups/pop_ups_mural_novo_recado/pop_ups_mural_recado.php');
-include_once('../includes/pop-ups/pop_ups mural_editar/pop-up-mural-recados.php');
+// linkar certo 
+
+include_once('../includes/pop-ups/pop_ups_mural_recados/pop_ups_mural_novo_recado/pop_ups_mural_recado.php');
+include_once('../includes/pop-ups/pop_ups_mural_recados/pop_ups mural_editar/pop-up-mural-recados.php');
 
 ?>
 
