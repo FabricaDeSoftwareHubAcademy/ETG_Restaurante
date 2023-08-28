@@ -15,7 +15,7 @@ $(document).ready(function(){
                     reader.onload = function(event){
                         let html = `
                             <div class = "uploaded-img">
-                                <img src = "${event.target.result}">
+                                <img src = "${event.target.result}" class = "beluga">
                                 <button type = "button" class = "remove-btn">
                                     <i class = "fas fa-times"></i>
                                 </button>
