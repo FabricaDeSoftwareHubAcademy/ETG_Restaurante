@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ETG</title>
-    <link rel="stylesheet" href="pop-up-verification.css">
+    <link rel="stylesheet" href="pop-up-excluir.css">
 </head>
 <body>
 
@@ -12,8 +12,8 @@
         <button type="submit" class="btn-pop-up-notificacao" id="submit-btn-notificacao" onclick="openPopupValidar()">Submit</button>
         <div class="popup-notificacao" id="popup-up-notificacao">
             <div class="div-img">
-                <img src="../img/Check_ring.png" alt="carregando" id="img_check">
-                <p>Notificação enviada com sucesso </p>
+                <img src="../img/erro.png" alt="carregando" id="img_check">
+                <p>Recado excluído com sucesso! </p>
             </div>
             <div class="botao-padrao-ok">
                 <a href="#"><input type="submit" class="botao-ok-submit" onclick="closePopupValidar()" value="OK"></a>
@@ -22,6 +22,6 @@
     </div>
 
 
-    <script src="pop-up-verification.js"></script>
+    <script src="pop-up-excluir.js"></script>
 </body>
 </html>

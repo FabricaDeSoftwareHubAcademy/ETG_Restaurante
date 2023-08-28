@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: poppins, sans-serif;
+    font-family: 'Montserrat', sans-serif;
     
 }
 :root{
@@ -12,24 +12,16 @@
     --cor-primaria-botao-yellow:rgba(255, 199, 0, 1);
     --cor-primaria-botao-blue:  rgba(6, 74, 140, 1);
 }
-.container-pop-up-excluir{
-    width: 100%;
-    height: 100vh;
-    position: fixed;
-    top: 0;
-    left: 0;
+.container-pop-up-notificacao{
     display: flex;
     align-items: center;
     justify-content: center;
-    z-index: 999999999;
-    pointer-events: none;
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+    background: #fff;
 }
-
-.container-pop-up-excluir.active{
-    pointer-events: all;
-}
-
-.btn-pop-up-excluir{
+.btn-pop-up-notificacao{
     padding: 10px 60px;
     background: #6fd649;
     color: white;
@@ -37,29 +29,10 @@
     outline: none;
     cursor: pointer;
     font-size: 22px;
-    font-weight:500;
     border-radius: 30px;
 }
-
-.btn-pop-up-excluir1{
-    padding: 10px 60px;
-    background: #6fd649;
-    color: white;
-    border: 0;
-    outline: none;
-    cursor: pointer;
-    font-size: 22px;
-    font-weight:500;
-    border-radius: 30px;
-}
-
-#popup-up-excluir{
-    background-color: white;
-}
-
-.popup-excluir{
+.popup-notificacao{
     width: 400px;
-    border-radius: 6px;
     position: absolute;
     top: 0;
     left: 50%;
@@ -74,16 +47,12 @@
     visibility: visible;
     top: 50%;
     transform: translate(-50%, -50%) scale(1);
-    background: #FFF;
-    box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.25);
-    border-radius: 28px;
 }
 
-.popup-excluir p{
+.popup-notificacao p{
     font-size: 20px;
     font-weight: 500;
     margin: 30px 0 10px;
-
 }
 
 /* Css Botão OK */
@@ -100,10 +69,10 @@
     width: 180px;
     height: 45px;
     background-color: var(--cor-primaria-botao-white);
-    border: 3px solid var(--cor-primaria-botao-red);
+    border: 3px solid var(--cor-primaria-botao-green);
     border-radius: 20px;
     cursor: pointer;
-    color: var(--cor-primaria-botao-red);
+    color: var(--cor-primaria-botao-green);
     font-style: normal;
     font-size: 15px;
     font-weight: 580;
@@ -111,21 +80,54 @@
 
 .botao-ok-submit:hover{
     transition: all 0.4s;
-    background-color: var(--cor-primaria-botao-red);
+    background-color: var(--cor-primaria-botao-green);
     color: var(--cor-primaria-botao-white);
 }
-
-.overlay_conf {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
+.div-img{
     display: flex;
-    align-items: center;
     justify-content: center;
-    z-index: 9999;
-    opacity: 0;
-    visibility: hidden;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+
+@media (max-width: 768px) {
+   
+    .popup-notificacao {
+        width: 100%;
+        max-width: 320px;
+        
+    }
+    
+    .btn-pop-up-notificacao { 
+        font-size: 18px;
+        padding: 8px 30px;
+    }
+       
+    .popup-notificacao p {
+            
+        font-size: 20px;
+        margin: 20px 0;
+    }
+        
+    .botao-ok-submit { 
+        width: 100%; 
+        font-size: 14px; 
+        width: 150px;
+        height: 45px;
+        
+    }
+
+}
+
+@media (max-width: 227px) {
+    #img_check{
+        width: 200px;
+        
+    }
+    .botao-ok-submit{
+        width: 150px;
+        height: 40px;
+    }
 }
