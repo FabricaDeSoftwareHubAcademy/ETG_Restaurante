@@ -7,6 +7,7 @@ require __DIR__."/../vendor/autoload.php";
 use App\Entity\Sala;
 use App\Entity\CadastroChecklist;
 use App\Entity\Imagens;
+include_once("../includes/menu.php");
 
 $objCadastroChecklist = new CadastroChecklist();
 $dados = $objCadastroChecklist -> getDados();
@@ -86,7 +87,7 @@ if (isset(  $_POST      ['nome_sala'],
             }
             
         }   
-        include_once("../includes/menu.php");
+        
         ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -208,7 +209,7 @@ if (isset(  $_POST      ['nome_sala'],
                         </div>
 
                         <div class="Check_Box_individual">
-                            <p class="coisa_tag_p">Sabado</p>
+                            <p class="coisa_tag_p">Sábado</p>
                             <input name="sabado" class="espaco_check_box" type="checkbox" />
                         </div>
 
@@ -243,7 +244,7 @@ if (isset(  $_POST      ['nome_sala'],
                         <div class="text-area">
                             <span id=descrição>Descrição</span>
     
-                            <textarea  placeholder="Area de texto " name="descricao_sala" id="" cols="70" rows="10" class="text-descricao" maxLength="255"></textarea>
+                            <textarea  placeholder="Area de texto " name="descricao_sala" id="" cols="70" rows="10" class="text-descricao" maxLength="254"></textarea>
                         </div>
                         <div class="cor-sala">
                             <div class="alinar-img">
