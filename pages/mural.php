@@ -30,7 +30,7 @@ require_once("../includes/menu.php");
     foreach($recados as $row_recados){
         
         $cards_recados .= '<div class="card">
-                                <p class="msg_aviso">'.$row_recados['descricao'].'</p>
+                                <p class="msg_aviso">'.htmlentities($row_recados['descricao']).'</p>
                                 <div class="area_bot">
 
                                     <div class="bloco_bot">

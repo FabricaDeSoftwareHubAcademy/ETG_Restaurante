@@ -1,16 +1,10 @@
 <?php
-session_start();
-require __DIR__.'/vendor/autoload.php';
-
-use App\Entity\Notificacao;
-
-
-$pacoca = new Notificacao (null,1552,6792,"Por favor Sr. Bauman, comparecer ao setor de carne para averiguarmos sua inadimplencia a respeito da cozinha!");
-
- 
-
-
-
-$pacoca -> cadastrar_notificacao ();
-
- 
+require 'conexao.php';
+$conn = new Conexao();
+if($_POST){
+    $nome = preg_replace('/[^[:alpha:]_]/', '',$_POST['nome']);
+    $senha = preg_replace('/[^[:alnum:]_]/', '',$_POST['senha']);
+    $select = $conn->select($nome, $senha);
+    var_dump($select);
+}
+?>
