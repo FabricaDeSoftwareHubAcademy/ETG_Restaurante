@@ -4,8 +4,7 @@ if(!isset($_SESSION['id_user'])){
  
     header('Location: ../');
 }
-include_once("../includes/menu.php");
-
+ 
 ?>
 
 <!DOCTYPE html>
@@ -56,5 +55,3 @@ include_once("../includes/menu.php");
     <script src="../assets/js/script_tela_nao_conf.js"></script>
 </body>
 </html>
-
-
