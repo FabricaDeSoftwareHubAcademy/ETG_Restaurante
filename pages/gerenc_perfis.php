@@ -23,7 +23,7 @@ foreach ($dados_perfil as $row_perfil)
                                 </div>
                                 
                                 <a href="../pages/edicao_perfil.php?id='.$row_perfil['id_cadastro_perfil'].'"><img src="../assets/imgs/icons/icon_editar.png" alt="icone_editar" class="icone_editar"></a> 
-                                <i class="bi bi-trash" onclick="openPopup_Conf('.$row_perfil['id_cadastro_perfil'].')"></i>
+                                <a class="bi bi-trash" href="../pages/actions/perfil_delete_action.php?id_cadastro_perfil='.$row_perfil['id_cadastro_perfil'].'"></a> 
                             </div>
                         </div>
                     </li> 

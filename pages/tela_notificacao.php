@@ -1,27 +1,27 @@
 <?php
 
-
 require __DIR__."/../vendor/autoload.php";
 use App\Entity\Notificacao;
 
 require_once("../includes/menu.php"); 
 
-$notificacao = new Notificacao ;
+$notificacao = new Notificacao();
+//die('teste');
 
 $dados = $notificacao -> getNotificacao();
 
- 
+
 
 
 date_default_timezone_set('America/Sao_paulo');
 
 // $dataBanco = Notificacao::getNotificacao()[0]['data_hora'];
- 
+
 
 // $primeiraData = new DateTime($dataBanco);
 
 // $segundaData = new DateTime(date('Y-m-d H:i:s'));
- 
+
 
 // $diferenca = $segundaData->getTimestamp() - $primeiraData->getTimestamp();
 
@@ -31,29 +31,29 @@ date_default_timezone_set('America/Sao_paulo');
 $todas_notificacao = '';
 
 foreach ($dados as $contador){
-
+    
     $dataBanco = $contador['data_hora'];
-     
-
+    
+    
     $primeiraData = new DateTime($dataBanco);
-
+    
     $segundaData = new DateTime(date('Y-m-d H:i:s'));
     $unidadeTempo = "";
-
+    
     $diferenca = $segundaData->getTimestamp() - $primeiraData->getTimestamp();
-
+    
     $minutes = round($diferenca/60);
     $hours = round($diferenca/60/60);
     $days = round($diferenca/60/60/24);
-
+    
     
     if($diferenca < 60){
 
         $tempoAtras = $diferenca." Segundos";
-
+        
     }
     else if(($diferenca/60) > 59 and $diferenca/60/60 < 24){
-
+        
         // $diferenca = ($diferenca /60)/60;
         // $unidadeTempo = ' Horas ';
 
@@ -63,7 +63,7 @@ foreach ($dados as $contador){
 
         // $diferenca = $diferenca /60;
         // $unidadeTempo = " Minutos ";
-
+        
         $tempoAtras = $minutes." Minutos";
 
     }

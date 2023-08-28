@@ -150,15 +150,5 @@ $enviar_notificacao = $dados[0] ['enviar_notificacao'];
     </div>
 <!-- </main>    -->
 
-    <script>
-        function abrir_modal(){
-            Swal.fire({
-                 title: 'Perfil alterado com sucesso!', //TITULO DO POP_UP DE ACORDO COM SUA TELA 
-                 icon: 'success', // success, error e warning
-                 confirmButtonColor: '#609437', // DEFINE A COR DO BOTÃO OK
-                 confirmButtonText: 'OK'
-            });
-        }
-</script>
 </body>
 </html>
