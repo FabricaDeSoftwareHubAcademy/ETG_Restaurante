@@ -43,6 +43,10 @@
   .container{
     display: flex;
     flex-wrap: wrap;
+    overflow: hidden;
+    overflow-y: auto;
+    /* max-width: 800px; */
+    max-height: 500px;
     
 
   }
@@ -505,6 +509,10 @@ input[type="file"] {
   display: flex;
   justify-content: space-evenly;
   margin: 50px;
+  /* position: fixed; */
+  position: absolute;
+  bottom: auto;
+
 }
 
 .input-linha{
