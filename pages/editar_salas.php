@@ -1,9 +1,8 @@
 <?php
 
 
- 
 require __DIR__."/../vendor/autoload.php";
-
+include_once("../includes/menu.php");
 $obj_sala = new App\Entity\Sala;
 $obj_imagem = new App\Entity\Imagens;
 
@@ -13,7 +12,8 @@ $objCadastroChecklist = new CadastroChecklist();
 
 if (isset($_GET['id_sala']))
 {  
-    $dados_sala = $obj_sala::getById($_GET['id_sala']);
+    $dados_sala = $obj_sala::getDadosById($_GET['id_sala']);
+    //die('teste');
     $funcionamento = json_decode($dados_sala[0]['funcionamento'], true);
 }        
 
@@ -223,7 +223,7 @@ if (isset($_POST['btn_submit']))
                             </div>
 
                             <div class="Check_Box_individual">
-                                <p class="coisa_tag_p">Sabado</p>
+                                <p class="coisa_tag_p">Sábado</p>
                                 <input name="sabado" class="espaco_check_box" type="checkbox" <?=($funcionamento['sabado'] == 'sim' ? 'checked' : NULL)?>/>
                             </div>
 
@@ -267,7 +267,7 @@ if (isset($_POST['btn_submit']))
                             <script>
                                    
                             </script>
-                            <textarea placeholder="Area de texto " name="descricao_sala" id="textareajs" cols="70" rows="10" class="text-descricao"><?=$dados_sala[0]['descricao']?></textarea>
+                            <textarea placeholder="Area de texto " name="descricao_sala" id="textareajs" cols="70" rows="10" class="text-descricao" maxlength="254"><?=$dados_sala[0]['descricao']?></textarea>
                         </div>
                         <div class="cor-sala">
                             <div class="alinar-img">

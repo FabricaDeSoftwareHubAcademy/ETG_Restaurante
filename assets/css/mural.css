@@ -12,6 +12,10 @@
     cursor: pointer;
     
 }
+button{
+    border:  0 ;
+    padding: 0;
+}
 .geral{
 
     width: 100%;
@@ -221,4 +225,31 @@
     transition: all 0.4s;
     background-color: var(--cor-primaria-botao-green);
     color: var(--cor-primaria-botao-white);
+}
+.botao-confirmar-submit{
+    width: 150px;
+    height: 40px;
+    background-color: var(--cor-primaria-botao-white);
+    border: 3px solid var(--cor-primaria-botao-green);
+    border-radius: 20px;
+    cursor: pointer;
+    color: var(--cor-primaria-botao-green);
+    font-style: normal;
+    font-size: 'Montserrat';
+    font-weight: 580;
+    font-size: 15px;
+ 
+}
+.botao-cancelar-submit{
+    width: 150px;
+height: 40px;
+background-color: var(--cor-primaria-botao-white);
+border: 3px solid var(--cor-primaria-botao-red);
+border-radius: 20px;
+cursor: pointer;
+color: var(--cor-primaria-botao-red);
+font-style: normal;
+font-size: 'Montserrat';
+font-weight: 580;
+font-size: 15px;
 }

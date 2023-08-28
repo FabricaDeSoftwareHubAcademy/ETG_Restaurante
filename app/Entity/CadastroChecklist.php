@@ -38,5 +38,21 @@ class CadastroChecklist
         $dados = $obj_banco -> select() -> fetchAll(PDO::FETCH_ASSOC);
         return $dados;
     }
+
+
+    public static function cadastroPergunta($dados,$idCheck){
+       $obBanco = new Banco("relacao_pergunta_checklist");
+       foreach($dados as $idPergunta){
+        $idLista = [
+            'id_cadastro_pergunta' => $idPergunta,
+            'id_cadastro_checklist' => $idCheck];
+            $obBanco -> insert($idLista);
+        
+
+        
+       }
+        
+
+    }
 }
 

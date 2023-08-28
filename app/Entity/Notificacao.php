@@ -16,7 +16,7 @@ class Notificacao
             $id_notificacao = null,
             $id_remetente = null,
             $id_destinatario = null ,
-            $descricao = null,
+            $descricao = null
             )        
 
         {

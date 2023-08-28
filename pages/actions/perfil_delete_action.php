@@ -19,4 +19,5 @@ $response = [
     'status'=>true  
 ];
 
-echo(json_encode($response));
+// echo(json_encode($response));
+header("Location: ../gerenc_perfis.php");

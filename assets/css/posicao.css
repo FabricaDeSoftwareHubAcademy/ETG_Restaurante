@@ -14,15 +14,29 @@
     align-items: center; /* Centraliza na horizontal */
 }
 
-#titulo-pergunta {
+#titulo-pergunta-pre, #titulo-pergunta-pos {
     font-size: medium;
     font-family: 'Montserrat';
+
 }
 
 #titulo {
     font-family: 'Montserrat';
-    font-size: 40px;
-    margin-top: 40px;
+    
+}
+.titulo-selecione-pergunta-pre{
+    height:30px ;
+    display: flex;
+    text-align: center;
+    padding-top: 10px;
+}
+
+.titulo-selecione-pergunta-pos{
+    height:30px ;
+    display: flex;
+    text-align: center;
+    padding-top: 25px;
+
 }
 .titulo-topo{
     width: 100%;
@@ -39,7 +53,7 @@
     overflow: hidden;
     overflow-y: scroll;
     max-width: 800px;
-    max-height: 400px;
+    max-height: 195px;
 }
 
 .selecao-pergunta::-webkit-scrollbar{
@@ -88,9 +102,10 @@
 
 .botoes-cadastro-checklist {
     display: flex;
-
+    padding-top: 15px;
     justify-content: space-between;
     width: 1000px;
+    height: 140px;
 }
 
 /* Tabela de perguntas */

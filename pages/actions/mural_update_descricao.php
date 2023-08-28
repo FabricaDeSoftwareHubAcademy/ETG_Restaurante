@@ -11,7 +11,7 @@ use App\Entity\Recado;
 $dados = json_decode(file_get_contents('php://input'), true);
 
  
-$obRecado = new Recado($_SESSION['num_matricula_logado'],$dados['novaDescricao']);
+$obRecado = new Recado($_SESSION['id_user'],$dados['novaDescricao']);
 
 if($obRecado->setDados($dados['id_recado'])
 ){
@@ -27,6 +27,7 @@ if($obRecado->setDados($dados['id_recado'])
 }
 
 $responseJson = json_encode($response);
+
 echo($responseJson);
 
 
