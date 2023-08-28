@@ -51,6 +51,16 @@
 
   }
 
+  .container::-webkit-scrollbar{
+    width: 8px;
+    background-color: #eeeeee;
+    border-radius: 10px;
+  }
+  
+  .container::-webkit-scrollbar-thumb{
+    background-color: #F28920;
+    border-radius: 10px; 
+  } 
   
 
   .tela-cadastro-salas .wrap-cadastro-salas{
