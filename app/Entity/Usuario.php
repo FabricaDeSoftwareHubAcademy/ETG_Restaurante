@@ -32,7 +32,7 @@ class Usuario
         if($rowUser)
         {
             session_start();
-            $_SESSION['id_user'] = $rowUser[0]['num_matricula'];
+            $_SESSION['num_matricula_logado'] = $rowUser[0]['num_matricula'];
             return true;
         }
         else

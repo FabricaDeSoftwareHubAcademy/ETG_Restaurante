@@ -69,7 +69,7 @@ if (isset(  $_POST      ['nome_sala'],
             );
             if($obj_sala -> cadastrar())
             {
-                include_once("")
+                include_once("");
             }
             else
             {
