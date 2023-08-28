@@ -1,6 +1,6 @@
 <?php
 session_start();
-if(!isset($_SESSION['num_matricula_logado'])){
+if(!isset($_SESSION['id_user'])){
  
     header('Location: ../');
 }
