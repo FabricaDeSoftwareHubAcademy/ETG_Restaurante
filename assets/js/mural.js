@@ -11,6 +11,7 @@ bnt_editar = document.querySelectorAll(".icon_card_recado_editar");
 overlay_excluir = document.querySelector(".overlay_modal_excluir_recado");
 
 const btn_salvar_editar = document.querySelector('.botao-salvar-submit');
+// erro 
 const btn_salvar_excluir = document.querySelector('.botao-excluir-submit');
 
 
@@ -87,11 +88,15 @@ async function confirmarEditar(){
     response = await request.json();
     if(response['status']){
 
-        location.reload();
+        window.location.reload();
 
     }else{
         // mensagem de erro 
+        window.location.reload();
+
     }
+    window.location.reload();
+
 
 }
 
@@ -110,6 +115,8 @@ function openModalExcluir(){
     bnt_excluir.forEach(btn=>{
         btn.removeEventListener('click', openModalExcluir)
     })  
+
+    
 
 }
 function retornaAlgo(){
@@ -135,6 +142,7 @@ async function deletarRecado(){
     const dados = await fetch('./actions/recado_delete_action.php?id_recado='+id_recado_delete);
  
     const response = await dados.json();
+    console.log(response)
     if(response['status']){
 
         location.reload()
