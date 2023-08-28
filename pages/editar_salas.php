@@ -1,7 +1,6 @@
 <?php
 
 
- 
 require __DIR__."/../vendor/autoload.php";
 
 $obj_sala = new App\Entity\Sala;
@@ -13,7 +12,8 @@ $objCadastroChecklist = new CadastroChecklist();
 
 if (isset($_GET['id_sala']))
 {  
-    $dados_sala = $obj_sala::getById($_GET['id_sala']);
+    $dados_sala = $obj_sala::getDadosById($_GET['id_sala']);
+    //die('teste');
     $funcionamento = json_decode($dados_sala[0]['funcionamento'], true);
 }        
 

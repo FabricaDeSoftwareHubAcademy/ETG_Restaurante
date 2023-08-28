@@ -27,20 +27,9 @@ if (isset($_POST['botao_salvar'], $_POST['nome_cargo'])){
     
     /*Chamando o metodo cadastrar da classe Perfil, essa funcao primeiramente vai verificar se ja existe
     algum perfil com este nome, se sim vai retornar false, senao true, logo, vai cadastrar no banco.*/ 
-    if ($objPerfil -> setDados($id)){
-        echo("   <script>
-    
-            Swal.fire({
-                title: 'Perfil alterado com sucesso!', //TITULO DO POP_UP DE ACORDO COM SUA TELA 
-                icon: 'success', // success, error e warning
-                confirmButtonColor: '#609437', // DEFINE A COR DO BOTÃO OK
-                confirmButtonText: 'OK'
-            });
-           
-</script>");
-sleep(2);
-// header('Location: gerenc_perfis.php');
-
+    if ($objPerfil -> setDados($id))
+    {
+        header("Location: gerenc_perfis.php");
     }
 }
 
