@@ -1,38 +1,4 @@
-<?php
-require __DIR__."/../vendor/autoload.php";
 
-$obj_email = new App\Entity\Mailer;
-
-use App\Entity\Usuario;
-$objUsuario = new Usuario();
-
-
-if (isset($_POST['email'], $_POST['btn_submit'])){
-    if ($objUsuario -> emailValidate($_POST['email']))
-    {
-        if ($obj_email::sendEmail($_POST['email']))
-        {
-            session_start();
-            $_SESSION['email_to_redef_secret'] = $_POST['email'];
-            header("Location: tela_esqueceu_senha2.php");
-        }
-        else
-        {
-            die('algo deu errado com a classe ou algo relacionado');
-        }
-        
-        
-        
-    }
-    else
-    {
-        
-        die ("email n existe");
-        
-    }
-    }
- 
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

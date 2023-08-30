@@ -2,7 +2,7 @@
 require __DIR__."/../vendor/autoload.php";
 include_once("../includes/menu.php"); 
 require("../includes/header/header.php");
-require("../includes/main/main_cadastrar_pergunta.php");
+require("../includes/main/main_editar_usuario.php");
 //REGRAS DE NEGOCIO ABAIXO
 
 

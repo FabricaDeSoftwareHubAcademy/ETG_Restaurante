@@ -1,9 +1,3 @@
-<?php
-
-include_once("../includes/menu.php");
-
-?>
-
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>

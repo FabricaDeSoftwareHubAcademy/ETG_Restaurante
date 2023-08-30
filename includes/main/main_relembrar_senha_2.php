@@ -1,29 +1,4 @@
-<?php
-session_start();
-require __DIR__."/../vendor/autoload.php";
 
-
-if (isset($_POST['btn_submit']) && isset($_SESSION['cod_redef_senha']))
-{
-    if ($_POST['email'] == $_SESSION['cod_redef_senha'])
-    {
-        unset($_SESSION['cod_redef_senha']);
-        header("Location: tela_esqueceu_senha3.php");
-    }
-    else
-    {
-        die('ta errado!');
-    }
-}
-
-if (isset($_POST['btn_resend']))
-{
-    App\Entity\Mailer::sendEmail($_SESSION['email_to_redef_secret']);
-}
-
-
-
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -35,11 +10,6 @@ if (isset($_POST['btn_resend']))
     <link rel="stylesheet" href="../assets/css/menu.css">
 </head>
 <body class="Pai-de-todos">
-
-<?php
-
-include_once("../includes/menu.php")
-?>
 
     <main class="tudo_esqueceu_senha2">
         <section class='titulo_esqueceu_senha2'>

@@ -1,10 +1,3 @@
-<?php
-
-include_once("../includes/menu.php");
-require ("../vendor/autoload.php");
-
-?>
-
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
