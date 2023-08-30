@@ -43,10 +43,24 @@
   .container{
     display: flex;
     flex-wrap: wrap;
+    overflow: hidden;
+    overflow-y: auto;
+    /* max-width: 800px; */
+    max-height: 500px;
     
 
   }
 
+  .container::-webkit-scrollbar{
+    width: 8px;
+    background-color: #eeeeee;
+    border-radius: 10px;
+  }
+  
+  .container::-webkit-scrollbar-thumb{
+    background-color: #F28920;
+    border-radius: 10px; 
+  } 
   
 
   .tela-cadastro-salas .wrap-cadastro-salas{
@@ -505,6 +519,10 @@ input[type="file"] {
   display: flex;
   justify-content: space-evenly;
   margin: 50px;
+  /* position: fixed; */
+  position: absolute;
+  bottom: auto;
+
 }
 
 .input-linha{
