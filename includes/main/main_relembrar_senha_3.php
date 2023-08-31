@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="../assets/css/estilo_esqueceu_senha3.css">
+<link rel="stylesheet" href="../assets/css/relembrar_senha_3.css">
 
 <body>
     <main class="pai-de-todos">

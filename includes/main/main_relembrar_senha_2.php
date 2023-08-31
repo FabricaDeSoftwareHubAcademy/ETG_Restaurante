@@ -1,5 +1,4 @@
-<link rel="stylesheet" href="../assets/css/estilo_esqueceu_senha2.css">
-<link rel="stylesheet" href="../assets/css/menu.css">
+<link rel="stylesheet" href="../assets/css/relembrar_senha_2.css">
 <script src="../assets/js/tela_esqueceu_senha2.js"></script>
 
 

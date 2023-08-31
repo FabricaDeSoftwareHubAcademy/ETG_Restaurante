@@ -1,5 +1,4 @@
-<link rel="stylesheet" href="../assets/css/esqueceu_senha1.css">
-<link rel="stylesheet" href="../assets/css/menu.css">
+<link rel="stylesheet" href="../assets/css/relembrar_senha_1.css">
 
 <body class="Pai-de-todos">
     <main class="tudo_esqueceu_senha1">
