@@ -64,4 +64,3 @@ include_once('../includes/pop-ups/pop_ups_mural_recados/pop_ups mural_editar/pop
 </div>
  
 </body>
-</html>

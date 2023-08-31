@@ -29,7 +29,7 @@ if(isset($_POST['btn_confirmar_submit'])){
 
 // pegando informações dos recados 
 
-$recados = Recado::getRecados()->fetchAll(PDO::FETCH_ASSOC)  ?  Recado::getRecados()->fetchAll(PDO::FETCH_ASSOC) : "";
+$recados = Recado::getDados()->fetchAll(PDO::FETCH_ASSOC)  ?  Recado::getDados()->fetchAll(PDO::FETCH_ASSOC) : "";
 
 $cards_recados = '';
 

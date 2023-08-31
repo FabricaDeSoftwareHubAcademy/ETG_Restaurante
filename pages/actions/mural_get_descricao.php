@@ -9,7 +9,7 @@ use App\Entity\Recado;
  
 $dados = json_decode(file_get_contents('php://input'), true);
 
-$result = Recado::getRecadosById($dados['id_recado'])->fetchAll(PDO::FETCH_ASSOC)[0];
+$result = Recado::getDadosById($dados['id_recado'])->fetchAll(PDO::FETCH_ASSOC)[0];
 
 $listaJson = json_encode($result);
 echo($listaJson);

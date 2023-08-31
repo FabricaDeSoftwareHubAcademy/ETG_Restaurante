@@ -42,7 +42,7 @@ if(isset($_POST[''])){
 }
 if (isset($_POST['pergunta'])){
     $perguntas = $_POST['pergunta'];
-    $check -> cadastroPergunta($perguntas,$id);
+    $check -> cadastrarPergunta($perguntas,$id);
     
     echo ("<script>
     function abrir_modal(){

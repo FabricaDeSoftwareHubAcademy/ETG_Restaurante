@@ -36,4 +36,3 @@
         </section>
     </main>
 </body>
-</html>

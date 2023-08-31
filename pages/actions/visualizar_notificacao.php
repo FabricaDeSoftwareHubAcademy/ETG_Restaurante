@@ -9,7 +9,7 @@ if(isset($_GET['id_notificacao'])){
     $id_not = $_GET['id_notificacao'];
 }
 
-$dados = Notificacao::visualizar($id_not);
+$dados = Notificacao::setVisualizar($id_not);
 
 if($dados){
 

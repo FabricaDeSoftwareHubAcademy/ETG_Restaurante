@@ -6,12 +6,28 @@ use \App\Db\Banco;
 
 class Pergunta
 {
-
+    
     private $descricao;
-
+    
     public function __construct($descricao = null)
     {
         $this -> descricao = $descricao;
+    }
+    public function cadastrar()
+    {
+        $obj_banco = new Banco('cadastro_pergunta');
+        $dados = [
+            'descricao' => $this -> descricao
+                ];
+        // atualmente retonando true or false  
+        if($obj_banco -> insert($dados))
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
     public static function getDados()
     {
@@ -45,21 +61,5 @@ class Pergunta
             return false;
         }
 
-    }
-    public function cadastrar()
-    {
-        $obj_banco = new Banco('cadastro_pergunta');
-        $dados = [
-            'descricao' => $this -> descricao
-                ];
-        // atualmente retonando true or false  
-        if($obj_banco -> insert($dados))
-        {
-            return true;
-        }
-        else
-        {
-            return false;
-        }
     }
 }

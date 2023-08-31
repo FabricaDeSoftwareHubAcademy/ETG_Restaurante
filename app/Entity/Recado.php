@@ -16,6 +16,45 @@ class Recado
         $this -> descricao      = $descricao; 
     }
 
+    public function cadastrar()
+    {     
+        $obj_banco = new Banco('recado');
+        $dados = [
+            'descricao' => $this -> descricao,
+            'num_matricula' => $this -> num_matricula
+                ];
+
+        $obj_banco -> insert($dados);
+    }
+    public static function getDados()
+    {
+        $obj_banco = new Banco("recado");
+        $dados = $obj_banco -> select(null , ' id_recado DESC ');
+
+        if($dados -> rowCount() > 0)
+        {
+            //o fetch assoc vai vir pra ca futuramente
+            return $dados;
+        }
+        else
+        {
+            return false;
+        }
+    }
+    public static function getDadosById($id)
+    {
+        $obj_banco = new Banco("recado");   
+        $dados = $obj_banco -> select('id_recado = "'.$id.'" ' , ' id_recado DESC ');
+
+        if($dados->rowCount() > 0)
+        {    
+            return $dados;
+        }
+        else
+        {
+            return false;
+        }
+    }
     public function setDados($id_recado)
     {
         $obj_banco = new Banco('recado');
@@ -36,17 +75,6 @@ class Recado
         }
     }    
 
-    public function cadastrar()
-    {     
-        $obj_banco = new Banco('recado');
-        $dados = [
-            'descricao' => $this -> descricao,
-            'num_matricula' => $this -> num_matricula
-                ];
-
-        $obj_banco -> insert($dados);
-    }
-
     public static function deleteById($id_recado)
     {
         $obj_banco = new Banco('recado');
@@ -62,33 +90,4 @@ class Recado
         }
     }
 
-    public static function getRecados()
-    {
-        $obj_banco = new Banco("recado");
-        $dados = $obj_banco -> select(null , ' id_recado DESC ');
-
-        if($dados -> rowCount() > 0)
-        {
-            //o fetch assoc vai vir pra ca futuramente
-            return $dados;
-        }
-        else
-        {
-            return false;
-        }
-    }
-    public static function getRecadosById($id)
-    {
-        $obj_banco = new Banco("recado");   
-        $dados = $obj_banco -> select('id_recado = "'.$id.'" ' , ' id_recado DESC ');
-
-        if($dados->rowCount() > 0)
-        {    
-            return $dados;
-        }
-        else
-        {
-            return false;
-        }
-    }
 }

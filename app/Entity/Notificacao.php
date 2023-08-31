@@ -62,7 +62,7 @@ class Notificacao
     }
 
 
-    public static function visualizar($id){
+    public static function setVisualizar($id){
 
         $banco = new Banco ('notificacao');
         $dados = [
@@ -74,9 +74,6 @@ class Notificacao
         }else{
             return false;
         }
-
-
-
     }
 }
 ?>

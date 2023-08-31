@@ -29,30 +29,25 @@ class CadastroChecklist
         return $ultimoId;
     }
 
-
-
-    public function getDados() : array
-    {
-        $obj_banco = new Banco('cadastro_checklist');
-
-        $dados = $obj_banco -> select() -> fetchAll(PDO::FETCH_ASSOC);
-        return $dados;
-    }
-
-
-    public static function cadastroPergunta($dados,$idCheck){
+    public static function cadastrarPergunta($dados, $idCheck){
        $obBanco = new Banco("relacao_pergunta_checklist");
        foreach($dados as $idPergunta){
         $idLista = [
             'id_cadastro_pergunta' => $idPergunta,
             'id_cadastro_checklist' => $idCheck];
             $obBanco -> insert($idLista);
-        
-
-        
        }
-        
-
     }
+    
+    
+    public function getDados() : array
+    {
+        $obj_banco = new Banco('cadastro_checklist');
+        
+        $dados = $obj_banco -> select() -> fetchAll(PDO::FETCH_ASSOC);
+        return $dados;
+    }
+    
 }
+
 
