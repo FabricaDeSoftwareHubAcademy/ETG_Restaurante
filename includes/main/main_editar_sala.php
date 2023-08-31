@@ -1,23 +1,10 @@
 
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
+<link rel="stylesheet" href="https/cdnjs.cloudflare.comlibs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
+<link rel="stylesheet" href="../assets/css/cadastro_edicao_salas.css"> 
 
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Editar salas</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https/cdnjs.cloudflare.comlibs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="../assets/css/cadastro_edicao_salas.css"> 
-    <link rel="stylesheet" href="../includes/pop-ups/pop_ups_verification_sala/pop_ups_verification_sala.css">
-    <script src="../includes/pop-ups/pop_ups_verification_sala/pop_ups_verification_sala.js"></script>
-    <script src="https://code.jquery.com/jquery-3.7.0.js"integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM="crossorigin="anonymous"></script>
 
-    
-</head>
-<html>
+<script src="https://code.jquery.com/jquery-3.7.0.js"integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM="crossorigin="anonymous"></script>
 
 <body class="tela-cadastro-salas"> 
 
@@ -168,9 +155,7 @@
 
                         <div class="text-area">
                             <span id=descrição>Descrição</span>
-                            <script>
-                                   
-                            </script>
+
                             <textarea placeholder="Area de texto " name="descricao_sala" id="textareajs" cols="70" rows="10" class="text-descricao" maxlength="254"><?=$dados_sala[0]['descricao']?></textarea>
                         </div>
                         <div class="cor-sala">
@@ -236,7 +221,7 @@
             </div>
         </div>
     </section>
-    <script>
+<script>
 const remover = document.querySelector(".imagem_aparecer_editar");
 const novo_css = document.querySelector(".novo_css_imagem");
 $(document).ready(function() {
@@ -258,18 +243,6 @@ $(document).ready(function() {
         reader.readAsDataURL(file);
     });
 });
-
-function abrir_modal(){
-            Swal.fire({
-                title: 'editado com sucesso!', //TITULO DO POP_UP DE ACORDO COM SUA TELA 
-                icon: 'success', // success, error e warning
-                confirmButtonColor: '#609437', // DEFINE A COR DO BOTÃO OK
-                confirmButtonText: 'OK'
-            });
-        }
-
-
-
 </script>
     
 </body>

@@ -1,19 +1,11 @@
+<link rel="stylesheet" href="../includes/pop-ups/pop_ups_mural_recados/pop_ups mural_editar/style-pop-up-mural.css">
+<link rel="stylesheet" href="../includes/pop-ups/pop_ups_mural_recados/pop_ups_mural_novo_recado/pop_ups_mural_recado.css">
+<link rel="stylesheet" href="../assets/css/mural.css"> 
+<script src="../assets/js/script-pop-up-mural.js"></script>
+<script src="../assets/js/pop_ups_mural_recado.js"></script>
+<script src="../assets/js/mural.js"></script>
 
-
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mural de Recados</title>
-    <link rel="stylesheet" href="../includes/pop-ups/pop_ups_mural_recados/pop_ups mural_editar/style-pop-up-mural.css">
-    <link rel="stylesheet" href="../includes/pop-ups/pop_ups_mural_recados/pop_ups_mural_novo_recado/pop_ups_mural_recado.css">
-    
-    <link rel="stylesheet" href="../assets/css/mural.css"> 
-
-</head>
 <body class="body_mural">
-    
     <div class="overlay_modal_excluir_recado">
 
         <div class="area_modal_excluir_recado">
@@ -70,8 +62,5 @@ include_once('../includes/pop-ups/pop_ups_mural_recados/pop_ups mural_editar/pop
         <a href="listar_salas.php"><input type="submit" class="botao-inicio-submit"  value="SALAS"></a>
 </div>
  
-<script src="../assets/js/script-pop-up-mural.js"></script>
-<script src="../assets/js/pop_ups_mural_recado.js"></script>
-<script src="../assets/js/mural.js"></script>
 </body>
 </html>

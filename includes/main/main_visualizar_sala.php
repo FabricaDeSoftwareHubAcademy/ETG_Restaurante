@@ -1,54 +1,15 @@
-<?php
-    require_once("../includes/menu.php");
 
-    require __DIR__."/../vendor/autoload.php";
-    use App\Entity\Sala;
-
-    if(isset($_GET['id_sala'])){
-        $id_sala = $_GET['id_sala'];
-
-        $dados = Sala::getDadosById($id_sala);
-       
- 
-    }
-    // print_r($dados);
-//  echo($dados['funcionamento']);
- $funcionamento = json_decode($dados[0]['funcionamento'],true);
-//  print_r($funcionamento);
-
- $segunda = $funcionamento['segunda'] == 'sim' ? 'Segunda' : '';
- $terca = $funcionamento['terca'] == 'sim' ? 'Terça' : '';
- $quarta = $funcionamento['quarta'] == 'sim' ? 'Quarta' : '';
- $quinta = $funcionamento['quinta'] == 'sim' ? 'Quinta' : '';
- $sexta = $funcionamento['sexta'] == 'sim' ? 'Sexta' : '';
- $sabado = $funcionamento['sabado'] == 'sim' ? 'Sábado' : '';
- $matutino = $funcionamento['turnos']['matutino'] == 'sim' ? 'Matutino' : ' ';
- $vespertino = $funcionamento['turnos']['vespertino'] == 'sim' ? 'Vespertino' : ' ';
- $noturno = $funcionamento['turnos']['noturno'] == 'sim' ? 'Noturno' : ' ';
- 
-?>
-
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Visualizar Sala</title>
-    <link rel="stylesheet" href="../assets/css/visualizar_sala.css">
-    <style>
-
-
- 
-.card{
+<style>
+        
+        .card{
     border: solid  <?=$dados[0]['cor']?>;
     box-shadow: 0 0 1em <?=$dados[0]['cor']?>;
 }
 
-    </style>
+</style>
 
-    
-</head>
+<link rel="stylesheet" href="../assets/css/visualizar_sala.css">
+
 <body class="visualizar_sala">
     <div class="pagina-visualizar-sala">
         <section class="area_card">

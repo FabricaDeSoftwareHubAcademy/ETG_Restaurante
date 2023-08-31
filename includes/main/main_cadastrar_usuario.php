@@ -1,15 +1,7 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Esquecer Senha</title>
-    <link rel="stylesheet" href="../assets/css/cadastro_usuario.css">
-    <link rel="stylesheet" href="../assets/css/menu.css">
-</head>
-<body class="Pai-de-todos">
+<link rel="stylesheet" href="../assets/css/cadastro_usuario.css">
+<link rel="stylesheet" href="../assets/css/menu.css">
 
+<body class="Pai-de-todos">
 
     <main class="tudo_esqueceu_senha1">
         <form method="POST">
@@ -70,6 +62,5 @@
             </section>
         </form>
     </main>
-    </script>
 </body>
 </html>

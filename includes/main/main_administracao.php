@@ -1,5 +1,6 @@
+<link rel="stylesheet" href="../assets/css/administracao.css">
+
 <body>
-    <link rel="stylesheet" href="../assets/css/administracao.css">
 
 
  <table class="tabela_salas">

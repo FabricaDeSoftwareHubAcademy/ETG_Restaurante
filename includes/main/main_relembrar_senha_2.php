@@ -1,14 +1,8 @@
+<link rel="stylesheet" href="../assets/css/estilo_esqueceu_senha2.css">
+<link rel="stylesheet" href="../assets/css/menu.css">
+<script src="../assets/js/tela_esqueceu_senha2.js"></script>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Esquecer Senha</title>
-    <link rel="stylesheet" href="../assets/css/estilo_esqueceu_senha2.css">
-    <link rel="stylesheet" href="../assets/css/menu.css">
-</head>
+
 <body class="Pai-de-todos">
 
     <main class="tudo_esqueceu_senha2">
@@ -36,7 +30,6 @@
                             <div>
                                 <input type="submit" class="botao-enviar-dnv" id="actionBtn" name="btn_resend" value="Enviar novamente">
                             </div>
-                            <script src="../assets/js/tela_esqueceu_senha2.js"></script>
                         </div>
                     </section>
                 

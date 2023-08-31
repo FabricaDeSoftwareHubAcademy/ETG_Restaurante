@@ -1,16 +1,12 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../assets/css/estilo_perfil_user.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="../assets/css/estilo-botao-minha-conta.css">
-    <title>Minha Conta</title>
-</head>
+<link rel="stylesheet" href="../assets/css/estilo_perfil_user.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
+<link rel="stylesheet" href="../assets/css/estilo-botao-minha-conta.css">
+
+
 <body>
+
+
     <main class="pai-de-todos">
-        <?php include_once("../includes/menu.php"); ?>
         <form class="form-minha-conta">
             <section class="titulo">
                 <h1 class="titulo-perfil">Minha Conta</h1>

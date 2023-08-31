@@ -1,32 +1,13 @@
 
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
+<link rel="stylesheet" href="../assets/css/cadastro_edicao_salas.css"> 
+<script src="https://code.jquery.com/jquery-3.7.0.js"integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM="crossorigin="anonymous"></script>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro de salas</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="../assets/css/cadastro_edicao_salas.css"> 
-    <script src="https://code.jquery.com/jquery-3.7.0.js"integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM="crossorigin="anonymous"></script>
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-
-
-
-
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.18/dist/sweetalert2.all.min.js"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200&display=swap" rel="stylesheet">
-
-    
-</head>
-
-<body class="tela-cadastro-salas">
        
+<body class="tela-cadastro-salas">
 
     <section class="container">
    
@@ -209,9 +190,6 @@
 
 <script>
 
-
-
-
 const remover = document.querySelector(".imagem_aparecer");
 const novo_css = document.querySelector(".novo_css_imagem");
 $(document).ready(function() {
@@ -233,23 +211,7 @@ $(document).ready(function() {
         reader.readAsDataURL(file);
     });
 });
-
-
-
-
-
-        function abrir_modal(){
-            Swal.fire({
-                title: 'Cadastrado com sucesso!', //TITULO DO POP_UP DE ACORDO COM SUA TELA 
-                icon: 'success', // success, error e warning
-                confirmButtonColor: '#609437', // DEFINE A COR DO BOTÃO OK
-                confirmButtonText: 'OK'
-            });
-        }
-    
 </script>
-
-
     
 </body>
 </html>

@@ -1,15 +1,6 @@
+<link rel="stylesheet" href="../assets/css/listar_salas.css"> 
+<script defer src="../assets/js/effect_scroll.js"></script>
 
-
-<!-- nome da sala cabe 32 caracteres  -->
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="../assets/css/listar_salas.css"> 
-    <script defer src="../assets/js/effect_scroll.js"></script>
-</head>
 <body class="body_listar_salas">
 
     <h1 class="title_listar_salas">Salas</h1>

@@ -1,31 +1,17 @@
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Edição  de perfil</title>
-    
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https/cdnjs.cloudflare.comlibs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
-    <!-- POP_UP -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.18/dist/sweetalert2.min.css">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.18/dist/sweetalert2.all.min.js"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200&display=swap" rel="stylesheet">
-    <!-- <link rel="stylesheet" href="../assets/css/estilo_botoes_padronizados.css"> -->
-    <link rel="stylesheet" href="../assets/css/cadastro_perfil.css">
-    
-</head>
+
+<link rel="stylesheet" href="https/cdnjs.cloudflare.comlibs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
+<!-- POP_UP -->
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link rel="stylesheet" href="../assets/css/cadastro_perfil.css">
 
 <body class="tela_cadastro_perfil">
-    <!-- <main class="pai-de-todos"> -->
-        <?php
-        //toma essa gambiarra ass luiz
-        include_once("../includes/menu.php"); 
-        // include_once("../modal/modal_verification.php");
-        ?>
+
+
     <div class="container">
         <div class="titulo_cad" >
             <h1 class="titulo_cad_perfil" >

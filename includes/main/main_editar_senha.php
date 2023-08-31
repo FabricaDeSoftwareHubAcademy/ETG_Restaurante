@@ -1,27 +1,12 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
-    
-    <link rel="stylesheet" href="../assets/css/input_button_redefinir_senha.css">
-    <link rel="stylesheet" href="../includes/pop-ups/pop_ups senha_alterada/pop_ups verification_senha_alterada.css">
-    <link rel="stylesheet" href="../includes/pop-ups/pop_ups verification_excluir/pop_ups verification_excluir.css">
-    <script src="../includes/pop-ups/pop_ups verification_excluir/pop_ups verification_excluir.js"></script>
 
-    <!--Alterar Cabeçalho pelo novo-->
-    <title>Alterar Senha</title>
-    <script src="../includes/pop-ups/pop_ups senha_alterada/pop_ups verification_senha_alterada.js"></script>
+<link rel="stylesheet" href="../assets/css/input_button_redefinir_senha.css">
+<link rel="stylesheet" href="../assets/css/estilo_redefinir_senha.css">
 
-    <link rel="stylesheet" href="../assets/css/estilo_redefinir_senha.css">
-    
 
-</head>
 <body>
-<!-- openPopupexcluir -->
-<!-- closePopupexcluir -->
+
+
+
     <div class="container-pop-up-excluir">
             <div class="popup-excluir" id="popup-up-excluir">
                 <img src="../includes/pop-ups/pop_ups verification_excluir/imgs/x-circle 1.png" alt="carregando">
@@ -32,21 +17,6 @@
                 </div>
             </div>
         </div>
-
-
-    <?php
-
-    if($logado){
-        echo("<script> openPopupsenha() </script>");
-    }
-
-    if($erro){
-
-        echo("<script> openPopupexcluir() </script>");
-        
-    }
-
-    ?>
 
     <main class="pai-de-todos">
         <?php include_once("../includes/menu.php"); ?>

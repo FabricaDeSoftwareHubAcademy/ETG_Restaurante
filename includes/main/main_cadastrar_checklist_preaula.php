@@ -1,16 +1,8 @@
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Checklist Pré-Aula</title>
-    
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
-    
-    <link rel="stylesheet" href="../assets/css/estilo_checklist_pre_aula.css">
-    
-</head>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
+<link rel="stylesheet" href="../assets/css/estilo_checklist_preaula.css">
+<script src="../assets/js/checklist.js"></script>
+
 
 <body class="container_checklist">
 
@@ -126,5 +118,4 @@
         </main>
 
 </body>
-<script src="../assets/js/checklist.js"></script>
 </html>
