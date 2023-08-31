@@ -16,6 +16,8 @@ class Recado
         $this -> descricao      = $descricao; 
     }
 
+
+    //CREATE
     public function cadastrar()
     {     
         $obj_banco = new Banco('recado');
@@ -26,6 +28,8 @@ class Recado
 
         $obj_banco -> insert($dados);
     }
+
+    //READ
     public static function getDados()
     {
         $obj_banco = new Banco("recado");
@@ -41,6 +45,10 @@ class Recado
             return false;
         }
     }
+    
+    //READ
+
+    
     public static function getDadosById($id)
     {
         $obj_banco = new Banco("recado");   
@@ -55,6 +63,8 @@ class Recado
             return false;
         }
     }
+
+    //UPDATE
     public function setDados($id_recado)
     {
         $obj_banco = new Banco('recado');
@@ -75,6 +85,8 @@ class Recado
         }
     }    
 
+
+    //DELETE
     public static function deleteById($id_recado)
     {
         $obj_banco = new Banco('recado');

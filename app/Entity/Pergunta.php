@@ -13,6 +13,8 @@ class Pergunta
     {
         $this -> descricao = $descricao;
     }
+
+    //CREATE
     public function cadastrar()
     {
         $obj_banco = new Banco('cadastro_pergunta');
@@ -29,6 +31,8 @@ class Pergunta
             return false;
         }
     }
+
+    //READ
     public static function getDados()
     {
         $obj_banco = new Banco('cadastro_pergunta');
@@ -45,6 +49,8 @@ class Pergunta
         }
 
     }
+
+    //READ
     //de GetPerguntasById para GetDadosById
     public static function getDadosById($id)
     {

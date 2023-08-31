@@ -46,6 +46,7 @@ class Sala
     }
 
 
+    //CREATE
     public function cadastrar() : bool
     {
         $objBanco = new Banco('Cadastro_sala');
@@ -63,6 +64,8 @@ class Sala
         return true;
     }
 
+
+    //READ
     public static function getDados()
     {
         $obj_banco = new Banco('Cadastro_sala');
@@ -72,6 +75,8 @@ class Sala
         return $salas;
     }
 
+
+    //READ
     public static function getDadosById($id_sala)
     {
         $objBanco = new Banco('Cadastro_sala');
@@ -79,6 +84,8 @@ class Sala
         return $dados;
     }
 
+
+    //UPDATE
     public function setDados($id = null, $dados = []) : bool
     {
         //var_dump($dados);exit;

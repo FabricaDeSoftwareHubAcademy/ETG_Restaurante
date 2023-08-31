@@ -19,7 +19,7 @@ class CadastroChecklist
     }
 
 
-    //
+    //CREATE
     public function cadastrar() : string
     {
         $obj_banco = new Banco('checklist_test');
@@ -29,6 +29,7 @@ class CadastroChecklist
         return $ultimoId;
     }
 
+    //CREATE
     public static function cadastrarPergunta($dados, $idCheck){
        $obBanco = new Banco("relacao_pergunta_checklist");
        foreach($dados as $idPergunta){
@@ -39,7 +40,7 @@ class CadastroChecklist
        }
     }
     
-    
+    //READ
     public function getDados() : array
     {
         $obj_banco = new Banco('cadastro_checklist');

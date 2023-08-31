@@ -43,6 +43,7 @@ class Perfil
 
     }
 
+    //CREATE
     public function cadastrar() : bool
     {
         $obj_banco = new Banco('cadastro_perfil');
@@ -71,6 +72,7 @@ class Perfil
         }
     }
 
+    //READ
     public function getDados()
     {
         $obj_banco = new Banco('cadastro_perfil');
@@ -80,6 +82,7 @@ class Perfil
         return $dados;
     }
 
+    //READ
     public function getDadosById($id_cadastro_perfil)
     {
         $obj_banco = new Banco('cadastro_perfil');        
@@ -90,6 +93,7 @@ class Perfil
     }
 
 
+    //UPDATE
     public function setDados($id)
     {
         $obj_banco = new Banco('cadastro_perfil');
@@ -112,6 +116,7 @@ class Perfil
         return true;
     }
 
+    //DELETE
     public function deleteById($id)
     {
         $obj_banco = new Banco('cadastro_perfil');
