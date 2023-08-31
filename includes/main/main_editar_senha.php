@@ -1,25 +1,10 @@
 
-<link rel="stylesheet" href="../assets/css/input_button_redefinir_senha.css">
-<link rel="stylesheet" href="../assets/css/estilo_redefinir_senha.css">
+<link rel="stylesheet" href="../assets/css/editar_senha/input_button_editar_senha.css">
+<link rel="stylesheet" href="../assets/css/editar_senha/editar_senha.css">
 
 
 <body>
-
-
-
-    <div class="container-pop-up-excluir">
-            <div class="popup-excluir" id="popup-up-excluir">
-                <img src="../includes/pop-ups/pop_ups verification_excluir/imgs/x-circle 1.png" alt="carregando">
-
-                <p>Informações incorretas</p>
-                <div class="botao-padrao-ok">
-                    <a href="#"><input type="submit" class="botao-ok-submit1" onclick="closePopupexcluir()" value="OK"></a>
-                </div>
-            </div>
-        </div>
-
     <main class="pai-de-todos">
-        <?php include_once("../includes/menu.php"); ?>
         <section class='titulo_alterar_senha'>
             <h1>Alterar Senha</h1>
         </section>

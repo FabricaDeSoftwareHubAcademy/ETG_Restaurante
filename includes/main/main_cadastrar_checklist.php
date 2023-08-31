@@ -1,10 +1,12 @@
-<link rel="stylesheet" href="estilo_perfil.css">
 <link rel="stylesheet" href="https/cdnjs.cloudflare.comlibs/font-awesome/6.4.0/css/all.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-<link rel="stylesheet" href="../assets/css/input-checklist.css">
-<link rel="stylesheet" href="../assets/css/posicao.css">
-<link rel="stylesheet" href="../assets/css/caixa_pergunta.css">
-<link rel="stylesheet" href="../assets/css/botões-checklist.css">
+
+
+<link rel="stylesheet" href="../assets/css/cadastrar_checklist/input_checklist.css">
+<link rel="stylesheet" href="../assets/css/cadastrar_checklist/posicao.css">
+<link rel="stylesheet" href="../assets/css/cadastrar_checklist/caixa_pergunta.css">
+<link rel="stylesheet" href="../assets/css/cadastrar_checklist/botões_checklist.css">
+
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 

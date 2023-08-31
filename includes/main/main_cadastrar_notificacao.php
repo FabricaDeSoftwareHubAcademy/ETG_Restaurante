@@ -1,5 +1,5 @@
 
-<link rel="stylesheet" href="../assets/css/estilo_enviar_notificacao.css">
+<link rel="stylesheet" href="../assets/css/cadastrar_notificacao.css">
 
 
 <body class="pai_de_todos">

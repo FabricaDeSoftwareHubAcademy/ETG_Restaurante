@@ -1,5 +1,5 @@
-<link rel="stylesheet" href="../assets/css/cadastro_usuario.css">
-<link rel="stylesheet" href="../assets/css/menu.css">
+<link rel="stylesheet" href="../assets/css/cadastrar_usuario.css">
+
 
 <body class="Pai-de-todos">
 

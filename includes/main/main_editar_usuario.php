@@ -1,7 +1,7 @@
-<link rel="stylesheet" href="../assets/css/estilo_perfil_user.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
-<link rel="stylesheet" href="../assets/css/estilo-botao-minha-conta.css">
 
+<link rel="stylesheet" href="../assets/css/editar_usuario/botao_editar_usuario.css">
+<link rel="stylesheet" href="../assets/css/editar_usuario/editar_usuario.css">
 
 <body>
 

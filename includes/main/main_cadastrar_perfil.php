@@ -83,7 +83,7 @@
                     </div>
                     <!--Botão Salvar-->
                     <div class="botao-padrao-salvar">
-                        <a href="../pages/gerenc_perfis.php"><input name="botao_salvar" type="submit" class="botao-salvar-submit" value="SALVAR" onclick="abrir_modal()"></a>
+                        <a href="../pages/gerenc_perfis.php"><input name="botao_salvar" type="submit" class="botao-salvar-submit" value="SALVAR"></a>
                     </div>
                 </div>
             </div>
