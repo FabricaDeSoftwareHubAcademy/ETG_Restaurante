@@ -17,7 +17,7 @@
         </div>
         <form method="POST" class="form_permissoes">
             <div class="input_group">
-                <input type="input" class="input_field" placeholder="Name" name="nome_cargo" value="<?=$dados[0]["nome_cargo"];?>" >
+                <input type="input" class="input_field" placeholder="Name" name="nome_cargo" value="<?=$dados[0]["nome"];?>" >
                 <label for="name" class="input_label">Nome</label> <!--Alterar para o nome do input-->
             </div>
             <div class="permissoes_salas">
@@ -74,11 +74,11 @@
             <div class="botoes">
                 <!--Botão Voltar-->
                 <div class="botao-padrao-voltar">
-                    <a href="gerenc_perfis.php"class="botao-voltar-submit">VOLTAR</a>
+                    <a href="listar_perfis.php"class="botao-voltar-submit">VOLTAR</a>
                 </div>
                 <!--Botão Salvar-->
                 <div class="botao-padrao-voltar">
-                    <a href="#"><input name="botao_salvar" type="submit" class="botao-salvar-submit"  value="SALVAR" onclick="abrir_modal()"></a>
+                    <a href="listar_perfis.php"><input name="botao_salvar" type="submit" class="botao-salvar-submit"  value="SALVAR"></a>
                 </div>
             </div>
         </form>  

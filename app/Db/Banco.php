@@ -8,7 +8,7 @@ class Banco{
     //Variaveis referentes a conexao com o banco de dados
     const HOST = '192.168.22.9';
   
-    const DB_NAME = 'etg_homologacao';
+    const DB_NAME = 'etg';
     const USER = 'fabrica';
     const PASS = 'fabrica@2022';
     private $table;//variavel que vai falar sobre qual tabela do banco esta sendo tratada

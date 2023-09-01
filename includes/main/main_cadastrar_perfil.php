@@ -9,12 +9,11 @@
 <!-- POP_UP -->
 
 <link rel="stylesheet" href="../assets/css/estilo_botoes_padronizados.css">
-<link rel="stylesheet" href="../assets/css/cadastro_perfil.css">
+<link rel="stylesheet" href="../assets/css/cadastrar_editar_perfil.css">
 
 
 <body class="tela_cadastro_perfil">
-
-
+    
     <div class="container">
         <div class="titulo_cad" >
             <h1 class="titulo_cad_perfil">Cadastro de Perfil</h1>
@@ -79,15 +78,16 @@
                 <div class="botoes">
                     <!--Botão Voltar-->
                     <div class="botao-padrao-voltar">
-                        <a href="gerenc_perfis.php" class="botao-voltar-submit">VOLTAR</a>
+                        <a href="listar_perfis.php" class="botao-voltar-submit">VOLTAR</a>
                     </div>
                     <!--Botão Salvar-->
                     <div class="botao-padrao-salvar">
-                        <a href="../pages/gerenc_perfis.php"><input name="botao_salvar" type="submit" class="botao-salvar-submit" value="SALVAR"></a>
+                        <a><input name="botao_salvar" type="submit" class="botao-salvar-submit" value="SALVAR"></a>
                     </div>
                 </div>
             </div>
         </form>
     </div>     
 </body>
+
 

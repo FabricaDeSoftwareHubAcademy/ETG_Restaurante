@@ -11,7 +11,7 @@
 <body class="tela_gerenciam_perfis">
 
         <main class="pai-de-todos">
-            <form action="cadastro_perfil.php" method="GET">
+            <form action="" method="GET">
                 <div class="container_gp">
                         <h1 class="Perfis">Perfis</h1>
                             <ul class="cardsgerenc">
@@ -28,7 +28,7 @@
                         </div>
 
                         <div class="botao-padrao-cadastrar">
-                            <a href="./cadastro_perfil.php"><input name="btn_submit" type="submit" class="botao-cadastrar-submit"  value="CADASTRAR"></a>
+                            <a href="cadastrar_perfil.php">CADASTRAR</a>
                         </div>
                     </div>  
                         
