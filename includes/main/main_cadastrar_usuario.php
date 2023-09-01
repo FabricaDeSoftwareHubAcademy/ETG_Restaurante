@@ -1,5 +1,5 @@
 <link rel="stylesheet" href="../assets/css/cadastrar_usuario.css">
-
+<link rel="stylesheet" href="../assets/css/estilo_botoes_padronizados.css">
 
 <body class="Pai-de-todos">
 
@@ -51,12 +51,12 @@
 
             <!--Botão Voltar-->
                 <div class="botao-padrao-voltar">
-                    <a href="#"><input type="submit" class="botao-voltar-submit"  value="VOLTAR"></a>
+                    <a href="listar_salas.php" class="botao-voltar-submit">VOLTAR</a>
                 </div>
 
             <!--Botão Confirmar-->
                 <div class="botao-padrao-confirmar">
-                    <a href=""><input type="submit" class="botao-confirmar-submit" name="btn_submit" value="CONFIRMAR"></a>
+                    <a><input type="submit" class="botao-confirmar-submit" name="btn_submit" value="CONFIRMAR"></a>
                 </div>
 
             </section>

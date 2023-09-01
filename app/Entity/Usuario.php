@@ -24,31 +24,32 @@ class Usuario
 
 
     //CREATE
-    public function cadastrar($nome = null , $email = null, $id_perfil = null, $num_matricula = null, $senha = null)
+    public function cadastrar($nome = null , $email = null, $num_matricula = null, $senha = null, $id_perfil = null)
     {
         $obj_banco = new Banco('cadastro_usuario');
-
         $validacao_email = $obj_banco -> select('email = "'.$email.'"') -> fetchAll(PDO::FETCH_ASSOC);
         
         if ($validacao_email)
         {
             die('email ja existe'); //modal para email errado return false
         }
-
-        $validacao_matricula = $obj_banco -> select('num_matricula = '.$num_matricula) -> fetchAll(PDO::FETCH_ASSOC);
-
+        
+        $validacao_matricula = $obj_banco -> select('matricula = '.$num_matricula) -> fetchAll(PDO::FETCH_ASSOC);
+        
         if ($validacao_matricula)
         {
             die('num_matricula ja existe'); //modal para num_matricula errado return false
         }
         else if (!$validacao_email && !$validacao_matricula)
         {
-            $obj_banco -> insert(['num_matricula'   =>      $num_matricula, 
-            'id_perfil'         =>      $id_perfil,
+            $obj_banco -> insert(['nome'            =>      $nome,
                                 'email'             =>      $email,
+                                'matricula'         =>      $num_matricula, 
                                 'senha'             =>      $senha,
-                                'nome'              =>      $nome
-                            ]);
+                                'id_perfil'         =>      $id_perfil
+              
+        ]);
+        //die('qwghkglda');
             return true;
         }
     }

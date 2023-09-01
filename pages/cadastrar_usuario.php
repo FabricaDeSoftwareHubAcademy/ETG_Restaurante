@@ -3,7 +3,6 @@
 require __DIR__."/../vendor/autoload.php";
 include_once("../includes/menu.php"); 
 require("../includes/header/header.php");
-require("../includes/main/main_cadastrar_usuario.php");
 
 
 use App\Entity\Perfil;
@@ -19,8 +18,9 @@ $dados = $objCadastroPerfil -> getDados();
 
 $options = '';
 foreach ($dados as $row_check ){
-    $options .= '<option  class="ops" value="'.$row_check['id_cadastro_perfil'].'"> '.$row_check['nome_cargo'].' </option>'; 
-} 
+    //var_dump($row_check);exit;
+    $options .= '<option  class="ops" value="'.$row_check['id'].'"> '.$row_check['nome'].' </option>'; 
+}
 // }
 if(isset(
         $_POST['btn_submit'],
@@ -30,15 +30,18 @@ if(isset(
         $_POST['senha'],
         ))
         
-{
-    //die('qwghkglda');
+        {
+            
+            $objUsuario -> cadastrar(
+            $_POST['nome'],
+            $_POST['email'],
+            $_POST['num_matricula'],
+            $_POST['senha'],
+            $_POST['id_perfil']
+            
+        );
+    }
 
-    $objUsuario -> cadastrar($_POST['nome'],
-    $_POST['email'],
-    $_POST['id_perfil'],
-    $_POST['num_matricula'],
-    $_POST['senha']
-    );
-}
+require("../includes/main/main_cadastrar_usuario.php");
 require("../includes/footer/footer.php");
 ?>
