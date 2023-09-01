@@ -14,7 +14,7 @@
         <!--Botão IR PARA MURAL DE AVISOS-->
         <div class="centralizar_btn">
             <div class="botao-padrao-mural-aviso">
-            <a href="mural.php" class="botao-mural-aviso-submit">MURAL DE AVISOS</a>
+            <a href="listar_recados.php" class="botao-mural-aviso-submit">MURAL DE AVISOS</a>
             </div>
         </div>
 

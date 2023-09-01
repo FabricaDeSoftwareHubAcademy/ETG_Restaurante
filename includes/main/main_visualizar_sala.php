@@ -2,8 +2,8 @@
 <style>
         
         .card{
-    border: solid  <?=$dados[0]['cor']?>;
-    box-shadow: 0 0 1em <?=$dados[0]['cor']?>;
+    border: solid  <?=$dados[0]['cor_itens']?>;
+    box-shadow: 0 0 1em <?=$dados[0]['cor_itens']?>;
 }
 
 </style>
@@ -16,7 +16,7 @@
             <div class="card">
                 <div class="imagem_card">
                         
-                    <img src="../storage/salas/<?= $dados[0]['imagem']?>" alt="" id="img_config">
+                    <img src="../storage/salas/<?= $dados[0]['img_sala']?>" alt="" id="img_config">
                 </div>
                 <div class="texto_card">
 
@@ -81,7 +81,7 @@
 
                 <!--Botão Voltar-->
                 <div class="botao-padrao-voltar">
-                    <a href="mural.php"><input type="submit" class="botao-voltar-submit"  value="VOLTAR"></a>
+                    <a href="listar_salas.php">VOLTAR</a>
                 </div>
 
                 <div class="botao-padrao-fazer-checklist">

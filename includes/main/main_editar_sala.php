@@ -202,7 +202,7 @@
                     <div class="alinar-botoes">
 
                         <div class="botao-padrao-voltar">
-                            <a><input type="reset" class="botao-voltar-submit"  value="VOLTAR"></a>
+                            <a href="listar_salas.php">VOLTAR</a>
                         </div>
                         
                         <div class="botao-padrao-cadastrar">

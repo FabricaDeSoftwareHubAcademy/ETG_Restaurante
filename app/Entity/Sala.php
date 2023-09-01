@@ -64,7 +64,7 @@ class Sala
     //READ
     public static function getDados()
     {
-        $obj_banco = new Banco('Cadastro_sala');
+        $obj_banco = new Banco('cadastro_sala');
 
         $salas = $obj_banco -> select() -> fetchAll(PDO::FETCH_ASSOC);
 
@@ -75,8 +75,8 @@ class Sala
     //READ
     public static function getDadosById($id_sala)
     {
-        $objBanco = new Banco('Cadastro_sala');
-        $dados = $objBanco -> select("id_cadastro_sala = ".$id_sala) -> fetchAll(PDO::FETCH_ASSOC);
+        $objBanco = new Banco('cadastro_sala');
+        $dados = $objBanco -> select("id = ".$id_sala) -> fetchAll(PDO::FETCH_ASSOC);
         return $dados;
     }
 
