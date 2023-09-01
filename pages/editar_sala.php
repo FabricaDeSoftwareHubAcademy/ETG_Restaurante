@@ -28,7 +28,7 @@ foreach ($dados as $row_check)
     $checklists[$row_check['id_cadastro_checklist']] = $row_check['nome']; 
     $options .= '<option  class="ops" value="'.$row_check['id_cadastro_checklist'].'"> '.$row_check['nome'].' </option>';
 }
-
+ 
 
 if (isset($_POST['btn_submit']))
 {
@@ -42,7 +42,7 @@ if (isset($_POST['btn_submit']))
                                 "quinta" => ($_POST['quinta'] == 'on' ? 'sim' : 'nao'),
 
                                 "sexta" => ($_POST['sexta'] == 'on' ? 'sim' : 'nao'),
-                                
+
                                 "sabado" => ($_POST['sabado'] == 'on' ? 'sim' : 'nao'),
 
                                 "turnos" => array(
@@ -50,7 +50,7 @@ if (isset($_POST['btn_submit']))
                                     'vespertino'        => ($_POST['vespertino'] == 'on' ? 'sim' : 'nao'),
                                     'noturno'           => ($_POST['noturno'] == 'on' ? 'sim' : 'nao')
                                                 )
-                                            );
+                            );
     $dias_funcionamentoJson = json_encode($dias_funcionamento);
     if (!empty($_FILES['imagem_sala']['name']))
     {   
@@ -73,8 +73,8 @@ if (isset($_POST['btn_submit']))
         'cor'               =>  $_POST['cor_sala'],
         'ativo_desativo'    =>  (isset($_POST['ativo_desativo']) ? 1 : 0),
         'funcionamento'     =>  $dias_funcionamentoJson
-        ]))
-        
+    ]))
+    
     if($obj_sala -> setDados()){
         echo('cadastrou');
         echo("<script>function abrir_modal(){
@@ -93,8 +93,7 @@ if (isset($_POST['btn_submit']))
         die('Update nao funcionou');
     }
 
-    
+
 }
 
-require("../includes/footer/footer.php");
 ?>

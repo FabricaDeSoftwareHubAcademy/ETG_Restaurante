@@ -1,10 +1,7 @@
-
 <link rel="stylesheet" href="https/cdnjs.cloudflare.comlibs/font-awesome/6.4.0/css/all.min.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
-<script src="https://code.jquery.com/jquery-3.7.0.js"integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM="crossorigin="anonymous"></script>
-
 <link rel="stylesheet" href="../assets/css/cadastrar_editar_sala.css"> 
-
+<script src="https://code.jquery.com/jquery-3.7.0.js"integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM="crossorigin="anonymous"></script>
 
 <body class="tela-cadastro-salas"> 
 
@@ -16,48 +13,45 @@
             
             <div class="wrap-cadastro-salas">
 
-                <form class="cadastro-sala-form" method="POST" enctype="multipart/form-data" >
+                <form class="cadastro-sala-form" method="POST" enctype="multipart/form-data" action="visualizar_sala.php" >
                     <div class="titulo_de_cadastro">
 
                         <h1> Editar Sala </h1>
                         
                     </div>
                     
-                    <div class="wrap-input margin-top-35 margin-bottom-35">
 
 
 
-                        <div class="input_group field">
-                            <input value="<?=$dados_sala[0]['nome']?>" type="input" class="input_field" placeholder="Name" required="" name="nome_sala" maxLength="32">
-                            <label for="name" class="input_label">Nome Da Sala</label> <!--Alterar para o nome do input-->
+                    <div class="cadastro_codigo">
+
+
+                        <div class="wrap-input margin-top-35 margin-bottom-35">
+
+
+
+                            <div class="input_group field">
+                                <input value="<?=$dados_sala[0]['nome']?>" type="input" class="input_field toguroo" placeholder="Name" required="" name="nome_sala" maxLength="32">
+                                <label for="name" class="input_label">Nome Da Sala</label> <!--Alterar para o nome do input-->
+                            </div>
+
+
+
                         </div>
 
+                        <div class="wrap-inputx margin-top-35 margin-bottomx-35">
 
 
+
+                            <div class="input_group field ">
+                                <input type="input" class="input_field toguro" placeholder="Name" required="" name="codigo_sala" maxLength="8">
+                                <label for="name" class="input_label toguro" > Código </label> <!--Alterar para o nome do input-->
+                            </div>
+
+
+
+                        </div>
                     </div>
-                    <div class="dropdown-ck">
-
-                        <select name="andar_sala" class="option">
-                            <?php
-                                $andares = ['Primeiro andar', 'Segundo andar', 'Terceiro andar', 'Quarto andar', 'Quinto andar'];
-                                foreach ($andares as $andar)
-                                {
-                                    if ($andar == $dados_sala[0]['andar'])
-                                    {
-                                        echo "<option name=\"andar_sala\" value='$andar' selected>$andar</option>";
-                                    }
-                                    else
-                                    {
-                                        echo "<option name=\"andar_sala\" value='$andar'>$andar</option>";
-                                    }
-                                }
-                            ?>
-                        </select> 
-                    
-                    
-                    </div>
-
-                    <div class="barra"></div>
                     
                     <div class="dropdown-ck">
 
@@ -208,11 +202,12 @@
                     <div class="alinar-botoes">
 
                         <div class="botao-padrao-voltar">
-                            <a href="listar_salas.php"><input type="reset" class="botao-voltar-submit"  value="VOLTAR"></a>
+                            <a><input type="reset" class="botao-voltar-submit"  value="VOLTAR"></a>
                         </div>
                         
                         <div class="botao-padrao-cadastrar">
-                            <a><input name="btn_submit" type="submit" class="botao-cadastrar-submit"  value="EDITAR" ></a>
+                            <a><input name="btn_submit" type="submit" class="botao-cadastrar-submit"  value="SALVAR" ></a>
+                            <!-- BOTAR LINK PRA TELA VISUALIAR SALAS -->
                         </div>
                         
                     </div>
@@ -221,7 +216,7 @@
             </div>
         </div>
     </section>
-<script>
+    <script>
 const remover = document.querySelector(".imagem_aparecer_editar");
 const novo_css = document.querySelector(".novo_css_imagem");
 $(document).ready(function() {
@@ -243,8 +238,21 @@ $(document).ready(function() {
         reader.readAsDataURL(file);
     });
 });
+
+function abrir_modal(){
+            Swal.fire({
+                title: 'editado com sucesso!', //TITULO DO POP_UP DE ACORDO COM SUA TELA 
+                icon: 'success', // success, error e warning
+                confirmButtonColor: '#609437', // DEFINE A COR DO BOTÃO OK
+                confirmButtonText: 'OK'
+            });
+        }
+
+
+
 </script>
     
 </body>
 
 
+</html>

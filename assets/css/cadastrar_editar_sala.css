@@ -11,7 +11,7 @@
   width: 100%;
   height: 100%;
   max-width: 832px;
- 
+  
   
   position: relative;
   margin: 0 auto; 
@@ -20,6 +20,51 @@
 .titulo_de_cadastro{
   font-size: 26.7px;
 }
+
+.cadastro_codigo{
+  width: 100%;
+  height: 80px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+
+  
+}
+
+.cadastro_codigo .input_field{
+
+  width: 95%;
+  border: none;
+  border-bottom: 2px solid #9b9b9b;
+  outline: 0;
+  color: black;
+  padding: 7px 0;
+  background: transparent;
+  transition: border-color 0.2s;
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  left: 10px;
+
+} 
+
+.cadastro_codigo .toguro{
+  
+  width: 76%;
+  margin-left: 50px;
+}
+.cadastro_codigo .toguroo{
+
+  width: 100%; 
+
+  margin-right: 50px;
+  
+
+}
+
+
+
 
 
 
@@ -41,12 +86,14 @@
     
   }
   .container{
+    
     display: flex;
     flex-wrap: wrap;
     overflow: hidden;
     overflow-y: auto;
     /* max-width: 800px; */
-    max-height: 500px;
+    max-height: 65vh;
+
     
 
   }
@@ -95,13 +142,18 @@
   .tela-cadastro-salas .wrap-input{
     width: 100%;
     position: relative;
-    
     display: block;
     height: 46px;
     background: transparent;
-    padding-bottom: 0px; 
+    padding-bottom: 0px;
     
   }
+.tela-cadastro-salas .wrap-inputx{
+
+  width: 50%;
+}
+
+
   .tela-cadastro-salas .input-form{
     font-size: 17px;
     color: rgb(76,76,76);
@@ -333,12 +385,14 @@
 .cor-sala{
   width: 100%;
   display: flex;
- flex-direction: row;
- 
- 
- padding-top: 20px
-
+  flex-direction: row;
+  padding-top: 20px;
+  margin-bottom: 80px;
 }
+
+
+
+
 
 @media screen and (max-width: 700px) { 
 
@@ -519,11 +573,13 @@ input[type="file"] {
   display: flex;
   justify-content: space-evenly;
   margin: 50px;
-  /* position: fixed; */
-  position: absolute;
-  bottom: auto;
-
+  position: fixed;
+  /* position: absolute; */
+  bottom: 30px;
+  max-width: 832px;
 }
+
+
 
 .input-linha{
   display: flex;
@@ -533,25 +589,9 @@ input[type="file"] {
   
 } 
 
-.cards{
-  width: 29%;
-  border: none;
-  position: absolute;
-  background: transparent;
-  outline: none;
-  margin-top: 10px;
-  margin-bottom: 45px;
-  font-size: 15px;
-}
 
-#checklist-s{
-  width: 100%;
-  border: none;
-  border-bottom: solid black 2px;
-  margin-top: 10px;
-  margin-bottom: 45px;
-  font-size: 15px;
-}
+
+
 
 
 
@@ -580,22 +620,7 @@ input[type="file"] {
 
 
 
-.dropdown-ck .textbox-ck {
-  position: relative;
-  opacity: 0.7;
-  width: 100%;
-  height: 100%;
-  cursor: pointer;
-  background-color: aliceblue;
-  border: none;
-  outline: none;
-  border-bottom: solid 2px #9b9b9b;
-  padding-top: 15px;
-  padding-left: 10px;
-  
-  font-size: 20px;
-  
-} 
+
 
 .dropdown-ck .option{
     font-weight: 600;  
@@ -612,20 +637,7 @@ input[type="file"] {
   
 }
 
-.dropdown-ck .option .ops{
-  padding-top: 12px;
-  padding-bottom: 8px;
-  padding-left: 3px;
-  cursor: pointer;
-  opacity: 0.7;
-  font-size: 17px;
-  color: black;
-}
 
-.dropdown-ck .option .ops:hover{
-  background-color:#F28920;
-  color: aliceblue;
-} 
 
 
 
@@ -681,6 +693,7 @@ input[type="file"] {
   left: 10px;
   
 }
+
 
 .input_label {
   position: absolute;
@@ -965,3 +978,10 @@ box-shadow: none;
   padding-right: 10px;
 }
 
+/* .input_field .toguro:placeholder-shown ~ .input_label .toguro{
+
+
+  background-color: red;
+
+
+} */

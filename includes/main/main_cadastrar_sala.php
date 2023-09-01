@@ -5,15 +5,16 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 
 <link rel="stylesheet" href="../assets/css/cadastrar_editar_sala.css"> 
-       
+
 <body class="tela-cadastro-salas">
+       
 
     <section class="container">
    
         <div class="container-cadastro-salas">
             <div class="wrap-cadastro-salas">
 
-                <form class="cadastro-sala-form" method="POST" enctype="multipart/form-data" >
+                <form class="cadastro-sala-form" method="POST" enctype="multipart/form-data">
 
                     
 
@@ -23,37 +24,36 @@
                         
                     </div>
                     
-                    <div class="wrap-input margin-top-35 margin-bottom-35">
+                    <div class="cadastro_codigo">
+
+                        <div class="wrap-input margin-top-35 margin-bottom-35">
 
 
 
-                        <div class="input_group field">
-                            <input type="input" class="input_field" placeholder="Name" required="" name="nome_sala" maxLength="32">
-                            <label for="name" class="input_label">Nome Da Sala </label> <!--Alterar para o nome do input-->
+                            <div class="input_group field" id="input_coisa_nome">
+                                <input type="input" class="input_field toguroo" placeholder="Name" required="" name="nome_sala" maxLength="32">
+                                <label for="name" class="input_label">Nome Da Sala </label> <!--Alterar para o nome do input-->
+                            </div>
+
+
+
                         </div>
 
 
+                        <div class="wrap-inputx margin-top-35 margin-bottomx-35">
 
-                    </div>
 
 
-                    <div class="dropdown-ck">
+                            <div class="input_group field ">
+                                <input type="input" class="input_field toguro" placeholder="Name" required="" name="codigo_sala" maxLength="8">
+                                <label for="name" class="input_label toguro" > Código </label> <!--Alterar para o nome do input-->
+                            </div>
 
-                        <select name="andar_sala" class="option">
 
-                            <option type="input" name="andar_sala">Primeiro Andar</option>
-                            <option type="input" name="andar_sala">Segundo Andar</option>
-                            <option type="input" name="andar_sala">Terceiro Andar</option>
-                            <option type="input" name="andar_sala">Quarto Andar</option>
-                            <option type="input" name="andar_sala">Quinto Andar</option>
 
-                            
-                        </select> 
-                    
-                    
-                    </div>
+                        </div>
 
-                    <div class="barra"></div>
+                    </div>     
 
                     
                     <div class="dropdown-ck">
@@ -73,10 +73,21 @@
 
                     <div class="area_Dos_check_box">
                         
-                        <div class="Check_Box_individual">
-                            <p class="coisa_tag_p">Segunda</p>
-                            <input name="segunda" class="espaco_check_box" type="checkbox" />
-                        </div>
+                        <!-- <div class="dropdown-ck">
+
+                                <select name="andar_sala" class="option">
+
+                                    <option type="input" name="andar_sala">Primeiro Andar</option>
+                                    <option type="input" name="andar_sala">Segundo Andar</option>
+                                    <option type="input" name="andar_sala">Terceiro Andar</option>
+                                    <option type="input" name="andar_sala">Quarto Andar</option>
+                                    <option type="input" name="andar_sala">Quinto Andar</option>
+
+                                    
+                                </select> 
+
+
+                        </div> -->
 
                         <div class="Check_Box_individual">
                             <p class="coisa_tag_p">Terça</p>
@@ -140,10 +151,12 @@
                             <div class="alinar-img">
 
                                 <div class="coisas_enilda">
-                                    <span id="img-text"> Insira a imagem : </span>
+                                    <span id="img-text"> Insira a imagem : Resolução 416x150 </span>
 
                                     <label id="botão-img" for="arquivo" >Selecionar Foto</label>
                                 </div>
+
+                                
                                 
                                 <input type="file" name="imagem_sala" id="arquivo" >
 
@@ -170,13 +183,17 @@
                     <div class="alinar-botoes">
 
                         <div class="botao-padrao-voltar">
-                            <a href="#"><input type="submit" class="botao-voltar-submit"  value="VOLTAR"></a>
+                            <a href="listar_salas.php">VOLTAR</a>
                         </div>
                         
                         <div class="botao-padrao-cadastrar">
-                            <a href="#"><input name="btn_submit" type="submit" class="botao-cadastrar-submit" id="botao-cadastrar-submit" value="CADASTRAR" onclick="abrir_modal()" ></a>
+                            <a><input name="btn_submit" type="submit" class="botao-cadastrar-submit" id="botao-cadastrar-submit" value="CADASTRAR"  ></a>
+
                         </div>
-                        
+
+
+                            <!-- onclick="abrir_modal()" -->
+
 
                     </div>  
                 
@@ -188,6 +205,9 @@
 
 
 <script>
+
+
+
 
 const remover = document.querySelector(".imagem_aparecer");
 const novo_css = document.querySelector(".novo_css_imagem");
@@ -210,6 +230,23 @@ $(document).ready(function() {
         reader.readAsDataURL(file);
     });
 });
+
+
+
+
+
+        function abrir_modal(){
+            Swal.fire({
+                title: 'Cadastrado com sucesso!', //TITULO DO POP_UP DE ACORDO COM SUA TELA 
+                icon: 'success', // success, error e warning
+                confirmButtonColor: '#609437', // DEFINE A COR DO BOTÃO OK
+                confirmButtonText: 'OK'
+            });
+        }
+    
 </script>
+
+
     
 </body>
+</html>
