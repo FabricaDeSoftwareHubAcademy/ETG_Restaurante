@@ -11,7 +11,6 @@ bnt_editar = document.querySelectorAll(".icon_card_recado_editar");
 overlay_excluir = document.querySelector(".overlay_modal_excluir_recado");
 
 const btn_salvar_editar = document.querySelector('.botao-salvar-submit');
-// erro 
 const btn_salvar_excluir = document.querySelector('.botao-excluir-submit');
 
 
@@ -38,8 +37,9 @@ async function openModalEditar(){
     
 
     dados = {
-        id_recado: id_recado
+        id: id_recado
     }
+    console.log(id_recado)
     
     response =  await fetch('actions/mural_get_descricao.php',{
         method: 'POST',
@@ -57,24 +57,26 @@ async function openModalEditar(){
 
     // console.log(conteudo);
 
-    textareaEditar.value = conteudo['descricao']
+    textareaEditar.value = conteudo['texto']
 
-    btn_salvar_excluir.setAttribute('id_recado',conteudo['id_recado'])
-    btn_salvar_editar.setAttribute('id_recado',conteudo['id_recado'])
+    btn_salvar_excluir.setAttribute('id_recado',conteudo['id'])
+    btn_salvar_editar.setAttribute('id_recado',conteudo['id'])
 
 }
 
 // function salvar alterações 
 async function confirmarEditar(){
 
+
     var id_recado = btn_salvar_editar.getAttribute('id_recado');
     var descricao = textareaEditar.value;
+    
      dados = {
 
-        id_recado : id_recado,
+        id : id_recado,
         novaDescricao: descricao
     }
-
+    
     request = await fetch('actions/mural_update_descricao.php',{
 
         method: "POST",
@@ -86,20 +88,17 @@ async function confirmarEditar(){
     });
 
     response = await request.json();
+    console.log(response)
     if(response['status']){
 
-        window.location.reload();
+        closePopup()
+        location.reload();
 
     }else{
         // mensagem de erro 
-        window.location.reload();
-
     }
-    window.location.reload();
-
 
 }
-
 
 function openModalExcluir(){
 
@@ -112,11 +111,9 @@ function openModalExcluir(){
     modalExcluirRecado.classList.add('active');
     overlay_excluir.classList.add('active');
 
-    bnt_excluir.forEach(btn=>{
+    bnt_excluir.forEach(btn => {
         btn.removeEventListener('click', openModalExcluir)
     })  
-
-    
 
 }
 function retornaAlgo(){
@@ -139,10 +136,9 @@ async function deletarRecado(){
  
     let id_recado_delete = id_atual;
    
-    const dados = await fetch('./actions/recado_delete_action.php?id_recado='+id_recado_delete);
+    const dados = await fetch('../pages/actions/recado_delete_action.php?id_recado='+id_recado_delete);
  
     const response = await dados.json();
-    console.log(response)
     if(response['status']){
 
         location.reload()
@@ -151,7 +147,33 @@ async function deletarRecado(){
         console.log("Algo inesperado aconteceu")
     }
      
-  
-     
  
+}
+
+
+async function cadastrarRecado(){
+
+    closePopup_recado()
+    var texto = document.getElementById("texto_novo_recado").value
+    
+    bodyDados = {
+        "texto":texto
+    }
+
+    const dados = await fetch("./actions/mural_novo_recado.php",{
+        method: "POST",
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(bodyDados)
+    })
+    const response = await dados.json()
+    if(response['status']){
+        location.reload()
+    }else{
+        console.log(response['status'])
+    }
+
+
+
 }
