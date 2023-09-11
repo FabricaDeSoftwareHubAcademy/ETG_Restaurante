@@ -28,28 +28,16 @@ class Notificacao
 
 
     //CREATE
-    public function cadastrar() : bool
+    public function cadastrar()
     {
         $obj_banco = new Banco ('notificacao');
 
-        $verificacao = $obj_banco -> select('id_notificacao ="'.$this -> id_notificacao.'"') -> fetchAll(PDO::FETCH_ASSOC);
+        $obj_banco -> insert([  'id'                => $this -> id_notificacao,
+                                'id_remetente'      => $this -> id_remetente,
+                                'id_destinatario'   => $this -> id_destinatario,
+                                'texto'             => $this -> descricao
+                            ]);
 
-        //caso ja exista o nome no banco
-        if ($verificacao)
-        {
-            return false;
-        } 
-        else
-        {
-
-            $obj_banco -> insert(['id_notificacao'      => $this -> id_notificacao,
-                                    'id_remetente'      => $this -> id_remetente,
-                                    'id_destinatario'   => $this -> id_destinatario,
-                                    'descricao'         => $this -> descricao
-                                ]);
-
-            return true;
-        }
     } 
 
 

@@ -8,7 +8,14 @@
 .pagina{
   width: 832px;
 }
-  
+
+.botao-padrao-cadastrar{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 :root{
     --cor-primaria-botao-white: white; 
     --cor-primaria-botao-green: green;
@@ -45,12 +52,6 @@ align-items: center;
 
 /* Css Botão Confirmar */
 
-.botao-padrao-confirmar{
-width: 100%;
-display: flex;
-align-items: center;
-justify-content: center;
-}
 
 .botao-confirmar-submit{
 width: 180px;
@@ -74,7 +75,7 @@ color: var(--cor-primaria-botao-white);
 
 /* Css Botão Voltar */
 
-.botao-padrao-voltar{
+.botao-voltar-submit{
 width: 100%;
 display: flex;
 align-items: center;
@@ -82,6 +83,7 @@ justify-content: center;
 }
 
 .botao-voltar-submit{
+text-decoration: none;
 width: 180px;
 height: 45px;
 background-color: var(--cor-primaria-botao-white);

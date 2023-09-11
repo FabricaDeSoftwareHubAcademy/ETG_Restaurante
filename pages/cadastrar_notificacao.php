@@ -1,10 +1,17 @@
 <?php
 require __DIR__."/../vendor/autoload.php";
-include_once("../includes/menu.php"); 
 require("../includes/header/header.php");
+include_once("../includes/menu.php"); 
 require("../includes/main/main_cadastrar_notificacao.php");
 //REGRAS DE NEGOCIO ABAIXO
 
+$obj_usuario = new app\Entity\Usuario;
+$obj_notificacao = new app\Entity\Notificacao;
+
+if (isset($_POST['btn_submit']))
+{
+    $obj_notificacao -> cadastrar();
+}
 
 
 //FIM DAS REGRAS DE NEGOCIO

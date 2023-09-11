@@ -1,6 +1,5 @@
 <?php
 require __DIR__."/../vendor/autoload.php";
-include_once("../includes/menu.php"); 
 require("../includes/header/header.php");
 
 
@@ -30,7 +29,11 @@ if (isset($_POST['botao_salvar'], $_POST['nome_cargo']))
     
     /*Chamando o metodo cadastrar da classe Perfil, essa funcao primeiramente vai verificar se ja existe
     algum perfil com este nome, se sim vai retornar false, senao true, logo, vai cadastrar no banco.*/
-    $objPerfil -> setDados($id);
+    
+    if($objPerfil -> setDados($id))
+    {
+        header("Location: listar_perfis.php");
+    }
 }
 
 $dadosPerfil = new Perfil();
@@ -45,6 +48,7 @@ $desbloquear_checklist = $dados[0] ['editar_sala'];
 $descricao_nao_conformidade = $dados[0] ['remover_sala'];
 $enviar_notificacao = $dados[0] ['enviar_notificacao'];
 
+include_once("../includes/menu.php"); 
 require("../includes/main/main_editar_perfil.php");
 require("../includes/footer/footer.php");
 ?>
