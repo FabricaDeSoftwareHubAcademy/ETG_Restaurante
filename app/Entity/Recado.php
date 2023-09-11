@@ -1,94 +1,96 @@
 <?php
+
 namespace App\Entity;
-use PDO;
-use PDOException;
 use \App\Db\Banco;
 
-class Recado
-{
-    private $num_matricula,
-            $descricao;
-    public function __construct($num_matricula,
-                                $descricao
-                                )
-    {
-        $this -> num_matricula  = $num_matricula;
-        $this -> descricao      = $descricao; 
+use PDO;
+
+class Recado{
+
+    private $id_autor,$descricao;
+    public function __construct($id_autor,$descricao){
+
+        $this->id_autor = $id_autor;
+        $this->descricao = $descricao; 
+        
     }
+    public function update($id_recado){
 
-    public function setDados($id_recado)
-    {
-        $obj_banco = new Banco('recado');
-        $dados = $obj_banco -> select('id_recado = "'.$id_recado.'" ');
+        $obBanco = new Banco('recados');
+        $dados = $obBanco->select('id = "'.$id_recado.'" ');
+        if($dados->rowCount() > 0){
 
-        if($dados -> rowCount() > 0)
-        {
             $values = [
-                'descricao' => $this -> descricao,
-                'num_matricula' => $this -> num_matricula
-                    ];
+                'id_autor'=>$this->id_autor,
+                'texto'=>$this->descricao,
+            ];
+            return $obBanco->update('id = "'.$id_recado.'" ',$values);
 
-            return $obj_banco -> update('id_recado = "'.$id_recado.'" ',$values);
-        }
-        else
-        {
+        }else{
             return false;
         }
+
     }    
 
-    public function cadastrar()
-    {     
-        $obj_banco = new Banco('recado');
+    public function cadastrar(){
+
+         
+        $obBanco = new Banco('recados');
         $dados = [
-            'descricao' => $this -> descricao,
-            'num_matricula' => $this -> num_matricula
-                ];
+            
+            'id_autor'=>$this->id_autor,
+            'texto'=>$this->descricao,
 
-        $obj_banco -> insert($dados);
+        ];
+        $obBanco->insert($dados);
+
     }
 
-    public static function deleteById($id_recado)
-    {
-        $obj_banco = new Banco('recado');
-        $row_recado = $obj_banco -> select('id_recado = '.$id_recado);
-        if($row_recado -> rowCount() > 0)
-        {
-            $obj_banco -> delete($id_recado,'id_recado');
+    public static function deleteById($id_recado){
+
+        $obBanco = new Banco('recados');
+        $row_recado = $obBanco->select('id = '.$id_recado);
+        if($row_recado->rowCount() > 0){
+
+            $obBanco->delete($id_recado,'id');
+
             return true;
-        }
-        else
-        {
+
+        }else{
             return false;
         }
+
     }
 
-    public static function getRecados()
-    {
-        $obj_banco = new Banco("recado");
-        $dados = $obj_banco -> select(null , ' id_recado DESC ');
+    public static function getDados(){
 
-        if($dados -> rowCount() > 0)
-        {
-            //o fetch assoc vai vir pra ca futuramente
+        $obBanco = new Banco("recados");
+        
+        $dados = $obBanco->select(null , ' id DESC ');
+        if($dados->rowCount() > 0){
+
             return $dados;
-        }
-        else
-        {
+
+        }else{
+
             return false;
+
         }
     }
-    public static function getRecadosById($id)
-    {
-        $obj_banco = new Banco("recado");   
-        $dados = $obj_banco -> select('id_recado = "'.$id.'" ' , ' id_recado DESC ');
+    public static function getDadosById($id){
 
-        if($dados->rowCount() > 0)
-        {    
+        $obBanco = new Banco("recados");
+        
+        $dados = $obBanco->select('id = "'.$id.'" ' , ' id DESC ');
+        if($dados->rowCount() > 0){
+            
             return $dados;
-        }
-        else
-        {
+
+        }else{
+
             return false;
+
         }
+
     }
 }

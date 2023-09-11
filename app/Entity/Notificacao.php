@@ -27,7 +27,7 @@ class Notificacao
         }
 
 
-    
+    //CREATE
     public function cadastrar() : bool
     {
         $obj_banco = new Banco ('notificacao');
@@ -52,6 +52,8 @@ class Notificacao
         }
     } 
 
+
+    //READ
     public function getNotificacao()
     {
     $obj_banco = new Banco ('notificacao');
@@ -61,8 +63,8 @@ class Notificacao
     return $dados;
     }
 
-
-    public static function visualizar($id){
+    //UPDATE
+    public static function setVisualizar($id){
 
         $banco = new Banco ('notificacao');
         $dados = [
@@ -74,9 +76,6 @@ class Notificacao
         }else{
             return false;
         }
-
-
-
     }
 }
 ?>

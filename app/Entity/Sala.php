@@ -7,78 +7,81 @@ use App\Db\Banco;
 
 class Sala
 {
-    private $id_cadastro_sala,
-            $id_cadastro_checklist,
-            $id_cadastro_usuario,
-            $andar,
+    private $nome,
+            $codigo,
+            $cor_itens,
+            $img_sala,
             $descricao,
-            $imagem,
-            $cor,
-            $status_sala,
-            $nome,
-            $ativo_desativo,
-            $funcionamento
+            $status,
+            $horarios,
+            $id_check,
+            $ativo_desativo
             ;
-    public function __construct($id_cadastro_sala = null,
-                                $id_cadastro_checklist = null,
-                                $id_cadastro_usuario = null,
-                                $andar = null,
-                                $descricao = null,
-                                $imagem = null,
-                                $cor = null,
-                                $status_sala = null,
+    public function __construct(
                                 $nome = null,
-                                $ativo_desativo = null,
-                                $funcionamento = null
+                                $codigo = null,
+                                $cor_itens = null,
+                                $img_sala = null,
+                                $descricao = null,
+                                $status = null,
+                                $horarios = null,
+                                $id_check = null,
+                                $ativo_desativo = null
                                 )
     {
-        $this -> id_cadastro_sala       = $id_cadastro_sala;
-        $this -> id_cadastro_checklist  = $id_cadastro_checklist;
-        $this -> id_cadastro_usuario    = $id_cadastro_usuario;
-        $this -> andar                  = $andar;
+        $this -> nome       = $nome;
+        $this -> codigo  = $codigo;
+        $this -> cor_itens    = $cor_itens;
+        $this -> img_sala                  = $img_sala;
         $this -> descricao              = $descricao;
-        $this -> imagem                 = $imagem;
-        $this -> cor                    = $cor;
-        $this -> status_sala            = $status_sala;
-        $this -> nome                   = $nome;
-        $this -> ativo_desativo         = $ativo_desativo;
-        $this -> funcionamento          = $funcionamento;
+        $this -> status                 = $status;
+        $this -> horarios                 = $horarios;
+        $this -> id_check                    = $id_check;
+        $this -> ativo_desativo            = $ativo_desativo;
+
     }
 
 
+    //CREATE
     public function cadastrar() : bool
     {
-        $objBanco = new Banco('Cadastro_sala');
-        $objBanco -> insert(['id_cadastro_checklist' => $this -> id_cadastro_checklist,
-                            'id_cadastro_usuario'    => $this -> id_cadastro_usuario,
-                            'andar'                  => ucfirst(strtolower($this -> andar)),
-                            'descricao'              => ucfirst(strtolower($this -> descricao)),
-                            'imagem'                 => $this -> imagem,
-                            'cor'                    => $this -> cor,
-                            'status_sala'            => $this -> status_sala,
-                            'nome'                   => ucfirst(strtolower($this -> nome)),
-                            'ativo_desativo'         => $this -> ativo_desativo,
-                            'funcionamento'          => $this -> funcionamento
+        $objBanco = new Banco('cadastro_sala');
+        $objBanco -> insert([
+                            'nome'                  => ucfirst(strtolower($this -> nome)),
+                            'codigo'                  => ucfirst(strtolower($this -> codigo)),
+                            'cor_itens'              => ucfirst(strtolower($this -> cor_itens)),
+                            'img_sala'                 => $this -> img_sala,
+                            'descricao'                    => ucfirst(strtolower($this -> descricao)),
+                            'status'            => $this -> status,
+                            'horarios'                    => null,
+                            'id_check'                   => $this -> id_check,
+                            'ativo_desativo'         => $this -> ativo_desativo
                             ]);
         return true;
     }
 
+
+    //READ
     public static function getDados()
     {
-        $obj_banco = new Banco('Cadastro_sala');
+        $obj_banco = new Banco('cadastro_sala');
 
         $salas = $obj_banco -> select() -> fetchAll(PDO::FETCH_ASSOC);
 
         return $salas;
     }
 
+
+    //READ
     public static function getDadosById($id_sala)
     {
-        $objBanco = new Banco('Cadastro_sala');
-        $dados = $objBanco -> select("id_cadastro_sala = ".$id_sala) -> fetchAll(PDO::FETCH_ASSOC);
+        $objBanco = new Banco('cadastro_sala');
+        $dados = $objBanco -> select("id = ".$id_sala) -> fetchAll(PDO::FETCH_ASSOC);
         return $dados;
     }
 
+
+    //UPDATE
     public function setDados($id = null, $dados = []) : bool
     {
         //var_dump($dados);exit;

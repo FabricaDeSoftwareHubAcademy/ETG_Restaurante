@@ -43,34 +43,38 @@ class Perfil
 
     }
 
+    //CREATE
     public function cadastrar() : bool
     {
         $obj_banco = new Banco('cadastro_perfil');
-
+        
         $verificacao = $obj_banco -> select('nome_cargo = "'.$this -> nome_cargo.'"') -> fetchAll(PDO::FETCH_ASSOC);
-
+        
         //caso ja exista o nome no banco
+        //die('testeabcde');
         if ($verificacao)
         {
             return false;
         } 
         else
         {
-            $obj_banco -> insert(                           ['nome_cargo'                   => $this -> nome_cargo,
-                                                               'cadastrar_sala'             => $this -> cadastrar_sala,
-                                                               'editar_sala'                => $this -> editar_sala,
-                                                               'remover_sala'               => $this -> remover_sala,
-                                                               'validar_checklist'          => $this -> validar_checklist,
-                                                               'inserir_item_checklist'     => $this -> inserir_item_checklist,
-                                                               'remover_item_checklist'     => $this -> remover_item_checklist,
-                                                               'desbloquear_checklist'      => $this -> desbloquear_checklist,
-                                                               'descricao_nao_conformidade' => $this -> descricao_nao_conformidade,
-                                                               'enviar_notificacao'         => $this -> enviar_notificacao
+            $obj_banco -> insert(                           [  'nome'                       => $this -> nome_cargo,
+                                                               'realizar_checklist'         => $this -> cadastrar_sala,
+                                                               'cadastrar_checklist'        => $this -> validar_checklist,
+                                                               'editar_checklist'           => $this -> editar_sala,
+                                                               'excluir_checklist'          => $this -> remover_sala,
+                                                               'lock_unlock_sala'           => $this -> inserir_item_checklist,
+                                                               'cadastrar_sala'             => $this -> remover_item_checklist,
+                                                               'editar_sala'                => $this -> desbloquear_checklist,
+                                                               'remover_sala'               => $this -> descricao_nao_conformidade,
+                                                               'enviar_notificacao'         => $this -> enviar_notificacao,
+                                                               'add_recado'                 => 0
                                                              ]);
             return true;
         }
     }
 
+    //READ
     public function getDados()
     {
         $obj_banco = new Banco('cadastro_perfil');
@@ -80,47 +84,52 @@ class Perfil
         return $dados;
     }
 
-    public function getDadosById($id_cadastro_perfil)
+    //READ
+    public function getDadosById($id)
     {
         $obj_banco = new Banco('cadastro_perfil');        
-
-        $dados = $obj_banco -> select('id_cadastro_perfil = '.$id_cadastro_perfil) -> fetchAll(PDO::FETCH_ASSOC);
         
+        $dados = $obj_banco -> select('id = '.$id) -> fetchAll(PDO::FETCH_ASSOC);
+        //die('teste');
+        //var_dump($dados);exit;
         return $dados;
     }
 
 
+    //UPDATE
     public function setDados($id)
     {
         $obj_banco = new Banco('cadastro_perfil');
         
         $dados = [
-            'nome_cargo'                 => $this -> nome_cargo,
-            'cadastrar_sala'             => $this -> cadastrar_sala,
-            'editar_sala'                => $this -> editar_sala,
-            'remover_sala'               => $this -> remover_sala,
-            'validar_checklist'          => $this -> validar_checklist,
-            'inserir_item_checklist'     => $this -> inserir_item_checklist,
-            'remover_item_checklist'     => $this -> remover_item_checklist,
-            'desbloquear_checklist'      => $this -> desbloquear_checklist,
-            'descricao_nao_conformidade' => $this -> descricao_nao_conformidade,
-            'enviar_notificacao'         => $this -> enviar_notificacao
+            'nome'                 => $this -> nome_cargo,
+            'realizar_checklist'             => $this -> cadastrar_sala,
+            'cadastrar_checklist'                => $this -> editar_sala,
+            'editar_checklist'               => $this -> remover_sala,
+            'excluir_checklist'          => $this -> validar_checklist,
+            'lock_unlock_sala'     => $this -> inserir_item_checklist,
+            'cadastrar_sala'     => $this -> remover_item_checklist,
+            'editar_sala'      => $this -> desbloquear_checklist,
+            'remover_sala' => $this -> descricao_nao_conformidade,
+            'enviar_notificacao'         => $this -> enviar_notificacao,
+            'add_recado'         => 0
                 ];
 
-        $obj_banco -> update('id_cadastro_perfil = '. $id, $dados);
+        $obj_banco -> update('id = '. $id, $dados);
         
         return true;
     }
 
+    //DELETE
     public function deleteById($id)
     {
         $obj_banco = new Banco('cadastro_perfil');
 
-        $row_perfil = $obj_banco -> select('id_cadastro_perfil = '.$id);
+        $row_perfil = $obj_banco -> select('id = '.$id);
 
         if($row_perfil -> rowCount() > 0)
         {
-            $obj_banco -> delete($id,'id_cadastro_perfil');
+            $obj_banco -> delete($id,'id');
 
             return true;
 

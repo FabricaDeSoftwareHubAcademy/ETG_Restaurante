@@ -8,7 +8,7 @@ class Banco{
     //Variaveis referentes a conexao com o banco de dados
     const HOST = '192.168.22.9';
   
-    const DB_NAME = 'etg_homologacao';
+    const DB_NAME = 'etg';
     const USER = 'fabrica';
     const PASS = 'fabrica@2022';
     private $table;//variavel que vai falar sobre qual tabela do banco esta sendo tratada
@@ -101,6 +101,8 @@ class Banco{
         
         $query = 'INSERT INTO '.$this -> table.'('.implode(', ', $chaves).') VALUES('.implode(', ', $valores).')';
 
+        
+        //echo $query; var_dump(array_values($dados));exit;
         //Chamando o metodo `executarQuery` e passando a $query montada e APENAS OS VALORES de `$dados`
         $this -> executarQuery($query, array_values($dados));
 
@@ -123,7 +125,7 @@ class Banco{
         */ 
         
         $query = 'INSERT INTO '.$this -> table.'('.implode(', ', $chaves).') VALUES('.implode(', ', $valores).')';
-        //  echo $query;var_dump($dados); exit;
+        echo $query;var_dump($dados); exit;
         //Chamando o metodo `executarQuery` e passando a $query montada e APENAS OS VALORES de `$dados`
         $id = $this -> executeLastId ($query, array_values($dados));
         return $id;
