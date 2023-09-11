@@ -30,7 +30,7 @@ body{
   opacity: 0;
   visibility: hidden;
   transition: opacity 0.3s ease, visibility 0s linear 0.3s;
-}
+} 
 .btn-pop{
   margin-top: 500px;
   display: flex;
@@ -54,14 +54,11 @@ body{
   display: flex;
   width: 642px;
   height: 465px;
+  padding: 24px 44px 24px 24px;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  position: relative;
   gap: 8px;
-  background: #FFF;
-  box-shadow: 1px 4px 4px 3px rgba(0, 0, 0, 0.25);
-  border-radius: 28px;
   border-radius: 15px;
   border: 1px solid var(--stroke-light, #DEE2E6);
   background: var(--gray-white, #FFF);
@@ -71,28 +68,17 @@ body{
 /* Estilos opcionais para o conteúdo do pop-up */
 
 
-.popup-mural-conf p {
-    color: #000;
-    text-align: center;
-    font-size: 26px;
-    font-weight: bold;
-    line-height: normal;
-    letter-spacing: -1.44px;
-}
-.texto-recado-mural{
-  display: flex;
-  align-items: start;
-  justify-content: start;
+.popup-mural-recado p {
   font-weight: bolder;
-  position: absolute;
-  width: 90%;
+  position: fixed;
+  width: 148px;
   height: 30px;
   margin-bottom: 400px;
+  margin-left:-450px;
   color: rgb(0, 0, 0);
+  
 }
-
 .div-pop{
-  margin-top: 20px;
   display: flex;
   width: 550px;
   height: 300px;
@@ -109,6 +95,7 @@ body{
   border: none;
   height: 100%;
   width: 100%;
+  font-size: 30px;
   resize: none;
   border-radius:30px;
   padding: 20px;
@@ -186,36 +173,18 @@ body{
 
 
 @media screen and (max-width: 768px) {
-  .popup-mural-recado {
+  .popup-mural {
     width: 90%;
 }
   .div-pop{
     width: 90%;
     left: 10%;
-    margin-top: 50px;
   }
-  .edita-recado-mural{
-    right: 80%;
-    width: 148vw;
+  .popup-mural p{
+    right: 68%;
   }
   .container-pop-up-botaoes{
-    flex-wrap: wrap;
-    margin-top: 20px;
-    width: 100%
-  }
-  .botao-padrao-voltar{
-    margin-top: 10px;
-  }
-  .botao-padrao-cancelar{
-    margin-top: 10px;
-  }
-
-  
-}
-@media screen and (max-width:855px) {
-  .edita_recado-mural{
-    width: 90vw;
-    right: -1%;
+    width: 90%;
   }
   
 }
