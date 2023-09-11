@@ -15,7 +15,7 @@
                 Edição de Perfil
             </h1>
         </div>
-        <form method="POST" class="form_permissoes">
+        <form method="POST" class="form_permissoes" action="../">
             <div class="input_group">
                 <input type="input" class="input_field" placeholder="Name" name="nome_cargo" value="<?=$dados[0]["nome"];?>" >
                 <label for="name" class="input_label">Nome</label> <!--Alterar para o nome do input-->
