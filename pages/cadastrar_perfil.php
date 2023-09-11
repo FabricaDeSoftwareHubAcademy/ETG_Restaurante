@@ -1,6 +1,5 @@
 <?php
 require __DIR__."/../vendor/autoload.php";
-include_once("../includes/menu.php"); 
 require("../includes/header/header.php");
 
 use App\Entity\Perfil;
@@ -24,7 +23,8 @@ if (isset($_POST['botao_salvar'], $_POST['nome_cargo'])){
 
 /*Chamando o metodo cadastrar da classe Perfil, essa funcao primeiramente vai verificar se ja existe
 algum perfil com este nome, se sim vai retornar false, senao true, logo, vai cadastrar no banco.*/ 
-if ($objPerfil -> cadastrar()){
+if ($objPerfil -> cadastrar())
+{
     
     header("Location: listar_perfis.php");
     //recarregando para a mesma pagina depois de cadastrar, futuramente: um popup ou modal
@@ -32,6 +32,7 @@ if ($objPerfil -> cadastrar()){
 } 
 }
 
+include_once("../includes/menu.php"); 
 require("../includes/main/main_cadastrar_perfil.php");
 require("../includes/footer/footer.php");
 ?>

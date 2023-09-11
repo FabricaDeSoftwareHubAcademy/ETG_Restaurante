@@ -24,7 +24,7 @@
                     <div class="alinar-botoes">
 
                         <div class="botao-padrao-voltar">
-                        <a href="listar_salas.php" class="botao-voltar-submit">VOLTAR</a>
+                            <a href="listar_salas.php" class="botao-voltar-submit">VOLTAR</a>
                         </div>
 
                         <div class="botao-padrao-cadastrar">
