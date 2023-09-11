@@ -29,7 +29,7 @@
                         <div class="wrap-input margin-top-35 margin-bottom-35">
 
 
-
+ 
                             <div class="input_group field">
                                 <input value="<?=$dados_sala[0]['nome']?>" type="input" class="input_field toguroo" placeholder="Name" required="" name="nome_sala" maxLength="32">
                                 <label for="name" class="input_label">Nome Da Sala</label> <!--Alterar para o nome do input-->
@@ -44,7 +44,7 @@
 
 
                             <div class="input_group field ">
-                                <input type="input" class="input_field toguro" placeholder="Name" required="" name="codigo_sala" maxLength="8">
+                                <input type="input" value="<?=$dados_sala[0]['codigo']?>" class="input_field toguro" placeholder="Name" required="" name="codigo_sala" maxLength="8">
                                 <label for="name" class="input_label toguro" > Código </label> <!--Alterar para o nome do input-->
                             </div>
 

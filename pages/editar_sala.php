@@ -2,7 +2,7 @@
 require __DIR__."/../vendor/autoload.php";
 include_once("../includes/menu.php"); 
 require("../includes/header/header.php");
-require("../includes/main/main_editar_sala.php");
+
 
 
 $obj_sala = new App\Entity\Sala;
@@ -14,6 +14,7 @@ $objCadastroChecklist = new CadastroChecklist();
 
 if (isset($_GET['id_sala']))
 {  
+     
     $dados_sala = $obj_sala::getDadosById($_GET['id_sala']);
     //die('teste');
     $funcionamento = json_decode($dados_sala[0]['funcionamento'], true);
@@ -65,7 +66,7 @@ if (isset($_POST['btn_submit']))
     
     if($obj_sala -> setDados($_GET['id_sala'],
     [   
-        'nome'              =>  $_POST['nome_sala'],
+        'nome'              =>  $_POST['nome'],
         'andar'             =>  $_POST['andar_sala'],
         'checklist'         =>  $_POST['checklist'],
         'descricao'         =>  $_POST['descricao_sala'],
@@ -95,5 +96,5 @@ if (isset($_POST['btn_submit']))
 
 
 }
-
+require("../includes/main/main_editar_sala.php");
 ?>
