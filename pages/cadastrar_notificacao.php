@@ -10,11 +10,12 @@ $obj_notificacao = new app\Entity\Notificacao;
 
 if (isset($_POST['btn_submit']))
 {
-    $obj_notificacao -> cadastrar();
+    $obj_notificacao::cadastrar($_POST[], $_POST[], $_POST[], $_POST[]);
 }
+
+
 
 
 //FIM DAS REGRAS DE NEGOCIO
 require("../includes/footer/footer.php");
-
 ?>

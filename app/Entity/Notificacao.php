@@ -28,14 +28,14 @@ class Notificacao
 
 
     //CREATE
-    public function cadastrar()
+    public static function cadastrar($id, $id_remetente, $id_destinatario, $texto)
     {
         $obj_banco = new Banco ('notificacao');
 
-        $obj_banco -> insert([  'id'                => $this -> id_notificacao,
-                                'id_remetente'      => $this -> id_remetente,
-                                'id_destinatario'   => $this -> id_destinatario,
-                                'texto'             => $this -> descricao
+        $obj_banco -> insert([  'id'                => $id,
+                                'id_remetente'      => $id_remetente,
+                                'id_destinatario'   => $id_destinatario,
+                                'texto'             => $texto
                             ]);
 
     } 
