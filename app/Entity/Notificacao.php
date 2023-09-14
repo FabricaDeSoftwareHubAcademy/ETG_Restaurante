@@ -28,18 +28,23 @@ class Notificacao
 
 
     //CREATE
-    public static function cadastrar($id, $id_remetente, $id_destinatario, $texto)
+    public static function cadastrar($id_remetente, $id_destinatario, $texto)
     {
         $obj_banco = new Banco ('notificacao');
 
-        $obj_banco -> insert([  'id'                => $id,
+        $obj_banco -> insert([
                                 'id_remetente'      => $id_remetente,
                                 'id_destinatario'   => $id_destinatario,
                                 'texto'             => $texto
                             ]);
+        return true;
 
     } 
 
+    static function teste() : bool
+    {
+        return true;
+    }
 
     //READ
     public function getNotificacao()
@@ -50,6 +55,16 @@ class Notificacao
 
     return $dados;
     }
+
+    public function getDadosById($id)
+    {
+    $obj_banco = new Banco ('notificacao');
+
+    $dados = $obj_banco -> select('id = '.$id) -> fetchAll(PDO::FETCH_ASSOC);
+
+    return $dados;
+    }
+
 
     //UPDATE
     public static function setVisualizar($id){

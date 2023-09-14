@@ -6,7 +6,8 @@ use PDO;
 use PDOException;
 
 
-class Usuario{
+class Usuario
+{
 
     // criando variaveis privadas 
     private $num_matricula,
@@ -88,10 +89,10 @@ class Usuario{
 
    
 
-    public function getDados() : array 
+    static function getDados() : array 
     {
-        
-        $objBanco = new Banco('usuarios');
+        die('testando usuario');
+        $objBanco = new Banco('cadastro_usuario');
         
         $dados = $objBanco -> select() -> fetchAll(PDO::FETCH_ASSOC);
         
@@ -99,6 +100,7 @@ class Usuario{
         return $dados;
 
     }
+
 
     public function updateData($email, $senha)
     {
