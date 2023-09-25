@@ -49,9 +49,9 @@
 
             <section class="centralizar_botoes_cadastrar_usuario">
 
-            <!--Botão Voltar-->
+                <!--Botão voltar-->
                 <div class="botao-padrao-voltar">
-                    <a href="listar_salas.php" class="botao-voltar-submit">VOLTAR</a>
+                    <a href="listar_salas.php" class="botao-voltar-link">VOLTAR</a>
                 </div>
 
             <!--Botão Confirmar-->

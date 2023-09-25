@@ -29,9 +29,8 @@
   border-radius: 20px;
   cursor: pointer;
   color: var(--cor-primaria-botao-green);
-  font-size: 'Montserrat';
+  font-family: 'Montserrat';
   font-weight: bold;
-  font-weight: 580;
   font-size: 15px;
 }
 
@@ -450,4 +449,34 @@ margin: 0 auto;
 select {
   border: 0px solid #aaa; 
   border-radius: 5px; 
+}
+
+/* CSS Botão VOLTAR NOVO NEW */
+
+.botao-padrao-voltar {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.botao-voltar-link {
+  /* width: 110px; */
+  display: inline-block;
+  padding: 12px 60px;
+  background-color: var(--cor-primaria-botao-white);
+  border: 3px solid var(--cor-primaria-botao-yellow);
+  border-radius: 20px;
+  cursor: pointer;
+  color: var(--cor-primaria-botao-yellow);
+  font-family: 'Montserrat', sans-serif; /* Corrigir a propriedade font-family */
+  font-weight: bold;
+  font-size: 15px;
+  text-decoration: none; /* Adicionar sublinhado ao texto do link */
+}
+
+.botao-voltar-link:hover {
+  transition: all 0.4s;
+  background-color: var(--cor-primaria-botao-yellow);
+  color: var(--cor-primaria-botao-white);
 }

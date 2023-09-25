@@ -28,8 +28,9 @@
                         </div>
 
                         <div class="botao-padrao-cadastrar">
-                            <a href="cadastrar_perfil.php">CADASTRAR</a>
+                            <a href="cadastrar_perfil.php" class="botao-cadastrar-link">CADASTRAR</a>
                         </div>
+
                     </div>  
                         
                 </div> 
