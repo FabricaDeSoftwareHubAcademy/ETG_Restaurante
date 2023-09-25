@@ -113,7 +113,7 @@ class Usuario
 
     public function emailValidate($email) : bool
     {
-        $objBanco = new Banco('usuarios');
+        $objBanco = new Banco('cadastro_usuario');
         
         $dados = $objBanco -> select('email = "'.$email.'"');
         if ($dados -> rowCount())

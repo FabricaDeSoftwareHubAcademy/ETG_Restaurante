@@ -1,10 +1,7 @@
 <?php
+
 require __DIR__."/../vendor/autoload.php";
-include_once("../includes/menu.php"); 
 require("../includes/header/header.php");
-require("../includes/main/main_relembrar_senha_1.php");
-
-
 $obj_email = new App\Entity\Mailer;
 
 use App\Entity\Usuario;
@@ -18,7 +15,7 @@ if (isset($_POST['email'], $_POST['btn_submit'])){
         {
             session_start();
             $_SESSION['email_to_redef_secret'] = $_POST['email'];
-            header("Location: tela_esqueceu_senha2.php");
+            header("Location: relembrar_senha_2.php");
         }
         else
         {
@@ -35,6 +32,8 @@ if (isset($_POST['email'], $_POST['btn_submit'])){
         
     }
 }
-
+//die('AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA');
+include_once("../includes/menu.php"); 
+require("../includes/main/main_relembrar_senha_1.php");
 require("../includes/footer/footer.php");
 ?>

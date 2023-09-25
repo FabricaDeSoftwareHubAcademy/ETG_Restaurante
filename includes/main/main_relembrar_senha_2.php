@@ -7,7 +7,7 @@
     <main class="tudo_esqueceu_senha2">
         <section class='titulo_esqueceu_senha2'>
             <h1>Insira o código enviado em seu E-mail:</h1>
-    <form method="POST" action="">
+    <form method="POST">
         
         </section>
             
