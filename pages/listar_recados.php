@@ -33,7 +33,7 @@ if(isset($_POST['btn_confirmar_submit'])){
     foreach($recados as $row_recados){
 
         $cards_recados .= '<div class="card">
-                                <p class="msg_aviso">'.$row_recados['texto'].'</p>
+                                <p class="msg_aviso">'.htmlspecialchars($row_recados['texto']).'</p>
                                 <div class="area_bot">
 
                                     <div class="bloco_bot">
