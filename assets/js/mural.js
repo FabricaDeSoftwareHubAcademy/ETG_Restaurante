@@ -153,25 +153,46 @@ async function deletarRecado(){
 
 async function cadastrarRecado(){
 
-    closePopup_recado()
     var texto = document.getElementById("texto_novo_recado").value
-    
-    bodyDados = {
-        "texto":texto
-    }
-
-    const dados = await fetch("./actions/mural_novo_recado.php",{
-        method: "POST",
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(bodyDados)
-    })
-    const response = await dados.json()
-    if(response['status']){
-        location.reload()
+    if(texto == ""){
+        const Toast = Swal.mixin({
+            toast: true,
+            position: 'top-end',
+            showConfirmButton: false,
+            timer: 3000,
+            timerProgressBar: true,
+            didOpen: (toast) => {
+              toast.addEventListener('mouseenter', Swal.stopTimer)
+              toast.addEventListener('mouseleave', Swal.resumeTimer)
+            }
+        })
+        
+        Toast.fire({
+            icon: 'error',
+            title: 'Digite algo'
+        })
     }else{
-        console.log(response['status'])
+
+        
+        closePopup_recado()
+        bodyDados = {
+            "texto":texto
+        }
+    
+        const dados = await fetch("./actions/mural_novo_recado.php",{
+            method: "POST",
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(bodyDados)
+        })
+        const response = await dados.json()
+        if(response['status']){
+            location.reload()
+        }else{
+            console.log(response['status'])
+        }
+
     }
 
 

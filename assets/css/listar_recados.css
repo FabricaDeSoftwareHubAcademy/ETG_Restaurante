@@ -123,10 +123,15 @@ button{
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 15px;
     width: 80%;
     flex-wrap: wrap;
     margin: 0 auto;
     position: relative;
+    height: 60vh;
+    overflow-y: scroll;
+    scrollbar-color: #F28920;
+ 
      
     gap: 10px;
     margin-top: 50px;
@@ -164,6 +169,7 @@ button{
     padding: 20px;
 
 }
+
 .area_btns_modal_excluir{
     position: absolute;
     width: 100%;
@@ -176,7 +182,7 @@ button{
     height: 100%;
     width: 100%;
     position: fixed;
-    z-index: 9999;
+    z-index: 1059;
     
     top: 0;
     left: 0;
