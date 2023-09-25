@@ -1,9 +1,10 @@
 <?php
-session_start();
-require __DIR__.'/vendor/autoload.php';
-
-use App\Entity\Pergunta;
-
-$recado = new Pergunta('Simões');
-
-print_r($recado->getPerguntasById(12)->fetchAll(PDO::FETCH_ASSOC));
+require 'conexao.php';
+$conn = new Conexao();
+if($_POST){
+    $nome = preg_replace('/[^[:alpha:]_]/', '',$_POST['nome']);
+    $senha = preg_replace('/[^[:alnum:]_]/', '',$_POST['senha']);
+    $select = $conn->select($nome, $senha);
+    var_dump($select);
+}
+?>

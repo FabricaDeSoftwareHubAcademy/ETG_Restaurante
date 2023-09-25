@@ -11,9 +11,10 @@ use App\Entity\Recado;
 $dados = json_decode(file_get_contents('php://input'), true);
 
  
-$obRecado = new Recado($_SESSION['num_matricula_logado'],$dados['novaDescricao']);
 
-if($obRecado->update($dados['id_recado'])
+$obRecado = new Recado($_SESSION['id_user'],$dados['novaDescricao']);
+
+if($obRecado->update($dados['id'])
 ){
 
     $response = [
@@ -28,5 +29,8 @@ if($obRecado->update($dados['id_recado'])
 
 $responseJson = json_encode($response);
 echo($responseJson);
+
+
+ 
 
 

@@ -7,25 +7,24 @@ use PDO;
 
 class Recado{
 
-    private $num_matricula,$descricao;
-    public function __construct($num_matricula,$descricao){
+    private $id_autor,$descricao;
+    public function __construct($id_autor,$descricao){
 
-        $this->num_matricula = $num_matricula;
+        $this->id_autor = $id_autor;
         $this->descricao = $descricao; 
-
+        
     }
-
     public function update($id_recado){
 
-        $obBanco = new Banco('recado');
-        $dados = $obBanco->select('id_recado = "'.$id_recado.'" ');
+        $obBanco = new Banco('recados');
+        $dados = $obBanco->select('id = "'.$id_recado.'" ');
         if($dados->rowCount() > 0){
 
             $values = [
-                'descricao'=>$this->descricao,
-                'num_matricula'=>$this->num_matricula
+                'id_autor'=>$this->id_autor,
+                'texto'=>$this->descricao,
             ];
-            return $obBanco->update('id_recado = "'.$id_recado.'" ',$values);
+            return $obBanco->update('id = "'.$id_recado.'" ',$values);
 
         }else{
             return false;
@@ -36,24 +35,24 @@ class Recado{
     public function cadastrar(){
 
          
-        $obBanco = new Banco('recado');
+        $obBanco = new Banco('recados');
         $dados = [
             
-            'descricao'=>$this->descricao,
-            'num_matricula'=>$this->num_matricula
+            'id_autor'=>$this->id_autor,
+            'texto'=>$this->descricao,
 
         ];
         $obBanco->insert($dados);
 
     }
 
-    public static function excluir($id_recado){
+    public static function deleteById($id_recado){
 
-        $obBanco = new Banco('recado');
-        $row_recado = $obBanco->select('id_recado = '.$id_recado);
+        $obBanco = new Banco('recados');
+        $row_recado = $obBanco->select('id = '.$id_recado);
         if($row_recado->rowCount() > 0){
 
-            $obBanco->delete($id_recado,'id_recado');
+            $obBanco->delete($id_recado,'id');
 
             return true;
 
@@ -63,11 +62,11 @@ class Recado{
 
     }
 
-    public static function getRecados(){
+    public static function getDados(){
 
-        $obBanco = new Banco("recado");
+        $obBanco = new Banco("recados");
         
-        $dados = $obBanco->select(null , ' id_recado DESC ');
+        $dados = $obBanco->select(null , ' id DESC ');
         if($dados->rowCount() > 0){
 
             return $dados;
@@ -78,11 +77,11 @@ class Recado{
 
         }
     }
-    public static function getRecadosById($id){
+    public static function getDadosById($id){
 
-        $obBanco = new Banco("recado");
+        $obBanco = new Banco("recados");
         
-        $dados = $obBanco->select('id_recado = "'.$id.'" ' , ' id_recado DESC ');
+        $dados = $obBanco->select('id = "'.$id.'" ' , ' id DESC ');
         if($dados->rowCount() > 0){
             
             return $dados;

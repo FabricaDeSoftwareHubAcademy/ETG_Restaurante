@@ -10,7 +10,7 @@ if(isset($_GET['id_recado'])){
     header("Location: ../../pages/gerenc_perfis.php");
 }
 
-$action_excluir = Recado::excluir($id_perfil) ? true : false;
+$action_excluir = Recado::deleteById($id_perfil) ? true : false;
 
 if($action_excluir){
 
