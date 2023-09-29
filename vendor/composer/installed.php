@@ -3,7 +3,7 @@
         'name' => 'arthur/etg',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => '6ddb7cb74a32d4fd3427058f68aa7dcf4c3711ae',
+        'reference' => 'f2016f4351efae5ebf60553985be91002b8c77d6',
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -13,7 +13,7 @@
         'arthur/etg' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => '6ddb7cb74a32d4fd3427058f68aa7dcf4c3711ae',
+            'reference' => 'f2016f4351efae5ebf60553985be91002b8c77d6',
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),

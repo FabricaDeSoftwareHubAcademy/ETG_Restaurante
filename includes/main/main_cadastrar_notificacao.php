@@ -16,14 +16,14 @@
             <form action="" method="POST">
 
                 <div class="input_group field">
-                    <input name="email_destinatario" type="input" class="input_field" placeholder="Name" required="">
+                    <input name="email_destinatario" type="email" class="input_field" placeholder="Name" required="">
                     <label for="name" class="input_label">Para:</label> <!--Alterar para o nome do input-->
                 </div>
 
                 <!--Textarea-->
                 <div class="textarea">
                     <label class="titulo-notificacao" for="story">Notificação:</label>
-                    <textarea name="descricao" class="quadrado_text" name="story" rows="5" cols="33"></textarea>
+                    <textarea maxlength="125" name="descricao" class="quadrado_text" name="story" rows="5" cols="33"></textarea>
                 </div>
 
             </section>
@@ -39,7 +39,7 @@
 
                     <!--Botão Confirmar-->
                 <div class="botao-padrao-confirmar">
-                    <a href="#"><input name="btn_submit" type="submit" class="botao-confirmar-submit"  value="CONFIRMAR"></a>
+                    <a><input name="btn_submit" type="submit" class="botao-confirmar-submit"  value="CONFIRMAR"></a>
                 </div>
             </form>
 

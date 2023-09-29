@@ -30,7 +30,6 @@ class Usuario
 
     }
 
-
     public function logar(){
 
        
@@ -89,8 +88,7 @@ class Usuario
    
 
     public static function getDados() : array 
-    {
-        die('testeclassse');   
+    {   
         $objBanco = new Banco('cadastro_usuario');
         
         $dados = $objBanco -> select() -> fetchAll(PDO::FETCH_ASSOC);
@@ -100,6 +98,22 @@ class Usuario
 
     }
 
+    public static function getDadosByEmail($email_user) 
+    {   
+        $objBanco = new Banco('cadastro_usuario');
+        
+        $dados = $objBanco -> select("email = '".$email_user."'") -> fetchAll(PDO::FETCH_ASSOC);
+        if ($dados)
+        {
+            return $dados;
+        }
+        else
+        {
+            return false;
+        }
+
+
+    }
 
     public function updateData($email, $senha)
     {
