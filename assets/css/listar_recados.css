@@ -124,7 +124,7 @@ button{
     align-items: center;
     justify-content: center;
     padding: 15px;
-    width: 80%;
+    width: 81%;
     flex-wrap: wrap;
     margin: 0 auto;
     position: relative;
@@ -132,12 +132,21 @@ button{
     overflow-y: scroll;
     scrollbar-color: #F28920;
  
-     
     gap: 10px;
     margin-top: 50px;
     margin-bottom: 50px;
 }
- 
+.area_cards_recados_mural::-webkit-scrollbar{
+    width: 8px;
+    background-color: #eeeeee;
+    border-radius: 10px;
+}
+  
+.area_cards_recados_mural::-webkit-scrollbar-thumb{
+background-color: #F28920;
+border-radius: 10px; 
+} 
+
 .area_modal_excluir_recado{
 
    display: none;

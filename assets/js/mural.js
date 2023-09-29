@@ -154,26 +154,7 @@ async function deletarRecado(){
 async function cadastrarRecado(){
 
     var texto = document.getElementById("texto_novo_recado").value
-    if(texto == ""){
-        const Toast = Swal.mixin({
-            toast: true,
-            position: 'top-end',
-            showConfirmButton: false,
-            timer: 3000,
-            timerProgressBar: true,
-            didOpen: (toast) => {
-              toast.addEventListener('mouseenter', Swal.stopTimer)
-              toast.addEventListener('mouseleave', Swal.resumeTimer)
-            }
-        })
-        
-        Toast.fire({
-            icon: 'error',
-            title: 'Digite algo'
-        })
-    }else{
-
-        
+    if(texto.trim()){
         closePopup_recado()
         bodyDados = {
             "texto":texto
@@ -192,6 +173,26 @@ async function cadastrarRecado(){
         }else{
             console.log(response['status'])
         }
+    }else{
+
+        const Toast = Swal.mixin({
+            toast: true,
+            position: 'top-end',
+            showConfirmButton: false,
+            timer: 3000,
+            timerProgressBar: true,
+            didOpen: (toast) => {
+              toast.addEventListener('mouseenter', Swal.stopTimer)
+              toast.addEventListener('mouseleave', Swal.resumeTimer)
+            }
+        })
+        
+        Toast.fire({
+            icon: 'error',
+            title: 'Digite algo'
+        })
+        
+        
 
     }
 
