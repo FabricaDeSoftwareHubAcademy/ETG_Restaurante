@@ -41,11 +41,6 @@ class Notificacao
 
     } 
 
-    static function teste() : bool
-    {
-        return true;
-    }
-
     //READ
     public function getNotificacao()
     {
@@ -55,6 +50,16 @@ class Notificacao
 
     return $dados;
     }
+
+    public static function getDados()
+    {
+    $obj_banco = new Banco ('notificacao');
+
+    $dados = $obj_banco -> select() -> fetchAll(PDO::FETCH_ASSOC);
+
+    return $dados;
+    }
+
 
     public function getDadosById($id)
     {

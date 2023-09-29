@@ -14,7 +14,10 @@ $id_remetente = '1'; //VAI PEGAR DA SESSION O ID DO USUARIO
 $email_destinatario = $_POST['email_destinatario']; //email 
 $texto = $_POST['descricao'];
 
-Notificacao::teste();
+Notificacao::getDados()
+
+
+// Notificacao::cadastrar($id_remetente);
 
 
 //FIM DAS REGRAS DE NEGOCIO
