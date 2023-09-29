@@ -67,36 +67,63 @@ async function openModalEditar(){
 // function salvar alterações 
 async function confirmarEditar(){
 
-
+    
     var id_recado = btn_salvar_editar.getAttribute('id_recado');
     var descricao = textareaEditar.value;
     
-     dados = {
+    if(descricao.trim()){
 
-        id : id_recado,
-        novaDescricao: descricao
-    }
-    
-    request = await fetch('actions/mural_update_descricao.php',{
 
-        method: "POST",
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(dados)
+        dados = {
+   
+           id : id_recado,
+           novaDescricao: descricao
+        }
+       
+       request = await fetch('actions/mural_update_descricao.php',{
+   
+           method: "POST",
+           headers: {
+               'Content-Type': 'application/json'
+           },
+           body: JSON.stringify(dados)
+   
+       });
+   
+       response = await request.json();
+       console.log(response)
+       if(response['status']){
+   
+           closePopup()
+           location.reload();
+   
+       }else{
+           // mensagem de erro 
+       }
 
-    });
-
-    response = await request.json();
-    console.log(response)
-    if(response['status']){
-
-        closePopup()
-        location.reload();
 
     }else{
-        // mensagem de erro 
+
+        const Toast = Swal.mixin({
+            toast: true,
+            position: 'top-end',
+            showConfirmButton: false,
+            timer: 3000,
+            timerProgressBar: true,
+            didOpen: (toast) => {
+              toast.addEventListener('mouseenter', Swal.stopTimer)
+              toast.addEventListener('mouseleave', Swal.resumeTimer)
+            }
+        })
+        
+        Toast.fire({
+            icon: 'error',
+            title: 'Digite algo'
+        })
+
     }
+
+
 
 }
 
