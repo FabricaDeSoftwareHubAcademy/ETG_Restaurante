@@ -6,17 +6,15 @@ use app\Entity\Notificacao;
 use app\Entity\Usuario;
 
 
-include_once("../includes/menu.php"); 
-require("../includes/main/main_cadastrar_notificacao.php");
 //REGRAS DE NEGOCIO ABAIXO
 
-if ()
+if (isset($_POST['btn_submit']))
 {
-    
-}
-$id_remetente = '1'; //VAI PEGAR DA SESSION O ID DO USUARIO
-$email_destinatario = $_POST['email_destinatario']; //email 
-$texto = $_POST['descricao'];
+    die('btn setado');
+    $id_remetente = '1'; //VAI PEGAR DA SESSION O ID DO USUARIO
+    $email_destinatario = $_POST['email_destinatario']; //email 
+    $texto = $_POST['descricao'];
+} 
 
 $usuarios = Usuario::getDados();
 var_dump($usuarios);exit;
@@ -28,5 +26,7 @@ var_dump($usuarios);exit;
 
 
 //FIM DAS REGRAS DE NEGOCIO
+include_once("../includes/menu.php"); 
+require("../includes/main/main_cadastrar_notificacao.php");
 require("../includes/footer/footer.php");
 ?>
