@@ -1,25 +1,38 @@
 <?php
-require __DIR__."/../vendor/autoload.php";
+require "../vendor/autoload.php";
 require("../includes/header/header.php");
 
-use app\Entity\Notificacao;
-
-
-include_once("../includes/menu.php"); 
-require("../includes/main/main_cadastrar_notificacao.php");
+use App\Entity\Notificacao;
+use App\Entity\Usuario;
 //REGRAS DE NEGOCIO ABAIXO
 
-
-$id_remetente = '1'; //VAI PEGAR DA SESSION O ID DO USUARIO
-$email_destinatario = $_POST['email_destinatario']; //email 
-$texto = $_POST['descricao'];
-
-Notificacao::getDados()
-
-
-// Notificacao::cadastrar($id_remetente);
+if (isset($_POST['btn_submit']))
+{
+    $id_remetente = '1'; //VAI PEGAR DA SESSION O ID DO USUARIO
+    $email_destinatario = $_POST['email_destinatario']; //email 
+    $texto = $_POST['descricao'];
+    
+    $usuarios = Usuario::getDadosByEmail($email_destinatario);
+    if($usuarios)
+    {
+        $id_destinatario = $usuarios[0]['id'];
+        Notificacao::cadastrar($id_remetente ,$id_destinatario, $texto);
+        header("Location: listar_salas.php");
+    }
+    else
+    {
+        die('ESTE EMAIL NAO EXISTE'); //pop up
+    }
+    
+} 
 
 
 //FIM DAS REGRAS DE NEGOCIO
+<<<<<<< HEAD
 // require("../includes/footer/footer.php");
+=======
+include_once("../includes/menu.php"); 
+require("../includes/main/main_cadastrar_notificacao.php");
+require("../includes/footer/footer.php");
+>>>>>>> 2b90b8cdd36538f62d1a82b8ddae2b9ae6869264
 ?>
