@@ -48,7 +48,7 @@ class Perfil
     {
         $obj_banco = new Banco('cadastro_perfil');
         
-        $verificacao = $obj_banco -> select('nome_cargo = "'.$this -> nome_cargo.'"') -> fetchAll(PDO::FETCH_ASSOC);
+        $verificacao = $obj_banco -> select('nome = "'.$this -> nome_cargo.'"') -> fetchAll(PDO::FETCH_ASSOC);
         
         //caso ja exista o nome no banco
         //die('testeabcde');
