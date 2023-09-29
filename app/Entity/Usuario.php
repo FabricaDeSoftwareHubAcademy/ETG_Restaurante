@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Entity;
 use App\Db\Banco;
 use PDO;
@@ -89,9 +88,9 @@ class Usuario
 
    
 
-    static function getDados() : array 
+    public static function getDados() : array 
     {
-        die('testando usuario');
+        die('testeclassse');   
         $objBanco = new Banco('cadastro_usuario');
         
         $dados = $objBanco -> select() -> fetchAll(PDO::FETCH_ASSOC);
