@@ -52,7 +52,7 @@ class Usuario
     }
 
     
-    public function cadastrar($nome = null , $email = null, $id_perfil = null, $num_matricula = null, $senha = null)
+    public function cadastrar($nome = null , $email = null,  $num_matricula = null, $senha = null, $id_perfil = null)
     {
         $objBanco = new Banco('usuarios');
 
@@ -75,7 +75,7 @@ class Usuario
             $objBanco -> insert([
                                 'nome'              =>      $nome,
                                 'email'             =>      $email,
-                                'matricula'    =>      $num_matricula, 
+                                'matricula'    =>           $num_matricula, 
                                 'senha'             =>      $senha,
                                 'id_perfil'         =>      $id_perfil,
                                 ]);

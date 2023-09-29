@@ -1,8 +1,8 @@
 <?php
 
 require __DIR__."/../vendor/autoload.php";
-include_once("../includes/menu.php"); 
 require("../includes/header/header.php");
+include_once("../includes/menu.php"); 
 
 
 use App\Entity\Perfil;
@@ -41,6 +41,7 @@ if(isset(
             
         );
     }
+
 
 require("../includes/main/main_cadastrar_usuario.php");
 require("../includes/footer/footer.php");
