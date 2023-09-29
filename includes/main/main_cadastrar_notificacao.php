@@ -23,7 +23,7 @@
                 <!--Textarea-->
                 <div class="textarea">
                     <label class="titulo-notificacao" for="story">Notificação:</label>
-                    <textarea maxlength="125" name="descricao" class="quadrado_text" name="story" rows="5" cols="33"></textarea>
+                    <textarea maxlength="250" name="descricao" class="quadrado_text" name="story" rows="5" cols="33"></textarea>
                 </div>
 
             </section>
