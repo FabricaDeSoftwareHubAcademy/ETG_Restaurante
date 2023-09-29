@@ -1,7 +1,8 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
-
 <link rel="stylesheet" href="../assets/css/editar_usuario/botao_editar_usuario.css">
 <link rel="stylesheet" href="../assets/css/editar_usuario/editar_usuario.css">
+<link rel="stylesheet" href="../assets/css/editar_senha/input_button_editar_senha.css">
+<link rel="stylesheet" href="../assets/css/editar_senha/editar_senha.css">
 
 <body>
 
@@ -23,26 +24,64 @@
             </div>
             
             <section class="name">
-                <h2 class="name-name">Nome:</h2>
+                <h2 class="name-name">Nome</h2>
             </section>
 
             <section class="alinhar-input">
                 <div class="input_group field">
                     <input type="input" class="input_field" placeholder="Name" required="" name="nome_sala" maxLength="105">
-                    <label for="name" class="input_label">Nome do usuario</label><!--Alterar para o nome do input-->
+                    <label for="name" class="input_label"></label><!--Alterar para o nome do input-->
                     <i class="bi bi-pencil-square" id="icon-input"></i>
                 </div>
-                <div class="alterar-senha">
-                    <a href="redefinir_senha.php">Alterar Senha</a>
-                </div>
-
             </section>
 
-            <section class="alinhar-botao">
-                <!--Botão Salvar-->
-                <div class="botao-padrao-salvar">
-                    <a href="#"><input type="submit" class="botao-salvar-submit"  value="SALVAR"></a>
-                </div>
+            <section class="editar_senha">
+                    <section class='titulo_alterar_senha'>
+                    <h1>Alterar Senha</h1>
+                </section>
+
+                <form method="POST" class="centralizar-back"> 
+                    <section class="centralizar_input_alterar_senha">
+
+                        <!--Input Email-->
+                        <div class="input_e-mail_group field">
+                            <input name="email" type="email" class="input_e-mail_field" placeholder="Name" required="" autocomplete="on">
+                            <label for="name" class="input_e-mail_label">E-mail</label> <!--Alterar para o nome do input-->
+                        </div>
+
+                            <!--Input Senha-->
+                        <div class="input_senha_group field">
+                            <input name="senhaantiga" type="password" class="input_senha_field" placeholder="Name" required="">
+                            <label for="name" class="input_senha_label">Senha antiga</label> <!--Alterar para o nome do input-->
+                        </div>
+
+                        <div class="input_senha_group field2">
+                            <input name="novasenha" type="password" class="input_senha_field" placeholder="Name" required="">
+                            <label for="name" class="input_senha_label">Criar nova senha</label> <!--Alterar para o nome do input-->
+                        </div>
+
+                        <div class="input_senha_group field3">
+                            <input name="confirmarnovasenha" type="password" class="input_senha_field" placeholder="Name" required="">
+                            <label for="name" class="input_senha_label">Confirmar nova senha</label> <!--Alterar para o nome do input-->
+                        </div>
+                    </section>
+
+                
+
+                    <section class="centralizar_botoes_alterar_senha">
+
+                            <!--Botão Voltar-->
+                        <div class="botao-padrao-voltar">
+                            <a href="#"><input type="submit" class="botao-voltar-submit"  value="VOLTAR"></a>
+                        </div>
+
+                            <!--Botão Confirmar-->
+                        <div class="botao-padrao-confirmar">
+                            <a href="#"><input name="btn_submit" type="submit" class="botao-confirmar-submit"  value="CONFIRMAR"></a>
+                        </div>
+
+                    </section>
+                </form>   
             </section>
 
         </form>
