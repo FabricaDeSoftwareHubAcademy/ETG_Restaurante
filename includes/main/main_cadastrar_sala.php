@@ -182,9 +182,11 @@
                     
                     <div class="alinar-botoes">
 
+                              <!--Botão voltar-->
                         <div class="botao-padrao-voltar">
-                            <a href="listar_salas.php">VOLTAR</a>
+                            <a href="listar_salas.php" class="botao-voltar-link">VOLTAR</a>
                         </div>
+   
                         
                         <div class="botao-padrao-cadastrar">
                             <a><input name="btn_submit" type="submit" class="botao-cadastrar-submit" id="botao-cadastrar-submit" value="CADASTRAR"  ></a>
