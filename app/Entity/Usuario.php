@@ -10,7 +10,7 @@ class Usuario
 {
 
     // criando variaveis privadas 
-    private $num_matricula,
+    private $matricula,
             $email,
             $senha;
              
@@ -18,14 +18,14 @@ class Usuario
     // metodo construct 
     public function __construct(
         
-        $num_matricula = null,
+        $matricula = null,
         $email = null,
         $senha = null
         
     ){
 
         // variaveis privadas recebem valores        
-        $this->num_matricula = $num_matricula;
+        $this->matricula = $matricula;
         $this->email = $email;
         $this->senha = $senha;
 
@@ -37,7 +37,7 @@ class Usuario
        
         $obBanco = new Banco("cadastro_usuario");
          
-        $rowUser = $obBanco->select('email = "'.$this->email.'" AND senha = "'.$this->senha.'" AND matricula = "'.$this->num_matricula.'"')->fetchAll(PDO::FETCH_ASSOC);
+        $rowUser = $obBanco->select('email = "'.$this->email.'" AND senha = "'.$this->senha.'" AND matricula = "'.$this->matricula.'"')->fetchAll(PDO::FETCH_ASSOC);
         if($rowUser){
             session_start();
             
@@ -54,7 +54,7 @@ class Usuario
     }
 
     
-    public function cadastrar($nome = null , $email = null, $id_perfil = null, $num_matricula = null, $senha = null)
+    public function cadastrar($nome = null , $email = null, $id_perfil = null, $matricula = null, $senha = null)
     {
         $objBanco = new Banco('usuarios');
 
@@ -65,10 +65,10 @@ class Usuario
             die('email ja existe'); //modal para email errado return false
         }
 
-        $validacao_matricula = $objBanco -> select('num_matricula = '.$num_matricula) -> fetchAll(PDO::FETCH_ASSOC);
+        $validacao_matricula = $objBanco -> select('matricula = '.$matricula) -> fetchAll(PDO::FETCH_ASSOC);
         if ($validacao_matricula)
         {
-            die('num_matricula ja existe'); //modal para num_matricula errado return false
+            die('matricula ja existe'); //modal para matricula errado return false
         }
         else if (!$validacao_email && !$validacao_matricula)
         {
@@ -77,7 +77,7 @@ class Usuario
             $objBanco -> insert([
                                 'nome'              =>      $nome,
                                 'email'             =>      $email,
-                                'matricula'    =>      $num_matricula, 
+                                'matricula'    =>      $matricula, 
                                 'senha'             =>      $senha,
                                 'id_perfil'         =>      $id_perfil,
                                 ]);
