@@ -29,9 +29,9 @@ class Sala
                                 $ativo_desativo = null
                                 )
     {
-        $this -> nome       = $nome;
-        $this -> codigo  = $codigo;
-        $this -> cor_itens    = $cor_itens;
+        $this -> nome                       = $nome;
+        $this -> codigo                 = $codigo;
+        $this -> cor_itens              = $cor_itens;
         $this -> img_sala                  = $img_sala;
         $this -> descricao              = $descricao;
         $this -> status                 = $status;
@@ -52,10 +52,9 @@ class Sala
                             'cor_itens'              => ucfirst(strtolower($this -> cor_itens)),
                             'img_sala'                 => $this -> img_sala,
                             'descricao'                    => ucfirst(strtolower($this -> descricao)),
-                            'status'            => $this -> status,
+                            'status'                     => $this -> status,
                             'horarios'                    => null,
-                            'id_check'                   => $this -> id_check,
-                            'ativo_desativo'         => $this -> ativo_desativo
+                            'id_check'                   => $this -> id_check
                             ]);
         return true;
     }

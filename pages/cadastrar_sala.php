@@ -20,28 +20,6 @@ if (isset(
             $_POST      ['btn_submit']    
         ))
 {
-    //logica do Json das checkbox de periodo
-            // $dias_funcionamento = array("segunda" => ($_POST['segunda'] == 'on' ? 'sim' : 'nao'),
-
-            //                             "terca" => ($_POST['terca'] == 'on' ? 'sim' : 'nao'),
-
-            //                             "quarta" => ($_POST['quarta'] == 'on' ? 'sim' : 'nao'),
-
-            //                             "quinta" => ($_POST['quinta'] == 'on' ? 'sim' : 'nao'),
-
-            //                             "sexta" => ($_POST['sexta'] == 'on' ? 'sim' : 'nao'),
-                                        
-            //                             "sabado" => ($_POST['sabado'] == 'on' ? 'sim' : 'nao'),
-
-            //                             "turnos" => array(
-            //                                 'matutino'          => ($_POST['matutino'] == 'on' ? 'sim' : 'nao'),
-            //                                 'vespertino'        => ($_POST['vespertino'] == 'on' ? 'sim' : 'nao'),
-            //                                 'noturno'           => ($_POST['noturno'] == 'on' ? 'sim' : 'nao')
-            //                                             )
-            //                             );
-            // $dias_funcionamentoJson = json_encode($dias_funcionamento);
-            
-            //var_dump($dias_funcionamentoJson);exit;
     if (!empty($_FILES['imagem_sala']['name']))
     {
         $objImagem = new Imagens;
@@ -61,7 +39,7 @@ if (isset(
         $_POST['checklist'],
         null
         
-            
+        
     );
         
     if($obj_sala -> cadastrar())
@@ -72,9 +50,31 @@ if (isset(
     {
         die('nao cadastrou');
     }
-            
+    
 }   
         
 require("../includes/main/main_cadastrar_sala.php");
 require("../includes/footer/footer.php");
+//logica do Json das checkbox de periodo
+        // $dias_funcionamento = array("segunda" => ($_POST['segunda'] == 'on' ? 'sim' : 'nao'),
+
+        //                             "terca" => ($_POST['terca'] == 'on' ? 'sim' : 'nao'),
+
+        //                             "quarta" => ($_POST['quarta'] == 'on' ? 'sim' : 'nao'),
+
+        //                             "quinta" => ($_POST['quinta'] == 'on' ? 'sim' : 'nao'),
+
+        //                             "sexta" => ($_POST['sexta'] == 'on' ? 'sim' : 'nao'),
+                                    
+        //                             "sabado" => ($_POST['sabado'] == 'on' ? 'sim' : 'nao'),
+
+        //                             "turnos" => array(
+        //                                 'matutino'          => ($_POST['matutino'] == 'on' ? 'sim' : 'nao'),
+        //                                 'vespertino'        => ($_POST['vespertino'] == 'on' ? 'sim' : 'nao'),
+        //                                 'noturno'           => ($_POST['noturno'] == 'on' ? 'sim' : 'nao')
+        //                                             )
+        //                             );
+        // $dias_funcionamentoJson = json_encode($dias_funcionamento);
+        
+        //var_dump($dias_funcionamentoJson);exit;
 ?>
