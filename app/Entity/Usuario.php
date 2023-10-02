@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Entity;
 use App\Db\Banco;
 use PDO;
@@ -31,7 +30,6 @@ class Usuario
 
     }
 
-
     public function logar(){
 
        
@@ -54,7 +52,8 @@ class Usuario
     }
 
     
-    public function cadastrar($nome = null , $email = null, $id_perfil = null, $matricula = null, $senha = null)
+
+    public function cadastrar($nome = null , $email = null,  $num_matricula = null, $senha = null, $id_perfil = null)
     {
         $objBanco = new Banco('usuarios');
 
@@ -77,7 +76,7 @@ class Usuario
             $objBanco -> insert([
                                 'nome'              =>      $nome,
                                 'email'             =>      $email,
-                                'matricula'    =>      $matricula, 
+                                'matricula'    =>           $num_matricula, 
                                 'senha'             =>      $senha,
                                 'id_perfil'         =>      $id_perfil,
                                 ]);
@@ -89,9 +88,8 @@ class Usuario
 
    
 
-    static function getDados() : array 
-    {
-        die('testando usuario');
+    public static function getDados() : array 
+    {   
         $objBanco = new Banco('cadastro_usuario');
         
         $dados = $objBanco -> select() -> fetchAll(PDO::FETCH_ASSOC);
@@ -101,6 +99,22 @@ class Usuario
 
     }
 
+    public static function getDadosByEmail($email_user) 
+    {   
+        $objBanco = new Banco('cadastro_usuario');
+        
+        $dados = $objBanco -> select("email = '".$email_user."'") -> fetchAll(PDO::FETCH_ASSOC);
+        if ($dados)
+        {
+            return $dados;
+        }
+        else
+        {
+            return false;
+        }
+
+
+    }
 
     public function updateData($email, $senha)
     {

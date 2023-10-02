@@ -34,9 +34,25 @@
 .area_salas{
     display: flex;
     align-items: center;
-    justify-content: center;
+     
     flex-direction: column;
+    max-height: 60vh;
+    overflow-y: scroll;
+    overflow-x: hidden;
 }
+
+.area_salas::-webkit-scrollbar{
+    width: 8px;
+    background-color: #eeeeee;
+    border-radius: 10px;
+}
+  
+.area_salas::-webkit-scrollbar-thumb{
+background-color: #F28920;
+border-radius: 10px; 
+} 
+
+ 
 .card_sala{
     position: relative;
     width: 100%;

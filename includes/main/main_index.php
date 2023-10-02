@@ -1,7 +1,8 @@
  
  
 
-<link rel="stylesheet" href="assets/css/login.css">
+ 
+<link type="text/css" rel="stylesheet" href="assets/css/login.css" media="screen"/> 
 <body>
     
     
