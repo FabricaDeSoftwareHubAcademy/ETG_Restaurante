@@ -27,12 +27,7 @@ if (isset($_POST['btn_submit']))
 } 
 
 
-//FIM DAS REGRAS DE NEGOCIO
-<<<<<<< HEAD
-// require("../includes/footer/footer.php");
-=======
 include_once("../includes/menu.php"); 
 require("../includes/main/main_cadastrar_notificacao.php");
 require("../includes/footer/footer.php");
->>>>>>> 2b90b8cdd36538f62d1a82b8ddae2b9ae6869264
 ?>
