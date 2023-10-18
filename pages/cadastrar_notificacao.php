@@ -21,5 +21,5 @@ Notificacao::getDados()
 
 
 //FIM DAS REGRAS DE NEGOCIO
-require("../includes/footer/footer.php");
+// require("../includes/footer/footer.php");
 ?>

@@ -29,9 +29,9 @@
 
             <section class="alinhar-input">
                 <div class="input_group field">
-                    <input type="input" class="input_field" placeholder="Name" required="" name="nome_sala" maxLength="105">
+                    <input type="input" class="input_field" id="input_name_cad" placeholder="Name" required="" name="nome_sala" disabled value="<?=$dados["nome"]?>" maxLength="105">
                     <label for="name" class="input_label"></label><!--Alterar para o nome do input-->
-                    <i class="bi bi-pencil-square" id="icon-input"></i>
+                    <i class="bi bi-pencil-square" onclick="habilitar()" id="icon-input"></i>
                 </div>
             </section>
 
@@ -43,12 +43,7 @@
                 <form method="POST" class="centralizar-back"> 
                     <section class="centralizar_input_alterar_senha">
 
-                        <!--Input Email-->
-                        <div class="input_e-mail_group field">
-                            <input name="email" type="email" class="input_e-mail_field" placeholder="Name" required="" autocomplete="on">
-                            <label for="name" class="input_e-mail_label">E-mail</label> <!--Alterar para o nome do input-->
-                        </div>
-
+                        
                             <!--Input Senha-->
                         <div class="input_senha_group field">
                             <input name="senhaantiga" type="password" class="input_senha_field" placeholder="Name" required="">
@@ -87,6 +82,17 @@
         </form>
 
     </main>
+    <script>
+
+    var nome = document.querySelector("#input_name_cad");
     
+    function habilitar(){
+        console.log(nome)
+        nome.disabled = false;
+
+    }
+    
+
+    </script>
     
 </body>
