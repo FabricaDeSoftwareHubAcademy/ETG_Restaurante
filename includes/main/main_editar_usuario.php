@@ -8,7 +8,7 @@
 
 
     <main class="pai-de-todos">
-        <form class="form-minha-conta">
+        <form method="POST" class="form-minha-conta">
             <section class="titulo">
                 <h1 class="titulo-perfil">Minha Conta</h1>
             </section>
@@ -40,11 +40,11 @@
                     <h1>Alterar Senha</h1>
                 </section>
 
-                <form method="POST" class="centralizar-back"> 
+                <div class="centralizar-back"> 
                     <section class="centralizar_input_alterar_senha">
 
                         
-                            <!--Input Senha-->
+                       
                         <div class="input_senha_group field">
                             <input name="senhaantiga" type="password" class="input_senha_field" placeholder="Name" required="">
                             <label for="name" class="input_senha_label">Senha antiga</label> <!--Alterar para o nome do input-->
@@ -67,16 +67,16 @@
 
                             <!--Botão Voltar-->
                         <div class="botao-padrao-voltar">
-                            <a href="#"><input type="submit" class="botao-voltar-submit"  value="VOLTAR"></a>
+                            <input type="reset" class="botao-voltar-submit"  value="VOLTAR">
                         </div>
 
                             <!--Botão Confirmar-->
                         <div class="botao-padrao-confirmar">
-                            <a href="#"><input name="btn_submit" type="submit" class="botao-confirmar-submit"  value="CONFIRMAR"></a>
+                            <input name="btn_submit" type="submit" class="botao-confirmar-submit"  value="CONFIRMAR">
                         </div>
 
                     </section>
-                </form>   
+                </div>   
             </section>
 
         </form>
