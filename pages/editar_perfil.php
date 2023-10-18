@@ -27,6 +27,7 @@ if (isset($_POST['botao_salvar'], $_POST['nome_cargo']))
     (isset($_POST['descricao_nao_conformidade']) ? 1 : 0),
     (isset($_POST['enviar_notificacao']) ? 1 : 0));
 
+
     
     /*Chamando o metodo cadastrar da classe Perfil, essa funcao primeiramente vai verificar se ja existe
     algum perfil com este nome, se sim vai retornar false, senao true, logo, vai cadastrar no banco.*/
@@ -48,7 +49,6 @@ $remover_item_checklist = $dados[0] ['cadastrar_sala'];
 $desbloquear_checklist = $dados[0] ['editar_sala'];
 $descricao_nao_conformidade = $dados[0] ['remover_sala'];
 $enviar_notificacao = $dados[0] ['enviar_notificacao'];
-$objeto_perfil = "";
 include_once("../includes/menu.php"); 
 require("../includes/main/main_editar_perfil.php");
 require("../includes/footer/footer.php");

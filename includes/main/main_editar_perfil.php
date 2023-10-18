@@ -17,57 +17,45 @@
         </div>
         <form method="POST" class="form_permissoes">
             <div class="input_group">
-                <input type="input" class="input_field" placeholder="Name" name="nome_cargo" value="<?=$dados[0]["nome"];?>" >
+                <input type="input" class="input_field" placeholder="Name" name="nome" value="<?=$dados[0]["nome"];?>" >
                 <label for="name" class="input_label">Nome</label> <!--Alterar para o nome do input-->
             </div>
             <div class="permissoes_salas">
-                <label class="titulo_permissoes">Permissões da Sala:</label>
+                <label class="titulo_permissoes">Gerenciamento de Cadastro:</label>
                 <div class="permissoes_salas_tipos">
-                    <div class="permissoes_salas_itens"> 
-                        <label class="label_permissao">Cadastrar Salas</label>
-                        <input type="checkbox" class="checkbox_permissoes" name="cadastrar_sala" <?php echo $cadastrar_salas == 1 ? "checked" : "";?>  />
+                    <div class="permissoes_salas_itens">
+                        <label class="label_permissao">Gerenciar Salas</label>
+                        <input type="checkbox" class="checkbox_permissoes" name="gerenciar_salas"  autocomplete="off"/>
                     </div>
                     <div class="permissoes_salas_itens">
-                        <label class="label_permissao">Edição de Salas</label>
-                        <input type="checkbox" class="checkbox_permissoes" name="editar_sala"   <?php echo $editar_salas == 1 ? "checked" : "";?>  />
+                        <label class="label_permissao">Gerenciar Perguntas</label>
+                        <input type="checkbox" class="checkbox_permissoes" name="gerenciar_perguntas"  autocomplete="off" />
                     </div>
                     <div class="permissoes_salas_itens">
-                        <label class="label_permissao">Remover Salas</label>
-                        <input type="checkbox" class="checkbox_permissoes" name="remover_sala"  <?php echo $remover_salas == 1 ? "checked" : "";?> />
+                        <label class="label_permissao">Gerenciar Checklists</label>
+                        <input type="checkbox" class="checkbox_permissoes" name="gerenciar_checklists" autocomplete="off"/>
                     </div>
+                    <div class="permissoes_salas_itens">
+                        <label class="label_permissao">Gerenciar Recados</label>
+                        <input type="checkbox" class="checkbox_permissoes" name="gerenciar_recados"  autocomplete="off"/>
+                    </div>
+                    <div class="permissoes_salas_itens">
+                        <label class="label_permissao">Gerenciar Notificacoes</label>
+                        <input type="checkbox" class="checkbox_permissoes" name="gerenciar_notificacoes"  autocomplete="off"/>
+                    </div>
+
                 </div>
             </div>
             <div class="permissoes_salas">
-                <label class="titulo_permissoes">Permissões do Check-List:</label>
+                <label class="titulo_permissoes">Checklist:</label>
                 <div class="permissoes_salas_tipos">
                     <div class="permissoes_salas_itens">
-                        <label class="label_permissao">Validar Check-List</label>
-                        <input type="checkbox" class="checkbox_permissoes" name="validar_checklist" <?php echo $validar_checklist == 1 ? "checked" : "" ?> />
+                        <label class="label_permissao">Realizar Checklist</label>
+                        <input type="checkbox" class="checkbox_permissoes" name="realizar_checklist" autocomplete="off"/>
                     </div>
                     <div class="permissoes_salas_itens">
-                        <label class="label_permissao">Inserir Item</label>
-                        <input type="checkbox" class="checkbox_permissoes" name="inserir_item_checklist" <?php echo $inserir_item_checklist ==1 ? "checked" : "" ?> />
-                    </div>
-                    <div class="permissoes_salas_itens">
-                        <label class="label_permissao">Remover Item</label>
-                        <input type="checkbox" class="checkbox_permissoes" name="remover_item_checklist" <?php echo $remover_item_checklist == 1 ? "checked" : "" ?> />
-                    </div>
-                    <div class="permissoes_salas_itens">
-                        <label class="label_permissao">Desbloquear Check-List</label>
-                        <input type="checkbox" class="checkbox_permissoes" name="desbloquear_checklist" <?php echo $desbloquear_checklist ==1 ? "checked" : "" ?> />
-                    </div>
-                    <div class="permissoes_salas_itens">
-                        <label class="label_permissao">Descrição de Não Conformidade</label>
-                        <input type="checkbox" class="checkbox_permissoes" name="descricao_nao_conformidade" <?php echo $descricao_nao_conformidade == 1 ? "checked" : "" ?> />
-                    </div>
-                </div>
-            </div>
-            <div class="permissoes_salas">
-                <label class="titulo_permissoes">Permissões de Notificações:</label>
-                <div class="permissoes_salas_tipos">
-                    <div class="permissoes_salas_itens">
-                        <label class="label_permissao">Enviar Notificações</label>
-                        <input type="checkbox" class="checkbox_permissoes" name="enviar_notificacao" <?php echo $enviar_notificacao == 1 ? "checked" : "" ?> />
+                        <label class="label_permissao">Nao conformidade e Acao corretiva</label>
+                        <input type="checkbox" class="checkbox_permissoes" name="realizar_nao_conformidade" autocomplete="off"/>
                     </div>
                 </div>
             </div>
