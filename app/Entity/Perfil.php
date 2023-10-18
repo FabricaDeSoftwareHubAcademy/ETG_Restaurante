@@ -6,23 +6,21 @@ use App\Db\Banco;
 
 class Perfil
 {
-    private $id_cadastro_perfil,
+    private 
     $nome,
     $gerenciar_perguntas,
     $gerenciar_salas,
     $realizar_acao_corretiva,
-    $realizar_nao_conformidade,
     $realizar_checklist,
     $gerenciar_checklist,
     $gerenciar_recados,
     $gerenciar_notificacoes,
     $administrador;
 
-    public function __construct($nome                 = '',
+    public function __construct($nome                 = null,
                                 $gerenciar_perguntas             = null,
                                 $gerenciar_salas                = null,
                                 $realizar_acao_corretiva               = null,
-                                $realizar_nao_conformidade          = null,
                                 $realizar_checklist     = null,
                                 $gerenciar_checklist     = null,
                                 $gerenciar_recados      = null,
@@ -34,7 +32,6 @@ class Perfil
         $this -> gerenciar_perguntas             = null;
         $this -> gerenciar_salas                = null;
         $this -> realizar_acao_corretiva               = null;
-        $this -> realizar_nao_conformidade          = null;
         $this -> realizar_checklist     = null;
         $this -> gerenciar_checklist     = null;
         $this -> gerenciar_recados      = null;
@@ -61,15 +58,14 @@ class Perfil
 
         {
             $obj_banco -> insert(                           [  'nome'                       => $this -> nome,
-                                                               'realizar_checklist'         => $this -> gerenciar_perguntas,
-                                                               'cadastrar_checklist'        => $this -> gerenciar_salas,
-                                                               'editar_checklist'           => $this -> realizar_acao_corretiva,
-                                                               'excluir_checklist'          => $this -> realizar_nao_conformidade,
-                                                               'lock_unlock_sala'           => $this -> realizar_checklist,
-                                                               'cadastrar_sala'             => $this -> gerenciar_checklist,
-                                                               'editar_sala'                => $this -> gerenciar_recados,
-                                                               'remover_sala'               => $this -> gerenciar_notificacoes,
-                                                               'enviar_notificacao'         => $this -> administrador
+                                                               'gerenciar_perguntas'         => $this -> gerenciar_perguntas,
+                                                                'gerenciar_salas' => $this -> gerenciar_salas,
+                                                                'realizar_acao_corretiva' => $this -> realizar_acao_corretiva,
+                                                                'realizar_checklist' => $this -> realizar_checklist,
+                                                                'gerenciar_checklist' => $this -> gerenciar_checklist,
+                                                                'gerenciar_recados' => $this -> gerenciar_recados,
+                                                                'gerenciar_notificacoes' => $this -> gerenciar_notificacoes,
+                                                                'administrador' => $this -> administrador
                                                              ]);
             return true;
         }
@@ -103,16 +99,15 @@ class Perfil
         $obj_banco = new Banco('cadastro_perfil');
         
         $dados = [
-            'nome'                 =>           $this -> nome,
-            'realizar_checklist'             => $this -> gerenciar_perguntas,
-            'cadastrar_checklist'              => $this -> gerenciar_salas,
-            'editar_checklist'               => $this -> realizar_acao_corretiva,
-            'excluir_checklist'          => $this -> realizar_nao_conformidade,
-            'lock_unlock_sala'     => $this -> realizar_checklist,
-            'cadastrar_sala'     => $this -> gerenciar_checklist,
-            'editar_sala'      => $this -> gerenciar_recados,
-            'remover_sala' => $this -> gerenciar_notificacoes,
-            'enviar_notificacao'         => $this -> administrador
+            'nome'                       => $this -> nome,
+            'gerenciar_perguntas'         => $this -> gerenciar_perguntas,
+             'gerenciar_salas' => $this -> gerenciar_salas,
+             'realizar_acao_corretiva' => $this -> realizar_acao_corretiva,
+             'realizar_checklist' => $this -> realizar_checklist,
+             'gerenciar_checklist' => $this -> gerenciar_checklist,
+             'gerenciar_recados' => $this -> gerenciar_recados,
+             'gerenciar_notificacoes' => $this -> gerenciar_notificacoes,
+             'administrador' => $this -> administrador
                 ];
 
         $obj_banco -> update('id = '. $id, $dados);

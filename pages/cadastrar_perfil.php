@@ -5,12 +5,18 @@ require("../includes/header/header.php");
 use App\Entity\Perfil;
 
 
-//Se o botao_salvar e o nome do cargo estiverem setados
+
 if (isset($_POST['botao_salvar'], $_POST['nome_cargo'])){
-    /*Chamando o metodo setDados que vai alterar os dados do objeto em questao
-    Lembrando que o unico obrigatorio e o nome do cargo*/
-    $objPerfil = new Perfil($_POST['nome_cargo'], 
-    (isset($_POST['cadastrar_sala']) ? 1 : 0)
+
+    $objPerfil = new Perfil($_POST['nome'], 
+    (isset($_POST['gerenciar_salas']) ? 1 : 0),
+    (isset($_POST['gerenciar_perguntas']) ? 1 : 0),
+    (isset($_POST['gerenciar_checklists']) ? 1 : 0),
+    (isset($_POST['gerenciar_salas']) ? 1 : 0),
+    (isset($_POST['gerenciar_notificacoes']) ? 1 : 0),
+    (isset($_POST['realizar_checklist']) ? 1 : 0),
+    (isset($_POST['realizar_nao_conformidade']) ? 1 : 0),
+    (isset($_POST['mais_usados_administrador']) ? 1 : 0)
 ); 
 
 /*Chamando o metodo cadastrar da classe Perfil, essa funcao primeiramente vai verificar se ja existe

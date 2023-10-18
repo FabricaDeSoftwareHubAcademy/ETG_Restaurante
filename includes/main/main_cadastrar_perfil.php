@@ -20,7 +20,7 @@
         </div>
         <form method="POST" class="form_permissoes">
             <div class="input_group">
-                <input type="input" class="input_field" placeholder="Name" name="nome_cargo">
+                <input type="input" class="input_field" placeholder="Name" name="nome">
                 <label for="name" class="input_label">Nome</label> <!--Alterar para o nome do input-->
             </div>
             <div class="permissoes_salas">
@@ -52,15 +52,15 @@
                     </div>
                     <div class="permissoes_salas_itens">
                         <label class="label_permissao">Gerenciar Checklists</label>
-                        <input type="checkbox" class="checkbox_permissoes" name="gerenciar_checklist"  autocomplete="off"/>
+                        <input type="checkbox" class="checkbox_permissoes" name="gerenciar_checklists"  autocomplete="off"/>
                     </div>
                     <div class="permissoes_salas_itens">
                         <label class="label_permissao">Gerenciar Recados</label>
-                        <input type="checkbox" class="checkbox_permissoes" name="gerenciar_sala"  autocomplete="off"/>
+                        <input type="checkbox" class="checkbox_permissoes" name="gerenciar_salas"  autocomplete="off"/>
                     </div>
                     <div class="permissoes_salas_itens">
                         <label class="label_permissao">Gerenciar Notificacoes</label>
-                        <input type="checkbox" class="checkbox_permissoes" name="gerenciar_notificacao"  autocomplete="off"/>
+                        <input type="checkbox" class="checkbox_permissoes" name="gerenciar_notificacoes"  autocomplete="off"/>
                     </div>
                 </div>
             </div>
