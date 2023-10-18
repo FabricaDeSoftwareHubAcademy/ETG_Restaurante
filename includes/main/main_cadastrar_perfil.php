@@ -24,53 +24,56 @@
                 <label for="name" class="input_label">Nome</label> <!--Alterar para o nome do input-->
             </div>
             <div class="permissoes_salas">
-                <label class="titulo_permissoes">Permissões da Sala:</label>
+                <label class="titulo_permissoes">Mais usados:</label>
                 <div class="permissoes_salas_tipos">
                     <div class="permissoes_salas_itens">
-                        <label class="label_permissao">Cadastrar Salas</label>
-                        <input type="checkbox" class="checkbox_permissoes" name="cadastrar_sala"  autocomplete="off"/>
+                        <label class="label_permissao">Administrador</label>
+                        <input type="checkbox" class="checkbox_permissoes" name="mais_usados_administrador"  autocomplete="off"/>
                     </div>
                     <div class="permissoes_salas_itens">
-                        <label class="label_permissao">Edição de Salas</label>
-                        <input type="checkbox" class="checkbox_permissoes" name="editar_sala"  autocomplete="off" />
+                        <label class="label_permissao">Logistica</label>
+                        <input type="checkbox" class="checkbox_permissoes" name="mais_usados_logistica"  autocomplete="off"/>
                     </div>
                     <div class="permissoes_salas_itens">
-                        <label class="label_permissao">Remover Salas</label>
-                        <input type="checkbox" class="checkbox_permissoes" name="remover_sala"  autocomplete="off"/>
+                        <label class="label_permissao">Docente</label>
+                        <input type="checkbox" class="checkbox_permissoes" name="mais_usados_docente"  autocomplete="off"/>
+                    </div>
+            </div>
+            <div class="permissoes_salas">
+                <label class="titulo_permissoes">Gerenciamento de Cadastro:</label>
+                <div class="permissoes_salas_tipos">
+                    <div class="permissoes_salas_itens">
+                        <label class="label_permissao">Gerenciar Salas</label>
+                        <input type="checkbox" class="checkbox_permissoes" name="gerenciar_salas"  autocomplete="off"/>
+                    </div>
+                    <div class="permissoes_salas_itens">
+                        <label class="label_permissao">Gerenciar Perguntas</label>
+                        <input type="checkbox" class="checkbox_permissoes" name="gerenciar_perguntas"  autocomplete="off" />
+                    </div>
+                    <div class="permissoes_salas_itens">
+                        <label class="label_permissao">Gerenciar Checklists</label>
+                        <input type="checkbox" class="checkbox_permissoes" name="gerenciar_checklist"  autocomplete="off"/>
+                    </div>
+                    <div class="permissoes_salas_itens">
+                        <label class="label_permissao">Gerenciar Recados</label>
+                        <input type="checkbox" class="checkbox_permissoes" name="gerenciar_sala"  autocomplete="off"/>
+                    </div>
+                    <div class="permissoes_salas_itens">
+                        <label class="label_permissao">Gerenciar Notificacoes</label>
+                        <input type="checkbox" class="checkbox_permissoes" name="gerenciar_notificacao"  autocomplete="off"/>
                     </div>
                 </div>
             </div>
             <div class="permissoes_salas">
-                <label class="titulo_permissoes">Permissões do Check-List:</label>
+                <label class="titulo_permissoes">Checklist:</label>
                 <div class="permissoes_salas_tipos">
                     <div class="permissoes_salas_itens">
-                        <label class="label_permissao">Validar Check-List</label>
-                        <input type="checkbox" class="checkbox_permissoes" name="validar_checklist"  autocomplete="off" />
+                        <label class="label_permissao">Realizar Checklist</label>
+                        <input type="checkbox" class="checkbox_permissoes" name="realizar_checklist"  autocomplete="off"/>
                     </div>
                     <div class="permissoes_salas_itens">
-                        <label class="label_permissao">Inserir Item</label>
-                        <input type="checkbox" class="checkbox_permissoes" name="inserir_item_checklist"  autocomplete="off" />
-                    </div>
-                    <div class="permissoes_salas_itens">
-                        <label class="label_permissao">Remover Item</label>
-                        <input type="checkbox" class="checkbox_permissoes" name="remover_item_checklist"  autocomplete="off" />
-                    </div>
-                    <div class="permissoes_salas_itens">
-                        <label class="label_permissao">Desbloquear Check-List</label>
-                        <input type="checkbox" class="checkbox_permissoes" name="desbloquear_checklist"  autocomplete="off" />
-                    </div>
-                    <div class="permissoes_salas_itens">
-                        <label class="label_permissao">Descrição de Não Conformidade</label>
-                        <input type="checkbox" class="checkbox_permissoes" name="descricao_nao_conformidade"  autocomplete="off"/>
-                    </div>
-                </div>
-            </div>
-            <div class="permissoes_salas">
-                <label class="titulo_permissoes">Permissões de Notificações:</label>
-                <div class="permissoes_salas_tipos">
-                    <div class="permissoes_salas_itens">
-                        <label class="label_permissao">Enviar Notificações</label>
-                        <input type="checkbox" class="checkbox_permissoes" name="enviar_notificacao"  autocomplete="off"/>
+                        <label class="label_permissao">Nao conformidade e Acao corretiva</label>
+                        <input type="checkbox" class="checkbox_permissoes" name="realizar_nao_conformidade"  autocomplete="off"/>
                     </div>
                 </div>
             </div>

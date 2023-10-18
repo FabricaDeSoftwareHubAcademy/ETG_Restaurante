@@ -102,9 +102,9 @@ class Perfil
         $obj_banco = new Banco('cadastro_perfil');
         
         $dados = [
-            'nome'                 => $this -> nome_cargo,
+            'nome'                 =>           $this -> nome_cargo,
             'realizar_checklist'             => $this -> cadastrar_sala,
-            'cadastrar_checklist'                => $this -> editar_sala,
+            'cadastrar_checklist'              => $this -> editar_sala,
             'editar_checklist'               => $this -> remover_sala,
             'excluir_checklist'          => $this -> validar_checklist,
             'lock_unlock_sala'     => $this -> inserir_item_checklist,
@@ -112,7 +112,7 @@ class Perfil
             'editar_sala'      => $this -> desbloquear_checklist,
             'remover_sala' => $this -> descricao_nao_conformidade,
             'enviar_notificacao'         => $this -> enviar_notificacao,
-            'add_recado'         => 0
+            'add_recado'       => 0
                 ];
 
         $obj_banco -> update('id = '. $id, $dados);
