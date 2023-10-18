@@ -74,6 +74,35 @@
 
 } 
 
+.area_bnt_set_senha{
+
+  height: 50px;
+  width: 700px; 
+  display: flex;
+  align-items: center;
+  justify-content: end;
+
+}
+.area_bnt_set_senha input{
+
+  margin-right: 20px;
+  background-color: #064A8C;
+  padding: 7px 15px;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  font-size: 17px;
+  font-family: 'Montserrat';
+  font-weight: bold;
+  cursor: pointer;
+  transition: .2s;
+
+}
+.area_bnt_set_senha input:hover{
+
+  padding: 9px 15px;
+
+}
 .name{
   margin-top: 10%;
   padding-left: 8%;
@@ -107,6 +136,8 @@
   position: absolute;
   top: 24px;
   right: 3%;
+  cursor: pointer;
+  z-index: 99;
 }
 
 @media (max-width: 832px) {

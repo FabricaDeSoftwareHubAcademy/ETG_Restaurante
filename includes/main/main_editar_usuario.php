@@ -8,7 +8,7 @@
 
 
     <main class="pai-de-todos">
-        <form method="POST" class="form-minha-conta">
+        <div  class="form-minha-conta">
             <section class="titulo">
                 <h1 class="titulo-perfil">Minha Conta</h1>
             </section>
@@ -29,10 +29,17 @@
 
             <section class="alinhar-input">
                 <div class="input_group field">
-                    <input type="input" class="input_field" id="input_name_cad" placeholder="Name" required="" name="nome_sala" disabled value="<?=$dados["nome"]?>" maxLength="105">
+                    <input type="input" class="input_field" id="input_name_cad" placeholder="Name" required="" name="nome" value="<?=$dados["nome"]?>" maxLength="105">
                     <label for="name" class="input_label"></label><!--Alterar para o nome do input-->
                     <i class="bi bi-pencil-square" onclick="habilitar()" id="icon-input"></i>
                 </div>
+
+                <div class="area_bnt_set_senha">
+
+                    <input type="submit" value="Alterar Nome">
+
+                </div>
+                
             </section>
 
             <section class="editar_senha">
@@ -40,7 +47,7 @@
                     <h1>Alterar Senha</h1>
                 </section>
 
-                <div class="centralizar-back"> 
+                <form method="POST" class="centralizar-back"> 
                     <section class="centralizar_input_alterar_senha">
 
                         
@@ -72,26 +79,44 @@
 
                             <!--Botão Confirmar-->
                         <div class="botao-padrao-confirmar">
-                            <input name="btn_submit" type="submit" class="botao-confirmar-submit"  value="CONFIRMAR">
+                            <input name="btn_submit" type="submit" id="btn_submit" class="botao-confirmar-submit"  value="CONFIRMAR">
                         </div>
 
                     </section>
-                </div>   
+                </form>   
             </section>
 
-        </form>
+        </div>
 
     </main>
     <script>
 
+
     var nome = document.querySelector("#input_name_cad");
-    
+    nome.disabled =true
+
     function habilitar(){
         console.log(nome)
         nome.disabled = false;
+        nome.classList.add("active")
 
     }
+
+
+    // btn_submit =document.getElementById("btn_submit")
+
+    // btn_submit.addEventListener("click", async (e) =>{
+        
+    //     const dados = new FormData(f1);
+    //     e.preventDefault(); 
+    //     // etapa 1: validando cpf
+    //     const dados_php = await fetch("./actions/validar_cpf.php", {
     
+    //         method: 'POST',
+    //         body: dados
+    //     } )
+    
+    //     const resposta = await dados_php.json();
 
     </script>
     

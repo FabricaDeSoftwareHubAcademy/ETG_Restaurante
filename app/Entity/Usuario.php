@@ -128,12 +128,13 @@ class Usuario
     }
 
 
-    public function setDados($email, $senha)
+    public function setDados($nome,$email, $senha)
     {
         //die('teste');
-        $objBanco = new Banco('usuarios');
+        $objBanco = new Banco('cadastro_usuario');
 
-        $objBanco -> update('email = "'.$email.'"',['senha' => $senha]);
+        $objBanco -> update('email = "'.$email.'"',['senha' => $senha,'nome' => $nome]);
+        echo("testeeee");
 
     }
 
@@ -158,11 +159,11 @@ class Usuario
 
    public function senhaValidate($senha, $email) : bool
    {
-       $objBanco = new Banco('usuarios');
-       
+       $objBanco = new Banco('cadastro_usuario');
+        
        $dados = $objBanco -> select('senha = "'.$senha.'" AND email = "'.$email.'"');
        if ($dados -> rowCount())
-       {
+       {    
            return true;
 
         }else

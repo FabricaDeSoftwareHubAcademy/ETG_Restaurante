@@ -17,40 +17,80 @@ $erro = false;
 $dados = $objUsuario->getDadosById($_SESSION['id_user']);
 print_r($dados);
 
+if(isset($_POST['btn_submit'])){
 
-
-if (isset($_POST['btn_submit'])){
-   
+    if(isset($_POST['nome'])){
     
-    if ($objUsuario -> senhaValidate($_POST['senhaantiga'], $_POST['email']))
-    {
-        //var_dump($_POST);exit;
-        if ($_POST['novasenha'] == $_POST['confirmarnovasenha'])
-        {
+    
+        if (isset($_POST['senhaantiga'],$_POST['novasenha'],$_POST['confirmarnovasenha'])){
             
-            $objUsuario -> setDados($_POST['email'] ,$_POST['novasenha']);
-            
-            $logado = true;
-            
+           
+            if ($objUsuario -> senhaValidate($_POST['senhaantiga'], $dados['email']))
+            {
+                $nome = $_POST['nome'];
+                 
+        
+                if ($_POST['novasenha'] == $_POST['confirmarnovasenha'])
+                {
+        
+                    $objUsuario -> setDados($nome,$dados['email'] ,$_POST['novasenha']);
+                    
+                    $logado = true;
+                    
+                }
+                else
+                {
+                    
+                    $erro = true;
+        
+                }
+                
+            } 
+            else
+            {
+                $erro = true;
+                
+                
+            }
+        
+             
+          
         }
+    }{
+    
+        if ($objUsuario -> senhaValidate($_POST['senhaantiga'], $dados['email']))
+        {
+            $nome = $dados['nome'];
+             
+    
+            if ($_POST['novasenha'] == $_POST['confirmarnovasenha'])
+            {
+    
+                $objUsuario -> setDados($nome,$dados['email'] ,$_POST['novasenha']);
+                
+                $logado = true;
+                
+            }
+            else
+            {
+                
+                $erro = true;
+    
+            }
+            
+        } 
         else
         {
-            
             $erro = true;
-
+            
+            
         }
-        
-    } 
-    else
-    {
-        $erro = true;
-        
-        
+    
     }
 
-     
-  
 }
+
+
 require("../includes/main/main_editar_usuario.php");
 //FIM DAS REGRAS DE NEGOCIO
 require("../includes/footer/footer.php");
