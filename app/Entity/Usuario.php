@@ -115,7 +115,20 @@ class Usuario
 
     }
 
-    public function updateData($email, $senha)
+    static function getDadosById($id) : array 
+    {
+         
+        $objBanco = new Banco('cadastro_usuario');
+        
+        $dados = $objBanco -> select("id = '".$id."'") -> fetchAll(PDO::FETCH_ASSOC)[0];
+        
+        
+        return $dados;
+
+    }
+
+
+    public function setDados($email, $senha)
     {
         //die('teste');
         $objBanco = new Banco('usuarios');

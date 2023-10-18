@@ -16,21 +16,8 @@ $dados = $notificacao -> getNotificacao();
 
 
 
-
+if
 date_default_timezone_set('America/Sao_paulo');
-
-// $dataBanco = Notificacao::getNotificacao()[0]['data_hora'];
-
-
-// $primeiraData = new DateTime($dataBanco);
-
-// $segundaData = new DateTime(date('Y-m-d H:i:s'));
-
-
-// $diferenca = $segundaData->getTimestamp() - $primeiraData->getTimestamp();
-
-
-
 
 $todas_notificacao = '';
 
