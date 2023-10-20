@@ -1,6 +1,7 @@
 <?php
 namespace App\Entity;
 use App\Db\Banco;
+use Exception;
 use PDO;
 use PDOException;
 
@@ -171,6 +172,33 @@ class Usuario
             return false;
        }
    
+  }
+  public function setName($new_nome,$email){
+
+
+    $dados = $this->getDadosByEmail($email)[0];
+
+    if($dados){
+        try{
+
+
+            $obBanco = new Banco("cadastro_usuario");
+            $update = [
+    
+                "nome"=>$new_nome
+            ]; 
+            $obBanco->update("id = '".$dados['id']."'",$update);
+            return true;
+        }
+        catch(Exception $e){
+
+            return false;
+        }
+         
+
+    }
+    
+     
   }
   public function setPasswordByEmail($email, $senha)
   {

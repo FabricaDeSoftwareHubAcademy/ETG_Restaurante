@@ -74,16 +74,30 @@
 
 } 
 
-.area_bnt_set_senha{
+.area_btn_alterar_nome{
 
   height: 50px;
   width: 700px; 
   display: flex;
   align-items: center;
   justify-content: end;
+  pointer-events: none;
+  opacity: 0;
+  transition: 0.5s;
 
 }
-.area_bnt_set_senha input{
+
+.area_btn_alterar_nome.active{
+
+
+  pointer-events: auto;
+  opacity: 1;
+
+
+}
+
+
+.area_btn_alterar_nome input{
 
   margin-right: 20px;
   background-color: #064A8C;
@@ -98,7 +112,7 @@
   transition: .2s;
 
 }
-.area_bnt_set_senha input:hover{
+.area_btn_alterar_nome input:hover{
 
   padding: 9px 15px;
 

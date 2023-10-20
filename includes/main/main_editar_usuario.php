@@ -27,20 +27,21 @@
                 <h2 class="name-name">Nome</h2>
             </section>
 
-            <section class="alinhar-input">
+            <form method="POST" class="alinhar-input">
+                
                 <div class="input_group field">
                     <input type="input" class="input_field" id="input_name_cad" placeholder="Name" required="" name="nome" value="<?=$dados["nome"]?>" maxLength="105">
                     <label for="name" class="input_label"></label><!--Alterar para o nome do input-->
                     <i class="bi bi-pencil-square" onclick="habilitar()" id="icon-input"></i>
                 </div>
 
-                <div class="area_bnt_set_senha">
+                <div class="area_btn_alterar_nome" id="area_btn_alterar_nome">
 
-                    <input type="submit" value="Alterar Nome">
+                    <input type="submit" name="btn_alterar_nome" value="Alterar Nome">
 
                 </div>
                 
-            </section>
+            </form>
 
             <section class="editar_senha">
                     <section class='titulo_alterar_senha'>
@@ -93,12 +94,26 @@
 
 
     var nome = document.querySelector("#input_name_cad");
-    nome.disabled =true
+    var area_btn_cad_user = document.getElementById("area_btn_alterar_nome")
+
+    nome.disabled = true
+
+
+    area_btn_cad_user.addEventListener('click',teste)
+
+    async function teste(){
+        area_btn_cad_user.prevent
+        setTimeout(function(){
+            window.reload();
+
+        },3000)
+    }
 
     function habilitar(){
         console.log(nome)
         nome.disabled = false;
         nome.classList.add("active")
+        area_btn_cad_user.classList.add("active")
 
     }
 
