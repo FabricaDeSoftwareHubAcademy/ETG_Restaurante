@@ -83,6 +83,7 @@ class Perfil
     //UPDATE
     public function setDados($id, $dados)
     {
+        //var_dump($dados);exit;
         $obj_banco = new Banco('cadastro_perfil');
 
         $obj_banco -> update('id = '. $id, $dados);
@@ -102,7 +103,6 @@ class Perfil
             $obj_banco -> delete($id,'id');
 
             return true;
-
         }
         else
         {

@@ -10,7 +10,7 @@ if(isset($_GET['id'])){
     
 }
 //Se o botao_salvar e o nome do cargo estiverem setados
-if (isset($_POST['botao_salvar'], $_POST['nome_cargo']))
+if (isset($_POST['botao_salvar'], $_POST['nome']))
 {
     $objeto_perfil -> setDados($id, ['nome' => $_POST['nome'],
                                     'gerenciar_perguntas' => (isset($_POST['gerenciar_perguntas']) ? 1 : 0),
@@ -37,7 +37,6 @@ $gerenciar_recados = $dados[0] ['gerenciar_recados'];
 $gerenciar_notificacoes = $dados[0] ['gerenciar_notificacoes'];
 $administrador = $dados[0] ['administrador'];
 
-var_dump($dados[0]);
 include_once("../includes/menu.php"); 
 require("../includes/main/main_editar_perfil.php");
 require("../includes/footer/footer.php");

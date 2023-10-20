@@ -15,7 +15,7 @@
         </div>
         <form method="POST" class="form_permissoes">
             <div class="input_group">
-                <input type="input" class="input_field" placeholder="Name" name="nome" <?=$dados[0]["nome"];?>>
+                <input type="input" class="input_field" placeholder="Name" name="nome" value="<?=$dados[0]["nome"];?>">
                 <label for="name" class="input_label">Nome</label> 
             </div>
             <div class="permissoes_salas">
@@ -23,23 +23,23 @@
                 <div class="permissoes_salas_tipos">
                     <div class="permissoes_salas_itens">
                         <label class="label_permissao">Gerenciar Salas</label>
-                        <input type="checkbox" class="checkbox_permissoes" name="gerenciar_salas" id="gerenciar_salas"  autocomplete="off"/>
+                        <input type="checkbox" class="checkbox_permissoes" name="gerenciar_salas" id="gerenciar_salas"  autocomplete="off" <?php echo $gerenciar_salas == 1 ? "checked" : "";?>/>
                     </div>
                     <div class="permissoes_salas_itens">
                         <label class="label_permissao">Gerenciar Perguntas</label>
-                        <input type="checkbox" class="checkbox_permissoes" name="gerenciar_perguntas"  id="gerenciar_perguntas" autocomplete="off" />
+                        <input type="checkbox" class="checkbox_permissoes" name="gerenciar_perguntas"  id="gerenciar_perguntas" autocomplete="off" <?php echo $gerenciar_perguntas == 1 ? "checked" : "";?>/>
                     </div>
                     <div class="permissoes_salas_itens">
                         <label class="label_permissao">Gerenciar Checklists</label>
-                        <input type="checkbox" class="checkbox_permissoes" name="gerenciar_checklists"  id="gerenciar_checklists" autocomplete="off"/>
+                        <input type="checkbox" class="checkbox_permissoes" name="gerenciar_checklists"  id="gerenciar_checklists" autocomplete="off"<?php echo $gerenciar_checklists == 1 ? "checked" : "";?>/>
                     </div>
                     <div class="permissoes_salas_itens">
                         <label class="label_permissao">Gerenciar Recados</label>
-                        <input type="checkbox" class="checkbox_permissoes" name="gerenciar_recados" id="gerenciar_recados" autocomplete="off"/>
+                        <input type="checkbox" class="checkbox_permissoes" name="gerenciar_recados" id="gerenciar_recados" autocomplete="off" <?php echo $gerenciar_recados == 1 ? "checked" : "";?>/>
                     </div>
                     <div class="permissoes_salas_itens">
                         <label class="label_permissao">Gerenciar Notificacoes</label>
-                        <input type="checkbox" class="checkbox_permissoes" name="gerenciar_notificacoes"  id="gerenciar_notificacoes" autocomplete="off"/>
+                        <input type="checkbox" class="checkbox_permissoes" name="gerenciar_notificacoes"  id="gerenciar_notificacoes" autocomplete="off" <?php echo $gerenciar_notificacoes == 1 ? "checked" : "";?>/>
                     </div>
 
                 </div>
@@ -49,11 +49,11 @@
                 <div class="permissoes_salas_tipos">
                     <div class="permissoes_salas_itens">
                         <label class="label_permissao">Realizar Checklist</label>
-                        <input type="checkbox" class="checkbox_permissoes" name="realizar_checklist"  id="realizar_checklist" autocomplete="off"/>
+                        <input type="checkbox" class="checkbox_permissoes" name="realizar_checklist"  id="realizar_checklist" autocomplete="off" <?php echo $realizar_checklist == 1 ? "checked" : "";?>/>
                     </div>
                     <div class="permissoes_salas_itens">
                         <label class="label_permissao">Nao conformidade e Acao corretiva</label>
-                        <input type="checkbox" class="checkbox_permissoes" name="realizar_nao_conformidade" id="realizar_nao_conformidade" autocomplete="off"/>
+                        <input type="checkbox" class="checkbox_permissoes" name="realizar_nao_conformidade" id="realizar_nao_conformidade" autocomplete="off" <?php echo $realizar_nao_conformidade == 1 ? "checked" : "";?>/>
                     </div>
                 </div>
             </div>
