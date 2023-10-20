@@ -26,8 +26,8 @@ if (isset($_POST['botao_salvar'], $_POST['nome_cargo']))
 
 }
 
-
 $dados = $objeto_perfil -> getDadosById($id);
+$nome = $dados[0] ['nome'];
 $gerenciar_perguntas = $dados[0] ['gerenciar_perguntas'];
 $gerenciar_salas = $dados[0] ['gerenciar_salas'];
 $realizar_acao_corretiva = $dados[0] ['realizar_acao_corretiva'];
@@ -37,6 +37,7 @@ $gerenciar_recados = $dados[0] ['gerenciar_recados'];
 $gerenciar_notificacoes = $dados[0] ['gerenciar_notificacoes'];
 $administrador = $dados[0] ['administrador'];
 
+var_dump($dados[0]);
 include_once("../includes/menu.php"); 
 require("../includes/main/main_editar_perfil.php");
 require("../includes/footer/footer.php");

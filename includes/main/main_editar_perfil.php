@@ -15,7 +15,7 @@
         </div>
         <form method="POST" class="form_permissoes">
             <div class="input_group">
-                <input type="input" class="input_field" placeholder="Name" name="nome" value="">
+                <input type="input" class="input_field" placeholder="Name" name="nome" <?=$dados[0]["nome"];?>>
                 <label for="name" class="input_label">Nome</label> 
             </div>
             <div class="permissoes_salas">
