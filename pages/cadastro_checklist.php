@@ -86,7 +86,21 @@
                     <label for="name" class="input_label">Nome do CheckList</label> <!--Alterar para o nome do input-->
                 </div>
 
-                    <div class="titulo-selecione-pergunta-pre">
+                    
+                
+            </div>
+            <!-- Menu das abas -->
+            <ul class="tab-menu">
+              <li class="tab-button active" onclick="showTab('tab1')">Aba 1</li>
+              <li class="tab-button" onclick="showTab('tab2')">Aba 2</li>
+              <li class="tab-button" onclick="showTab('tab3')">Aba 3</li>
+            </ul>
+
+            <!-- Conteúdo das abas -->
+            <div id="tab1" class="tab" style="display: block;">
+              <h2>Aba 1</h2>
+              <p>Conteúdo da aba 1.</p>
+              <div class="titulo-selecione-pergunta-pre">
                         <h1 id="titulo-pergunta-pos">Selecione as Perguntas Pré-Aula:</h1>
                     </div>
 
@@ -101,7 +115,12 @@
 
                     </table>
                 </section>
-                <div class="titulo-selecione-pergunta-pos">
+            </div>
+
+            <div id="tab2" class="tab">
+              <h2>Aba 2</h2>
+              <p>Conteúdo da aba 2.</p>
+              <div class="titulo-selecione-pergunta-pos">
                         <h1 id="titulo-pergunta-pos">Selecione as Perguntas Pós-Aula:</h1>
                     </div>
                 <section class="selecao-pergunta">
@@ -111,11 +130,27 @@
                             <th>Pergunta</th>
                         </tr>
                         <?=$tr?>
-
-
                     </table>
                 </section>
             </div>
+
+            <div id="tab3" class="tab">
+              <h2>Aba 3</h2>
+              <p>Conteúdo da aba 3.</p>
+            </div>
+
+            <script>
+              function showTab(tabId) {
+                const tabs = document.querySelectorAll('.tab');
+                const buttons = document.querySelectorAll('.tab-button');
+
+                tabs.forEach(tab => tab.style.display = 'none');
+                buttons.forEach(button => button.classList.remove('active'));
+
+                document.getElementById(tabId).style.display = 'block';
+                document.querySelector(`[onclick="showTab('${tabId}')"`).classList.add('active');
+              }
+            </script>
 
             <div class="botoes">
                 <div class="botoes-cadastro-checklist">

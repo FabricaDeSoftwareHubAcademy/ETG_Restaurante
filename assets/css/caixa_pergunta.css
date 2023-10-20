@@ -1,3 +1,41 @@
+/* Estilos gerais */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  text-align: center;
+}
+
+/* Estilos das abas */
+.tab {
+  display: none;
+  padding: 20px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+}
+
+/* Estilos do menu das abas */
+.tab-menu {
+  display: flex;
+  list-style: none;
+  padding: 0;
+}
+
+.tab-menu li {
+  margin: 0;
+  padding: 10px 20px;
+  cursor: pointer;
+  background-color: #3498db;
+  color: #fff;
+  border-radius: 5px 5px 0 0;
+  margin-bottom: -1px;
+}
+
+.tab-menu li.active {
+  background-color: #2980b9;
+}
+
+/* ------------------------------------- */
+
 /* Estilo da Caixa */
 
 .selecao-pergunta{
