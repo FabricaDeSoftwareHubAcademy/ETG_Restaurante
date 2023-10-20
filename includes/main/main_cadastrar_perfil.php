@@ -29,15 +29,15 @@
                 <div class="permissoes_salas_tipos">
                     <div class="permissoes_salas_itens">
                         <label class="label_permissao">Administrador</label>
-                        <input type="checkbox" class="checkbox_permissoes" name="mais_usados_administrador"  id="mais_usados_administrador" autocomplete="off" onchange="preencherOutrasCheckboxesAdm(this)"/>
+                        <input type="checkbox" class="checkbox_permissoes" name="mais_usados_administrador"  id="mais_usados_administrador" autocomplete="off"/>
                     </div>
                     <div class="permissoes_salas_itens">
                         <label class="label_permissao">Logistica</label>
-                        <input type="checkbox" class="checkbox_permissoes" name="mais_usados_logistica"  autocomplete="off" onchange="preencherOutrasCheckboxesLogistica(this)"/>
+                        <input type="checkbox" class="checkbox_permissoes" name="mais_usados_logistica" id="mais_usados_logistica" autocomplete="off"/>
                     </div>
                     <div class="permissoes_salas_itens">
                         <label class="label_permissao">Docente</label>
-                        <input type="checkbox" class="checkbox_permissoes" name="mais_usados_docente"  autocomplete="off" onchange="preencherOutrasCheckboxesDocente(this)"/>
+                        <input type="checkbox" class="checkbox_permissoes" name="mais_usados_docente" id="mais_usados_docente" autocomplete="off"/>
                     </div>
             </div>
             <div class="permissoes_salas">
@@ -96,6 +96,4 @@
 </body>
 
 
-<script src="../assets/js/preencher_checkbox_adm.js"></script>
-<script src="../assets/js/preencher_checkbox_docente.js"></script>
-<script src="../assets/js/preencher_checkbox_logistica.js"></script>
+<script src="../assets/js/preencher_checkbox_mais_usados.js"></script>
