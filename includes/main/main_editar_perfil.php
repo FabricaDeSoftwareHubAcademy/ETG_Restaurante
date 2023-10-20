@@ -7,8 +7,6 @@
 <link rel="stylesheet" href="../assets/css/cadastrar_editar_perfil.css">
 
 <body class="tela_cadastro_perfil">
-
-
     <div class="container">
         <div class="titulo_cad" >
             <h1 class="titulo_cad_perfil" >
@@ -17,31 +15,31 @@
         </div>
         <form method="POST" class="form_permissoes">
             <div class="input_group">
-                <input type="input" class="input_field" placeholder="Name" name="nome" value="<?=$dados[0]["nome"];?>" >
-                <label for="name" class="input_label">Nome</label> <!--Alterar para o nome do input-->
+                <input type="input" class="input_field" placeholder="Name" name="nome" value="">
+                <label for="name" class="input_label">Nome</label> 
             </div>
             <div class="permissoes_salas">
                 <label class="titulo_permissoes">Gerenciamento de Cadastro:</label>
                 <div class="permissoes_salas_tipos">
                     <div class="permissoes_salas_itens">
                         <label class="label_permissao">Gerenciar Salas</label>
-                        <input type="checkbox" class="checkbox_permissoes" name="gerenciar_salas"  autocomplete="off"/>
+                        <input type="checkbox" class="checkbox_permissoes" name="gerenciar_salas" id="gerenciar_salas"  autocomplete="off"/>
                     </div>
                     <div class="permissoes_salas_itens">
                         <label class="label_permissao">Gerenciar Perguntas</label>
-                        <input type="checkbox" class="checkbox_permissoes" name="gerenciar_perguntas"  autocomplete="off" />
+                        <input type="checkbox" class="checkbox_permissoes" name="gerenciar_perguntas"  id="gerenciar_perguntas" autocomplete="off" />
                     </div>
                     <div class="permissoes_salas_itens">
                         <label class="label_permissao">Gerenciar Checklists</label>
-                        <input type="checkbox" class="checkbox_permissoes" name="gerenciar_checklists" autocomplete="off"/>
+                        <input type="checkbox" class="checkbox_permissoes" name="gerenciar_checklists"  id="gerenciar_checklists" autocomplete="off"/>
                     </div>
                     <div class="permissoes_salas_itens">
                         <label class="label_permissao">Gerenciar Recados</label>
-                        <input type="checkbox" class="checkbox_permissoes" name="gerenciar_recados"  autocomplete="off"/>
+                        <input type="checkbox" class="checkbox_permissoes" name="gerenciar_recados" id="gerenciar_recados" autocomplete="off"/>
                     </div>
                     <div class="permissoes_salas_itens">
                         <label class="label_permissao">Gerenciar Notificacoes</label>
-                        <input type="checkbox" class="checkbox_permissoes" name="gerenciar_notificacoes"  autocomplete="off"/>
+                        <input type="checkbox" class="checkbox_permissoes" name="gerenciar_notificacoes"  id="gerenciar_notificacoes" autocomplete="off"/>
                     </div>
 
                 </div>
@@ -51,25 +49,28 @@
                 <div class="permissoes_salas_tipos">
                     <div class="permissoes_salas_itens">
                         <label class="label_permissao">Realizar Checklist</label>
-                        <input type="checkbox" class="checkbox_permissoes" name="realizar_checklist" autocomplete="off"/>
+                        <input type="checkbox" class="checkbox_permissoes" name="realizar_checklist"  id="realizar_checklist" autocomplete="off"/>
                     </div>
                     <div class="permissoes_salas_itens">
                         <label class="label_permissao">Nao conformidade e Acao corretiva</label>
-                        <input type="checkbox" class="checkbox_permissoes" name="realizar_nao_conformidade" autocomplete="off"/>
+                        <input type="checkbox" class="checkbox_permissoes" name="realizar_nao_conformidade" id="realizar_nao_conformidade" autocomplete="off"/>
                     </div>
                 </div>
             </div>
-            <div class="botoes">
-                <!--Botão Voltar-->
-                <div class="botao-padrao-voltar">
-                    <a href="listar_perfis.php"class="botao-voltar-submit">VOLTAR</a>
-                </div>
-                <!--Botão Salvar-->
-                <div class="botao-padrao-voltar">
-                    <a href="listar_perfis.php"><input name="botao_salvar" type="submit" class="botao-salvar-submit"  value="SALVAR"></a>
+            <div class="container_gp2">
+                <div class="botoes">
+                    <!--Botão Voltar-->
+                    <div class="botao-padrao-voltar">
+                        <a href="listar_perfis.php" class="botao-voltar-submit">VOLTAR</a>
+                    </div>
+                    <!--Botão Salvar-->
+                    <div class="botao-padrao-salvar">
+                        <a><input name="botao_salvar" type="submit" class="botao-salvar-submit" value="SALVAR"></a>
+                    </div>
                 </div>
             </div>
-        </form>  
+        </form>
+
     </div>
 <!-- </main>    -->
 

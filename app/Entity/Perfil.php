@@ -81,21 +81,9 @@ class Perfil
 
 
     //UPDATE
-    public function setDados($id)
+    public function setDados($id, $dados)
     {
         $obj_banco = new Banco('cadastro_perfil');
-        
-        $dados = [
-            'nome'                       => $this -> nome,
-            'gerenciar_perguntas'         => $this -> gerenciar_perguntas,
-             'gerenciar_salas' => $this -> gerenciar_salas,
-             'realizar_acao_corretiva' => $this -> realizar_acao_corretiva,
-             'realizar_checklist' => $this -> realizar_checklist,
-             'gerenciar_checklist' => $this -> gerenciar_checklist,
-             'gerenciar_recados' => $this -> gerenciar_recados,
-             'gerenciar_notificacoes' => $this -> gerenciar_notificacoes,
-             'administrador' => $this -> administrador
-                ];
 
         $obj_banco -> update('id = '. $id, $dados);
         
