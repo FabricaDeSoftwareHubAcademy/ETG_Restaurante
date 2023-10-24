@@ -26,7 +26,7 @@ if(isset(
         $_POST['btn_submit'],
         $_POST['nome'],
         $_POST['id_perfil'],
-        $_POST['num_matricula'],
+        $_POST['matricula'],
         $_POST['senha'],
         ))
         
@@ -35,7 +35,7 @@ if(isset(
             $objUsuario -> cadastrar(
             $_POST['nome'],
             $_POST['email'],
-            $_POST['num_matricula'],
+            $_POST['matricula'],
             $_POST['senha'],
             $_POST['id_perfil']
             
