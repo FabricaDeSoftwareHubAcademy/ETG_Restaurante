@@ -15,7 +15,7 @@
         </div>
         <form method="POST" class="form_permissoes">
             <div class="input_group">
-                <input type="input" class="input_field" placeholder="Name" name="nome" value="<?=$dados[0]["nome"];?>">
+                <input type="input" class="input_field" placeholder="Name" name="nome" value="<?=$nome;?>">
                 <label for="name" class="input_label">Nome</label> 
             </div>
             <div class="permissoes_salas">
@@ -31,7 +31,7 @@
                     </div>
                     <div class="permissoes_salas_itens">
                         <label class="label_permissao">Gerenciar Checklists</label>
-                        <input type="checkbox" class="checkbox_permissoes" name="gerenciar_checklists"  id="gerenciar_checklists" autocomplete="off"<?php echo $gerenciar_checklists == 1 ? "checked" : "";?>/>
+                        <input type="checkbox" class="checkbox_permissoes" name="gerenciar_checklists"  id="gerenciar_checklists" autocomplete="off"<?php echo $gerenciar_checklist == 1 ? "checked" : "";?>/>
                     </div>
                     <div class="permissoes_salas_itens">
                         <label class="label_permissao">Gerenciar Recados</label>
@@ -53,7 +53,7 @@
                     </div>
                     <div class="permissoes_salas_itens">
                         <label class="label_permissao">Nao conformidade e Acao corretiva</label>
-                        <input type="checkbox" class="checkbox_permissoes" name="realizar_nao_conformidade" id="realizar_nao_conformidade" autocomplete="off" <?php echo $realizar_nao_conformidade == 1 ? "checked" : "";?>/>
+                        <input type="checkbox" class="checkbox_permissoes" name="realizar_nao_conformidade" id="realizar_nao_conformidade" autocomplete="off" <?php echo $realizar_acao_corretiva == 1 ? "checked" : "";?>/>
                     </div>
                 </div>
             </div>

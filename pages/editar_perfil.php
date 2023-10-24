@@ -35,7 +35,6 @@ $realizar_checklist = $dados[0] ['realizar_checklist'];
 $gerenciar_checklist = $dados[0] ['gerenciar_checklist'];
 $gerenciar_recados = $dados[0] ['gerenciar_recados'];
 $gerenciar_notificacoes = $dados[0] ['gerenciar_notificacoes'];
-$administrador = $dados[0] ['administrador'];
 
 include_once("../includes/menu.php"); 
 require("../includes/main/main_editar_perfil.php");
