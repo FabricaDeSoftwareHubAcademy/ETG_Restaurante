@@ -72,23 +72,11 @@
                     <h3 class="alinar_titulo_h3">Dias De Funcionamento </h3>
 
                     <div class="area_Dos_check_box">
-                        
-                        <!-- <div class="dropdown-ck">
 
-                                <select name="andar_sala" class="option">
-
-                                    <option type="input" name="andar_sala">Primeiro Andar</option>
-                                    <option type="input" name="andar_sala">Segundo Andar</option>
-                                    <option type="input" name="andar_sala">Terceiro Andar</option>
-                                    <option type="input" name="andar_sala">Quarto Andar</option>
-                                    <option type="input" name="andar_sala">Quinto Andar</option>
-
-                                    
-                                </select> 
-
-
-                        </div> -->
-
+                        <div class="Check_Box_individual">
+                            <p class="coisa_tag_p">Segunda</p>
+                            <input name="segunda" class="espaco_check_box" type="checkbox" />
+                        </div>
                         <div class="Check_Box_individual">
                             <p class="coisa_tag_p">Terça</p>
                             <input name="terca" class="espaco_check_box" type="checkbox" />
@@ -189,11 +177,9 @@
    
                         
                         <div class="botao-padrao-cadastrar">
-                            <a><input name="btn_submit" type="submit" class="botao-cadastrar-submit" id="botao-cadastrar-submit" value="CADASTRAR"  ></a>
+                            <a><input name="btn_submit" type="submit" class="botao-cadastrar-submit" id="botao-cadastrar-submit" value="CADASTRAR"></a>
 
                         </div>
-
-
                             <!-- onclick="abrir_modal()" -->
 
 

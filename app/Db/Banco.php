@@ -161,7 +161,7 @@ class Banco{
                   SET '. $setter . '
                   WHERE '. $where;
         //echo $query;exit;
-        return $this->executarQuery($query);
+        return $this->executarQuery($query);    
         // terminar............ 
     }
 

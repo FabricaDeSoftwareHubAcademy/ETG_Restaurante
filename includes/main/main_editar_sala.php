@@ -13,7 +13,7 @@
             
             <div class="wrap-cadastro-salas">
 
-                <form class="cadastro-sala-form" method="POST" enctype="multipart/form-data" action="visualizar_sala.php" >
+                <form class="cadastro-sala-form" method="POST" enctype="multipart/form-data">
                     <div class="titulo_de_cadastro">
 
                         <h1> Editar Sala </h1>
@@ -31,7 +31,7 @@
 
  
                             <div class="input_group field">
-                                <input value="<?=$dados_sala[0]['nome']?>" type="input" class="input_field toguroo" placeholder="Name" required="" name="nome_sala" maxLength="32">
+                                <input value="<?=$dados_sala[0]['nome']?>" type="input" class="input_field toguroo" placeholder="Name" required="" name="nome" maxLength="32">
                                 <label for="name" class="input_label">Nome Da Sala</label> <!--Alterar para o nome do input-->
                             </div>
 
@@ -44,7 +44,7 @@
 
 
                             <div class="input_group field ">
-                                <input type="input" value="<?=$dados_sala[0]['codigo']?>" class="input_field toguro" placeholder="Name" required="" name="codigo_sala" maxLength="8">
+                                <input type="input" value="<?=$dados_sala[0]['codigo']?>" class="input_field toguro" placeholder="Name" required="" name="codigo" maxLength="8">
                                 <label for="name" class="input_label toguro" > Código </label> <!--Alterar para o nome do input-->
                             </div>
 
@@ -59,7 +59,7 @@
                         <?php
                                 foreach ($checklists as $id => $nome)
                                 {
-                                    if ($id == $dados_sala[0]['id_cadastro_checklist'])
+                                    if ($id == $dados_sala[0]['id'])
                                     {
                                         echo "<option name=\"checklist\" value='$id' selected>$nome</option>";
                                     }
@@ -150,7 +150,7 @@
                         <div class="text-area">
                             <span id=descrição>Descrição</span>
 
-                            <textarea placeholder="Area de texto " name="descricao_sala" id="textareajs" cols="70" rows="10" class="text-descricao" maxlength="254"><?=$dados_sala[0]['descricao']?></textarea>
+                            <textarea placeholder="Area de texto " name="descricao" id="textareajs" cols="70" rows="10" class="text-descricao" maxlength="254"><?=$dados_sala[0]['descricao']?></textarea>
                         </div>
                         <div class="cor-sala">
                             <div class="alinar-img">
@@ -161,12 +161,12 @@
                                     <label id="botão-img" for="arquivo" >Selecionar Foto</label>
                                 </div>
                                 
-                                <input type="file" name="imagem_sala" id="arquivo" >
+                                <input type="file" name="img_sala" id="arquivo" >
 
                                 <div class="area-anexo"> 
 
                                     
-                                    <img id="camera_imagem" class="imagem_aparecer_editar" src="../storage/salas/<?=$dados_sala[0]['imagem']?>" alt="">
+                                    <img id="camera_imagem" class="imagem_aparecer_editar" src="../storage/salas/<?=$dados_sala[0]['img_sala']?>" alt="">
 
                                     <img  id="imagem_agora_vai" class="novo_css_imagem" src="" alt="">
 
@@ -174,23 +174,22 @@
                             </div>    
                             <div class="alinar-botao-cor">
                                 <span id="selecao-cor-text">Cor da sala : </span> 
-                                <input value="<?=$dados_sala[0]['cor']?>" class="botao-cor" name="cor_sala" type="color">
+                                <input value="<?=$dados_sala[0]['cor_itens']?>" class="botao-cor" name="cor_itens" type="color">
                             </div>
                         </div>
                             
-                        <div class="botao-on-off">
+                        <!-- <div class="botao-on-off">
 
                             <div class="text-on-off">
                                     Desativar/Ativar
                             </div>
                             <label class="switch">
-                                <!-- lugar para printar  -->
-                                <input name="ativo_desativo" <?=($dados_sala[0]['ativo_desativo'] == '1' ? 'checked' : NULL)?> type="checkbox">
+                                <input name="ativo_desativo" type="checkbox">
                                 <span class="slider"></span>
                             </label>
 
                         </div>
-                         
+                          -->
                             
 
                                

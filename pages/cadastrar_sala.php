@@ -1,8 +1,8 @@
 
 <?php
 require __DIR__."/../vendor/autoload.php";
-include_once("../includes/menu.php"); 
 require("../includes/header/header.php");
+include_once("../includes/menu.php"); 
 
 use App\Entity\Sala;
 use App\Entity\CadastroChecklist;
@@ -27,6 +27,26 @@ if (isset(
         
     }
             
+    $dias_funcionamento = array("segunda" => ($_POST['segunda'] == 'on' ? 'sim' : 'nao'),
+
+    "terca" => ($_POST['terca'] == 'on' ? 'sim' : 'nao'),
+
+    "quarta" => ($_POST['quarta'] == 'on' ? 'sim' : 'nao'),
+
+    "quinta" => ($_POST['quinta'] == 'on' ? 'sim' : 'nao'),
+
+    "sexta" => ($_POST['sexta'] == 'on' ? 'sim' : 'nao'),
+    
+    "sabado" => ($_POST['sabado'] == 'on' ? 'sim' : 'nao'),
+
+    "turnos" => array(
+        'matutino'          => ($_POST['matutino'] == 'on' ? 'sim' : 'nao'),
+        'vespertino'        => ($_POST['vespertino'] == 'on' ? 'sim' : 'nao'),
+        'noturno'           => ($_POST['noturno'] == 'on' ? 'sim' : 'nao')
+                    )
+    );
+    $dias_funcionamentoJson = json_encode($dias_funcionamento);
+
     $obj_sala = new Sala
     (
         $_POST       ['nome_sala'],
@@ -35,46 +55,16 @@ if (isset(
         $imagem,
         $_POST      ['descricao_sala'],
         null, //status
-        null, //horarios
+        $dias_funcionamentoJson, //horarios
         $_POST['checklist'],
         null
-        
-        
     );
-        
-    if($obj_sala -> cadastrar())
-    {
-        die('cadastrou!');
-    }
-    else
-    {
-        die('nao cadastrou');
-    }
-    
+        $obj_sala -> cadastrar();
+        header("Location: listar_salas.php");
+
 }   
         
 require("../includes/main/main_cadastrar_sala.php");
 require("../includes/footer/footer.php");
-//logica do Json das checkbox de periodo
-        // $dias_funcionamento = array("segunda" => ($_POST['segunda'] == 'on' ? 'sim' : 'nao'),
 
-        //                             "terca" => ($_POST['terca'] == 'on' ? 'sim' : 'nao'),
-
-        //                             "quarta" => ($_POST['quarta'] == 'on' ? 'sim' : 'nao'),
-
-        //                             "quinta" => ($_POST['quinta'] == 'on' ? 'sim' : 'nao'),
-
-        //                             "sexta" => ($_POST['sexta'] == 'on' ? 'sim' : 'nao'),
-                                    
-        //                             "sabado" => ($_POST['sabado'] == 'on' ? 'sim' : 'nao'),
-
-        //                             "turnos" => array(
-        //                                 'matutino'          => ($_POST['matutino'] == 'on' ? 'sim' : 'nao'),
-        //                                 'vespertino'        => ($_POST['vespertino'] == 'on' ? 'sim' : 'nao'),
-        //                                 'noturno'           => ($_POST['noturno'] == 'on' ? 'sim' : 'nao')
-        //                                             )
-        //                             );
-        // $dias_funcionamentoJson = json_encode($dias_funcionamento);
-        
-        //var_dump($dias_funcionamentoJson);exit;
 ?>
