@@ -12,6 +12,7 @@
 <link rel="stylesheet" href="../assets/css/cadastrar_editar_perfil.css">
 
 
+
 <body class="tela_cadastro_perfil">
     
     <div class="container">
@@ -28,15 +29,15 @@
                 <div class="permissoes_salas_tipos">
                     <div class="permissoes_salas_itens">
                         <label class="label_permissao">Administrador</label>
-                        <input type="checkbox" class="checkbox_permissoes" name="mais_usados_administrador"  autocomplete="off"/>
+                        <input type="checkbox" class="checkbox_permissoes" name="mais_usados_administrador"  id="mais_usados_administrador" autocomplete="off"/>
                     </div>
                     <div class="permissoes_salas_itens">
                         <label class="label_permissao">Logistica</label>
-                        <input type="checkbox" class="checkbox_permissoes" name="mais_usados_logistica"  autocomplete="off"/>
+                        <input type="checkbox" class="checkbox_permissoes" name="mais_usados_logistica" id="mais_usados_logistica" autocomplete="off"/>
                     </div>
                     <div class="permissoes_salas_itens">
                         <label class="label_permissao">Docente</label>
-                        <input type="checkbox" class="checkbox_permissoes" name="mais_usados_docente"  autocomplete="off"/>
+                        <input type="checkbox" class="checkbox_permissoes" name="mais_usados_docente" id="mais_usados_docente" autocomplete="off"/>
                     </div>
             </div>
             <div class="permissoes_salas">
@@ -44,24 +45,25 @@
                 <div class="permissoes_salas_tipos">
                     <div class="permissoes_salas_itens">
                         <label class="label_permissao">Gerenciar Salas</label>
-                        <input type="checkbox" class="checkbox_permissoes" name="gerenciar_salas"  autocomplete="off"/>
+                        <input type="checkbox" class="checkbox_permissoes" name="gerenciar_salas" id="gerenciar_salas"  autocomplete="off"/>
                     </div>
                     <div class="permissoes_salas_itens">
                         <label class="label_permissao">Gerenciar Perguntas</label>
-                        <input type="checkbox" class="checkbox_permissoes" name="gerenciar_perguntas"  autocomplete="off" />
+                        <input type="checkbox" class="checkbox_permissoes" name="gerenciar_perguntas"  id="gerenciar_perguntas" autocomplete="off" />
                     </div>
                     <div class="permissoes_salas_itens">
                         <label class="label_permissao">Gerenciar Checklists</label>
-                        <input type="checkbox" class="checkbox_permissoes" name="gerenciar_checklists"  autocomplete="off"/>
+                        <input type="checkbox" class="checkbox_permissoes" name="gerenciar_checklists"  id="gerenciar_checklists" autocomplete="off"/>
                     </div>
                     <div class="permissoes_salas_itens">
                         <label class="label_permissao">Gerenciar Recados</label>
-                        <input type="checkbox" class="checkbox_permissoes" name="gerenciar_salas"  autocomplete="off"/>
+                        <input type="checkbox" class="checkbox_permissoes" name="gerenciar_recados" id="gerenciar_recados" autocomplete="off"/>
                     </div>
                     <div class="permissoes_salas_itens">
                         <label class="label_permissao">Gerenciar Notificacoes</label>
-                        <input type="checkbox" class="checkbox_permissoes" name="gerenciar_notificacoes"  autocomplete="off"/>
+                        <input type="checkbox" class="checkbox_permissoes" name="gerenciar_notificacoes"  id="gerenciar_notificacoes" autocomplete="off"/>
                     </div>
+
                 </div>
             </div>
             <div class="permissoes_salas">
@@ -69,11 +71,11 @@
                 <div class="permissoes_salas_tipos">
                     <div class="permissoes_salas_itens">
                         <label class="label_permissao">Realizar Checklist</label>
-                        <input type="checkbox" class="checkbox_permissoes" name="realizar_checklist"  autocomplete="off"/>
+                        <input type="checkbox" class="checkbox_permissoes" name="realizar_checklist"  id="realizar_checklist" autocomplete="off"/>
                     </div>
                     <div class="permissoes_salas_itens">
                         <label class="label_permissao">Nao conformidade e Acao corretiva</label>
-                        <input type="checkbox" class="checkbox_permissoes" name="realizar_nao_conformidade"  autocomplete="off"/>
+                        <input type="checkbox" class="checkbox_permissoes" name="realizar_nao_conformidade" id="realizar_nao_conformidade" autocomplete="off"/>
                     </div>
                 </div>
             </div>
@@ -94,3 +96,4 @@
 </body>
 
 
+<script src="../assets/js/preencher_checkbox_mais_usados.js"></script>

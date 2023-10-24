@@ -42,31 +42,18 @@ class Perfil
     }
 
     //CREATE
-    public function cadastrar() : bool
+    public function cadastrar($dados = []) : bool
     {
         $obj_banco = new Banco('cadastro_perfil');
         
         $verificacao = $obj_banco -> select('nome = "'.$this -> nome.'"') -> fetchAll(PDO::FETCH_ASSOC);
-        
-        //caso ja exista o nome no banco
-        //die('testeabcde');
-        if ($verificacao)
+        if (1 == 2)
         {
             return false;
         } 
         else
-
         {
-            $obj_banco -> insert(                           [  'nome'                       => $this -> nome,
-                                                               'gerenciar_perguntas'         => $this -> gerenciar_perguntas,
-                                                                'gerenciar_salas' => $this -> gerenciar_salas,
-                                                                'realizar_acao_corretiva' => $this -> realizar_acao_corretiva,
-                                                                'realizar_checklist' => $this -> realizar_checklist,
-                                                                'gerenciar_checklist' => $this -> gerenciar_checklist,
-                                                                'gerenciar_recados' => $this -> gerenciar_recados,
-                                                                'gerenciar_notificacoes' => $this -> gerenciar_notificacoes,
-                                                                'administrador' => $this -> administrador
-                                                             ]);
+            $obj_banco -> insert($dados);                  
             return true;
         }
     }
@@ -94,21 +81,10 @@ class Perfil
 
 
     //UPDATE
-    public function setDados($id)
+    public function setDados($id, $dados)
     {
+        //var_dump($dados);exit;
         $obj_banco = new Banco('cadastro_perfil');
-        
-        $dados = [
-            'nome'                       => $this -> nome,
-            'gerenciar_perguntas'         => $this -> gerenciar_perguntas,
-             'gerenciar_salas' => $this -> gerenciar_salas,
-             'realizar_acao_corretiva' => $this -> realizar_acao_corretiva,
-             'realizar_checklist' => $this -> realizar_checklist,
-             'gerenciar_checklist' => $this -> gerenciar_checklist,
-             'gerenciar_recados' => $this -> gerenciar_recados,
-             'gerenciar_notificacoes' => $this -> gerenciar_notificacoes,
-             'administrador' => $this -> administrador
-                ];
 
         $obj_banco -> update('id = '. $id, $dados);
         
@@ -127,7 +103,6 @@ class Perfil
             $obj_banco -> delete($id,'id');
 
             return true;
-
         }
         else
         {
