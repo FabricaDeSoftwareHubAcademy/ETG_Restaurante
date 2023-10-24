@@ -1,9 +1,9 @@
 <?php return array(
     'root' => array(
         'name' => 'arthur/etg',
-        'pretty_version' => 'dev-main',
-        'version' => 'dev-main',
-        'reference' => 'f2016f4351efae5ebf60553985be91002b8c77d6',
+        'pretty_version' => '1.0.0+no-version-set',
+        'version' => '1.0.0.0',
+        'reference' => NULL,
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -11,9 +11,9 @@
     ),
     'versions' => array(
         'arthur/etg' => array(
-            'pretty_version' => 'dev-main',
-            'version' => 'dev-main',
-            'reference' => 'f2016f4351efae5ebf60553985be91002b8c77d6',
+            'pretty_version' => '1.0.0+no-version-set',
+            'version' => '1.0.0.0',
+            'reference' => NULL,
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
