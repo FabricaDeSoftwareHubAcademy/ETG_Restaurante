@@ -4,7 +4,7 @@
 <link rel="stylesheet" href="../assets/css/editar_senha/input_button_editar_senha.css">
 <link rel="stylesheet" href="../assets/css/editar_senha/editar_senha.css">
 
-<body>
+<body class="pai-de-todos1">
 
 
     <main class="pai-de-todos">
@@ -102,10 +102,11 @@
     area_btn_cad_user.addEventListener('click',teste)
 
     async function teste(){
-        area_btn_cad_user.prevent
+        area_btn_cad_user.preventDefault(); 
         setTimeout(function(){
+            alert(241321    )
             window.reload();
-
+ 
         },3000)
     }
 

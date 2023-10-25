@@ -4,8 +4,7 @@ require __DIR__."/../vendor/autoload.php";
 include_once("../includes/menu.php"); 
 require("../includes/header/header.php");
 
-//REGRAS DE NEGOCIO ABAIXO
-print($_SESSION['id_user']);
+//REGRAS DE NEGOCIO ABAIXO 
  
 
 use App\Entity\Usuario;
@@ -14,14 +13,13 @@ $objUsuario = new Usuario();
 $logado = false;
 $erro = false;
 
-$dados = $objUsuario->getDadosById($_SESSION['id_user']);
-print_r($dados);
+$dados = $objUsuario->getDadosById($_SESSION['id_user']); 
 
 if(isset($_POST['btn_alterar_nome'])){
 
-    if(($objUsuario -> setName($_POST['nome'],$dados['email']))){
-        // header("Refresh: 2"); 
-    }
+    if(($objUsuario -> setName($_POST['nome'],$dados['email']))){ 
+        $dados = $objUsuario->getDadosById($_SESSION['id_user']);
+    } 
 }
 
 if(isset($_POST['btn_submit'])){
