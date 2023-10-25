@@ -1,8 +1,8 @@
 <?php
 
-/* session_start();
+session_start();
 
-// unset na session 
-unset($_SESSION['num_matricula_logado']);
- */
+
+unset($_SESSION['id_user']);
+
 header("Location: ../../"); 
