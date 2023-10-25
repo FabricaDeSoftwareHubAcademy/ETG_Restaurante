@@ -19,7 +19,7 @@ foreach($dados as $sala){
         
                         <div class="border_card_sala" style="
                         border: 2px solid '.$sala['cor_itens'].'"></div>
-                        <a class="click_sala" href="visualizar_sala.php?id_sala='.$sala['id'].'"><img class="img_card_sala" src="../storage/salas'.$sala['img_sala'].'" alt=""></a>
+                        <a class="click_sala" href="visualizar_sala.php?id_sala='.$sala['id'].'"><img class="img_card_sala" src="../storage/salas/'.$sala['img_sala'].'" alt=""></a>
                         <a href="editar_sala.php?id_sala='.$sala['id'].'"><img class="icon_editar_sala" src="../assets/imgs/icons/btn_editar.png" alt=""></a>
                         <div class="area_title_sala">
                         
