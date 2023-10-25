@@ -74,6 +74,49 @@
 
 } 
 
+.area_btn_alterar_nome{
+
+  height: 50px;
+  width: 700px; 
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  pointer-events: none;
+  opacity: 0;
+  transition: 0.5s;
+
+}
+
+.area_btn_alterar_nome.active{
+
+
+  pointer-events: auto;
+  opacity: 1;
+
+
+}
+
+
+.area_btn_alterar_nome input{
+
+  margin-right: 20px;
+  background-color: #064A8C;
+  padding: 7px 15px;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  font-size: 17px;
+  font-family: 'Montserrat';
+  font-weight: bold;
+  cursor: pointer;
+  transition: .2s;
+
+}
+.area_btn_alterar_nome input:hover{
+
+  padding: 9px 15px;
+
+}
 .name{
   margin-top: 10%;
   padding-left: 8%;
@@ -107,6 +150,8 @@
   position: absolute;
   top: 24px;
   right: 3%;
+  cursor: pointer;
+  z-index: 99;
 }
 
 @media (max-width: 832px) {

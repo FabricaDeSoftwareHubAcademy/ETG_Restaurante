@@ -1,4 +1,3 @@
-
 <link rel="stylesheet" href="../assets/css/editar_senha/input_button_editar_senha.css">
 <link rel="stylesheet" href="../assets/css/editar_senha/editar_senha.css">
 
@@ -12,11 +11,7 @@
         <form method="POST" class="centralizar-back"> 
             <section class="centralizar_input_alterar_senha">
 
-                <!--Input Email-->
-                <div class="input_e-mail_group field">
-                    <input name="email" type="email" class="input_e-mail_field" placeholder="Name" required="" autocomplete="on">
-                    <label for="name" class="input_e-mail_label">E-mail</label> <!--Alterar para o nome do input-->
-                </div>
+        
 
                     <!--Input Senha-->
                 <div class="input_senha_group field">

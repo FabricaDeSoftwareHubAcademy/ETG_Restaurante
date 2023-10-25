@@ -1,6 +1,7 @@
 <?php
 namespace App\Entity;
 use App\Db\Banco;
+use Exception;
 use PDO;
 use PDOException;
 
@@ -116,12 +117,26 @@ class Usuario
 
     }
 
-    public function updateData($email, $senha)
+    static function getDadosById($id) : array 
+    {
+         
+        $objBanco = new Banco('cadastro_usuario');
+        
+        $dados = $objBanco -> select("id = '".$id."'") -> fetchAll(PDO::FETCH_ASSOC)[0];
+        
+        
+        return $dados;
+
+    }
+
+
+    public function setDados($nome,$email, $senha)
     {
         //die('teste');
-        $objBanco = new Banco('usuarios');
+        $objBanco = new Banco('cadastro_usuario');
 
-        $objBanco -> update('email = "'.$email.'"',['senha' => $senha]);
+        $objBanco -> update('email = "'.$email.'"',['senha' => $senha,'nome' => $nome]);
+        echo("testeeee");
 
     }
 
@@ -146,11 +161,11 @@ class Usuario
 
    public function senhaValidate($senha, $email) : bool
    {
-       $objBanco = new Banco('usuarios');
-       
+       $objBanco = new Banco('cadastro_usuario');
+        
        $dados = $objBanco -> select('senha = "'.$senha.'" AND email = "'.$email.'"');
        if ($dados -> rowCount())
-       {
+       {    
            return true;
 
         }else
@@ -158,6 +173,33 @@ class Usuario
             return false;
        }
    
+  }
+  public function setName($new_nome,$email){
+
+
+    $dados = $this->getDadosByEmail($email)[0];
+
+    if($dados){
+        try{
+
+
+            $obBanco = new Banco("cadastro_usuario");
+            $update = [
+    
+                "nome"=>$new_nome
+            ]; 
+            $obBanco->update("id = '".$dados['id']."'",$update);
+            return true;
+        }
+        catch(Exception $e){
+
+            return false;
+        }
+         
+
+    }
+    
+     
   }
   public function setPasswordByEmail($email, $senha)
   {
