@@ -11,7 +11,7 @@
         <h2 class="nome_sala">Cozinha Didática 2</h2>
 
         <main class="main_checklist">
-            <form action="checklist_pre_aula.php" method="POST" class="checklist_pre_aula">
+            <form action="checklist_pre_aula.php" method="GET" class="checklist_pre_aula">
                 <div class="input_checklist">
                     <label class="label_checklist" for="data">Os equipamentos e /ou utensílios estão limpos, organizados e em condições de uso?</label>
 
