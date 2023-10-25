@@ -8,7 +8,7 @@ use App\Entity\Sala;
 
 $salas = "";
 $dados = Sala::getDados();
-
+//var_dump($dados);exit;
 $count = 0;
 foreach($dados as $sala){
     

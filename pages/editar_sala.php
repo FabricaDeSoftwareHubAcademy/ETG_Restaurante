@@ -16,8 +16,7 @@ if (isset($_GET['id_sala']))
 {  
      
     $dados_sala = $obj_sala::getDadosById($_GET['id_sala']);
-    //die('teste');
-    $funcionamento = json_decode($dados_sala[0]['funcionamento'], true);
+    $funcionamento = json_decode($dados_sala[0]['horarios'], true);
 }        
 
 $options = '';
@@ -26,13 +25,14 @@ $dados = $objCadastroChecklist -> getDados();
 
 foreach ($dados as $row_check)
 {
-    $checklists[$row_check['id_cadastro_checklist']] = $row_check['nome']; 
-    $options .= '<option  class="ops" value="'.$row_check['id_cadastro_checklist'].'"> '.$row_check['nome'].' </option>';
+    $checklists[$row_check['id']] = $row_check['nome']; 
+    $options .= '<option  class="ops" value="'.$row_check['id'].'"> '.$row_check['nome'].' </option>';
 }
  
 
 if (isset($_POST['btn_submit']))
 {
+    //echo($dados_sala[0]['id']);exit;
     //novo JSON de turnos para UPDATE
     $dias_funcionamento = array("segunda" => ($_POST['segunda'] == 'on' ? 'sim' : 'nao'),
 
@@ -55,44 +55,39 @@ if (isset($_POST['btn_submit']))
     $dias_funcionamentoJson = json_encode($dias_funcionamento);
     if (!empty($_FILES['imagem_sala']['name']))
     {   
-        //var_dump($_FILES);
         $novo_nome_imagem = $obj_imagem::storeImg($_FILES['imagem_sala']['name']);
         $antigo_nome_imagem = '../storage/salas/'.$dados_sala[0]['imagem'];
-        //echo $antigo_nome_imagem;exit;
         unlink($antigo_nome_imagem);
-        
-        
     }
-    
-    if($obj_sala -> setDados($_GET['id_sala'],
+    $obj_sala -> setDados($_GET['id_sala'],
     [   
         'nome'              =>  $_POST['nome'],
-        'andar'             =>  $_POST['andar_sala'],
-        'checklist'         =>  $_POST['checklist'],
-        'descricao'         =>  $_POST['descricao_sala'],
-        'imagem'            =>  (strlen($_FILES['imagem_sala']['tmp_name']) ? $novo_nome_imagem : $dados_sala[0]['imagem']),
-        'cor'               =>  $_POST['cor_sala'],
-        'ativo_desativo'    =>  (isset($_POST['ativo_desativo']) ? 1 : 0),
-        'funcionamento'     =>  $dias_funcionamentoJson
-    ]))
+        'codigo'             =>  $_POST['codigo'],
+        'cor_itens'         =>  $_POST['cor_itens'],
+        'img_sala'         =>  (strlen($_FILES['imagem_sala']['tmp_name']) ? $novo_nome_imagem : $dados_sala[0]['img_sala']),
+        'descricao'            =>  $_POST['descricao'],
+        'status'               =>  null,
+        'horarios'    =>  $dias_funcionamentoJson,
+        'id_check'     =>  $_POST['checklist']
+    ]);
     
-    if($obj_sala -> setDados()){
-        echo('cadastrou');
-        echo("<script>function abrir_modal(){
-            Swal.fire({
-                title: 'Cadastrado com sucesso!', //TITULO DO POP_UP DE ACORDO COM SUA TELA 
-                icon: 'success', // success, error e warning
-                confirmButtonColor: '#609437', // DEFINE A COR DO BOTÃO OK
-                confirmButtonText: 'OK'
-            });
-        }</script>");
-        sleep(2);
-        header("Location: listar_salas.php");
-    }
-    else
-    {
-        die('Update nao funcionou');
-    }
+    header("Location: ../");
+    
+    
+    // if($obj_sala -> setDados()){
+    //     echo('cadastrou');
+    //     echo("<script>function abrir_modal(){
+    //         Swal.fire({
+    //             title: 'Cadastrado com sucesso!', //TITULO DO POP_UP DE ACORDO COM SUA TELA 
+    //             icon: 'success', // success, error e warning
+    //             confirmButtonColor: '#609437', // DEFINE A COR DO BOTÃO OK
+    //             confirmButtonText: 'OK'
+    //         });
+    //     }</script>");
+    //     sleep(2);
+    //     header("Location: listar_salas.php");
+    // }
+
 
 
 }

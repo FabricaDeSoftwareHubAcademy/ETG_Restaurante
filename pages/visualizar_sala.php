@@ -14,19 +14,19 @@ if(isset($_GET['id_sala'])){
     
 }
 // print_r($dados);
-//  echo($dados['funcionamento']);
-// $funcionamento = json_decode($dados[0]['funcionamento'],true);
+// echo($dados['funcionamento']);
+$funcionamento = json_decode($dados[0]['horarios'], true);
 // print_r($funcionamento);
 
-// $segunda = $funcionamento['segunda'] == 'sim' ? 'Segunda' : '';
-// $terca = $funcionamento['terca'] == 'sim' ? 'Terça' : '';
-// $quarta = $funcionamento['quarta'] == 'sim' ? 'Quarta' : '';
-// $quinta = $funcionamento['quinta'] == 'sim' ? 'Quinta' : '';
-// $sexta = $funcionamento['sexta'] == 'sim' ? 'Sexta' : '';
-// $sabado = $funcionamento['sabado'] == 'sim' ? 'Sábado' : '';
-// $matutino = $funcionamento['turnos']['matutino'] == 'sim' ? 'Matutino' : ' ';
-// $vespertino = $funcionamento['turnos']['vespertino'] == 'sim' ? 'Vespertino' : ' ';
-// $noturno = $funcionamento['turnos']['noturno'] == 'sim' ? 'Noturno' : ' ';
+$segunda = $funcionamento['segunda'] == 'sim' ? 'Segunda' : '';
+$terca = $funcionamento['terca'] == 'sim' ? 'Terça' : '';
+$quarta = $funcionamento['quarta'] == 'sim' ? 'Quarta' : '';
+$quinta = $funcionamento['quinta'] == 'sim' ? 'Quinta' : '';
+$sexta = $funcionamento['sexta'] == 'sim' ? 'Sexta' : '';
+$sabado = $funcionamento['sabado'] == 'sim' ? 'Sábado' : '';
+$matutino = $funcionamento['turnos']['matutino'] == 'sim' ? 'Matutino' : ' ';
+$vespertino = $funcionamento['turnos']['vespertino'] == 'sim' ? 'Vespertino' : ' ';
+$noturno = $funcionamento['turnos']['noturno'] == 'sim' ? 'Noturno' : ' ';
 
 require("../includes/main/main_visualizar_sala.php");
 require("../includes/footer/footer.php");

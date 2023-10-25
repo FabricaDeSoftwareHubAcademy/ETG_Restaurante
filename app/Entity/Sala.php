@@ -53,7 +53,7 @@ class Sala
                             'img_sala'                 => $this -> img_sala,
                             'descricao'                    => ucfirst(strtolower($this -> descricao)),
                             'status'                     => $this -> status,
-                            'horarios'                    => null,
+                            'horarios'                    => $this -> horarios,
                             'id_check'                   => $this -> id_check
                             ]);
         return true;
@@ -84,16 +84,17 @@ class Sala
     public function setDados($id = null, $dados = []) : bool
     {
         //var_dump($dados);exit;
-        $obj_banco = new Banco('Cadastro_sala');
+        $obj_banco = new Banco('cadastro_sala');
 
-        $obj_banco -> update('id_cadastro_sala = "'.$id.'"', ['nome'                      => $dados['nome'],
-                                                            'andar'                       => $dados['andar'],
-                                                            'id_cadastro_checklist'       => $dados['checklist'],
-                                                            'descricao'                   => $dados['descricao'],
-                                                            'imagem'                      => $dados['imagem'],
-                                                            'cor'                         => $dados['cor'],
-                                                            'ativo_desativo'              => $dados['ativo_desativo'],
-                                                            'funcionamento'               => $dados['funcionamento']
+        $obj_banco -> update('id = "'.$id.'"', [
+                                                        'nome'              =>  $dados['nome'],
+                                                        'codigo'             =>  $dados['codigo'],
+                                                        'cor_itens'         =>  $dados['cor_itens'],
+                                                        'img_sala'         =>  $dados['img_sala'],
+                                                        'descricao'            =>  $dados['descricao'],
+                                                        'status'               =>  $dados['status'],
+                                                        'horarios'    =>  $dados['horarios'],
+                                                        'id_check'     =>  $dados['id_check']
                                                             ]);
         return true;
     }
