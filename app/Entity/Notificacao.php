@@ -42,7 +42,7 @@ class Notificacao
     } 
 
     //READ
-    public function getNotificacao()
+    public static function getNotificacao()
     {
     $obj_banco = new Banco ('notificacao');
 
