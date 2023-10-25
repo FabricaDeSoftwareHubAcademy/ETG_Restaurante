@@ -26,7 +26,7 @@
   
 }
 .main_checklist{
-  WiDtH: 78%;
+  width: 78%;
   max-width: 810px;
   max-height: 728px;
   overflow: hidden;
@@ -45,6 +45,8 @@
   background-color: #F28920;
   border-radius: 10px; 
 } 
+
+
 
 .titulo_checklist{
     font-family: "Montserrat";
@@ -74,7 +76,7 @@
   flex-direction: row;
   align-items: center;
   width: 80%;
-  height: 100%;
+
   margin: 5px;
 }
 
@@ -179,7 +181,7 @@
   
   /* Css Botão Voltar */
   
-  .botao-padrao-voltar{[]
+  .botao-padrao-voltar{
     height: 40px;
     display: flex;
     
@@ -234,4 +236,8 @@
      
       flex-wrap: wrap;
     }
+  }
+
+  .checklist_pre_aula{
+    max-height: 700px;
   }
