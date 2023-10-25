@@ -1,5 +1,7 @@
 <link rel="stylesheet" href="../assets/css/listar_notificacoes.css">
 <link rel="stylesheet" href="../assets/css/estilo_botões_padronizados.css">
+<link href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@4/dark.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
 
 <body class="tela_notificacao">  
     <main class="area_not">
@@ -28,12 +30,12 @@
             if(response['status']){
 
                 Swal.fire({
-                title: 'OHHHHHHHH!',
-                text: 'Visualizado com Sucesso!',
-                imageUrl: 'https://m.media-amazon.com/images/I/51NPUA7Kk2L._AC_UF894,1000_QL80_.jpg',
-                imageWidth: 400,
-                imageHeight: 200,
-                imageAlt: 'Custom image',
+                    title: 'OHHHHHHHH!',
+                    text: 'Visualizado com Sucesso!',
+                    imageUrl: 'https://m.media-amazon.com/images/I/51NPUA7Kk2L._AC_UF894,1000_QL80_.jpg',
+                    imageWidth: 400,
+                    imageHeight: 200,
+                    imageAlt: 'Custom image',
                 })
 
             }else{

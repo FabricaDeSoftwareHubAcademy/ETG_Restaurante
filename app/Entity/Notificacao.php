@@ -78,7 +78,7 @@ class Notificacao
         $dados = [
             'visualizado' => 1 
         ];
-        if($banco->update('id_notificacao = "'.$id.'"',$dados)){
+        if($banco->update('id = "'.$id.'"',$dados)){
 
             return true;
         }else{
