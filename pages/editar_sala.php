@@ -59,22 +59,19 @@ if (isset($_POST['btn_submit']))
         $antigo_nome_imagem = '../storage/salas/'.$dados_sala[0]['imagem'];
         unlink($antigo_nome_imagem);
     }
-    if ($obj_sala -> setDados(
-        $_GET['id_sala'],
+    $obj_sala -> setDados($_GET['id_sala'],
     [   
         'nome'              =>  $_POST['nome'],
         'codigo'             =>  $_POST['codigo'],
         'cor_itens'         =>  $_POST['cor_itens'],
         'img_sala'         =>  (strlen($_FILES['imagem_sala']['tmp_name']) ? $novo_nome_imagem : $dados_sala[0]['img_sala']),
         'descricao'            =>  $_POST['descricao'],
-        'status'               =>  null,
         'horarios'    =>  $dias_funcionamentoJson,
         'id_check'     =>  $_POST['checklist']
-    ]
-    ))
-    {
-        die('cadastrou!');
-    }
+    ]);
+    
+    //header('Location: ' . $_SERVER['PHP_SELF']);
+    
 
 
 }
