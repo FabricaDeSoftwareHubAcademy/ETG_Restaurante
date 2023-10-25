@@ -73,7 +73,7 @@
 
                 <li class="saida">
                     <button class="btnOpenmodal-menu" onclick="openModal()" >  
-                        <a href="actions/sair.php" class="link-menu">
+                        <a href="../" class="link-menu">
                             <i class="bi bi-box-arrow-left" style="--i:6"></i>
                             <h5 class="titulo-info" id="titulo-sair" style="--i:6">Sair</h5>
                         </a>
