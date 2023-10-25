@@ -177,25 +177,6 @@
                                 <input value="<?=$dados_sala[0]['cor_itens']?>" class="botao-cor" name="cor_itens" type="color">
                             </div>
                         </div>
-                            
-                        <!-- <div class="botao-on-off">
-
-                            <div class="text-on-off">
-                                    Desativar/Ativar
-                            </div>
-                            <label class="switch">
-                                <input name="ativo_desativo" type="checkbox">
-                                <span class="slider"></span>
-                            </label>
-
-                        </div>
-                          -->
-                            
-
-                               
-        
-                                
-
                     </div>
                     
                     <div class="alinar-botoes">
@@ -206,7 +187,6 @@
                         
                         <div class="botao-padrao-cadastrar">
                             <a><input name="btn_submit" type="submit" class="botao-cadastrar-submit"  value="SALVAR" ></a>
-                            <!-- BOTAR LINK PRA TELA VISUALIAR SALAS -->
                         </div>
                         
                     </div>
