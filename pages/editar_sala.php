@@ -59,7 +59,8 @@ if (isset($_POST['btn_submit']))
         $antigo_nome_imagem = '../storage/salas/'.$dados_sala[0]['imagem'];
         unlink($antigo_nome_imagem);
     }
-    $obj_sala -> setDados($_GET['id_sala'],
+    if ($obj_sala -> setDados(
+        $_GET['id_sala'],
     [   
         'nome'              =>  $_POST['nome'],
         'codigo'             =>  $_POST['codigo'],
@@ -69,25 +70,11 @@ if (isset($_POST['btn_submit']))
         'status'               =>  null,
         'horarios'    =>  $dias_funcionamentoJson,
         'id_check'     =>  $_POST['checklist']
-    ]);
-    
-    header("Location: ../");
-    
-    
-    // if($obj_sala -> setDados()){
-    //     echo('cadastrou');
-    //     echo("<script>function abrir_modal(){
-    //         Swal.fire({
-    //             title: 'Cadastrado com sucesso!', //TITULO DO POP_UP DE ACORDO COM SUA TELA 
-    //             icon: 'success', // success, error e warning
-    //             confirmButtonColor: '#609437', // DEFINE A COR DO BOTÃO OK
-    //             confirmButtonText: 'OK'
-    //         });
-    //     }</script>");
-    //     sleep(2);
-    //     header("Location: listar_salas.php");
-    // }
-
+    ]
+    ))
+    {
+        die('cadastrou!');
+    }
 
 
 }
