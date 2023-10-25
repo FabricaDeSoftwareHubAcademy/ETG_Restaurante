@@ -7,8 +7,8 @@ use App\Entity\Checklist;
 
 $obj_checklist = new Checklist();
 //REGRAS DE NEGOCIO ABAIXO
-$id_sala = "23"; //do metodo GET	
-$id_usuario = "1"; //do metodo GET
+$id_sala = $_GET["id_sala"]; //do metodo GET	
+$id_usuario = $_SESSION["id_user"]; //do metodo GET
 $data_fechamento = "1970-01-01 00:00:01";
 
 if (isset($_POST["btn_submit"]))
