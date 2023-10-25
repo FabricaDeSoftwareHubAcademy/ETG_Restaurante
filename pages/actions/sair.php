@@ -1,5 +1,8 @@
 <?php
+session_start();
 
+
+unset($_SESSION['id_user']);
 /* session_start();
 
 // unset na session 
