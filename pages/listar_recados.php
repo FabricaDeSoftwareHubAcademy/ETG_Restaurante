@@ -2,10 +2,9 @@
 session_start();
 
 // require autoload = 0 bugs 
-require __DIR__."/../vendor/autoload.php";
-include_once("../includes/menu.php"); 
-require("../includes/header/header.php");
+require "../vendor/autoload.php";
 
+ 
 
 use App\Entity\Recado;
  
@@ -16,8 +15,7 @@ if(isset($_POST['btn_confirmar_submit'])){
         $obRecado = new Recado($_SESSION['id_user'],$_POST['descricao_sala']);
         $obRecado->cadastrar();
         header("Refresh: 0");
-      
-
+       
     }
 
 }
@@ -26,7 +24,7 @@ if(isset($_POST['btn_confirmar_submit'])){
 
 // pegando informações dos recados 
 
-$recados = Recado::getDados()->fetchAll(PDO::FETCH_ASSOC)  ?  Recado::getDados()->fetchAll(PDO::FETCH_ASSOC) : "";
+$recados = Recado::getDados()  ?  Recado::getDados(): "";
 
 $cards_recados = '';
 
@@ -47,5 +45,8 @@ foreach($recados as $row_recados){
                         
 
     }
+    include_once("../includes/menu.php"); 
+    include_once("../includes/header/header.php");
     require("../includes/main/main_listar_recados.php");
+
 ?>
