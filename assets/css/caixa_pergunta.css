@@ -2,13 +2,13 @@
 
 /* Estilos das abas */
 .tab {
-   display: none;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 15px;
-    width: 100%;
-    box-shadow: 2px 2px 10px #888888;
-    background-color: #fff;
+  display: none;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 15px;
+  width: 100%;
+  box-shadow: 2px 2px 10px #888888;
+  background-color: #fff;
 }
 
 /* Estilos do menu das abas */
@@ -26,6 +26,7 @@
   background-color: #064A8C;
   color: #fff;
   border: 1px solid white;
+  font-family: 'Montserrat';
   border-radius: 5px 5px 0 0;
   margin-bottom: -1px;
 }

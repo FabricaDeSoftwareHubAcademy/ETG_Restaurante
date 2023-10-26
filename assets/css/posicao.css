@@ -35,7 +35,7 @@
     height:30px ;
     display: flex;
     text-align: center;
-    padding-top: 25px;
+    padding-top: 10px;
 
 }
 .titulo-topo{
@@ -71,7 +71,7 @@
     display: flex;
     flex-wrap: wrap; /* Adiciona quebra de linha caso necessário */
     justify-content: space-between; /* Espaço entre os elementos */
-    max-width: 800px;
+    width: 100%;
     padding: 20px;
 }
 

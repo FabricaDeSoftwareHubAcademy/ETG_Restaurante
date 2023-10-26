@@ -63,6 +63,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="../assets/css/input-checklist.css">
     <link rel="stylesheet" href="../assets/css/posicao.css">
+    <link rel="stylesheet" href="../assets/js/cadastro-checklist.js">
     <link rel="stylesheet" href="../assets/css/caixa_pergunta.css">
     <link rel="stylesheet" href="../assets/css/botões-checklist.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -85,23 +86,18 @@
                     <input type="input" class="input_field" placeholder="Name" required="" name="nome-checklist">
                     <label for="name" class="input_label">Nome do CheckList</label> <!--Alterar para o nome do input-->
                 </div>
-
-                    
                 
             </div>
             <!-- Menu das abas -->
             <ul class="tab-menu">
-              <li class="tab-button active" onclick="showTab('tab1')">Aba 1</li>
-              <li class="tab-button" onclick="showTab('tab2')">Aba 2</li>
-              <li class="tab-button" onclick="showTab('tab3')">Aba 3</li>
+              <li class="tab-button active" onclick="showTab('tab1')">Pré-Aula</li>
+              <li class="tab-button" onclick="showTab('tab2')">Pós-Aula</li>
             </ul>
 
             <!-- Conteúdo das abas -->
             <div id="tab1" class="tab" style="display: block;">
-              <h2>Aba 1</h2>
-              <p>Conteúdo da aba 1.</p>
               <div class="titulo-selecione-pergunta-pre">
-                        <h1 id="titulo-pergunta-pos">Selecione as Perguntas Pré-Aula:</h1>
+                        <h1 id="titulo-pergunta-pos">Selecione as Perguntas:</h1>
                     </div>
 
                 <section class="selecao-pergunta">
@@ -111,17 +107,13 @@
                             <th>Pergunta</th>
                         </tr>
                         <?=$tr?>
-
-
                     </table>
                 </section>
             </div>
 
             <div id="tab2" class="tab">
-              <h2>Aba 2</h2>
-              <p>Conteúdo da aba 2.</p>
               <div class="titulo-selecione-pergunta-pos">
-                        <h1 id="titulo-pergunta-pos">Selecione as Perguntas Pós-Aula:</h1>
+                        <h1 id="titulo-pergunta-pos">Selecione as Perguntas:</h1>
                     </div>
                 <section class="selecao-pergunta">
                     <table class="tabela-perguntas">
@@ -134,10 +126,6 @@
                 </section>
             </div>
 
-            <div id="tab3" class="tab">
-              <h2>Aba 3</h2>
-              <p>Conteúdo da aba 3.</p>
-            </div>
 
             <script>
               function showTab(tabId) {
