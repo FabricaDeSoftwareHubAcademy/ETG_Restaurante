@@ -242,3 +242,13 @@ body{
     background-color: var(--cor-primaria-botao-green);
     color: var(--cor-primaria-botao-white);
 }
+
+
+
+
+
+.nova_pergunta{
+    width: 40%;
+    height: 40vh;
+    background-color: #353535;
+}
