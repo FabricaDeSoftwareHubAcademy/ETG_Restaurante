@@ -493,3 +493,42 @@
       height: 150px;
       z-index: 2;
     }
+
+
+@media (max-width: 610px){
+  #bloc1{
+    width: 40;
+    height: 70px;
+  }
+  @keyframes bloc1 {
+    from {height: 57px;top: 0px; background-color: #064A8C;}
+    to {height: 70px;}  
+  }
+  #bloc2{
+    width: 40;
+    height: 90px;
+  }
+  @keyframes bloc2 {
+    from {height: 67px;top: 0px; background-color: #064A8C;}
+    to {height: 90px ;}   
+  }
+}
+
+@media (max-width: 376px){
+  #bloc1{
+    width: 35;
+    height: 60px;
+  }
+  @keyframes bloc1 {
+    from {height: 47px;top: 0px; background-color: #064A8C;}
+    to {height: 60px;}  
+  }
+  #bloc2{
+    width: 35;
+    height: 80px;
+  }
+  @keyframes bloc2 {
+    from {height: 47px;top: 0px; background-color: #064A8C;}
+    to {height: 80px ;}   
+  }
+}
