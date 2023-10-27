@@ -19,52 +19,11 @@
                 </div>
             </div>
             <section class="perguntas">
-                <div class="question1">
-                    <p name="question_text" id="question_text">Os equipamentos e /ou utensílios estão limpos, organizados e em condições de uso?</p>
-                    <i class="bi bi-pencil-square"></i>
-                    <i class="bi bi-trash"></i>                    </i>
-                </div>
-                <div class="question1">
-                    <p name="question_text" id="question_text">Os equipamentos e /ou utensílios estão limpos, organizados e em condições de uso?</p>
-                    <i class="bi bi-pencil-square"></i>
-                    <i class="bi bi-trash"></i>                    </i>
-                </div>
-                <div class="question1">
-                    <p name="question_text" id="question_text">Os equipamentos e /ou utensílios estão limpos, organizados e em condições de uso?</p>
-                    <i class="bi bi-pencil-square"></i>
-                    <i class="bi bi-trash"></i>                    </i>
-                </div>
-                <div class="question1">
-                    <p name="question_text" id="question_text">Os equipamentos e /ou utensílios estão limpos, organizados e em condições de uso?</p>
-                    <i class="bi bi-pencil-square"></i>
-                    <i class="bi bi-trash"></i>                    </i>
-                </div>
-                <div class="question1">
-                    <p name="question_text" id="question_text">Os equipamentos e /ou utensílios estão limpos, organizados e em condições de uso?</p>
-                    <i class="bi bi-pencil-square"></i>
-                    <i class="bi bi-trash"></i>                    </i>
-                </div>
-                <div class="question1">
-                    <p name="question_text" id="question_text">Os equipamentos e /ou utensílios estão limpos, organizados e em condições de uso?</p>
-                    <i class="bi bi-pencil-square"></i>
-                    <i class="bi bi-trash"></i>                    </i>
-                </div>
-                <div class="question1">
-                    <p name="question_text" id="question_text">Os equipamentos e /ou utensílios estão limpos, organizados e em condições de uso?</p>
-                    <i class="bi bi-pencil-square"></i>
-                    <i class="bi bi-trash"></i>                    </i>
-                </div>
-                <div class="question1">
-                    <p name="question_text" id="question_text">Os equipamentos e /ou utensílios estão limpos, organizados e em condições de uso?</p>
-                    <i class="bi bi-pencil-square"></i>
-                    <i class="bi bi-trash"></i>                    </i>
-                </div>
+                <?php
+
+                echo($divs);
+                ?>
                 
-                <div class="question1">
-                    <p name="question_text" id="question_text">Os equipamentos e /ou utensílios estão limpos, organizados e em condições de uso?</p>
-                    <i class="bi bi-pencil-square"></i>
-                    <i class="bi bi-trash"></i>                    </i>
-                </div>
             </section>
             
             <div class="botao">

@@ -1,8 +1,7 @@
 <?php
-namespace App\Entity;
-use PDO;
-use PDOException;
+namespace App\Entity; 
 use \App\Db\Banco;
+use PDO;
 
 class Pergunta
 {
@@ -41,7 +40,7 @@ class Pergunta
 
         if($dados -> rowCount() > 0){
 
-            return $dados;
+            return $dados->fetchAll(PDO::FETCH_ASSOC);
         }
         else
         {
