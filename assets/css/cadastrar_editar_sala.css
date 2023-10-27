@@ -537,16 +537,17 @@ input[type="file"] {
 
 .alinar-botoes{
   width: 100%;
-  display: flex;
-  justify-content: space-evenly;
-  margin: 50px;
-  position: fixed;
+    display: flex;
+    justify-content: space-evenly;
+    /* margin: 5px; */
+    position: fixed;
     /* position: absolute; */
-  bottom: 30px;
-  background: rgb(255, 255, 255);
-  height: 90px;
-  max-width: 832px;
+    bottom: 0px;
+    background: rgb(255, 255, 255);
+    height: 90px;
+    max-width: 832px;
 }
+
 
 
 
