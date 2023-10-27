@@ -67,4 +67,12 @@ class Pergunta
         }
 
     }
+
+    public static function filter($nome)
+    {
+        $obj_banco = new Banco('cadastro_pergunta');
+        $dados = $obj_banco -> select('descricao LIKE "%' . $nome . '%"');
+        return $dados -> fetchAll(PDO::FETCH_ASSOC);
+        # SELECT * FROM pergunta WHERE descricao LIKE '%os equipamentos%';
+    }
 }
