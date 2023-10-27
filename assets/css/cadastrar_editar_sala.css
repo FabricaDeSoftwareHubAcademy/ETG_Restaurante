@@ -52,7 +52,7 @@
 .cadastro_codigo .toguro{
   
   width: 76%;
-  margin-left: 50px;
+  margin-left: 21%;
 }
 .cadastro_codigo .toguroo{
 
@@ -394,39 +394,6 @@
 
 
 
-@media screen and (max-width: 700px) { 
-
-    .cor-sala {
-      width: 100%;
-      display: flex;
-      flex-direction: column;
-      
-      padding-top: 20px;
-    }
-
-    .cor-sala .alinar-botao-cor {
-      display: flex;
-      flex-direction: column;
-      width: 100%;
-      align-items: center;
-      margin-top: 20px;
-    }
-    .cor-sala .alinar-img {
-      display: flex;
-      flex-direction: column;
-      width: 100%;
-      align-items: center;
-    }
-    .coisas_enilda{
-      width: 100%;
-      justify-content: center;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-
-    
-}
 
 
 .coisas_enilda{
@@ -574,8 +541,10 @@ input[type="file"] {
   justify-content: space-evenly;
   margin: 50px;
   position: fixed;
-  /* position: absolute; */
+    /* position: absolute; */
   bottom: 30px;
+  background: rgb(255, 255, 255);
+  height: 90px;
   max-width: 832px;
 }
 
@@ -1014,4 +983,49 @@ box-shadow: none;
   transition: all 0.4s;
   background-color: var(--cor-primaria-botao-yellow);
   color: var(--cor-primaria-botao-white);
+}
+
+
+
+@media screen and (max-width: 700px) { 
+
+  .cor-sala {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    
+    padding-top: 20px;
+  }
+
+  .cor-sala .alinar-botao-cor {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    margin-top: 20px;
+  }
+  .cor-sala .alinar-img {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+  }
+  .coisas_enilda{
+    width: 100%;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .area-anexo{
+    background-color: aliceblue;
+    height: 150px;
+    width: 400px;
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    
+    border: dashed  black 2px;
+  }
 }
