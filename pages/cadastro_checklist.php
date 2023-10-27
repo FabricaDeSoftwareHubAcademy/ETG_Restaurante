@@ -92,6 +92,7 @@
             <ul class="tab-menu">
               <li class="tab-button active" onclick="showTab('tab1')">Pré-Aula</li>
               <li class="tab-button" onclick="showTab('tab2')">Pós-Aula</li>
+              <div class="line"></div>
             </ul>
 
             <!-- Conteúdo das abas -->

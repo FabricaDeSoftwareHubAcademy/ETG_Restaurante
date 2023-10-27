@@ -15,25 +15,39 @@
 .tab-menu {
   display: flex;
   width: 100%;
+  position: relative;
   list-style: none;
   padding: 0;
 }
 
 .tab-menu li {
   margin: 0;
+  position: relative;
   padding: 10px 20px;
   cursor: pointer;
   background-color: #064A8C;
   color: #fff;
-  border: 1px solid white;
   font-family: 'Montserrat';
   border-radius: 5px 5px 0 0;
   margin-bottom: -1px;
 }
 
-
 .tab-menu li.active {
+  /* border-bottom: 3px solid #F28920; */
   background-color: #2980b9;
+}
+
+.tab-menu .line{
+  position: absolute;
+  height: 5px;
+  width: 108px;
+  background: #F28920;
+  left: 0;
+  bottom: 0;
+  transition:  all 0.29s ease-in-out;
+}
+.tab-menu li:nth-child(2):hover ~ .line{
+    left: 110px;
 }
 
 /* ------------------------------------- */
