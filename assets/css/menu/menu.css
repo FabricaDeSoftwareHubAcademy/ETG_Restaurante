@@ -251,7 +251,7 @@
 }
 
 .sub-menu.active{
-  height: 120px;
+  height: 150px;
   border: 2px solid #FAA916;
   margin-left: 65px;
 }
@@ -316,33 +316,33 @@
 }
 /* =============================================== POP UP ================================================================================ */
 .modal-container-menu{
-    display: none;
-    width: 100vw;
-    position: fixed;
-    z-index: 999;
-    justify-content: center;
-    left: 40%;
-    top: 20%;
+  display: none;
+  width: 100vw;
+  position: fixed;
+  z-index: 999;
+  justify-content: center;
+  left: 40%;
+  top: 20%;
 
 }
 
 @media (max-width: 832px){
 
-    .modal-container-menu{
-      left: 30%;
-    }
-
+  .modal-container-menu{
+    left: 30%;
   }
 
+}
+
 .modal-menu{
-    display: flex;
-    flex-direction: column;
-    padding: 30px;
-    background-color: #ffffff;
-    border-radius: 10px;
-    width: 350px;
-    height: 250px;
-    border: 2px solid black;
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  width: 350px;
+  height: 250px;
+  border: 2px solid black;
 }
 
 .active{
@@ -350,21 +350,21 @@
 }
 
 .btnOpenmodal-menu{
-    position: relative;
-    border: #fff;
-    text-decoration: none;
-    cursor: pointer;
-    background-color: #fff;
-    text-align: center;
-    /* top: 140px; */
+  position: relative;
+  border: #fff;
+  text-decoration: none;
+  cursor: pointer;
+  background-color: #fff;
+  text-align: center;
+  /* top: 140px; */
 }
 
 .modal-container-menu active{
-    align-items: center;
-    display: flex;
-    justify-content: center;
+  align-items: center;
+  display: flex;
+  justify-content: center;
 }
- 
+
 
 
 /* ===================================================== BOTÕES POP'UP MENU ==================================================== */
@@ -421,75 +421,114 @@
 /*==========================================================================Fitas==========================================================================*/
 
 .logo{
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+
+.cabecalho-menu{
+  position: relative;
+  margin-top: 30px;
+  width: 100%;
+  height: 150px;
+  z-index: 999;
+}
+
+.fitas{
     display: flex;
-    width: 100%;
-    justify-content: center;
+    position: absolute;
+    right: 3%;
+
+}
+
+#bloc1 {
+  width: 57px;
+  height: 100px;
+  background:#F28920 ;
+  position: relative;
+  animation-name: bloc1;
+  animation-duration: 2.5s;  
+  animation-delay: 0s;
+  animation-fill-mode: backwards;
+  box-shadow: 2px 2px 5px rgb(138, 137, 137);
+  
+}
+  
+@keyframes bloc1 {
+  from {height: 150px;top: 0px; background-color: #064A8C;}
+  to {height: 100px;}    
+}
+
+#bloc2 {
+  width: 57px;
+  height: 137px;
+  background: #064A8C;
+  position: relative;
+  animation-name: bloc2;
+  animation-duration: 2.5s;  
+  animation-delay: 0s;
+  animation-fill-mode: backwards;
+  box-shadow: 2px 2px 5px rgb(138, 137, 137);
+
+
+}
+#img-logo{
+  width: 130px;
+  height: 80px;
+  
+}
+
+@keyframes bloc2 {
+  from {height: 90px;top: 0px; background-color:  #F28920 ;}
+  to {height: 137px;}
+  
+}
+
+.container-logo{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  right: 0%;
+  background-color: white;
+  height: 150px;
+  z-index: 2;
+}
+
+
+@media (max-width: 610px){
+  #bloc1{
+    width: 40;
+    height: 70px;
   }
-  
-  .cabecalho-menu{
-    position: relative;
-    margin-top: 30px;
-    width: 100%;
-    height: 150px;
-    z-index: 999;
+  @keyframes bloc1 {
+    from {height: 57px;top: 0px; background-color: #064A8C;}
+    to {height: 70px;}  
   }
-  
-  .fitas{
-      display: flex;
-      position: absolute;
-      right: 3%;
-  
+  #bloc2{
+    width: 40;
+    height: 90px;
   }
-  
-  #bloc1 {
-      width: 57px;
-      height: 100px;
-      background:#F28920 ;
-      position: relative;
-      animation-name: bloc1;
-      animation-duration: 2.5s;  
-      animation-delay: 0s;
-      animation-fill-mode: backwards;
-      box-shadow: 2px 2px 5px rgb(138, 137, 137);
-      
-    }
-    
-    @keyframes bloc1 {
-      from {height: 150px;top: 0px; background-color: #064A8C;}
-      to {height: 100px;}    
-    }
-  
-    #bloc2 {
-      width: 57px;
-      height: 137px;
-      background: #064A8C;
-      position: relative;
-      animation-name: bloc2;
-      animation-duration: 2.5s;  
-      animation-delay: 0s;
-      animation-fill-mode: backwards;
-      box-shadow: 2px 2px 5px rgb(138, 137, 137);
-  
-  
-    }
-    #img-logo{
-      width: 130px;
-      height: 80px;
-      
-    }
-    
-    @keyframes bloc2 {
-      from {height: 90px;top: 0px; background-color:  #F28920 ;}
-      to {height: 137px;}
-      
-    }
-  
-    .container-logo{
-      width: 100%;
-      display: flex;
-      flex-direction: row;
-      right: 0%;
-      background-color: white;
-      height: 150px;
-      z-index: 2;
-    }
+  @keyframes bloc2 {
+    from {height: 67px;top: 0px; background-color: #064A8C;}
+    to {height: 90px ;}   
+  }
+}
+
+@media (max-width: 376px){
+  #bloc1{
+    width: 35;
+    height: 60px;
+  }
+  @keyframes bloc1 {
+    from {height: 47px;top: 0px; background-color: #064A8C;}
+    to {height: 60px;}  
+  }
+  #bloc2{
+    width: 35;
+    height: 80px;
+  }
+  @keyframes bloc2 {
+    from {height: 47px;top: 0px; background-color: #064A8C;}
+    to {height: 80px ;}   
+  }
+}
