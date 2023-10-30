@@ -19,7 +19,7 @@
 }
 
 .body_listar_salas{
-    width: 832px;
+    max-width: 832px;
     position: relative;
     margin: 0 auto;
     
@@ -231,10 +231,17 @@ border-radius: 10px;
 
 .show{
     transform: translateX(-0) ;
-    
+     
     opacity: 1;
 }
 
  
 /* ======================= */
 
+/* @media (max-width: 832px) {
+
+    *{
+        background-color: red;
+    }
+    
+} */
