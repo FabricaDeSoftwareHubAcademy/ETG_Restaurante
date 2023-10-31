@@ -48,9 +48,7 @@ foreach($dados as $sala){
                         $count = 0;
                     }
                     
-                }
-                
-                
+                } 
                 
 require("../includes/main/main_listar_salas.php");
 require("../includes/footer/footer.php");
