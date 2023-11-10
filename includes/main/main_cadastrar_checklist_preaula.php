@@ -12,6 +12,7 @@
 
         <main class="main_checklist">
             <form  method="POST" class="checklist_pre_aula">
+<<<<<<< Updated upstream
                 <?=$dados_imprimir?>       
                 <!--Botão Voltar-->
                 <div class="botao-padrao-voltar">
@@ -21,11 +22,165 @@
                 <!--Botão Salvar-->
                 <div class="botao-padrao-voltar">
                     <a href=""><input name="btn_submit" type="submit" class="botao-salvar-submit"  value="CONFIRMAR"></a>
+=======
+                <div class="input_checklist">
+                    <label class="label_checklist" for="data">Os equipamentos e /ou utensílios estão limpos, organizados e em condições de uso?</label>
+
+                        <div class="row">
+                            <div class="checkmark" onclick="check(false)">
+                                <i id="red" class="bi bi-x"></i>
+                            </div>
+
+                            <div class="checkmark" onclick="check(true)">
+                                <i id="green" class="bi bi-check"></i>
+                            </div>
+
+                        </div>
+                </div>
+                <div class="input_checklist">
+                    <label class="label_checklist" for="data">Os equipamentos e /ou utensílios estão limpos, organizados e em condições de uso?</label>
+
+                        <div class="row">
+                            <div class="checkmark" onclick="check(false)">
+                                <i id="red" class="bi bi-x"></i>
+                            </div>
+
+                            <div class="checkmark" onclick="check(true)">
+                                <i id="green" class="bi bi-check"></i>
+                            </div>
+
+                        </div>
+                </div>
+                <div class="input_checklist">
+                    <label class="label_checklist" for="data">Os equipamentos e /ou utensílios estão limpos, organizados e em condições de uso?</label>
+
+                        <div class="row">
+                            <div class="checkmark" onclick="check(false)">
+                                <i id="red" class="bi bi-x"></i>
+                            </div>
+
+                            <div class="checkmark" onclick="check(true)">
+                                <i id="green" class="bi bi-check"></i>
+                            </div>
+
+                        </div>
+                </div>
+                <div class="input_checklist">
+                    <label class="label_checklist" for="data">Os equipamentos e /ou utensílios estão limpos, organizados e em condições de uso?</label>
+
+                        <div class="row">
+                            <div class="checkmark" onclick="check(false)">
+                                <i id="red" class="bi bi-x"></i>
+                            </div>
+
+                            <div class="checkmark" onclick="check(true)">
+                                <i id="green" class="bi bi-check"></i>
+                            </div>
+
+                        </div>
+                </div>
+                <div class="input_checklist">
+                    <label class="label_checklist" for="data">Os equipamentos e /ou utensílios estão limpos, organizados e em condições de uso?</label>
+
+                        <div class="row">
+                            <div class="checkmark" onclick="check(false)">
+                                <i id="red" class="bi bi-x"></i>
+                            </div>
+
+                            <div class="checkmark" onclick="check(true)">
+                                <i id="green" class="bi bi-check"></i>
+                            </div>
+
+                        </div>
+                </div>
+                <div class="input_checklist">
+                    <label class="label_checklist" for="data">Os equipamentos e /ou utensílios estão limpos, organizados e em condições de uso?</label>
+
+                        <div class="row">
+                            <div class="checkmark" onclick="check(false)">
+                                <i id="red" class="bi bi-x"></i>
+                            </div>
+
+                            <div class="checkmark" onclick="check(true)">
+                                <i id="green" class="bi bi-check"></i>
+                            </div>
+
+                        </div>
+                </div>
+                <div class="input_checklist">
+                    <label class="label_checklist" for="data">Os equipamentos e /ou utensílios estão limpos, organizados e em condições de uso?</label>
+
+                        <div class="row">
+                            <div class="checkmark" onclick="check(false)">
+                                <i id="red" class="bi bi-x"></i>
+                            </div>
+
+                            <div class="checkmark" onclick="check(true)">
+                                <i id="green" class="bi bi-check"></i>
+                            </div>
+
+                        </div>
+                </div>
+                <div class="input_checklist">
+                    <label class="label_checklist" for="data">Os equipamentos e /ou utensílios estão limpos, organizados e em condições de uso?</label>
+
+                        <div class="row">
+                            <div class="checkmark" onclick="check(false)">
+                                <i id="red" class="bi bi-x"></i>
+                            </div>
+
+                            <div class="checkmark" onclick="check(true)">
+                                <i id="green" class="bi bi-check"></i>
+                            </div>
+
+                        </div>
+                </div>
+                
+                <div class="input_checklist">
+                    <label class="label_checklist" for="data">Os equipamentos e /ou utensílios estão limpos, organizados e em condições de uso?</label>
+
+                        <div class="row">
+                            <div class="checkmark" onclick="check(false)">
+                                <i id="red" class="bi bi-x"></i>
+                            </div>
+
+                            <div class="checkmark" onclick="check(true)">
+                                <i id="green" class="bi bi-check"></i>
+                            </div>
+
+                        </div>
+                </div>
+                
+                <div class="input_checklist">
+                    <label class="label_checklist" for="data">Os equipamentos e /ou utensílios estão limpos, organizados e em condições de uso?</label>
+
+                        <div class="row">
+                            <div class="checkmark" onclick="check(false)">
+                                <i id="red" class="bi bi-x"></i>
+                            </div>
+
+                            <div class="checkmark" onclick="check(true)">
+                                <i id="green" class="bi bi-check"></i>
+                            </div>
+
+                        </div>
+                </div>
+                
+
+                
+                <div class="botoes">   
+                    <!--Botão Voltar-->
+                    <div class="botao-padrao-voltar">
+                        <a href="gerenc_perfis.php"class="botao-voltar-submit">CANCELAR</a>
+                    </div>
+        
+                    <!--Botão Salvar-->
+                    <div class="botao-padrao-voltar">
+                        <a href=""><input name="btn_submit" type="submit" class="botao-salvar-submit"  value="CONFIRMAR"></a>
+                    </div>
+>>>>>>> Stashed changes
                 </div>
             </form>
-            <div class="botoes">
-
-            </div>
         </main>
 
 </body>
