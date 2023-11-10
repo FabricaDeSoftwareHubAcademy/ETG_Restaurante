@@ -21,7 +21,7 @@
         </div>
         <form method="POST" class="form_permissoes">
             <div class="input_group">
-                <input type="input" class="input_field" placeholder="Name" name="nome">
+                <input type="input" class="input_field" placeholder="Name" name="nome" maxlength="30">
                 <label for="name" class="input_label">Nome</label> <!--Alterar para o nome do input-->
             </div>
             <div class="permissoes_salas">
