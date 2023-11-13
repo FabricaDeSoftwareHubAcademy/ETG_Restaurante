@@ -1,3 +1,24 @@
+<?php
+session_start();
+require __DIR__."/../vendor/autoload.php";
+include_once("../includes/menu.php"); 
+require("../includes/header/header.php");
+
+//REGRAS DE NEGOCIO ABAIXO 
+ 
+
+use App\Entity\Usuario;
+ 
+$objUsuario = new Usuario();
+$logado = false;
+$erro = false;
+
+$dados = $objUsuario->getDadosById($_SESSION['id_user']); 
+
+// value="<?=$dados["nome"]?
+
+?>
+
 
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https/cdnjs.cloudflare.comlibs/font-awesome/6.4.0/css/all.min.css">
@@ -13,6 +34,15 @@
             </a>
 
             <ul class="navItems-menu">
+
+                <li class="parte-perfil">
+                    <a href="#"  class="link-menu">  
+                        <img src="../assets/imgs/others/cozinha_etg.jpg" class="icon-perfil" style="--i:2" alt="...">
+                        <h5 class="titulo-nome"><?=substr($dados["nome"], 0, 10)?></h5>
+                    </a>
+                </li>
+    
+                
                 <li class="li-menu">
                     <a href="../pages/listar_recados.php" class="link-menu">
                         <i id="icon-casa" class="bi bi-house-door"  style="--i:1"></i>   
