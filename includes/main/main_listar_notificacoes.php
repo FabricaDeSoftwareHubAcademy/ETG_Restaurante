@@ -3,11 +3,20 @@
 <link href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@4/dark.css" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
 
-<body class="tela_notificacao">  
-    <main class="area_not">
-        <?=$todas_notificacao?>
-    </main>        
+<body class="tela_notificacao"> 
+    <div class="titulo_tela_notificacao">
+        <h1>Notificações</h1>  
+    </div>
+    <section class="container">
+        
+        <main class="area_not">
+            <?=$todas_notificacao?>
+        </main>        
+    </section>
 
+    <div class="botao-padrao-voltar">
+        <a href="listar_salas.php" class="botao-voltar-link">VOLTAR</a>
+    </div>
 
     <script> 
         async function desmarcar (id){
