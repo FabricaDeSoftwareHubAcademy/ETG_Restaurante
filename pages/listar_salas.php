@@ -49,7 +49,7 @@ foreach($dados as $sala){
                     }
                     
                 } 
-    
+                
 require("../includes/main/main_listar_salas.php");
 require("../includes/footer/footer.php");
 ?>
