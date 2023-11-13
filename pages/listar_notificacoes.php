@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 require __DIR__."/../vendor/autoload.php";
 include_once("../includes/menu.php"); 
 require("../includes/header/header.php");
@@ -11,12 +11,12 @@ use App\Entity\Notificacao;
 $notificacao = new Notificacao();
 //die('teste');
 
-$dados = $notificacao::getNotificacao();
+$dados = $notificacao::getNotificacao($_SESSION["id_user"]);
 
 
 date_default_timezone_set('America/Sao_paulo');
 
-$dataBanco = Notificacao::getNotificacao()[0]['data_envio'];
+$dataBanco = isset(Notificacao::getNotificacao($_SESSION["id_user"])[0]['data_envio'])?Notificacao::getNotificacao($_SESSION["id_user"])[0]['data_envio'] : "";
 
 $primeiraData = new DateTime($dataBanco);
 
@@ -53,11 +53,17 @@ foreach ($dados as $contador){
         
     }
     else if(($diferenca/60) > 59 and $diferenca/60/60 < 24){
-        
-        // $diferenca = ($diferenca /60)/60;
-        // $unidadeTempo = ' Horas ';
-        
-        $tempoAtras = $hours." Horas";
+        if($hours == 1){
+            $tempoAtras = "Há ".$hours." Hora";
+            
+        }
+        else{
+            // $diferenca = ($diferenca /60)/60;
+            // $unidadeTempo = ' Horas ';
+            
+            $tempoAtras = $hours." Horas";
+            // echo($hours);
+        }    
     }
     else if(($diferenca/60) < 60 and $diferenca/60/60 < 59){
         

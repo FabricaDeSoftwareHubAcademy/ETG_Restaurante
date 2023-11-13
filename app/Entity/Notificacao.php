@@ -42,11 +42,11 @@ class Notificacao
     } 
 
     //READ
-    public static function getNotificacao()
+    public static function getNotificacao($id_user)
     {
     $obj_banco = new Banco ('notificacao');
 
-    $dados = $obj_banco -> select(order:'marcado ASC') -> fetchAll(PDO::FETCH_ASSOC); 
+    $dados = $obj_banco -> select(order:'marcado ASC',where:"id_destinatario = '".$id_user."'") -> fetchAll(PDO::FETCH_ASSOC); 
 
     return $dados;
     }
