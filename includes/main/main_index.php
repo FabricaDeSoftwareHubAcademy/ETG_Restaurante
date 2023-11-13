@@ -69,7 +69,7 @@
                 </div>
 
                 <div class="area_link">
-                    <a href="">Esqueci minha senha</a>
+                    <a href="./pages/relembrar_senha_1.php">Esqueci minha senha</a>
                 </div>
                 
                 
