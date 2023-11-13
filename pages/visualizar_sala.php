@@ -4,9 +4,11 @@ include_once("../includes/menu.php");
 require("../includes/header/header.php");
 
 
+
 use App\Entity\Sala;
 
 if(isset($_GET['id_sala'])){
+    
     $id_sala = $_GET['id_sala'];
 
     $dados = Sala::getDadosById($id_sala);
