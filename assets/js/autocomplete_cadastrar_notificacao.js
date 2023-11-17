@@ -19,7 +19,6 @@ $("#nome").autocomplete({
                         value: value.email // Utilize 'value' para o valor a ser enviado
                     };
                 });
-                console.log(aData);
                 response(aData); // Adicionado para retornar os dados para o autocompletar
             },
             error: function(xhr, status, error) {
