@@ -198,8 +198,7 @@ async function cadastrarRecado(){
             location.reload()
         }else{
             console.log(response['status'])
-        }
-        
+        } 
     }else{
 
         const Toast = Swal.mixin({
