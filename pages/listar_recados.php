@@ -52,6 +52,7 @@ foreach($recados as $row_recados){
                         
 
     }
+    $texto = 'Mural Recados';
     include_once("../includes/menu.php"); 
     include_once("../includes/header/header.php");
     require("../includes/main/main_listar_recados.php");
