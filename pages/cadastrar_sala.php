@@ -9,12 +9,15 @@ use App\Entity\CadastroChecklist;
 use App\Entity\Imagens;
 
 
+
+
 $objCadastroChecklist = new CadastroChecklist();
 $dados = $objCadastroChecklist -> getDados();
 $options = '';
 foreach ($dados as $row_check ){
     $options .= '<option  class="ops" value="'.$row_check['id'].'"> '.$row_check['nome'].' </option>';
 }
+
  
 if (isset(
             $_POST      ['btn_submit']    
