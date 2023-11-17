@@ -5,4 +5,4 @@ use \App\Entity\Pergunta;
 print_r(Pergunta::filter("equipamentos"));
 
 
-// teste
+// A U P K 3
