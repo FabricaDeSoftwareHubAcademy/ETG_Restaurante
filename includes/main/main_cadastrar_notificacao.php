@@ -13,7 +13,7 @@
         <!--Input-->
 
         <section class="centralizar-inputs-tela-enviar-notificacao">
-            <form action="" method="POST">
+            <form action="" method="POST" class="form_enviar_notificacao">
 
                 <div class="input_group field">
                     <input name="email_destinatario" type="email" class="input_field" placeholder="Name" required="">
