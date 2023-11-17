@@ -37,6 +37,7 @@ foreach ($dados_pergunta as $linha)
     }
 
 }
+
 if (isset($_POST["btn_submit"]))
 {
     $obj_checklist -> cadastrar(
