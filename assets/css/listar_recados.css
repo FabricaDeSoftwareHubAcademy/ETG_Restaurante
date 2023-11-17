@@ -8,6 +8,7 @@
     text-align: center;
     font-size: 40px;
     font-family: "Montserrat";
+    transition: .3s;
 }
 .icon_card_recado_excluir, .icon_card_recado_editar{
     cursor: pointer;
@@ -267,4 +268,11 @@ font-style: normal;
 font-size: 'Montserrat';
 font-weight: 580;
 font-size: 15px;
+}
+@media(max-width: 500px){
+
+    .title_principal{
+        font-size: 30px;
+    }
+
 }
