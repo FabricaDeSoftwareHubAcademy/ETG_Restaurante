@@ -2,7 +2,7 @@ $("#nome").autocomplete({
     source: function(request, response) {
         // Fetch data
         $.ajax({
-            url: "http://localhost/ETG_Escola/app/Ajax/cadastrar_notificacao.php",
+            url: "../app/Ajax/cadastrar_notificacao.php",
             type: 'GET',
             dataType: "json",
             success: function(data) {
