@@ -16,8 +16,8 @@
             <form action="" method="POST">
 
                 <div class="input_group field">
-                    <input name="email_destinatario" type="email" class="input_field" placeholder="Name" required="">
-                    <label for="name" class="input_label">Para:</label> <!--Alterar para o nome do input-->
+                    <input name="email_destinatario" id="nome" type="email" class="input_field" placeholder="Name" required="">
+                    <label for="name"  class="input_label">Para:</label> <!--Alterar para o nome do input-->
                 </div>
 
                 <!--Textarea-->
@@ -47,5 +47,10 @@
 
     </div>
 </div>
-  
+<!-- Script -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<!-- jQuery UI -->
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+<script src="../assets/js/autocomplete_cadastrar_notificacao.js"></script>
 </body>

@@ -4,7 +4,8 @@ require("../includes/header/header.php");
 
 use App\Entity\Notificacao;
 use App\Entity\Usuario;
-//REGRAS DE NEGOCIO ABAIXO
+use App\Entity\Funcoes;
+
 
 if (isset($_POST['btn_submit']))
 {
