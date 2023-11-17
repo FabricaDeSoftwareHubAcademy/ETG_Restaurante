@@ -133,9 +133,8 @@ button{
     overflow-y: scroll;
     scrollbar-color: #F28920;
  
-    gap: 10px;
-    margin-top: 50px;
-    margin-bottom: 50px;
+    gap: 10px; 
+    margin-bottom: 10px;
 }
 .area_cards_recados_mural::-webkit-scrollbar{
     width: 8px;
@@ -269,10 +268,18 @@ font-size: 'Montserrat';
 font-weight: 580;
 font-size: 15px;
 }
-@media(max-width: 500px){
+@media(max-width: 650px){
 
     .title_principal{
         font-size: 30px;
     }
 
+}
+
+@media(max-width: 450px){
+
+    .area_cards_recados_mural{
+
+        width: 95%;
+    }
 }
