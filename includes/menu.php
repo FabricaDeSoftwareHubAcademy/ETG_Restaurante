@@ -15,7 +15,9 @@ $erro = false;
 
 $dados = $objUsuario->getDadosById($_SESSION['id_user']); 
 
+
 // value="<?=$dados["nome"]?
+// var_dump($dados['foto']);
 
 ?>
 
@@ -36,8 +38,8 @@ $dados = $objUsuario->getDadosById($_SESSION['id_user']);
             <ul class="navItems-menu">
 
                 <li class="parte-perfil">
-                    <a href="#"  class="link-menu">  
-                        <img src="../assets/imgs/others/cozinha_etg.jpg" class="icon-perfil" style="--i:2" alt="...">
+                    <a href="#"  class="link-menu">                           
+                        <img src="../assets/imgs/icons/<?=$dados["foto"]?>" class="icon-perfil" style="--i:2" alt="...">                    
                         <h5 class="titulo-nome"><?=substr($dados["nome"], 0, 10)?></h5>
                     </a>
                 </li>
