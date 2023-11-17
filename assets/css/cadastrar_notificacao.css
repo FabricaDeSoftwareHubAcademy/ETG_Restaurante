@@ -5,6 +5,32 @@
   font-family:'Montserrat', sans-serif;
 }
 
+/* JQUERY */
+.ui-autocomplete {
+  max-height: 200px; /* Altura máxima da lista de sugestões */
+  overflow-y: auto; /* Adiciona uma barra de rolagem se a lista de sugestões for muito longa */
+}
+
+.ui-menu {
+  list-style: none; /* Remove os marcadores de lista padrão */
+  padding: 0;
+  margin: 0;
+}
+
+.ui-menu-item {
+  padding: 8px;
+  cursor: pointer;
+}
+
+.ui-menu-item:hover, .ui-state-focus {
+  background-color: #e0e0e0; /* Cor de fundo quando hover ou focado */
+}
+
+.ui-helper-hidden-accessible {
+  display: none; /* Oculta elementos auxiliares visualmente, mas ainda acessíveis */
+}
+/* JQUERY */
+
 .pagina{
   width: 100%;
   max-width: 832px;

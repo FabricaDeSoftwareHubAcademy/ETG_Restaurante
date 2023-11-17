@@ -1,7 +1,7 @@
 <?php
 namespace App\Entity;
 
-//TA TUDO FUNCIONANDO NAO MECHE
+//TA TUDO FUNCIONANDO
 class Funcoes
 {
     public static function d($data){
@@ -20,7 +20,7 @@ class Funcoes
                 $str .= "</table>";
             }
         }elseif(is_resource($data)){
-            while($arr = mysql_fetch_array($data)){
+            while($arr = mysql_fetch_array($data)){ //esse mysql funciona, o interpretador que ta bugado
                 $data_array[] = $arr;
             }
             $str = Funcoes::d($data_array);
