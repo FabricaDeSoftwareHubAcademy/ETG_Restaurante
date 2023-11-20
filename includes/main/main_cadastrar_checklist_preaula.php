@@ -4,8 +4,8 @@
 
 
 <body class="container_checklist">
-
-
+    <?php include_once "../includes/main/main_cadastrar_nao_conformidade.php";
+    ?>
     <h1 class="titulo_checklist">Checklist Pré-Aula</h1>
     <h2 class="nome_sala">Cozinha Didática 2</h2>
 
