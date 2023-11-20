@@ -6,7 +6,7 @@ require("../includes/header/header.php");
 //REGRAS DE NEGOCIO ABAIXO
 use App\Entity\Pergunta;
 
-
+$descricao = '';
 $dados = Pergunta::getDados(); 
 $divs = ""; 
 foreach ($dados as $item) {
