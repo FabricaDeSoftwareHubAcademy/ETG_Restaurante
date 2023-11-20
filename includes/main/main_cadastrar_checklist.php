@@ -19,7 +19,7 @@
 
     <main class="todo-projeto">
 
-        <form class="cadastro-checklist" method="POST" name="form-perguntas">
+        <form class="cadastro-checklist" method="POST" name="form-perguntas" id="meuFormulario">
 
             <div class="inputs-cadastro-checklist">
                 <div class="input_group field">
@@ -47,7 +47,7 @@
                             <th>Selecione</th>
                             <th>Pergunta</th>
                         </tr>
-                        <?= $tr ?>
+                        <?= $trpre ?>
                     </table>
                 </section>
             </div>
@@ -62,7 +62,7 @@
                             <th>Selecione</th>
                             <th>Pergunta</th>
                         </tr>
-                        <?= $tr ?>
+                        <?= $trpos ?>
                     </table>
                 </section>
             </div>
@@ -96,56 +96,5 @@
             </div>
         </form>
     </main>
-
-
-    <!----------------- Sanduiche------------------>
-    <script>
-        var toggleClick = document.querySelector(".toggleBox-menu");
-        var container = document.querySelector(".container-menu");
-        toggleClick.addEventListener("click", () => {
-            toggleClick.classList.toggle("active");
-            container.classList.toggle("active");
-            submenu.classList.remove('active');
-            btn_submenu.setAttribute('onclick', 'openSubmenu()');
-            closeModal()
-        })
-
-        const modal = document.querySelector('.modal-container-menu')
-        const submenu = document.querySelector('.sub-menu')
-        const btn_submenu = document.getElementById('btnsubmenu')
-
-        function openModal() {
-            modal.classList.add('active')
-        }
-
-        function closeModal() {
-            modal.classList.remove('active')
-        }
-
-        function openSubmenu() {
-            submenu.classList.add('active')
-            btn_submenu.setAttribute('onclick', 'closeSubmenu()')
-        }
-
-        function closeSubmenu() {
-            submenu.classList.remove('active')
-            btn_submenu.setAttribute('onclick', 'openSubmenu()')
-        }
-    </script>
-
-    <!-- pop-up -->
-
-
-    <script>
-        function abrir_modal() {
-            Swal.fire({
-                title: 'Cadastrado com sucesso!', //TITULO DO POP_UP DE ACORDO COM SUA TELA 
-                icon: 'success', // success, error e warning
-                confirmButtonColor: '#609437', // DEFINE A COR DO BOTÃO OK
-                confirmButtonText: 'OK'
-            });
-        }
-    </script>
-
 
 </body>
