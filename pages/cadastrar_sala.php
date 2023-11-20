@@ -1,7 +1,7 @@
 
 <?php
 require __DIR__."/../vendor/autoload.php";
-require("../includes/header/header.php");
+
 include_once("../includes/menu.php"); 
 
 use App\Entity\Sala;
@@ -22,13 +22,15 @@ foreach ($dados as $row_check ){
 if (isset(
             $_POST      ['btn_submit']    
         ))
-{
-    if (!empty($_FILES['imagem_sala']['name']))
+{   
+    // var_dump($_FILES);exit;
+    if (!empty($_FILES['img_sala']['name']))
     {
         $objImagem = new Imagens;
-        $imagem = $objImagem::storeImg($_FILES['imagem_sala']['name']);
+        // $imagem = $objImagem::storeImg($_FILES['imagem_sala']['name']);
+        $novo_nome_imagem = $objImagem::storeImg($_FILES['img_sala']['name']); 
         
-    }
+    
             
     $dias_funcionamento = array("segunda" => ($_POST['segunda'] == 'on' ? 'sim' : 'nao'),
 
@@ -49,7 +51,8 @@ if (isset(
                     )
     );
     $dias_funcionamentoJson = json_encode($dias_funcionamento);
-
+    // linha que eu add  $imagem = $objImagem::storeImg($_FILES['imagem_sala']['name']); // 
+    // $imagem = $objImagem::storeImg($_FILES['imagem_sala']['name']);
     $obj_sala = new Sala
     (
         $_POST       ['nome_sala'],
@@ -64,9 +67,9 @@ if (isset(
     );
         $obj_sala -> cadastrar();
         header("Location: listar_salas.php");
-
+    }
 }   
-        
+require("../includes/header/header.php");
 require("../includes/main/main_cadastrar_sala.php");
 require("../includes/footer/footer.php");
 

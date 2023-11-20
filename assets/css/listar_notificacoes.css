@@ -127,6 +127,15 @@
     padding-top: 5px;
 }
 
+.alinhar_botao_voltar{
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+
+}
+
 .botao-padrao-voltar {
     width: 100%;
     display: flex;
