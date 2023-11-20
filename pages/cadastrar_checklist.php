@@ -15,42 +15,31 @@ $tr = "";
 // die('teste');
 
 // Funcoes::dd($dados);
-$ids = array();
 foreach ($dados as $rowdados) {
     $tr .= "    <tr> 
-                    <td><input type='checkbox'  id='checkbox' name=".$rowdados['id']." value='" . $rowdados['id'] . "'></td>
+                    <td><input type='checkbox'  id='checkbox' name='perguntas[]' value='" . $rowdados['id'] . "'></td>
                     <td>" . $rowdados['descricao'] . "</td>   
                 </tr>";
 }
 
-if (isset($_POST['btn_cadastrar'])) {
-    Funcoes::dd($_POST);
+if (isset($_POST['btn_cadastrar']) && isset($_POST['nome_checklist'])) {
     $check = new CadastroChecklist();
     $check->nome = $_POST['nome_checklist'];
-    $id = $check->cadastrar();
-}
-
-if (isset($_POST[''])) {
-
-    $check = new CadastroChecklist();
-    $check = $_POST['id_cadastro_pergunta'];
-    $id = $check->cadastrar();
-}
-if (isset($_POST['pergunta'])) {
-    $perguntas = $_POST['pergunta'];
-    $check->cadastrarPergunta($perguntas, $id);
-
-    echo ("<script>
-    function abrir_modal(){
+    $id = $check->cadastrar($_POST['perguntas']);
+    echo ("
+    <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11.0.18/dist/sweetalert2.all.min.js'></script>
+    <script>    
         Swal.fire({
-            title: 'Cadastrado com sucesso!', //TITULO DO POP_UP DE ACORDO COM SUA TELA 
-            icon: 'success', // success, error e warning
-            confirmButtonColor: '#609437', // DEFINE A COR DO BOTÃO OK
+            title: 'Cadastrado com sucesso!', 
+            icon: 'success', 
+            confirmButtonColor: '#609437', 
             confirmButtonText: 'OK'
         });
-    }
-        </script>");
+    </script>");
 }
+
+
+
 require("../includes/header/header.php");
 require("../includes/main/main_cadastrar_checklist.php");
 ?>

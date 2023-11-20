@@ -3,6 +3,7 @@ namespace App\Entity;
 use PDO;
 use PDOException;
 use App\Db\Banco;
+use App\Entity\Funcoes;
 
 class CadastroChecklist
 {
@@ -20,14 +21,13 @@ class CadastroChecklist
 
 
     //CREATE
-    public function cadastrar() //: null
+    public function cadastrar($dados) //: null
     {
 
         $obj_banco = new Banco('cadastro_checklist');
 
         $ultimoId = $obj_banco -> insertRecoverId(['nome' => $this -> nome]);
-
-        $this -> cadastrarPergunta(dados: null, idCheck: $ultimoId);
+        $this -> cadastrarPergunta(dados: $dados, idCheck: $ultimoId);
 
     }
 
@@ -36,8 +36,8 @@ class CadastroChecklist
        $obBanco = new Banco("relacao_pergunta_checklist");
        foreach($dados as $idPergunta){
         $idLista = [
-            'id_cadastro_pergunta' => $idPergunta,
-            'id_cadastro_checklist' => $idCheck];
+            'id_pergunta' => $idPergunta,
+            'id_check' => $idCheck];
             $obBanco -> insert($idLista);
        }
     }
