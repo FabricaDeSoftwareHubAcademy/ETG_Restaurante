@@ -15,7 +15,7 @@
   .input_field {
     width: 100%;
     border: none;
-    border-bottom: 2px solid #9b9b9b;
+    border-bottom: 2px solid #ccc;
     outline: 0;
     color: black;
     padding: 7px 0;
@@ -27,7 +27,7 @@
     font-size: 20px;
     left: 10%;
   }
-   
+  
   .input_field::placeholder {
     color: transparent;
   }
