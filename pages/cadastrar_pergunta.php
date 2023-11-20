@@ -8,7 +8,7 @@ use App\Entity\Pergunta;
 
 
 $dados = Pergunta::getDados(); 
-$divs = "";
+$divs = ""; 
 foreach ($dados as $item) {
 
     $divs .= '<div class="question1">
