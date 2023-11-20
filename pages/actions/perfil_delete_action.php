@@ -21,4 +21,4 @@ $response = [
 ];
 
 // echo(json_encode($response));
-header("Location: ../listar_perfis.php");
+// header("Location: ../listar_perfis.php");
