@@ -1,7 +1,8 @@
 <?php
 
 require __DIR__."./../vendor/autoload.php";
-// require("../includes/header/header.php");
+$titulo_page = 'Cadastrar Usuario';
+require("../includes/header/header.php");
 include_once("./../includes/menu.php"); 
 
 

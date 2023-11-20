@@ -1,6 +1,7 @@
 <?php
 session_start();
 require __DIR__."/../vendor/autoload.php";
+$titulo_page = 'Redefinir Senha';
 require("../includes/header/header.php");
 if (isset($_POST['btn_submit']) && isset($_SESSION['cod_redef_senha']))
 {

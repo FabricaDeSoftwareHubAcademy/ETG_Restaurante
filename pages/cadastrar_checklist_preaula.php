@@ -1,6 +1,7 @@
 <?php 
 session_start();    
 require __DIR__."/../vendor/autoload.php";
+$titulo_page = 'Cadastrar Checklist Pre Aula';
 require("../includes/header/header.php");
 include_once("../includes/menu.php");
 use App\Entity\Checklist;

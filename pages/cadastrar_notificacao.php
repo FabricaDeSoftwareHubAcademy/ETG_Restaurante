@@ -1,5 +1,6 @@
 <?php
 require "../vendor/autoload.php";
+$titulo_page = 'Cadastrar Notificacao';
 require("../includes/header/header.php");
 
 use App\Entity\Notificacao;

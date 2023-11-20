@@ -1,6 +1,7 @@
 <?php
 require __DIR__."/../vendor/autoload.php";
 include_once("../includes/menu.php"); 
+$titulo_page = 'Lista Perfis';
 require("../includes/header/header.php");
 
 use App\Entity\Perfil;

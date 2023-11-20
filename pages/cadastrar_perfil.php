@@ -1,5 +1,6 @@
 <?php
 require __DIR__."/../vendor/autoload.php";
+$titulo_page = 'Cadastrar Perfil';
 require("../includes/header/header.php");
 
 use App\Entity\Perfil;

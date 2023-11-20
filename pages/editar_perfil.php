@@ -1,5 +1,6 @@
 <?php
 require __DIR__."/../vendor/autoload.php";
+$titulo_page = 'Editar Perfil';
 require("../includes/header/header.php");
 
 

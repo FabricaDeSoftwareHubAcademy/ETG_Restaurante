@@ -1,6 +1,7 @@
 <?php
 require __DIR__."/../vendor/autoload.php";
 include_once("../includes/menu.php"); 
+$titulo_page = 'Cadastrar Pergunta';
 require("../includes/header/header.php");
 
 //REGRAS DE NEGOCIO ABAIXO

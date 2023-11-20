@@ -1,6 +1,7 @@
 
 <?php
 require __DIR__."/../vendor/autoload.php";
+$titulo_page = 'Cadastrar Sala';
 require("../includes/header/header.php");
 include_once("../includes/menu.php"); 
 

@@ -2,6 +2,7 @@
 
 require __DIR__."/../vendor/autoload.php";
 include_once("../includes/menu.php"); 
+$titulo_page = 'Cadastrar Checklist';
 require("../includes/header/header.php");
 require("../includes/main/main_cadastrar_checklist.php");
 //REGRAS DE NEGOCIO ABAIXO
