@@ -1,37 +1,24 @@
-let awser = "";
+// let awser = "";
 const red = document.getElementById('red')
-const green = document.getElementById('green')
 
+ 
+function atualizarValor(id,bool){
+    
+    if(bool){
 
-const clear = () => {
-    awser = ""
-    red.classList = 'bi-x'
-    green.classList = 'bi bi-check'
-}
+        let  green = document.getElementById('green'+id)
+        let  red = document.getElementById('red'+id)
+        green.classList = 'bi bi-check-circle'
+        red.classList = 'bi bi-x'
 
-const check = (bool) => {
-    if(bool) {
-        const VERDE_SELECIONADO = awser === 'true'
-        
-        if(VERDE_SELECIONADO){
-            clear();
-        }else{
-            awser = "true"
-            
-            red.classList = 'bi-x'
-            green.classList = 'bi bi-check-circle'
-        }
     }else{
-        const VERMELHO_SELECIONADO = awser === 'false'
-        
-        if(VERMELHO_SELECIONADO){
-            clear();
-        }else{            
-            awser = "false"
 
-            green.classList = 'bi bi-check'
-            red.classList = 'bi bi-x-circle'
-        }
-   
+        let  green = document.getElementById('green'+id)
+        let  red = document.getElementById('red'+id)
+        green.classList = 'bi bi-check'
+        red.classList = 'bi bi-x-circle'
+
     }
+
+
 }

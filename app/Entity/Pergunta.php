@@ -32,11 +32,11 @@ class Pergunta
     }
 
     //READ
-    public static function getDados()
+    public static function getDados($id_sala)
     {
         $obj_banco = new Banco('perguntas_da_sala');
 
-        $dados = $obj_banco -> select();
+        $dados = $obj_banco -> select(where:'id_sala = '.$id_sala.'');
 
         if($dados -> rowCount() > 0){
 
