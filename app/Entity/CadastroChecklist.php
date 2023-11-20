@@ -22,9 +22,9 @@ class CadastroChecklist
     //CREATE
     public function cadastrar() : string
     {
-        $obj_banco = new Banco('checklist_test');
+        $obj_banco = new Banco('cadatro_checklist');
 
-        $ultimoId = $obj_banco -> insertRecoverId(['descricao' => $this -> nome]);
+        $ultimoId = $obj_banco -> insertRecoverId(['nome' => $this -> nome]);
 
         return $ultimoId;
     }
