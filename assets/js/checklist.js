@@ -17,7 +17,7 @@ function atualizarValor(id,bool){
         let  red = document.getElementById('red'+id)
         green.classList = 'bi bi-check'
         red.classList = 'bi bi-x-circle'
-
+        acao()
     }
 
 

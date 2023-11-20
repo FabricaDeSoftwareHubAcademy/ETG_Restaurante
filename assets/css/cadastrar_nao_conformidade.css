@@ -35,7 +35,7 @@ header{
     height: 10vh;
 }
 
-.bi.bi-x-circle{
+/* .bi.bi-x-circle{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -48,14 +48,14 @@ header{
     top: 50%;
     left: 50%;
     transform: (-50%, -50%);
-}
+} */
 
 
-.bi.bi-x-circle:hover{
+/* .bi.bi-x-circle:hover{
     transition: 0.4s;
     background-color: rgb(255, 59, 59);
     color: aliceblue;
-}
+}  */
 
 
 /* parte do mei da tela */
@@ -84,6 +84,7 @@ header{
 
 }
 .mom.active{
+    margin-top: 160px;
     opacity: 1;
     pointer-events: all;
 }
@@ -120,14 +121,14 @@ header{
     font-size: 16px;
 }
 
-.xis{
+/* .xis{
     display: flex;
     fill: red;
     width: 75px;
     height: 10vh;
     padding-left: 10px;
 
-}
+} */
 
 /* parte do mei (descrição) */
 .descricao{
@@ -165,9 +166,9 @@ textarea{
     align-items: center;
 }
 
-.bi::before{
+/* .bi::before{
     font-size: 20px;
-}
+} */
 
 #images{
     width: 100%;
