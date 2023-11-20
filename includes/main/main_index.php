@@ -55,7 +55,7 @@
                 <div class="area_input">
                     <div class="area_img_input">
 
-                        <img class="img_input password" src="assets/imgs/icons/icon_password.png" >
+                        <img class="img_input password" src="assets/imgs/icons/fechadura.png" >
 
                     </div>
                     <div class="input_person">
@@ -69,7 +69,7 @@
                 </div>
 
                 <div class="area_link">
-                    <a href="">Esqueci minha senha</a>
+                    <a href="./pages/relembrar_senha_1.php">Esqueci minha senha</a>
                 </div>
                 
                 

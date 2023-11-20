@@ -1,7 +1,7 @@
 <?php
 require __DIR__."/../vendor/autoload.php";
-include_once("../includes/menu.php"); 
-require("../includes/header/header.php");
+$titulo_page = 'Editar Sala';
+
 
 
 
@@ -53,10 +53,10 @@ if (isset($_POST['btn_submit']))
                                                 )
                             );
     $dias_funcionamentoJson = json_encode($dias_funcionamento);
-    if (!empty($_FILES['imagem_sala']['name']))
+    if (!empty($_FILES['img_sala']['name']))
     {   
-        $novo_nome_imagem = $obj_imagem::storeImg($_FILES['imagem_sala']['name']);
-        $antigo_nome_imagem = '../storage/salas/'.$dados_sala[0]['imagem'];
+        $novo_nome_imagem = $obj_imagem::storeImg($_FILES['img_sala']['name']); 
+        $antigo_nome_imagem = '../storage/salas/'.$dados_sala[0]['img_sala'];
         unlink($antigo_nome_imagem);
     }
     $obj_sala -> setDados($_GET['id_sala'],
@@ -64,16 +64,19 @@ if (isset($_POST['btn_submit']))
         'nome'              =>  $_POST['nome'],
         'codigo'             =>  $_POST['codigo'],
         'cor_itens'         =>  $_POST['cor_itens'],
-        'img_sala'         =>  (strlen($_FILES['imagem_sala']['tmp_name']) ? $novo_nome_imagem : $dados_sala[0]['img_sala']),
+        'img_sala'         =>  (strlen($_FILES['img_sala']['tmp_name']) ? $novo_nome_imagem : $dados_sala[0]['img_sala']),
         'descricao'            =>  $_POST['descricao'],
         'horarios'    =>  $dias_funcionamentoJson,
         'id_check'     =>  $_POST['checklist']
     ]);
     
-    //header('Location: ' . $_SERVER['PHP_SELF']);
     
-
-
+    
+    
+    header("Location: ./listar_salas.php");
 }
+
+include_once("../includes/menu.php"); 
+require("../includes/header/header.php");
 require("../includes/main/main_editar_sala.php");
 ?>

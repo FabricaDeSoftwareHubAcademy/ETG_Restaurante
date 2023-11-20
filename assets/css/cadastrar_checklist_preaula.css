@@ -26,25 +26,25 @@
   
 }
 .main_checklist{
-  WiDtH: 78%;
+  width: 78%;
   max-width: 810px;
   max-height: 728px;
-  overflow: hidden;
-  overflow-y: scroll;
   margin-right: 2%;
 }
 
 
-.main_checklist::-webkit-scrollbar{
+.list-pre-aula::-webkit-scrollbar{
   width: 8px;
   background-color: #eeeeee;
   border-radius: 10px;
 }
 
-.main_checklist::-webkit-scrollbar-thumb{
+.list-pre-aula::-webkit-scrollbar-thumb{
   background-color: #F28920;
   border-radius: 10px; 
 } 
+
+
 
 .titulo_checklist{
     font-family: "Montserrat";
@@ -74,7 +74,7 @@
   flex-direction: row;
   align-items: center;
   width: 80%;
-  height: 100%;
+
   margin: 5px;
 }
 
@@ -179,7 +179,7 @@
   
   /* Css Botão Voltar */
   
-  .botao-padrao-voltar{[]
+  .botao-padrao-voltar{
     height: 40px;
     display: flex;
     
@@ -211,19 +211,11 @@
   }
 
   .botoes{
-  
-    /* max-width: 811px; */
-    width: 100%;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    position: absolute;
-
-    left: 50%;
-    transform: translateX(-50%);
-    padding: 10px;
-    justify-content: space-evenly;
-    
+    flex-direction: row;
+    justify-content: center; 
+    width: 80%;
+    margin-top: 5%;
   }
 
   @media(max-width:1400px){
@@ -234,4 +226,19 @@
      
       flex-wrap: wrap;
     }
+  }
+
+  .list-pre-aula{
+    max-height: 550px;
+    overflow: hidden;
+    overflow-y: scroll
+  }
+
+  /* Botão */
+  .botoes-cadastro-checklist {
+    display: flex;
+    padding-top: 25px;
+    margin: 50px 0 50px 0;
+    justify-content: space-between;
+    width: 100%;
   }

@@ -89,6 +89,7 @@ body{
   height: 30px;
   margin-bottom: 400px;
   color: rgb(0, 0, 0);
+  font-size: 20px;
 }
 
 .div-pop{
@@ -113,6 +114,7 @@ body{
   border-radius:30px;
   padding: 20px;
   outline: none;
+  font-size: 18px;
 
 }
 /* CONTAINER DOS BOTOES */

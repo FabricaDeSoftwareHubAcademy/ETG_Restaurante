@@ -42,11 +42,11 @@ class Notificacao
     } 
 
     //READ
-    public static function getNotificacao()
+    public static function getNotificacao($id_user)
     {
     $obj_banco = new Banco ('notificacao');
 
-    $dados = $obj_banco -> select() -> fetchAll(PDO::FETCH_ASSOC); 
+    $dados = $obj_banco -> select(order:'marcado ASC',where:"id_destinatario = '".$id_user."'") -> fetchAll(PDO::FETCH_ASSOC); 
 
     return $dados;
     }
@@ -76,7 +76,8 @@ class Notificacao
 
         $banco = new Banco ('notificacao');
         $dados = [
-            'visualizado' => 1 
+            'visualizado' => 1 ,
+            'marcado'=> 1
         ];
         if($banco->update('id = "'.$id.'"',$dados)){
 
@@ -85,5 +86,21 @@ class Notificacao
             return false;
         }
     }
+
+    public static function setDesmarcarNotificacao($id){
+
+        $banco = new Banco ('notificacao');
+        $dados = [
+            
+            'marcado'=> 0
+        ];
+        if($banco->update('id = "'.$id.'"',$dados)){
+
+            return true;
+        }else{
+            return false;
+        }
+    }
+
 }
 ?>

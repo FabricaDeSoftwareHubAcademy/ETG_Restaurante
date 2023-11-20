@@ -1,6 +1,7 @@
 <?php
 
 require __DIR__."/../vendor/autoload.php";
+$titulo_page = 'Redefinir Senha';
 require("../includes/header/header.php");
 $obj_email = new App\Entity\Mailer;
 

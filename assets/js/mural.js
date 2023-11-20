@@ -172,15 +172,13 @@ async function deletarRecado(){
 
     }else{
         console.log("Algo inesperado aconteceu")
-    }
-     
- 
+    } 
 }
-
-
+ 
 async function cadastrarRecado(){
 
     var texto = document.getElementById("texto_novo_recado").value
+
     if(texto.trim()){
         closePopup_recado()
         bodyDados = {
@@ -194,12 +192,13 @@ async function cadastrarRecado(){
             },
             body: JSON.stringify(bodyDados)
         })
+
         const response = await dados.json()
         if(response['status']){
             location.reload()
         }else{
             console.log(response['status'])
-        }
+        } 
     }else{
 
         const Toast = Swal.mixin({

@@ -4,8 +4,7 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
 
 <link rel="stylesheet" href="../assets/css/menu/menu.css">
-<body>
-
+<body> 
 
     <div class="cabecalho-menu">
         <div class="container-menu">
@@ -37,15 +36,15 @@
                 </li>
             </li>
 
-
-                <li class="li-menu">
+            
+            <li class="li-menu">
 
                     <a href="../pages/listar_notificacoes.php" class="link-menu">
                         <i id="icon-notificacao" class="bi bi-bell"  style="--i:3"></i>  
                         <h5 class="titulo-info" id="titulo-not" style="--i:3">Alertas</h5>              
                     </a>
                 </li>   
-            
+                
                 <li class="li-menu">
 
                     <a href="listar_salas.php" class="link-menu">
@@ -53,7 +52,7 @@
                         <h5 class="titulo-info" id="titulo-not" style="--i:3">Salas</h5>              
                     </a>  
                 </li>      
-
+                
                 
                 <li class="link_submenu"> 
                     <li class="li-menu">   
@@ -61,12 +60,16 @@
                             <i class="bi bi-list-check" id="btnsubmenu" onclick="openSubmenu()" style="--i:5"></i>
                             <h5 class="titulo-info" id="titulo-cad" style="--i:5">Cadastros</h5>
                         </a>
-
+                        
                         <ul class="sub-menu">            
-                            <li class="iten-submenu"><a href="../pages/cadastrar_sala.php" id="fonte-submenu">Cadastro de Salas</a></li>
+                        <li class="iten-submenu"><a href="../pages/cadastrar_sala.php" id="fonte-submenu">Cadastro de Salas</a></li>
                             <li class="iten-submenu"><a href="../pages/cadastrar_checklist.php" id="fonte-submenu">Cadastro Checklist</a></li>
                             <li class="iten-submenu"><a href="../pages/cadastrar_pergunta.php" id="fonte-submenu">Cadastro de Perguntas</a></li>                       
-                        </ul>
+                            <li class="iten-submenu"><a href="../pages/cadastrar_notificacao.php" id="fonte-submenu">Cadastro de Notificações</a></li> 
+                            <li class="iten-submenu"><a href="../pages/cadastrar_usuario.php" id="fonte-submenu2">Cadastro de Usuário</a></li> 
+                            <li class="iten-submenu"><a href="../pages/cadastrar_perfil.php" id="fonte-submenu2">Cadastro de Perfil</a></li> 
+                            <li class="iten-submenu"><a href="../pages/cadastrar_pergunta.php" id="fonte-submenu">Cadastro de Perguntas</a></li>  
+                            <li class="iten-submenu"><a href="../pages/cadastrar_notificacao.php" id="fonte-submenu">Cadastro de Notificações</a></li>                                             </ul>
                     </li> 
                 </li>         
 

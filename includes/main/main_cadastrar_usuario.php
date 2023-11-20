@@ -13,7 +13,7 @@
 
                 <!-- input nome -->
             <div class="input_group field">
-                <input type="input" class="input_field" name="nome" placeholder="Name" required="">
+                <input type="input" maxlength="45" class="input_field" name="nome" placeholder="Name" required="">
                 <label for="name" class="input_label">Nome</label> <!--Alterar para o nome do input-->
             </div>
             
@@ -35,7 +35,7 @@
 
             <div class="mover_input">
                 <div class="input_group field matricula">
-                    <input type="input" class="input_field_matricula" name="num_matricula" placeholder="Name" required="">
+                    <input type="input" class="input_field_matricula" name="matricula" placeholder="Name" required="">
                     <label for="name" class="input_label_matricula">N° de Matricula</label> <!--Alterar para o nome do input-->
                 </div>
             </div>
@@ -51,7 +51,7 @@
 
                 <!--Botão voltar-->
                 <div class="botao-padrao-voltar">
-                    <a href="listar_salas.php" class="botao-voltar-link">VOLTAR</a>
+                    <a href="listar_recados.php" class="botao-voltar-link">VOLTAR</a>
                 </div>
 
             <!--Botão Confirmar-->

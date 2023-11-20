@@ -1,6 +1,7 @@
 <?php
 session_start();
 require __DIR__."/../vendor/autoload.php";
+$titulo_page = 'Redefinir Senha';
 require("../includes/header/header.php");
 
 use App\Entity\Usuario;

@@ -94,18 +94,41 @@ class Perfil
     //DELETE
     public function deleteById($id)
     {
-        $obj_banco = new Banco('cadastro_perfil');
 
-        $row_perfil = $obj_banco -> select('id = '.$id);
 
-        if($row_perfil -> rowCount() > 0)
-        {
-            $obj_banco -> delete($id,'id');
 
-            return true;
+        if ($this -> checkForeignKey($id)) {
+            echo "<script>alert('Não é possível excluir este perfil, pois ele está sendo utilizado por algum usuário!');</script>";
+            return false;
         }
-        else
-        {
+        else{
+            $obj_banco = new Banco('cadastro_perfil');
+
+            $row_perfil = $obj_banco -> select('id = '.$id);
+
+            if($row_perfil -> rowCount() > 0)
+            {
+                $obj_banco -> delete($id,'id');
+
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+    }
+
+    //Verifica se o perfil possui alguma FOREIGN KEY
+    public function checkForeignKey($id)
+    {
+        $obj_banco = new Banco('cadastro_usuario');
+
+        $row_perfil = $obj_banco->select('id_perfil = '.$id);
+        
+        if ($row_perfil->rowCount() > 0) {
+            return true;
+        } else {
             return false;
         }
     }

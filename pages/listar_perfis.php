@@ -1,6 +1,7 @@
 <?php
 require __DIR__."/../vendor/autoload.php";
 include_once("../includes/menu.php"); 
+$titulo_page = 'Lista Perfis';
 require("../includes/header/header.php");
 
 use App\Entity\Perfil;
@@ -19,7 +20,7 @@ foreach ($dados_perfil as $row_perfil)
     <li>
     <div class="titulo_gp">
     <div class="card_perfil">
-    <img src="../assets/imgs/icons/profile.png" alt="icone_perfil" id="icone_perfil">
+  
     <div class="card_nome">
     <h2 class="tipo_perfil">'.$row_perfil["nome"].'</h2>
     </div>

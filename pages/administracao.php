@@ -1,6 +1,7 @@
 <?php 
 require __DIR__."/../vendor/autoload.php";
 include_once("../includes/menu.php"); 
+$titulo_page = 'Administracao';
 require("../includes/header/header.php");
 require("../includes/main/main_administracao.php");
 

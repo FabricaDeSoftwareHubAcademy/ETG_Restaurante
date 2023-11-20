@@ -54,9 +54,9 @@ class Usuario
 
     
 
-    public function cadastrar($nome = null , $email = null,  $num_matricula = null, $senha = null, $id_perfil = null)
+    public function cadastrar($nome = null , $email = null,  $matricula = null, $senha = null, $id_perfil = null)
     {
-        $objBanco = new Banco('usuarios');
+        $objBanco = new Banco('cadastro_usuario');
 
 
         $validacao_email = $objBanco -> select('email = "'.$email.'"') -> fetchAll(PDO::FETCH_ASSOC);
@@ -77,7 +77,7 @@ class Usuario
             $objBanco -> insert([
                                 'nome'              =>      $nome,
                                 'email'             =>      $email,
-                                'matricula'    =>           $num_matricula, 
+                                'matricula'    =>           $matricula, 
                                 'senha'             =>      $senha,
                                 'id_perfil'         =>      $id_perfil,
                                 ]);

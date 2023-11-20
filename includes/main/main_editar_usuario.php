@@ -1,8 +1,8 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
 <link rel="stylesheet" href="../assets/css/editar_usuario/botao_editar_usuario.css">
-<link rel="stylesheet" href="../assets/css/editar_usuario/editar_usuario.css">
 <link rel="stylesheet" href="../assets/css/editar_senha/input_button_editar_senha.css">
 <link rel="stylesheet" href="../assets/css/editar_senha/editar_senha.css">
+<link rel="stylesheet" href="../assets/css/editar_usuario/editar_usuario.css">
 
 <body class="pai-de-todos1">
 
@@ -30,7 +30,7 @@
             <form method="POST" class="alinhar-input">
                 
                 <div class="input_group field">
-                    <input type="input" class="input_field" id="input_name_cad" placeholder="Name" required="" name="nome" value="<?=$dados["nome"]?>" maxLength="105">
+                    <input type="input" class="input_field" maxlength="45" id="input_name_cad" placeholder="Name" required="" name="nome" value="<?=$dados["nome"]?>" maxLength="105">
                     <label for="name" class="input_label"></label><!--Alterar para o nome do input-->
                     <i class="bi bi-pencil-square" onclick="habilitar()" id="icon-input"></i>
                 </div>
@@ -71,11 +71,18 @@
 
                 
 
-                    <section class="centralizar_botoes_alterar_senha">
+                    
+                </form>   
+            </section>
+
+            
+        </div>
+
+        <section class="centralizar_botoes_alterar_senha">
 
                             <!--Botão Voltar-->
                         <div class="botao-padrao-voltar">
-                            <input type="reset" class="botao-voltar-submit"  value="VOLTAR">
+                            <a href="listar_recados.php" class="botao-voltar-submit" >VOLTAR</a>
                         </div>
 
                             <!--Botão Confirmar-->
@@ -84,11 +91,6 @@
                         </div>
 
                     </section>
-                </form>   
-            </section>
-
-        </div>
-
     </main>
     <script>
 

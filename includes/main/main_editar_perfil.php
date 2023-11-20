@@ -15,7 +15,7 @@
         </div>
         <form method="POST" class="form_permissoes">
             <div class="input_group">
-                <input type="input" class="input_field" placeholder="Name" name="nome" value="<?=$nome;?>">
+                <input type="input" class="input_field" placeholder="Name" name="nome" maxlength="30"value="<?=$nome;?>">
                 <label for="name" class="input_label">Nome</label> 
             </div>
             <div class="permissoes_salas">
@@ -70,7 +70,6 @@
                 </div>
             </div>
         </form>
-
     </div>
 <!-- </main>    -->
 
