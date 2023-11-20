@@ -15,18 +15,18 @@ $tr = "";
 // die('teste');
 
 // Funcoes::dd($dados);
-
+$ids = array();
 foreach ($dados as $rowdados) {
-    $tr .= "<tr> 
-                    <td><input type='checkbox'  id='checkbox' name='pergunta' value='" . $rowdados['id'] . "'></td>
+    $tr .= "    <tr> 
+                    <td><input type='checkbox'  id='checkbox' name=".$rowdados['id']." value='" . $rowdados['id'] . "'></td>
                     <td>" . $rowdados['descricao'] . "</td>   
                 </tr>";
 }
 
-if (isset($_POST['cadastrar'])) {
-
+if (isset($_POST['btn_cadastrar'])) {
+    Funcoes::dd($_POST);
     $check = new CadastroChecklist();
-    $check->nome = $_POST['nome-checklist'];
+    $check->nome = $_POST['nome_checklist'];
     $id = $check->cadastrar();
 }
 

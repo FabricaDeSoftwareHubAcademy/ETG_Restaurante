@@ -23,7 +23,7 @@
 
             <div class="inputs-cadastro-checklist">
                 <div class="input_group field">
-                    <input type="input" class="input_field" placeholder="Name" required="" name="nome-checklist"  maxlength="45">
+                    <input type="text" class="input_field" placeholder="Name" required="" name="nome_checklist"  maxlength="45">
                     <label for="name" class="input_label">Nome da CheckList</label> <!--Alterar para o nome do input-->
                 </div>
             </div>
@@ -90,7 +90,7 @@
 
                     <!--Botão Cadastrar-->
                     <div class="botao-padrao-cadastrar">
-                        <a href="#"><input type="submit" class="botao-cadastrar-submit" name="cadastrar" value="CADASTRAR" onclick="abrir_modal()"></a>
+                        <a href="#"><input type="submit" class="botao-cadastrar-submit" name="btn_cadastrar" value="CADASTRAR" onclick="abrir_modal()"></a>
                     </div>
                 </div>
             </div>

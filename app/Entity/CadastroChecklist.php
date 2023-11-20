@@ -20,13 +20,15 @@ class CadastroChecklist
 
 
     //CREATE
-    public function cadastrar() : string
+    public function cadastrar() //: null
     {
-        $obj_banco = new Banco('cadatro_checklist');
+
+        $obj_banco = new Banco('cadastro_checklist');
 
         $ultimoId = $obj_banco -> insertRecoverId(['nome' => $this -> nome]);
 
-        return $ultimoId;
+        $this -> cadastrarPergunta(dados: null, idCheck: $ultimoId);
+
     }
 
     //CREATE
