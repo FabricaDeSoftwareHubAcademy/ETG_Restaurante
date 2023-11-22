@@ -7,14 +7,13 @@
     <?php include_once "../includes/main/main_cadastrar_nao_conformidade.php";
     ?>
     <h1 class="titulo_checklist">Checklist Pré-Aula</h1>
-    <h2 class="nome_sala">Cozinha Didática 2</h2>
+    <h2 class="nome_sala"><?= $dados_sala[0]['nome']?></h2>
 
     <main class="main_checklist">
         <form method="POST" class="checklist_pre_aula">
             <div class="list-pre-aula">
                 <?=$dados_imprimir ?>
             </div>
-
             <div class="botões">
                 <div class="botoes-cadastro-checklist">
                     <!--Botão Voltar-->
