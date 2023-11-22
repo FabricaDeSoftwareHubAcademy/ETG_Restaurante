@@ -173,7 +173,23 @@ class Usuario
             return false;
        }
    
+  } 
+
+  public static function setImage($email, $name_img)
+  {
+    try{
+
+        $obj_banco = new Banco('cadastro_usuario');
+        $obj_banco -> update('email = "'.$email.'"', ['foto' => $name_img]);
+     
+        return True;
+
+    }catch(Exception $e){
+        echo $e->getMessage();
+        return false;
+    }
   }
+
   public function setName($new_nome,$email){
 
 
