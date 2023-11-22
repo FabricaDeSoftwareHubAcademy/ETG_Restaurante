@@ -1,6 +1,7 @@
 <?php
 namespace App\Entity;
 use App\Db\Banco;
+use App\Entity\Funcoes;
 use Exception;
 use PDO;
 use PDOException;
@@ -95,7 +96,6 @@ class Usuario
         
         $dados = $objBanco -> select() -> fetchAll(PDO::FETCH_ASSOC);
         
-        
         return $dados;
 
     }
@@ -122,8 +122,7 @@ class Usuario
          
         $objBanco = new Banco('cadastro_usuario');
         
-        $dados = $objBanco -> select("id = '".$id."'") -> fetchAll(PDO::FETCH_ASSOC)[0];
-        
+        $dados = $objBanco -> select("id = '".$id."'") -> fetchAll(PDO::FETCH_ASSOC);
         
         return $dados;
 
