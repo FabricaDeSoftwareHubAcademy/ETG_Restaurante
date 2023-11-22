@@ -6,8 +6,9 @@ require("../includes/header/header.php");
 
 //REGRAS DE NEGOCIO ABAIXO
 use App\Entity\Pergunta;
+$obPergunta = new Pergunta();
 
-$dados = Pergunta::getDados(); 
+$dados = $obPergunta->getDados(); 
 $divs = ""; 
 foreach ($dados as $item) {
 
