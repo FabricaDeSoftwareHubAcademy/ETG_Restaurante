@@ -1,5 +1,4 @@
-<?php
-session_start();
+<?php 
 require __DIR__."/../vendor/autoload.php";
 
 $titulo_page = 'Editar Usuario';
