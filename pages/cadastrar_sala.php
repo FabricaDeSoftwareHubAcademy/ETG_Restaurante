@@ -19,7 +19,7 @@ foreach ($dados as $row_check ){
     $options .= '<option  class="ops" value="'.$row_check['id'].'"> '.$row_check['nome'].' </option>';
 }
 
- 
+//dsadsadsa// 
 if (isset(
             $_POST      ['btn_submit']    
         ))
