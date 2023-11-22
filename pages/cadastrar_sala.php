@@ -51,15 +51,17 @@ if (isset(
         'noturno'           => ($_POST['noturno'] == 'on' ? 'sim' : 'nao')
                     )
     );
+    var_dump($novo_nome_imagem);
     $dias_funcionamentoJson = json_encode($dias_funcionamento);
     // linha que eu add  $imagem = $objImagem::storeImg($_FILES['imagem_sala']['name']); // 
     // $imagem = $objImagem::storeImg($_FILES['imagem_sala']['name']);
     $obj_sala = new Sala
+    
     (
         $_POST       ['nome_sala'],
         $_POST      ['codigo_sala'],
         $_POST      ['cor_sala'],
-        $imagem,
+        $novo_nome_imagem,
         $_POST      ['descricao_sala'],
         null, //status
         $dias_funcionamentoJson, //horarios
