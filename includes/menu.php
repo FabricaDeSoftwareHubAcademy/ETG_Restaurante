@@ -39,7 +39,7 @@ $dados = $objUsuario->getDadosById($_SESSION['id_user']);
 
                 <li class="parte-perfil">
                     <a href="../pages/editar_usuario.php"  class="link-menu">                           
-                        <img src="../assets/imgs/icons/<?=$dados["foto"]?>" class="icon-perfil" style="--i:2" alt="...">                    
+                        <img src="../assets/imgs/users/<?=$dados["foto"]?>" class="icon-perfil" style="--i:2" alt="...">                    
                         <h5 class="titulo-nome"><?=substr($dados["nome"], 0, 10)?></h5>
                     </a>
                 </li>
