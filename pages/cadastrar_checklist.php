@@ -12,7 +12,6 @@ use App\Entity\Funcoes;
 
 $dados = Pergunta::getDados();
 $tr = "";
-// die('teste');
 
 
 foreach ($dados as $rowdados) {
