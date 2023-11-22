@@ -95,7 +95,7 @@
 .li-menu{
   list-style: none;
   position: relative;
-  top: 150px;
+  top: 50px;
   margin-left: -6px;
 }
   
@@ -109,6 +109,8 @@
   text-align: center;
   transform: scale(0);
 }
+
+.parte-perfil .link-menu
 
 .saida .link-menu i{
   position: relative;
@@ -152,6 +154,7 @@
 } 
 
 #icon-pessoa:hover{
+  transition: 0.2s ease;
   color: rgba(6, 74, 140, 1);
 }
 
@@ -190,6 +193,11 @@
   color: rgba(6, 74, 140, 1);
 }
 
+.container-menu.active .navItems-menu li:hover .parte-perfil h5{
+  transition: 0.2s ease;
+  color: rgba(6, 74, 140, 1);
+}
+
 
 .titulo-info{
   font-family: "Montsserat";
@@ -197,7 +205,7 @@
   display: flex;
   justify-content: center;
   text-align: center;
-  font-size: 13px;
+  font-size: 12px;
 }
 
 /* ======================================================= SUB MENU DE CADASTROS  ============================================================================*/
@@ -251,6 +259,7 @@
 }
 
 .sub-menu.active{
+  height: 150px;
   height: 215px;
   border: 2px solid #FAA916;
   margin-left: 65px;
@@ -276,7 +285,7 @@
   color: inherit; 
 }
 
-.link-submenu2{
+.link_submenu2{  
   list-style: none;
 }
 
@@ -286,7 +295,7 @@
   margin-left: 65px;
 }
 
-.link_submenu2 .link-menu2 i{
+.link_submenu2 .link-menu i{
   position: relative;
   display: block;
   color: #FAA916;
@@ -531,4 +540,27 @@
     from {height: 47px;top: 0px; background-color: #064A8C;}
     to {height: 80px ;}   
   }
+}
+
+.icon-perfil{
+  width: 50px;
+  height: 50px;
+  border-radius: 60px;
+  margin: auto;
+  display: block;
+}
+
+.titulo-nome{
+  color: #F28920;
+  font-family: "Montsserat";
+  font-style: normal;
+  font-size: 13px;
+}
+
+.parte-perfil{
+  list-style: none;
+  width: 100%; 
+  text-align: center;
+  margin-top: 120%;
+
 }

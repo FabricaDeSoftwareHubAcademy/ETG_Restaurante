@@ -1,3 +1,26 @@
+<?php
+session_start();
+require __DIR__."/../vendor/autoload.php";
+include_once("../includes/menu.php"); 
+require("../includes/header/header.php");
+
+//REGRAS DE NEGOCIO ABAIXO 
+ 
+
+use App\Entity\Usuario;
+ 
+$objUsuario = new Usuario();
+$logado = false;
+$erro = false;
+
+$dados = $objUsuario->getDadosById($_SESSION['id_user']); 
+
+
+// value="<?=$dados["nome"]?
+// var_dump($dados['foto']);
+
+?>
+
 
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https/cdnjs.cloudflare.comlibs/font-awesome/6.4.0/css/all.min.css">
@@ -13,6 +36,15 @@
             </a>
 
             <ul class="navItems-menu">
+
+                <li class="parte-perfil">
+                    <a href="../pages/editar_usuario.php"  class="link-menu">                           
+                        <img src="../assets/imgs/icons/<?=$dados["foto"]?>" class="icon-perfil" style="--i:2" alt="...">                    
+                        <h5 class="titulo-nome"><?=substr($dados["nome"], 0, 10)?></h5>
+                    </a>
+                </li>
+    
+                
                 <li class="li-menu">
                     <a href="../pages/listar_recados.php" class="link-menu">
                         <i id="icon-casa" class="bi bi-house-door"  style="--i:1"></i>   
@@ -21,7 +53,7 @@
                 </li>  
 
             
-            <li class="link-submenu2">
+            <li class="link_submenu2">
                 <li class="li-menu">
                     <a href="#" class="link-menu">
                         <i id="icon-pessoa" class="bi bi-person" style="--i:2"></i>
@@ -41,7 +73,7 @@
 
                     <a href="../pages/listar_notificacoes.php" class="link-menu">
                         <i id="icon-notificacao" class="bi bi-bell"  style="--i:3"></i>  
-                        <h5 class="titulo-info" id="titulo-not" style="--i:3">Alertas</h5>              
+                        <h5 class="titulo-info" id="titulo-not" style="--i:3">Notificações</h5>              
                     </a>
                 </li>   
                 
@@ -49,7 +81,7 @@
 
                     <a href="listar_salas.php" class="link-menu">
                         <i id="icon-vizualizar" class="bi bi-person-video3"  style="--i:4"></i>     
-                        <h5 class="titulo-info" id="titulo-not" style="--i:3">Salas</h5>              
+                        <h5 class="titulo-info" id="titulo-not" style="--i:4">Salas</h5>              
                     </a>  
                 </li>      
                 
@@ -69,16 +101,18 @@
                             <li class="iten-submenu"><a href="../pages/cadastrar_usuario.php" id="fonte-submenu2">Cadastro de Usuário</a></li> 
                             <li class="iten-submenu"><a href="../pages/cadastrar_perfil.php" id="fonte-submenu2">Cadastro de Perfil</a></li> 
                             <li class="iten-submenu"><a href="../pages/cadastrar_pergunta.php" id="fonte-submenu">Cadastro de Perguntas</a></li>  
-                            <li class="iten-submenu"><a href="../pages/cadastrar_notificacao.php" id="fonte-submenu">Cadastro de Notificações</a></li>                                             </ul>
+                            <li class="iten-submenu"><a href="../pages/cadastrar_notificacao.php" id="fonte-submenu">Cadastro de Notificações</a></li>                      
+
+                        </ul>
                     </li> 
                 </li>         
 
 
                 <li class="saida">
-                    <button class="btnOpenmodal-menu" onclick="openModal()" >  
+                    <button class="btnOpenmodal-menu" onclick="openModal()">  
                         <a href="actions/sair.php" class="link-menu">
                             <i class="bi bi-box-arrow-left" style="--i:6"></i>
-                            <h5 class="titulo-info" id="titulo-sair" style="--i:6">Sair</h5>
+                            <h5 class="titulo-info" onclick="openModal()" id="titulo-sair" style="--i:6">Sair</h5>
                         </a>
                     </button>
                 </li>        
