@@ -12,7 +12,7 @@
 
 
 <body>
-
+    <?php $id = $linha["id_pergunta"];?>
     <!-- <i onclick="acao()" class="bi bi-x-circle"></i> -->
     <main class="mom">
         <div class="meio">
@@ -31,7 +31,7 @@
                     </div>
                 </div>
             <div class="botoes">
-                    <button class="botao-cancelar-submit" onclick="fechar()">CANCELAR</button>
+                    <button class="botao-cancelar-submit"  onclick="fechar()">CANCELAR</button>
                     <button class="botao-confirmar-submit">CONFIRMAR</button>                
             </div>
             
