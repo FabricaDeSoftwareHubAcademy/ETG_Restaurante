@@ -1,5 +1,5 @@
 // let awser = "";
-const red = document.getElementById('red')
+// const red = document.getElementById('red')
 
  
 function atualizarValor(id,bool){
@@ -17,7 +17,7 @@ function atualizarValor(id,bool){
         let  red = document.getElementById('red'+id)
         green.classList = 'bi bi-check'
         red.classList = 'bi bi-x-circle'
-        acao()
+        acao(id)
     }
 
 
