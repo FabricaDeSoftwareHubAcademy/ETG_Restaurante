@@ -1,59 +1,88 @@
 <?php
 session_start();
 require __DIR__."/../vendor/autoload.php";
-include_once("../includes/menu.php"); 
+
 $titulo_page = 'Editar Usuario';
-require("../includes/header/header.php");
 
 //REGRAS DE NEGOCIO ABAIXO 
- 
+
 
 use App\Entity\Usuario;
  
 $objUsuario = new Usuario();
-$logado = false;
 $erro = false;
+
+// validar se $_SESSION['id_user'] esta setado(leu logo assumiu a responsabilidade) 
 
 $dados = $objUsuario->getDadosById($_SESSION['id_user']); 
 
-if(isset($_POST['btn_alterar_nome'])){
+// if(isset($_POST['btn_alterar_nome'])){
 
-    if(($objUsuario -> setName($_POST['nome'],$dados['email']))){ 
-        $dados = $objUsuario->getDadosById($_SESSION['id_user']);
-    } 
+//     if(($objUsuario -> setName($_POST['nome'],$dados['email']))){ 
+//         $dados = $objUsuario->getDadosById($_SESSION['id_user']);
+//     } 
+// }
+
+if(isset($_FILES['foto'])){ 
+    
+    
+    
+    $name_img = $_FILES['foto']['name'];
+    $new_name  = uniqid(). '-' . substr($name_img, 0, 20);
+    $path = '../storage/salas/';
+    move_uploaded_file($_FILES['foto']['tmp_name'], $path.$new_name);
+    
+    unlink($path . $dados['foto']);
+
+    $objUsuario->setImage($dados['email'],$new_name);
+  
 }
-
 if(isset($_POST['btn_submit'])){
+    
+ 
 
-    if(isset($_POST['nome'])){
+  
+    // setar nome 
+    
      
-        $objUsuario -> setDados($_POST['nome'],$dados['email'] ,$_POST['novasenha']); 
-        $logado = true;
-       
-    }{
-    
-        if ($objUsuario -> senhaValidate($_POST['senhaantiga'], $dados['email']))
-        {
-            $nome = $dados['nome']; 
+    if(isset($_POST['nome'])){
 
-            if ($_POST['novasenha'] == $_POST['confirmarnovasenha']){
+
+        $objUsuario -> setName($_POST['nome'],$dados['email']); 
+
+    }else{
+
+        $objUsuario -> setName($dados['nome'],$dados['email']); 
+
+    }
     
-                $objUsuario -> setDados($nome,$dados['email'] ,$_POST['novasenha']); 
-                $logado = true;
-                
-            }else{
-                
-                $erro = true;
-    
-            } 
-        } 
-        else
-        {
-            $erro = true; 
+     
+    // if (    isset($_POST['senhaantiga'],$_POST['novasenha'],$_POST['confirmarnovasenha']))
+    if (strlen($_POST['senhaantiga']) > 0 and strlen($_POST['novasenha']) > 0 and strlen($_POST['confirmarnovasenha']) > 0 )
+    {
+         
+        
+        if ($_POST['novasenha'] == $_POST['confirmarnovasenha']){
+            $objUsuario -> setPasswordByEmail($dados['email'],$_POST['novasenha']); 
+          
+            header('Refresh: 0');
+        }else{
+            
+            $erro = true;
+
         } 
     } 
-}
+    else
+    {
+        $erro = true; 
+    } 
 
+    
+    header('Refresh: 0');
+    
+}
+require("../includes/header/header.php");
+include_once("../includes/menu.php"); 
 
 require("../includes/main/main_editar_usuario.php");
 //FIM DAS REGRAS DE NEGOCIO
