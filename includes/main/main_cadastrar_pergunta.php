@@ -14,7 +14,7 @@
             <div class="pesquisa">
                 <div class="input_group field">
                     <input type="input" id ="input" class="input_field" placeholder="." required="" name="nome-checklist" autocomplete="off">
-                    <label for="name" class="input_label">Pesquisa Checklist
+                    <label for="name" class="input_label">Descrição da pergunta
                     </label> <!--Alterar para o nome do input-->
                     <i class="bi bi-search" id="lupa"></i>
                 </div>
