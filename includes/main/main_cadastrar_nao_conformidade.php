@@ -12,8 +12,7 @@
 
 
 <body>
-    <?php $id = $linha["id_pergunta"];?>
-    <!-- <i onclick="acao()" class="bi bi-x-circle"></i> -->
+
     <main class="mom">
         <div class="meio">
             <div class="pergunta">
