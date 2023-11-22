@@ -32,7 +32,7 @@ class Pergunta
     }
 
     //READ
-    public static function getDados($id_sala)
+    public static function getDados()
     {
         $obj_banco = new Banco('cadastro_pergunta');
 
