@@ -5,7 +5,7 @@ require __DIR__."/../vendor/autoload.php";
 $titulo_page = 'Editar Usuario';
 
 //REGRAS DE NEGOCIO ABAIXO 
-
+ 
 
 use App\Entity\Usuario;
  
@@ -14,15 +14,8 @@ $erro = false;
 
 // validar se $_SESSION['id_user'] esta setado(leu logo assumiu a responsabilidade) 
 
-$dados = $objUsuario->getDadosById($_SESSION['id_user']); 
-
-// if(isset($_POST['btn_alterar_nome'])){
-
-//     if(($objUsuario -> setName($_POST['nome'],$dados['email']))){ 
-//         $dados = $objUsuario->getDadosById($_SESSION['id_user']);
-//     } 
-// }
-
+$dados_editar = $objUsuario->getDadosById($_SESSION['id_user'])[0];  
+$foto = $dados_editar['foto'];
 if(isset($_FILES['foto'])){ 
     
     
@@ -32,9 +25,9 @@ if(isset($_FILES['foto'])){
     $path = '../assets/imgs/users/';
     move_uploaded_file($_FILES['foto']['tmp_name'], $path.$new_name);
     
-    unlink($path . $dados['foto']);
+    unlink($path . $dados_editar['foto']);
 
-    $objUsuario->setImage($dados['email'],$new_name);
+    $objUsuario->setImage($dados_editar['email'],$new_name);
   
 }
 if(isset($_POST['btn_submit'])){
@@ -45,11 +38,11 @@ if(isset($_POST['btn_submit'])){
     if(isset($_POST['nome'])){
 
 
-        $objUsuario -> setName($_POST['nome'],$dados['email']); 
+        $objUsuario -> setName($_POST['nome'],$dados_editar['email']); 
 
     }else{
 
-        $objUsuario -> setName($dados['nome'],$dados['email']); 
+        $objUsuario -> setName($dados_editar['nome'],$dados_editar['email']); 
 
     }
     
@@ -60,7 +53,7 @@ if(isset($_POST['btn_submit'])){
          
         
         if ($_POST['novasenha'] == $_POST['confirmarnovasenha']){
-            $objUsuario -> setPasswordByEmail($dados['email'],$_POST['novasenha']); 
+            $objUsuario -> setPasswordByEmail($dados_editar['email'],$_POST['novasenha']); 
           
             header('Refresh: 0');
         }else{
@@ -78,6 +71,8 @@ if(isset($_POST['btn_submit'])){
     header('Refresh: 0');
     
 }
+
+
 require("../includes/header/header.php");
 include_once("../includes/menu.php"); 
 

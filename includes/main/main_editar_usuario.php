@@ -4,7 +4,7 @@
 <link rel="stylesheet" href="../assets/css/editar_senha/editar_senha.css">
 <link rel="stylesheet" href="../assets/css/editar_usuario/editar_usuario.css">
 <script src="https://code.jquery.com/jquery-3.7.0.js"integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM="crossorigin="anonymous"></script>
-
+ 
 <body class="pai-de-todos1">
 
 
@@ -18,7 +18,7 @@
             <div>
                 <section class="quadrado-perfil">
                     <div class="foto-perfil">
-                        <img id="img_user" src="../assets/imgs/users/<?=$dados["foto"]?>" alt="">
+                        <img id="img_user" src="../assets/imgs/users/<?=$foto?>" alt="">
                     </div>
                 </section>
                 
@@ -37,7 +37,7 @@
             <div method="POST" class="alinhar-input">
                 
                 <div class="input_group field">
-                    <input type="input" class="input_field" maxlength="45" id="input_name_cad" placeholder="Name" required="" name="nome" value="<?=$dados["nome"]?>" maxLength="105">
+                    <input type="input" class="input_field" maxlength="45" id="input_name_cad" placeholder="Name" required="" name="nome" value="<?=$dados_editar["nome"]?>" maxLength="105">
                     <label for="name" class="input_label"></label><!--Alterar para o nome do input-->
                     <i class="bi bi-pencil-square" onclick="habilitar()" id="icon-input"></i>
                 </div>
