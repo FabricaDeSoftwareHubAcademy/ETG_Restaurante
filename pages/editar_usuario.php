@@ -29,7 +29,7 @@ if(isset($_FILES['foto'])){
     
     $name_img = $_FILES['foto']['name'];
     $new_name  = uniqid(). '-' . substr($name_img, 0, 20);
-    $path = '../storage/salas/';
+    $path = '../assets/imgs/users/';
     move_uploaded_file($_FILES['foto']['tmp_name'], $path.$new_name);
     
     unlink($path . $dados['foto']);
@@ -38,10 +38,7 @@ if(isset($_FILES['foto'])){
   
 }
 if(isset($_POST['btn_submit'])){
-    
- 
-
-  
+     
     // setar nome 
     
      

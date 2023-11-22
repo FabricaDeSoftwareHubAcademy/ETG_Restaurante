@@ -548,6 +548,7 @@
   border-radius: 60px;
   margin: auto;
   display: block;
+  object-fit: cover;
 }
 
 .titulo-nome{

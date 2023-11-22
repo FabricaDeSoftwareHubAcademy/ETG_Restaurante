@@ -18,7 +18,7 @@
             <div>
                 <section class="quadrado-perfil">
                     <div class="foto-perfil">
-                        <img id="img_user" src="../storage/salas/<?=$dados["foto"]?>" alt="">
+                        <img id="img_user" src="../assets/imgs/users/<?=$dados["foto"]?>" alt="">
                     </div>
                 </section>
                 
