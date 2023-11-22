@@ -154,6 +154,7 @@
 } 
 
 #icon-pessoa:hover{
+  transition: 0.2s ease;
   color: rgba(6, 74, 140, 1);
 }
 
@@ -204,7 +205,7 @@
   display: flex;
   justify-content: center;
   text-align: center;
-  font-size: 13px;
+  font-size: 12px;
 }
 
 /* ======================================================= SUB MENU DE CADASTROS  ============================================================================*/
@@ -284,7 +285,7 @@
   color: inherit; 
 }
 
-.link-submenu2{
+.link_submenu2{  
   list-style: none;
 }
 
@@ -294,7 +295,7 @@
   margin-left: 65px;
 }
 
-.link_submenu2 .link-menu2 i{
+.link_submenu2 .link-menu i{
   position: relative;
   display: block;
   color: #FAA916;

@@ -38,7 +38,7 @@ $dados = $objUsuario->getDadosById($_SESSION['id_user']);
             <ul class="navItems-menu">
 
                 <li class="parte-perfil">
-                    <a href="#"  class="link-menu">                           
+                    <a href="../pages/editar_usuario.php"  class="link-menu">                           
                         <img src="../assets/imgs/icons/<?=$dados["foto"]?>" class="icon-perfil" style="--i:2" alt="...">                    
                         <h5 class="titulo-nome"><?=substr($dados["nome"], 0, 10)?></h5>
                     </a>
@@ -53,7 +53,7 @@ $dados = $objUsuario->getDadosById($_SESSION['id_user']);
                 </li>  
 
             
-            <li class="link-submenu2">
+            <li class="link_submenu2">
                 <li class="li-menu">
                     <a href="#" class="link-menu">
                         <i id="icon-pessoa" class="bi bi-person" style="--i:2"></i>
@@ -73,7 +73,7 @@ $dados = $objUsuario->getDadosById($_SESSION['id_user']);
 
                     <a href="../pages/listar_notificacoes.php" class="link-menu">
                         <i id="icon-notificacao" class="bi bi-bell"  style="--i:3"></i>  
-                        <h5 class="titulo-info" id="titulo-not" style="--i:3">Alertas</h5>              
+                        <h5 class="titulo-info" id="titulo-not" style="--i:3">Notificações</h5>              
                     </a>
                 </li>   
                 
@@ -81,7 +81,7 @@ $dados = $objUsuario->getDadosById($_SESSION['id_user']);
 
                     <a href="listar_salas.php" class="link-menu">
                         <i id="icon-vizualizar" class="bi bi-person-video3"  style="--i:4"></i>     
-                        <h5 class="titulo-info" id="titulo-not" style="--i:3">Salas</h5>              
+                        <h5 class="titulo-info" id="titulo-not" style="--i:4">Salas</h5>              
                     </a>  
                 </li>      
                 
@@ -109,10 +109,10 @@ $dados = $objUsuario->getDadosById($_SESSION['id_user']);
 
 
                 <li class="saida">
-                    <button class="btnOpenmodal-menu" onclick="openModal()" >  
+                    <button class="btnOpenmodal-menu" onclick="openModal()">  
                         <a href="actions/sair.php" class="link-menu">
                             <i class="bi bi-box-arrow-left" style="--i:6"></i>
-                            <h5 class="titulo-info" id="titulo-sair" style="--i:6">Sair</h5>
+                            <h5 class="titulo-info" onclick="openModal()" id="titulo-sair" style="--i:6">Sair</h5>
                         </a>
                     </button>
                 </li>        
