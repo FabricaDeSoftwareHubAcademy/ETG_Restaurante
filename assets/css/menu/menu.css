@@ -110,8 +110,6 @@
   transform: scale(0);
 }
 
-.parte-perfil .link-menu
-
 .saida .link-menu i{
   position: relative;
   display: block;
@@ -332,16 +330,46 @@
   justify-content: center;
   left: 40%;
   top: 20%;
-
 }
 
 @media (max-width: 832px){
-
+ 
   .modal-container-menu{
     left: 30%;
   }
+}
+
+@media (max-height:724px){
+
+  .li-menu .link-menu i{
+    font-size: 20px;
+    padding-top: 17px;
+  }
 
 }
+
+
+@media (max-height:807px){
+
+  .navItems-menu{
+    margin-top: -40%;
+
+  }
+  
+  @media (max-height:624px){
+  
+    .navItems-menu{
+      margin-top: -90%;
+    }
+  
+  } 
+
+  .li-menu{
+    top: 15px;
+  }
+  
+}
+
 
 .modal-menu{
   display: flex;
@@ -563,5 +591,5 @@
   width: 100%; 
   text-align: center;
   margin-top: 120%;
-
 }
+  
