@@ -19,6 +19,7 @@ $erro = false;
 
 $dados_editar = $objUsuario->getDadosById($_SESSION['id_user'])[0];  
 $foto = $dados_editar['foto'];
+
 if(isset($_FILES['foto'])){ 
     
     
