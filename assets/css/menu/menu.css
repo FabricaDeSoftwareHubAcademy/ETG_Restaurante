@@ -375,6 +375,11 @@
     width: 200px;
   }
  
+  .sub-menu.active{
+    width: 240px;
+    margin-top: -80px;
+  }
+
 }
 
 .modal-menu{
