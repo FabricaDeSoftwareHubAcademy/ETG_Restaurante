@@ -6,11 +6,13 @@ include_once("../includes/menu.php");
 use App\Entity\Checklist;
 use App\Entity\Pergunta;
 use App\Entity\Sala;
+use App\Entity\NaoConformidade;
 use App\Entity\Funcoes;
 $obj_checklist = new Checklist();
 $obj_pergunta = new Pergunta();
 $dados_imprimir = "";
 $obj_sala = new Sala();
+
 
 
 //REGRAS DE NEGOCIO ABAIXO
@@ -29,6 +31,7 @@ if ($dados_pergunta)
         {
             $dados_imprimir .= '
             <div class="input_checklist">
+
                 <label class="label_checklist" for="data">'.$linha["pergunta"].'</label>
     
                 <div class="row">
@@ -46,19 +49,34 @@ if ($dados_pergunta)
     
     }
 }
-if (isset($_POST["btn_submit"]))
-{
-    $obj_checklist -> cadastrar(
-        [
-        "id_usuario" => $id_usuario,
-        "id_sala" => $id_sala,
-        "data_fechamento" => $data_fechamento
-         ]
-);
-}
+
 
 $dados_imprimir .= '
 <input type="hidden" id="valor_booleano" name="valor_booleano" value="0">';
+
+// $dados = json_decode(file_get_contents('php://input'), true);
+
+
+// if (isset($_POST["btn_submit_modal"]))
+// {
+//     //id_realiza
+//    //id_prof
+//     //id_perg
+//     //descricao_NC
+//     //img1
+//     //img2
+//     //img3 
+//     var_dump($_POST);exit;
+
+//     $dados = ['teste' => $_POST['descricao_nao_conf'],
+//             'teste2' => $id_usuario,
+//             'teste2' => $_POST['valor_booleano'],
+//             'descricao_NC' => $_POST['descricao_nao_conf']];
+
+//     $somadados = [];
+//     NaoConformidade::cadastrar(dados: $dados);
+
+// }
 
 //FIM DAS REGRAS DE NEGOCIO
 require("../includes/main/main_cadastrar_checklist_preaula.php");

@@ -1,6 +1,6 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
 <link rel="stylesheet" href="../assets/css/cadastrar_checklist_preaula.css">
-<script src="../assets/js/checklist.js"></script>
+<script src="../assets/js/checklist.js" defer></script>
 
 
 <body class="container_checklist">
@@ -23,7 +23,7 @@
 
                     <!--Botão Salvar-->
                     <div class="botao-padrao-voltar">
-                        <a href=""><input name="btn_submit" type="submit" class="botao-salvar-submit" value="CONFIRMAR"></a>
+                        <a href=""><input name="btn_submit" type="submit" class="botao-salvar-submit" id="btn_submit"  value="CONFIRMAR"></a>
                     </div>
 
                 </div>
