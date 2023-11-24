@@ -370,6 +370,12 @@
   
 }
 
+@media (max-width: 494px){
+  .submenu2.active{
+    width: 200px;
+  }
+ 
+}
 
 .modal-menu{
   display: flex;
