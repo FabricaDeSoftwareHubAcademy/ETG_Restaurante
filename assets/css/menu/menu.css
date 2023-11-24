@@ -545,7 +545,7 @@
 
 @media (max-width: 610px){
   #bloc1{
-    width: 40;
+    width: 37px;
     height: 70px;
   }
   @keyframes bloc1 {
@@ -553,7 +553,7 @@
     to {height: 70px;}  
   }
   #bloc2{
-    width: 40;
+    width: 37px;
     height: 90px;
   }
   @keyframes bloc2 {
