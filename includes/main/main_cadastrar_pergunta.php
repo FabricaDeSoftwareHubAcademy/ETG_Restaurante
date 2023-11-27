@@ -14,7 +14,7 @@
             <div class="pesquisa">
                 <div class="input_group field">
                     <input type="input" id ="input" class="input_field" placeholder="." required="" name="nome-checklist" autocomplete="off">
-                    <label for="name" class="input_label">Pesquisa Checklist
+                    <label for="name" class="input_label">Descrição da pergunta
                     </label> <!--Alterar para o nome do input-->
                     <i class="bi bi-search" id="lupa"></i>
                 </div>
@@ -34,3 +34,9 @@
         
     </main>
 </body>
+<!-- Script -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<!-- jQuery UI -->
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+<script src="../assets/js/autocomplete_cadastrar_notificacao.js"></script>
