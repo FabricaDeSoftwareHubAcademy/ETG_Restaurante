@@ -422,7 +422,6 @@
 
 .mover_input{
   width: 100%;
-  background-color: aqua;
   display: flex;
   /* flex-direction: row; */
   margin-top: 5%;
