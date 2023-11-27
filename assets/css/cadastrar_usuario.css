@@ -205,6 +205,7 @@
   font-size: 20px;
   left: 10px;
   margin-top: 3%;
+
 }
 
 .input_field::placeholder {
@@ -518,22 +519,21 @@ select {
 @media (max-width: 600px) {
   .input_field{
     width: 350px;
-    margin-left: 55%;   
+    margin-left: 65%;   
     font-size: 16px; 
   }
  
   .input_label{
-    margin-left: 50%;
+    margin-left: 60%;
   }
 
   .input_e-mail_field{
     width: 350px;
-    margin-left: 55%;   
     font-size: 16px; 
   }
  
   .input_e-mail_label{
-    margin-left: 50%;
+    margin-left: 60%;
   }
 
   .dropdown-ck{
