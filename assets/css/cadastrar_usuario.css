@@ -94,19 +94,19 @@
 }
 
 .centralizar_botoes_cadastrar_usuario{
-display: flex;
-justify-content: space-between;
-text-align: center;
-margin-top: 100px;
-}
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  margin-top: 100px;
+  }
 
 
 .Pai-de-todos{
   width: 100%;
-height: 100%;
-max-width: 832px;
-position: relative;
-margin: 0 auto;
+  height: 100%;
+  max-width: 832px;
+  position: relative;
+  margin: 0 auto;
 }
 
 /* INPUT EMAIL */
@@ -464,6 +464,8 @@ select {
   color: var(--cor-primaria-botao-white);
 }
 
+
+/* ============================================================ RESPONSIVIDADE ==================================================================== */
 @media (max-width: 828px) {
   .input_field{
     width: 465px;
@@ -511,7 +513,56 @@ select {
   .input_senha_label{
     margin-left: 50%;
   }
+  
+}
 
-    
+@media (max-width: 600px) {
+  .input_field{
+    width: 350px;
+    margin-left: 55%;   
+    font-size: 16px; 
+  }
+ 
+  .input_label{
+    margin-left: 50%;
+  }
+
+  .input_e-mail_field{
+    width: 350px;
+    margin-left: 55%;   
+    font-size: 16px; 
+  }
+ 
+  .input_e-mail_label{
+    margin-left: 50%;
+  }
+
+  .dropdown-ck{
+    margin-left: 15%;
+  }
+
+  .dropdown-ck .option{
+    font-size: 15px;
+  }
+
+
+  .input_field_matricula{
+    width: 140px;
+    margin-left: -55%;
+  }
+
+  .input_label_matricula{
+    margin-left: -58%;
+  }
+
+  .input_senha_field{
+    width: 350px;
+    margin-left: 55%;   
+    font-size: 16px; 
+  }
+ 
+  .input_senha_label{
+    margin-left: 50%;
+  }
   
 }
