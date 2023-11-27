@@ -30,6 +30,23 @@
             <div class="botao">
                 <a href="#"><input type="submit" class="botao-cadastrar-submit"  value="CADASTRAR"></a>
             </div>
+            <div class="popup">
+                <h4>Nova pergunta:</h4>
+                <textarea name="nova_pergunta" class="nova_pergunta" placeholder= "Escreva o conteúdo da pergunta"cols="30" rows="10" autocomplete= "off"></textarea>
+                <h4>A pergunta será para: </h4>
+                <div class="checks">
+                    <div class="check1">
+                        <input type="checkbox" name="antes_da_aula" id=""> Antes da aula
+                    </div>
+                    <div class="check2">
+                        <input type="checkbox" name="depois_da_aula" id=""> Depois da aula
+                    </div>
+                </div>
+                <div class="botoes">
+                    <a href="#"><input type="submit" class="botao-cancelar-submit"  value="CANCELAR"></a>
+                    <a href="#"><input type="submit" class="botao-confirmar-submit"  value="CONFIRMAR"></a>
+                </div>
+            </div>
         </form>
         
     </main>
