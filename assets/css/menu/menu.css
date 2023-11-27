@@ -370,7 +370,8 @@
   
 }
 
-@media (max-width: 494px){
+
+@media (max-width: 836px){
   .submenu2.active{
     width: 200px;
   }

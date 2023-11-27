@@ -23,21 +23,21 @@
                         <label for="name" class="input_e-mail_label">E-mail</label> <!--Alterar para o nome do input-->
                     </div>
 
-                <div class="dropdown-ck">
-                    <select name="id_perfil" class="option">
-                        <option value="">Selecione seu Perfil</option>
-                        <?=$options?>
-        
-                    </select> 
-                </div>
+                <div class="mover_input">
+                    <div class="dropdown-ck">
+                        <select name="id_perfil" class="option">
+                            <option value="">Selecione seu Perfil</option>
+                            <?=$options?>
+            
+                        </select> 
+                        <div class="barra"></div> 
+                    </div>
 
-                <div class="barra"></div> 
 
-            <div class="mover_input">
-                <div class="input_group field matricula">
-                    <input type="input" class="input_field_matricula" name="matricula" placeholder="Name" required="">
-                    <label for="name" class="input_label_matricula">N° de Matricula</label> <!--Alterar para o nome do input-->
-                </div>
+                    <div class="input_group">
+                        <input type="input" class="input_field_matricula" name="matricula" placeholder="Name" required="">
+                        <label for="name" class="input_label_matricula">N° de Matricula</label> <!--Alterar para o nome do input-->
+                    </div>
             </div>
                 <!--Input Senha-->
             <div class="input_senha_group field">

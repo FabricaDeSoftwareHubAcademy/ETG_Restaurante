@@ -100,18 +100,9 @@ text-align: center;
 margin-top: 100px;
 }
 
-@media (max-width: 882px) {
-.centralizar_botoes_cadastrar_usuario{
-  margin-top: 250px;
-}
-
-.centralizar_input_cadastrar_usuario{
-  margin-top: 5%;
-}
-}
 
 .Pai-de-todos{
-width: 100%;
+  width: 100%;
 height: 100%;
 max-width: 832px;
 position: relative;
@@ -213,7 +204,6 @@ margin: 0 auto;
   font-weight: 400;
   font-size: 20px;
   left: 10px;
-  padding-left: 10px;
   margin-top: 3%;
 }
 
@@ -228,7 +218,7 @@ margin: 0 auto;
   left: 10px;
   
 }
-  
+
 .input_label {
   position: absolute;
   top: 0px;
@@ -243,7 +233,7 @@ margin: 0 auto;
   left: 10px;
   
 }
-  
+
 .input_field:focus {
   padding-bottom: 6px;
   font-weight: 700;
@@ -251,7 +241,7 @@ margin: 0 auto;
   border-image-slice: 1;
   
 }
-  
+
 .input_field:focus ~ .input_label {
   position: absolute;
   top: 0;
@@ -261,7 +251,7 @@ margin: 0 auto;
   font-weight: 700;
   left: 10px;
 }
-  
+
 .input_field:required, .input_field:invalid {
   box-shadow: none;
 }
@@ -273,7 +263,7 @@ margin: 0 auto;
   max-width: 180px;
   margin-top: 5%;
 }
-  
+
 .input_senha_field {
   width: 652px;
   border: none;
@@ -290,11 +280,11 @@ margin: 0 auto;
   left: 10px;
   padding-left: 10px;
 }
-  
+
 .input_senha_field::placeholder {
   color: transparent;
 }
-  
+
 .input_senha_field:placeholder-shown ~ .input_senha_label {
   font-size: 17px;
   cursor: text;
@@ -315,14 +305,14 @@ margin: 0 auto;
   font-size: 20px;
   left: 10px;
 }
-  
+
 .input_senha_field:focus {
   padding-bottom: 6px;
   font-weight: 700;
   border-width: 3px;
   border-image-slice: 1;
 }
-  
+
 .input_senha_field:focus ~ .input_senha_label {
   position: absolute;
   top: 0;
@@ -332,42 +322,33 @@ margin: 0 auto;
   font-weight: 700;
   left: 10px;
 }
-  
+
 .input_senha_field:required, .input_senha_field:invalid {
   box-shadow: none;
 }
 
 .dropdown-ck{
-  margin-top: 30px;
-  width: 100%;
   height: 30px;
   font-size: 'Montserrat';
   outline: 0;
   border: 0;
   list-style: none;
 }
-  
-  
+
+
 .barra{ 
-  width: 40%;
   border-bottom: solid black 2px;
   opacity: 0.4;
-  margin-bottom: 40px;
-  margin-right: 5px;
-  margin-top: 5%;
 }
 
 .dropdown-ck .option{
   font-weight: 600;  
-  width: 40%;
   background-color: rgb(255, 255, 255);
   font-size: 'Montserrat';
   border-bottom: black;
   height: 35px;
   font-size: 19px;
-  padding-left: 7px;
   opacity: 0.4;
-  margin-top: 5%;
 }
 
 
@@ -376,7 +357,7 @@ margin: 0 auto;
 
 
 .input_field_matricula {
-  width: 252px;
+  width: 192px;
   border-bottom: 2px solid #9b9b9b;
   color: black;
   padding: 7px 0;
@@ -386,7 +367,7 @@ margin: 0 auto;
   font-style: normal;
   font-weight: 400;
   font-size: 20px;
-  padding-left: 10px;
+  /* padding-left: 10px; */
 }
 
 .input_field_matricula::placeholder {
@@ -400,7 +381,7 @@ margin: 0 auto;
   left: 10px;
   
 }
-  
+
 .input_label_matricula {
   position: absolute;
   top: 0;
@@ -412,11 +393,11 @@ margin: 0 auto;
   font-style: normal;
   font-weight: 400;
   font-size: 20px;
-  left: 10px;
-
+  
+  
   
 }
-  
+
 .input_field_matricula:focus {
   padding-bottom: 6px;
   font-weight: 700;
@@ -424,7 +405,7 @@ margin: 0 auto;
   border-image-slice: 1;
   
 }
-  
+
 .input_field_matricula:focus ~ .input_label_matricula {
   position: absolute;
   top: 0;
@@ -434,15 +415,18 @@ margin: 0 auto;
   font-weight: 700;
   left: 10px;
 }
-  
+
 .input_field_matricula:required, .input_field_matricula:invalid {
   box-shadow: none;
 }
 
 .mover_input{
+  width: 100%;
+  background-color: aqua;
   display: flex;
-  margin-left: 61%;
-  margin-top: -15%;
+  /* flex-direction: row; */
+  margin-top: 5%;
+  justify-content: center;
 }
 
 select {
@@ -478,4 +462,56 @@ select {
   transition: all 0.4s;
   background-color: var(--cor-primaria-botao-yellow);
   color: var(--cor-primaria-botao-white);
+}
+
+@media (max-width: 828px) {
+  .input_field{
+    width: 465px;
+    margin-left: 55%;   
+    font-size: 16px; 
+  }
+ 
+  .input_label{
+    margin-left: 50%;
+  }
+
+  .input_e-mail_field{
+    width: 465px;
+    margin-left: 55%;   
+    font-size: 16px; 
+  }
+ 
+  .input_e-mail_label{
+    margin-left: 50%;
+  }
+
+  .dropdown-ck{
+    margin-left: 15%;
+  }
+
+  .dropdown-ck .option{
+    font-size: 15px;
+  }
+
+
+  .input_field_matricula{
+    margin-left: -45%;
+  }
+
+  .input_label_matricula{
+    margin-left: -50%;
+  }
+
+  .input_senha_field{
+    width: 465px;
+    margin-left: 55%;   
+    font-size: 16px; 
+  }
+ 
+  .input_senha_label{
+    margin-left: 50%;
+  }
+
+    
+  
 }
