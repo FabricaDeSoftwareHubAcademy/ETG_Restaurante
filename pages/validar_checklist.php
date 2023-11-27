@@ -91,18 +91,19 @@
             
         </div>
 
-        <div class="alinar-botoes">
 
-            <div class="botao-padrao-voltar">
-                <a href="listar_salas.php" class="botao-voltar-link">VOLTAR</a>
-            </div>
-            
-            <div class="botao-padrao-cadastrar">
-                <a><input name="btn_submit" type="submit" class="botao-cadastrar-submit"  value="SALVAR" ></a>
-            </div>
-            
-        </div>
 
     </section>
+    <div class="alinar-botoes">
+
+        <div class="botao-padrao-voltar">
+            <a href="listar_salas.php" class="botao-voltar-link">VOLTAR</a>
+        </div>
+
+        <div class="botao-padrao-cadastrar">
+            <a><input name="btn_submit" type="submit" class="botao-cadastrar-submit"  value="FINALIZAR" ></a>
+        </div>
+
+    </div>
     
 </body>
