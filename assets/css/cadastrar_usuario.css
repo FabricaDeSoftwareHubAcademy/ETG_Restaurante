@@ -330,6 +330,7 @@
 
 .dropdown-ck{
   height: 30px;
+  margin-top: 23px;
   font-size: 'Montserrat';
   outline: 0;
   border: 0;
@@ -544,6 +545,9 @@ select {
     font-size: 15px;
   }
 
+  .mover_input{
+    margin-left: 10%;
+  }
 
   .input_field_matricula{
     width: 140px;
