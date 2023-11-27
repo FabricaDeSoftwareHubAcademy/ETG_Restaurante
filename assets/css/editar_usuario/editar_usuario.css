@@ -85,11 +85,19 @@
   }
 
  .alinhar-input{
-    margin-top: 2%;
+    /* margin-top: 2%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; */
+
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    margin: 15% auto;
+    margin-top: 2%;
+    width: 832px;
 
 } 
 
