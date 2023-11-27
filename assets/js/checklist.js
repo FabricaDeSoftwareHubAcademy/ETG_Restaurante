@@ -28,16 +28,23 @@ id_atual = id;
 async function getDados()
 {
 
-    //id_pergu
-    //descricao_NC
-    //img1
-    //img2
-    //img3 
+    console.log(listasrc);
+    // if (listasrc.length > 3)
+    // {
+    //     break;
+    // }
+    // let dataimg = document.getElementById('nomeimg');
+    // // let dataimg2 = dataimg.value;
+    // let caminhoImagem = dataimg.src;
+    // let nomeImagem = caminhoImagem.substring(caminhoImagem.lastIndexOf('/') + 1);
+    // getImgs(caminhoImagem);
     let descricao_nao_conf = document.getElementById('descricao_nao_conf');
-
     dados = {
         'id_pergu': id_atual,
-        'descricao_NC': descricao_nao_conf.value
+        'descricao_NC': descricao_nao_conf.value,
+        // 'img1': img1.value,
+        // 'img2': img2.value,
+        // 'img3': img3.value
     };
     somadados.push(dados);
     descricao_nao_conf.value = "";
@@ -74,3 +81,22 @@ btn_submit.addEventListener('click', async (e ) => {
    
 
 });
+
+function getImgs(files)
+{
+    console.log(files);
+    // let files = event.target.files;
+    // let formData = new FormData();
+
+    // // Adiciona o arquivo ao objeto FormData
+    // for (c = 0; c < files.length; c++)
+    // {
+        
+    // }
+    // formData.append('file', files[0]);
+
+    // // Envia o formulário para o servidor usando uma requisição AJAX
+    // let xhr = new XMLHttpRequest();
+    // xhr.open('POST', 'URL_DO_SERVIDOR');
+    // xhr.send(formData);
+}
