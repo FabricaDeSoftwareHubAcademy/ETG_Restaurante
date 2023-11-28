@@ -2,6 +2,9 @@
     max-width: 832px;
     position: relative;
     margin: 0 auto;
+    max-height: 100vh;
+    height: 100vh;
+    overflow-y: hidden;
 }
 .title_principal{
      
@@ -133,7 +136,7 @@ button{
     overflow-y: scroll;
     scrollbar-color: #F28920;
     gap: 10px;
-    /* margin-bottom: 10px; */
+        /* margin-bottom: 10px; */
 
 }
 
