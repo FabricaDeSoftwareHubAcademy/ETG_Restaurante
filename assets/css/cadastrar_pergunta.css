@@ -1,3 +1,5 @@
+/* GERAL */
+
 *{
     padding: 0;
     margin: 0;
@@ -26,6 +28,9 @@ body{
     margin: auto;
 }
 
+
+/* MEIO DA TELA */
+
 .meio{  
     width: 100%;
     height: 79vh; 
@@ -34,6 +39,8 @@ body{
     align-items: center;
     flex-direction: column;
 }
+
+/* TÍTULO (Cadastro De Perguntas) */
 
 #titulo{
     display: flex;
@@ -46,6 +53,8 @@ body{
     letter-spacing: 0.2px;
 }
 
+/* PARTE FUNCIONAL (pesquisa, cards e botão) */
+
 .aunt{
     width: 100%;
     height: 100vh;
@@ -55,28 +64,32 @@ body{
     flex-direction: column;
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* PESQUISA */
+
 .pesquisa{
     display: block;
     width: 85%;
     height: 9vh;
     background-color: rgb(255, 255, 255);
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 .input_group.field{
     width: 100%;
@@ -107,18 +120,18 @@ body{
     line-height: 140%; /* 25.2px */
     letter-spacing: 0.2px;
 }
-   
+  
 .input_field::placeholder {
     color: transparent;
 }
-  
+
 .input_field:placeholder-shown ~ .input_label {
     font-size: 17px;
     cursor: text;
     top: 30px;
     left: 0.5vh;
 }
-  
+
 .input_label {
     position: absolute;
     top: 0;
@@ -128,7 +141,7 @@ body{
     pointer-events: none;
     font-family: 'Montserrat';
 }
-  
+
 .input_field:focus ~ .input_label {
     position: absolute;
     top: 0;
@@ -162,7 +175,7 @@ body{
 
 
 
-
+/* CARDS DAS PERGUNTAS */
 
 .perguntas{
     width: 85%;    
@@ -226,6 +239,39 @@ body{
     cursor: pointer;
 }
 
+/* RESPONSIVIDADE DAS PERGUNTAS  */
+
+@media screen and (max-width:550px ){
+
+    #question_text{
+        font-size: 12.5px;
+        font-weight: bold;
+        padding: 3%;
+    }
+    
+    .question1{
+        padding-right: 25px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* BOTÃO CADASTRAR */
+
 .botao-padrao-cadastrar{
     width: 100%;
     height: 100vh;
@@ -256,38 +302,27 @@ body{
 }
 
 
-@media screen and (max-width:550px ){
 
-    #question_text{
-        font-size: 12.5px;
-        font-weight: bold;
-        padding: 3%;
-    }
-    
-    .question1{
-        padding-right: 25px;
-    }
-}
 
-@media screen and (max-width: 700px ){
 
-    .popup.open-popup {
-        width: 330px;
-    }
 
-    .botao-confirmar-submit {
-        width: 115px;
-    }   
 
-    .botao-cancelar-submit{
-        width: 115px;
-    }
 
-    .botoes{
-        justify-content: space-between;
-        gap: 25px;
-    }
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* POPUP DE CADASTRAR PERGUNTAS */
 
 .popup{
     flex-direction: column;
@@ -313,6 +348,73 @@ body{
     visibility: visible;
     top: 55%;
     transform: translate(-50%, -50%) scale(1);
+}
+
+/* TÍTULOS DO POPUP DE CADASTRAR PERGUNTAS */
+
+h4{
+    width: 100%;
+    display: flex;
+    margin-top: 2%;
+}
+
+/* RESPONSIVIDADE DO POPUP DE CADASTRAR PERGUNTAS */
+
+@media screen and (max-width: 700px ){
+
+    .popup.open-popup {
+        width: 330px;
+    }
+
+    .botao-confirmar-submit {
+        width: 115px;
+    }   
+
+    .botao-cancelar-submit{
+        width: 115px;
+    }
+
+    .botoes{
+        justify-content: space-between;
+        gap: 25px;
+    }
+}
+
+/* CAIXA DE TEXTO */
+
+textarea{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    padding: 10px;
+    resize: none;
+    outline: none;
+    background-color: #f9f8f8;
+}
+
+.nova_pergunta{
+    width: 100%;
+    height: 31.2vh;
+    border-radius: 20px 20px 20px 20px;
+}
+
+/* DIV DAS CHECKBOX'S DO POPUP DE CADASTRAR PERGUNTAS*/
+
+.checks{
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+}
+
+/* BOTÕES DO POPUP DE CADASTRAR PERGUNTAS (cancelar e confirmar) */
+
+.botoes{
+    padding: 1%;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-evenly;
+    margin-top: 2%;
 }
 
 .botao-padrao-cancelar{
@@ -372,41 +474,4 @@ body{
     transition: all 0.4s;
     background-color: var(--cor-primaria-botao-green);
     color: var(--cor-primaria-botao-white);
-}
-
-textarea{
-    font-family: 'Montserrat', sans-serif;
-    font-size: 1rem;
-    letter-spacing: 1px;
-    padding: 10px;
-    resize: none;
-    outline: none;
-    background-color: #f9f8f8;
-}
-
-.nova_pergunta{
-    width: 100%;
-    height: 31.2vh;
-    border-radius: 20px 20px 20px 20px;
-}
-
-.botoes{
-    padding: 1%;
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    justify-content: space-evenly;
-    margin-top: 2%;
-}
-
-h4{
-    width: 100%;
-    display: flex;
-    margin-top: 2%;
-}
-
-.checks{
-    display: flex;
-    width: 100%;
-    justify-content: space-around;
 }
