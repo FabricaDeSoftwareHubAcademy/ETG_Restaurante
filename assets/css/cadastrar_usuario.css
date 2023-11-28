@@ -451,102 +451,101 @@ select {
 @media (max-width: 828px) {
   .input_field{
     width: 465px;
-    margin-left: 55%;   
+    /* margin-left: 55%;    */
     font-size: 16px; 
   }
  
-  .input_label{
+  /* .input_label{
     margin-left: 50%;
-  }
+  } */
 
   .input_e-mail_field{
     width: 465px;
-    margin-left: 55%;   
+    /* margin-left: 55%;    */
     font-size: 16px; 
   }
  
-  .input_e-mail_label{
+  /* .input_e-mail_label{
     margin-left: 50%;
   }
 
   .dropdown-ck{
     margin-left: 15%;
-  }
+  } */
 
   .dropdown-ck .option{
     font-size: 15px;
   }
 
-
+/* 
   .input_field_matricula{
     margin-left: -45%;
   }
 
   .input_label_matricula{
     margin-left: -50%;
-  }
+  } */
 
   .input_senha_field{
     width: 465px;
-    margin-left: 55%;   
+    /* margin-left: 55%;    */
     font-size: 16px; 
   }
- 
+/*  
   .input_senha_label{
     margin-left: 50%;
   }
-  
+   */
 }
 
 @media (max-width: 600px) {
   .input_field{
-    width: 350px;
-    margin-left: 65%;   
+    width: 350px;   
     font-size: 16px; 
   }
  
-  .input_label{
+  /* .input_label{
     margin-left: 60%;
-  }
+  } */
 
   .input_e-mail_field{
     width: 350px;
     font-size: 16px; 
   }
  
-  .input_e-mail_label{
+  /* .input_e-mail_label{
     margin-left: 60%;
-  }
+  } */
 
-  .dropdown-ck{
+  /* .dropdown-ck{
     margin-left: 15%;
-  }
+  } */
 
   .dropdown-ck .option{
     font-size: 15px;
   }
 
-  .mover_input{
+  /* .mover_input{
     margin-left: 10%;
-  }
+  } */
 
   .input_field_matricula{
     width: 140px;
-    margin-left: -55%;
+    /* margin-left: -55%; */
   }
 
-  .input_label_matricula{
+  /* .input_label_matricula{
     margin-left: -58%;
-  }
+  } */
 
   .input_senha_field{
     width: 350px;
-    margin-left: 55%;   
+    /* margin-left: 55%;    */
     font-size: 16px; 
   }
  
-  .input_senha_label{
+  /* .input_senha_label{
     margin-left: 50%;
-  }
+  } */
   
 }
