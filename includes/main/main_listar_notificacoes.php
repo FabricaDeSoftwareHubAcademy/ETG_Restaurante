@@ -11,13 +11,18 @@
         
         <main class="area_not">
             <?=$todas_notificacao?>
-        </main>        
+        </main>   
+        
+        <div class="alinhar_botao_voltar">
+            <div class="botao-padrao-voltar">
+                <a href="listar_salas.php" class="botao-voltar-link">VOLTAR</a>
+            </div>
+        </div>
+
+
+
     </section>
-
-    <div class="botao-padrao-voltar">
-        <a href="listar_salas.php" class="botao-voltar-link">VOLTAR</a>
-    </div>
-
+    
     <script> 
         async function desmarcar (id){
             // alert(id)

@@ -28,7 +28,7 @@ font-weight: bold;
 }
  
 .centralizar-back{
-width: 832px;
+width: 100%;
 }
 
 .centralizar_input_alterar_senha{
@@ -47,7 +47,7 @@ margin-top: 4%;
   margin-top: 20%;
 }
 
-@media (max-width: 832px) {
+/* @media (max-width: 832px) {
 .centralizar_botoes_alterar_senha{
   margin-top: 300px;
 }
@@ -55,4 +55,4 @@ margin-top: 4%;
 .centralizar_input_alterar_senha{
   margin-top: 5%;
 }
-}
+} */

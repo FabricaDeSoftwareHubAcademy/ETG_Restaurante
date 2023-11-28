@@ -3,7 +3,6 @@
 <script src="https://code.jquery.com/jquery-3.7.0.js"integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM="crossorigin="anonymous"></script>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-
 <link rel="stylesheet" href="../assets/css/cadastrar_editar_sala.css"> 
 
 <body class="tela-cadastro-salas">
@@ -59,12 +58,18 @@
                     <div class="dropdown-ck">
 
                         <select name="checklist" class="option">
-                        <option>Selecione O Checklist </option>
 
-                            <?=$options?>
+                            <option>Selecione O Checklist </option>
+
+                                <?=$options?>
                             
                         </select> 
-                                     
+                        
+    
+                        <a href="cadastrar_checklist.php" style="color: black;">
+                            <i class="bi bi-plus-circle " style="font-size: 30px; opacity: 0.7;"></i>
+                        </a>
+                        
                     </div>
 
                     <div class="barra"></div>
@@ -146,7 +151,7 @@
 
                                 
                                 
-                                <input type="file" name="imagem_sala" id="arquivo" >
+                                <input type="file" name="img_sala" id="arquivo" >
 
                                 <div class="area-anexo">
 

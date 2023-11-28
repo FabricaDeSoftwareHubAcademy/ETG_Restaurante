@@ -9,7 +9,7 @@
 
 .tela-cadastro-salas{
   width: 100%;
-  height: 100%;
+  /* height: 100%; */
   max-width: 832px;
  
   
@@ -19,6 +19,7 @@
 
 .titulo_de_cadastro{
   font-size: 26.7px;
+  margin-bottom: 30px;
 }
 
 .cadastro_codigo{
@@ -51,16 +52,14 @@
 
 .cadastro_codigo .toguro{
   
-  width: 76%;
-  margin-left: 21%;
+  width: 50%;
+  margin-left: 50%;
 }
 .cadastro_codigo .toguroo{
 
-  width: 100%; 
-
+  width: 80%;
   margin-right: 50px;
   
-
 }
 
 
@@ -91,7 +90,8 @@
     flex-wrap: wrap;
     overflow: hidden;
     overflow-y: auto;
-    /* max-width: 800px; */
+    width: 97%;
+    max-width: 810px; 
     max-height: 65vh;
 
     
@@ -580,13 +580,20 @@ input[type="file"] {
 }
 
 .barra{
-
-  width: 99%;
-  border-bottom: solid black 2px;
-  opacity: 0.4;
- 
-  margin-right: 5px;
+  margin-right: 17%;
+    display: flex;
+    /* padding-right: 5%; */
+    /* align-items: start; */
+    /* justify-content: start; */
+    width: 83%;
+    border-bottom: solid black 2px;
+    opacity: 0.4;
 }
+
+
+ 
+  
+
 
 
 
@@ -596,7 +603,7 @@ input[type="file"] {
     font-weight: 600;  
     border: none;
     outline: none;
-    width: 100%;
+    width: 83%;
     background-color: rgb(255, 255, 255);
     font-size: 'Montserrat';
     border-bottom: black;
@@ -604,7 +611,20 @@ input[type="file"] {
     font-size: 18px;
     padding-left: 7px;
     opacity: 0.4;
+    margin-right: 8%;
   
+}
+
+.botao_link{
+  width: 15%;
+  border-radius: 20px;
+  margin-right: 1%;
+  /* padding-right: 5%;*/
+  font-size: 15px;
+  height: 35px;
+  font-weight: bold;
+  opacity: 0.6;
+
 }
 
 
@@ -996,6 +1016,19 @@ box-shadow: none;
     flex-direction: column;
     
     padding-top: 20px;
+  }
+
+  .input_field.toguro{
+
+    width: 50%;
+
+
+  }
+  .cadastro_codigo .toguro{
+    width: 60%;
+    margin-left: 36%;
+    /* background-color: red; */
+
   }
 
   .cor-sala .alinar-botao-cor {

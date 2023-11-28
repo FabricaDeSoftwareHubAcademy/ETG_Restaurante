@@ -34,12 +34,11 @@ class Pergunta
     //READ
     public static function getDados()
     {
-        $obj_banco = new Banco('perguntas_da_sala');
+        $obj_banco = new Banco('cadastro_pergunta');
 
         $dados = $obj_banco -> select();
-
         if($dados -> rowCount() > 0){
-
+            
             return $dados -> fetchall(PDO::FETCH_ASSOC);
         }
         else

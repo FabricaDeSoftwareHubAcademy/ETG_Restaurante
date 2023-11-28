@@ -7,7 +7,6 @@
 
 .pai-de-todos{
     width: 100%; 
-    max-width: 832px;
     position: relative;
     margin: 0 auto;
   }
@@ -19,7 +18,7 @@
     font-size: 240%;
   }
   .form-minha-conta{
-    margin-top: 50px;
+    margin-top: 2%; /* 50px*/
     overflow-y: scroll;
     overflow-x: hidden;
     scrollbar-color: #F28920;
@@ -43,14 +42,16 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    width: 158px;
-    height: 133px;
+    width: 130px;
+    height: 130px;
     flex-shrink: 0;
     background-color: aqua;
     border-radius: 15px;
     border: 1px solid #FFF;
     background: url(<path-to-image>), lightgray 50% / cover no-repeat;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    border-radius: 10000000%;
+ 
   }
 
   .bi-person-circle::before {
@@ -83,11 +84,19 @@
   }
 
  .alinhar-input{
-    margin-top: 2%;
+    /* margin-top: 2%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; */
+
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    margin: 15% auto;
+    margin-top: 2%;
+    width: 100%;
 
 } 
 
@@ -106,10 +115,8 @@
 
 .area_btn_alterar_nome.active{
 
-
   pointer-events: auto;
   opacity: 1;
-
 
 }
 
@@ -171,6 +178,15 @@
   z-index: 99;
 }
 
+#img_user{
+
+  object-fit: cover;  
+  width: 100%;
+  height: 100%;
+  border-radius: 1000000%;
+
+}
+/* 
 @media (max-width: 832px) {
   .name-name{
     font-family: 'Montserrat';
@@ -199,4 +215,4 @@
   margin: 0% auto;
   margin-bottom: 50px;
 
-}
+} */

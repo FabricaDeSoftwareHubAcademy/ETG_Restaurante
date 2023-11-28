@@ -47,8 +47,9 @@ $(document).ready(function(){
 
     $
 });
-
-function acao(){
+let currentID;
+function acao(id){
+    currentID = id
     let modal = document.querySelector('.mom')
     modal.classList.add('active');   
 }
@@ -56,5 +57,8 @@ function acao(){
 function fechar(){
     let modal = document.querySelector('.mom')
     modal.classList.remove('active');
+
+    let  red = document.getElementById('red'+currentID)
+    red.classList = 'bi bi-x'
 }
 
