@@ -54,7 +54,7 @@
     overflow: hidden;
     overflow-y: scroll;
     max-width: 800px;
-    max-height: 195px;
+    max-height: 340px;
 }
 
 .selecao-pergunta::-webkit-scrollbar{
@@ -103,11 +103,10 @@
 
 .botoes-cadastro-checklist {
     display: flex;
-    padding-top: 15px;
+    padding-top: 40px;
     justify-content: space-between;
     width: 80vw;
     max-width: 832px;
-    height: 265px;
 }
 
 /* Tabela de perguntas */
