@@ -71,10 +71,12 @@
 
 
 .tudo_esqueceu_senha1{
-  width: 100%; 
-  max-width: 832px;
+  width: 100%;
+  display: flex; 
   position: relative;
   margin: 0 auto;
+  justify-content: center;
+  background-color: aqua;
 }
 
 .titulo_cadastro_usuario h1{
@@ -87,10 +89,12 @@
   margin-top: 10%;
 }
 
-.centralizar_input_cadastrar_usuario{
-  max-width: 652px;
-  margin: auto;
-}
+/* .centralizar_input_cadastrar_usuario{
+  
+
+
+
+} */
 
 .centralizar_botoes_cadastrar_usuario{
   display: flex;
@@ -227,7 +231,7 @@
   padding-bottom: 6px;
   font-weight: 700;
   border-width: 3px;
-  border-image-slice: 1;;
+  border-image-slice: 1;
 }
 
 .input_field:focus ~ .input_label {
@@ -242,6 +246,7 @@
 .input_field:required, .input_field:invalid {
   box-shadow: none;
 }
+
 
 
 .input_senha_group {
@@ -278,10 +283,11 @@
   
 .input_senha_label {
   position: absolute;
+  top: 0;
   display: block;
-  transition: 0.2s;
+  transition: 0.3s;
   color: #9b9b9b;
-  pointer-events: none; 
+  pointer-events: none;
   font-family: 'Montserrat';
   font-style: normal;
   font-weight: 400;
@@ -299,7 +305,7 @@
   position: absolute;
   top: 0;
   display: block;
-  transition: 0.2s;
+  transition: 0.3s;
   font-size: 17px;
   font-weight: 700;
 }
@@ -307,6 +313,7 @@
 .input_senha_field:required, .input_senha_field:invalid {
   box-shadow: none;
 }
+
 
 .dropdown-ck{
   height: 30px;
@@ -395,14 +402,16 @@
 }
 
 .mover_input{
-  width: 100%;
+  width: 77%;
   display: flex;
   justify-content: space-between;
+  margin-top: 5%;
 }
 
 select {
   border: 0px solid #aaa; 
   border-radius: 5px; 
+  margin-top: 5.5%;
 }
 
 /* CSS Botão VOLTAR NOVO NEW */
@@ -461,6 +470,10 @@ select {
   .dropdown-ck{
     margin-left: 15%;
   } */
+
+  .mover_input{
+    width: 70%;
+  }
 
   .dropdown-ck .option{
     font-size: 15px;
