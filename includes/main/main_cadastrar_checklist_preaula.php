@@ -6,7 +6,7 @@
 <body class="container_checklist">
     <?php include_once "../includes/main/main_cadastrar_nao_conformidade.php";
     ?>
-    <h1 class="titulo_checklist">Checklists</h1>
+    <h1 class="titulo_checklist">Checklist Pré-Aula</h1>
     <h2 class="nome_sala"><?= $dados_sala[0]['nome']?></h2>
 
     <main class="main_checklist">
