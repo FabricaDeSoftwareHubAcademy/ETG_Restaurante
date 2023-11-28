@@ -240,12 +240,12 @@ li{
   
   /* CSS Botão Cadastrar */
   
-  .botao-padrao-cadastrar {
+  /* .botao-padrao-cadastrar {
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
-  }
+  } */
   
   .botao-cadastrar-link {
     /* width: 110px; */
@@ -268,9 +268,52 @@ li{
   color: var(--cor-primaria-botao-white);
 }
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
+  /* Estilos para telas menores ou iguais a 768px de largura */
   .card_perfil {
-      max-width: 100%;
-      display: flex;
+    width: 90vw;
+    height: 10vh;
+    font-size: 14px;
+  }
+
+  .Perfis{
+    font-size: 30px;
+  }
+  .icone_editar{
+    width: 13px;
+    height: 13px;
+    margin: 8px;
+  }
+  .container_gp{
+    max-height: 500px;
+  }
+  /* .botao-cadastrar-link {
+    width: 100px;
+    font-size: 12px;
+    padding: 10px 35px;
+  
+
+  } */
+}
+
+@media (max-width: 670px) {
+  /* Estilos para telas menores ou iguais a 670px de largura */
+  .card_perfil {
+    width: 90vw;
+    height: 10vh;
+    font-size: 14px;
+  }
+
+  .Perfis{
+    font-size: 30px;
+  }
+  .icone_editar{
+    width: 13px;
+    height: 13px;
+    margin: 8px;
+  }
+  .container_gp{
+    max-height: 375px;
+  }
 
 }
