@@ -34,38 +34,61 @@ class ResponderChecklist
         //     //img1
         //     //img2
         //     //img3
-        // echo(json_encode($dados));exit;
+        echo(json_encode($dados));exit;
         foreach ($dados as $pergunta)
         {
-            //LOGICA DA IMAGEM
             $img1_64 = $pergunta['img1'];
             $img2_64 = $pergunta['img2'];
             $img3_64 = $pergunta['img3'];
-
-
-            list($type, $data) = explode(';', $img1_64);
-            list(, $data) = explode(',', $data);
-
-            list($type, $data) = explode(';', $img2_64);
-            list(, $data) = explode(',', $data);
+            //LOGICA DA IMAGEM
+            if (isset($pergunta['img1']))
+            {
+                //primeira imagem
+                list($type, $data) = explode(';', $img1_64);
+                list(, $data) = explode(',', $data);
+                $img1decodificada = base64_decode($data);
+                $data = '';
+                $nome1 = uniqid().'_nc.png';
+                $caminho_salvar = '../../storage/n_conformidade/'.$nome1;
+                file_put_contents($caminho_salvar, $img1decodificada);
+            }
+            elseif(isset($pergunta['img2']))
+            {                
+                //segunda imagem
+                list($type, $data) = explode(';', $img2_64);
+                list(, $data) = explode(',', $data);
+                $img2decodificada = base64_decode($data);
+                $data = '';
+                $nome2 = uniqid().'_nc.png';
+                $caminho_salvar = '../../storage/n_conformidade/'.$nome2;
+                file_put_contents($caminho_salvar, $img2decodificada);
+            }
+            elseif(isset($pergunta['img3']))
+            {
+                //terceira imagem
+                list($type, $data) = explode(';', $img3_64);
+                list(, $data) = explode(',', $data);
+                $img3decodificada = base64_decode($data);
+                $data = '';
+                $nome3 = uniqid().'_nc.png';
+                $caminho_salvar = '../../storage/n_conformidade/'.$nome3;
+                file_put_contents($caminho_salvar, $img3decodificada);
+            }
             
-            list($type, $data) = explode(';', $img3_64);
-            list(, $data) = explode(',', $data);
-
-            
 
 
-            $nao_conformidade = [
-                'id_realiza' =>  $last_id,
-                'id_prof' => $_SESSION['id_user'],
-                'id_pergu' => $pergunta['id_pergu'],
-                'descricao_NC' => $pergunta['descricao_NC'],
-                'img1' => $pergunta['img1'],
-                'img2' => $pergunta['img2'],
-                'img3' => $pergunta['img3'],
-            ];
-            echo(json_encode($nao_conformidade));exit;
-            NaoConformidade::cadastrar(dados : $nao_conformidade);
+
+            // $nao_conformidade = [
+            //     'id_realiza' =>  $last_id,
+            //     'id_prof' => $_SESSION['id_user'],
+            //     'id_pergu' => $pergunta['id_pergu'],
+            //     'descricao_NC' => $pergunta['descricao_NC'],
+            //     'img1' => $pergunta['img1'],
+            //     'img2' => $pergunta['img2'],
+            //     'img3' => $pergunta['img3'],
+            // ];
+            // echo(json_encode($nao_conformidade));exit;
+            // NaoConformidade::cadastrar(dados : $nao_conformidade);
         }
 
     }
