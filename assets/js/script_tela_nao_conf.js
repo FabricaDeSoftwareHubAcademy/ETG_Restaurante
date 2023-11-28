@@ -7,31 +7,37 @@ $(document).ready(function(){
     });
     $('#upload-input').change(event => {
         if(event.target.files){
-            let filesAmount = event.target.files.length;
             //VARIAS IMAGENS
+            let filesAmount = event.target.files.length;
             if (filesAmount < 4 && filesAmount > 1)
-            {
-                $('.upload-img').html("");
-                for(i = 0; i < filesAmount; i++){
+            {   
+                
+                for(c = 0; c < event.target.files.length; c++)
+                {
                     let reader = new FileReader();
                     let figCap = document.createElement("figcaption");
-                   
-                    reader.onload = function(event){                        
+                    reader.onload = function(event)
+                    {
+                        listasrc.push({'1': event.target.result});
                         let html = `
-                        <div class = "uploaded-img">
-                                <img src = "${event.target.result}" class = "beluga">
-                                <button type = "button" class = "remove-btn">
-                                <i class = "fas fa-times btn-remove-x"></i>
+                            <div class = "uploaded-img">
+                                <img  src = "${event.target.result}" class = "beluga">
+                                <button type = "button" btn="${temporaria}"  class = "remove-btn">
+                                    <i class = "fas fa-times btn-remove-x"></i>
                                 </button>
-                                </div>
-                                `;
-                                $(".upload-img").append(html);
+                            </div>
+                        `;
+                        $(".upload-img").append(html);
                     }
-                    
-                    reader.readAsDataURL(event.target.files[i]);
+                    // console.log(arrayfotos)
+                    reader.readAsDataURL(event.target.files[c]);
+                    console.log(event.target.files)
+                    // console.log(arrayfotos)
+
+
                 }
-                
                 $('.upload-img').css('padding', "20px");
+
             }
             //UMA IMAGEM POR VEZ
             else
@@ -92,7 +98,7 @@ $(document).ready(function(){
     });
 
     $(window).click(function(event){
-        // console.log(disponiveis);
+        console.log(disponiveis);
         if($(event.target).hasClass('remove-btn')){
             $(event.target).parent().remove();
                 btn = $(event.target).attr('btn');

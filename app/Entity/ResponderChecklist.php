@@ -34,14 +34,14 @@ class ResponderChecklist
         //     //img1
         //     //img2
         //     //img3
-        echo(json_encode($dados));exit;
         foreach ($dados as $pergunta)
         {
             $img1_64 = $pergunta['img1'];
             $img2_64 = $pergunta['img2'];
             $img3_64 = $pergunta['img3'];
+            
             //LOGICA DA IMAGEM
-            if (isset($pergunta['img1']))
+            if (isset($img1_64))
             {
                 //primeira imagem
                 list($type, $data) = explode(';', $img1_64);
@@ -52,9 +52,9 @@ class ResponderChecklist
                 $caminho_salvar = '../../storage/n_conformidade/'.$nome1;
                 file_put_contents($caminho_salvar, $img1decodificada);
             }
-            elseif(isset($pergunta['img2']))
-            {                
-                //segunda imagem
+            if (isset($img2_64))
+            {
+                //primeira imagem
                 list($type, $data) = explode(';', $img2_64);
                 list(, $data) = explode(',', $data);
                 $img2decodificada = base64_decode($data);
@@ -63,7 +63,7 @@ class ResponderChecklist
                 $caminho_salvar = '../../storage/n_conformidade/'.$nome2;
                 file_put_contents($caminho_salvar, $img2decodificada);
             }
-            elseif(isset($pergunta['img3']))
+            if(isset($img2_64))
             {
                 //terceira imagem
                 list($type, $data) = explode(';', $img3_64);
@@ -74,6 +74,9 @@ class ResponderChecklist
                 $caminho_salvar = '../../storage/n_conformidade/'.$nome3;
                 file_put_contents($caminho_salvar, $img3decodificada);
             }
+            unset($img1_64);
+            unset($img2_64);
+            unset($img3_64);
             
 
 

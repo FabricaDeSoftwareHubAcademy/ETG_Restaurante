@@ -27,7 +27,6 @@ id_atual = id;
 }
 async function getDados()
 {
-
     // console.log(listasrc)
     let descricao_nao_conf = document.getElementById('descricao_nao_conf');
     dados = {
@@ -37,9 +36,11 @@ async function getDados()
         'img2': (typeof listasrc[1] === 'undefined') ? null : listasrc[1]['1'],
         'img3': (typeof listasrc[2] === 'undefined') ? null : listasrc[2]['1']
     };
+
     somadados.push(dados);
-    // console.log(somadados)
+    console.log(somadados)
     descricao_nao_conf.value = "";
+    
     removerimgs()
     let modal = document.querySelector('.mom')
     modal.classList.remove('active');
@@ -48,7 +49,7 @@ async function getDados()
         disponiveis[chave] = false
     }
 
-    
+
 }
 const btn_submit = document.getElementById('btn_submit');
 btn_submit.addEventListener('click', async (e ) => {
