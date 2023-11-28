@@ -80,12 +80,13 @@
 
 .centralizar_input_cadastrar_usuario{
   display: flex;
-  width: 250%;
+  width: 200%;
   flex-direction: column;
   background-color: antiquewhite;
   position: relative;
   justify-content: center;
   align-items: center;
+  margin-left: -4 5%;
 }
 
 
