@@ -7,7 +7,6 @@
 
 .pai-de-todos{
     width: 100%; 
-    max-width: 832px;
     position: relative;
     margin: 0 auto;
   }
@@ -19,7 +18,7 @@
     font-size: 240%;
   }
   .form-minha-conta{
-    margin-top: 50px;
+    margin-top: 2%; /* 50px*/
     overflow-y: scroll;
     overflow-x: hidden;
     scrollbar-color: #F28920;
@@ -97,7 +96,7 @@
     flex-direction: column;
     margin: 15% auto;
     margin-top: 2%;
-    width: 832px;
+    width: 100%;
 
 } 
 
@@ -116,10 +115,8 @@
 
 .area_btn_alterar_nome.active{
 
-
   pointer-events: auto;
   opacity: 1;
-
 
 }
 
@@ -189,7 +186,7 @@
   border-radius: 1000000%;
 
 }
-
+/* 
 @media (max-width: 832px) {
   .name-name{
     font-family: 'Montserrat';
@@ -218,4 +215,4 @@
   margin: 0% auto;
   margin-bottom: 50px;
 
-}
+} */
