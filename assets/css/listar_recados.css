@@ -2,9 +2,9 @@
     max-width: 832px;
     position: relative;
     margin: 0 auto;
-    max-height: 100vh;
+    /* max-height: 100vh;
     height: 100vh;
-    overflow-y: hidden;
+    overflow-y: hidden; */
 }
 .title_principal{
      
