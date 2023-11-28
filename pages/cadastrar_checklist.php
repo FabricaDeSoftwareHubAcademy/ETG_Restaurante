@@ -11,8 +11,8 @@ use App\Entity\Funcoes;
 
 
 $dados = Pergunta::getDados();
-$tr = "";
-
+$trpre = "";
+$trpos = "";
 
 foreach ($dados as $rowdados) {
     if ($rowdados['tipo'] == 'PRE')

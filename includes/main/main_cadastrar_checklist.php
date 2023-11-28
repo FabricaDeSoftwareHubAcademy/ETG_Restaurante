@@ -1,4 +1,3 @@
-
 <link rel="stylesheet" href="estilo_perfil.css">
 <link rel="stylesheet" href="https/cdnjs.cloudflare.comlibs/font-awesome/6.4.0/css/all.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -23,61 +22,66 @@
 
             <div class="inputs-cadastro-checklist">
                 <div class="input_group field">
-                    <input type="text" class="input_field" placeholder="Name" required="" name="nome_checklist"  maxlength="45">
+                    <input type="text" class="input_field" placeholder="Name" required="" name="nome_checklist" maxlength="45">
                     <label for="name" class="input_label">Nome da CheckList</label> <!--Alterar para o nome do input-->
                 </div>
             </div>
 
             <!-- Menu das abas -->
             <ul class="tab-menu">
-                <li class="tab-button active" onclick="showTab('tab1')">Pré-Aula</li>
-                <li class="tab-button" onclick="showTab('tab2')">Pós-Aula</li>
-                <div class="line"></div>
+                <li class="tab-button active" id="btn_pre" onclick="showTab('tab1')">Pré-Aula</li>
+                <li class="tab-button" id="btn_pos" onclick="showTab('tab2')">Pós-Aula</li>
+                <div class="line" id="line"></div>
             </ul>
-
             <!-- Conteúdo das abas -->
             <div id="tab1" class="tab" style="display: block;">
                 <div class="titulo-selecione-pergunta-pre">
-                    <h1 id="titulo-pergunta-pos">Selecione as Perguntas:</h1>
+                    <h1 id="titulo-pergunta-pos">Selecione as Perguntas Pré Aula:</h1>
                 </div>
-
                 <section class="selecao-pergunta">
                     <table class="tabela-perguntas">
                         <tr class="topo-tabela">
                             <th>Selecione</th>
-                            <th>Pergunta</th>
-                        </tr>
-                        <?= $trpre ?>
+                            <th>Pergunta Pré</th>
+                        </tr> <?= $trpre ?>
                     </table>
                 </section>
             </div>
-
             <div id="tab2" class="tab">
                 <div class="titulo-selecione-pergunta-pos">
-                    <h1 id="titulo-pergunta-pos">Selecione as Perguntas:</h1>
+                    <h1 id="titulo-pergunta-pos">Selecione as Perguntas Pós Aula:</h1>
                 </div>
                 <section class="selecao-pergunta">
                     <table class="tabela-perguntas">
                         <tr class="topo-tabela">
                             <th>Selecione</th>
-                            <th>Pergunta</th>
-                        </tr>
-                        <?= $trpos ?>
+                            <th>Pergunta Pós</th>
+                        </tr> <?= $trpos ?>
                     </table>
                 </section>
             </div>
-
-
             <script>
                 function showTab(tabId) {
                     const tabs = document.querySelectorAll('.tab');
                     const buttons = document.querySelectorAll('.tab-button');
-
                     tabs.forEach(tab => tab.style.display = 'none');
                     buttons.forEach(button => button.classList.remove('active'));
-
                     document.getElementById(tabId).style.display = 'block';
                     document.querySelector(`[onclick="showTab('${tabId}')"`).classList.add('active');
+                }
+                const btn_pos = document.getElementById('btn_pos');
+                btn_pos.addEventListener('click', proxTab);
+
+                function proxTab() {
+                    const line = document.getElementById('line');
+                    line.classList.add('active');
+                }
+                const btn_pre = document.getElementById('btn_pre');
+                btn_pre.addEventListener('click', preTab);
+
+                function preTab() {
+                    const line = document.getElementById('line');
+                    line.classList.remove('active');
                 }
             </script>
 
