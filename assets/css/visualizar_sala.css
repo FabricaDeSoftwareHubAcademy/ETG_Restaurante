@@ -38,6 +38,11 @@
     
 }
 
+.nome_da_sala{
+    display: flex;
+    height: 80px;
+    width: 100%;
+}
 .card{
     display: flex;
     width: 80%;
