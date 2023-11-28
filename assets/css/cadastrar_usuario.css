@@ -75,7 +75,6 @@
   max-width: 832px;
   position: relative;
   margin: 0 auto;
-  margin-top: 3%;
 }
 
 .titulo_cadastro_usuario h1{
@@ -131,9 +130,6 @@
   font-family: 'Montserrat';
   font-weight: 400;
   font-size: 20px;
-  left: 10px;
-  padding-left: 10px;
-  
 }
 
 .input_e-mail_field::placeholder {
@@ -144,7 +140,6 @@
   font-size: 17px;
   cursor: text;
   top: 37px;
-  left: 10px;
 }
 
 .input_e-mail_label {
@@ -158,7 +153,6 @@
   font-style: normal;
   font-weight: 400;
   font-size: 20px;
-  left: 10px;
 }
 
 .input_e-mail_field:focus {
@@ -175,12 +169,14 @@
   transition: 0.3s;
   font-size: 17px;
   font-weight: 700;
-  left: 10px;
 }
 
 .input_e-mail_field:required, .input_e-mail_field:invalid {
   box-shadow: none;
 }
+
+
+
 
 /* INPUT NOME */
 .input_group {
@@ -200,12 +196,8 @@
   background: transparent;
   transition: border-color 0.2s;
   font-family: 'Montserrat';
-  font-style: normal;
   font-weight: 400;
   font-size: 20px;
-  left: 10px;
-  margin-top: 3%;
-
 }
 
 .input_field::placeholder {
@@ -215,14 +207,12 @@
 .input_field:placeholder-shown ~ .input_label {
   font-size: 17px;
   cursor: text;
-  top: 41px;
-  left: 10px;
-  
+  top: 37px;
 }
 
 .input_label {
   position: absolute;
-  top: 0px;
+  top: 0;
   display: block;
   transition: 0.3s;
   color: #9b9b9b;
@@ -231,16 +221,13 @@
   font-style: normal;
   font-weight: 400;
   font-size: 20px;
-  left: 10px;
-  
 }
 
 .input_field:focus {
   padding-bottom: 6px;
   font-weight: 700;
   border-width: 3px;
-  border-image-slice: 1;
-  
+  border-image-slice: 1;;
 }
 
 .input_field:focus ~ .input_label {
@@ -250,12 +237,12 @@
   transition: 0.3s;
   font-size: 17px;
   font-weight: 700;
-  left: 10px;
 }
 
 .input_field:required, .input_field:invalid {
   box-shadow: none;
 }
+
 
 .input_senha_group {
   position: relative;
@@ -275,11 +262,8 @@
   background: transparent;
   transition: border-color 0.2s;
   font-family: 'Montserrat';
-  font-style: normal;
   font-weight: 400;
   font-size: 20px;
-  left: 10px;
-  padding-left: 10px;
 }
 
 .input_senha_field::placeholder {
@@ -290,12 +274,10 @@
   font-size: 17px;
   cursor: text;
   top: 37px;
-  left: 10px;
 }
   
 .input_senha_label {
   position: absolute;
-  top: 0;
   display: block;
   transition: 0.2s;
   color: #9b9b9b;
@@ -304,7 +286,6 @@
   font-style: normal;
   font-weight: 400;
   font-size: 20px;
-  left: 10px;
 }
 
 .input_senha_field:focus {
