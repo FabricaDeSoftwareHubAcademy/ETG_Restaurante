@@ -23,7 +23,7 @@
 
                     <!--Botão Salvar-->
                     <div class="botao-padrao-voltar">
-                        <a href=""><input name="btn_submit" type="submit" class="botao-salvar-submit" id="btn_submit"  value="CONFIRMAR"></a>
+                        <input name="btn_submit" type="button" class="botao-salvar-submit" id="btn_submit"  value="CONFIRMAR">
                     </div>
 
                 </div>

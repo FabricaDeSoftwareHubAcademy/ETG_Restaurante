@@ -28,26 +28,25 @@ id_atual = id;
 async function getDados()
 {
 
-    console.log(listasrc);
-    // if (listasrc.length > 3)
-    // {
-    //     break;
-    // }
-    // let dataimg = document.getElementById('nomeimg');
-    // // let dataimg2 = dataimg.value;
-    // let caminhoImagem = dataimg.src;
-    // let nomeImagem = caminhoImagem.substring(caminhoImagem.lastIndexOf('/') + 1);
-    // getImgs(caminhoImagem);
+    // console.log(listasrc)
     let descricao_nao_conf = document.getElementById('descricao_nao_conf');
     dados = {
         'id_pergu': id_atual,
         'descricao_NC': descricao_nao_conf.value,
-        // 'img1': img1.value,
-        // 'img2': img2.value,
-        // 'img3': img3.value
+        'img1': (typeof listasrc[0] === 'undefined') ? null : listasrc[0]['1'],
+        'img2': (typeof listasrc[1] === 'undefined') ? null : listasrc[1]['1'],
+        'img3': (typeof listasrc[2] === 'undefined') ? null : listasrc[2]['1']
     };
     somadados.push(dados);
+    // console.log(somadados)
     descricao_nao_conf.value = "";
+    removerimgs()
+    let modal = document.querySelector('.mom')
+    modal.classList.remove('active');
+    for (var chave in disponiveis)
+    {
+        disponiveis[chave] = false
+    }
 
     
 }
@@ -67,8 +66,6 @@ btn_submit.addEventListener('click', async (e ) => {
     // Obtém o valor de um parâmetro específico
     var parametro = params.get('id_sala');
 
-    console.log(parametro);
-
    JSON.stringify(somadados);
    let data_php = await fetch('./actions/cat_data_pergunta.php?id_sala='+parametro, {
        method: 'POST',
@@ -81,22 +78,3 @@ btn_submit.addEventListener('click', async (e ) => {
    
 
 });
-
-function getImgs(files)
-{
-    console.log(files);
-    // let files = event.target.files;
-    // let formData = new FormData();
-
-    // // Adiciona o arquivo ao objeto FormData
-    // for (c = 0; c < files.length; c++)
-    // {
-        
-    // }
-    // formData.append('file', files[0]);
-
-    // // Envia o formulário para o servidor usando uma requisição AJAX
-    // let xhr = new XMLHttpRequest();
-    // xhr.open('POST', 'URL_DO_SERVIDOR');
-    // xhr.send(formData);
-}

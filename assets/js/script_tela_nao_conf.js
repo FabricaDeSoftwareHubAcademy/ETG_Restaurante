@@ -21,7 +21,7 @@ $(document).ready(function(){
                         <div class = "uploaded-img">
                                 <img src = "${event.target.result}" class = "beluga">
                                 <button type = "button" class = "remove-btn">
-                                <i class = "fas fa-times"></i>
+                                <i class = "fas fa-times btn-remove-x"></i>
                                 </button>
                                 </div>
                                 `;
@@ -67,13 +67,13 @@ $(document).ready(function(){
                     }
                     if (temporaria != false)
                     {
-                       console.log(disponiveis);
+                        // ESQUECEMOS OQ E ISSO, ENTENDA DEPOIS
                         listasrc.push({'1': event.target.result});
                         let html = `
                             <div class = "uploaded-img">
                                 <img  src = "${event.target.result}" class = "beluga">
                                 <button type = "button" btn="${temporaria}"  class = "remove-btn">
-                                    <i class = "fas fa-times"></i>
+                                    <i class = "fas fa-times btn-remove-x"></i>
                                 </button>
                             </div>
                         `;
@@ -83,29 +83,21 @@ $(document).ready(function(){
                     }
 
                     reader.readAsDataURL(arrayfotos[c]);
-                    // console.log(arrayfotos[c]['name']);
+
                 }
                 $('.upload-img').css('padding', "20px");
             }
-
-            // else {
-            //     let modal = document.querySelector('.mensagem')
-            //     modal.classList.remove('active');
-            // }
             
         }
     });
 
     $(window).click(function(event){
+        // console.log(disponiveis);
         if($(event.target).hasClass('remove-btn')){
             $(event.target).parent().remove();
                 btn = $(event.target).attr('btn');
                 disponiveis[btn] = false;
-                console.log(disponiveis);
         }
-        //  else if($(event.target).parent().hasClass('remove-btn')){
-        //     $(event.target).parent().parent().remove();
-        // }
     })
 
 
@@ -118,6 +110,9 @@ function acao(id){
 }
 
 function fechar(){
+
+    removerimgs()
+
     let modal = document.querySelector('.mom')
     modal.classList.remove('active');
 
@@ -125,3 +120,10 @@ function fechar(){
     red.classList = 'bi bi-x'
 }
 
+function removerimgs()
+{
+    let imagens = document.querySelectorAll('.uploaded-img')
+    for (var div of imagens) {
+        div.remove();
+    }
+}

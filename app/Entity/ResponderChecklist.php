@@ -37,15 +37,34 @@ class ResponderChecklist
         // echo(json_encode($dados));exit;
         foreach ($dados as $pergunta)
         {
+            //LOGICA DA IMAGEM
+            $img1_64 = $pergunta['img1'];
+            $img2_64 = $pergunta['img2'];
+            $img3_64 = $pergunta['img3'];
+
+
+            list($type, $data) = explode(';', $img1_64);
+            list(, $data) = explode(',', $data);
+
+            list($type, $data) = explode(';', $img2_64);
+            list(, $data) = explode(',', $data);
+            
+            list($type, $data) = explode(';', $img3_64);
+            list(, $data) = explode(',', $data);
+
+            
+
+
             $nao_conformidade = [
                 'id_realiza' =>  $last_id,
                 'id_prof' => $_SESSION['id_user'],
                 'id_pergu' => $pergunta['id_pergu'],
                 'descricao_NC' => $pergunta['descricao_NC'],
-                'img1' => 'd',
-                'img2' => 'd',
-                'img3' => 'd',
+                'img1' => $pergunta['img1'],
+                'img2' => $pergunta['img2'],
+                'img3' => $pergunta['img3'],
             ];
+            echo(json_encode($nao_conformidade));exit;
             NaoConformidade::cadastrar(dados : $nao_conformidade);
         }
 
