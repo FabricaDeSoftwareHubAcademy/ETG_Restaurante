@@ -90,6 +90,7 @@
     flex-wrap: wrap;
     overflow: hidden;
     overflow-y: auto;
+    width: 97%;
     max-width: 810px; 
     max-height: 65vh;
 
@@ -1015,6 +1016,19 @@ box-shadow: none;
     flex-direction: column;
     
     padding-top: 20px;
+  }
+
+  .input_field.toguro{
+
+    width: 50%;
+
+
+  }
+  .cadastro_codigo .toguro{
+    width: 60%;
+    margin-left: 36%;
+    /* background-color: red; */
+
   }
 
   .cor-sala .alinar-botao-cor {
