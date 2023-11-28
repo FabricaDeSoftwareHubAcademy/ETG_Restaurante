@@ -68,6 +68,8 @@ if (isset(
         // header("Location: listar_salas.php");
     }
 }   
+
+
 require("../includes/header/header.php");
 require("../includes/main/main_cadastrar_sala.php");
 require("../includes/footer/footer.php");
