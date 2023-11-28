@@ -13,7 +13,7 @@
 <body class="visualizar_sala">
     <div class="pagina-visualizar-sala">
             <div class="nome_da_sala" id="nome_da_sala">
-                <h1>VISUALIZAR andre</h1>
+                <h1>Visualizar Sala</h1>
             </div>
         <section class="area_card">
             
