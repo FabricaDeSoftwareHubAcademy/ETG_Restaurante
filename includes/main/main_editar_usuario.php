@@ -94,7 +94,7 @@
                                 <input name="btn_submit" type="submit" id="btn_submit" class="botao-confirmar-submit"  value="SALVAR">
                             </div>
     
-                        </section>
+            </section>
             
         </form>
 
