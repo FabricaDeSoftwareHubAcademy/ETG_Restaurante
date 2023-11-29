@@ -184,7 +184,7 @@
                         <div class="botao-padrao-cadastrar">
                             <a><input name="btn_submit" type="submit" class="botao-cadastrar-submit" id="botao-cadastrar-submit" value="CADASTRAR"></a>
 
-                            <button id="botao-cadastrar-submit2"> testeeee </button>
+                            <!-- <button id="botao-cadastrar-submit2"> testeeee </button> -->
 
                         </div>
                             <!-- onclick="abrir_modal()" -->
