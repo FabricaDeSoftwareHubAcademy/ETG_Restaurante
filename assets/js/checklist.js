@@ -1,7 +1,7 @@
 // let awser = "";
 // const red = document.getElementById('red')
 
-var id_atual = 0;
+var id_atual = 0; 
 var dados = Array();
 var somadados = Array();
 function atualizarValor(id, bool)
@@ -26,19 +26,17 @@ id_atual = id;
 
 }
 async function getDados()
-{
-    // console.log(listasrc)
+{ 
     let descricao_nao_conf = document.getElementById('descricao_nao_conf');
     dados = {
         'id_pergu': id_atual,
         'descricao_NC': descricao_nao_conf.value,
-        'img1': (typeof listasrc[0] === 'undefined') ? null : listasrc[0]['1'],
-        'img2': (typeof listasrc[1] === 'undefined') ? null : listasrc[1]['1'],
-        'img3': (typeof listasrc[2] === 'undefined') ? null : listasrc[2]['1']
+        'img1': (typeof listasrc[0] === 'undefined') ? null : listasrc[0],
+        'img2': (typeof listasrc[1] === 'undefined') ? null : listasrc[1],
+        'img3': (typeof listasrc[2] === 'undefined') ? null : listasrc[2]
     };
 
-    somadados.push(dados);
-    console.log(somadados)
+    somadados.push(dados); 
     descricao_nao_conf.value = "";
     
     removerimgs()
@@ -48,7 +46,9 @@ async function getDados()
     {
         disponiveis[chave] = false
     }
-
+ 
+    listasrc = [] 
+    dados = {}
 
 }
 const btn_submit = document.getElementById('btn_submit');

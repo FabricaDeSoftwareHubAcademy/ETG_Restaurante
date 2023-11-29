@@ -6,19 +6,26 @@ $(document).ready(function(){
         $('#upload-input').trigger('click');
     });
     $('#upload-input').change(event => {
+
+        console.log(event.target.files)
+        
         if(event.target.files){
             //VARIAS IMAGENS
             let filesAmount = event.target.files.length;
+            console.log(filesAmount)
             if (filesAmount < 4 && filesAmount > 1)
             {   
-                
+                console.log('FOOOOOOOOOOOOOOOOOOOI')
+
+                listasrc = []
                 for(c = 0; c < event.target.files.length; c++)
                 {
                     let reader = new FileReader();
                     let figCap = document.createElement("figcaption");
                     reader.onload = function(event)
-                    {
-                        listasrc.push({'1': event.target.result});
+                    {   
+                        
+                        listasrc.push(event.target.result);
                         let html = `
                             <div class = "uploaded-img">
                                 <img  src = "${event.target.result}" class = "beluga">
@@ -31,10 +38,10 @@ $(document).ready(function(){
                     }
                     // console.log(arrayfotos)
                     reader.readAsDataURL(event.target.files[c]);
-                    console.log(event.target.files)
+                    // console.log(event.target.files)
                     // console.log(arrayfotos)
 
-
+                    console.log(reader)
                 }
                 $('.upload-img').css('padding', "20px");
 
@@ -63,18 +70,16 @@ $(document).ready(function(){
                         {
                             temporaria = key;
                             disponiveis[key] = true;
-
                             break;
                         }
-                        else
-                        {
+                        else{
                             temporaria = false;
                         }
                     }
                     if (temporaria != false)
                     {
                         // ESQUECEMOS OQ E ISSO, ENTENDA DEPOIS
-                        listasrc.push({'1': event.target.result});
+                        listasrc.push(event.target.result);
                         let html = `
                             <div class = "uploaded-img">
                                 <img  src = "${event.target.result}" class = "beluga">
@@ -92,13 +97,19 @@ $(document).ready(function(){
 
                 }
                 $('.upload-img').css('padding', "20px");
-            }
+            } 
             
+            
+            $('#upload-input').val('');
+
         }
     });
 
     $(window).click(function(event){
-        console.log(disponiveis);
+        
+        // console.log(disponiveis);
+        // console.log(dados);
+        console.log(listasrc)
         if($(event.target).hasClass('remove-btn')){
             $(event.target).parent().remove();
                 btn = $(event.target).attr('btn');
@@ -116,7 +127,7 @@ function acao(id){
 }
 
 function fechar(){
-
+    listasrc = []
     removerimgs()
 
     let modal = document.querySelector('.mom')

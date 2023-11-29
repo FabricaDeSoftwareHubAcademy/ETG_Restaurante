@@ -18,7 +18,7 @@
                 <div class="botoes-cadastro-checklist">
                     <!--Botão Voltar-->
                     <div class="botao-padrao-voltar">
-                        <a href="gerenc_perfis.php" class="botao-voltar-submit">CANCELAR</a>
+                        <a href="./visualizar_sala.php?id_sala=<?=$dados_sala[0]['id']?>" class="botao-voltar-submit">CANCELAR</a>
                     </div>
 
                     <!--Botão Salvar-->
