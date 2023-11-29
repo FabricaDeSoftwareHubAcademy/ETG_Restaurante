@@ -165,6 +165,8 @@
   font-style: normal;
   font-weight: 400;
   font-size: 20px;
+  left: -180px;
+  
 }
 
 .input_e-mail_field:focus {
@@ -236,6 +238,7 @@
   font-style: normal;
   font-weight: 400;
   font-size: 20px;
+  left: -180px;
 }
 
 .input_field:focus {
@@ -306,6 +309,7 @@
   font-style: normal;
   font-weight: 400;
   font-size: 20px;
+  left: -180px;
 }
 
 .input_senha_field:focus {
