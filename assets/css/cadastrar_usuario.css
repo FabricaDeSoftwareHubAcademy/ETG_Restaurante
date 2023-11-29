@@ -425,16 +425,10 @@
 .mover_input{
   width: 100%;
   display: flex;
-  padding-right: 90px;
-  padding-left: 85px;
   justify-content: space-between;
-  /* background-color: aqua; */
+  background-color: aqua;
   margin-top: 5%;
 }
-
-
-
-
 
 select {
   border: 0px solid #aaa; 
@@ -524,4 +518,10 @@ select {
     margin-left: 16%;
   }
    
+  .mover_input{
+    padding-right: 190px;
+    padding-left: 185px;
+
+  }
+  
 }

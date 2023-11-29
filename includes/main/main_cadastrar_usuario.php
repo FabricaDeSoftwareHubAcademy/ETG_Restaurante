@@ -9,9 +9,7 @@
                 <h1>Cadastrar Usuário</h1>
             </section>
 
-            <section class="centralizar_input_cadastrar_usuario"> 
-
-                
+            <section class="centralizar_input_cadastrar_usuario">                
                 <!-- input nome -->
                 <div class="input_group field">
                     <input type="input" maxlength="45" class="input_field" name="nome" placeholder="Name" required="">
@@ -32,8 +30,8 @@
                             <?=$options?>
             
                         </select> 
-                        <div class="barra"></div> 
-                    </div>
+                    <div class="barra"></div> 
+                </div>
 
 
                     <div class="input_group">
