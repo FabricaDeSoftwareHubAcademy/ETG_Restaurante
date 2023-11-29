@@ -13,7 +13,7 @@
         <div class="container-cadastro-salas">
             <div class="wrap-cadastro-salas">
 
-                <form class="cadastro-sala-form" method="POST" enctype="multipart/form-data">
+                <form class="cadastro-sala-form" id="form_cad" method="POST" enctype="multipart/form-data">
 
                     
 
@@ -184,11 +184,114 @@
                         <div class="botao-padrao-cadastrar">
                             <a><input name="btn_submit" type="submit" class="botao-cadastrar-submit" id="botao-cadastrar-submit" value="CADASTRAR"></a>
 
+                            <button id="botao-cadastrar-submit2"> testeeee </button>
+
                         </div>
                             <!-- onclick="abrir_modal()" -->
 
 
                     </div>  
+
+                    <!-- <div class="container-pop-up-notificacao">
+                        <button type="submit" class="btn-pop-up-notificacao" id="submit-btn-notificacao" onclick="openPopupValidar()">Submit</button>
+                        <div class="popup-notificacao" id="popup-up-notificacao">
+                            <div class="div-img">
+                                <img src="img/erro.png" alt="carregando" id="img_check">
+                                <p>Recado excluído com sucesso! </p>
+                            </div>
+                            <div class="botao-padrao-ok">
+                                <a href="#"><input type="submit" class="botao-ok-submit" onclick="closePopupValidar()" value="OK"></a>
+                            </div>
+                        </div>
+                    </div> -->
+
+                    <script>
+
+                        let button = document.getElementById("botao-cadastrar-submit2") 
+
+                        button.addEventListener('click', async (e) => {
+                            // alert("dsadsa")
+                            e.preventDefault()
+
+                            let form = document.getElementById('form_cad')
+                            console.log(form)
+
+                            let formData = new FormData(form)
+                            // console.log(formData)
+
+                            let dados_php = await fetch("../../pages/actions/abrir_modal_cadastrar_sala.php",{method:"POST",
+                                body: formData
+                            })
+
+                            let response = await dados_php.json()
+
+                            console.log(response)
+
+                            if(response){
+                                const Toast = Swal.mixin({
+                                toast: true,
+                                position: "top-end",
+                                showConfirmButton: false,
+                                timer: 3000,
+                                timerProgressBar: true,
+                                didOpen: (toast) => {
+                                toast.onmouseenter = Swal.stopTimer;
+                                toast.onmouseleave = Swal.resumeTimer;
+                                }
+                            });
+                            Toast.fire({
+                                icon: "success",
+                                title: "deu bom"
+                            });
+                                // Swal.fire({
+                                //     position: "top-end",
+                                //     icon: "success",
+                                //     title: "Your work has been saved",
+                                //     showConfirmButton: false,
+                                //     timer: 1500
+                                // });
+
+                            }else{const Toast = Swal.mixin({
+                                toast: true,
+                                position: "top-end",
+                                showConfirmButton: false,
+                                timer: 3000,
+                                timerProgressBar: true,
+                                didOpen: (toast) => {
+                                toast.onmouseenter = Swal.stopTimer;
+                                toast.onmouseleave = Swal.resumeTimer;
+                                }
+                            });
+                            Toast.fire({
+                                icon: "error",
+                                title: "deu bom"
+                            });
+
+                            }
+                            
+                        })
+
+
+                        // function openPopupValidar() {
+                        //     let popup = document.getElementById('popup-up-notificacao');
+                        //     let btn = document.getElementById("submit-btn-notificacao");
+
+                        //     btn.style.display = "none";
+                        //     popup.classList.add("open-popup");
+                        // }
+
+                        // function closePopupValidar() {
+                        //     let popup = document.getElementById("popup-up-notificacao");
+                        //     let btn = document.getElementById("submit-btn-notificacao");
+
+                        //     btn.style.display = "block";
+
+                        //     popup.classList.remove("open-popup");
+                        // }
+
+
+
+                    </script>
                 
                     
                 </form>  
