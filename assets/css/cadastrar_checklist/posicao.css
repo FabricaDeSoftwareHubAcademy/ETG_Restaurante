@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
 
-.pai_de_todos{
+.pai_de_todos {
     width: 100%;
     height: 100%;
     max-width: 832px;
@@ -11,11 +11,13 @@
 .todo-projeto {
     display: flex;
     flex-direction: column;
-    align-items: center; /* Centraliza na horizontal */
+    align-items: center;
+    /* Centraliza na horizontal */
     margin: 0px 50px;
 }
 
-#titulo-pergunta-pre, #titulo-pergunta-pos {
+#titulo-pergunta-pre,
+#titulo-pergunta-pos {
     font-size: medium;
     font-family: 'Montserrat';
 
@@ -23,23 +25,25 @@
 
 #titulo {
     font-family: 'Montserrat';
-    
+
 }
-.titulo-selecione-pergunta-pre{
-    height:30px ;
+
+.titulo-selecione-pergunta-pre {
+    height: 30px;
     display: flex;
     text-align: center;
     padding-top: 10px;
 }
 
-.titulo-selecione-pergunta-pos{
-    height:30px ;
+.titulo-selecione-pergunta-pos {
+    height: 30px;
     display: flex;
     text-align: center;
     padding-top: 10px;
 
 }
-.titulo-topo{
+
+.titulo-topo {
     width: 100%;
     display: flex;
     align-items: center;
@@ -57,21 +61,25 @@
     max-height: 340px;
 }
 
-.selecao-pergunta::-webkit-scrollbar{
+.selecao-pergunta::-webkit-scrollbar {
     background-color: #e7e7e7;
     border-radius: 5px;
     width: 8px;
-    
+
 }
-.selecao-pergunta::-webkit-scrollbar-thumb{
+
+.selecao-pergunta::-webkit-scrollbar-thumb {
     border-radius: 5px;
     background-color: #F28920;
 }
+
 /* --------------INPUTS -------------- */
 .inputs-cadastro-checklist {
     display: flex;
-    flex-wrap: wrap; /* Adiciona quebra de linha caso necessário */
-    justify-content: space-between; /* Espaço entre os elementos */
+    flex-wrap: wrap;
+    /* Adiciona quebra de linha caso necessário */
+    justify-content: space-between;
+    /* Espaço entre os elementos */
     width: 100%;
     padding: 20px;
 }
@@ -109,18 +117,33 @@
     max-width: 832px;
 }
 
-/* Tabela de perguntas */
+/*-------------- Tabela de perguntas --------------*/
 
 
-.tabela-perguntas{
+.tabela-perguntas {
     border-collapse: collapse;
     border-radius: 15px;
-    
+
 }
 
-.topo-tabela{
+.topo-tabela {
     position: sticky;
     top: 0px;
 
 }
 
+/* --------------@media-------------- */
+@media (max-width: 600px) {
+    th {
+        padding: 0 4vw 0;
+        font-size: smaller;
+
+    }
+    #checkbox::after {
+        font-size: 8px;
+    }
+    td{
+        font-size: small;
+    }
+
+}
