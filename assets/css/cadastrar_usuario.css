@@ -80,12 +80,12 @@
 
 .centralizar_input_cadastrar_usuario{
   display: flex;
-  width: 200%;
+  width: 100%;
   flex-direction: column;
   position: relative;
   justify-content: center;
   align-items: center;
-  margin-left: -45%;
+  margin-top: 10%;
 }
 
 
@@ -100,12 +100,13 @@
 }
 
 .centralizar_botoes_cadastrar_usuario {
+  width: 100%;
   display: flex;
+  padding-right: 20px;
+  /* margin-left: 20px; */
   justify-content: space-between;
-  margin-left: -40%;
-  /* background-color: aquamarine; */
-  margin-top: 100px;
-  width: 200%;
+  /* background-color: chartreuse; */
+  margin-top: 20%;
 
 }
 
@@ -422,9 +423,12 @@
 }
 
 .mover_input{
-  width: 77%;
+  width: 100%;
   display: flex;
+  padding-right: 90px;
+  padding-left: 85px;
   justify-content: space-between;
+  /* background-color: aqua; */
   margin-top: 5%;
 }
 
@@ -473,39 +477,51 @@ select {
 @media (max-width: 801px) {
 
    .input_label{
-    margin-left: 50%;
+    margin-left: 2%;
   } 
 
   .input_e-mail_label{
-    margin-left: 50%;
+    margin-left: 2%;
   }
 
   .input_label_matricula{
-    margin-left: -50%;
+    margin-left: 2%;
   } 
  
   .input_senha_label{
-    margin-left: 50%;
+    margin-left: 2%;
   }
    
 }
 
-@media (max-width: 600px) {
+@media (max-width: 693px) {
 
-  .input_label{
-    margin-left: 60%;
-  } 
- 
-  .input_e-mail_label{
-    margin-left: 60%;
+  .input_e-mail_field{
+    width: 480px;
   }
 
-  .input_label_matricula{
-    margin-left: -58%;
-  } 
-
-  .input_senha_label{
-    margin-left: 50%;
+  .input_field{
+    width: 480px;
   }
   
+  .mover_input{
+    width: 65%;
+  }
+
+  .input_senha_field{
+    width: 480px;
+  }
+
+  .input_label{
+    margin-left: 16%;
+  } 
+
+  .input_e-mail_label{
+    margin-left: 16%;
+  }
+ 
+  .input_senha_label{
+    margin-left: 16%;
+  }
+   
 }

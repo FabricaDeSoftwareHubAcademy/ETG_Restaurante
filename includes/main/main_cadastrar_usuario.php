@@ -50,7 +50,6 @@
             </section>   
 
             <section class="centralizar_botoes_cadastrar_usuario">
-
                 <!--Botão voltar-->
                 <div class="botao-padrao-voltar">
                     <a href="listar_recados.php" class="botao-voltar-link">VOLTAR</a>
@@ -60,8 +59,8 @@
                 <div class="botao-padrao-confirmar">
                     <a><input type="submit" class="botao-confirmar-submit" name="btn_submit" value="CONFIRMAR"></a>
                 </div>
-
             </section>
+
         </form>
     </main>
 </body>
