@@ -13,7 +13,6 @@
 
 <body>
 
-    <!-- <i onclick="acao()" class="bi bi-x-circle"></i> -->
     <main class="mom">
         <div class="meio">
             <div class="pergunta">
@@ -31,7 +30,7 @@
                     </div>
                 </div>
             <div class="botoes">
-                    <button class="botao-cancelar-submit" onclick="fechar()">CANCELAR</button>
+                    <button class="botao-cancelar-submit"  onclick="fechar()">CANCELAR</button>
                     <button class="botao-confirmar-submit">CONFIRMAR</button>                
             </div>
             

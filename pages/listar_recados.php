@@ -1,5 +1,7 @@
 <?php
-session_start();
+
+include_once("../includes/menu.php");
+ 
 
 if(!isset($_SESSION['id_user'])){
 
@@ -35,6 +37,8 @@ $recados = Recado::getDados()  ?  Recado::getDados(): "";
 
 $cards_recados = '';
 
+if (is_array($recados) || is_object($recados)) {
+
 foreach($recados as $row_recados){
 
     $cards_recados .= '<div class="card">
@@ -52,6 +56,13 @@ foreach($recados as $row_recados){
                         
 
     }
+
+} else {
+    // Tratamento caso $recados não seja um array ou objeto
+}
+
+
+
     $titulo_page = 'Mural Recados';
     include_once("../includes/menu.php"); 
     include_once("../includes/header/header.php");

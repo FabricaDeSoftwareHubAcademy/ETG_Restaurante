@@ -13,25 +13,25 @@
 
 .input_senha_group.field{
   width: 100%;
-  max-width: 700px;
-  min-width: 300px;
-  margin-top: 15px;
+  max-width: 84%;
+  min-width: 50%;
+  margin-top: 2%;/*15px*/
   
 }
   
 .input_senha_group.field2{
-  width: 100%;
-  max-width: 700px;
-  min-width: 300px;
-  margin-top: 15px;
+    width: 100%;
+    max-width: 84%;
+    min-width: 50%;
+    margin-top: 2%;
 
 }
  
 .input_senha_group.field3{
   width: 100%;
-  max-width: 700px;
-  min-width: 300px;
-  margin-top: 15px;
+  max-width: 84%;
+  min-width: 50%;
+  margin-top: 2%;
 
 }
 
@@ -221,7 +221,7 @@
 
 .botao-voltar-submit{
   width: 180px;
-  height: 45px;
+  height: 40px;
   background-color: var(--cor-primaria-botao-white);
   border: 3px solid var(--cor-primaria-botao-yellow);
   border-radius: 20px;
@@ -243,7 +243,7 @@
   color: var(--cor-primaria-botao-white);
 }
 
-@media (max-width: 882px){
+/* @media (max-width: 832px){
   .input_senha_group.field{
     margin-top: 25px;
   }
@@ -255,4 +255,4 @@
   .input_senha_group.field3{
     margin-top: 25px;
   }
-}
+} */

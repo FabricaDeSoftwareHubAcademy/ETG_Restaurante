@@ -1,7 +1,7 @@
 <?php
-session_start();
-require __DIR__."/../vendor/autoload.php";
 include_once("../includes/menu.php"); 
+
+require __DIR__."/../vendor/autoload.php";
 $titulo_page = 'Notificacoes';
 require("../includes/header/header.php");
 
@@ -47,7 +47,7 @@ foreach ($dados as $contador){
     $hours = round($diferenca/60/60);
     $days = round($diferenca/60/60/24);
     
-    
+    // $tempoAtras = "";  
     if($diferenca < 60){
         
         $tempoAtras = $diferenca." Segundos";
@@ -88,6 +88,7 @@ foreach ($dados as $contador){
     // var_dump($contador["id"]) . var_dump($contador["texto"]) . print($tempoAtras) . var_dump($contador["visualizado"]);
     // echo("<br>");
     if($contador['marcado'] == 1)
+    
     {
         
             $todas_notificacao .='
