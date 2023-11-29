@@ -86,7 +86,7 @@
   position: relative;
   justify-content: center;
   align-items: center;
-  margin-left: -4 5%;
+  margin-left: -45%;
 }
 
 
@@ -124,6 +124,10 @@
   width: 544px;
   max-width: 180px;
   margin-top: 5%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
 }
 
 .input_e-mail_field {
@@ -192,6 +196,9 @@
   padding: 20px 0 0;
   width: 652px;
   max-width: 180px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .input_field {
@@ -259,6 +266,9 @@
   width: 652px;
   max-width: 180px;
   margin-top: 5%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .input_senha_field {
