@@ -57,41 +57,65 @@
             </section>
 
             <section class="inputs">
-                <div class="input">                      
-                    <p class = "texto-checklist">
-                        Os equipamentos e /ou utensílios estão limpos, organizados e em condições de uso?
-                    </p>
+                <div class="area-check">
+                    <div class="input">                      
+                        <p class = "texto-checklist">
+                            Os equipamentos e /ou utensílios estão limpos, organizados e em condições de uso?
+                        </p>
+                    </div>
+                    <i class="bi bi-check-circle" id="check"></i>
+                </div>               
+                <div class="area-check">
+                    <div class="input">                      
+                        <p class = "texto-checklist">
+                            Os equipamentos e /ou utensílios estão limpos, organizados e em condições de uso?
+                        </p>
+                    </div>
+                    <i class="bi bi-x-circle" id="not-check"></i>
                 </div>
-                <div class="input">
-                    <p class = "texto-checklist">
-                        Os equipamentos e /ou utensílios estão limpos, organizados e em condições de uso?
-                    </p>
+                <div class="area-check">
+                    <div class="input">                      
+                        <p class = "texto-checklist">
+                            Os equipamentos e /ou utensílios estão limpos, organizados e em condições de uso?
+                        </p>
+                    </div>
+                    <i class="bi bi-check-circle" id="check"></i>
                 </div>
-                <div class="input">
-                    <p class = "texto-checklist">
-                        Os equipamentos e /ou utensílios estão limpos, organizados e em condições de uso?
-                    </p>
+                <div class="area-check">
+                    <div class="input">                      
+                        <p class = "texto-checklist">
+                            Os equipamentos e /ou utensílios estão limpos, organizados e em condições de uso?
+                        </p>
+                    </div>
+                    <i class="bi bi-check-circle" id="check"></i>
                 </div>
-                <div class="input">
-                    <p class = "texto-checklist">
-                        Os equipamentos e /ou utensílios estão limpos, organizados e em condições de uso?
-                    </p>
+                <div class="area-check">
+                    <div class="input">                      
+                        <p class = "texto-checklist">
+                            Os equipamentos e /ou utensílios estão limpos, organizados e em condições de uso?
+                        </p>
+                    </div>
+                    <i class="bi bi-check-circle" id="check"></i>
                 </div>
-                <div class="input">
-                    <p class = "texto-checklist">
-                        Os equipamentos e /ou utensílios estão limpos, organizados e em condições de uso?
-                    </p>
+                <div class="area-check">
+                    <div class="input">                      
+                        <p class = "texto-checklist">
+                            Os equipamentos e /ou utensílios estão limpos, organizados e em condições de uso?
+                        </p>
+                    </div>
+                    <i class="bi bi-x-circle" id="not-check"></i>
                 </div>
-                <div class="input">
-                    <p class = "texto-checklist">
-                        Os equipamentos e /ou utensílios estão limpos, organizados e em condições de uso?
-                    </p>
+                <div class="area-check">
+                    <div class="input">                      
+                        <p class = "texto-checklist">
+                            Os equipamentos e /ou utensílios estão limpos, organizados e em condições de uso?
+                        </p>
+                    </div>
+                    <i class="bi bi-x-circle" id="not-check"></i>
                 </div>
             </section>
             
         </div>
-
-
 
     </section>
     <div class="alinar-botoes">
