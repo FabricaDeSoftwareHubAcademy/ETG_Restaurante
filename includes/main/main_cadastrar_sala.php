@@ -13,7 +13,7 @@
         <div class="container-cadastro-salas">
             <div class="wrap-cadastro-salas">
 
-                <form class="cadastro-sala-form" method="POST" enctype="multipart/form-data">
+                <form class="cadastro-sala-form" id="form_cad" method="POST" enctype="multipart/form-data">
 
                     
 
@@ -184,6 +184,8 @@
                         <div class="botao-padrao-cadastrar">
                             <a><input name="btn_submit" type="submit" class="botao-cadastrar-submit" id="botao-cadastrar-submit" value="CADASTRAR"></a>
 
+                            <button id="botao-cadastrar-submit2"> testeeee </button>
+
                         </div>
                             <!-- onclick="abrir_modal()" -->
 
@@ -205,7 +207,7 @@
 
                     <script>
 
-                        let button = document.getElementById("btn_sub") 
+                        let button = document.getElementById("botao-cadastrar-submit2") 
 
                         button.addEventListener('click', async (e) => {
                             // alert("dsadsa")
@@ -217,7 +219,7 @@
                             let formData = new FormData(form)
                             // console.log(formData)
 
-                            let dados_php = await fetch("./action.php",{method:"POST",
+                            let dados_php = await fetch("../../pages/actions/abrir_modal_cadastrar_sala.php",{method:"POST",
                                 body: formData
                             })
 
@@ -270,22 +272,22 @@
                         })
 
 
-                        function openPopupValidar() {
-                            let popup = document.getElementById('popup-up-notificacao');
-                            let btn = document.getElementById("submit-btn-notificacao");
+                        // function openPopupValidar() {
+                        //     let popup = document.getElementById('popup-up-notificacao');
+                        //     let btn = document.getElementById("submit-btn-notificacao");
 
-                            btn.style.display = "none";
-                            popup.classList.add("open-popup");
-                        }
+                        //     btn.style.display = "none";
+                        //     popup.classList.add("open-popup");
+                        // }
 
-                        function closePopupValidar() {
-                            let popup = document.getElementById("popup-up-notificacao");
-                            let btn = document.getElementById("submit-btn-notificacao");
+                        // function closePopupValidar() {
+                        //     let popup = document.getElementById("popup-up-notificacao");
+                        //     let btn = document.getElementById("submit-btn-notificacao");
 
-                            btn.style.display = "block";
+                        //     btn.style.display = "block";
 
-                            popup.classList.remove("open-popup");
-                        }
+                        //     popup.classList.remove("open-popup");
+                        // }
 
 
 
