@@ -13,7 +13,7 @@
 
 .input_senha_group.field{
   width: 100%;
-  max-width: 84%;
+  max-width: 84%;/*84%*/;
   min-width: 50%;
   margin-top: 2%;/*15px*/
   
@@ -190,8 +190,8 @@
 }
 
 .botao-confirmar-submit{
-  width: 180px;
-  height: 45px;
+  width: 44%; /* 44%*/
+  height: 172%; /*170%*/
   background-color: var(--cor-primaria-botao-white);
   border: 3px solid var(--cor-primaria-botao-green);
   border-radius: 20px;
@@ -220,8 +220,8 @@
 }
 
 .botao-voltar-submit{
-  width: 180px;
-  height: 40px;
+  width: 44%; /*180px 44%*/
+  height: 150%; /*40px  150%*/
   background-color: var(--cor-primaria-botao-white);
   border: 3px solid var(--cor-primaria-botao-yellow);
   border-radius: 20px;
