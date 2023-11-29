@@ -256,7 +256,7 @@ body{
 }
 
 
-@media screen and (max-width:500px ){
+@media screen and (max-width:550px ){
 
     #question_text{
         font-size: 12.5px;
@@ -269,15 +269,35 @@ body{
     }
 }
 
+@media screen and (max-width: 700px ){
+
+    .popup.open-popup {
+        width: 330px;
+    }
+
+    .botao-confirmar-submit {
+        width: 115px;
+    }   
+
+    .botao-cancelar-submit{
+        width: 115px;
+    }
+
+    .botoes{
+        justify-content: space-between;
+        gap: 25px;
+    }
+}
+
 .popup{
     flex-direction: column;
-    width: 40%;
+    width: 500px;
     background: #fff;
     border-radius: 6px;
     position: absolute;
     display: flex;
     align-items: center;
-    top: 50%;
+    top: 55%;
     left: 50%;
     transform: translate(-50%, -50%) scale(0.1);
     text-align: center;
@@ -291,7 +311,7 @@ body{
 
 .open-popup{
     visibility: visible;
-    top: 50%;
+    top: 55%;
     transform: translate(-50%, -50%) scale(1);
 }
 
