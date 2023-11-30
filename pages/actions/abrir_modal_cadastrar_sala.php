@@ -1,11 +1,8 @@
 <?php
-
+require __DIR__."./vendor/autoload.php";
 use App\Entity\Sala;
 use App\Entity\CadastroChecklist;
 use App\Entity\Imagens;
-
-
-
 $objCadastroChecklist = new CadastroChecklist();
 $dados = $objCadastroChecklist -> getDados();
 $options = '';
@@ -61,6 +58,7 @@ foreach ($dados as $row_check ){
     
   
 
-echo(json_encode($_POST));
+echo(json_encode(True));
+
 
 ?>

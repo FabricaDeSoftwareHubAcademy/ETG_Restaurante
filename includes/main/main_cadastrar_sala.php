@@ -184,9 +184,9 @@
    
                         
                         <div class="botao-padrao-cadastrar">
-                            <a><input name="btn_submit" type="submit" class="botao-cadastrar-submit" id="botao-cadastrar-submit" value="CADASTRAR"></a>
+                            <!-- <a><input name="btn_submit" type="submit" class="botao-cadastrar-submit" id="botao-cadastrar-submit" value="CADASTRAR"></a> -->
 
-                            <button id="botao-cadastrar-submit2"> testeeee </button>
+                            <button name="btn_submit" type="submit" class="botao-cadastrar-submit" id="botao-cadastrar-submit" value="CADASTRAR"> CADASTRAR </button>
 
                         </div>
                             <!-- onclick="abrir_modal()" -->
@@ -209,7 +209,7 @@
 
                     <script>
 
-                        let button = document.getElementById("botao-cadastrar-submit2") 
+                        let button = document.getElementById("botao-cadastrar-submit") 
 
                         button.addEventListener('click', async (e) => {
                             // alert("dsadsa")
@@ -235,7 +235,9 @@
                                 //     title: "deu bom"
                                 // });
 
-                                console.log(" Nome sala maior q zero");
+                                console.log("Nome sala maior q zero");
+
+                                nome_sala = true ;
 
 
                             }else{
@@ -276,7 +278,9 @@
                                 //     icon: "success",
                                 //     title: "deu bom"
                                 // });
-                                console.log("codigo sala maior q zero");        
+                                console.log("codigo sala maior q zero");    
+                                
+                                codigo_sala = true;
 
                             }else{
 
@@ -298,15 +302,11 @@
 
                             }
 
+                            let checklist = document.getElementById('checklist')
 
+                            console.log(checklist.value);
 
-
-
-
-                            let checklist = document.getElementsByClassName('checklist')
-
-                            console.log(checklist);
-                            if(checklist.value.length > 0){
+                            if(checklist.value > 0){
 
                                 // const Toast = Swal.mixin({
                                 // toast: true,
@@ -326,6 +326,9 @@
                                 
                                 console.log("checklist maior q zero");
 
+                                checklist = true ;
+
+
                             }else{
 
                                 const Toast = Swal.mixin({
@@ -341,83 +344,43 @@
                                 });
                                 Toast.fire({
                                     icon: "error",
-                                    title: "Codigo não pode estar vazio !"
+                                    title: "Selecione Um checklist !"
                                 });
                                 console.log("checklist vazio");    
                             }
 
+                            console.log(nome_sala,codigo_sala,checklist)
+                                
+                            if(nome_sala == true && codigo_sala == true && checklist == true){
 
+                                let form = document.getElementById('form_cad')
+                                console.log(form)
 
+                                let formData = new FormData(form)
+                                // console.log(formData)
 
+                                let dados_php = await fetch("../pages/actions/abrir_modal_cadastrar_sala.php",{method:"POST",
+                                    body: formData
+                                })
+                                
+                                alert("Ta chegando até aqui !")
+                                let response = await dados_php.json()
 
-
-
-
-
-
-
-
-
-
-
-                            let form = document.getElementById('form_cad')
-                            console.log(form)
-
-                            let formData = new FormData(form)
-                            // console.log(formData)
-
-                            let dados_php = await fetch("../pages/actions/abrir_modal_cadastrar_sala.php",{method:"POST",
-                                body: formData
-                            })
-
-                            let response = await dados_php.json()
-
-                            console.log(response)
-
-                            // if(response){
-                            //     const Toast = Swal.mixin({
-                            //     toast: true,
-                            //     position: "top-end",
-                            //     showConfirmButton: false,
-                            //     timer: 3000,
-                            //     timerProgressBar: true,
-                            //     didOpen: (toast) => {
-                            //     toast.onmouseenter = Swal.stopTimer;
-                            //     toast.onmouseleave = Swal.resumeTimer;
-                            //     }
-                            // });
-                            // Toast.fire({
-                            //     icon: "success",
-                            //     title: "deu bom"
-                            // });
-                                // Swal.fire({
-                                //     position: "top-end",
-                                //     icon: "success",
-                                //     title: "Your work has been saved",
-                                //     showConfirmButton: false,
-                                //     timer: 1500
-                                // });
-
-                            // }else{const Toast = Swal.mixin({
-                            //     toast: true,
-                            //     position: "top-end",
-                            //     showConfirmButton: false,
-                            //     timer: 3000,
-                            //     timerProgressBar: true,
-                            //     didOpen: (toast) => {
-                            //     toast.onmouseenter = Swal.stopTimer;
-                            //     toast.onmouseleave = Swal.resumeTimer;
-                            //     }
-                            // });
-                            // Toast.fire({
-                            //     icon: "error",
-                            //     title: "deu bom"
-                            // });
-
-                            // }
                             
-                        })
+                                console.log(response)
 
+                                if(response){
+                                    console.log("1")
+                                }else{
+                                    console.log("2")
+                                }
+
+                            }else{
+                                console.log("deu merda piá");
+                            }  
+                        }
+                        )
+                    
 
                         // function openPopupValidar() {
                         //     let popup = document.getElementById('popup-up-notificacao');
