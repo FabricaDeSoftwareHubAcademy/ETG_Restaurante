@@ -88,12 +88,13 @@ async function getDados()
 const btn_submit = document.getElementById('btn_submit');
 btn_submit.addEventListener('click', async (e ) => {
    e.preventDefault();
-
+    var continuar_rodando;
     for (var chave in respondidas)
     {
         if (respondidas[chave] == null)
         {
-            const Toast = Swal.mixin({
+                continuar_rodando = false 
+                const Toast = Swal.mixin({
                 toast: true,
                 position: "top-end",
                 showConfirmButton: false,
@@ -109,29 +110,31 @@ btn_submit.addEventListener('click', async (e ) => {
                 title: "Preencha todas as perguntas"
             });
             break;
+
         }
     }
-    //pegando os dados para pasar pelo metodo GET
-    // Obtém a string da URL atual
-    var queryString = window.location.search;
+    if (continuar_rodando)
+    {
+        //pegando os dados para pasar pelo metodo GET
+        // Obtém a string da URL atual
+        var queryString = window.location.search;
+    
+        // Cria um objeto URLSearchParams com a string da URL
+        var params = new URLSearchParams(queryString);
+    
+        // Obtém o valor de um parâmetro específico
+        var parametro = params.get('id_sala');
+    
+       JSON.stringify(somadados);
+       let data_php = await fetch('./actions/cat_data_pergunta.php?id_sala='+parametro, {
+           method: 'POST',
+           body: JSON.stringify(somadados)
+           
+       });
+    
+       let response = await data_php.json();
+       console.log(response);
+    }
 
-    // Cria um objeto URLSearchParams com a string da URL
-    var params = new URLSearchParams(queryString);
-
-    // Obtém o valor de um parâmetro específico
-    var parametro = params.get('id_sala');
-
-   JSON.stringify(somadados);
-   let data_php = await fetch('./actions/cat_data_pergunta.php?id_sala='+parametro, {
-       method: 'POST',
-       body: JSON.stringify(somadados)
-       
-   });
-
-   let response = await data_php.json();
-   console.log(response);
-   
-
-   
 
 });
