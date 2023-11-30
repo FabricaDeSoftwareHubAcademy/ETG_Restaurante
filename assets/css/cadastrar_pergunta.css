@@ -1,3 +1,5 @@
+/* GERAL */
+
 *{
     padding: 0;
     margin: 0;
@@ -15,6 +17,7 @@
 }
 
 body{
+    height: 100vh;
     width: 100%;
     background-color: rgb(255, 255, 255);
     display: flex;
@@ -26,6 +29,17 @@ body{
     margin: auto;
 }
 
+@media screen and (max-width:550px ){
+
+    body{
+        height: 94vh;
+    }
+    
+}
+
+
+/* MEIO DA TELA */
+
 .meio{  
     width: 100%;
     height: 79vh; 
@@ -34,6 +48,8 @@ body{
     align-items: center;
     flex-direction: column;
 }
+
+/* TÍTULO (Cadastro De Perguntas) */
 
 #titulo{
     display: flex;
@@ -46,6 +62,8 @@ body{
     letter-spacing: 0.2px;
 }
 
+/* PARTE FUNCIONAL (pesquisa, cards e botão) */
+
 .aunt{
     width: 100%;
     height: 100vh;
@@ -55,28 +73,32 @@ body{
     flex-direction: column;
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* PESQUISA */
+
 .pesquisa{
     display: block;
     width: 85%;
     height: 9vh;
     background-color: rgb(255, 255, 255);
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 .input_group.field{
     width: 100%;
@@ -107,18 +129,18 @@ body{
     line-height: 140%; /* 25.2px */
     letter-spacing: 0.2px;
 }
-   
+  
 .input_field::placeholder {
     color: transparent;
 }
-  
+
 .input_field:placeholder-shown ~ .input_label {
     font-size: 17px;
     cursor: text;
     top: 30px;
     left: 0.5vh;
 }
-  
+
 .input_label {
     position: absolute;
     top: 0;
@@ -128,7 +150,7 @@ body{
     pointer-events: none;
     font-family: 'Montserrat';
 }
-  
+
 .input_field:focus ~ .input_label {
     position: absolute;
     top: 0;
@@ -159,10 +181,7 @@ body{
 
 
 
-
-
-
-
+/* CARDS DAS PERGUNTAS */
 
 .perguntas{
     width: 85%;    
@@ -191,7 +210,7 @@ body{
     align-items: center;
     background-color: #F9F8F8;    ;
     width: 99%;
-    height: 10vh;
+    min-height: 10vh;
     border-radius: 18px;
     margin-bottom: 2vh;
     box-shadow: 1px 4px 4px 1px rgba(0, 0, 0, 0.25);
@@ -226,6 +245,50 @@ body{
     cursor: pointer;
 }
 
+/* RESPONSIVIDADE DAS PERGUNTAS  */
+
+@media screen and (max-width:550px ){
+
+    #question_text{
+        font-size: 12px;
+        font-weight: bold;
+        padding: 3%;
+    }
+    
+    .question1{
+        padding-right: 25px;
+    }
+}
+
+button.editar{
+    border: none;
+    background-color: #F9F8F8;
+}
+
+button.excluir{
+    border: none;
+    background-color: #F9F8F8;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* BOTÃO CADASTRAR */
+
 .botao-padrao-cadastrar{
     width: 100%;
     height: 100vh;
@@ -256,23 +319,69 @@ body{
 }
 
 
-@media screen and (max-width:550px ){
 
-    #question_text{
-        font-size: 12.5px;
-        font-weight: bold;
-        padding: 3%;
-    }
-    
-    .question1{
-        padding-right: 25px;
-    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* POPUP DE CADASTRAR PERGUNTAS */
+
+.popup_cadastrar{
+    flex-direction: column;
+    width: 500px;
+    background: #fff;
+    border-radius: 10px;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.1);
+    text-align: center;
+    padding: 0 30px 30px;
+    color: #333;
+    gap: 1vh;
+    box-shadow: 1px 4px 4px 1px rgba(0, 0, 0, 0.25);;
+    visibility: hidden;
+    transition: transform 0.4s, top 0.4s;
 }
+
+.open-popup1{
+    visibility: visible;
+    top: 55%;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+/* TÍTULOS DO POPUP DE CADASTRAR PERGUNTAS */
+
+h4{
+    width: 100%;
+    display: flex;
+    margin-top: 2%;
+}
+
+/* RESPONSIVIDADE DO POPUP DE CADASTRAR PERGUNTAS */
 
 @media screen and (max-width: 700px ){
 
-    .popup.open-popup {
+    .popup_cadastrar.open-popup1{
         width: 330px;
+        top: 60%;
     }
 
     .botao-confirmar-submit {
@@ -289,30 +398,50 @@ body{
     }
 }
 
-.popup{
-    flex-direction: column;
-    width: 500px;
-    background: #fff;
-    border-radius: 6px;
-    position: absolute;
-    display: flex;
-    align-items: center;
-    top: 55%;
-    left: 50%;
-    transform: translate(-50%, -50%) scale(0.1);
-    text-align: center;
-    padding: 0 30px 30px;
-    color: #333;
-    gap: 1vh;
-    box-shadow: 1px 4px 4px 1px rgba(0, 0, 0, 0.25);;
-    visibility: hidden;
-    transition: transform 0.4s, top 0.4s;
+/* CAIXA DE TEXTO */
+
+textarea{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    padding: 10px;
+    resize: none;
+    outline: none;
+    background-color: #f9f8f8;
 }
 
-.open-popup{
-    visibility: visible;
-    top: 55%;
-    transform: translate(-50%, -50%) scale(1);
+.nova_pergunta{
+    width: 100%;
+    height: 31.2vh;
+    border-radius: 20px 20px 20px 20px;
+}
+
+/* DIV DAS CHECKBOX'S DO POPUP DE CADASTRAR PERGUNTAS*/
+
+.checks{
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+}
+
+#check1{
+    cursor: pointer;
+}
+
+#check2{
+    cursor: pointer;
+}
+
+
+/* BOTÕES DO POPUP DE CADASTRAR PERGUNTAS (cancelar e confirmar) */
+
+.botoes{
+    padding: 1%;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-evenly;
+    margin-top: 2%;
 }
 
 .botao-padrao-cancelar{
@@ -374,6 +503,115 @@ body{
     color: var(--cor-primaria-botao-white);
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* POP UP DE EDIÇÃO DE PERGUNTAS */
+
+.popup_editar{
+    flex-direction: column;
+    width: 500px;
+    background: #fff;
+    border-radius: 6px;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.1);
+    text-align: center;
+    padding: 0 30px 30px;
+    color: #333;
+    gap: 1vh;
+    box-shadow: 1px 4px 4px 1px rgba(0, 0, 0, 0.25);;
+    visibility: hidden;
+    transition: transform 0.4s, top 0.4s;
+}
+
+.open-popup2{
+    visibility: visible;
+    top: 55%;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+/* TÍTULOS DO POPUP DE EDIÇÃO DE PERGUNTAS */
+
+h4{
+    width: 100%;
+    display: flex;
+    margin-top: 2%;
+}
+
+/* RESPONSIVIDADE DO POPUP DE EDIÇÃO DE PERGUNTAS */
+
+@media screen and (max-width: 700px ){
+
+    .popup_editar.open-popup2{
+        width: 330px;
+        top: 60%;
+
+    }
+
+    .botao-confirmar-submit {
+        width: 115px;
+    }   
+
+    .botao-cancelar-submit{
+        width: 115px;
+    }
+
+    .botoes{
+        justify-content: space-between;
+        gap: 25px;
+    }
+}
+
+/* CAIXA DE TEXTO */
+
 textarea{
     font-family: 'Montserrat', sans-serif;
     font-size: 1rem;
@@ -387,8 +625,27 @@ textarea{
 .nova_pergunta{
     width: 100%;
     height: 31.2vh;
-    border-radius: 20px 20px 20px 20px;
+    border-radius: 5px 5px 5px 5px;
 }
+
+/* DIV DAS CHECKBOX'S DO POPUP DE EDIÇÃO DE PERGUNTAS */
+
+.checks{
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+}
+
+#check1{
+    cursor: pointer;
+}
+
+#check2{
+    cursor: pointer;
+}
+
+
+/* BOTÕES DO POPUP DE EDIÇÃO DE PERGUNTAS (cancelar e confirmar) */
 
 .botoes{
     padding: 1%;
@@ -399,14 +656,182 @@ textarea{
     margin-top: 2%;
 }
 
-h4{
+.botao-padrao-cancelar{
     width: 100%;
+    height: 100vh;
     display: flex;
-    margin-top: 2%;
+    align-items: center;
+    justify-content: center;
 }
 
-.checks{
-    display: flex;
+.botao-cancelar-submit{
+    width: 180px;
+    height: 45px;
+    background-color: var(--cor-primaria-botao-white);
+    border: 3px solid var(--cor-primaria-botao-red);
+    border-radius: 20px;
+    cursor: pointer;
+    color: var(--cor-primaria-botao-red);
+    font-style: normal;
+    font-size: 'Montserrat';
+    font-weight: 580;
+    font-size: 15px;
+    text-align: center;
+}
+
+.botao-cancelar-submit:hover{
+    transition: all 0.4s;
+    background-color: var(--cor-primaria-botao-red);
+    color: var(--cor-primaria-botao-white);
+}
+
+.botao-padrao-confirmar{
     width: 100%;
-    justify-content: space-around;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.botao-confirmar-submit{
+    width: 180px;
+    height: 45px;
+    background-color: var(--cor-primaria-botao-white);
+    border: 3px solid var(--cor-primaria-botao-green);
+    border-radius: 20px;
+    cursor: pointer;
+    color: var(--cor-primaria-botao-green);
+    font-style: normal;
+    font-size: 'Montserrat';
+    font-weight: 580;
+    font-size: 15px;
+    text-align: center;
+}
+
+.botao-confirmar-submit:hover{
+    transition: all 0.4s;
+    background-color: var(--cor-primaria-botao-green);
+    color: var(--cor-primaria-botao-white);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* POPUP DE CONFIRMAÇÃO DE EXCLUSÃO */
+
+
+.popup_conf_exclusao{
+    
+    flex-direction: column;
+    width: 325px;
+    background: #fff;
+    border-radius: 6px;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.1);
+    text-align: center;
+    padding: 0 30px 30px;
+    color: #333;
+    gap: 1vh;
+    box-shadow: 1px 4px 4px 1px rgba(0, 0, 0, 0.25);;
+    visibility: hidden;
+    transition: transform 0.4s, top 0.4s;
+}
+
+
+/* Css Botão Sim */
+
+button.botao-padrao-sim{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+button.botao-sim-submit{
+
+    width: 100px;
+    height: 45px;
+    background-color: var(--cor-primaria-botao-green);
+    border: 3px solid var(--cor-primaria-botao-white);
+    border-radius: 20px;
+    cursor: pointer;
+    color: var(--cor-primaria-botao-white);
+    font-style: normal;
+    font-size: 'Montserrat';
+    font-weight: 580;
+    font-size: 15px;
+}
+
+/* Css Botão Não */
+
+button.botao-padrao-nao{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+button.botao-nao-submit{
+
+    width: 100px;
+    height: 45px;
+    background-color: var(--cor-primaria-botao-red);
+    border: 3px solid var(--cor-primaria-botao-white);
+    border-radius: 20px;
+    cursor: pointer;
+    color: var(--cor-primaria-botao-white);
+    font-style: normal;
+    font-size: 'Montserrat';
+    font-weight: 580;
+    font-size: 15px;
+}
+
+
+h9{
+    margin-top: 10%;
+}
+
+
+.open-popup3{
+    visibility: visible;
+    top: 55%;
+    transform: translate(-50%, -50%) scale(1);
 }
