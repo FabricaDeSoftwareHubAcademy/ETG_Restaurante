@@ -46,7 +46,7 @@
 
 
                             <div class="input_group field ">
-                                <input type="input" class="input_field toguro" placeholder="Name" required="" name="codigo_sala" maxLength="8">
+                                <input type="input" class="input_field toguro" placeholder="Name" required="" id="codigo_sala" name="codigo_sala" maxLength="8">
                                 <label for="name" class="input_label toguro" > Código </label> <!--Alterar para o nome do input-->
                             </div>
 
@@ -59,7 +59,7 @@
                     
                     <div class="dropdown-ck">
 
-                        <select name="checklist" class="option">
+                        <select name="checklist" class="option" id="ch">
 
                             <option>Selecione O Checklist </option>
 
@@ -219,21 +219,23 @@
                             let nome_sala = document.getElementById('nome_sala')
                             if(nome_sala.value.length > 0){
 
-                                const Toast = Swal.mixin({
-                                toast: true,
-                                position: "top-end",
-                                showConfirmButton: false,
-                                timer: 3000,
-                                timerProgressBar: true,
-                                didOpen: (toast) => {
-                                toast.onmouseenter = Swal.stopTimer;
-                                toast.onmouseleave = Swal.resumeTimer;
-                                }
-                                });
-                                Toast.fire({
-                                    icon: "success",
-                                    title: "deu bom"
-                                });
+                                // const Toast = Swal.mixin({
+                                // toast: true,
+                                // position: "top-end",
+                                // showConfirmButton: false,
+                                // timer: 3000,
+                                // timerProgressBar: true,
+                                // didOpen: (toast) => {
+                                // toast.onmouseenter = Swal.stopTimer;
+                                // toast.onmouseleave = Swal.resumeTimer;
+                                // }
+                                // });
+                                // Toast.fire({
+                                //     icon: "success",
+                                //     title: "deu bom"
+                                // });
+
+                                console.log(" Nome sala maior q zero");
 
 
                             }else{
@@ -251,10 +253,111 @@
                                 });
                                 Toast.fire({
                                     icon: "error",
-                                    title: "deu ruim!"
+                                    title: "Nome da sala não pode estar vazio !"
                                 });
 
                             }
+
+                            let codigo_sala = document.getElementById('codigo_sala')
+                            if(codigo_sala.value.length > 0){
+
+                                // const Toast = Swal.mixin({
+                                // toast: true,
+                                // position: "top-end",
+                                // showConfirmButton: false,
+                                // timer: 3000,
+                                // timerProgressBar: true,
+                                // didOpen: (toast) => {
+                                // toast.onmouseenter = Swal.stopTimer;
+                                // toast.onmouseleave = Swal.resumeTimer;
+                                // }
+                                // });
+                                // Toast.fire({
+                                //     icon: "success",
+                                //     title: "deu bom"
+                                // });
+                                console.log("codigo sala maior q zero");        
+
+                            }else{
+
+                                const Toast = Swal.mixin({
+                                toast: true,
+                                position: "top-end",
+                                showConfirmButton: false,
+                                timer: 3000,
+                                timerProgressBar: true,
+                                didOpen: (toast) => {
+                                toast.onmouseenter = Swal.stopTimer;
+                                toast.onmouseleave = Swal.resumeTimer;
+                                }
+                                });
+                                Toast.fire({
+                                    icon: "error",
+                                    title: "Codigo não pode estar vazio !"
+                                });
+
+                            }
+
+
+
+
+
+
+                            let checklist = document.getElementsByClassName('option')
+
+                            console.log(checklist);
+                            if(checklist.value.length > 0){
+
+                                // const Toast = Swal.mixin({
+                                // toast: true,
+                                // position: "top-end",
+                                // showConfirmButton: false,
+                                // timer: 3000,
+                                // timerProgressBar: true,
+                                // didOpen: (toast) => {
+                                // toast.onmouseenter = Swal.stopTimer;
+                                // toast.onmouseleave = Swal.resumeTimer;
+                                // }
+                                // });
+                                // Toast.fire({
+                                //     icon: "success",
+                                //     title: "deu bom"
+                                // });
+                                
+                                console.log("checklist maior q zero");
+
+                            }else{
+
+                                const Toast = Swal.mixin({
+                                toast: true,
+                                position: "top-end",
+                                showConfirmButton: false,
+                                timer: 3000,
+                                timerProgressBar: true,
+                                didOpen: (toast) => {
+                                toast.onmouseenter = Swal.stopTimer;
+                                toast.onmouseleave = Swal.resumeTimer;
+                                }
+                                });
+                                Toast.fire({
+                                    icon: "error",
+                                    title: "Codigo não pode estar vazio !"
+                                });
+
+                            }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
                             let form = document.getElementById('form_cad')
