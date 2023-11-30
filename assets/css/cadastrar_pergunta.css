@@ -370,7 +370,7 @@ h4{
 
 @media screen and (max-width: 700px ){
 
-    .popup.open-popup {
+    .popup_cadastrar.open-popup1{
         width: 330px;
     }
 
@@ -568,7 +568,7 @@ textarea{
     transform: translate(-50%, -50%) scale(1);
 }
 
-/* TÍTULOS DO POPUP DE CADASTRAR PERGUNTAS */
+/* TÍTULOS DO POPUP DE EDIÇÃO DE PERGUNTAS */
 
 h4{
     width: 100%;
@@ -576,11 +576,11 @@ h4{
     margin-top: 2%;
 }
 
-/* RESPONSIVIDADE DO POPUP DE CADASTRAR PERGUNTAS */
+/* RESPONSIVIDADE DO POPUP DE EDIÇÃO DE PERGUNTAS */
 
 @media screen and (max-width: 700px ){
 
-    .popup.open-popup {
+    .popup_editar.open-popup2{
         width: 330px;
     }
 
@@ -616,7 +616,7 @@ textarea{
     border-radius: 5px 5px 5px 5px;
 }
 
-/* DIV DAS CHECKBOX'S DO POPUP DE CADASTRAR PERGUNTAS*/
+/* DIV DAS CHECKBOX'S DO POPUP DE EDIÇÃO DE PERGUNTAS */
 
 .checks{
     display: flex;
@@ -633,7 +633,7 @@ textarea{
 }
 
 
-/* BOTÕES DO POPUP DE CADASTRAR PERGUNTAS (cancelar e confirmar) */
+/* BOTÕES DO POPUP DE EDIÇÃO DE PERGUNTAS (cancelar e confirmar) */
 
 .botoes{
     padding: 1%;
