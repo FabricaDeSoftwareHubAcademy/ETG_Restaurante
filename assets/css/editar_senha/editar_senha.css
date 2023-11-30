@@ -6,7 +6,6 @@
 
 
 .pai-de-todos1{
-
   max-width: 832px;
   margin: 0 auto;
   position: relative;
@@ -41,11 +40,41 @@ margin-top: 4%;
 }
 
 .centralizar_botoes_alterar_senha{
+    /* display: flex;
+    justify-content: space-between;
+    text-align: center;
+    margin-top: 20%; */
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    padding: 10px; 
+    background-color: #fff; 
+  
+
+}
+
+.centralizar_botoes_alterar_senha {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 832px;
   display: flex;
   justify-content: space-between;
   text-align: center;
-  margin-top: 20%;
+  padding: 10px;
+  background-color: #fff; /* Optional: add a background color for better visibility */
 }
+
+
+
+
+
 
 /* @media (max-width: 832px) {
 .centralizar_botoes_alterar_senha{
@@ -56,3 +85,5 @@ margin-top: 4%;
   margin-top: 5%;
 }
 } */
+
+
