@@ -17,6 +17,7 @@
 }
 
 body{
+    height: 95vh;
     width: 100%;
     background-color: rgb(255, 255, 255);
     display: flex;
