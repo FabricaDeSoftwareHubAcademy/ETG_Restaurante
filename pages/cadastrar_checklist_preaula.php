@@ -1,5 +1,4 @@
-<?php 
-session_start();    
+<?php  
 require __DIR__."/../vendor/autoload.php";
 $titulo_page = 'Cadastrar Checklist Pre Aula';
 require("../includes/header/header.php");
@@ -19,7 +18,7 @@ $id_sala = $_GET["id_sala"]; //do metodo GET
 $id_usuario = isset($_SESSION['id_user']) ? $_SESSION['id_user'] : ""; //do metodo GET
 $data_fechamento = "1970-01-01 00:00:01";
 
-$dados_pergunta = $obj_pergunta::getDados($id_sala); 
+$dados_pergunta = $obj_pergunta::getDados($id_sala);  
 $dados_sala = $obj_sala::getDadosById($id_sala);
 // var_dump($dados_pergunta);exit;
 if ($dados_pergunta)
@@ -38,8 +37,8 @@ if ($dados_pergunta)
                         <i id="red'.$linha['id_pergunta'].'" class="bi bi-x"></i>
                     </div>
     
-                    <div class="checkmark" onclick="atualizarValor('.$linha['id'].',true)">
-                        <i id="green'.$linha['id'].'" class="bi bi-check"></i>
+                    <div class="checkmark" onclick="atualizarValor('.$linha['id_pergunta'].',true)">
+                        <i id="green'.$linha['id_pergunta'].'" class="bi bi-check"></i>
                     </div>
                 </div>
             </div>';
