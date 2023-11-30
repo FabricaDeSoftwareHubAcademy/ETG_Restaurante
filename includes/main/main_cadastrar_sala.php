@@ -4,6 +4,8 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="../assets/css/cadastrar_editar_sala.css"> 
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 
 <body class="tela-cadastro-salas">
        
@@ -30,7 +32,7 @@
 
 
                             <div class="input_group field" id="input_coisa_nome">
-                                <input type="input" class="input_field toguroo" placeholder="Name" required="" name="nome_sala" maxLength="32">
+                                <input type="input" class="input_field toguroo" id='nome_sala' placeholder="Name" required="" name="nome_sala" maxLength="32">
                                 <label for="name" class="input_label">Nome Da Sala </label> <!--Alterar para o nome do input-->
                             </div>
 
@@ -213,21 +215,10 @@
                             // alert("dsadsa")
                             e.preventDefault()
 
-                            let form = document.getElementById('form_cad')
-                            console.log(form)
 
-                            let formData = new FormData(form)
-                            // console.log(formData)
+                            let nome_sala = document.getElementById('nome_sala')
+                            if(nome_sala.value.length > 0){
 
-                            let dados_php = await fetch("../../pages/actions/abrir_modal_cadastrar_sala.php",{method:"POST",
-                                body: formData
-                            })
-
-                            let response = await dados_php.json()
-
-                            console.log(response)
-
-                            if(response){
                                 const Toast = Swal.mixin({
                                 toast: true,
                                 position: "top-end",
@@ -238,20 +229,16 @@
                                 toast.onmouseenter = Swal.stopTimer;
                                 toast.onmouseleave = Swal.resumeTimer;
                                 }
-                            });
-                            Toast.fire({
-                                icon: "success",
-                                title: "deu bom"
-                            });
-                                // Swal.fire({
-                                //     position: "top-end",
-                                //     icon: "success",
-                                //     title: "Your work has been saved",
-                                //     showConfirmButton: false,
-                                //     timer: 1500
-                                // });
+                                });
+                                Toast.fire({
+                                    icon: "success",
+                                    title: "deu bom"
+                                });
 
-                            }else{const Toast = Swal.mixin({
+
+                            }else{
+
+                                const Toast = Swal.mixin({
                                 toast: true,
                                 position: "top-end",
                                 showConfirmButton: false,
@@ -261,13 +248,70 @@
                                 toast.onmouseenter = Swal.stopTimer;
                                 toast.onmouseleave = Swal.resumeTimer;
                                 }
-                            });
-                            Toast.fire({
-                                icon: "error",
-                                title: "deu bom"
-                            });
+                                });
+                                Toast.fire({
+                                    icon: "error",
+                                    title: "deu ruim!"
+                                });
 
                             }
+
+
+                            let form = document.getElementById('form_cad')
+                            console.log(form)
+
+                            let formData = new FormData(form)
+                            // console.log(formData)
+
+                            let dados_php = await fetch("../pages/actions/abrir_modal_cadastrar_sala.php",{method:"POST",
+                                body: formData
+                            })
+
+                            let response = await dados_php.json()
+
+                            console.log(response)
+
+                            // if(response){
+                            //     const Toast = Swal.mixin({
+                            //     toast: true,
+                            //     position: "top-end",
+                            //     showConfirmButton: false,
+                            //     timer: 3000,
+                            //     timerProgressBar: true,
+                            //     didOpen: (toast) => {
+                            //     toast.onmouseenter = Swal.stopTimer;
+                            //     toast.onmouseleave = Swal.resumeTimer;
+                            //     }
+                            // });
+                            // Toast.fire({
+                            //     icon: "success",
+                            //     title: "deu bom"
+                            // });
+                                // Swal.fire({
+                                //     position: "top-end",
+                                //     icon: "success",
+                                //     title: "Your work has been saved",
+                                //     showConfirmButton: false,
+                                //     timer: 1500
+                                // });
+
+                            // }else{const Toast = Swal.mixin({
+                            //     toast: true,
+                            //     position: "top-end",
+                            //     showConfirmButton: false,
+                            //     timer: 3000,
+                            //     timerProgressBar: true,
+                            //     didOpen: (toast) => {
+                            //     toast.onmouseenter = Swal.stopTimer;
+                            //     toast.onmouseleave = Swal.resumeTimer;
+                            //     }
+                            // });
+                            // Toast.fire({
+                            //     icon: "error",
+                            //     title: "deu bom"
+                            // });
+
+                            // }
                             
                         })
 
