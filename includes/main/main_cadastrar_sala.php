@@ -365,12 +365,30 @@
                                 
                                 alert("Ta chegando até aqui !")
                                 let response = await dados_php.json()
+                                
+                                console.log(response);
 
                             
                                 console.log(response)
 
                                 if(response){
-                                    console.log("1")
+                                    Swal.fire({
+                                    title: "Custom animation with Animate.css",
+                                    showClass: {
+                                        popup: `
+                                        animate__animated
+                                        animate__fadeInUp
+                                        animate__faster
+                                        `
+                                    },
+                                    hideClass: {
+                                        popup: `
+                                        animate__animated
+                                        animate__fadeOutDown
+                                        animate__faster
+                                        `
+                                    }
+                                    });
                                 }else{
                                     console.log("2")
                                 }

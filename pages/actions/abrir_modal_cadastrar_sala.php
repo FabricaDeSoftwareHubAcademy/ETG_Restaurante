@@ -1,5 +1,5 @@
 <?php
-require __DIR__."./vendor/autoload.php";
+require __DIR__."/../../vendor/autoload.php";
 use App\Entity\Sala;
 use App\Entity\CadastroChecklist;
 use App\Entity\Imagens;
