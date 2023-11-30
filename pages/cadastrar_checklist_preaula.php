@@ -13,8 +13,6 @@ $obj_pergunta = new Pergunta();
 $dados_imprimir = "";
 $obj_sala = new Sala();
 
-
-
 //REGRAS DE NEGOCIO ABAIXO
 $id_sala = $_GET["id_sala"]; //do metodo GET	
 $id_usuario = isset($_SESSION['id_user']) ? $_SESSION['id_user'] : ""; //do metodo GET
@@ -35,7 +33,7 @@ if ($dados_pergunta)
                 <label class="label_checklist" for="data">'.$linha["pergunta"].'</label>
     
                 <div class="row">
-                    <div class="checkmark" onclick="atualizarValor('.$linha['id_pergunta'].',false)">
+                    <div class="checkmark" id="btn_x'.$linha['id_pergunta'].'" onclick="atualizarValor('.$linha['id_pergunta'].',false)">
                         <i id="red'.$linha['id_pergunta'].'" class="bi bi-x"></i>
                     </div>
     
@@ -56,29 +54,25 @@ $dados_imprimir .= '
 
 // $dados = json_decode(file_get_contents('php://input'), true);
 
-
-// if (isset($_POST["btn_submit_modal"]))
-// {
-//     //id_realiza
-//    //id_prof
-//     //id_perg
-//     //descricao_NC
-//     //img1
-//     //img2
-//     //img3 
-//     var_dump($_POST);exit;
-
-//     $dados = ['teste' => $_POST['descricao_nao_conf'],
-//             'teste2' => $id_usuario,
-//             'teste2' => $_POST['valor_booleano'],
-//             'descricao_NC' => $_POST['descricao_nao_conf']];
-
-//     $somadados = [];
-//     NaoConformidade::cadastrar(dados: $dados);
-
-// }
+echo('<script>
+var respondidas = {}
+    </script>');
 
 //FIM DAS REGRAS DE NEGOCIO
 require("../includes/main/main_cadastrar_checklist_preaula.php");
+
+foreach ($dados_pergunta as $linha)
+{
+    if ($linha["tipo"] == "PRE")
+    {
+        echo('<script>
+        respondidas['.$linha['id_pergunta'].'] = null
+        </script>');
+    }
+}
 require("../includes/footer/footer.php");
+
+
+
+
 ?>

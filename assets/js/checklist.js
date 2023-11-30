@@ -1,26 +1,32 @@
 // let awser = "";
 // const red = document.getElementById('red')
-
+var ids = document.getElementById('')
 var id_atual = 0; 
 var dados = Array();
 var somadados = Array();
 function atualizarValor(id, bool)
 {
 id_atual = id;
-    if(bool){
-
+    if(bool)
+    {
         let  green = document.getElementById('green'+id)
         let  red = document.getElementById('red'+id)
         green.classList = 'bi bi-check-circle'
         red.classList = 'bi bi-x'
-
-    }else{
+        
+        respondidas[id] = true
+    }
+    else
+    {
 
         let  green = document.getElementById('green'+id)
         let  red = document.getElementById('red'+id)
         green.classList = 'bi bi-check'
         red.classList = 'bi bi-x-circle'
+        respondidas[id] = false
         acao(id)
+
+
     }
 
 
@@ -28,35 +34,83 @@ id_atual = id;
 async function getDados()
 { 
     let descricao_nao_conf = document.getElementById('descricao_nao_conf');
-    dados = {
-        'id_pergu': id_atual,
-        'descricao_NC': descricao_nao_conf.value,
-        'img1': (typeof listasrc[0] === 'undefined') ? null : listasrc[0],
-        'img2': (typeof listasrc[1] === 'undefined') ? null : listasrc[1],
-        'img3': (typeof listasrc[2] === 'undefined') ? null : listasrc[2]
-    };
-
-    somadados.push(dados); 
-    descricao_nao_conf.value = "";
-    
-    removerimgs()
-    let modal = document.querySelector('.mom')
-    modal.classList.remove('active');
-    for (var chave in disponiveis)
+    if (descricao_nao_conf.value != '' && (typeof listasrc[0] != 'undefined') && (typeof listasrc[1] != 'undefined') && (typeof listasrc[2] != 'undefined'))
     {
-        disponiveis[chave] = false
+        dados = {
+            'id_pergu': id_atual,
+            'descricao_NC': descricao_nao_conf.value,
+            'img1': (typeof listasrc[0] === 'undefined') ? null : listasrc[0],
+            'img2': (typeof listasrc[1] === 'undefined') ? null : listasrc[1],
+            'img3': (typeof listasrc[2] === 'undefined') ? null : listasrc[2]
+        };
+    
+        
+    
+        somadados.push(dados); 
+        descricao_nao_conf.value = "";
+        
+        removerimgs()
+        let modal = document.querySelector('.mom')
+        modal.classList.remove('active');
+        for (var chave in disponiveis)
+        {
+            disponiveis[chave] = false
+        }
+        
+        listasrc = [] 
+        dados = {}
+        
+        $('#btn_x'+id_atual).removeAttr('onclick');
     }
- 
-    listasrc = [] 
-    dados = {}
+    else
+    {
+        const Toast = Swal.mixin({
+            toast: true,
+            position: "top-end",
+            showConfirmButton: false,
+            timer: 3000,
+            timerProgressBar: true,
+            didOpen: (toast) => {
+              toast.onmouseenter = Swal.stopTimer;
+              toast.onmouseleave = Swal.resumeTimer;
+            }
+          });
+          Toast.fire({
+            icon: "error",
+            title: "Insira a descricao e ao menos 3 fotos"
+          });
+    }
+
+
+
 
 }
 const btn_submit = document.getElementById('btn_submit');
 btn_submit.addEventListener('click', async (e ) => {
-    
-
    e.preventDefault();
 
+    for (var chave in respondidas)
+    {
+        if (respondidas[chave] == null)
+        {
+            const Toast = Swal.mixin({
+                toast: true,
+                position: "top-end",
+                showConfirmButton: false,
+                timer: 3000,
+                timerProgressBar: true,
+                didOpen: (toast) => {
+                toast.onmouseenter = Swal.stopTimer;
+                toast.onmouseleave = Swal.resumeTimer;
+                }
+            });
+            Toast.fire({
+                icon: "error",
+                title: "Preencha todas as perguntas"
+            });
+            break;
+        }
+    }
     //pegando os dados para pasar pelo metodo GET
     // Obtém a string da URL atual
     var queryString = window.location.search;
@@ -76,6 +130,8 @@ btn_submit.addEventListener('click', async (e ) => {
 
    let response = await data_php.json();
    console.log(response);
+   
+
    
 
 });

@@ -6,17 +6,7 @@ use App\Entity\NaoConformidade;
 
 class ResponderChecklist
 {
-    // public
-    // $id_usuario,
-    // $id_sala,
-    // $data_fechamento;
 
-    // public function __construct()
-    // {
-    //     $this -> id_usuario      = null;
-    //     $this -> id_sala         = null;
-    //     $this -> data_fechamento = null;
-    // }
 
     public static function cadastrar($dados = [], $id_sala = 1)
     {
@@ -26,19 +16,16 @@ class ResponderChecklist
         ];
         $obj_banco = new Banco('responder_check');
         $last_id = $obj_banco -> insertRecoverId($responder_check);
-        //INSERINDO NA TABELA NAO CONFORMIDADE
-        //     //id_realiza
-        //    //id_prof
-        //     //id_pergu
-        //     //descricao_NC
-        //     //img1
-        //     //img2
-        //     //img3
+
         foreach ($dados as $pergunta)
         {
-            $img1_64 = $pergunta['img1'];
-            $img2_64 = $pergunta['img2'];
-            $img3_64 = $pergunta['img3'];
+            $img1_64  = $pergunta['img1'];
+            $img2_64  = $pergunta['img2'];
+            $img3_64  = $pergunta['img3'];
+            $nome1 = null;
+            $nome2 = null;
+            $nome3 = null;
+
             
             //LOGICA DA IMAGEM
             if (isset($img1_64))
@@ -63,9 +50,9 @@ class ResponderChecklist
                 $caminho_salvar = '../../storage/n_conformidade/'.$nome2;
                 file_put_contents($caminho_salvar, $img2decodificada);
             }
-            if(isset($img2_64))
+            if (isset($img3_64))
             {
-                //terceira imagem
+                //primeira imagem
                 list($type, $data) = explode(';', $img3_64);
                 list(, $data) = explode(',', $data);
                 $img3decodificada = base64_decode($data);
@@ -74,24 +61,22 @@ class ResponderChecklist
                 $caminho_salvar = '../../storage/n_conformidade/'.$nome3;
                 file_put_contents($caminho_salvar, $img3decodificada);
             }
+
             unset($img1_64);
             unset($img2_64);
             unset($img3_64);
+
             
-
-
-
-            // $nao_conformidade = [
-            //     'id_realiza' =>  $last_id,
-            //     'id_prof' => $_SESSION['id_user'],
-            //     'id_pergu' => $pergunta['id_pergu'],
-            //     'descricao_NC' => $pergunta['descricao_NC'],
-            //     'img1' => $pergunta['img1'],
-            //     'img2' => $pergunta['img2'],
-            //     'img3' => $pergunta['img3'],
-            // ];
-            // echo(json_encode($nao_conformidade));exit;
-            // NaoConformidade::cadastrar(dados : $nao_conformidade);
+            $nao_conformidade = [
+                'id_realiza' =>  $last_id,
+                'id_prof' => $_SESSION['id_user'],
+                'id_pergu' => $pergunta['id_pergu'],
+                'descricao_NC' => $pergunta['descricao_NC'],
+                'img1' => (isset($nome1)) ? $nome1 : '',
+                'img2' => (isset($nome2)) ? $nome2 : '',
+                'img3' => (isset($nome3)) ? $nome3 : '',
+            ];
+            NaoConformidade::cadastrar(dados : $nao_conformidade);
         }
 
     }
