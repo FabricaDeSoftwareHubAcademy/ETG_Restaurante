@@ -59,7 +59,7 @@
                     
                     <div class="dropdown-ck">
 
-                        <select name="checklist" class="option" id="ch">
+                        <select name="checklist" class="option" id="checklist">
 
                             <option>Selecione O Checklist </option>
 
@@ -303,7 +303,7 @@
 
 
 
-                            let checklist = document.getElementsByClassName('option')
+                            let checklist = document.getElementsByClassName('checklist')
 
                             console.log(checklist);
                             if(checklist.value.length > 0){
@@ -343,7 +343,7 @@
                                     icon: "error",
                                     title: "Codigo não pode estar vazio !"
                                 });
-
+                                console.log("checklist vazio");    
                             }
 
 
