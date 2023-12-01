@@ -1,8 +1,7 @@
 
 <body>
     <section class="tudo">
-        
-        <div class="pagina">
+        <div class="cabecalho">
             <div class="titulo"> 
                 <h1>Validação do Checklist</h1>
             </div>
@@ -72,7 +71,19 @@
                 </div>
             </div>
         </div>
+        <div class="alinar-botoes">
+            <div class="botao-padrao-voltar">
+                <a href="listar_salas.php" class="botao-voltar-link">VOLTAR</a>
+            </div>
+            <div class="botao-padrao-cadastrar">
+                <a>
+                    <input name="btn_submit" type="submit" class="botao-cadastrar-submit" id="botao-cadastrar-submit" value="CADASTRAR">
+                </a>
+            </div>
+        </div>  
     </section>
+
+
 </body>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
