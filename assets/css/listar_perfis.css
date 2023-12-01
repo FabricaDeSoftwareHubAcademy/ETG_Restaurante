@@ -40,6 +40,7 @@ li{
     flex-direction: column;
     align-items: center;
     padding: 20px;
+        max-height: 65vh;
 }
 
 .cardsgerenc{
@@ -278,11 +279,11 @@ li{
 
 
 
-@media (max-width: 390px) {
+@media (max-width: 430px) {
 
   .card_perfil {
-    width: 90vw;
-    height: 9vh;
+    width: 86vw;
+    height: 5vh;
     font-size: 12px;
   }
   .container_gp2{
@@ -293,51 +294,45 @@ li{
     align-items: center;
     /* margin-top: 100px; */
   }
-
   .Perfis{
-    font-size: 18px;
+    font-size: 20px;
+  }
+  .bi-trash{
+    font-size: 8px;
   }
   .icone_editar{
-    width: 13px;
-    height: 13px;
+    width: 8px;
+    height: 8px;
     margin: 8px;
   }
   .container_gp{
     max-height: 450px;
   }
   .tipo_perfil{
-    font-size: 16px;
+    font-size: 12px;
   }
-  /* .cardsgerenc {
+  .cardsgerenc {
     max-height:560px;
   }
-  .container_gp{
-    max-height: 880px; */
+
 }
 
 
 @media (max-width: 832px) {
 
-  .card_perfil {
-    width: 86vw;
-    height: 9vh;
-    font-size: 14px;
-  }
-
-  .Perfis{
-    font-size: 30px;
-  }
-  .icone_editar{
-    width: 22px;
-    height: 22px;
+  /* .icone_editar{
+    width: 27px;
+    height: 27px;
     margin: 8px;
-  }
+  } */
   .container_gp{
-    max-height: 880px;
+    max-height: 72vh; 
   }
   .cardsgerenc {
     max-height: 790px;
-    /* dsadsadsa */
   }
+  /* .bi-trash{
+    font-size: 28px;
+  } */
 
 }
