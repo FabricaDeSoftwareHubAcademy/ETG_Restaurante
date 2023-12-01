@@ -1,0 +1,343 @@
+
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root{
+  --cor-primaria-botao-white: white; 
+  --cor-primaria-botao-green: green;
+  --cor-primaria-botao-red:   red;
+  --cor-primaria-botao-yellow:rgba(255, 199, 0, 1);
+  --cor-primaria-botao-blue:  rgba(6, 74, 140, 1);
+}
+
+.tela_gerenciam_perfis{
+  max-width: 832px;
+  max-height: 100vh;
+  height: 100vh;
+  overflow-y: hidden;
+  position: relative;
+  margin: 0 auto;
+  height: 107vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'Montserrat';
+  margin-bottom: 10px;
+
+}
+
+
+li{
+  list-style: none;
+ 
+}
+
+.container_gp{
+  margin-top: 5px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  max-height: 65vh;
+  max-width: 832px;
+}
+
+.cardsgerenc{
+height: 50%;
+width: 100%;
+/* max-height: 537px; */
+font-family: 'Montserrat';
+overflow: hidden;
+overflow-y: scroll;
+padding: 0px 20px 20px 20px;
+}
+
+
+.cardsgerenc::-webkit-scrollbar{
+width: 8px;
+background-color: #eeeeee;
+border-radius: 10px;
+}
+
+.cardsgerenc::-webkit-scrollbar-thumb{
+background-color: #F28920;
+border-radius: 10px; 
+} 
+.titulo_gp{
+
+  font-size: 23px;
+  font-weight: bold;
+  color: black; 
+}
+
+
+
+.Perfis{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+  font-family: 'Montserrat';
+  font-size: 40px;
+  margin-bottom: 20px;
+}
+
+.div_card_perfil
+{
+  /* background-color: blue; */
+  display: flex;
+  justify-content: space-between;
+  
+  /* max-width: 730px; */
+}
+
+.card_perfil
+{
+padding: 20px;
+/* width: 86vw; */
+width: 45vw;
+height: 9vh;
+margin-bottom: 20px;
+display: flex;
+align-items: center;
+flex-direction: row;
+justify-content: center;
+border-radius: 28px;
+border: 1px solid #FFF;
+/* background: #f9f9f9; */
+/* background-color: red; */
+box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+cursor: pointer;
+}
+
+.botoes_direita
+{
+  display: flex;
+  /* background-color: yellow; */
+  width: 10vw;
+  justify-content: space-evenly;
+  align-items: center;
+  margin: 0 30px 0 30px;
+}
+.botoes_direita a
+{
+  font-size: 40px;
+}
+.icone_menu
+{
+  width: 30px;
+  height: 30px;
+  margin: 12px;
+  display: flex;
+}
+
+.tipo_perfil{
+color: #000;
+font-size: 20px;
+font-style: normal;
+font-weight: 600;
+line-height: 140%; /* 33.6px */
+letter-spacing: 0.2px;
+margin-right: 20px;
+font-family: 'Montserrat';
+}
+
+.funcao{
+color: #000;
+font-size: 14px;
+font-style: normal;
+font-weight: 600;
+line-height: 140%; /* 19.6px */
+letter-spacing: 0.2px;
+border-radius: 13px;
+background: linear-gradient(0deg, rgba(250, 169, 22, 0.30) 0%, rgba(250, 169, 22, 0.30) 100%), #FFF;
+display: flex;
+padding: 5px;
+
+}
+.icone_perfil{
+width: 59px;
+height: 63px;
+box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+margin-right: 20px;
+}
+
+.icone_editar{
+width: 20px;
+height: 20px;
+margin: 12px;
+display: flex;
+
+}
+
+.card_nome{
+width: 830px;
+height: 100px;
+margin: 10px;
+display: flex;
+align-items: center;
+flex-direction: column;
+justify-content: center;
+
+}
+
+.bi-trash{
+color: #f80606;
+  cursor: pointer;
+  font-size: 22px;
+}
+
+
+.container_gp2 {
+
+  width: 100%;
+  display: flex;
+
+}
+.botao-padrao-cadastrar{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.botao-cadastrar-submit{
+  width: 180px;
+  height: 45px;
+  background-color: var(--cor-primaria-botao-white);
+  border: 3px solid var(--cor-primaria-botao-green);
+  border-radius: 20px;
+  cursor: pointer;
+  color: var(--cor-primaria-botao-green);
+  font-style: normal;
+  font-family: 'Montserrat';
+  font-weight: bold;
+  font-size: 15px;
+  
+}
+
+.botao-cadastrar-submit:hover{
+  transition: all 0.4s;
+  background-color: var(--cor-primaria-botao-green);
+  color: var(--cor-primaria-botao-white);
+}
+
+
+
+.botao-padrao-voltar{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.botao-voltar-submit{
+  width: 180px;
+  height: 45px;
+  background-color: var(--cor-primaria-botao-white);
+  border: 3px solid var(--cor-primaria-botao-yellow);
+  border-radius: 20px;
+  cursor: pointer;
+  color: var(--cor-primaria-botao-yellow);
+  font-style: normal;
+  font-family: 'Montserrat';
+  font-weight: bold;
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+
+.botao-voltar-submit:hover{
+  transition: all 0.4s;
+  background-color: var(--cor-primaria-botao-yellow);
+  color: var(--cor-primaria-botao-white);
+}
+
+.alinar-botoes{
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  margin: 50px;
+}
+
+.botao-cadastrar-link {
+  /* width: 110px; */
+  display: inline-block;
+  padding: 12px 40px;
+  background-color: var(--cor-primaria-botao-white);
+  border: 3px solid var(--cor-primaria-botao-green);
+  border-radius: 20px;
+  cursor: pointer;
+  color: var(--cor-primaria-botao-green);
+  font-family: 'Montserrat', sans-serif; /* Corrigir a propriedade font-family */
+  font-weight: bold;
+  font-size: 15px;
+  text-decoration: none; /* Adicionar sublinhado ao texto do link */
+}
+
+.botao-cadastrar-link:hover {
+transition: all 0.4s;
+background-color: var(--cor-primaria-botao-green);
+color: var(--cor-primaria-botao-white);
+}
+
+
+
+@media (max-width: 430px) {
+
+.card_perfil {
+  width: 86vw;
+  height: 5vh;
+  font-size: 12px;
+}
+.container_gp2{
+  width: 80%;
+  position: absolute;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  /* margin-top: 100px; */
+}
+.Perfis{
+  font-size: 20px;
+}
+
+.botoes_direita a
+{
+  font-size: 13px;
+}
+.icone_menu
+{
+  width: 10px;
+  height: 10px;
+  margin: 6px;
+}
+.container_gp{
+  max-height: 450px;
+}
+.tipo_perfil{
+  font-size: 12px;
+}
+.cardsgerenc {
+  max-height:560px;
+}
+
+}
+
+@media (max-width: 832px) {
+
+.container_gp{
+  max-height: 72vh; 
+}
+.cardsgerenc {
+  max-height: 790px;
+}
+
+}
