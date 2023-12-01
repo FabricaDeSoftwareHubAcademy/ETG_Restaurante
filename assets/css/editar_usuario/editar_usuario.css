@@ -6,7 +6,7 @@
 }
 
 .pai-de-todos{
-    width: 100%; 
+    width: 94%; 
     position: relative;
     margin: 0 auto;
   }
@@ -22,7 +22,7 @@
     overflow-y: scroll;
     overflow-x: hidden;
     scrollbar-color: #F28920;
-    max-height: 60vh;
+    max-height: 60vh; /*60vh*/
 
   }
 
@@ -59,7 +59,7 @@
   }
 
   .bi-pencil-square::before {
-    font-size: 25px;
+    font-size: 160%;
 }
 
   .icon-edit{
@@ -172,10 +172,13 @@
 
 #icon-input{
   position: absolute;
-  top: 24px;
+  top: 10px;
   right: 3%;
   cursor: pointer;
   z-index: 99;
+  margin-top: 1%;
+  display: flex;
+  justify-content: end;
 }
 
 #img_user{
@@ -216,3 +219,16 @@
   margin-bottom: 50px;
 
 } */
+
+@media(min-width: 832px){
+  #icon-input{
+    margin-top: 1%;
+
+  }
+
+}
+
+@media(max-width: 832px){
+
+
+}

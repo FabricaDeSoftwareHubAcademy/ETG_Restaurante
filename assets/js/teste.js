@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 // Importar módulos
 const express = require('express');
 const mongoose = require('mongoose');
@@ -52,3 +53,15 @@ const port = process.env.PORT || 3000;
 app.listen(port, () => {
   console.log(`Servidor rodando na porta ${port}`);
 });
+=======
+let teste = {
+    '1':1,
+    '2':2
+}
+console.log(teste)
+
+Object.keys(teste).forEach(key => delete teste[key]);
+    console.log('teste')
+
+console.log(teste)
+>>>>>>> 69804ac3e691c17962d8ac358669fe143a84e433
