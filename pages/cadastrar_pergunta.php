@@ -8,7 +8,7 @@ require("../includes/header/header.php");
 use App\Entity\Pergunta;
 $obPergunta = new Pergunta();
 
-$dados = $obPergunta->getDados(); 
+$dados = $obPergunta->getPerguntas(); 
 $divs = ""; 
 foreach ($dados as $item) {
 
