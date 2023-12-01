@@ -34,7 +34,7 @@ if (isset($_POST['email'], $_POST['btn_submit'])){
     }
 }
 //die('AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA');
-include_once("../includes/menu.php"); 
+
 require("../includes/main/main_relembrar_senha_1.php");
 require("../includes/footer/footer.php");
 ?>
