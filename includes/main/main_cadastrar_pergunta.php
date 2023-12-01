@@ -1,9 +1,20 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
-<link rel="stylesheet" href="../assets/css/cadastrar_pergunta.css">
+
 <title>Cadastro de Perguntas</title>
-<script defer src="../assets/js/filter.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+
+<link rel="stylesheet" href="../assets/css/cadastrar_pergunta.css">
+
+<script  src="../assets/js/filter.js"></script>
+
+
+
+<script defer src="../assets/js/filter_old.js"></script>
+<script defer src="../assets/js/effect_scroll.js" ></script>
+
 
 
 <body>
@@ -26,33 +37,24 @@
             
             <!-- AQUI ELE ESTÁ PRINTANDO AS PERGUNTAS DO BANCO NOS CARDS (ver em "cadastrar_pergunta.php")-->
                 
-                <section class="perguntas">
+                <section class="perguntas" id="perguntas">
                     <?php
 
-                    echo($divs);
+                        // echo($divs);
                     ?>
                     
                 </section>
-            
+
+                <script>
+                    listarPerguntas()
+                </script>
+                
             <!-- BOTÃO DE CADASTRAR -->
                 <div class="botao">
                     <button  class="botao-cadastrar-submit"  value="CADASTRAR" onclick="openPopup1()">CADASTRAR</button>
                 </div>
         </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+ 
         <!-- POPUP DE CADASTRAR PERGUNTA -->
 
         <form>
@@ -82,14 +84,7 @@
             </div>
         </form>
 
-
-
-
-
-
-
-
-
+ 
         
 
             <!-- POPUP EDITAR PERGUNTA -->
@@ -122,13 +117,7 @@
             </div>
         </form>
         
-        
-
-
-
-
-
-
+         
 
             <!-- POPUP DE CONFIRMAÇÃO DE EXCLUSÃO DA PERGUNTA -->
 
@@ -151,7 +140,7 @@
 
 
 <script>
-
+ 
     // SCRIPT DO POPUP DE CADASTRAR PERGUNTAS
 
     let popup_cadastro_pergunta = document.getElementById("popup-cadastro-pergunta");
@@ -185,8 +174,8 @@
 </body>
 
 <!-- Script -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> -->
 
 <!-- jQuery UI -->
-<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
-<script src="../assets/js/autocomplete_cadastrar_notificacao.js"></script>
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script> -->
+<!-- <script src="../assets/js/autocomplete_cadastrar_notificacao.js"></script> -->

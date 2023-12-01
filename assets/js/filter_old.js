@@ -1,21 +1,22 @@
-var input = document.getElementById("input")
-input.addEventListener('input',uga)
+var intervaloInput 
+$("#input").on("input", async function(){ 
+    clearTimeout(intervaloInput); 
+    // definindo setTimeout para que dps de 500ms apareça as perguntas
+    intervaloInput = setTimeout(async function(){
 
-// var area_cards = document.getElementById("area_cards")
-
-function uga(){
-
-    // let bloco = document.createElement("div")
-    // bloco.classList.add("card")
-    // let p = document.createElement("p")
-    // p.innerHTML = input.value 
-
-    // bloco.appendChild(p)
+        $("#perguntas").empty()
 
 
-    // area_cards.appendChild(bloco)    
+        for(pergunta in dadosPerguntas){
 
-    console.log(input.value)
+            let descricao =  dadosPerguntas[pergunta].descricao.toLowerCase()
+            if(descricao.includes($("#input").val())){
 
-}
-alert("deu bom ")
+                let divPergunta = '<div class="question1 move" animation="right"> <p name="question_text" id="question_text">'+dadosPerguntas[pergunta].descricao+' </p> <div class="icons-question1"> <button class="editar" onclick="openPopup2()"><i class="bi bi-pencil-square"></i></button> <button class="excluir" onclick="openPopup3()"><i class="bi bi-trash"></i></button> </div> </div>'
+    
+                $('#perguntas').append(divPergunta)
+            }
+
+        }
+    },500)
+})

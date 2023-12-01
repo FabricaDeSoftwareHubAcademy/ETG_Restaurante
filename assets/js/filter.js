@@ -1,47 +1,42 @@
-$("#input").autocomplete({
-    source: function(request, response) {
-        // Fetch data
-        $.ajax({
-            url: "../app/Ajax/cadastrar_pergunta.php",
-            type: 'GET',
-            dataType: "json",
-            success: function(data) {
-                var term = request.term.toLowerCase();
-                var filteredData = $.grep(data, function(value) {
-                    return value.nome.toLowerCase().indexOf(term) !== -1 ||
-                           value.email.toLowerCase().indexOf(term) !== -1;
-                });
+var dadosPerguntas
+async function listarPerguntas(){
+    
+    let dados_php = await fetch('../pages/actions/action_get_perguntas.php')
+    dadosPerguntas = await dados_php.json()
 
-                var aData = $.map(filteredData, function(value, index) {
-                    return {
-                        id: value.id,
-                        label: value.descricao + ' (' + value.descricao + ')', // Nome e email no mesmo seletor
-                        value: value.descricao, // Utilize 'value' para o valor a ser enviado
-                    };
-                });
-                console.log(aData)
-                response(aData); // Adicionado para retornar os dados para o autocompletar
-            },
-            error: function(xhr, status, error) {
-                console.error("Erro na requisição AJAX: ", status, error);
-            }
-        });
-    },
-    minLength: 2, // Defina um comprimento mínimo para acionar a pesquisa
-    select: function(event, ui) {
-        // Preencher o input com o valor do item selecionado
-        $("#input").val(ui.item.value);
+    console.log(dadosPerguntas)
+    for(pergunta in dadosPerguntas){
+        
 
-        // Adiciona a div formatada ao DOM
-        var questionDiv = '<div class="question1">' +
-            '<p name="question_text" id="question_text">' + ui.item.pergunta + '</p>' +
-            '<div class="icons-question1">' +
-                '<i class="bi bi-pencil-square"></i>' +
-                '<i class="bi bi-trash"></i>' +
-            '</div>' +
-        '</div>';
+        let divPergunta = '<div class="question1 move" animation="right"> <p name="question_text" id="question_text">'+dadosPerguntas[pergunta].descricao+' </p> <div class="icons-question1"> <button class="editar" onclick="openPopup2()"><i class="bi bi-pencil-square"></i></button> <button class="excluir" onclick="openPopup3()"><i class="bi bi-trash"></i></button> </div> </div>'
+ 
+        $('#perguntas').append(divPergunta)
+    } 
+};
 
-        // Substitui o conteúdo existente pelo novo
-        $("#output-container").html(questionDiv);
-    }
-});
+
+
+
+// var intervaloInput 
+// $("#input").on("input", async function(){ 
+//     clearTimeout(intervaloInput);
+//     // definindo setTimeout para que dps de 500ms apareça as perguntas
+//     intervaloInput = setTimeout(async function(){
+
+//         $("#perguntas").empty()
+
+
+//         for(pergunta in dadosPerguntas){
+
+//             let descricao =  dadosPerguntas[pergunta].descricao.toLowerCase()
+//             if(descricao.includes($("#input").val())){
+
+//                 let divPergunta = '<div class="question1 move" animation="right"> <p name="question_text" id="question_text">'+dadosPerguntas[pergunta].descricao+' </p> <div class="icons-question1"> <button class="editar" onclick="openPopup2()"><i class="bi bi-pencil-square"></i></button> <button class="excluir" onclick="openPopup3()"><i class="bi bi-trash"></i></button> </div> </div>'
+    
+//                 $('#perguntas').append(divPergunta)
+//             }
+
+//         }
+//     },500)
+// })
+
