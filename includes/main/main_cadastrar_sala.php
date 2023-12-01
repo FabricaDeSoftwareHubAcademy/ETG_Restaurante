@@ -4,11 +4,37 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="../assets/css/cadastrar_editar_sala.css"> 
+<link rel="stylesheet" href="../../assets/css/pop_ups/pop-up-verification.css">
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 
 <body class="tela-cadastro-salas">
-       
+
+
+<div id="blur" class="blur">
+    <div class="container-pop-up-notificacao">
+        <!-- <button type="submit" class="btn-pop-up-notificacao" id="submit-btn-notificacao" onclick="openPopupValidar()">Submit</button> -->
+        <div class="popup-notificacao" id="popup-up-notificacao">
+            <div class="div-img">
+                <img src="../includes/pop-ups/img/Check_ring.png" alt="carregando" id="img_check">
+                <p>Alteração Salva Com Sucesso! </p>
+            </div>
+            <div class="botao-padrao-ok">
+                <script>
+                    function closePopupValidar() {
+                                    let popup = document.getElementById("popup-up-notificacao");
+                                    let btn = document.getElementById("submit-btn-notificacao");
+
+                                    // btn.style.display = "block";
+
+                                    popup.classList.remove("open-popup");
+                                }
+                </script>
+                <a href="listar_salas.php"><input type="submit" class="botao-ok-submit" onclick="closePopupValidar()" value="OK"></a>
+            </div>
+        </div>
+    </div>
+</div>       
 
     <section class="container">
    
@@ -363,32 +389,29 @@
                                     body: formData
                                 })
                                 
-                                alert("Ta chegando até aqui !")
+                                // alert("Ta chegando até aqui !")
                                 let response = await dados_php.json()
                                 
                                 console.log(response);
 
                             
-                                console.log(response)
+                                console.log(response);
 
                                 if(response){
-                                    Swal.fire({
-                                    title: "Custom animation with Animate.css",
-                                    showClass: {
-                                        popup: `
-                                        animate__animated
-                                        animate__fadeInUp
-                                        animate__faster
-                                        `
-                                    },
-                                    hideClass: {
-                                        popup: `
-                                        animate__animated
-                                        animate__fadeOutDown
-                                        animate__faster
-                                        `
-                                    }
-                                    });
+                                    
+                                    let popup = document.getElementById('popup-up-notificacao');
+                                    let btn = document.getElementById("submit-btn-notificacao");
+
+                                    // btn.style.display = "none";
+                                    
+                                    popup.classList.add("open-popup");
+
+                                    let blur = document.getElementById("blur");
+
+                                    blur.classList.add("active");
+
+                                
+
                                 }else{
                                     console.log("2")
                                 }
