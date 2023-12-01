@@ -17,7 +17,7 @@ foreach ($dados as $row_check ){
     {
         $objImagem = new Imagens;
         // $imagem = $objImagem::storeImg($_FILES['imagem_sala']['name']);
-        $novo_nome_imagem = $objImagem::storeImg($_FILES['img_sala']['name']); 
+        $novo_nome_imagem = $objImagem::storeImgAction($_FILES['img_sala']['name']); 
         
     
             
