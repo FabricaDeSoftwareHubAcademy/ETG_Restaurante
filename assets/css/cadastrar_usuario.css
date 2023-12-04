@@ -13,14 +13,6 @@
 }
 
 
-/* Css Botão Confirmar */
-/* 
-.botao-padrao-confirmar{
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-} */
 .botao-confirmar-submit{
   width: 180px;
   height: 45px;
@@ -29,9 +21,9 @@
   border-radius: 20px;
   cursor: pointer;
   color: var(--cor-primaria-botao-green);
-  font-family: 'Montserrat';
-  font-weight: bold;
+  font-size: 'Montserrat';
   font-size: 15px;
+  margin-left: 45%;
 }
 
 .botao-confirmar-submit:hover{
@@ -42,14 +34,6 @@
 
 /* Css Botão Voltar */
 
-.botao-padrao-voltar{
-  width: 180px;
-  height: 45px;
-  margin-right: 25%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
 
 .botao-voltar-submit{
   width: 180px;
@@ -60,9 +44,8 @@
   cursor: pointer;
   color: var(--cor-primaria-botao-yellow);
   font-size: 'Montserrat';
-  font-weight: bold;
   font-size: 15px;
-
+  margin-left: -45%;
 }
 
 .botao-voltar-submit:hover{
@@ -103,6 +86,7 @@
 
 .centralizar_botoes_cadastrar_usuario {
   width: 100%;
+  justify-content: center;
   display: flex;
   position: relative;
   /* background-color: chartreuse; */
@@ -443,30 +427,6 @@ select {
 
 /* CSS Botão VOLTAR NOVO NEW */
 
-.botao-padrao-voltar {
-  width: 180px;
-  height: 45px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.botao-voltar-link {
-  /* width: 110px; */
-  
-  display: inline-block;
-  padding: 12px 60px;
-  background-color: var(--cor-primaria-botao-white);
-  border: 3px solid var(--cor-primaria-botao-yellow);
-  border-radius: 20px;
-  cursor: pointer;
-  color: var(--cor-primaria-botao-yellow);
-  font-family: 'Montserrat', sans-serif; /* Corrigir a propriedade font-family */
-  font-weight: bold;
-  font-size: 15px;
-  text-decoration: none; /* Adicionar sublinhado ao texto do link */
-}
-
 .botao-voltar-link:hover {
   transition: all 0.4s;
   background-color: var(--cor-primaria-botao-yellow);
@@ -537,9 +497,240 @@ select {
   .botao-padrao-voltar{
     width: 160px;
   }
+}
 
-  .centralizar_botoes_cadastrar_usuario{
-    margin-left: 0%;
+  @media (max-width: 669px) {
+
+    .input_e-mail_field{
+      width: 380px;
+    }
+  
+    .input_field{
+      width: 380px;
+    }
+    
+    .mover_input{
+      width: 65%;
+    }
+  
+    .input_senha_field{
+      width: 380px;
+    }
+  
+    .input_label{
+      margin-left: 45%;
+    } 
+  
+    .input_e-mail_label{
+      margin-left: 45%;
+    }
+   
+    .input_senha_label{
+      margin-left: 45%;
+    }
+  
+    .botao-confirmar-submit{
+      width: 140px;
+      font-size: 13px;
+      margin-left: 20%;
+    }
+
+    .botao-voltar-submit{
+      width: 140px;
+      font-size: 13px;
+      margin-left: -20%;
+    }
+
+    .dropdown-ck{
+      width: 120px;
+      margin-left: -10%;
+    }
+
+    .dropdown-ck .option{
+      width: 120px;
+      font-size: 12px;
+    }
+    
+    .input_field_matricula{
+      width: 140px;
+      margin-left: 70%;
+    }
+
+    .input_label_matricula{
+      margin-left: -20%;
+    }
   }
 
-}
+  @media (max-width: 669px) {
+
+    .input_e-mail_field{
+      width: 320px;
+    }
+  
+    .input_field{
+      width: 320px;
+    }
+    
+    .mover_input{
+      width: 65%;
+    }
+  
+    .input_senha_field{
+      width: 320px;
+    }
+  
+    .input_label{
+      margin-left: 64%;
+    } 
+  
+    .input_e-mail_label{
+      margin-left: 64%;
+    }
+   
+    .input_senha_label{
+      margin-left: 64%;
+    }
+  
+    .botao-confirmar-submit{
+      width: 100px;
+      font-size: 12px;
+      margin-left: 10%;
+    }
+
+    .botao-voltar-submit{
+      width: 100px;
+      font-size: 12px;
+      margin-left: -10%;
+    }
+
+    .dropdown-ck{
+      width: 120px;
+      margin-left: 0%;
+    }
+
+    .dropdown-ck .option{
+      width: 120px;
+      font-size: 12px;
+    }
+    
+    .input_field_matricula{
+      width: 140px;
+      margin-left: 35%;
+    }
+
+    .input_label_matricula{
+      margin-left: -35%;
+    }
+  }
+
+  @media (max-width: 553px) {
+
+    .titulo_cadastro_usuario h1{
+      font-size: 25px;
+    }
+
+    .input_e-mail_field{
+      width: 240px;
+    }
+  
+    .input_field{
+      width: 240px;
+    }
+    
+    .mover_input{
+      width: 65%;
+    }
+  
+    .input_senha_field{
+      width: 240px;
+    }
+  
+    .input_label{
+      margin-left: 85%;
+    } 
+  
+    .input_e-mail_label{
+      margin-left: 85%;
+    }
+   
+    .input_senha_label{
+      margin-left: 85%;
+    }
+  
+    .botao-confirmar-submit{
+      width: 100px;
+      font-size: 12px;
+      margin-left: 10%;
+    }
+
+    .botao-voltar-submit{
+      width: 100px;
+      font-size: 12px;
+      margin-left: -10%;
+    }
+
+    .dropdown-ck{
+      width: 90px;
+      margin-left: 10%;
+    }
+
+    .dropdown-ck .option{
+      width: 90px;
+      font-size: 12px;
+    }
+    
+    .input_field_matricula{
+      width: 100px;
+      margin-left: 15%;
+    }
+
+    .input_label_matricula{
+      margin-left: -40%;
+    }
+
+    .input_field_matricula:placeholder-shown ~ .input_label_matricula{
+      font-size: 11px;
+    }
+  }
+
+  @media (max-width: 553px) {
+    .tudo_esqueceu_senha1{
+      margin-top: -50px;
+    }
+
+    .centralizar_input_cadastrar_usuario{
+      margin-top: -10px;
+    }
+
+    .centralizar_botoes_cadastrar_usuario{
+      margin-top: 45px;
+    }
+
+  }
+
+  @media (max-width: 553px) {
+    .tudo_esqueceu_senha1{
+      margin-left: 10px;
+    }
+
+  }
+
+  @media (max-width: 443px) {
+    .tudo_esqueceu_senha1{
+      margin-left: 15px;
+    }
+
+    .botao-confirmar-submit{
+      width: 100px;
+      font-size: 12px;
+      margin-left: -23%;
+    }
+
+    .botao-voltar-submit{
+      width: 100px;
+      font-size: 12px;
+      margin-left: 5%;
+    }
+
+  }
+
