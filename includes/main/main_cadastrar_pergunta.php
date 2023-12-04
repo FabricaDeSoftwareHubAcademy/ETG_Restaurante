@@ -55,7 +55,7 @@
 
         <!-- POPUP DE CADASTRAR PERGUNTA -->
 
-        <form>
+        <form class="overlay" id="overlay" style="opacity: 1;">
             <div class="popup_cadastrar" id="popup-cadastro-pergunta">
                 <h4>Cadastrar pergunta:</h4>
 
@@ -94,7 +94,8 @@
 
             <!-- POPUP EDITAR PERGUNTA -->
 
-        <form>
+        <form class="overlay" id="overlay" style="opacity: 1;">
+
             <div class="popup_editar" id="popup-editar-pergunta">
                 <h4>Editar pergunta:</h4>
 
@@ -123,21 +124,28 @@
         </form>
         
         
+
+
+
+
+
+
+
             <!-- POPUP DE CONFIRMAÇÃO DE EXCLUSÃO DA PERGUNTA -->
+        <form class="overlay" id="overlay" style="opacity: 1;">
 
-        <div class="popup_conf_exclusao" id="popup_conf_exclusao">
-            <h9>Tem certeza que deseja excluir a pergunta?</h9>
+            <div class="popup_conf_exclusao" id="popup_conf_exclusao">
+                <h9>Tem certeza que deseja excluir a pergunta?</h9>
 
-            <!-- DIV DOS BOTÕES (sim e não) -->
+                <!-- DIV DOS BOTÕES (sim e não) -->
 
-            <div class="botoes">
-                <button class="botao-nao-submit" value="NÃO" onclick="closePopup3()">NÃO</button>
-                <button class="botao-sim-submit" value="SIM" onclick="closePopup3()">SIM</button>
-            </div>
+                <div class="botoes">
+                    <button class="botao-nao-submit" value="NÃO" onclick="closePopup3()">NÃO</button>
+                    <button class="botao-sim-submit" value="SIM" onclick="closePopup3()">SIM</button>
+                </div>
             
-            
-        </div> 
-
+            </div> 
+        </form>
     </main>
 
 
@@ -149,7 +157,10 @@
 
     let popup_cadastro_pergunta = document.getElementById("popup-cadastro-pergunta");
     function openPopup1(){
+
+        document.getElementById("overlay").style.visibility="visible";
         popup_cadastro_pergunta.classList.add("open-popup1");
+        
     }
     function closePopup1(){
         popup_cadastro_pergunta.classList.remove("open-popup1");
@@ -159,7 +170,10 @@
 
     let popup_editar_pergunta = document.getElementById("popup-editar-pergunta");
     function openPopup2(){
+
+        document.getElementById("overlay").style.visibility="visible";
         popup_editar_pergunta.classList.add("open-popup2");
+        
     }
     function closePopup2(){
         popup_editar_pergunta.classList.remove("open-popup2");
@@ -167,7 +181,10 @@
 
     let popup_conf_exclusao = document.getElementById("popup_conf_exclusao");
     function openPopup3(){
+
+        document.getElementById("overlay").style.visibility="visible";
         popup_conf_exclusao.classList.add("open-popup3");
+        
     }
     function closePopup3(){
         popup_conf_exclusao.classList.remove("open-popup3");
