@@ -708,3 +708,29 @@ select {
 
   }
 
+  @media (max-width: 553px) {
+    .tudo_esqueceu_senha1{
+      margin-left: 10px;
+    }
+
+  }
+
+  @media (max-width: 443px) {
+    .tudo_esqueceu_senha1{
+      margin-left: 15px;
+    }
+
+    .botao-confirmar-submit{
+      width: 100px;
+      font-size: 12px;
+      margin-left: -23%;
+    }
+
+    .botao-voltar-submit{
+      width: 100px;
+      font-size: 12px;
+      margin-left: 5%;
+    }
+
+  }
+
