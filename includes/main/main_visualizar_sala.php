@@ -3,7 +3,6 @@
         
         .card{
     border: solid  <?=$dados[0]['cor_itens']?>;
-    box-shadow: 0 0 1em <?=$dados[0]['cor_itens']?>;
 }
 
 </style>
@@ -11,7 +10,6 @@
 <link rel="stylesheet" href="../assets/css/visualizar_sala.css">
 
 <body class="visualizar_sala">
-    <div class="pagina-visualizar-sala">
             <div class="nome_da_sala" id="nome_da_sala">
                 <h1>Visualizar Sala</h1>
             </div>
@@ -24,15 +22,15 @@
                     </div>
                     <div class="texto_card" >
 
-                        <div class="titulo_card">
-                            <p class="label-sala">Nome da Sala</p>
+                        <!-- <div class="titulo_card"></div> -->
+                            <!-- <p class="label-sala"> <h1>Nome da Sala</h1></p> -->
+
                             <h1 class="nome-sala"><?=$dados[0]['nome']?></h1>
-                        </div>
             
 
                             <div class="paragrafo_card">
                                 <h2 id="paragrafo_descricao">
-                                    Descrição
+                                    Descrição: 
                                 </h2>
 
                                 <p class="texto-descricao"> <?=$dados[0]['descricao']?></p>
@@ -41,7 +39,7 @@
                             </div>
                             <div class="dias-de-funcionamento">
                                 <h2 id="dias-funcionamento">
-                                    Dias de Funcionamento
+                                    Dias de Funcionamento:
                                 </h2>
 
                                 <p class="dias_funcionamento"> <?php
@@ -60,13 +58,13 @@
                             </div>
                             <div class="turnos-de-funcionamento">
                                 <h2 id="turnos-funcionamento">
-                                    Turnos de Funcionamento
+                                    Turnos de Funcionamento:
                                 </h2>
 
                                 <p class="turnos_funcionamento"> <?php
                                 
                                     echo $matutino.' ';
-                                    echo $vespertino.' ';
+                                    echo $vespertino.' '; 
                                     echo $noturno.' ';
 
                                 
@@ -85,13 +83,13 @@
                         <a href="#"><input type="submit" class="botao-voltar-submit"  value="VOLTAR"></a>
                     </div>
                     <!--Botão Checklist -->
+
                     <div class="botao-padrao-fazer-checklist">
                         <a href="../pages/cadastrar_checklist_preaula.php?id_sala=<?=$_GET['id_sala']?>"><input type="submit" class="botao-fazer-checklist-submit"  value="FAZER CHECKLIST"></a>
                     </div>
 
                 </div>
         </section>
-    </div>
     
 </body>
 
