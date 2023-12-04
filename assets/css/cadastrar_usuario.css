@@ -540,6 +540,25 @@ select {
       font-size: 13px;
       margin-left: -20%;
     }
+
+    .dropdown-ck{
+      width: 120px;
+      margin-left: -10%;
+    }
+
+    .dropdown-ck .option{
+      width: 120px;
+      font-size: 12px;
+    }
+    
+    .input_field_matricula{
+      width: 140px;
+      margin-left: 70%;
+    }
+
+    .input_label_matricula{
+      margin-left: -20%;
+    }
   }
 
 
