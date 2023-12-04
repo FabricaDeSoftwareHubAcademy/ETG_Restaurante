@@ -14,13 +14,13 @@
 
 
 /* Css Botão Confirmar */
-
+/* 
 .botao-padrao-confirmar{
-  width: 100%; 
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
-}
+} */
 .botao-confirmar-submit{
   width: 180px;
   height: 45px;
@@ -43,7 +43,9 @@
 /* Css Botão Voltar */
 
 .botao-padrao-voltar{
-  width: 100%;
+  width: 180px;
+  height: 45px;
+  margin-right: 25%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -102,12 +104,9 @@
 .centralizar_botoes_cadastrar_usuario {
   width: 100%;
   display: flex;
-  padding-right: 20px;
-  /* margin-left: 20px; */
-  justify-content: space-between;
+  position: relative;
   /* background-color: chartreuse; */
   margin-top: 20%;
-
 }
 
 
@@ -445,7 +444,8 @@ select {
 /* CSS Botão VOLTAR NOVO NEW */
 
 .botao-padrao-voltar {
-  width: 100%;
+  width: 180px;
+  height: 45px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -453,6 +453,7 @@ select {
 
 .botao-voltar-link {
   /* width: 110px; */
+  
   display: inline-block;
   padding: 12px 60px;
   background-color: var(--cor-primaria-botao-white);
@@ -495,7 +496,7 @@ select {
 
 }
 
-@media (max-width: 693px) {
+@media (max-width: 735px) {
 
   .input_e-mail_field{
     width: 480px;
@@ -524,11 +525,21 @@ select {
   .input_senha_label{
     margin-left: 16%;
   }
-   
-  /* .mover_input{
-    padding-right: 190px;
-    padding-left: 185px;
 
+  .botao-confirmar-submit{
+    width: 160px;
   }
-   */
+  
+  .botao-confirmar-submit{
+    width: 160px;
+  }
+
+  .botao-padrao-voltar{
+    width: 160px;
+  }
+
+  .centralizar_botoes_cadastrar_usuario{
+    margin-left: 0%;
+  }
+
 }
