@@ -12,6 +12,29 @@ async function listarPerguntas(){
  
         $('#perguntas').append(divPergunta)
     } 
+
+
+    const observer = new IntersectionObserver((entries) => {
+
+        entries.forEach((entry) => {
+    
+            console.log(entry);
+            
+            if(entry.isIntersecting){
+    
+                entry.target.classList.add('show');
+    
+            }
+            
+        });
+    
+    })
+    
+    
+    var hiddenElements = document.querySelectorAll('.move');
+    hiddenElements.forEach((el) => observer.observe(el))
+
+
 };
 
 

@@ -10,10 +10,10 @@
 
 <script  src="../assets/js/filter.js"></script>
 
+<!-- <script defer src="../assets/js/effect_scroll.js" ></script> -->
 
 
 <script defer src="../assets/js/filter_old.js"></script>
-<script defer src="../assets/js/effect_scroll.js" ></script>
 
 
 
