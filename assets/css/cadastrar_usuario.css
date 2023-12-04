@@ -561,5 +561,69 @@ select {
     }
   }
 
+  @media (max-width: 669px) {
+
+    .input_e-mail_field{
+      width: 320px;
+    }
+  
+    .input_field{
+      width: 320px;
+    }
+    
+    .mover_input{
+      width: 65%;
+    }
+  
+    .input_senha_field{
+      width: 320px;
+    }
+  
+    .input_label{
+      margin-left: 45%;
+    } 
+  
+    .input_e-mail_label{
+      margin-left: 45%;
+    }
+   
+    .input_senha_label{
+      margin-left: 45%;
+    }
+  
+    .botao-confirmar-submit{
+      width: 140px;
+      font-size: 13px;
+      margin-left: 20%;
+    }
+
+    .botao-voltar-submit{
+      width: 140px;
+      font-size: 13px;
+      margin-left: -20%;
+    }
+
+    .dropdown-ck{
+      width: 120px;
+      margin-left: -10%;
+    }
+
+    .dropdown-ck .option{
+      width: 120px;
+      font-size: 12px;
+    }
+    
+    .input_field_matricula{
+      width: 140px;
+      margin-left: 70%;
+    }
+
+    .input_label_matricula{
+      margin-left: -20%;
+    }
+
+
+  }
+  
 
 }
