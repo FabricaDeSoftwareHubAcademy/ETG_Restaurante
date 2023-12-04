@@ -157,19 +157,6 @@ li{
     font-size: 22px;
  }
 
-/* 
-  .container_gp2{
- 
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: absolute;
-    margin: 0 auto;
-    left: 50%;
-    transform: translateX(-50%);
-    padding: 10px;
-  } */
   
   .container_gp2 {
   
@@ -317,8 +304,6 @@ li{
   height: 32px;
   font-size: 12px;
 }
-
-
 }
 
 
