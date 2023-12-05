@@ -1,7 +1,7 @@
 <?php
-require __DIR__ ."/../vendor/autoload.php";
+require __DIR__ . "/../vendor/autoload.php";
 $titulo_page = 'Cadastrar Checklist';
-include_once("../includes/menu.php"); 
+include_once("../includes/menu.php");
 
 
 use App\Entity\Pergunta;
@@ -15,21 +15,17 @@ $trpre = "";
 $trpos = "";
 
 foreach ($dados as $rowdados) {
-    if ($rowdados['tipo'] == 'PRE')
-    {
+    if ($rowdados['tipo'] == 'PRE') {
         $trpre .= "    <tr> 
                         <td><input type='checkbox'  id='checkbox' name='perguntas[]' value='" . $rowdados['id'] . "'></td>
                         <td>" . $rowdados['descricao'] . "</td>   
                     </tr>";
-    }
-    elseif ($rowdados['tipo'] == 'POS')
-    {
-            $trpos .= "    <tr> 
+    } elseif ($rowdados['tipo'] == 'POS') {
+        $trpos .= "    <tr> 
                         <td><input type='checkbox'  id='checkbox' name='perguntas[]' value='" . $rowdados['id'] . "'></td>
                         <td>" . $rowdados['descricao'] . "</td>   
                     </tr>";
     }
-    
 }
 
 if (isset($_POST['btn_cadastrar']) && isset($_POST['nome_checklist'])) {
@@ -40,6 +36,7 @@ if (isset($_POST['btn_cadastrar']) && isset($_POST['nome_checklist'])) {
 
 
 
+
+
 require("../includes/header/header.php");
 require("../includes/main/main_cadastrar_checklist.php");
-?>

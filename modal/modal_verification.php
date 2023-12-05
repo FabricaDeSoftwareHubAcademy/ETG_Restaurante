@@ -36,6 +36,7 @@
                 confirmButtonText: 'ok'
             });
         }
+
     </script>
 </body>
 </html>

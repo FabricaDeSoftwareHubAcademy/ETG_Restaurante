@@ -96,7 +96,7 @@
 
                     <!--Botão Cadastrar-->
                     <div class="botao-padrao-cadastrar">
-                        <a href="#"><input type="submit" class="botao-cadastrar-submit" name="btn_cadastrar" value="CADASTRAR" onclick="abrir_modal()"></a>
+                        <a href="#"><input type="submit" class="botao-cadastrar-submit" name="btn_cadastrar" value="CADASTRAR"></a>
                     </div>
                 </div>
             </div>
