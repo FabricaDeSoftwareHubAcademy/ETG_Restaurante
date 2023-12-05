@@ -8,12 +8,13 @@
 
 <link rel="stylesheet" href="../assets/css/cadastrar_pergunta.css">
 
-<script  src="../assets/js/filter.js"></script>
+<script src="../assets/js/filter.js"></script>
+<script defer src="../assets/js/filter_old.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 <!-- <script defer src="../assets/js/effect_scroll.js" ></script> -->
 
 
-<script defer src="../assets/js/filter_old.js"></script>
 
 
 
@@ -51,17 +52,17 @@
                 
             <!-- BOTÃO DE CADASTRAR -->
                 <div class="botao">
-                    <button  class="botao-cadastrar-submit"  value="CADASTRAR" onclick="openPopup1()">CADASTRAR</button>
+                    <button  class="botao-cadastrar-submit"   value="CADASTRAR" onclick="openPopup1()">CADASTRAR</button>
                 </div>
         </div>
  
         <!-- POPUP DE CADASTRAR PERGUNTA -->
 
-        <form>
+        <form id='form_cad_pergunta'>
             <div class="popup_cadastrar" id="popup-cadastro-pergunta">
                 <h4>Cadastrar pergunta:</h4>
 
-                <textarea name="nova_pergunta" class="nova_pergunta" placeholder= "Escreva a pergunta"cols="30" rows="10" autocomplete= "off"></textarea>
+                <textarea name="nova_pergunta" id="nova_pergunta"  class="nova_pergunta" placeholder= "Escreva a pergunta"cols="30" rows="10" autocomplete= "off"></textarea>
 
                 <h4>Selecione a categoria da pergunta:</h4>
 
@@ -78,8 +79,8 @@
 
                 <!-- DIV DOS BOTÕES (cancelar e confirmar) -->
                 <div class="botoes">
-                    <button class="botao-cancelar-submit"  value="CANCELAR" onclick="closePopup1()">CANCELAR</button>
-                    <button class="botao-confirmar-submit"  value="CONFIRMAR">CONFIRMAR</button>
+                    <button class="botao-cancelar-submit" id="btn_cancelar_cad_pergunta" value="CANCELAR"  >CANCELAR</button>
+                    <button class="botao-confirmar-submit" id="btn_cad_pergunta" value="CONFIRMAR">CONFIRMAR</button>
                 </div>
             </div>
         </form>
@@ -93,7 +94,7 @@
             <div class="popup_editar" id="popup-editar-pergunta">
                 <h4>Editar pergunta:</h4>
 
-                <textarea name="nova_pergunta" class="nova_pergunta" placeholder= "Escreva a pergunta"cols="30" rows="10" autocomplete= "off"></textarea>
+                <textarea name="nova_pergunta" id="text_editar_pergunta" class="nova_pergunta" placeholder= "Escreva a pergunta"cols="30" rows="10" autocomplete= "off"></textarea>
 
                 <h4>Selecione a categoria da pergunta:</h4>
 
@@ -101,10 +102,10 @@
                 
                 <div class="checks">
                     <div class="check1">
-                        <input type="checkbox" name="antes_da_aula" id="check1"> Pré-Aula
+                        <input type="checkbox" name="antes_da_aula" id="check3"> Pré-Aula
                     </div>
                     <div class="check2">
-                        <input type="checkbox" name="depois_da_aula" id="check2"> Pós-Aula
+                        <input type="checkbox" name="depois_da_aula" id="check4"> Pós-Aula
                     </div>
                 </div>
 
@@ -128,7 +129,7 @@
 
             <div class="botoes">
                 <button class="botao-nao-submit" value="NÃO" onclick="closePopup3()">NÃO</button>
-                <button class="botao-sim-submit" value="SIM" onclick="closePopup3()">SIM</button>
+                <button class="botao-sim-submit" id="botao-sim-submit" value="SIM">SIM</button>
             </div>
             
             

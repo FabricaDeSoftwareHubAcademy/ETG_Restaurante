@@ -1,65 +1,53 @@
 var dadosPerguntas
+var id_atual_excluir_pergunta
 async function listarPerguntas(){
-    
+    $("#perguntas").empty()
     let dados_php = await fetch('../pages/actions/action_get_perguntas.php')
     dadosPerguntas = await dados_php.json()
 
-    console.log(dadosPerguntas)
+    // console.log(dadosPerguntas)
     for(pergunta in dadosPerguntas){
         
-
-        let divPergunta = '<div class="question1 move" animation="right"> <p name="question_text" id="question_text">'+dadosPerguntas[pergunta].descricao+' </p> <div class="icons-question1"> <button class="editar" onclick="openPopup2()"><i class="bi bi-pencil-square"></i></button> <button class="excluir" onclick="openPopup3()"><i class="bi bi-trash"></i></button> </div> </div>'
+        // pausei aqui algo
+        let divPergunta = '<div class="question1 move" animation="right"> <p name="question_text" id="question_text">'+dadosPerguntas[pergunta].descricao+' </p> <div class="icons-question1"> <button class="editar" id="btn_pencil_editar_pergunta" btn_editar="'+dadosPerguntas[pergunta].id+'" onclick="openPopup2()"><i class="bi bi-pencil-square"></i></button> <button class="excluir" id="btn_trash_excluir_pergunta" btn_excluir="'+dadosPerguntas[pergunta].id+'" onclick="openPopup3()"><i class="bi bi-trash"></i></button> </div> </div>'
  
         $('#perguntas').append(divPergunta)
-    } 
+    }  
 
 
+    $('[id="btn_trash_excluir_pergunta"]').on('click',async function(){ 
+        id_atual_excluir_pergunta = $(this).attr('btn_excluir')  
+        
+    })
+
+
+    $('[id="btn_pencil_editar_pergunta"]').on('click',async function(){ 
+
+        setDadosPerguntaById($(this).attr('btn_editar'))
+        
+    })
+
+
+
+
+    // depois no botao de 'NAO' adicionar função para resetar o id_atual 
+    
     const observer = new IntersectionObserver((entries) => {
 
         entries.forEach((entry) => {
-    
-            console.log(entry);
-            
+     
             if(entry.isIntersecting){
     
                 entry.target.classList.add('show');
     
             }
-            
         });
     
-    })
-    
+    }) 
     
     var hiddenElements = document.querySelectorAll('.move');
     hiddenElements.forEach((el) => observer.observe(el))
 
 
 };
-
-
-
-
-// var intervaloInput 
-// $("#input").on("input", async function(){ 
-//     clearTimeout(intervaloInput);
-//     // definindo setTimeout para que dps de 500ms apareça as perguntas
-//     intervaloInput = setTimeout(async function(){
-
-//         $("#perguntas").empty()
-
-
-//         for(pergunta in dadosPerguntas){
-
-//             let descricao =  dadosPerguntas[pergunta].descricao.toLowerCase()
-//             if(descricao.includes($("#input").val())){
-
-//                 let divPergunta = '<div class="question1 move" animation="right"> <p name="question_text" id="question_text">'+dadosPerguntas[pergunta].descricao+' </p> <div class="icons-question1"> <button class="editar" onclick="openPopup2()"><i class="bi bi-pencil-square"></i></button> <button class="excluir" onclick="openPopup3()"><i class="bi bi-trash"></i></button> </div> </div>'
-    
-//                 $('#perguntas').append(divPergunta)
-//             }
-
-//         }
-//     },500)
-// })
 
