@@ -268,11 +268,3 @@ h2#turnos-funcionamento{
     }
 
 }
-
-@media screen and (max-width:450px ){
-
-    .card{
-        height: 60vh;
-    }
-
-}
