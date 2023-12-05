@@ -26,62 +26,41 @@
                                     </div>
                                     <div class="botoes_direita">                        
                                         <a class="bi bi-check-circle"> </a>
-                                         
                                         <a><img src="../assets/imgs/icons/menu_icon_3.svg" alt="icone_editar" class="icone_menu"></a> 
                                     </div>
                                 </div>
                             </li>
                             <li>
-                                <div class="titulo_gp">
-                                    <div class="card_perfil">
-                                        <div class="card_nome">
-                                            <h2 class="tipo_perfil">AS COISAS NAO ESTAO CERTAS</h2>
+                                <div class="div_card_perfil">
+                                    <div class="titulo_gp">
+                                        <div class="card_perfil">
+                                            <div class="card_nome">
+                                                <h2 class="tipo_perfil">AS COISAS NAO ESTAO CERTAS</h2>
+                                            </div>
                                         </div>
-                                            <a href="">
-                                                <img src="../assets/imgs/icons/icon_editar.png" alt="icone_editar" class="icone_editar"></a> 
-                                            <a class="bi bi-trash" ></a> 
+                                    </div>
+                                    <div class="botoes_direita">                        
+                                        <a class="bi bi-check-circle"> </a>
+                                        <a><img src="../assets/imgs/icons/menu_icon_3.svg" alt="icone_editar" class="icone_menu"></a> 
                                     </div>
                                 </div>
-                            </li> 
-
+                            </li>
                             <li>
-                                <div class="titulo_gp">
-                                    <div class="card_perfil">
-                                        <div class="card_nome">
-                                            <h2 class="tipo_perfil">AS COISAS NAO ESTAO CERTAS</h2>
+                                <div class="div_card_perfil">
+                                    <div class="titulo_gp">
+                                        <div class="card_perfil">
+                                            <div class="card_nome">
+                                                <h2 class="tipo_perfil">AS COISAS NAO ESTAO CERTAS</h2>
+                                            </div>
                                         </div>
-                                            <a href="">
-                                                <img src="../assets/imgs/icons/icon_editar.png" alt="icone_editar" class="icone_editar"></a> 
-                                            <a class="bi bi-trash"></a> 
+                                    </div>
+                                    <div class="botoes_direita">                        
+                                        <a class="bi bi-check-circle"> </a>
+                                        <a><img src="../assets/imgs/icons/menu_icon_3.svg" alt="icone_editar" class="icone_menu"></a> 
                                     </div>
                                 </div>
-                            </li> 
-
-                            <li>
-                                <div class="titulo_gp">
-                                    <div class="card_perfil">
-                                        <div class="card_nome">
-                                            <h2 class="tipo_perfil">AS COISAS NAO ESTAO CERTAS</h2>
-                                        </div>
-                                            <a href="">
-                                                <img src="../assets/imgs/icons/icon_editar.png" alt="icone_editar" class="icone_editar"></a> 
-                                            <a class="bi bi-trash" ></a> 
-                                    </div>
-                                </div>
-                            </li> 
-
-                            <li>
-                                <div class="titulo_gp">
-                                    <div class="card_perfil">
-                                        <div class="card_nome">
-                                            <h2 class="tipo_perfil">NOT DALE</h2>
-                                        </div>
-                                            <a href="">
-                                                <img src="../assets/imgs/icons/icon_editar.png" alt="icone_editar" class="icone_editar"></a> 
-                                            <a class="bi bi-trash" ></a> 
-                                    </div>
-                                </div>
-                            </li> 
+                            </li>
+                        
 
                         </ul>
                 
