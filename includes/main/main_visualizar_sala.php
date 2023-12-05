@@ -1,4 +1,3 @@
-
 <!-- PARTE DA TELA QUE PEGA A COR DA BOX -->
 <style>
         .card{
