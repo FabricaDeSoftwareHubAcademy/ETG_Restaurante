@@ -1,17 +1,8 @@
-
 <?php
-require __DIR__."/../vendor/autoload.php";
-$titulo_page = 'Cadastrar Sala';
-require("../includes/header/header.php");
-include_once("../includes/menu.php"); 
-
+require __DIR__."/../../vendor/autoload.php";
 use App\Entity\Sala;
 use App\Entity\CadastroChecklist;
 use App\Entity\Imagens;
-
-
-
-
 $objCadastroChecklist = new CadastroChecklist();
 $dados = $objCadastroChecklist -> getDados();
 $options = '';
@@ -19,17 +10,14 @@ foreach ($dados as $row_check ){
     $options .= '<option  class="ops" value="'.$row_check['id'].'"> '.$row_check['nome'].' </option>';
 }
 
-//dsadsadsa// 
-if (isset(
-            $_POST      ['btn_submit']    
-        ))
-{   
+
+  
     // var_dump($_FILES);exit;
     if (!empty($_FILES['img_sala']['name']))
     {
         $objImagem = new Imagens;
         // $imagem = $objImagem::storeImg($_FILES['imagem_sala']['name']);
-        $novo_nome_imagem = $objImagem::storeImg($_FILES['img_sala']['name']); 
+        $novo_nome_imagem = $objImagem::storeImgAction($_FILES['img_sala']['name']); 
         
     
             
@@ -67,11 +55,10 @@ if (isset(
         $obj_sala -> cadastrar();
         // header("Location: listar_salas.php");
     }
-}   
+    
+  
 
+echo(json_encode(True));
 
-require("../includes/header/header.php");
-require("../includes/main/main_cadastrar_sala.php");
-require("../includes/footer/footer.php");
 
 ?>

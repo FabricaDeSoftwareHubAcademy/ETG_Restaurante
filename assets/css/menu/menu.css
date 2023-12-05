@@ -371,6 +371,18 @@
 }
 
 
+@media (max-width: 836px){
+  .submenu2.active{
+    width: 200px;
+  }
+ 
+  .sub-menu.active{
+    width: 240px;
+    margin-top: -80px;
+  }
+
+}
+
 .modal-menu{
   display: flex;
   flex-direction: column;
@@ -534,7 +546,7 @@
 
 @media (max-width: 610px){
   #bloc1{
-    width: 40;
+    width: 37px;
     height: 70px;
   }
   @keyframes bloc1 {
@@ -542,7 +554,7 @@
     to {height: 70px;}  
   }
   #bloc2{
-    width: 40;
+    width: 37px;
     height: 90px;
   }
   @keyframes bloc2 {

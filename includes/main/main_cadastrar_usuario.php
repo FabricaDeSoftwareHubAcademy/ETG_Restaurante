@@ -9,57 +9,56 @@
                 <h1>Cadastrar Usuário</h1>
             </section>
 
-            <section class="centralizar_input_cadastrar_usuario"> 
-
+            <section class="centralizar_input_cadastrar_usuario">                
                 <!-- input nome -->
-            <div class="input_group field">
-                <input type="input" maxlength="45" class="input_field" name="nome" placeholder="Name" required="">
-                <label for="name" class="input_label">Nome</label> <!--Alterar para o nome do input-->
-            </div>
-            
-                <!--Input Email-->
+                <div class="input_group field">
+                    <input type="input" maxlength="45" class="input_field" name="nome" placeholder="Name" required="">
+                    <label for="name" class="input_label">Nome</label> <!--Alterar para o nome do input-->
+                </div>
+                
+                    <!--Input Email-->
                 <div class="input_e-mail_group field">
-                        <input type="email" class="input_e-mail_field" name="email" placeholder="Name" required="" autocomplete="on">
-                        <label for="name" class="input_e-mail_label">E-mail</label> <!--Alterar para o nome do input-->
+                    <input type="email" class="input_e-mail_field" name="email" placeholder="Name" required="" autocomplete="on">
+                    <label for="name" class="input_e-mail_label">E-mail</label> <!--Alterar para o nome do input-->
+                </div>
+               
+
+                <div class="mover_input">
+                    <div class="dropdown-ck">
+                        <select name="id_perfil" class="option">
+                            <option value="">Selecione seu Perfil</option>
+                            <?=$options?>
+            
+                        </select> 
+                    <div class="barra"></div> 
+                </div>
+
+
+                    <div class="input_group">
+                        <input type="input" class="input_field_matricula" name="matricula" placeholder="Name" required="">
+                        <label for="name" class="input_label_matricula">N° de Matricula</label> <!--Alterar para o nome do input-->
                     </div>
-
-                <div class="dropdown-ck">
-                    <select name="id_perfil" class="option">
-                        <option value="">Selecione seu Perfil</option>
-                        <?=$options?>
-        
-                    </select> 
                 </div>
-
-                <div class="barra"></div> 
-
-            <div class="mover_input">
-                <div class="input_group field matricula">
-                    <input type="input" class="input_field_matricula" name="matricula" placeholder="Name" required="">
-                    <label for="name" class="input_label_matricula">N° de Matricula</label> <!--Alterar para o nome do input-->
+                    
+                        <!--Input Senha-->
+                <div class="input_senha_group field">
+                    <input type="password" class="input_senha_field" name="senha" placeholder="Name" required="">
+                    <label for="name" class="input_senha_label">Senha</label> <!--Alterar para o nome do input-->
                 </div>
-            </div>
-                <!--Input Senha-->
-            <div class="input_senha_group field">
-                <input type="password" class="input_senha_field" name="senha" placeholder="Name" required="">
-                <label for="name" class="input_senha_label">Senha</label> <!--Alterar para o nome do input-->
-            </div>
-
             </section>   
 
             <section class="centralizar_botoes_cadastrar_usuario">
-
                 <!--Botão voltar-->
                 <div class="botao-padrao-voltar">
-                    <a href="listar_recados.php" class="botao-voltar-link">VOLTAR</a>
+                    <a href="listar_recados.php"><input type="submit" class="botao-voltar-submit" value="VOLTAR"></a>
                 </div>
 
             <!--Botão Confirmar-->
                 <div class="botao-padrao-confirmar">
                     <a><input type="submit" class="botao-confirmar-submit" name="btn_submit" value="CONFIRMAR"></a>
                 </div>
-
             </section>
+
         </form>
     </main>
 </body>

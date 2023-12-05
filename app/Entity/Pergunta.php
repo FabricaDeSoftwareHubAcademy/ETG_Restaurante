@@ -32,19 +32,20 @@ class Pergunta
     }
 
     //READ
-    public static function getDados()
-    {
-        $obj_banco = new Banco('cadastro_pergunta');
+    public static function getDados($id_sala)
+{        $obj_banco = new Banco('perguntas_da_sala');
 
-        $dados = $obj_banco -> select();
+        $dados = $obj_banco -> select(where:'id_sala = '.$id_sala.'');
+
         if($dados -> rowCount() > 0){
-            
+
             return $dados -> fetchall(PDO::FETCH_ASSOC);
         }
         else
         {
             return false;
         }
+
 
     }
 
@@ -63,8 +64,23 @@ class Pergunta
         else
         {
             return false;
-        }
+        } 
+    }
 
+    public static function getPerguntas()
+    {
+        $obj_banco = new Banco('cadastro_pergunta');
+
+        $dados = $obj_banco->select();
+
+        if($dados -> rowCount() > 0)
+        {
+            return $dados;
+        }
+        else
+        {
+            return false;
+        } 
     }
 
     public static function filter($nome)

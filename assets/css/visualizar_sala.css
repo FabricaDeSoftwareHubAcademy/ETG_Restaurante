@@ -38,6 +38,12 @@
     
 }
 
+.nome_da_sala{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    font-weight: 500;
+}
 .card{
     display: flex;
     width: 80%;
@@ -87,15 +93,20 @@
 }
 
 p.label-sala{
+    position: absolute;
+    display: flex;
     font-style: normal;
     font-family: 'Montserrat';
+    margin-top: 10px 12px;
 }
 
 h1.nome-sala{
+    position: absolute;
+    margin-left: 20%;
     text-align: center;
     font-style: normal;
     font-family: 'Montserrat';
-    margin-top: 10px;
+    margin-top: 10px 12px;
 
 }
 
@@ -149,7 +160,7 @@ p.texto-descricao{
     text-align: start;
     font-style: normal;
     font-family: 'Montserrat';
-    font-size: 18px;
+    font-size: 16px;
 }
  
 #paragrafo_horarios{
@@ -227,3 +238,87 @@ p.texto-descricao{
     width: 80%;
     justify-content: space-between;
 }
+
+/* Estilos padrão para todos os dispositivos */
+
+/* ... (código existente) ... */
+
+/* Adaptações para tablets (tamanho máximo de tela 768px) */
+@media (max-width: 768px) {
+    .area_card {
+        width: 100%;
+        min-width: unset;
+    }
+
+    .card {
+        width: 100%;
+    }
+
+    .imagem_card {
+        height: auto;
+    }
+
+    .nome_da_sala {
+        font-size: 18px;
+    }
+
+    /* Adicione outras adaptações necessárias para tablets */
+}
+
+/* Adaptações para smartphones (tamanho máximo de tela 480px) */
+@media (max-width: 480px) {
+    .area_card {
+        width: 100%;
+        min-width: unset;
+    }
+
+    .card {
+        width: 100%;
+    }
+
+    .imagem_card {
+        height: auto;
+    }
+
+    .nome_da_sala {
+        font-size: 16px;
+    }
+
+    .texto_card {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .label-sala, .nome-sala {
+        margin-left: 5%;
+        margin-top: 5px;
+    }
+
+    /* Adicione outras adaptações necessárias para smartphones */
+}
+
+
+
+
+
+
+
+/* Responsividade da tela */
+ 
+/* @media (min-width: 702px) and (max-width: 1024px) {
+    h1.nome-sala{
+        position: absolute;
+        margin-left: 20%;
+        text-align: center;
+        font-style: normal;
+        font-family: 'Montserrat';
+        margin-top: 10px 12px;
+        /* font-size: 18px; */
+    }
+} */ */
+
+
+/* @media screen and (max-width: 618px){
+
+    
+} */
