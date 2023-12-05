@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
@@ -6,13 +6,13 @@
     <title>ETG</title>
     <link rel="stylesheet" href="pop-up-excluir.css">
 </head>
-<body>
+<body> -->
 
     <div class="container-pop-up-notificacao">
         <button type="submit" class="btn-pop-up-notificacao" id="submit-btn-notificacao" onclick="openPopupValidar()">Submit</button>
         <div class="popup-notificacao" id="popup-up-notificacao">
             <div class="div-img">
-                <img src="../img/erro.png" alt="carregando" id="img_check">
+                <img src="img/erro.png" alt="carregando" id="img_check">
                 <p>Recado excluído com sucesso! </p>
             </div>
             <div class="botao-padrao-ok">
@@ -22,6 +22,6 @@
     </div>
 
 
-    <script src="pop-up-excluir.js"></script>
-</body>
-</html>
+    <!-- <script src="pop-up-excluir.js"></script> -->
+<!-- </body>
+</html> -->

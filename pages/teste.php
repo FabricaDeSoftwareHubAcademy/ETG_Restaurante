@@ -5,19 +5,25 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro de CheckList</title>
-    <link rel="stylesheet" href="estilo_perfil.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="estilo_perfil.css"> -->
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https/cdnjs.cloudflare.comlibs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="../assets/css/input-checklist.css">
-    <link rel="stylesheet" href="../assets/css/posicao.css">
-    <link rel="stylesheet" href="../assets/css/caixa_pergunta.css">
-    <link rel="stylesheet" href="../assets/css/botões-checklist.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"> -->
+    <!-- <link rel="stylesheet" href="../assets/css/input-checklist.css"> -->
+    <!-- <link rel="stylesheet" href="../assets/css/posicao.css"> -->
+    <!-- <link rel="stylesheet" href="../assets/css/caixa_pergunta.css"> -->
+    <!-- <link rel="stylesheet" href="../assets/css/botões-checklist.css"> -->
+    <link rel="stylesheet" href="../assets/css/pop_ups/pop-up-excluir.css">
 </head>
 
-<body class="pai_de_todos">
-    <?php include_once("../includes/menu.php"); ?>
- 
+<body>
+    <?php  
+          include_once("../includes/pop-ups/pop-up-excluir.php");
+        //   include_once("../assets/js/pop_ups/pop-up-excluir.js");
+        //   include_once("../assets/css/pop_ups/pop-up-excluir.css");?>
+    
+
+
     <h1 id="titulo">Cadastro de CheckList</h1>
     <main class="todo-projeto">
         <form class="cadastro-checklist" method="POST" name="form-perguntas">
@@ -42,35 +48,36 @@
                         </tr>
 
                         <?php
-                        // Faz a conexão com o banco de dados
-                        $host = '192.168.22.9';
-                        $usuario = 'fabrica';
-                        $senha = 'fabrica@2022';
-                        $banco = 'etg_homologacao';
+                        // // Faz a conexão com o banco de dados
+                        // $host = '192.168.22.9';
+                        // $usuario = 'fabrica';
+                        // $senha = 'fabrica@2022';
+                        // $banco = 'etg_homologacao';
 
-                        $conexao = mysqli_connect($host, $usuario, $senha, $banco);
+                        // $conexao = mysqli_connect($host, $usuario, $senha, $banco);
 
-                        // Verifica se a conexão foi bem sucedida
-                        if (mysqli_connect_errno()) {
-                            die('Falha na conexão: ' . mysqli_connect_error());
-                        }
+                        // // Verifica se a conexão foi bem sucedida
+                        // if (mysqli_connect_errno()) {
+                        //     die('Falha na conexão: ' . mysqli_connect_error());
+                        // }
 
-                        // Busca as perguntas do banco de dados
-                        $query = "SELECT id_cadastro_pergunta,descricao FROM cadastro_pergunta";
-                        $resultado = mysqli_query($conexao, $query);
+                        // // Busca as perguntas do banco de dados
+                        // $query = "SELECT id_cadastro_pergunta,descricao FROM cadastro_pergunta";
+                        // $resultado = mysqli_query($conexao, $query);
 
-                        // Loop através dos resultados e cria as linhas da tabela
-                        while ($linha = mysqli_fetch_assoc($resultado)) {
-                            echo "<tr>";
-                            echo "<td><input type='checkbox' name='pergunta[]' value='" . $linha['id_cadastro_pergunta'] . "'></td>";
-                            echo "<td>" . $linha['descricao'] . "</td>";
-                        }
+                        // // Loop através dos resultados e cria as linhas da tabela
+                        // while ($linha = mysqli_fetch_assoc($resultado)) {
+                        //     echo "<tr>";
+                        //     echo "<td><input type='checkbox' name='pergunta[]' value='" . $linha['id_cadastro_pergunta'] . "'></td>";
+                        //     echo "<td>" . $linha['descricao'] . "</td>";
+                        // }
 
-                        // Fecha a conexão com o banco de dados
-                        mysqli_close($conexao);
+                        // // Fecha a conexão com o banco de dados
+                        // mysqli_close($conexao);
                         ?>
                     </table>
                 </section>
+                <script src="../assets/js/pop_ups/pop-up-excluir.js"></script>
             </div>
 
             <div class="botoes">
@@ -89,16 +96,16 @@
         </form>
     </main>
 
-    <div>
+    <!-- <div>
         <?php
-        if (isset($_POST['cadastrar'])) {
-            var_dump($_POST);
-        }
+        // if (isset($_POST['cadastrar'])) {
+        //     var_dump($_POST);
+        // }
         ?>
-    </div>
+    </div> -->
 
     <!----------------- Sanduiche------------------>
-    <script>
+    <!-- <script>
         var toggleClick = document.querySelector(".toggleBox-menu");
         var container = document.querySelector(".container-menu");
         toggleClick.addEventListener("click", () => {
@@ -130,6 +137,8 @@
             submenu.classList.remove('active')
             btn_submenu.setAttribute('onclick', 'openSubmenu()')
         }
-    </script>
+    </script> -->
+
+    
 </body>
 </html>

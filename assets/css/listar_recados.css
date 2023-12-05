@@ -2,6 +2,9 @@
     max-width: 832px;
     position: relative;
     margin: 0 auto;
+    /* max-height: 100vh;
+    height: 100vh;
+    overflow-y: hidden; */
 }
 .title_principal{
      
@@ -123,19 +126,20 @@ button{
 .area_cards_recados_mural{
     display: flex;
     align-items: center;
-    justify-content: center;
-    padding: 15px;
-    width: 81%;
+    justify-content: space-evenly;
+    /* padding: 15px; */
+    width: 94%;
     flex-wrap: wrap;
     margin: 0 auto;
     position: relative;
     height: 60vh;
     overflow-y: scroll;
     scrollbar-color: #F28920;
- 
-    gap: 10px; 
-    margin-bottom: 10px;
+    gap: 10px;
+        /* margin-bottom: 10px; */
+
 }
+
 .area_cards_recados_mural::-webkit-scrollbar{
     width: 8px;
     background-color: #eeeeee;
@@ -210,12 +214,14 @@ border-radius: 10px;
 
 .botao-padrao-inicio{
      
-    width: 80%;
+    width: 91%;
     position: relative;
     margin: 0 auto;
     display: flex;
     align-items: end;
     justify-content: end;
+    padding-right: 4%;
+
 }
 
 .botao-inicio-submit{
