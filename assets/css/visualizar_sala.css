@@ -1,3 +1,5 @@
+/* GERAL */
+
 *{
     padding: 0;
     margin: 0;
@@ -11,10 +13,6 @@
     --cor-primaria-botao-red:   red;
     --cor-primaria-botao-yellow:rgba(255, 199, 0, 1);
     --cor-primaria-botao-blue:  rgba(6, 74, 140, 1);
-    ;
-}
-
-:root{
     --move_low: 75px;
     --move_low_reverse: -75px;
 }
@@ -26,27 +24,39 @@
     margin: 0 auto;
 }
 
+
+
+
+
+/* TITULO DA PÁGINA */
+h1.nome-sala{
+    margin-top: 1vh;
+    font-style: normal;
+    font-family: 'Montserrat';
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+
+
+
+
+
+/* MEIO DA PÁGINA */
 .area_card{
     display: flex;
-    /* width: 100vw;
-    height: 100vh; */
     flex-direction: column;
     align-items: center; 
-    /* max-width: 100%;
-    min-width: 100%;
-    margin: 0 auto; */
     width: 100%;
-    
 }
 
-.nome_da_sala{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    font-weight: 500;
-}
 
+
+
+
+
+/* CARD DE VISUALIZAR SALAS */
 .card{
     display: flex;
     width: 80%;
@@ -58,17 +68,11 @@
     height: 60vh;
 }
 
-.turnos-de-funcionamento{
-    margin-bottom: 3vh;
-}
-
 .imagem_card{
     display: flex;
     width: 100%;
     height: 20vh;
     border: solid black 0px;
-
-
 }
 
 #img_config{
@@ -80,77 +84,25 @@
     
 }
 
-/* 
-.titulo_card{
-    flex-direction: column;
-    display: flex;
-    margin-top: 6%;
-    justify-content: center;
-} 
-*/
-
-
 .texto_card{
-    /* padding-left: 30px; 
-    padding-right: 30px; */
     width: 90%;
 }
 
-/* 
-p.label-sala{
-    position: absolute;
+.nome_da_sala{
     display: flex;
-    font-style: normal;
-    font-family: 'Montserrat';
-} */
-
-h1.nome-sala{
-
-    margin-top: 1vh;
-    font-style: normal;
-    font-family: 'Montserrat';
-    width: 100%;
-    display: flex;
+    align-items: center;
     justify-content: center;
-
-}
-
-.dias_funcionamento{
-    display: flex;
     width: 100%;
-    margin-top: 1vh;
-    text-align: justify;
-    font-style: normal;
-    font-family: 'Montserrat';
-    font-size: 16px;
-    word-spacing: 1vw;
+    font-weight: 500;
 }
 
-.turnos_funcionamento{
-    display: flex;
-    width: 100%;
-    margin-top: 1vh;
-    text-align: justify;
-    font-style: normal;
-    font-family: 'Montserrat';
-    font-size: 16px; 
-    word-spacing: 1vw;
-}
+#paragrafo_descricao{
 
-h2#dias-funcionamento{
     display: flex;
     font-family: 'Montserrat';
     font-size: 22px;
     width: 100%;
-    margin-top: 3vh;
-}
-
-h2#turnos-funcionamento{
-    display: flex;
-    font-family: 'Montserrat';
-    font-size: 22px;
-    width: 100%;
-    margin-top: 3vh;
+    margin-top: 2vh;
 }
 
 .texto-descricao{
@@ -164,35 +116,60 @@ h2#turnos-funcionamento{
 
 }
 
-#paragrafo_descricao{
-
+h2#dias-funcionamento{
     display: flex;
     font-family: 'Montserrat';
     font-size: 22px;
     width: 100%;
-    margin-top: 2vh;
-
+    margin-top: 3vh;
 }
-/* 
-p.texto-descricao{
+
+.dias_funcionamento{
+    display: flex;
+    width: 100%;
+    margin-top: 1vh;
     text-align: justify;
     font-style: normal;
     font-family: 'Montserrat';
     font-size: 16px;
-} */
+    word-spacing: 1vw;
+}
 
+h2#turnos-funcionamento{
+    display: flex;
+    font-family: 'Montserrat';
+    font-size: 22px;
+    width: 100%;
+    margin-top: 3vh;
+}
+
+
+.turnos_funcionamento{
+    display: flex;
+    width: 100%;
+    margin-top: 1vh;
+    text-align: justify;
+    font-style: normal;
+    font-family: 'Montserrat';
+    font-size: 16px; 
+    word-spacing: 1vw;
+    margin-bottom: 3vh;
+}
+
+
+
+
+
+/* PARTE INFERIOR DA TELA - BOTÕES */
 .alinhar_botoes{
 
     display: flex; 
     margin-top: 3vh;
     width: 100%;
     justify-content: space-evenly;
-
 }
 
- 
 /* CSS Botão Voltar */
-
 .botao-voltar-submit{
     width: 180px;
     height: 45px;
@@ -206,7 +183,6 @@ p.texto-descricao{
     font-weight: bold;
     font-size: 15px;
     text-align: center;
-
 }
 
 .botao-voltar-submit:hover{
@@ -215,9 +191,7 @@ p.texto-descricao{
     color: var(--cor-primaria-botao-white);
 }
 
-
 /* Css Botão Fazer Checklist */
-
 .botao-fazer-checklist-submit{
     width: 180px;
     height: 45px;
@@ -230,9 +204,7 @@ p.texto-descricao{
     font-family: 'Montserrat';
     font-weight: bold;
     font-size: 15px;
-    text-align: center;
-    
-    
+    text-align: center;   
 }
 
 .botao-fazer-checklist-submit:hover{
@@ -244,6 +216,7 @@ p.texto-descricao{
 
 
 
+/* PARTE DA RESPONSIVIDADE DA TELA */
 @media screen and (max-width:590px ){
 
     .card{
@@ -293,192 +266,13 @@ p.texto-descricao{
         width: 115px;
         font-size: 13px;
     }
+
 }
 
+@media screen and (max-width:450px ){
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    /* @media screen and (max-width: 360px) {
-    .area_card {
-        min-width: 100%;
+    .card{
+        height: 60vh;
     }
-    
+
 }
-
-Styles for tablets (832x1197)
-@media screen and (min-width: 361px) and (max-width: 832px) {
-    .visualizar_sala {
-        max-width: 100%;
-    }
-    .area_card {
-        min-width: 100%;
-    }
-    
-}
-
-
-@media screen and (min-width: 833px) {
-    .visualizar_sala {
-        max-width: 832px;
-    }
-    .area_card {
-        min-width: 407px;
-    }
-   
-}
- */
-
-
-
-
-
-
-/* Estilos padrão para todos os dispositivos */
-
-/* ... (código existente) ... */
-
-/* Adaptações para tablets (tamanho máximo de tela 768px) */
-/* @media (max-width: 768px) {
-    .area_card {
-        display: flex;
-        justify-content: center;
-        width: 100%;
-        min-width: unset;
-    }
-
-    .card {
-        width: 100%;
-    }
-
-    .imagem_card {
-        width: 100%;
-      
-    }
-
-    .nome_da_sala {
-        font-size: 18px;
-    } 
-}*/
-
-
-    /* Adicione outras adaptações necessárias para tablets */
-
-
-/* Adaptações para smartphones (tamanho máximo de tela 480px) */
-/* @media (max-width: 388px) {
-    .area_card {
-        width: 95%;
-        min-width: unset;
-    }
-
-    .card {
-        width: 100%;
-    }
-
-    .imagem_card {
-        display: flex;
-        width: 100%;
-        height: 300px;
-        border: solid black 0px;
-      
-    }
-    h1.nome-sala{
-        position: absolute;
-        margin-left: 40%;
-        text-align: center;
-        font-style: normal;
-        font-family: 'Montserrat';
-        margin-top: 10px 12px;
-    
-    }
-    .nome_da_sala {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
-        font-size: 16px;
-        margin-left: 100px;
- 
-    }
-
-
-    .texto_card {
-        padding-left: 10px;
-        padding-right: 10px;
-    }
-    .texto-descricao{
-        font-size: 10%
-    }
-
-    .label-sala, .nome-sala {
-        margin-left: 5%;
-        margin-top: 5px;
-        
-    }
-  
-
- } */   
-    
-
-    /* Adicione outras adaptações necessárias para smartphones */
-
-/* Responsividade da tela */
-/* @media (min-width: 702px) and (max-width: 1024px) {
-    h1.nome-sala{
-        position: absolute;
-        margin-left: 20%;
-        text-align: center;
-        font-style: normal;
-        font-family: 'Montserrat';
-        margin-top: 10px 12px;
-        /* font-size: 18px; 
-    {
-{*/
