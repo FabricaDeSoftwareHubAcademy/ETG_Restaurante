@@ -184,30 +184,18 @@ p.texto-descricao{
 .alinhar_botoes{
 
     display: flex; 
-    margin-top: 5%;
+    margin-top: 3vh;
     width: 100%;
-    justify-content: space-between;
-    /* max-width: 832px;
-    margin-bottom: 5%;
-    padding-right: 6%; */
+    justify-content: space-evenly;
 
 }
 
  
 /* CSS Botão Voltar */
 
-.botao-padrao-voltar{
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    
-}
-
 .botao-voltar-submit{
-    width: 285%;/*180px*/
-    height: 5vh;/*porcentagem ou vw ou vh*/
+    width: 180px;
+    height: 45px;
     background-color: var(--cor-primaria-botao-white);
     border: 3px solid var(--cor-primaria-botao-yellow);
     border-radius: 20px;
@@ -217,6 +205,7 @@ p.texto-descricao{
     font-family: 'Montserrat';
     font-weight: bold;
     font-size: 15px;
+    text-align: center;
 
 }
 
@@ -229,16 +218,9 @@ p.texto-descricao{
 
 /* Css Botão Fazer Checklist */
 
-.botao-padrao-fazer-checklist{
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
 .botao-fazer-checklist-submit{
-    width: 126%;/**/
-    height: 5vh;/*porcentagem ou vw ou vh*/
+    width: 180px;
+    height: 45px;
     background-color: var(--cor-primaria-botao-white);
     border: 3px solid var(--cor-primaria-botao-green);
     border-radius: 20px;
@@ -248,6 +230,7 @@ p.texto-descricao{
     font-family: 'Montserrat';
     font-weight: bold;
     font-size: 15px;
+    text-align: center;
     
     
 }
@@ -261,9 +244,109 @@ p.texto-descricao{
 
 
 
+@media screen and (max-width:590px ){
+
+    .card{
+        height: 55vh;
+    }
+
+    h1.nome-sala{
+        font-size: 20px;
+    }
+
+    #paragrafo_descricao{
+        font-size: 15px;
+        margin-top: 1vh;
+    }
+
+    .texto-descricao{
+        font-size: 13px;
+        word-spacing: 1px;
+    }
+
+    h2#dias-funcionamento{
+        font-size: 15px;
+        margin-top: 1vh;
+    }
+
+    .dias_funcionamento{
+        font-size: 13px;
+        word-spacing: 2px;
+    }
+
+    h2#turnos-funcionamento{
+        font-size: 15px;
+        margin-top: 1vh;
+    }
+
+    .turnos_funcionamento{
+        font-size: 13px;
+        word-spacing: 2px;
+    }
+
+    .botao-fazer-checklist-submit{
+        width: 115px;
+        font-size: 11px;
+    }
+
+    .botao-voltar-submit{
+        width: 115px;
+        font-size: 13px;
+    }
+}
 
 
-/* @media screen and (max-width: 360px) {
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    /* @media screen and (max-width: 360px) {
     .area_card {
         min-width: 100%;
     }

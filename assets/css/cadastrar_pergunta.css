@@ -319,7 +319,7 @@ button.excluir{
     cursor: pointer;
     color: var(--cor-primaria-botao-green);
     font-style: normal;
-    font-size: 'Montserrat';
+    font-family: 'Montserrat';
     font-weight: 580;
     font-size: 15px;
     text-align: center;
