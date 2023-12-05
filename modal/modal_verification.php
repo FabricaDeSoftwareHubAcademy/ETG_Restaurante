@@ -6,13 +6,7 @@
     <title>pop_ups</title>
     <!-- Inclua os links para os arquivos do SweetAlert2 CSS e JavaScript -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.18/dist/sweetalert2.min.css">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-
-
-
-
-    
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>  
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.18/dist/sweetalert2.all.min.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200&display=swap" rel="stylesheet">
