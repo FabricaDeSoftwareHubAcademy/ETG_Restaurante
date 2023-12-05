@@ -15,6 +15,41 @@
     <div class="titulo-topo">
         <h1 id="titulo">Cadastro de CheckList</h1>
     </div>
+    <div class="container-pop-up-notificacao">
+        <!-- <button type="submit" class="btn-pop-up-notificacao" id="submit-btn-notificacao" onclick="openPopupValidar()">Submit</button> -->
+        <div class="popup-notificacao" id="popup-up-notificacao">
+            <div class="div-img">
+                <img src="../includes/pop-ups/img/Check_ring.png" alt="carregando" id="img_check">
+                <p>Checklist Cadastrada com sucesso! </p>
+            </div>
+            <div class="botao-padrao-ok">
+                <script>
+                    function closePopupValidar() {
+                                    let popup = document.getElementById("popup-up-notificacao");
+                                    let btn = document.getElementById("submit-btn-notificacao");
+
+                                    // btn.style.display = "block";
+
+                                    popup.classList.remove("open-popup");
+                                }
+                </script>
+                <a href="cadastrar_checklist.php"><input type="submit" class="botao-ok-submit" onclick="closePopupValidar()" value="OK"></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-pop-up-notificacao">
+        
+        <div class="popup-notificacao" id="popup-up-notificacao">
+            <div class="div-img">
+                <img src="img/erro.png" alt="carregando" id="img_check">
+                <p>Recado excluído com sucesso! </p>
+            </div>
+            <div class="botao-padrao-ok">
+                <a href="#"><input type="submit" class="botao-ok-submit" onclick="closePopupValidar()" value="OK"></a>
+            </div>
+        </div>
+    </div>
 
     <main class="todo-projeto">
 
@@ -22,10 +57,10 @@
 
             <div class="inputs-cadastro-checklist">
                 <div class="input_group field">
-                    <input type="text" class="input_field" placeholder=""  required="" name="nome_checklist" maxlength="45">
+                    <input type="text" class="input_field" placeholder="" required="" name="nome_checklist" maxlength="45">
                     <label for="name" class="input_label">Nome da CheckList</label> <!--Alterar para o nome do input-->
 
-                    
+
                 </div>
             </div>
 
@@ -87,6 +122,7 @@
                 }
             </script>
 
+
             <div class="botoes">
                 <div class="botoes-cadastro-checklist">
                     <!--Botão Voltar-->
@@ -96,10 +132,68 @@
 
                     <!--Botão Cadastrar-->
                     <div class="botao-padrao-cadastrar">
-                        <a href="#"><input type="submit" class="botao-cadastrar-submit" name="btn_cadastrar" value="CADASTRAR"></a>
+                        <!-- <a href="#"><input type="submit" class="botao-cadastrar-submit" name="btn_cadastrar" value="CADASTRAR"></a> -->
+                        <button name="btn_cadastrar" type="submit" class="botao-cadastrar-submit" id="botao-cadastrar-submit" value="CADASTRAR"> CADASTRAR </button>
                     </div>
                 </div>
             </div>
+            <script>
+                let button = document.getElementById("botao-cadastrar-submit")
+
+                button.addEventListener('click', async (e) => {
+                    // alert("dsadsa")
+                    e.preventDefault()
+
+                    let form = document.getElementById('meuFormulario')
+                    console.log(form)
+
+                    let formData = new FormData(form)
+                    // console.log(formData)
+
+                    let dados_php = await fetch("../pages/actions/actn_checklist.php", {
+                        method: "POST",
+                        body: formData
+                    })
+
+                    // alert("Ta chegando até aqui !")
+                    let response = await dados_php.json()
+
+                    console.log(response);
+
+
+                    console.log(response);
+
+                    if (response) {
+
+                        let popup = document.getElementById('popup-up-notificacao');
+                        let btn = document.getElementById("submit-btn-notificacao");
+
+                        // btn.style.display = "none";
+
+                        popup.classList.add("open-popup");
+
+                        let blur = document.getElementById("blur");
+
+                        blur.classList.add("active");
+
+
+
+                    } else {
+                        let popup = document.getElementById('popup-up-notificacao');
+                        let btn = document.getElementById("submit-btn-notificacao");
+
+                        // btn.style.display = "none";
+
+                        popup.classList.add("open-popup");
+
+                        let blur = document.getElementById("blur");
+
+                        blur.classList.add("active");
+                    }
+
+                });
+            </script>
+
         </form>
     </main>
 

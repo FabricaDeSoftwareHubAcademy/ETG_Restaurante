@@ -10,17 +10,17 @@ use App\Entity\Funcoes;
 
 
 
-$dados = Pergunta::getDados();
+$dados = Pergunta::getPerguntas();
 $trpre = "";
 $trpos = "";
 
 foreach ($dados as $rowdados) {
-    if ($rowdados['tipo'] == 'PRE') {
+    if ($rowdados['tipo'] == '0' || $rowdados['tipo'] == '2') {
         $trpre .= "    <tr> 
                         <td><input type='checkbox'  id='checkbox' name='perguntas[]' value='" . $rowdados['id'] . "'></td>
                         <td>" . $rowdados['descricao'] . "</td>   
                     </tr>";
-    } elseif ($rowdados['tipo'] == 'POS') {
+    } elseif ($rowdados['tipo']== '1' || $rowdados['tipo'] == '2') {
         $trpos .= "    <tr> 
                         <td><input type='checkbox'  id='checkbox' name='perguntas[]' value='" . $rowdados['id'] . "'></td>
                         <td>" . $rowdados['descricao'] . "</td>   
