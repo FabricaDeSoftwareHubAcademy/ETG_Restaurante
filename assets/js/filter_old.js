@@ -113,9 +113,11 @@ $("#btn_cancelar_cad_pergunta").click(async function(event){
 })
 
 
+// botao sim excluir pergunta 
 $("#botao-sim-submit").on('click',async function(event){
-
+    event.preventDefault()
     closePopup3()
+    closePopup1()
     let dados_php = await fetch('../pages/actions/action_excluir_pergunta.php?id_pergunta='+id_atual_excluir_pergunta)
 
     let response = await dados_php.json()
