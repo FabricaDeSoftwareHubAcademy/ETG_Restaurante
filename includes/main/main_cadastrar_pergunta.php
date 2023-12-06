@@ -58,7 +58,7 @@
  
         <!-- POPUP DE CADASTRAR PERGUNTA -->
 
-        <form id='form_cad_pergunta'>
+        <form id='form_cad_pergunta' class="overlay" style="opacity: 1;">
             <div class="popup_cadastrar" id="popup-cadastro-pergunta">
                 <h4>Cadastrar pergunta:</h4>
 
@@ -152,7 +152,9 @@
         popup_cadastro_pergunta.classList.add("open-popup1");
         
     }
-    function closePopup1(){
+    function closePopup1(){ 
+        
+        document.getElementById("overlay").style.visibility= 'hidden';
         popup_cadastro_pergunta.classList.remove("open-popup1");
     }
 

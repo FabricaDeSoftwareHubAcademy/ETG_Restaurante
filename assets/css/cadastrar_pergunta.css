@@ -909,7 +909,12 @@ h9{
     transform: translate(-50%, -50%) scale(1);
 }
 
+#form_cad_pergunta {
 
+    position: absolute;
+    z-index: 9999999999999;
+
+}
 .overlay {
     position: fixed;
     top: 0;
@@ -923,7 +928,12 @@ h9{
     z-index: 1059;
     opacity: 0;
     visibility: hidden;
-    transition: opacity 0.3s ease, visibility 0s linear 0.3s;
-    visibility: 0;
+    transition: opacity 0.3s ease, visibility 0s linear 0.3s; 
     transition: transform 0.4s, top 0.4s;
+}
+
+#popup-cadastro-pergunta{
+    position: absolute;
+    z-index: 999999;
+
 }
