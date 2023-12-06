@@ -9,7 +9,7 @@ $("#input").on("input", async function(){
             let descricao =  dadosPerguntas[pergunta].descricao.toLowerCase()
             if(descricao.includes($("#input").val().toLowerCase())){
 
-                let divPergunta = '<div class="question1 move" animation="right"> <p name="question_text" id="question_text">'+dadosPerguntas[pergunta].descricao+' </p> <div class="icons-question1"> <button class="editar" onclick="openPopup2()"><i class="bi bi-pencil-square"></i></button> <button class="excluir" btn_excluir="'+dadosPerguntas[pergunta].id+'" id="btn_trash_excluir_pergunta" onclick="openPopup3()"><i class="bi bi-trash"></i></button> </div> </div>'
+                let divPergunta = '<div class="question1 move" animation="right"> <p name="question_text" id="question_text">'+dadosPerguntas[pergunta].descricao+' </p> <div class="icons-question1"> <button class="editar" id="btn_pencil_editar_pergunta" btn_editar="'+dadosPerguntas[pergunta].id+'" onclick="openPopup2()"><i class="bi bi-pencil-square"></i></button> <button class="excluir" btn_excluir="'+dadosPerguntas[pergunta].id+'" id="btn_trash_excluir_pergunta" onclick="openPopup3()"><i class="bi bi-trash"></i></button> </div> </div>'
                 
                 $('#perguntas').append(divPergunta)
             }
@@ -18,6 +18,11 @@ $("#input").on("input", async function(){
             id_atual_excluir_pergunta = $(this).attr('btn_excluir')  
         })
 
+        $('[id="btn_pencil_editar_pergunta"]').on('click',async function(){ 
+
+            setDadosPerguntaById($(this).attr('btn_editar'))
+            
+        })
 
            
         const observer = new IntersectionObserver((entries) => {
@@ -45,7 +50,7 @@ $("#btn_cad_pergunta").click(async function(event){
 
     // se todos os campos estiverem corretamente preenchidos
     if((($('#nova_pergunta').val().trim().length) > 0) && $('#check1').prop('checked') || $('#check2').prop('checked')){
-        let formData = new FormData($('#overlay')[0])    
+        let formData = new FormData($('#form_cad_pergunta')[0])    
         let dados_php = await fetch('./actions/cad_pergunta.php',{
             method:'POST',
             body: formData
@@ -108,9 +113,11 @@ $("#btn_cancelar_cad_pergunta").click(async function(event){
 })
 
 
+// botao sim excluir pergunta 
 $("#botao-sim-submit").on('click',async function(event){
-
+    event.preventDefault()
     closePopup3()
+    closePopup1()
     let dados_php = await fetch('../pages/actions/action_excluir_pergunta.php?id_pergunta='+id_atual_excluir_pergunta)
 
     let response = await dados_php.json()
@@ -182,9 +189,6 @@ function setDadosPerguntaById(id){
 
         $('#check4').prop('checked',true)
     }
-
-
-
 
     $("#text_editar_pergunta").val(dados_sala['descricao'])
 
