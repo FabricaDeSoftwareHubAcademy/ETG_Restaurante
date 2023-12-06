@@ -63,6 +63,14 @@
                         <label class="label_permissao">Gerenciar Notificacoes</label>
                         <input type="checkbox" class="checkbox_permissoes" name="gerenciar_notificacoes"  id="gerenciar_notificacoes" autocomplete="off"/>
                     </div>
+                    <div class="permissoes_salas_itens">
+                        <label class="label_permissao">Gerenciar Usuários</label>
+                        <input type="checkbox" class="checkbox_permissoes" name="gerenciar_usuarios"  id="gerenciar_usuarios" autocomplete="off"/>
+                    </div>
+                    <div class="permissoes_salas_itens">
+                        <label class="label_permissao">Gerenciar Perfis</label>
+                        <input type="checkbox" class="checkbox_permissoes" name="gerenciar_perfis"  id="gerenciar_perfis" autocomplete="off"/>
+                    </div>
 
                 </div>
             </div>
