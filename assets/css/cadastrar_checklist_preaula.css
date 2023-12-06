@@ -14,7 +14,10 @@
     --cor-label:black;
   } 
 
-
+.btn-remove-x{
+  pointer-events: none;
+  
+}
 
 .container_checklist{
   max-width: 832px;

@@ -16,6 +16,7 @@ if(isset($_GET['id_sala'])){
     //var_dump($dados);exit;
     
 }
+
 // print_r($dados);
 // echo($dados['funcionamento']);
 $funcionamento = json_decode($dados[0]['horarios'], true);
