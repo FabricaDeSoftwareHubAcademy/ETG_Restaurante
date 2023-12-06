@@ -22,7 +22,8 @@
   cursor: pointer;
   color: var(--cor-primaria-botao-green);
   font-family: 'Montserrat';
-  font-size: bold;
+  font-size: 15px;
+  font-weight: bold;
   margin-left: 45%;
 }
 
@@ -44,7 +45,8 @@
   cursor: pointer;
   color: var(--cor-primaria-botao-yellow);
   font-family: 'Montserrat';
-  font-size: bold;
+  font-size: 15px;
+  font-weight: bold;
   margin-left: -45%;
 }
 
