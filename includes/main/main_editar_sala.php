@@ -2,6 +2,7 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
 <link rel="stylesheet" href="../assets/css/cadastrar_editar_sala.css"> 
 <script src="https://code.jquery.com/jquery-3.7.0.js"integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM="crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 <body class="tela-cadastro-salas"> 
 
@@ -28,13 +29,6 @@
             </div>
         </div>
     </div>
-
-
-
-
-
-
-
     <section class="container">
         
         <div class="container-cadastro-salas">
@@ -43,7 +37,7 @@
             
             <div class="wrap-cadastro-salas">
 
-                <form class="cadastro-sala-form" method="POST" enctype="multipart/form-data">
+                <form class="cadastro-sala-form" method="POST" id="form_cad" enctype="multipart/form-data">
                     <div class="titulo_de_cadastro">
 
                         <h1> Editar Sala </h1>
@@ -61,7 +55,7 @@
 
  
                             <div class="input_group field">
-                                <input value="<?=$dados_sala[0]['nome']?>" type="input" class="input_field toguroo" placeholder="Name" required="" name="nome" maxLength="32">
+                                <input value="<?=$dados_sala[0]['nome']?>" type="input" class="input_field toguroo" placeholder="Name" required="" name="nome" maxLength="32" id='nome_sala'>
                                 <label for="name" class="input_label">Nome Da Sala</label> <!--Alterar para o nome do input-->
                             </div>
 
@@ -74,7 +68,7 @@
 
 
                             <div class="input_group field ">
-                                <input type="input" value="<?=$dados_sala[0]['codigo']?>" class="input_field toguro" placeholder="Name" required="" name="codigo" maxLength="8">
+                                <input type="input" value="<?=$dados_sala[0]['codigo']?>" class="input_field toguro" placeholder="Name" required="" name="codigo" maxLength="8"  id="codigo_sala" >
                                 <label for="name" class="input_label toguro" > Código </label> <!--Alterar para o nome do input-->
                             </div>
 
@@ -85,7 +79,7 @@
                     
                     <div class="dropdown-ck">
 
-                        <select name="checklist" class="option">
+                        <select name="checklist" class="option" id="checklist">
                         <?php
                                 foreach ($checklists as $id => $nome)
                                 {
@@ -218,14 +212,17 @@
                         <!-- <div class="botao-padrao-cadastrar">
                             <a><input name="btn_submit" type="submit" class="botao-cadastrar-submit"  value="SALVAR" ></a>
                         </div> -->
-
-                        <button name="btn_submit" type="submit" class="botao-cadastrar-submit" id="botao-cadastrar-submit" value="CADASTRAR"> CADASTRAR </button>
-                        
+                        <div class="botao-padrao-cadastrar">        
+                            <button name="btn_submit" type="submit" class="botao-cadastrar-submit" id="botao-cadastrar-submit" value="SALVAR"> Salvar </button>
+                        </div>
                     </div>
                 
 
 
-                    <script>
+                              
+                </form>  
+
+                <script>
 
                         let button = document.getElementById("botao-cadastrar-submit") 
 
@@ -235,6 +232,7 @@
 
 
                             let nome_sala = document.getElementById('nome_sala')
+                            
                             if(nome_sala.value.length > 0){
 
                                 // const Toast = Swal.mixin({
@@ -377,7 +375,7 @@
                                 let formData = new FormData(form)
                                 // console.log(formData)
 
-                                let dados_php = await fetch("../pages/actions/abrir_modal_cadastrar_sala.php",{method:"POST",
+                                let dados_php = await fetch("../pages/actions/abrir_modal_editar_sala.php?id_sala=<?=$_GET['id_sala']?>",{method:"POST",
                                     body: formData
                                 })
                                 
@@ -387,7 +385,7 @@
                                 console.log(response);
 
                             
-                                console.log(response);
+                                // console.log(response);
 
                                 if(response){
                                     
@@ -398,7 +396,7 @@
                                     
                                     popup.classList.add("open-popup");
 
-                                    let blur = document.getElementById("blur");
+                                    // let blur = document.getElementById("blur");
 
                                     blur.classList.add("active");
 
@@ -434,10 +432,7 @@
 
 
 
-                    </script>            
-                </form>  
-
-
+                </script>                  
                                 
 
 
@@ -450,40 +445,40 @@
         </div>
     </section>
     <script>
-const remover = document.querySelector(".imagem_aparecer_editar");
-const novo_css = document.querySelector(".novo_css_imagem");
-$(document).ready(function() {
-    $('#arquivo').on('change', function(e) {
-        var file = e.target.files[0];
-        var reader = new FileReader();
-        reader.onload = function(e) {
-            var fileExtension = file.name.split('.').pop().toLowerCase();
-            var aceitados = ['jpg', 'jpeg', 'gif', 'png'];
-            if (aceitados.includes(fileExtension)) {
-                $('#imagem_agora_vai').attr('src', e.target.result);
-                remover.classList.add("active");
-                novo_css.classList.add("active");
-            } else {
-                // Caso a extensão do arquivo não seja suportada, você pode adicionar um comportamento específico aqui, como exibir uma mensagem de erro.
-                console.log('Extensão de arquivo não suportada.');
-            }
-        }
-        reader.readAsDataURL(file);
-    });
-});
-
-function abrir_modal(){
-            Swal.fire({
-                title: 'editado com sucesso!', //TITULO DO POP_UP DE ACORDO COM SUA TELA 
-                icon: 'success', // success, error e warning
-                confirmButtonColor: '#609437', // DEFINE A COR DO BOTÃO OK
-                confirmButtonText: 'OK'
+        const remover = document.querySelector(".imagem_aparecer_editar");
+        const novo_css = document.querySelector(".novo_css_imagem");
+        $(document).ready(function() {
+            $('#arquivo').on('change', function(e) {
+                var file = e.target.files[0];
+                var reader = new FileReader();
+                reader.onload = function(e) {
+                    var fileExtension = file.name.split('.').pop().toLowerCase();
+                    var aceitados = ['jpg', 'jpeg', 'gif', 'png'];
+                    if (aceitados.includes(fileExtension)) {
+                        $('#imagem_agora_vai').attr('src', e.target.result);
+                        remover.classList.add("active");
+                        novo_css.classList.add("active");
+                    } else {
+                        // Caso a extensão do arquivo não seja suportada, você pode adicionar um comportamento específico aqui, como exibir uma mensagem de erro.
+                        console.log('Extensão de arquivo não suportada.');
+                    }
+                }
+                reader.readAsDataURL(file);
             });
-        }
+        });
+
+// function abrir_modal(){
+//             Swal.fire({
+//                 title: 'editado com sucesso!', //TITULO DO POP_UP DE ACORDO COM SUA TELA 
+//                 icon: 'success', // success, error e warning
+//                 confirmButtonColor: '#609437', // DEFINE A COR DO BOTÃO OK
+//                 confirmButtonText: 'OK'
+//             });
+//         }
 
 
 
-</script>
+    </script>
     
 </body>
 

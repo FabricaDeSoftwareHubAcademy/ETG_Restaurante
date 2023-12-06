@@ -83,7 +83,7 @@ class Sala
     //UPDATE
     public function setDados($id = null, $dados = []) : bool
     {
-        //var_dump($dados);exit;
+        // echo(json_encode($dados));exit;
         $obj_banco = new Banco('cadastro_sala');
 
         $obj_banco -> update('id = "'.$id.'"', [
