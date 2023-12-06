@@ -204,6 +204,7 @@ body{
     overflow: hidden;
     overflow-y: scroll;
     border-radius: 10px;
+    padding: 5px;
 }
 
 .perguntas::-webkit-scrollbar{
@@ -223,13 +224,15 @@ body{
     align-items: center;
     background-color: #F9F8F8;    ;
     width: 99%;
-    min-height: 10vh;
+    min-height: 100px;
     border-radius: 18px;
     margin-bottom: 2vh;
     box-shadow: 1px 4px 4px 1px rgba(0, 0, 0, 0.25);
     gap: 20px;
     padding-left: 10px;
     padding-right: 50px;
+    position: relative;
+    
 }
 
 #question_text{
@@ -257,6 +260,65 @@ body{
     color: black;
     cursor: pointer;
 }
+
+:root{
+    --move_low: 75px;
+    --move_low_reverse: -75px;
+
+}
+/* animations */
+
+[data-anime]{
+
+    opacity: 0;
+
+}
+ 
+[animation="left"]{
+
+    transform: translateX(var(--move_low_reverse)) ;
+
+}
+
+[animation="right"]{
+
+   
+    transform: translateX(var(--move_low)) ;
+     
+
+}
+[animation="top"]{
+    
+    transform: translateY(var(--move_low_reverse)) ;
+
+
+}
+
+.move    {
+    opacity: 0;
+    transition: all 1s;
+    position: relative;
+}
+
+.show{
+    transform: translateX(-0) ;
+     
+    opacity: 1;
+}
+
+ 
+/* ======================= */
+
+
+
+
+
+
+
+
+
+
+
 
 /* RESPONSIVIDADE DAS PERGUNTAS  */
 
@@ -849,7 +911,20 @@ h9{
     transform: translate(-50%, -50%) scale(1);
 }
 
+#form_cad_pergunta {
 
+    position: absolute;
+    z-index: 9999999999999;
+
+}
+
+#form_editar_pergunta{
+
+
+    position: absolute;
+    z-index: 9999999999999;
+
+}
 .overlay {
     position: fixed;
     top: 0;
@@ -863,7 +938,12 @@ h9{
     z-index: 1059;
     opacity: 0;
     visibility: hidden;
-    transition: opacity 0.3s ease, visibility 0s linear 0.3s;
-    visibility: 0;
+    transition: opacity 0.3s ease, visibility 0s linear 0.3s; 
     transition: transform 0.4s, top 0.4s;
+}
+
+#popup-cadastro-pergunta{
+    position: absolute;
+    z-index: 999999;
+
 }

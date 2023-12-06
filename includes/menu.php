@@ -23,7 +23,7 @@ $dados = $objUsuario->getDadosById($_SESSION['id_user']);
 
 
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https/cdnjs.cloudflare.comlibs/font-awesome/6.4.0/css/all.min.css">
+<!-- <link rel="stylesheet" href="https/cdnjs.cloudflare.comlibs/font-awesome/6.4.0/css/all.min.css"> -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
 
 <link rel="stylesheet" href="../assets/css/menu/menu.css">
@@ -73,7 +73,7 @@ $dados = $objUsuario->getDadosById($_SESSION['id_user']);
 
                     <a href="../pages/listar_notificacoes.php" class="link-menu">
                         <i id="icon-notificacao" class="bi bi-bell"  style="--i:3"></i>  
-                        <h5 class="titulo-info" id="titulo-not" style="--i:3">Notificações</h5>              
+                        <h5 class="titulo-info" id="titulo-noti" style="--i:3">Notificações</h5>              
                     </a>
                 </li>   
                 
@@ -131,7 +131,7 @@ $dados = $objUsuario->getDadosById($_SESSION['id_user']);
             </ul>
 
         </div>
-        <script src="js.js"></script>    
+        <!-- <script src="js.js"></script>     -->
         <div class="container-logo">
             <div class="logo">
                 <ul class="cabecalho_logo"><img src="../assets/imgs/logos/MicrosoftTeams-image.png" alt="Carregando" id = "img-logo"></ul>
@@ -147,7 +147,7 @@ $dados = $objUsuario->getDadosById($_SESSION['id_user']);
     <script>
 
 // ================================================  JAVA SCRIPT DO SUB-MENU DE CADASTRO/MENU ==============================================================
-        var toggleClick = document.querySelector(".toggleBox-menu");
+var toggleClick = document.querySelector(".toggleBox-menu");
         var container = document.querySelector(".container-menu");
         toggleClick.addEventListener("click", ()=>{
           toggleClick.classList.toggle("active");
@@ -193,16 +193,25 @@ function closeSubmenu(){
 }
 
 document.addEventListener("click", function(event) {
-            // Fechar o submenu quando clicar fora dele
-            if (!submenu.contains(event.target) && !btn_submenu.contains(event.target)) {
-                closeSubmenu();
-            }
+    // Fechar o submenu quando clicar fora dele
+    if (!submenu.contains(event.target) && !btn_submenu.contains(event.target)) {
+        closeSubmenu();
+    }
 
-            // Fechar a modal quando clicar fora dela
-            if (!modal.contains(event.target) && event.target !== document.querySelector('button[onclick="openModal()"]')) {
-                closeModal(0);
-            }
-        });
+    // Fechar a modal quando clicar fora dela
+    if (!modal.contains(event.target) && event.target !== document.querySelector('button[onclick="openModal()"]')) {
+        closeModal(0);
+    }
+
+    // Fechar o menu quando clicar fora dele
+    if (!container.contains(event.target) && !toggleClick.contains(event.target)) {
+        toggleClick.classList.remove("active");
+        container.classList.remove("active");
+        submenu.classList.remove('active');
+        btn_submenu.setAttribute('onclick', 'openSubmenu()');
+        closeModal();
+    }
+});
 
 // ================================================  JAVA SCRIPT DO SUB-MENU DOS PERFIS  ==============================================================
 

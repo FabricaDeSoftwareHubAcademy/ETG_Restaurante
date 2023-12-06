@@ -21,8 +21,9 @@
   border-radius: 20px;
   cursor: pointer;
   color: var(--cor-primaria-botao-green);
-  font-size: 'Montserrat';
+  font-family: 'Montserrat';
   font-size: 15px;
+  font-weight: bold;
   margin-left: 45%;
 }
 
@@ -43,8 +44,9 @@
   border-radius: 20px;
   cursor: pointer;
   color: var(--cor-primaria-botao-yellow);
-  font-size: 'Montserrat';
+  font-family: 'Montserrat';
   font-size: 15px;
+  font-weight: bold;
   margin-left: -45%;
 }
 
