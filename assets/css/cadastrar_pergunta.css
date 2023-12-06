@@ -230,6 +230,7 @@ body{
     gap: 20px;
     padding-left: 10px;
     padding-right: 50px;
+    position: relative;
 }
 
 #question_text{
@@ -257,6 +258,65 @@ body{
     color: black;
     cursor: pointer;
 }
+
+:root{
+    --move_low: 75px;
+    --move_low_reverse: -75px;
+
+}
+/* animations */
+
+[data-anime]{
+
+    opacity: 0;
+
+}
+ 
+[animation="left"]{
+
+    transform: translateX(var(--move_low_reverse)) ;
+
+}
+
+[animation="right"]{
+
+   
+    transform: translateX(var(--move_low)) ;
+     
+
+}
+[animation="top"]{
+    
+    transform: translateY(var(--move_low_reverse)) ;
+
+
+}
+
+.move    {
+    opacity: 0;
+    transition: all 1s;
+    position: relative;
+}
+
+.show{
+    transform: translateX(-0) ;
+     
+    opacity: 1;
+}
+
+ 
+/* ======================= */
+
+
+
+
+
+
+
+
+
+
+
 
 /* RESPONSIVIDADE DAS PERGUNTAS  */
 
