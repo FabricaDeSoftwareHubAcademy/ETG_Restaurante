@@ -73,7 +73,7 @@ $dados = $objUsuario->getDadosById($_SESSION['id_user']);
 
                     <a href="../pages/listar_notificacoes.php" class="link-menu">
                         <i id="icon-notificacao" class="bi bi-bell"  style="--i:3"></i>  
-                        <h5 class="titulo-info" id="titulo-not" style="--i:3">Notificações</h5>              
+                        <h5 class="titulo-info" id="titulo-noti" style="--i:3">Notificações</h5>              
                     </a>
                 </li>   
                 
