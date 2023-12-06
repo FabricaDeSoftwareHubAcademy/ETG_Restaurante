@@ -147,7 +147,7 @@ $dados = $objUsuario->getDadosById($_SESSION['id_user']);
     <script>
 
 // ================================================  JAVA SCRIPT DO SUB-MENU DE CADASTRO/MENU ==============================================================
-        var toggleClick = document.querySelector(".toggleBox-menu");
+var toggleClick = document.querySelector(".toggleBox-menu");
         var container = document.querySelector(".container-menu");
         toggleClick.addEventListener("click", ()=>{
           toggleClick.classList.toggle("active");
@@ -193,16 +193,25 @@ function closeSubmenu(){
 }
 
 document.addEventListener("click", function(event) {
-            // Fechar o submenu quando clicar fora dele
-            if (!submenu.contains(event.target) && !btn_submenu.contains(event.target)) {
-                closeSubmenu();
-            }
+    // Fechar o submenu quando clicar fora dele
+    if (!submenu.contains(event.target) && !btn_submenu.contains(event.target)) {
+        closeSubmenu();
+    }
 
-            // Fechar a modal quando clicar fora dela
-            if (!modal.contains(event.target) && event.target !== document.querySelector('button[onclick="openModal()"]')) {
-                closeModal(0);
-            }
-        });
+    // Fechar a modal quando clicar fora dela
+    if (!modal.contains(event.target) && event.target !== document.querySelector('button[onclick="openModal()"]')) {
+        closeModal(0);
+    }
+
+    // Fechar o menu quando clicar fora dele
+    if (!container.contains(event.target) && !toggleClick.contains(event.target)) {
+        toggleClick.classList.remove("active");
+        container.classList.remove("active");
+        submenu.classList.remove('active');
+        btn_submenu.setAttribute('onclick', 'openSubmenu()');
+        closeModal();
+    }
+});
 
 // ================================================  JAVA SCRIPT DO SUB-MENU DOS PERFIS  ==============================================================
 
