@@ -1,21 +1,53 @@
-var input = document.getElementById("input")
-input.addEventListener('input',uga)
+var dadosPerguntas
+var id_atual_excluir_pergunta
+async function listarPerguntas(){
+    $("#perguntas").empty()
+    let dados_php = await fetch('../pages/actions/action_get_perguntas.php')
+    dadosPerguntas = await dados_php.json()
 
-// var area_cards = document.getElementById("area_cards")
-
-function uga(){
-
-    // let bloco = document.createElement("div")
-    // bloco.classList.add("card")
-    // let p = document.createElement("p")
-    // p.innerHTML = input.value 
-
-    // bloco.appendChild(p)
+    // console.log(dadosPerguntas)
+    for(pergunta in dadosPerguntas){
+        
+        // pausei aqui algo
+        let divPergunta = '<div class="question1 move" animation="right"> <p name="question_text" id="question_text">'+dadosPerguntas[pergunta].descricao+' </p> <div class="icons-question1"> <button class="editar" id="btn_pencil_editar_pergunta" btn_editar="'+dadosPerguntas[pergunta].id+'" onclick="openPopup2()"><i class="bi bi-pencil-square"></i></button> <button class="excluir" id="btn_trash_excluir_pergunta" btn_excluir="'+dadosPerguntas[pergunta].id+'" onclick="openPopup3()"><i class="bi bi-trash"></i></button> </div> </div>'
+ 
+        $('#perguntas').append(divPergunta)
+    }  
 
 
-    // area_cards.appendChild(bloco)    
+    $('[id="btn_trash_excluir_pergunta"]').on('click',async function(){ 
+        id_atual_excluir_pergunta = $(this).attr('btn_excluir')  
+        
+    })
 
-    console.log(input.value)
 
-}
-alert("deu bom ")
+    $('[id="btn_pencil_editar_pergunta"]').on('click',async function(){ 
+
+        setDadosPerguntaById($(this).attr('btn_editar'))
+        
+    })
+
+
+
+
+    // depois no botao de 'NAO' adicionar função para resetar o id_atual 
+    
+    const observer = new IntersectionObserver((entries) => {
+
+        entries.forEach((entry) => {
+     
+            if(entry.isIntersecting){
+    
+                entry.target.classList.add('show');
+    
+            }
+        });
+    
+    }) 
+    
+    var hiddenElements = document.querySelectorAll('.move');
+    hiddenElements.forEach((el) => observer.observe(el))
+
+
+};
+

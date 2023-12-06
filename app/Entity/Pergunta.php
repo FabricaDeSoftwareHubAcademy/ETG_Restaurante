@@ -1,6 +1,7 @@
 <?php
 namespace App\Entity; 
 use \App\Db\Banco;
+use Exception;
 use PDO;
 
 class Pergunta
@@ -14,37 +15,51 @@ class Pergunta
     }
 
     //CREATE
-    public function cadastrar()
-    {
-        $obj_banco = new Banco('cadastro_pergunta');
-        $dados = [
-            'descricao' => $this -> descricao
-                ];
-        // atualmente retonando true or false  
-        if($obj_banco -> insert($dados))
-        {
-            return true;
+    public function cadastrar($tipo)
+    {   
+        try{
+
+
+            $obj_banco = new Banco('cadastro_pergunta');
+            $dados = [
+                        'descricao' => $this -> descricao,
+                        'tipo' => $tipo
+                     ];
+    
+    
+            // atualmente retonando true or false  
+            if($obj_banco -> insert($dados))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+
+        }catch(Exception $e){
+
+            echo(json_encode($e->getMessage()));
+
         }
-        else
-        {
-            return false;
-        }
+        
     }
 
     //READ
-    public static function getDados()
-    {
-        $obj_banco = new Banco('cadastro_pergunta');
+    public static function getDados($id_sala)
+{        $obj_banco = new Banco('perguntas_da_sala');
 
-        $dados = $obj_banco -> select();
+        $dados = $obj_banco -> select(where:'id_sala = '.$id_sala.'');
+
         if($dados -> rowCount() > 0){
-            
+
             return $dados -> fetchall(PDO::FETCH_ASSOC);
         }
         else
         {
             return false;
         }
+
 
     }
 
@@ -63,8 +78,23 @@ class Pergunta
         else
         {
             return false;
-        }
+        } 
+    }
 
+    public static function getPerguntas()
+    {
+        $obj_banco = new Banco('cadastro_pergunta');
+
+        $dados = $obj_banco->select(order:"id DESC");
+
+        if($dados -> rowCount() > 0)
+        {
+            return $dados->fetchAll(PDO::FETCH_ASSOC);
+        }
+        else
+        {
+            return false;
+        } 
     }
 
     public static function filter($nome)
@@ -73,5 +103,22 @@ class Pergunta
         $dados = $obj_banco -> select('descricao LIKE "%' . $nome . '%"');
         return $dados -> fetchAll(PDO::FETCH_ASSOC);
         # SELECT * FROM pergunta WHERE descricao LIKE '%os equipamentos%';
+    }
+
+    public static function excluirPergunta($id){
+
+        try{
+
+            $obj_banco = new Banco('cadastro_pergunta');
+            $obj_banco->delete($id,'id')->fetchAll(PDO::FETCH_ASSOC);
+            return true;
+
+        }catch(Exception $e){
+
+            echo($e->getMessage());
+            return ($e->getMessage());
+        }
+
+
     }
 }

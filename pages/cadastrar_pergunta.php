@@ -6,16 +6,17 @@ require("../includes/header/header.php");
 
 //REGRAS DE NEGOCIO ABAIXO
 use App\Entity\Pergunta;
+$obPergunta = new Pergunta();
 
-$dados = Pergunta::getDados(); 
+$dados = $obPergunta->getPerguntas(); 
 $divs = ""; 
 foreach ($dados as $item) {
 
     $divs .= '<div class="question1">
-    <p name="question_text" id="question_text">'.$item['pergunta'].'</p>
+    <p name="question_text" id="question_text">'.$item['descricao'].'</p>
     <div class="icons-question1">
-        <i class="bi bi-pencil-square"></i>
-        <i class="bi bi-trash"></i></i>
+        <button class="editar" onclick="openPopup2()"><i class="bi bi-pencil-square"></i></button>
+        <button class="excluir" onclick="openPopup3()"><i class="bi bi-trash"></i></button>
     </div>
     </div>';
 

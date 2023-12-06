@@ -1,6 +1,7 @@
 <?php
 namespace App\Entity;
 use App\Db\Banco;
+use App\Entity\Funcoes;
 use Exception;
 use PDO;
 use PDOException;
@@ -95,7 +96,6 @@ class Usuario
         
         $dados = $objBanco -> select() -> fetchAll(PDO::FETCH_ASSOC);
         
-        
         return $dados;
 
     }
@@ -122,8 +122,7 @@ class Usuario
          
         $objBanco = new Banco('cadastro_usuario');
         
-        $dados = $objBanco -> select("id = '".$id."'") -> fetchAll(PDO::FETCH_ASSOC)[0];
-        
+        $dados = $objBanco -> select("id = '".$id."'") -> fetchAll(PDO::FETCH_ASSOC);
         
         return $dados;
 
@@ -173,7 +172,23 @@ class Usuario
             return false;
        }
    
+  } 
+
+  public static function setImage($email, $name_img)
+  {
+    try{
+
+        $obj_banco = new Banco('cadastro_usuario');
+        $obj_banco -> update('email = "'.$email.'"', ['foto' => $name_img]);
+     
+        return True;
+
+    }catch(Exception $e){
+        echo $e->getMessage();
+        return false;
+    }
   }
+
   public function setName($new_nome,$email){
 
 

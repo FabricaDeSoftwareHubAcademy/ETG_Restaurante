@@ -95,7 +95,7 @@
 .li-menu{
   list-style: none;
   position: relative;
-  top: 150px;
+  top: 50px;
   margin-left: -6px;
 }
   
@@ -152,6 +152,7 @@
 } 
 
 #icon-pessoa:hover{
+  transition: 0.2s ease;
   color: rgba(6, 74, 140, 1);
 }
 
@@ -190,6 +191,11 @@
   color: rgba(6, 74, 140, 1);
 }
 
+.container-menu.active .navItems-menu li:hover .parte-perfil h5{
+  transition: 0.2s ease;
+  color: rgba(6, 74, 140, 1);
+}
+
 
 .titulo-info{
   font-family: "Montsserat";
@@ -197,7 +203,7 @@
   display: flex;
   justify-content: center;
   text-align: center;
-  font-size: 13px;
+  font-size: 12px;
 }
 
 /* ======================================================= SUB MENU DE CADASTROS  ============================================================================*/
@@ -239,6 +245,10 @@
   color: #FAA916;
 }
 
+#titulo-noti{
+  margin-left: 4px;
+}
+
 .iten-submenu{
   background-color: #fff;
   padding: 6px;
@@ -251,6 +261,7 @@
 }
 
 .sub-menu.active{
+  height: 150px;
   height: 215px;
   border: 2px solid #FAA916;
   margin-left: 65px;
@@ -276,7 +287,7 @@
   color: inherit; 
 }
 
-.link-submenu2{
+.link_submenu2{  
   list-style: none;
 }
 
@@ -286,7 +297,7 @@
   margin-left: 65px;
 }
 
-.link_submenu2 .link-menu2 i{
+.link_submenu2 .link-menu i{
   position: relative;
   display: block;
   color: #FAA916;
@@ -323,13 +334,56 @@
   justify-content: center;
   left: 40%;
   top: 20%;
-
 }
 
 @media (max-width: 832px){
-
+ 
   .modal-container-menu{
     left: 30%;
+  }
+}
+
+@media (max-height:724px){
+
+  .li-menu .link-menu i{
+    font-size: 20px;
+    padding-top: 17px;
+  }
+
+}
+
+
+@media (max-height:807px){
+
+  .navItems-menu{
+    margin-top: -40%;
+
+  }
+  
+  @media (max-height:624px){
+  
+    .navItems-menu{
+      margin-top: -90%;
+    }
+  
+  } 
+
+  .li-menu{
+    top: 15px;
+  }
+  
+}
+
+
+@media (max-width: 836px){
+  .submenu2.active{
+    width: 200px;
+  }
+ 
+  .sub-menu.active{
+    width: 280px;
+    height: 210px;
+    margin-top: -80px;
   }
 
 }
@@ -497,7 +551,7 @@
 
 @media (max-width: 610px){
   #bloc1{
-    width: 40;
+    width: 37px;
     height: 70px;
   }
   @keyframes bloc1 {
@@ -505,7 +559,7 @@
     to {height: 70px;}  
   }
   #bloc2{
-    width: 40;
+    width: 37px;
     height: 90px;
   }
   @keyframes bloc2 {
@@ -532,3 +586,27 @@
     to {height: 80px ;}   
   }
 }
+
+.icon-perfil{
+  width: 50px;
+  height: 50px;
+  border-radius: 60px;
+  margin: auto;
+  display: block;
+  object-fit: cover;
+}
+
+.titulo-nome{
+  color: #F28920;
+  font-family: "Montsserat";
+  font-style: normal;
+  font-size: 13px;
+}
+
+.parte-perfil{
+  list-style: none;
+  width: 100%; 
+  text-align: center;
+  margin-top: 120%;
+}
+  

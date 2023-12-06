@@ -1,5 +1,5 @@
 
-<link rel="stylesheet" href="https/cdnjs.cloudflare.comlibs/font-awesome/6.4.0/css/all.min.css">
+<!-- <link rel="stylesheet" href="https/cdnjs.cloudflare.comlibs/font-awesome/6.4.0/css/all.min.css"> -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
 <!-- POP_UP -->
 
@@ -21,7 +21,7 @@
         </div>
         <form method="POST" class="form_permissoes">
             <div class="input_group">
-                <input type="input" class="input_field" placeholder="Name" name="nome" maxlength=25">
+                <input type="input" class="input_field" placeholder="Name" name="nome" maxlength=25>
                 <label for="name" class="input_label">Nome</label> <!--Alterar para o nome do input-->
             </div>
             <div class="permissoes_salas">
