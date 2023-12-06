@@ -1,4 +1,5 @@
 var intervaloInput 
+
 $("#input").on("input", async function(){ 
     clearTimeout(intervaloInput); 
     // definindo setTimeout para que dps de 500ms apareça as perguntas
@@ -174,8 +175,8 @@ function setDadosPerguntaById(id){
             dados_sala = dadosPerguntas[i]
         }
     }
-
-    console.log(dados_sala)
+    id_atual_editar_pergunta = dados_sala['id']
+    console.log(id_atual_editar_pergunta)
     if(dados_sala['tipo'] == '0'){
         $('#check3').prop('checked',true)
     }
@@ -191,8 +192,83 @@ function setDadosPerguntaById(id){
     }
 
     $("#text_editar_pergunta").val(dados_sala['descricao'])
-
-     
-    
+ 
     
 }
+
+// function botao cancelar editar 
+$("#botao_cancelar_editar").on('click',async function(event){
+
+    event.preventDefault()  
+
+    closePopup2()
+    closePopup1()
+})
+
+
+
+// action editar pergunta  
+$("#botao_confirmar_editar").on('click',async function(e){
+    e.preventDefault()
+ 
+    if(($("#text_editar_pergunta").val().trim().length > 0) && $('#check3').prop('checked') || $('#check4').prop('checked')){
+
+        let formData = new FormData($('#form_editar_pergunta')[0])    
+
+
+        let dados_php = await fetch('./actions/action_editar_pergunta.php?id_pergunta='+id_atual_editar_pergunta,{
+            method:"POST",
+            body: formData
+
+        })
+
+        let response = await dados_php.json()
+        if(response.status){
+
+
+
+            listarPerguntas()
+
+            closePopup2()
+            closePopup1()
+
+            const Toast = Swal.mixin({
+                toast: true,
+                position: "top-end",
+                showConfirmButton: false,
+                timer: 3000,
+                timerProgressBar: true,
+                didOpen: (toast) => {
+                  toast.onmouseenter = Swal.stopTimer;
+                  toast.onmouseleave = Swal.resumeTimer;
+                }
+              });
+              Toast.fire({
+                icon: "success",
+                title: "Editado com sucesso!"
+              }); 
+
+        }
+
+
+    }else{
+
+        const Toast = Swal.mixin({
+            toast: true,
+            position: "top-end",
+            showConfirmButton: false,
+            timer: 3000,
+            timerProgressBar: true,
+            didOpen: (toast) => {
+              toast.onmouseenter = Swal.stopTimer;
+              toast.onmouseleave = Swal.resumeTimer;
+            }
+          });
+          Toast.fire({
+            icon: "error",
+            title: "Preencha todos os campos"
+          }); 
+        
+    }
+
+})

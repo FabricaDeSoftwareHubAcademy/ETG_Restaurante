@@ -121,4 +121,28 @@ class Pergunta
 
 
     }
+    public static function updatePergunta($id,$tipo,$descricao){
+
+
+        try{
+
+            $dados_update = [
+                'descricao' => $descricao,
+                'tipo'=> $tipo
+                
+            ];
+            
+            $obj_banco = new Banco('cadastro_pergunta');
+
+            $obj_banco->update('id = "'.$id.'"',$dados_update );
+
+            return true;
+
+        }catch(Exception $e){
+
+            echo($e->getMessage());
+            return ($e->getMessage());
+        }
+
+    }
 }
