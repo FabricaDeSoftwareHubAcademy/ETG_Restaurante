@@ -58,20 +58,20 @@
         var idtemp = data['children'][0]['attributes']['dataid']['value']
 
         Swal.fire({
-        title: "Are you sure?",
-        text: "You won't be able to revert this!",
+        title: "Deseja excluir esse perfil?",
+        text: "Essa ação não poderá ser desfeita!",
         icon: "warning",
         showCancelButton: true,
         confirmButtonColor: "#3085d6",
         cancelButtonColor: "#d33",
-        confirmButtonText: "Yes, delete it!"
+        confirmButtonText: "Sim!"
         }).then((result) => {
         if (result.isConfirmed)
         {
             deletarPerfil(idtemp);
             Swal.fire({
-            title: "Deleted!",
-            text: "Your file has been deleted.",
+            title: "Excluído!",
+            text: "O perfil foi excluído com sucesso!",
             icon: "success"
             });
         }
