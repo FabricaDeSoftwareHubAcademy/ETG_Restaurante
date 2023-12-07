@@ -13,7 +13,7 @@
         <main class="pai-de-todos">
             <form action="" method="GET">
                 <div class="container_gp">
-                        <h1 class="Perfis">Perfis</h1>
+                        <h1 class="Perfis">Usuários</h1>
                             <ul class="cardsgerenc">
                                 <?=$imprimir?>
                             </ul>
