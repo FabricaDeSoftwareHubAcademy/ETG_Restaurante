@@ -34,6 +34,6 @@ foreach ($dados_perfil as $row_perfil)
                             ';
                         }
                         
-require("../includes/main/main_listar_usuarios.php");
+require("../includes/main/main_visualizar_usuarios.php");
 require("../includes/footer/footer.php");
 ?>
