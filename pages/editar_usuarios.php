@@ -13,7 +13,7 @@ $titulo_page = 'Editar Usuarios';
 
 use App\Entity\Usuario;
  
-$objUsuario = new Usuario();
+$objUsuarios = new Usuario();
 $erro = false;
 
 // validar se $_SESSION['id_user'] esta setado(leu logo assumiu a responsabilidade) 
@@ -58,7 +58,7 @@ if(isset($_POST['btn_submit'])){
          
         
         if ($_POST['novasenha'] == $_POST['confirmarnovasenha']){
-            $objUsuario -> setPasswordByEmail($dados_editar['email'],$_POST['novasenha']); 
+            $objUsuarios -> setPasswordByEmail($dados_editar['email'],$_POST['novasenha']); 
           
             header('Refresh: 0');
         }else{
@@ -80,7 +80,7 @@ if(isset($_POST['btn_submit'])){
 
 require("../includes/header/header.php"); 
 include_once("../includes/menu.php");
-require("../includes/main/main_editar_usuario.php");
+require("../includes/main/main_editar_usuarios.php");
 //FIM DAS REGRAS DE NEGOCIO
 require("../includes/footer/footer.php");
 ?>
