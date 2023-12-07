@@ -1,5 +1,11 @@
 /* EDITAR_USUARIOS.CSS */
 
+:root{
+  --cor-primaria-botao-white: white; 
+  --cor-primaria-botao-green: green;
+  --cor-primaria-botao-yellow:rgba(255, 199, 0, 1);
+  --cor-primaria-botao-blue:  rgba(6, 74, 140, 1);
+}
 
 *{
     margin: 0;
