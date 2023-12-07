@@ -187,8 +187,18 @@
                                 <input type="file" name="img_sala" id="arquivo" >
 
                                 <div class="area-anexo">
-                                    <img id="camera_imagem" class="imagem_aparecer_editar" src="../storage/salas/<?=$dados_sala[0]['img_sala']?>" alt="">
-                                    <img  id="imagem_agora_vai" class="novo_css_imagem" src="" alt="">
+                                    <?php
+                                    if (true)
+                                    {
+                                        echo(json_encode('AAAAAAAAAA'));
+                                        // isset($dados_sala[0]['img_sala'])
+                                        echo '<img id="imagem_agora_vai" class="novo_css_imagem" src="../storage/salas/' . $dados_sala[0]['dsada'] . '" alt="">';
+                                    }
+                                    else
+                                    {
+                                        echo '<img  id="imagem_agora_vai" class="novo_css_imagem" src="" alt="">';
+                                    }
+                                    ?>
                                 </div>
                             </div>    
                             <div class="alinar-botao-cor">
@@ -364,6 +374,7 @@
         $(document).ready(function() {
             $('#arquivo').on('change', function(e) {
                 var file = e.target.files[0];
+                console.log(file);
                 var reader = new FileReader();
                 reader.onload = function(e) {
                     var fileExtension = file.name.split('.').pop().toLowerCase();
