@@ -23,9 +23,7 @@ if (isset($_POST['botao_salvar'], $_POST['nome']))
                                     'gerenciar_recados' => (isset($_POST['gerenciar_recados']) ? 1 : 0),
                                     'gerenciar_notificacoes' => (isset($_POST['gerenciar_notificacoes']) ? 1 : 0),
                                     'gerenciar_usuarios' => (isset($_POST['gerenciar_usuarios']) ? 1 : 0),
-                                    'gerenciar_perfis' => (isset($_POST['gerenciar_perfis']) ? 1 : 0),
-                                    'administrador' => (isset($_POST['mais_usados_administrador']) ? 1 : 0)
-                                    ]);
+                                    'gerenciar_perfis' => (isset($_POST['gerenciar_perfis']) ? 1 : 0)]);
     header("Location: listar_perfis.php");
 
 }

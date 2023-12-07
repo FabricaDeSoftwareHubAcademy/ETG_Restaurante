@@ -160,7 +160,7 @@ class Banco{
         $query = 'UPDATE '.$this->table.'
                   SET '. $setter . '
                   WHERE '. $where;
-        //echo $query;exit;
+        // echo $query;exit;
         return $this->executarQuery($query);    
         // terminar............ 
     }
