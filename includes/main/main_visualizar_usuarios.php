@@ -4,16 +4,16 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
 <script src="../assets/js/deletar_perfil.js"></script>
 
-<link rel="stylesheet" href="../assets/css/listar_perfis.css">
+<link rel="stylesheet" href="../assets/css/listar_usuarios.css">
 
 
 
-<body class="tela_gerenciam_perfis">
+<body class="tela_gerenciam_usuarios">
 
         <main class="pai-de-todos">
             <form action="" method="GET">
                 <div class="container_gp">
-                        <h1 class="Perfis">Usuários</h1>
+                        <h1 class="Usuarios"> Usuários </h1>
                             <ul class="cardsgerenc">
                                 <?=$imprimir?>
                             </ul>

@@ -12,7 +12,7 @@
     --cor-primaria-botao-blue:  rgba(6, 74, 140, 1);
 }
 
-.tela_gerenciam_perfis{
+.tela_gerenciam_usuarios{
     max-width: 832px;
     max-height: 100vh;
     height: 100vh;
@@ -73,7 +73,7 @@ li{
 
 
 
-.Perfis{
+.Usuarios{
     width: 100%;
     display: flex;
     flex-direction: row;
@@ -275,7 +275,7 @@ li{
     display: flex;
     align-items: center;
   }
-  .Perfis{
+  .Usuarios{
     font-size: 20px;
   }
   .bi-trash{

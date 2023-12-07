@@ -1,7 +1,7 @@
 <?php
 require __DIR__."/../vendor/autoload.php";
 include_once("../includes/menu.php"); 
-$titulo_page = 'Lista Perfis';
+$titulo_page = 'Lista Usuarios';
 require("../includes/header/header.php");
 
 use App\Entity\Perfil;
@@ -33,6 +33,6 @@ foreach ($dados_perfil as $row_perfil)
                             ';
                         }
                         
-require("../includes/main/main_listar_perfis.php");
+require("../includes/main/main_listar_usuarios.php");
 require("../includes/footer/footer.php");
 ?>
