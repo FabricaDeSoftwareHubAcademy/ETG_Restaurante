@@ -78,7 +78,7 @@ class Usuario
             $objBanco -> insert([
                                 'nome'              =>      $nome,
                                 'email'             =>      $email,
-                                'matricula'    =>           $matricula, 
+                                'matricula'         =>      $matricula, 
                                 'senha'             =>      $senha,
                                 'id_perfil'         =>      $id_perfil,
                                 ]);
@@ -211,6 +211,7 @@ class Usuario
     
                 "nome"=>$new_nome
             ]; 
+            
             $obBanco->update("id = '".$dados['id']."'",$update);
             return true;
         }

@@ -1,7 +1,8 @@
 <?php
+session_start();
 require __DIR__."/../vendor/autoload.php";
-include_once("../includes/menu.php"); 
 $titulo_page = 'Lista Salas';
+include_once("../includes/menu.php"); 
 require("../includes/header/header.php");
 
 use App\Entity\Sala;
@@ -14,6 +15,20 @@ $count = 0;
 if($ifgensala){
     foreach($dados as $sala){
         
+        
+        $img_sala = '';
+        if($sala['img_sala'] == ''){
+
+        $img_sala = 'https://iili.io/JI1SMfR.png';
+
+        }else{
+
+        $img_sala = "../storage/salas/".$sala['img_sala'];
+
+        }
+
+
+
         if($count == 0){
             
             

@@ -11,7 +11,7 @@
 <body class="tela-cadastro-salas">
 
 
-<div id="blur" class="blur">
+
     <div class="container-pop-up-notificacao">
         <!-- <button type="submit" class="btn-pop-up-notificacao" id="submit-btn-notificacao" onclick="openPopupValidar()">Submit</button> -->
         <div class="popup-notificacao" id="popup-up-notificacao">
@@ -34,7 +34,7 @@
             </div>
         </div>
     </div>
-</div>       
+      
 
     <section class="container">
    

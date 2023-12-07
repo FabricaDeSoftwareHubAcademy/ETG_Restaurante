@@ -1,23 +1,24 @@
-async function deletarPerfil(){
-    var overlay_conf = document.getElementById("overlay_conf");
-    var popup = document.querySelector(".popup");
-  
-    overlay_conf.style.opacity = 0;
-    overlay_conf.style.visibility = "hidden";
-    
-    const dados = await fetch('./actions/perfil_delete_action.php?id_cadastro_perfil='+ id_atual);
+async function deletarPerfil(id)
+{
 
-  
-    const response = await dados.json();
-    if(response['status']){
-        openPopupexcluir();
+    // var id_profile = $(".btn_excluir").attr("data-id");
+    // console.log(id);
 
-        // setTimeout(function(){
-        //     location.reload()
-        // },2000);
+    // var id_profile = document.getElementById('')
+    // var overlay_conf = document.getElementById("overlay_conf");
+    // var popup = document.querySelector(".popup");
+  
+    // overlay_conf.style.opacity = 0;
+    // overlay_conf.style.visibility = "hidden";
     
-    }else{
-        console.log("Algo inesperado aconteceu")
-    }
-    console.log(response)
-  }
+    const id = await fetch('./actions/perfil_delete_action.php?id_perfil='+id);
+    
+    // JSON.stringify(id);
+    // let data_php = await fetch( {
+    //     method: 'GET',
+    //     body: id 
+    // });
+  
+    const response = await id.json();
+    // console.log(response)
+}

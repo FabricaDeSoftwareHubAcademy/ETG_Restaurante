@@ -24,7 +24,7 @@ if (isset($_POST['btn_submit']) /* && isset($_SESSION['email_to_redef_secret']) 
 }
 
 
-include_once("../includes/menu.php"); 
+
 require("../includes/main/main_relembrar_senha_3.php");
 require("../includes/footer/footer.php");
 ?>

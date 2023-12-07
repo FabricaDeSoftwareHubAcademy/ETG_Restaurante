@@ -1,5 +1,5 @@
 
-<link rel="stylesheet" href="https/cdnjs.cloudflare.comlibs/font-awesome/6.4.0/css/all.min.css">
+<!-- <link rel="stylesheet" href="https/cdnjs.cloudflare.comlibs/font-awesome/6.4.0/css/all.min.css"> -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
 <!-- POP_UP -->
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -40,6 +40,14 @@
                     <div class="permissoes_salas_itens">
                         <label class="label_permissao">Gerenciar Notificacoes</label>
                         <input type="checkbox" class="checkbox_permissoes" name="gerenciar_notificacoes"  id="gerenciar_notificacoes" autocomplete="off" <?php echo $gerenciar_notificacoes == 1 ? "checked" : "";?>/>
+                    </div>
+                    <div class="permissoes_salas_itens">
+                        <label class="label_permissao">Gerenciar Usuarios</label>
+                        <input type="checkbox" class="checkbox_permissoes" name="gerenciar_usuarios" id="gerenciar_usuarios" autocomplete="off" <?php echo $gerenciar_usuarios == 1 ? "checked" : "";?>/>
+                    </div>
+                    <div class="permissoes_salas_itens">
+                        <label class="label_permissao">Gerenciar Perfis</label>
+                        <input type="checkbox" class="checkbox_permissoes" name="gerenciar_perfis" id="gerenciar_perfis" autocomplete="off" <?php echo $gerenciar_perfis == 1 ? "checked" : "";?>/>
                     </div>
 
                 </div>

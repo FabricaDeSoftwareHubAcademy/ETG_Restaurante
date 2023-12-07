@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 require __DIR__."/../vendor/autoload.php";
 $titulo_page = 'Redefinir Senha';
 require("../includes/header/header.php");
@@ -34,7 +34,7 @@ if (isset($_POST['email'], $_POST['btn_submit'])){
     }
 }
 //die('AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA');
-include_once("../includes/menu.php"); 
+
 require("../includes/main/main_relembrar_senha_1.php");
 require("../includes/footer/footer.php");
 ?>

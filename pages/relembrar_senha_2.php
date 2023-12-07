@@ -22,7 +22,6 @@ if (isset($_POST['btn_resend']))
 {
     App\Entity\Mailer::sendEmail($_SESSION['email_to_redef_secret']);
 }
-include_once("../includes/menu.php"); 
 require("../includes/main/main_relembrar_senha_2.php");
 require("../includes/footer/footer.php");
 ?>

@@ -3,6 +3,7 @@
     padding: 0;
     box-sizing: border-box;
 }
+
 :root{
     --cor-primaria-botao-white: white; 
     --cor-primaria-botao-green: green;
@@ -155,6 +156,7 @@ li{
   color: #f80606;
     cursor: pointer;
     font-size: 22px;
+    border: none;
  }
 
   
@@ -278,7 +280,7 @@ li{
     font-size: 20px;
   }
   .bi-trash{
-    font-size: 8px;
+    font-size: 12px;
   }
   .icone_editar{
     width: 8px;
@@ -306,20 +308,17 @@ li{
 }
 }
 
-
 @media (max-width: 832px) {
 
-  /* .icone_editar{
-    width: 27px;
-    height: 27px;
+  .icone_editar{
+    width: 12px;
+    height: 12px;
     margin: 8px;
-  } */
+  }
   .container_gp{
     max-height: 72vh; 
   }
   .cardsgerenc {
     max-height: 790px;
   }
-
-
 }

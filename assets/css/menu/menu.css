@@ -245,6 +245,10 @@
   color: #FAA916;
 }
 
+#titulo-noti{
+  margin-left: 4px;
+}
+
 .iten-submenu{
   background-color: #fff;
   padding: 6px;
@@ -376,7 +380,8 @@
   }
  
   .sub-menu.active{
-    width: 240px;
+    width: 280px;
+    height: 220px;
     margin-top: -80px;
   }
 

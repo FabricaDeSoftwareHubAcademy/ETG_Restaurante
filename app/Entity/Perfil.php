@@ -4,6 +4,7 @@ use PDO;
 use PDOException;
 use App\Db\Banco;
 
+
 class Perfil
 {
     private 
@@ -15,28 +16,34 @@ class Perfil
     $gerenciar_checklist,
     $gerenciar_recados,
     $gerenciar_notificacoes,
-    $administrador;
+    $gerenciar_perfis,
+    $gerenciar_usuarios;
+    // $administrador;
 
-    public function __construct($nome                 = null,
-                                $gerenciar_perguntas             = null,
-                                $gerenciar_salas                = null,
-                                $realizar_acao_corretiva               = null,
-                                $realizar_checklist     = null,
-                                $gerenciar_checklist     = null,
-                                $gerenciar_recados      = null,
+    public function __construct($nome = null,
+                                $gerenciar_perguntas = null,
+                                $gerenciar_salas = null,
+                                $realizar_acao_corretiva = null,
+                                $realizar_checklist = null,
+                                $gerenciar_checklist = null,
+                                $gerenciar_recados = null,
                                 $gerenciar_notificacoes = null,
-                                $administrador         = null
+                                $gerenciar_perfis = null,
+                                $gerenciar_usuarios = null,
+                                // $administrador = null
                                 )
     {
-        $this -> nome                 = null;
-        $this -> gerenciar_perguntas             = null;
-        $this -> gerenciar_salas                = null;
-        $this -> realizar_acao_corretiva               = null;
-        $this -> realizar_checklist     = null;
-        $this -> gerenciar_checklist     = null;
-        $this -> gerenciar_recados      = null;
-        $this -> gerenciar_notificacoes      = null;
-        $this -> administrador      = null;
+        $this -> nome                = $nome;
+        $this -> gerenciar_perguntas             = $gerenciar_perguntas;
+        $this -> gerenciar_salas                = $gerenciar_salas;
+        $this -> realizar_acao_corretiva               = $realizar_acao_corretiva;
+        $this -> realizar_checklist     = $realizar_checklist;
+        $this -> gerenciar_checklist     = $gerenciar_checklist;
+        $this -> gerenciar_recados      = $gerenciar_recados;
+        $this -> gerenciar_notificacoes      = $gerenciar_notificacoes;
+        $this -> gerenciar_perfis      = $gerenciar_perfis;
+        $this -> gerenciar_usuarios      = $gerenciar_usuarios;
+        // $this -> administrador      = $administrador;
         
 
     }
@@ -47,13 +54,15 @@ class Perfil
         $obj_banco = new Banco('cadastro_perfil');
         
         $verificacao = $obj_banco -> select('nome = "'.$this -> nome.'"') -> fetchAll(PDO::FETCH_ASSOC);
-        if (1 == 2)
+        if ($verificacao)
         {
             return false;
         } 
         else
         {
-            $obj_banco -> insert($dados);                  
+
+            // var_dump($dados);exit;
+            $obj_banco -> insert($dados);           
             return true;
         }
     }
@@ -95,12 +104,11 @@ class Perfil
     public function deleteById($id)
     {
 
-
-
-        if ($this -> checkForeignKey($id)) {
-            echo "<script>alert('Não é possível excluir este perfil, pois ele está sendo utilizado por algum usuário!');</script>";
+        if ($this->checkForeignKey($id)) {
+         var_dump('teste');exit;
             return false;
         }
+        
         else{
             $obj_banco = new Banco('cadastro_perfil');
 
@@ -127,10 +135,13 @@ class Perfil
         $row_perfil = $obj_banco->select('id_perfil = '.$id);
         
         if ($row_perfil->rowCount() > 0) {
+            
             return true;
         } else {
             return false;
         }
     }
 }
+
+
 ?>
