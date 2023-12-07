@@ -31,7 +31,7 @@ if(isset($_FILES['foto'])){
         $path = '../assets/imgs/users/';
         move_uploaded_file($_FILES['foto']['tmp_name'], $path.$new_name);
         
-        unlink($path . $dados_editar['foto']);
+        // unlink($path . $dados_editar['foto']);
     
         $objUsuario->setImage($dados_editar['email'],$new_name);
       
