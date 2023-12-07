@@ -49,11 +49,12 @@ background-color: #F28920;
 border-radius: 10px; 
 } 
 
-.Perfis
+.titulo
 {
   font-family: 'Montserrat';
   font-size: 40px;
   text-align: center;
+  margin-bottom: 20px;
 
 }
 
@@ -67,9 +68,14 @@ border-radius: 10px;
 {
 padding: 40px;
 width: 100%;
-background-color: red;
+/* background-color: red; */
 border-radius: 28px;
 box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+border-radius: 28px;
+border: 1px solid #FFF;
+background: #f9f9f9;
+box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+cursor: pointer;
 }
 
 .botoes_direita

@@ -2,7 +2,7 @@
 
 <body>
     
-    <h1 class="Perfis">Perfis</h1>
+    <h1 class="titulo">Validação De Checklist</h1>
         <form action="" class="cardsgerenc" method="GET">
             <div class="container_gp">
 
