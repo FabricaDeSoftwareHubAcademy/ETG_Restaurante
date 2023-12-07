@@ -65,7 +65,7 @@ class Sala
     {
         $obj_banco = new Banco('cadastro_sala');
 
-        $salas = $obj_banco -> select() -> fetchAll(PDO::FETCH_ASSOC);
+        $salas = $obj_banco -> select(order:"id DESC") -> fetchAll(PDO::FETCH_ASSOC);
 
         return $salas;
     }
