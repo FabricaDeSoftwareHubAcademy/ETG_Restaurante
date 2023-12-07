@@ -1119,8 +1119,10 @@ box-shadow: none;
 }
 .open-popup{
   visibility: visible;
-  top: 50%;
-  transform: translate(-50%, -50%) scale(1);
+    top: 50%;
+    transform: translate(-50%, -50%) scale(1);
+    background: whitesmoke;
+    border-radius: 20px;
 }
 
 .popup-notificacao p{
