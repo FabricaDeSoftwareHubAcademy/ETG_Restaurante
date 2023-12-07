@@ -130,7 +130,7 @@
                 <!-- DIV DOS BOTÕES (sim e não) -->
 
             <div class="botoes">
-                <button class="botao-nao-submit" id="botao-nao-submit-excluir-pergunta" value="NÃO" onclick="closePopup3()">NÃO</button>
+                <button class="botao-nao-submit" id="botao-nao-submit-excluir-pergunta" value="NÃO" >NÃO</button>
                 <button class="botao-sim-submit" id="botao-sim-submit" value="SIM">SIM</button>
             </div>
             
