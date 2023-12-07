@@ -45,11 +45,22 @@ include_once('../includes/pop-ups/pop_ups_mural_recados/pop_ups mural_editar/pop
     <?=$cards_recados?>
 
     <!-- botão para add recado caso seja adm(requer condicional)   -->
-    <div class="area_btn_add">
+    <?php
+        if($ifgenrec){
+            echo '
+            <div class="area_btn_add">
+    
+                <img onclick="openPopup_recado()" class="img_btn_add" src="../assets/imgs/icons/btn_add.png" alt=""> 
+
+            </div>
+            ';
+        }
+    ?>
+    <!-- <div class="area_btn_add">
     
         <img onclick="openPopup_recado()" class="img_btn_add" src="../assets/imgs/icons/btn_add.png" alt=""> 
 
-    </div>
+    </div> -->
 </div>
 
 

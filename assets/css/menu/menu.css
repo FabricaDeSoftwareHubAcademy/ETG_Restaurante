@@ -257,8 +257,7 @@
 }
 
 .sub-menu.active{
-  height: 150px;
-  height: 215px;
+  height: auto;
   border: 2px solid #FAA916;
   margin-left: 65px;
 }
@@ -288,7 +287,7 @@
 }
 
 .submenu2.active {
-  height: 110px;
+  height: auto;
   border: 2px solid #FAA916;
   margin-left: 65px;
 }
