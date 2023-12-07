@@ -1,737 +1,695 @@
-*{  
-  margin: 0;
-  padding: 0;
-  box-sizing: 0;
-  outline:0 none; 
-  border:0 none;
-}
-
-:root{
-  --cor-primaria-botao-white: white; 
-  --cor-primaria-botao-green: green;
-  --cor-primaria-botao-yellow:rgba(255, 199, 0, 1);
-}
+/* EDITAR_USUARIOS.CSS */
 
 
-.botao-confirmar-submit{
-  width: 180px;
-  height: 45px;
-  background-color: var(--cor-primaria-botao-white);
-  border: 3px solid var(--cor-primaria-botao-green);
-  border-radius: 20px;
-  cursor: pointer;
-  color: var(--cor-primaria-botao-green);
-  font-family: 'Montserrat';
-  font-size: 15px;
-  font-weight: bold;
-  margin-left: 45%;
-}
-
-.botao-confirmar-submit:hover{
-  transition: all 0.4s;
-  background-color: var(--cor-primaria-botao-green);
-  color: var(--cor-primaria-botao-white);
-}
-
-/* Css Botão Voltar */
-
-
-.botao-voltar-submit{
-  width: 180px;
-  height: 45px;
-  background-color: var(--cor-primaria-botao-white);
-  border: 3px solid var(--cor-primaria-botao-yellow);
-  border-radius: 20px;
-  cursor: pointer;
-  color: var(--cor-primaria-botao-yellow);
-  font-family: 'Montserrat';
-  font-size: 15px;
-  font-weight: bold;
-  margin-left: -45%;
-}
-
-.botao-voltar-submit:hover{
-  transition: all 0.4s;
-  background-color: var(--cor-primaria-botao-yellow);
-  color: var(--cor-primaria-botao-white);
-}
-
-
-.tudo_esqueceu_senha1{
-  width: 100%;
-  display: flex; 
-  position: relative;
-  justify-content: center;
-  /* background-color: aqua; */
-}
-
-.centralizar_input_cadastrar_usuarios{
+*{
+    margin: 0;
+    box-sizing: 0;
+    padding: 0;
+    text-decoration: none;
+  }
+  
+  .pai-de-todos{
+    width: 94%; 
+    position: relative;
+    margin: 0 auto;
+  }
+  
+  .titulo-perfil{
+    margin-top: 7%;
+    font-family: 'Montserrat';
+    font-weight: bold;
+    font-size: 240%;
+  }
+  .form-minha-conta{
+    margin-top: 2%; /* 50px*/
+    overflow-y: scroll;
+    overflow-x: hidden;
+    scrollbar-color: #F28920;
+    max-height: 60vh; /*60vh*/
+  
+  }
+  
+  .form-minha-conta::-webkit-scrollbar{
+    width: 8px;
+    background-color: #eeeeee;
+    border-radius: 10px;
+  }
+  
+  .form-minha-conta::-webkit-scrollbar-thumb{
+  background-color: #F28920;
+  border-radius: 10px; 
+  } 
+  .foto-perfil{
+    margin-top: 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 130px;
+    height: 130px;
+    flex-shrink: 0;
+    background-color: aqua;
+    border-radius: 15px;
+    border: 1px solid #FFF;
+    background: url(<path-to-image>), lightgray 50% / cover no-repeat;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    border-radius: 10000000%;
+  
+  }
+  
+  .bi-person-circle::before {
+    font-size: 100px;
+  }
+  
+  .bi-pencil-square::before {
+    font-size: 160%;
+  }
+  
+  .icon-edit{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 3%;
+  }
+  
+  .titulo-perfil{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .quadrado-perfil{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  
+  .alinhar-input{
+    /* margin-top: 2%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; */
+  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 15% auto;
+    margin-top: 2%;
+    width: 100%;
+  
+  } 
+  
+  .area_btn_alterar_nome{
+  
+  height: 50px;
+  width: 700px; 
   display: flex;
-  width: 100%;
-  flex-direction: column;
-  position: relative;
-  justify-content: center;
   align-items: center;
-  margin-top: 10%;
-}
-
-
-.titulo_cadastro_usuarios h1{
+  justify-content: end;
+  pointer-events: none;
+  opacity: 0;
+  transition: 0.5s;
+  
+  }
+  
+  .area_btn_alterar_nome.active{
+  
+  pointer-events: auto;
+  opacity: 1;
+  
+  }
+  
+  
+  .area_btn_alterar_nome input{
+  
+  margin-right: 20px;
+  background-color: #064A8C;
+  padding: 7px 15px;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  font-size: 17px;
   font-family: 'Montserrat';
-  font-size: 40px;
-  font-style: normal;
-  text-align: center;
-  display: flex;
-  justify-content: center;  
+  font-weight: bold;
+  cursor: pointer;
+  transition: .2s;
+  
+  }
+  .area_btn_alterar_nome input:hover{
+  
+  padding: 9px 15px;
+  
+  }
+  .name{
   margin-top: 10%;
-}
-
-.centralizar_botoes_cadastrar_usuarios {
-  width: 100%;
-  justify-content: center;
-  display: flex;
-  position: relative;
-  /* background-color: chartreuse; */
+  padding-left: 8%;
+  }
+  
+  .name-name{
+  font-family: 'Montserrat';
+  font-weight: bold;
+  margin-top: 2%;
+  }
+  
+  .alinhar-botao{
   margin-top: 20%;
-}
-
-
-.Pai-de-todos{
+  
+  }
+  
+  .alterar-senha{
+  margin-top: 3%;
+  font-size: 20px;
+  display: flex;
+  justify-content: start;
+  width: 83%;
+  }
+  
+  .alterar-senha a{
+  font-family: 'Montserrat';
+  font-weight: bold;
+  }
+  
+  #icon-input{
+  position: absolute;
+  top: 10px;
+  right: 3%;
+  cursor: pointer;
+  z-index: 99;
+  margin-top: 1%;
+  display: flex;
+  justify-content: end;
+  }
+  
+  #img_user{
+  
+  object-fit: cover;  
   width: 100%;
   height: 100%;
-  max-width: 832px;
-  position: relative;
-  margin: 0 auto;
-}
-
-/* INPUT EMAIL */
-
-.input_e-mail_group {
-  position: relative;
-  padding: 20px 0 0;
-  width: 544px;
-  max-width: 180px;
-  margin-top: 5%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  border-radius: 1000000%;
   
-}
-
-.input_e-mail_field {
-  width: 544px;
-  border: none;
-  border-bottom: 2px solid #9b9b9b;
-  outline: 0;
-  color: black;
-  padding: 7px 0;
-  background: transparent;
-  transition: border-color 0.2s;
-  font-family: 'Montserrat';
-  font-weight: 400;
-  font-size: 20px;
-}
-
-.input_e-mail_field::placeholder {
-  color: transparent;
-}
-
-.input_e-mail_field:placeholder-shown ~ .input_e-mail_label {
-  font-size: 17px;
-  cursor: text;
-  top: 37px;
-}
-
-.input_e-mail_label {
-  position: absolute;
-  top: 0;
-  display: block;
-  transition: 0.3s;
-  color: #9b9b9b;
-  pointer-events: none;
-  font-family: 'Montserrat';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 20px;
-  left: -180px;
+  }
+  /* 
+  @media (max-width: 832px) {
+  .name-name{
+    font-family: 'Montserrat';
+    font-weight: bold;
+    margin-top: 16%;
+    padding-left: 3%;
+  }
   
-}
-
-.input_e-mail_field:focus {
-  padding-bottom: 6px;
-  font-weight: 700;
-  border-width: 3px;
-  border-image-slice: 1;
-}
-
-.input_e-mail_field:focus ~ .input_e-mail_label {
-  position: absolute;
-  top: 0;
-  display: block;
-  transition: 0.3s;
-  font-size: 17px;
-  font-weight: 700;
-}
-
-.input_e-mail_field:required, .input_e-mail_field:invalid {
-  box-shadow: none;
-}
-
-
-
-
-/* INPUT NOME */
-.input_group {
-  position: relative;
-  padding: 20px 0 0;
-  width: 652px;
-  max-width: 180px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.input_field {
-  width: 544px;
-  border: none;
-  border-bottom: 2px solid #9b9b9b;
-  outline: 0;
-  color: black;
-  padding: 7px 0;
-  background: transparent;
-  transition: border-color 0.2s;
-  font-family: 'Montserrat';
-  font-weight: 400;
-  font-size: 20px;
-}
-
-.input_field::placeholder {
-  color: transparent;
-}
-
-.input_field:placeholder-shown ~ .input_label {
-  font-size: 17px;
-  cursor: text;
-  top: 37px;
-}
-
-.input_label {
-  position: absolute;
-  top: 0;
-  display: block;
-  transition: 0.3s;
-  color: #9b9b9b;
-  pointer-events: none;
-  font-family: 'Montserrat';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 20px;
-  left: -180px;
-}
-
-.input_field:focus {
-  padding-bottom: 6px;
-  font-weight: 700;
-  border-width: 3px;
-  border-image-slice: 1;
-}
-
-.input_field:focus ~ .input_label {
-  position: absolute;
-  top: 0;
-  display: block;
-  transition: 0.3s;
-  font-size: 17px;
-  font-weight: 700;
-}
-
-.input_field:required, .input_field:invalid {
-  box-shadow: none;
-}
-
-
-
-.input_senha_group {
-  position: relative;
-  padding: 20px 0 0;
-  width: 652px;
-  max-width: 180px;
-  margin-top: 5%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.input_senha_field {
-  width: 544px;
-  border: none;
-  border-bottom: 2px solid #9b9b9b;
-  outline: 0;
-  color: black;
-  padding: 7px 0;
-  background: transparent;
-  transition: border-color 0.2s;
-  font-family: 'Montserrat';
-  font-weight: 400;
-  font-size: 20px;
-}
-
-.input_senha_field::placeholder {
-  color: transparent;
-}
-
-.input_senha_field:placeholder-shown ~ .input_senha_label {
-  font-size: 17px;
-  cursor: text;
-  top: 37px;
-}
+  .alinhar-input{
+    margin-top: 2%;
+    padding-left: 3%;
+  } 
   
-.input_senha_label {
-  position: absolute;
-  top: 0;
-  display: block;
-  transition: 0.3s;
-  color: #9b9b9b;
-  pointer-events: none;
+  .alinhar-botao{
+  margin-top: 30%;
+  
+  }
+  
+  }
+  .centralizar_botoes_alterar_senha{
+  
+  margin-top: 40px;
+  }
+  .centralizar_input_alterar_senha{
+  
+  margin: 0% auto;
+  margin-bottom: 50px;
+  
+  } */
+  
+  @media(min-width: 832px){
+  #icon-input{
+    margin-top: 1%;
+  
+  }
+  
+  }
+  
+  @media(max-width: 832px){
+  
+  
+  }
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  /* BOTAO_EDITAR_USUARIOS.CSS */
+  
+  
+  /* Css input */
+  
+  .input_group.field{
+    width: 100%;
+    max-width: 84%;
+    min-width: 50%;
+  }
+  
+  .input_group {
+    position: relative;
+    padding: 2% 0 0;
+    width: 100%;
+    
+  }
+  
+  .input_field {
+    width: 100%;
+    border: none;
+    border-bottom: 2px solid #9b9b9b;
+    outline: 0;
+    color: black;
+    padding: 7px 7px;
+    background: transparent;
+    transition: border-color 0.2s;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 130%;
+    left: 10%;
+    background-color: transparent; 
+    /* border-radius: 5px;  */
+    transition: .2s;
+     
+    
+  }
+  .input_field.active {
+    
+    background-color: #eeeeee;
+  
+  }
+  
+    
+  .input_field::placeholder {
+    color: transparent;
+  }
+  
+  .input_field:placeholder-shown ~ .input_label {
+    font-size: 7%;
+    cursor: text;
+    top: 28px;
+    left: 10px;
+  }
+  
+  .input_label {
+    position: absolute;
+    top: 0;
+    display: block;
+    transition: 0.3s;
+    color: #9b9b9b;
+    pointer-events: none;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    left: 10px;
+    
+    
+  }
+  
+  .input_field:focus {
+    padding-bottom: 6px;
+    font-weight: 700;
+    border-width: 3px;
+    border-image-slice: 1;
+    
+  }
+  
+  .input_field:focus ~ .input_label {
+    position: absolute;
+    top: 0;
+    display: block;
+    transition: 0.3s;
+    font-size: 17px;
+    font-weight: 700;
+    left: 10px;
+  }
+  
+  .input_field:required, .input_field:invalid {
+    box-shadow: none;
+  }
+  
+  
+  /* Css Botão Salvar */
+  
+  .botao-padrao-salvar{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .botao-salvar-submit{
+    width: 180px;
+    height: 45px;
+    background-color: var(--cor-primaria-botao-white);
+    border: 3px solid var(--cor-primaria-botao-green);
+    border-radius: 20px;
+    cursor: pointer;
+    color: var(--cor-primaria-botao-green);
+    font-style: normal;
+    font-family: 'Montserrat';
+    font-weight: bold;
+    font-size: 15px;
+  }
+  
+  .botao-salvar-submit:hover{
+    transition: all 0.4s;
+    background-color: var(--cor-primaria-botao-green);
+    color: var(--cor-primaria-botao-white);
+  }
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  /* EDITAR_SENHA.CSS */
+  
+  
+  .pai-de-todos1{
+    max-width: 832px;
+    margin: 0 auto;
+    position: relative;
+  }
+  
+  .titulo_alterar_senha{
+    font-family: 'Montserrat';
+    font-weight: bold;
+    text-align: center;
+    display: flex;
+    padding-left: 8.4%;
+    font-size: 22px;
+    margin-top: 7%;
+  }
+  
+  .titulo_alterar_senha h1{
   font-family: 'Montserrat';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 20px;
-  left: -180px;
-}
-
-.input_senha_field:focus {
-  padding-bottom: 6px;
-  font-weight: 700;
-  border-width: 3px;
-  border-image-slice: 1;
-}
-
-.input_senha_field:focus ~ .input_senha_label {
-  position: absolute;
-  top: 0;
-  display: block;
-  transition: 0.3s;
-  font-size: 17px;
-  font-weight: 700;
-}
-
-.input_senha_field:required, .input_senha_field:invalid {
-  box-shadow: none;
-}
-
-
-.dropdown-ck{
-  height: 30px;
-  font-size: 'Montserrat';
-  outline: 0;
-  border: 0;
-  list-style: none;
-  margin-left: -100px;
-}
-
-
-.barra{ 
-  border-bottom: solid black 2px;
-  opacity: 0.4;
-}
-
-.dropdown-ck .option{
-  font-weight: 600;  
-  background-color: rgb(255, 255, 255);
-  font-size: 'Montserrat';
-  border-bottom: black;
-  height: 35px;
-  font-size: 19px;
-  opacity: 0.4;
-}
-
-
-/* ==================================================================INPUT MATRICULA================================================================*/
-
-
-
-.input_field_matricula {
-  width: 192px;
-  border-bottom: 2px solid #9b9b9b;
-  color: black;
-  background: transparent;
-  transition: border-color 0.2s;
-  font-family: 'Montserrat';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 20px;
-  margin-left: 200px;
-
-  /* padding-left: 10px; */
-}
-
-.input_field_matricula::placeholder {
-  color: transparent;
-}
-
-.input_field_matricula:placeholder-shown ~ .input_label_matricula {
-  font-size: 17px;
-  cursor: text;
-  top: 25px;
-}
-
-.input_label_matricula {
+  font-weight: bold;
+  }
+   
+  .centralizar-back{
   width: 100%;
-  position: absolute;
-  top: 0;
-  display: block;
-  transition: 0.3s;
-  color: #9b9b9b;
-  pointer-events: none;
-  font-family: 'Montserrat';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 20px;
-  left: 120px;
-}
-
-.input_field_matricula:focus {
-  padding-bottom: 6px;
-  font-weight: 700;
-  border-width: 3px;
-  border-image-slice: 1;
+  }
   
-}
-
-.input_field_matricula:focus ~ .input_label_matricula {
-  position: absolute;
-  top: 0;
-  display: block;
-  transition: 0.3s;
-  font-size: 17px;
-  font-weight: 700;
-}
-
-.input_field_matricula:required, .input_field_matricula:invalid {
-  box-shadow: none;
-}
-
-.mover_input{
-  width: 80%;
-  padding-right: 90px;
-  padding-left: 85px;
+  .centralizar_input_alterar_senha{
   display: flex;
-  justify-content: space-between;
-  margin-top: 5%;
-}
-
-select {
-  border: 0px solid #aaa; 
-  border-radius: 5px; 
-  margin-top: 5.5%;
-}
-
-/* CSS Botão VOLTAR NOVO NEW */
-
-.botao-voltar-link:hover {
-  transition: all 0.4s;
-  background-color: var(--cor-primaria-botao-yellow);
-  color: var(--cor-primaria-botao-white);
-}
-
-
-/* ============================================================ RESPONSIVIDADE ==================================================================== */
-@media (max-width: 801px) {
-
-   .input_label{
-    margin-left: 2%;
-  } 
-
-  .input_e-mail_label{
-    margin-left: 2%;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 15% auto;
+  margin-top: 4%;
   }
-
-  .input_label_matricula{
-    margin-left: 2%;
-  } 
- 
-  .input_senha_label{
-    margin-left: 2%;
+  
+  .centralizar_botoes_alterar_senha{
+      /* display: flex;
+      justify-content: space-between;
+      text-align: center;
+      margin-top: 20%; */
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      text-align: center;
+      padding: 10px; 
+      background-color: #fff; 
+    
+  
+  }
+  
+  .centralizar_botoes_alterar_senha {
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    max-width: 832px;
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    padding: 10px;
+    background-color: #fff; /* Optional: add a background color for better visibility */
+  }
+  
+  
+  
+  
+  
+  
+  /* INPUT_BUTTON_EDITAR_SENHA */
+  
+  
+  /* Css input Senha */
+  
+  .input_senha_group.field{
+    width: 100%;
+    max-width: 84%;/*84%*/;
+    min-width: 50%;
+    margin-top: 2%;/*15px*/
+    
+  }
+    
+  .input_senha_group.field2{
+      width: 100%;
+      max-width: 84%;
+      min-width: 50%;
+      margin-top: 2%;
+  
   }
    
-
-}
-
-@media (max-width: 735px) {
-
-  .input_e-mail_field{
-    width: 480px;
-  }
-
-  .input_field{
-    width: 480px;
+  .input_senha_group.field3{
+    width: 100%;
+    max-width: 84%;
+    min-width: 50%;
+    margin-top: 2%;
+  
   }
   
-  .mover_input{
-    width: 65%;
+  .input_senha_group {
+    position: relative;
+    padding: 20px 0 0;
+    width: 100%;
   }
-
-  .input_senha_field{
-    width: 480px;
+  
+  .input_senha_field {
+    width: 100%;
+    border: none;
+    border-bottom: 2px solid #9b9b9b;
+    outline: 0;
+    color: black;
+    padding: 7px 0;
+    background: transparent;
+    transition: border-color 0.2s;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    left: 10px;
   }
-
-  .input_label{
-    margin-left: 16%;
-  } 
-
-  .input_e-mail_label{
-    margin-left: 16%;
+  
+  .input_senha_field::placeholder {
+    color: transparent;
   }
- 
-  .input_senha_label{
-    margin-left: 16%;
+  
+  .input_senha_field:placeholder-shown ~ .input_senha_label {
+    font-size: 17px;
+    cursor: text;
+    top: 37px;
+    left: 10px;
   }
-
-  .botao-confirmar-submit{
-    width: 160px;
+  
+  .input_senha_label {
+    position: absolute;
+    top: 0;
+    display: block;
+    transition: 0.2s;
+    color: #9b9b9b;
+    pointer-events: none; 
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    left: 10px;
+  }
+  
+  .input_senha_field:focus {
+    padding-bottom: 6px;
+    font-weight: 700;
+    border-width: 3px;
+    border-image-slice: 1;
+  }
+  
+  .input_senha_field:focus ~ .input_senha_label {
+    position: absolute;
+    top: 0;
+    display: block;
+    transition: 0.2s;
+    font-size: 17px;
+    font-weight: 700;
+    left: 10px;
+  }
+    
+  .input_senha_field:required, .input_senha_field:invalid {
+    box-shadow: none;
+  }
+  
+  /* Css input Email */
+  
+  .input_e-mail_group.field{
+    width: 100%;
+    max-width: 700px;
+    min-width: 300px;
+  }
+  
+  .input_e-mail_group {
+    position: relative;
+    padding: 20px 0 0;
+    width: 100%;
+  }
+  
+  .input_e-mail_field {
+      width: 100%;
+      border: none;
+      border-bottom: 2px solid #9b9b9b;
+      outline: 0;
+      color: black;
+      padding: 7px 0;
+      background: transparent;
+      transition: border-color 0.2s;
+      font-family: 'Montserrat';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 20px;
+      left: 10px;
+  }
+  
+  .input_e-mail_field::placeholder {
+    color: transparent;
+  }
+  
+  .input_e-mail_field:placeholder-shown ~ .input_e-mail_label {
+    font-size: 17px;
+    cursor: text;
+    top: 37px;
+    left: 10px;
+  }
+  
+  .input_e-mail_label {
+    position: absolute;
+    top: 0;
+    display: block;
+    transition: 0.3s;
+    color: #9b9b9b;
+    pointer-events: none;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    left: 10px;
+  }
+  
+  .input_e-mail_field:focus {
+    padding-bottom: 6px;
+    font-weight: 700;
+    border-width: 3px;
+    border-image-slice: 1;
+  }
+  
+  .input_e-mail_field:focus ~ .input_e-mail_label {
+    position: absolute;
+    top: 0;
+    display: block;
+    transition: 0.3s;
+    font-size: 17px;
+    font-weight: 700;
+    left: 10px;
+  }
+  
+  .input_e-mail_field:required, .input_e-mail_field:invalid {
+    box-shadow: none;
+  }
+  
+  /* Css Botão Confirmar */
+  
+  .botao-padrao-confirmar{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 7%; 
   }
   
   .botao-confirmar-submit{
-    width: 160px;
+    width: 44%; /* 44%*/
+    height: 172%; /*170%*/
+    background-color: var(--cor-primaria-botao-white);
+    border: 3px solid var(--cor-primaria-botao-green);
+    border-radius: 20px;
+    cursor: pointer;
+    color: var(--cor-primaria-botao-green);
+    font-style: normal;
+    font-family: 'Montserrat';
+    font-weight: bold;
+    font-size: 15px;
   }
-
+  
+  .botao-confirmar-submit:hover{
+    transition: all 0.4s;
+    background-color: var(--cor-primaria-botao-green);
+    color: var(--cor-primaria-botao-white);
+  }
+  
+  /* Css Botão Voltar */
+  
   .botao-padrao-voltar{
-    width: 160px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 7%; 
   }
-}
-
-  @media (max-width: 669px) {
-
-    .input_e-mail_field{
-      width: 380px;
-    }
   
-    .input_field{
-      width: 380px;
-    }
-    
-    .mover_input{
-      width: 65%;
-    }
+  .botao-voltar-submit{
+    width: 44%; /*180px 44%*/
+    height: 150%; /*40px  150%*/
+    background-color: var(--cor-primaria-botao-white);
+    border: 3px solid var(--cor-primaria-botao-yellow);
+    border-radius: 20px;
+    cursor: pointer;
+    color: var(--cor-primaria-botao-yellow);
+    font-style: normal;
+    font-family: 'Montserrat';
+    font-weight: bold;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   
-    .input_senha_field{
-      width: 380px;
-    }
-  
-    .input_label{
-      margin-left: 45%;
-    } 
-  
-    .input_e-mail_label{
-      margin-left: 45%;
-    }
-   
-    .input_senha_label{
-      margin-left: 45%;
-    }
-  
-    .botao-confirmar-submit{
-      width: 140px;
-      font-size: 13px;
-      margin-left: 20%;
-    }
-
-    .botao-voltar-submit{
-      width: 140px;
-      font-size: 13px;
-      margin-left: -20%;
-    }
-
-    .dropdown-ck{
-      width: 120px;
-      margin-left: -10%;
-    }
-
-    .dropdown-ck .option{
-      width: 120px;
-      font-size: 12px;
-    }
-    
-    .input_field_matricula{
-      width: 140px;
-      margin-left: 70%;
-    }
-
-    .input_label_matricula{
-      margin-left: -20%;
-    }
   }
-
-  @media (max-width: 669px) {
-
-    .input_e-mail_field{
-      width: 320px;
-    }
   
-    .input_field{
-      width: 320px;
-    }
-    
-    .mover_input{
-      width: 65%;
-    }
-  
-    .input_senha_field{
-      width: 320px;
-    }
-  
-    .input_label{
-      margin-left: 64%;
-    } 
-  
-    .input_e-mail_label{
-      margin-left: 64%;
-    }
-   
-    .input_senha_label{
-      margin-left: 64%;
-    }
-  
-    .botao-confirmar-submit{
-      width: 100px;
-      font-size: 12px;
-      margin-left: 10%;
-    }
-
-    .botao-voltar-submit{
-      width: 100px;
-      font-size: 12px;
-      margin-left: -10%;
-    }
-
-    .dropdown-ck{
-      width: 120px;
-      margin-left: 0%;
-    }
-
-    .dropdown-ck .option{
-      width: 120px;
-      font-size: 12px;
-    }
-    
-    .input_field_matricula{
-      width: 140px;
-      margin-left: 35%;
-    }
-
-    .input_label_matricula{
-      margin-left: -35%;
-    }
+  .botao-voltar-submit:hover{
+    transition: all 0.4s;
+    background-color: var(--cor-primaria-botao-yellow);
+    color: var(--cor-primaria-botao-white);
   }
-
-  @media (max-width: 553px) {
-
-    .titulo_cadastro_usuarios h1{
-      font-size: 25px;
-    }
-
-    .input_e-mail_field{
-      width: 240px;
-    }
   
-    .input_field{
-      width: 240px;
-    }
-    
-    .mover_input{
-      width: 65%;
-    }
-  
-    .input_senha_field{
-      width: 240px;
-    }
-  
-    .input_label{
-      margin-left: 85%;
-    } 
-  
-    .input_e-mail_label{
-      margin-left: 85%;
-    }
-   
-    .input_senha_label{
-      margin-left: 85%;
-    }
-  
-    .botao-confirmar-submit{
-      width: 100px;
-      font-size: 12px;
-      margin-left: 10%;
-    }
-
-    .botao-voltar-submit{
-      width: 100px;
-      font-size: 12px;
-      margin-left: -10%;
-    }
-
-    .dropdown-ck{
-      width: 90px;
-      margin-left: 10%;
-    }
-
-    .dropdown-ck .option{
-      width: 90px;
-      font-size: 12px;
-    }
-    
-    .input_field_matricula{
-      width: 100px;
-      margin-left: 15%;
-    }
-
-    .input_label_matricula{
-      margin-left: -40%;
-    }
-
-    .input_field_matricula:placeholder-shown ~ .input_label_matricula{
-      font-size: 11px;
-    }
-  }
-
-  @media (max-width: 553px) {
-    .tudo_esqueceu_senha1{
-      margin-top: -50px;
-    }
-
-    .centralizar_input_cadastrar_usuarios{
-      margin-top: -10px;
-    }
-
-    .centralizar_botoes_cadastrar_usuarios{
-      margin-top: 45px;
-    }
-
-  }
-
-  @media (max-width: 553px) {
-    .tudo_esqueceu_senha1{
-      margin-left: 10px;
-    }
-
-  }
-
-  @media (max-width: 443px) {
-    .tudo_esqueceu_senha1{
-      margin-left: 15px;
-    }
-
-    .botao-confirmar-submit{
-      width: 100px;
-      font-size: 12px;
-      margin-left: -23%;
-    }
-
-    .botao-voltar-submit{
-      width: 100px;
-      font-size: 12px;
-      margin-left: 5%;
-    }
-
-  }
