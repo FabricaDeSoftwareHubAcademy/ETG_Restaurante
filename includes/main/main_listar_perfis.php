@@ -42,34 +42,41 @@
             </form>
         </main>
     </body>
-<script defer>
+<script>
+
+
+    async function deletarPerfil(id)
+    {
+        let dados = await fetch('./actions/perfil_delete_action.php?id_perfil='+id);
+        let response = await dados.json();
+        window.location.reload();
+        
+    }
 
     function callPopUp(data)
     {
-        deletarPerfil(data['children'][0]['attributes']['dataid']['value']);
-        
-        // var id_profile = $(".btn_excluir").attr("data-id");
-        //  console.log(id_profile);
+        var idtemp = data['children'][0]['attributes']['dataid']['value']
 
-        // console.log('teste')
-        // Swal.fire({
-        // title: "Are you sure?",
-        // text: "You won't be able to revert this!",
-        // icon: "warning",
-        // showCancelButton: true,
-        // confirmButtonColor: "#3085d6",
-        // cancelButtonColor: "#d33",
-        // confirmButtonText: "Yes, delete it!"
-        
-        // }).then((result) => {
-        // if (result.isConfirmed) {
-        //     Swal.fire({
-        //     title: "Deleted!",
-        //     text: "Your file has been deleted.",
-        //     icon: "success"
-        //     });
-        // }
-        // });
+        Swal.fire({
+        title: "Are you sure?",
+        text: "You won't be able to revert this!",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Yes, delete it!"
+        }).then((result) => {
+        if (result.isConfirmed)
+        {
+            deletarPerfil(idtemp);
+            Swal.fire({
+            title: "Deleted!",
+            text: "Your file has been deleted.",
+            icon: "success"
+            });
+        }
+        });
+       
     }
     
 
