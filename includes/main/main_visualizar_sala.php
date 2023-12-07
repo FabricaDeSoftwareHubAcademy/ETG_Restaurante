@@ -105,14 +105,6 @@
 
                 </div>
         </section>
-    </div>
-                <!--Botão Voltar-->
-                <a href="./listar_salas.php"><input type="submit" class="botao-voltar-submit"  value="VOLTAR"></a>
-    
-                <!--Botão Checklist -->
-                <a href="../pages/cadastrar_checklist_preaula.php?id_sala=<?=$_GET['id_sala']?>"><input type="submit" class="botao-fazer-checklist-submit"  value="FAZER CHECKLIST"></a>
-
-            </div>
 </body>
 
 
