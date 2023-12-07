@@ -83,7 +83,7 @@
                         <?php
                                 foreach ($checklists as $id => $nome)
                                 {
-                                    if ($id == $dados_sala[0]['id'])
+                                    if ($id == $dados_sala[0]['id_check'])
                                     {
                                         echo "<option name=\"checklist\" value='$id' selected>$nome</option>";
                                     }

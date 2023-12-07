@@ -14,12 +14,11 @@ foreach ($dados as $row_check ){
 }
 
 
-
 $newimg = false;
 //CADASTRANDO A IMAGEM
 if (!empty($_FILES['img_sala']['name']))
 {
-    echo(json_encode($_FILES['img_sala']['name']));
+    // echo(json_encode($_FILES['img_sala']['name']));
     $antigo_nome_imagem = '../../storage/salas/'.$dados_sala[0]['img_sala'];
     unlink($antigo_nome_imagem);
     $novo_nome_imagem = Imagens::storeImgAction($_FILES['img_sala']['name']);
@@ -47,7 +46,7 @@ $dias_funcionamentoJson = json_encode($dias_funcionamento);
 // linha que eu add  $imagem = $objImagem::storeImg($_FILES['imagem_sala']['name']); // 
 // $imagem = $objImagem::storeImg($_FILES['imagem_sala']['name']);
 $obj_sala = new Sala();
-// echo(json_encode($_POST));exit;
+// echo(json_encode($_POST['checklist']));
 $obj_sala -> setDados($_GET['id_sala'], ['nome' => $_POST['nome'],
                                         'codigo' => $_POST['codigo'],
                                         'cor_itens' => $_POST['cor_itens'],
