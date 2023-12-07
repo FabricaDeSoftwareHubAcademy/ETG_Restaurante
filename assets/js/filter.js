@@ -1,5 +1,6 @@
 var dadosPerguntas
 var id_atual_excluir_pergunta
+var id_atual_editar_pergunta
 async function listarPerguntas(){
     $("#perguntas").empty()
     let dados_php = await fetch('../pages/actions/action_get_perguntas.php')
@@ -19,7 +20,6 @@ async function listarPerguntas(){
         id_atual_excluir_pergunta = $(this).attr('btn_excluir')  
         
     })
-
 
     $('[id="btn_pencil_editar_pergunta"]').on('click',async function(){ 
 
