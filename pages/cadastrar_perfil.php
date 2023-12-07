@@ -22,7 +22,8 @@ if (isset($_POST['botao_salvar'], $_POST['nome']))
 ); 
     if ($objPerfil -> cadastrar())
     {
-        header("Location: listar_perfis.php");
+        
+        // header("Location: listar_perfis.php");
     } 
 
 }
@@ -31,3 +32,4 @@ include_once("../includes/menu.php");
 require("../includes/main/main_cadastrar_perfil.php");
 require("../includes/footer/footer.php");
 ?>
+

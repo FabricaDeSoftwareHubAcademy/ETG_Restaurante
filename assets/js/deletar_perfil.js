@@ -11,7 +11,7 @@ async function deletarPerfil(id)
     // overlay_conf.style.opacity = 0;
     // overlay_conf.style.visibility = "hidden";
     
-    const id = await fetch('./actions/perfil_delete_action.php?id_perfil='+id);
+    id = await fetch('./actions/perfil_delete_action.php?id_perfil='+id);
     
     // JSON.stringify(id);
     // let data_php = await fetch( {
@@ -19,6 +19,8 @@ async function deletarPerfil(id)
     //     body: id 
     // });
   
-    const response = await id.json();
+    // const response = await id.json();
     // console.log(response)
+    
+
 }

@@ -15,19 +15,6 @@
 
 <body class="tela_gerenciam_perfis">
 
-<!-- <div class="container-pop-up-notificacao">
-        <button type="submit" class="btn-pop-up-notificacao" id="submit-btn-notificacao" onclick="openPopupValidar()">Submit</button>
-        <div class="popup-notificacao" id="popup-up-notificacao">
-            <div class="div-img">
-                <img src="img/erro.png" alt="carregando" id="img_check">
-                <p>Perfil excluído com sucesso! </p>
-            </div>
-            <div class="botao-padrao-ok">
-                <a href="#"><input type="submit" class="botao-ok-submit" onclick="closePopupValidar()" value="OK"></a>
-            </div>
-        </div>
-    </div> -->
-
         <main class="pai-de-todos">
             <form action="" method="GET">
                 <div class="container_gp">
