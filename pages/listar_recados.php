@@ -1,5 +1,6 @@
 <?php
 session_start();
+$titulo_page = 'Mural Recados'; 
 include_once("../includes/menu.php");
  
 
@@ -60,11 +61,8 @@ foreach($recados as $row_recados){
 } else {
     // Tratamento caso $recados não seja um array ou objeto
 }
-
-
-
-    $titulo_page = 'Mural Recados';
-    include_once("../includes/menu.php"); 
+  
+    
     include_once("../includes/header/header.php");
     require("../includes/main/main_listar_recados.php");
 

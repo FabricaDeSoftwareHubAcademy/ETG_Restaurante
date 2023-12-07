@@ -6,7 +6,7 @@ session_start();
 
 require __DIR__."/../vendor/autoload.php";
 
-$titulo_page = 'Editar Usuario';
+$titulo_page = 'Minha Conta';
 
 //REGRAS DE NEGOCIO ABAIXO 
  

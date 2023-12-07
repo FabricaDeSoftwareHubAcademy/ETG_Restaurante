@@ -62,7 +62,7 @@
             <div class="popup_cadastrar" id="popup-cadastro-pergunta">
                 <h4>Cadastrar pergunta:</h4>
 
-                <textarea name="nova_pergunta" id="nova_pergunta"  class="nova_pergunta" placeholder= "Escreva a pergunta"cols="30" rows="10" autocomplete= "off"></textarea>
+                <textarea maxlength="255" name="nova_pergunta" id="nova_pergunta"  class="nova_pergunta" placeholder= "Escreva a pergunta"cols="30" rows="10" autocomplete= "off"></textarea>
 
                 <h4>Selecione a categoria da pergunta:</h4>
 
@@ -95,7 +95,7 @@
             <div class="popup_editar" id="popup-editar-pergunta">
                 <h4>Editar pergunta:</h4>
 
-                <textarea name="nova_pergunta" id="text_editar_pergunta" class="nova_pergunta" placeholder= "Escreva a pergunta"cols="30" rows="10" autocomplete= "off"></textarea>
+                <textarea maxlength="255" name="nova_pergunta" id="text_editar_pergunta" class="nova_pergunta" placeholder= "Escreva a pergunta"cols="30" rows="10" autocomplete= "off"></textarea>
 
                 <h4>Selecione a categoria da pergunta:</h4>
 
