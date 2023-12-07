@@ -184,22 +184,13 @@
                                     <label id="botão-img" for="arquivo" >Selecionar Foto</label>
                                 </div>
                                 
-                                <input type="file" name="img_sala" id="arquivo" >
-
+                                
+                                <input type="file" name="img_sala" id="arquivo">
                                 <div class="area-anexo">
-                                    <?php
-                                    if (true)
-                                    {
-                                        echo(json_encode('AAAAAAAAAA'));
-                                        // isset($dados_sala[0]['img_sala'])
-                                        echo '<img id="imagem_agora_vai" class="novo_css_imagem" src="../storage/salas/' . $dados_sala[0]['dsada'] . '" alt="">';
-                                    }
-                                    else
-                                    {
-                                        echo '<img  id="imagem_agora_vai" class="novo_css_imagem" src="" alt="">';
-                                    }
-                                    ?>
+                                    <img id="camera_imagem" class="imagem_aparecer_editar" src="../storage/salas/<?=$dados_sala[0]['img_sala']?>" alt="">
+                                    <img  id="imagem_agora_vai" class="novo_css_imagem" src="" alt="">
                                 </div>
+                                
                             </div>    
                             <div class="alinar-botao-cor">
                                 <span id="selecao-cor-text">Cor da sala : </span> 
@@ -372,6 +363,28 @@
         const remover = document.querySelector(".imagem_aparecer_editar");
         const novo_css = document.querySelector(".novo_css_imagem");
         $(document).ready(function() {
+            // Suponha que 'caminho_da_imagem' contenha o caminho da imagem que você deseja definir
+            var caminho_da_imagem = $('.imagem_aparecer_editar').prop('src');
+            
+            // Crie um novo objeto Image
+            var imagem = new Image();
+            
+            // Defina o caminho da imagem
+            imagem.src = caminho_da_imagem;
+            
+            // Certifique-se de que a imagem foi completamente carregada antes de manipulá-la
+            imagem.onload = function()
+            {
+                // console.log(caminho_da_imagem);
+                // Adicione a imagem a um elemento HTML com o ID 'imagem_agora_vai'
+                // document.getElementById('imagem_agora_vai').src = imagem.src;
+                $('#imagem_agora_vai').attr('src', imagem.src);
+
+                // Adicione as classes 'active' aos elementos desejados
+                remover.classList.add("active");
+                novo_css.classList.add("active");
+            };
+
             $('#arquivo').on('change', function(e) {
                 var file = e.target.files[0];
                 console.log(file);

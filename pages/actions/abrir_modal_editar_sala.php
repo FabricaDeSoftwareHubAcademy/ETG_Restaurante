@@ -3,8 +3,11 @@ require __DIR__."/../../vendor/autoload.php";
 use App\Entity\Sala;
 use App\Entity\CadastroChecklist;
 use App\Entity\Imagens;
+
 $objCadastroChecklist = new CadastroChecklist();
 $dados = $objCadastroChecklist -> getDados();
+$dados_sala = Sala::getDadosById($_GET['id_sala']);
+
 $options = '';
 foreach ($dados as $row_check ){
     $options .= '<option  class="ops" value="'.$row_check['id'].'"> '.$row_check['nome'].' </option>';
@@ -12,20 +15,17 @@ foreach ($dados as $row_check ){
 
 
 
-
+$newimg = false;
 //CADASTRANDO A IMAGEM
-echo(json_encode($_FILES));exit;
-// if (!empty($_FILES['img_sala']['name']))
-// {
+if (!empty($_FILES['img_sala']['name']))
+{
+    echo(json_encode($_FILES['img_sala']['name']));
+    $antigo_nome_imagem = '../../storage/salas/'.$dados_sala[0]['img_sala'];
+    unlink($antigo_nome_imagem);
+    $novo_nome_imagem = Imagens::storeImgAction($_FILES['img_sala']['name']);
+    $newimg = true;
+}
 
-// }
-// if (isset($_FILES))
-// if ()
-// {
-//     $objImagem = new Imagens;
-//     // $imagem = $objImagem::storeImg($_FILES['imagem_sala']['name']);
-//     $novo_nome_imagem = $objImagem::storeImgAction($_FILES['img_sala']['name']); 
-// }
 
 //CADASTRANDO OS OUTROS DADOS
 $dias_funcionamento = array("segunda" => (isset($_POST['segunda']) && $_POST['segunda'] == 'on' ? 'sim' : 'nao'),
@@ -51,7 +51,7 @@ $obj_sala = new Sala();
 $obj_sala -> setDados($_GET['id_sala'], ['nome' => $_POST['nome'],
                                         'codigo' => $_POST['codigo'],
                                         'cor_itens' => $_POST['cor_itens'],
-                                        'img_sala' => $novo_nome_imagem,
+                                        'img_sala' => ($newimg) ? $novo_nome_imagem : $dados_sala[0]['img_sala'],
                                         'descricao' => $_POST['descricao'],
                                         'horarios' => $dias_funcionamentoJson, //horarios
                                         'id_check' => $_POST['checklist']                                     
