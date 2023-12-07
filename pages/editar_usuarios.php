@@ -99,7 +99,7 @@ $titulo_page = 'Editar Usuarios';
 
 use App\Entity\Usuario;
  
-$objUsuario = new Usuario();
+$objUsuarios = new Usuario();
 $erro = false;
 
 // validar se $_SESSION['id_user'] esta setado(leu logo assumiu a responsabilidade) 
