@@ -5,10 +5,10 @@ include_once("../includes/menu.php");
 $titulo_page = 'Lista Usuarios';
 require("../includes/header/header.php");
 
-use App\Entity\Perfil;
+use App\Entity\Usuario;
 
 //pegando dados perfil
-$objPerfil = new Perfil;
+$objPerfil = new Usuario;
 $dados_perfil = $objPerfil -> getDados();
 
 $imprimir = '';
@@ -34,6 +34,6 @@ foreach ($dados_perfil as $row_perfil)
                             ';
                         }
                         
-require("../includes/main/main_listar_usuarios.php");
+require("../includes/main/main_visualizar_usuarios.php");
 require("../includes/footer/footer.php");
 ?>

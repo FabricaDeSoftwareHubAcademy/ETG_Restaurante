@@ -4,7 +4,7 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
 <script src="../assets/js/deletar_perfil.js"></script>
 
-<link rel="stylesheet" href="../assets/css/listar_usuarios.css">
+<link rel="stylesheet" href="../assets/css/visualizar_usuarios.css">
 
 
 

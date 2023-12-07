@@ -41,6 +41,14 @@
                         <label class="label_permissao">Gerenciar Notificacoes</label>
                         <input type="checkbox" class="checkbox_permissoes" name="gerenciar_notificacoes"  id="gerenciar_notificacoes" autocomplete="off" <?php echo $gerenciar_notificacoes == 1 ? "checked" : "";?>/>
                     </div>
+                    <div class="permissoes_salas_itens">
+                        <label class="label_permissao">Gerenciar Usuarios</label>
+                        <input type="checkbox" class="checkbox_permissoes" name="gerenciar_usuarios" id="gerenciar_usuarios" autocomplete="off" <?php echo $gerenciar_usuarios == 1 ? "checked" : "";?>/>
+                    </div>
+                    <div class="permissoes_salas_itens">
+                        <label class="label_permissao">Gerenciar Perfis</label>
+                        <input type="checkbox" class="checkbox_permissoes" name="gerenciar_perfis" id="gerenciar_perfis" autocomplete="off" <?php echo $gerenciar_perfis == 1 ? "checked" : "";?>/>
+                    </div>
 
                 </div>
             </div>
