@@ -311,8 +311,8 @@ li{
 @media (max-width: 832px) {
 
   .icone_editar{
-    width: 12px;
-    height: 12px;
+    width: 22px;
+    height: 22px;
     margin: 8px;
   }
   .container_gp{
@@ -320,5 +320,8 @@ li{
   }
   .cardsgerenc {
     max-height: 790px;
+  }
+  .alinar-botoes{
+    height: 12vh;
   }
 }
