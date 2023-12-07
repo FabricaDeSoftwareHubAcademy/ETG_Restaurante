@@ -203,6 +203,7 @@ class Usuario
     
                 "nome"=>$new_nome
             ]; 
+            
             $obBanco->update("id = '".$dados['id']."'",$update);
             return true;
         }
