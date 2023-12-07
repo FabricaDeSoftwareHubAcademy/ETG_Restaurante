@@ -128,8 +128,7 @@ btn_submit.addEventListener('click', async (e ) => {
        JSON.stringify(somadados);
        let data_php = await fetch('./actions/cat_data_pergunta.php?id_sala='+parametro, {
            method: 'POST',
-           body: JSON.stringify(somadados)
-           
+           body: JSON.stringify(somadados) 
        });
     
        let response = await data_php.json();
