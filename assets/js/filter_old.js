@@ -272,3 +272,12 @@ $("#botao_confirmar_editar").on('click',async function(e){
     }
 
 })
+
+
+$("#botao-nao-submit-excluir-pergunta").on('click',function(e){
+  e.preventDefault()
+  closePopup3()
+  closePopup1()
+
+
+})
