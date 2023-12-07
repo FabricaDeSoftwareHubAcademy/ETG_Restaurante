@@ -1,8 +1,9 @@
 <?php 
+session_start();
 
 
-include_once("../includes/menu.php");
- 
+
+
 require __DIR__."/../vendor/autoload.php";
 
 $titulo_page = 'Editar Usuario';
@@ -78,7 +79,7 @@ if(isset($_POST['btn_submit'])){
 
 
 require("../includes/header/header.php"); 
-
+include_once("../includes/menu.php");
 require("../includes/main/main_editar_usuario.php");
 //FIM DAS REGRAS DE NEGOCIO
 require("../includes/footer/footer.php");

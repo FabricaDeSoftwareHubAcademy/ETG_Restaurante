@@ -1,4 +1,5 @@
 <?php
+session_start();
 include_once("../includes/menu.php"); 
 
 require __DIR__."/../vendor/autoload.php";
