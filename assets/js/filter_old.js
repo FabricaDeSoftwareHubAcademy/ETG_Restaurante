@@ -211,7 +211,7 @@ $("#botao_cancelar_editar").on('click',async function(event){
 $("#botao_confirmar_editar").on('click',async function(e){
     e.preventDefault()
  
-    if(($("#text_editar_pergunta").val().trim().length > 0) && $('#check3').prop('checked') || $('#check4').prop('checked')){
+    if(($("#text_editar_pergunta").val().trim().length > 0) && ($('#check3').prop('checked') || $('#check4').prop('checked'))){
 
         let formData = new FormData($('#form_editar_pergunta')[0])    
 
