@@ -1,13 +1,9 @@
 <?php
-
+session_start();
+$titulo_page = 'Mural Recados'; 
 include_once("../includes/menu.php");
  
 
-if(!isset($_SESSION['id_user'])){
-
-    header('Location: ../index.php');
-
-}
 
 
 // require autoload = 0 bugs 
@@ -64,7 +60,8 @@ foreach($recados as $row_recados){
 
 
     $titulo_page = 'Mural Recados';
-    include_once("../includes/menu.php"); 
+  
+    
     include_once("../includes/header/header.php");
     require("../includes/main/main_listar_recados.php");
 

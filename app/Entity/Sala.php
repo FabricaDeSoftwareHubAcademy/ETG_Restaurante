@@ -65,7 +65,7 @@ class Sala
     {
         $obj_banco = new Banco('cadastro_sala');
 
-        $salas = $obj_banco -> select() -> fetchAll(PDO::FETCH_ASSOC);
+        $salas = $obj_banco -> select(order:"id DESC") -> fetchAll(PDO::FETCH_ASSOC);
 
         return $salas;
     }
@@ -83,7 +83,7 @@ class Sala
     //UPDATE
     public function setDados($id = null, $dados = []) : bool
     {
-        //var_dump($dados);exit;
+        // echo(json_encode($dados));exit;
         $obj_banco = new Banco('cadastro_sala');
 
         $obj_banco -> update('id = "'.$id.'"', [

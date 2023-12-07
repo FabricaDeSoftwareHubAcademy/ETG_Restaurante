@@ -1,4 +1,5 @@
 <?php
+session_start();
 require __DIR__."/../vendor/autoload.php";
 include_once("../includes/menu.php"); 
 $titulo_page = 'Visualizar Sala';
@@ -16,6 +17,7 @@ if(isset($_GET['id_sala'])){
     //var_dump($dados);exit;
     
 }
+
 // print_r($dados);
 // echo($dados['funcionamento']);
 $funcionamento = json_decode($dados[0]['horarios'], true);

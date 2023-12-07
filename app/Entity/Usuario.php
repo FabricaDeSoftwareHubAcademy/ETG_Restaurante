@@ -78,7 +78,7 @@ class Usuario
             $objBanco -> insert([
                                 'nome'              =>      $nome,
                                 'email'             =>      $email,
-                                'matricula'    =>           $matricula, 
+                                'matricula'         =>      $matricula, 
                                 'senha'             =>      $senha,
                                 'id_perfil'         =>      $id_perfil,
                                 ]);
@@ -88,7 +88,15 @@ class Usuario
 
     }
 
-   
+    public static function getDadosPerfil($id)
+    {   
+        $objBanco = new Banco('perfil_do_user');
+        
+        $dados = $objBanco -> select('id_user = '.$id) -> fetchAll(PDO::FETCH_ASSOC);
+        
+        return $dados;
+
+    }
 
     public static function getDados() : array 
     {   
@@ -203,6 +211,7 @@ class Usuario
     
                 "nome"=>$new_nome
             ]; 
+            
             $obBanco->update("id = '".$dados['id']."'",$update);
             return true;
         }
