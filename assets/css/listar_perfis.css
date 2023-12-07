@@ -3,6 +3,7 @@
     padding: 0;
     box-sizing: border-box;
 }
+
 :root{
     --cor-primaria-botao-white: white; 
     --cor-primaria-botao-green: green;
