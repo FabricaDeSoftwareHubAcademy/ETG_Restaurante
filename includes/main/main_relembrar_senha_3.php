@@ -2,7 +2,7 @@
 
 <body>
     <main class="pai-de-todos">
-        <?php include_once("../includes/menu.php"); ?>
+        
         <section class='titulo_alterar_senha'>
             <h1>Redefinir Senha</h1>
         </section>

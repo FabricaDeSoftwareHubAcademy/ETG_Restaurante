@@ -1,38 +1,39 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
 
-<title>Visualizar Usuários</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
+<script src="../assets/js/deletar_perfil.js"></script>
+
 <link rel="stylesheet" href="../assets/css/visualizar_usuarios.css">
 
-<body>
-    
-    <main class="meio">
-        
-        <!-- TÍTULO DA PÁGINA -->
-        <h1 id="titulo"> Usuários </h1>
 
-        <div class="dad">
 
-            <!-- PARTE DA PESQUISA  -->
+<body class="tela_gerenciam_usuarios">
 
-                <div class="pesquisa">
-                    <div class="input_group field">
-                        <input type="input" id ="input" class="input_field" placeholder="." required="" name="nome-checklist" autocomplete="off">
-                        <label for="name" class="input_label">Pesquisar usuário</label> 
-                        <i class="bi bi-search" id="lupa"></i>
-                    </div>
-                </div>
+        <main class="pai-de-todos">
+            <form action="" method="GET">
+                <div class="container_gp">
+                        <h1 class="Usuarios"> Usuários </h1>
+                            <ul class="cardsgerenc">
+                                <?=$imprimir?>
+                            </ul>
                 
-                <!-- PARTE DOS CARDS DOS USUÁRIOS -->
-                <div class="user1">
-                    <p name="user_text" id="user_text">'.$item['descricao'].'</p>
-                    <div class="icons-user1">
-                        <button class="editar"><i class="bi bi-pencil-square"></i></button>
-                        <button class="excluir"><i class="bi bi-trash"></i></button>
-                    </div>
-                    </div>
-        </div>
+                </div>
+                <div class="container_gp2">
+                        
+                    <div class="alinar-botoes">
 
-    </main>
-</body>
+                        <div class="botao-padrao-voltar">
+                            <a href="listar_salas.php" class="botao-voltar-submit">VOLTAR</a>
+                        </div>
+
+                        <div class="botao-padrao-cadastrar">
+                            <a href="cadastrar_usuario.php" class="botao-cadastrar-link">CADASTRAR</a>
+                        </div>
+
+                    </div>  
+                        
+                </div> 
+            </form>
+        </main>
+    </body>

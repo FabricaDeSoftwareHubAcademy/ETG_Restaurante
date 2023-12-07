@@ -6,7 +6,7 @@ session_start();
 
 require __DIR__."/../vendor/autoload.php";
 
-$titulo_page = 'Minha Conta';
+$titulo_page = 'Editar Usuarios';
 
 //REGRAS DE NEGOCIO ABAIXO 
  
@@ -18,25 +18,22 @@ $erro = false;
 
 // validar se $_SESSION['id_user'] esta setado(leu logo assumiu a responsabilidade) 
 
-$dados_editar = $objUsuario->getDadosById($_SESSION['id_user'])[0];  
+$dados_editar = $objUsuarios->getDadosById($_SESSION['id_user'])[0];  
 $foto = $dados_editar['foto'];
 
-if(isset($_FILES['foto'])){
-
-    if(strlen($_FILES['foto']['name']) > 0 ){ 
-      
-         
-        $name_img = $_FILES['foto']['name'];
-        $new_name  = uniqid(). '-' . substr($name_img, 0, 20);
-        $path = '../assets/imgs/users/';
-        move_uploaded_file($_FILES['foto']['tmp_name'], $path.$new_name);
-        
-        // unlink($path . $dados_editar['foto']);
+if(isset($_FILES['foto'])){ 
     
-        $objUsuario->setImage($dados_editar['email'],$new_name);
-      
+    
+    
+    $name_img = $_FILES['foto']['name'];
+    $new_name  = uniqid(). '-' . substr($name_img, 0, 20);
+    $path = '../assets/imgs/users/';
+    move_uploaded_file($_FILES['foto']['tmp_name'], $path.$new_name);
+    
+    unlink($path . $dados_editar['foto']);
 
-    }
+    $objUsuarios->setImage($dados_editar['email'],$new_name);
+  
 }
 if(isset($_POST['btn_submit'])){
      
@@ -46,11 +43,11 @@ if(isset($_POST['btn_submit'])){
     if(isset($_POST['nome'])){
 
 
-        $objUsuario -> setName($_POST['nome'],$dados_editar['email']); 
+        $objUsuarios -> setName($_POST['nome'],$dados_editar['email']); 
 
     }else{
 
-        $objUsuario -> setName($dados_editar['nome'],$dados_editar['email']); 
+        $objUsuarios -> setName($dados_editar['nome'],$dados_editar['email']); 
 
     }
     

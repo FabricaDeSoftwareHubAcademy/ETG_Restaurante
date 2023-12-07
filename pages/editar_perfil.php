@@ -1,4 +1,5 @@
 <?php
+session_start();
 require __DIR__."/../vendor/autoload.php";
 $titulo_page = 'Editar Perfil';
 require("../includes/header/header.php");
@@ -21,6 +22,8 @@ if (isset($_POST['botao_salvar'], $_POST['nome']))
                                     'gerenciar_checklist' => (isset($_POST['gerenciar_checklists']) ? 1 : 0),
                                     'gerenciar_recados' => (isset($_POST['gerenciar_recados']) ? 1 : 0),
                                     'gerenciar_notificacoes' => (isset($_POST['gerenciar_notificacoes']) ? 1 : 0),
+                                    'gerenciar_usuarios' => (isset($_POST['gerenciar_usuarios']) ? 1 : 0),
+                                    'gerenciar_perfis' => (isset($_POST['gerenciar_perfis']) ? 1 : 0),
                                     'administrador' => (isset($_POST['mais_usados_administrador']) ? 1 : 0)
                                     ]);
     header("Location: listar_perfis.php");
@@ -36,6 +39,8 @@ $realizar_checklist = $dados[0] ['realizar_checklist'];
 $gerenciar_checklist = $dados[0] ['gerenciar_checklist'];
 $gerenciar_recados = $dados[0] ['gerenciar_recados'];
 $gerenciar_notificacoes = $dados[0] ['gerenciar_notificacoes'];
+$gerenciar_usuarios = $dados[0] ['gerenciar_usuarios'];
+$gerenciar_perfis = $dados[0] ['gerenciar_perfis'];
 
 include_once("../includes/menu.php"); 
 require("../includes/main/main_editar_perfil.php");

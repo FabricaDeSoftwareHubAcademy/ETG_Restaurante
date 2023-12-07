@@ -1,5 +1,6 @@
 <?php  
-session_start();
+
+ob_start();
 require __DIR__."/../vendor/autoload.php";
 include_once("../includes/menu.php"); 
 require("../includes/header/header.php");
@@ -237,3 +238,11 @@ document.addEventListener("DOMContentLoaded", function() {
 
     </script>       
 </body>
+
+
+<?php
+
+ob_end_flush();
+
+?>
+
