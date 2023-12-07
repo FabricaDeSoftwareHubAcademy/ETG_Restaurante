@@ -181,19 +181,14 @@
 
                                 <div class="coisas_enilda">
                                     <span id="img-text"> Insira a imagem : </span>
-
                                     <label id="botão-img" for="arquivo" >Selecionar Foto</label>
                                 </div>
                                 
                                 <input type="file" name="img_sala" id="arquivo" >
 
-                                <div class="area-anexo"> 
-
-                                    
+                                <div class="area-anexo">
                                     <img id="camera_imagem" class="imagem_aparecer_editar" src="../storage/salas/<?=$dados_sala[0]['img_sala']?>" alt="">
-
                                     <img  id="imagem_agora_vai" class="novo_css_imagem" src="" alt="">
-
                                 </div>
                             </div>    
                             <div class="alinar-botao-cor">
@@ -208,10 +203,7 @@
                         <div class="botao-padrao-voltar">
                             <a href="listar_salas.php" class="botao-voltar-link">VOLTAR</a>
                         </div>
-                        
-                        <!-- <div class="botao-padrao-cadastrar">
-                            <a><input name="btn_submit" type="submit" class="botao-cadastrar-submit"  value="SALVAR" ></a>
-                        </div> -->
+
                         <div class="botao-padrao-cadastrar">        
                             <button name="btn_submit" type="submit" class="botao-cadastrar-submit" id="botao-cadastrar-submit" value="SALVAR"> Salvar </button>
                         </div>
@@ -234,22 +226,6 @@
                             let nome_sala = document.getElementById('nome_sala')
                             
                             if(nome_sala.value.length > 0){
-
-                                // const Toast = Swal.mixin({
-                                // toast: true,
-                                // position: "top-end",
-                                // showConfirmButton: false,
-                                // timer: 3000,
-                                // timerProgressBar: true,
-                                // didOpen: (toast) => {
-                                // toast.onmouseenter = Swal.stopTimer;
-                                // toast.onmouseleave = Swal.resumeTimer;
-                                // }
-                                // });
-                                // Toast.fire({
-                                //     icon: "success",
-                                //     title: "deu bom"
-                                // });
 
                                 console.log("Nome sala maior q zero");
 
@@ -278,24 +254,7 @@
 
                             let codigo_sala = document.getElementById('codigo_sala')
                             if(codigo_sala.value.length > 0){
-
-                                // const Toast = Swal.mixin({
-                                // toast: true,
-                                // position: "top-end",
-                                // showConfirmButton: false,
-                                // timer: 3000,
-                                // timerProgressBar: true,
-                                // didOpen: (toast) => {
-                                // toast.onmouseenter = Swal.stopTimer;
-                                // toast.onmouseleave = Swal.resumeTimer;
-                                // }
-                                // });
-                                // Toast.fire({
-                                //     icon: "success",
-                                //     title: "deu bom"
-                                // });
                                 console.log("codigo sala maior q zero");    
-                                
                                 codigo_sala = true;
 
                             }else{
@@ -323,22 +282,6 @@
                             console.log(checklist.value);
 
                             if(checklist.value > 0){
-
-                                // const Toast = Swal.mixin({
-                                // toast: true,
-                                // position: "top-end",
-                                // showConfirmButton: false,
-                                // timer: 3000,
-                                // timerProgressBar: true,
-                                // didOpen: (toast) => {
-                                // toast.onmouseenter = Swal.stopTimer;
-                                // toast.onmouseleave = Swal.resumeTimer;
-                                // }
-                                // });
-                                // Toast.fire({
-                                //     icon: "success",
-                                //     title: "deu bom"
-                                // });
                                 
                                 console.log("checklist maior q zero");
 
@@ -411,36 +354,7 @@
                             }  
                         }
                         )
-                    
-
-                        // function openPopupValidar() {
-                        //     let popup = document.getElementById('popup-up-notificacao');
-                        //     let btn = document.getElementById("submit-btn-notificacao");
-
-                        //     btn.style.display = "none";
-                        //     popup.classList.add("open-popup");
-                        // }
-
-                        // function closePopupValidar() {
-                        //     let popup = document.getElementById("popup-up-notificacao");
-                        //     let btn = document.getElementById("submit-btn-notificacao");
-
-                        //     btn.style.display = "block";
-
-                        //     popup.classList.remove("open-popup");
-                        // }
-
-
-
                 </script>                  
-                                
-
-
-
-
-
-
-
             </div>
         </div>
     </section>
@@ -466,17 +380,6 @@
                 reader.readAsDataURL(file);
             });
         });
-
-// function abrir_modal(){
-//             Swal.fire({
-//                 title: 'editado com sucesso!', //TITULO DO POP_UP DE ACORDO COM SUA TELA 
-//                 icon: 'success', // success, error e warning
-//                 confirmButtonColor: '#609437', // DEFINE A COR DO BOTÃO OK
-//                 confirmButtonText: 'OK'
-//             });
-//         }
-
-
 
     </script>
     

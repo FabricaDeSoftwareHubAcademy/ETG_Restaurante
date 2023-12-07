@@ -15,6 +15,11 @@ foreach ($dados as $row_check ){
 
 //CADASTRANDO A IMAGEM
 echo(json_encode($_FILES));exit;
+// if (!empty($_FILES['img_sala']['name']))
+// {
+
+// }
+// if (isset($_FILES))
 // if ()
 // {
 //     $objImagem = new Imagens;
