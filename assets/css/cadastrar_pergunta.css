@@ -917,6 +917,14 @@ h9{
     z-index: 9999999999999;
 
 }
+
+#form_editar_pergunta{
+
+
+    position: absolute;
+    z-index: 9999999999999;
+
+}
 .overlay {
     position: fixed;
     top: 0;
