@@ -35,7 +35,7 @@ $ifgenrec = $perfil['gerenciar_recados'] == '1';
 $ifreacheck = $perfil['realizar_checklist'] == '1';
 $ifreaac = $perfil['realizar_acao_corretiva'] == '1';
 
-var_dump($perfil, $ifgensala , $ifgencheck , $ifgenperg , $ifgennot , $ifuser , $ifperfil);
+// var_dump($perfil, $ifgensala , $ifgencheck , $ifgenperg , $ifgennot , $ifuser , $ifperfil);
 
 // value="<?=$dados["nome"]?
 // var_dump($dados['foto']);
@@ -76,23 +76,23 @@ var_dump($perfil, $ifgensala , $ifgencheck , $ifgenperg , $ifgennot , $ifuser , 
             
                 <li class="link_submenu2">
                     <?php 
-                        if($ifperfil || $ifuser){
-                            echo '
-                            <li class="li-menu">
-                                <a href="#" class="link-menu">
-                                    <i id="icon-pessoa" class="bi bi-person" style="--i:2"></i>
-                                    <h5 class="titulo-info" id="titulo-perf" style="--i:2">Usuários</h5>                    
-                                </a>
-        
-                                <ul class="submenu2" id="submenu-icon-pessoa">
+                        echo '
+                        <li class="li-menu">
+                            <a href="#" class="link-menu">
+                                <i id="icon-pessoa" class="bi bi-person" style="--i:2"></i>
+                                <h5 class="titulo-info" id="titulo-perf" style="--i:2">Usuários</h5>                    
+                            </a>
+    
+                            <ul class="submenu2" id="submenu-icon-pessoa">
 
-                                '.
-                                ($ifperfil ? '<li class="iten-submenu2"><a href="../pages/listar_perfis.php" id="fonte-submenu2">Gerenciar Perfis</a></li>' : '').
-                                ($ifuser ? '<li class="iten-submenu"><a href="../pages/cadastrar_usuario.php" id="fonte-submenu2">Cadastro de Usuário</a></li>' : '')
-                                .'
-                                </ul>
-                            </li>';
-                        }
+                            '.
+                            ($ifperfil ? '<li class="iten-submenu2"><a href="../pages/listar_perfis.php" id="fonte-submenu2">Gerenciar Perfis</a></li><li class="iten-submenu2"><a href="../pages/listar_perfis.php" id="fonte-submenu2">Cadastro de Perfil</a></li>' : '').
+                            ($ifuser ? '<li class="iten-submenu2"><a href="../pages/cadastrar_usuario.php" id="fonte-submenu2">Cadastro de Usuário</a></li>' : '')
+
+                            .'
+                            <li class="iten-submenu2"><a href="../pages/editar_usuario.php" id="fonte-submenu2">Minha Conta</a></li>
+                            </ul>
+                        </li>';
                     ?>
                 </li>
 
@@ -292,7 +292,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 <?php
 
-ob_end_flush();
+// ob_end_flush();
 
 ?>
 
