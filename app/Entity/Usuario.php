@@ -88,7 +88,15 @@ class Usuario
 
     }
 
-   
+    public static function getDadosPerfil($id)
+    {   
+        $objBanco = new Banco('perfil_do_user');
+        
+        $dados = $objBanco -> select('id_user = '.$id) -> fetchAll(PDO::FETCH_ASSOC);
+        
+        return $dados;
+
+    }
 
     public static function getDados() : array 
     {   

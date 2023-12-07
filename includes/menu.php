@@ -1,8 +1,15 @@
 <?php  
+session_start();
+if(!isset($_SESSION['id_user'])){
+
+    header('Location: ../');
+
+}
+
 
 ob_start();
 require __DIR__."/../vendor/autoload.php";
-include_once("../includes/menu.php"); 
+include_once("../includes/menu.php");
 require("../includes/header/header.php");
 
 //REGRAS DE NEGOCIO ABAIXO 
@@ -15,7 +22,20 @@ $logado = false;
 $erro = false;
 
 $dados = $objUsuario->getDadosById($_SESSION['id_user']); 
+$perfil = ($objUsuario->getDadosPerfil($_SESSION['id_user']))[0];
 
+
+$ifperfil = $perfil['gerenciar_perfis'] == '1';
+$ifuser = $perfil['gerenciar_usuarios'] == '1';
+$ifgensala = $perfil['gerenciar_salas'] == '1';
+$ifgencheck = $perfil['gerenciar_checklist'] == '1';
+$ifgenperg = $perfil['gerenciar_perguntas'] == '1';
+$ifgennot = $perfil['gerenciar_notificacoes'] == '1';
+$ifgenrec = $perfil['gerenciar_recados'] == '1';
+$ifreacheck = $perfil['realizar_checklist'] == '1';
+$ifreaac = $perfil['realizar_acao_corretiva'] == '1';
+
+var_dump($perfil, $ifgensala , $ifgencheck , $ifgenperg , $ifgennot , $ifuser , $ifperfil);
 
 // value="<?=$dados["nome"]?
 // var_dump($dados['foto']);
@@ -54,23 +74,30 @@ $dados = $objUsuario->getDadosById($_SESSION['id_user']);
                 </li>  
 
             
-            <li class="link_submenu2">
-                <li class="li-menu">
-                    <a href="#" class="link-menu">
-                        <i id="icon-pessoa" class="bi bi-person" style="--i:2"></i>
-                        <h5 class="titulo-info" id="titulo-perf" style="--i:2">Usuários</h5>                    
-                    </a>
+                <li class="link_submenu2">
+                    <?php 
+                        if($ifperfil || $ifuser){
+                            echo '
+                            <li class="li-menu">
+                                <a href="#" class="link-menu">
+                                    <i id="icon-pessoa" class="bi bi-person" style="--i:2"></i>
+                                    <h5 class="titulo-info" id="titulo-perf" style="--i:2">Usuários</h5>                    
+                                </a>
+        
+                                <ul class="submenu2" id="submenu-icon-pessoa">
 
-                    <ul class="submenu2" id="submenu-icon-pessoa">
-                        <li class="iten-submenu2"><a href="../pages/listar_perfis.php" id="fonte-submenu2">Gerenciar Perfis</a></li>
-                        <li class="iten-submenu2"><a href="../pages/editar_usuario.php" id="fonte-submenu2">Minha Conta</a></li>
-                        <li class="iten-submenu"><a href="../pages/cadastrar_usuario.php" id="fonte-submenu2">Cadastro de Usuário</a></li> 
-                    </ul>    
+                                '.
+                                ($ifperfil ? '<li class="iten-submenu2"><a href="../pages/listar_perfis.php" id="fonte-submenu2">Gerenciar Perfis</a></li>' : '').
+                                ($ifuser ? '<li class="iten-submenu"><a href="../pages/cadastrar_usuario.php" id="fonte-submenu2">Cadastro de Usuário</a></li>' : '')
+                                .'
+                                </ul>
+                            </li>';
+                        }
+                    ?>
                 </li>
-            </li>
 
             
-            <li class="li-menu">
+                <li class="li-menu">
 
                     <a href="../pages/listar_notificacoes.php" class="link-menu">
                         <i id="icon-notificacao" class="bi bi-bell"  style="--i:3"></i>  
@@ -88,7 +115,29 @@ $dados = $objUsuario->getDadosById($_SESSION['id_user']);
                 
                 
                 <li class="link_submenu"> 
-                    <li class="li-menu">   
+                    <?php
+                        if($ifgensala || $ifgencheck || $ifgenperg || $ifgennot || $ifuser || $ifperfil){
+                           echo '
+                        <li class="li-menu">   
+                            <a href="#" class="link-menu">
+                                <i class="bi bi-list-check" id="btnsubmenu" onclick="openSubmenu()" style="--i:5"></i>
+                                <h5 class="titulo-info" id="titulo-cad" style="--i:5">Cadastros</h5>
+                            </a>
+                           
+                            <ul class="sub-menu">
+                            '.
+                            ($ifgensala ? '<li class="iten-submenu"><a href="../pages/cadastrar_sala.php" id="fonte-submenu">Cadastro de Salas</a></li>' : '').
+                            ($ifgencheck ? '<li class="iten-submenu"><a href="../pages/cadastrar_checklist.php" id="fonte-submenu">Cadastro Checklist</a></li>' : '').
+                            ($ifgenperg ? '<li class="iten-submenu"><a href="../pages/cadastrar_pergunta.php" id="fonte-submenu">Cadastro de Perguntas</a></li>' : '').
+                            ($ifgennot ? '<li class="iten-submenu"><a href="../pages/cadastrar_notificacao.php" id="fonte-submenu">Cadastro de Notificações</a></li>' : '').
+                            ($ifuser ? '<li class="iten-submenu"><a href="../pages/cadastrar_usuario.php" id="fonte-submenu2">Cadastro de Usuário</a></li>' : '').
+                            ($ifperfil ? '<li class="iten-submenu"><a href="../pages/cadastrar_perfil.php" id="fonte-submenu2">Cadastro de Perfil</a></li>' : '')
+                            .'
+                            </ul>
+                        </li> ';
+                        }
+                    ?>
+                    <!-- <li class="li-menu">   
                         <a href="#" class="link-menu">
                             <i class="bi bi-list-check" id="btnsubmenu" onclick="openSubmenu()" style="--i:5"></i>
                             <h5 class="titulo-info" id="titulo-cad" style="--i:5">Cadastros</h5>
@@ -105,7 +154,7 @@ $dados = $objUsuario->getDadosById($_SESSION['id_user']);
                             <li class="iten-submenu"><a href="../pages/cadastrar_notificacao.php" id="fonte-submenu">Cadastro de Notificações</a></li>                      
 
                         </ul>
-                    </li> 
+                    </li>  -->
                 </li>         
 
 
@@ -117,6 +166,7 @@ $dados = $objUsuario->getDadosById($_SESSION['id_user']);
                         </a>
                     </button>
                 </li>        
+                
                 <div class="modal-container-menu">
                     <div class="modal-menu">
                     

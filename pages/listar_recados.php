@@ -4,11 +4,6 @@ $titulo_page = 'Mural Recados';
 include_once("../includes/menu.php");
  
 
-if(!isset($_SESSION['id_user'])){
-
-    header('Location: ../index.php');
-
-}
 
 
 // require autoload = 0 bugs 
@@ -61,6 +56,10 @@ foreach($recados as $row_recados){
 } else {
     // Tratamento caso $recados não seja um array ou objeto
 }
+
+
+
+    $titulo_page = 'Mural Recados';
   
     
     include_once("../includes/header/header.php");
