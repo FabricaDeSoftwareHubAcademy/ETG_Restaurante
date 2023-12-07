@@ -1,9 +1,9 @@
 <?php
 session_start();
+$titulo_page = 'Notificacoes';
 include_once("../includes/menu.php"); 
 
 require __DIR__."/../vendor/autoload.php";
-$titulo_page = 'Notificacoes';
 require("../includes/header/header.php");
 
 

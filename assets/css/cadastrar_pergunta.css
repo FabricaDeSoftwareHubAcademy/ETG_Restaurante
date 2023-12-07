@@ -236,6 +236,9 @@ body{
 }
 
 #question_text{
+    max-width: 520px;
+    width: 100%;
+    word-wrap: break-word;
     font-size: medium;
     font-weight: bold;
     padding: 3%;
