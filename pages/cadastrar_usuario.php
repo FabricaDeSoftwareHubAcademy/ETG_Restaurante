@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 require __DIR__."./../vendor/autoload.php";
 $titulo_page = 'Cadastrar Usuario';
 require("../includes/header/header.php");
