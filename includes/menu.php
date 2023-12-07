@@ -30,6 +30,8 @@ $ifgencheck = $perfil['gerenciar_checklist'] == '1';
 $ifgenperg = $perfil['gerenciar_perguntas'] == '1';
 $ifgennot = $perfil['gerenciar_notificacoes'] == '1';
 $ifgenrec = $perfil['gerenciar_recados'] == '1';
+$ifreacheck = $perfil['realizar_checklist'] == '1';
+$ifreaac = $perfil['realizar_acao_corretiva'] == '1';
 
 var_dump($perfil, $ifgensala , $ifgencheck , $ifgenperg , $ifgennot , $ifuser , $ifperfil);
 
