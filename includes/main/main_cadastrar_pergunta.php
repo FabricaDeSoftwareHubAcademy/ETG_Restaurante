@@ -90,7 +90,7 @@
 
             <!-- POPUP EDITAR PERGUNTA -->
 
-        <form class="overlay" id="overlay" style="opacity: 1;">
+        <form class="overlay" id="form_editar_pergunta" style="opacity: 1;">
 
             <div class="popup_editar" id="popup-editar-pergunta">
                 <h4>Editar pergunta:</h4>
@@ -113,8 +113,8 @@
                 <!-- DIV DOS BOTÕES (cancelar e confirmar) -->
 
                 <div class="botoes">
-                    <button class="botao-cancelar-submit"  value="CANCELAR" onclick="closePopup2()">CANCELAR</button>
-                    <button class="botao-confirmar-submit"  value="CONFIRMAR">CONFIRMAR</button>
+                    <button class="botao-cancelar-submit" id='botao_cancelar_editar' value="CANCELAR" >CANCELAR</button>
+                    <button class="botao-confirmar-submit" id='botao_confirmar_editar' value="CONFIRMAR">CONFIRMAR</button>
                 </div>
             </div>
         </form>
@@ -130,7 +130,7 @@
                 <!-- DIV DOS BOTÕES (sim e não) -->
 
             <div class="botoes">
-                <button class="botao-nao-submit" value="NÃO" onclick="closePopup3()">NÃO</button>
+                <button class="botao-nao-submit" id="botao-nao-submit-excluir-pergunta" value="NÃO" >NÃO</button>
                 <button class="botao-sim-submit" id="botao-sim-submit" value="SIM">SIM</button>
             </div>
             
