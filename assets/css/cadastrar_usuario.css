@@ -37,6 +37,7 @@
 
 
 .botao-voltar-submit{
+  text-align: center;
   width: 180px;
   height: 45px;
   background-color: var(--cor-primaria-botao-white);

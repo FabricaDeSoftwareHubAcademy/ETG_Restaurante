@@ -1171,8 +1171,8 @@ box-shadow: none;
 @media (max-width: 768px) {
  
   .popup-notificacao {
-      width: 100%;
-      max-width: 320px;
+       width: 250px; 
+       max-width: 320px; 
       
   }
   
