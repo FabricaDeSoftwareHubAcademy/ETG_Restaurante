@@ -53,18 +53,12 @@ class Perfil
     {
         $obj_banco = new Banco('cadastro_perfil');
         
-        $verificacao = $obj_banco -> select('nome = "'.$this -> nome.'"') -> fetchAll(PDO::FETCH_ASSOC);
-        if ($verificacao)
-        {
-            return false;
-        } 
-        else
-        {
+        // $verificacao = $obj_banco -> select('nome = "'.$this -> nome.'"') -> fetchAll(PDO::FETCH_ASSOC);
 
-            // var_dump($dados);exit;
-            $obj_banco -> insert($dados);           
-            return true;
-        }
+        // var_dump($dados);exit;
+        $obj_banco -> insert($dados);           
+        return true;
+
     }
 
     //READ
