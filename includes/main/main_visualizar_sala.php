@@ -87,7 +87,7 @@
 
                     <!--Botão Voltar-->
                     <div class="botao-padrao-voltar">
-                        <a href="#"><input type="submit" class="botao-voltar-submit"  value="VOLTAR"></a>
+                        <a href="./listar_salas.php"><input type="submit" class="botao-voltar-submit"  value="VOLTAR"></a>
                     </div>
                     <!--Botão Checklist -->
                     <?php
