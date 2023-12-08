@@ -189,14 +189,31 @@
     }
     .notificacao_individual{
 
-        display: flex;
+        /* display: flex;
         width: 80%;
         height: 110px;
         background-color: rgb(238, 238, 238);
         border-radius: 12px;
         justify-content: space-around;
         box-shadow: 2px 2px 5px 0px;
+        margin-bottom: 40px; */
+
+
+
+
+        display: flex;
+        width: 80%;
+        height: 110px;
+        /* background-color: rgb(233, 233, 233); */
+        /* border-radius: 12px; */
+        justify-content: space-around;
+        box-shadow: 2px 2px 5px 0px;
         margin-bottom: 40px;
+        border-radius: 28px;
+        border: 1px solid #FFF;
+        background: #f9f9f9;
+        box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+        cursor: pointer;
 
 
     }

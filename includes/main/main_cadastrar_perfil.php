@@ -94,7 +94,7 @@
                         <a href="listar_perfis.php" class="botao-voltar-submit">VOLTAR</a>
                     </div>
                     <!--Botão Salvar-->
-                    <div class="botao-padrao-salvar">
+                    <div class="botao-padrao-salvar" onclick="openPopupCad">
                         <a><input name="botao_salvar" type="submit" class="botao-salvar-submit" value="SALVAR"></a>
                     </div>
                 </div>

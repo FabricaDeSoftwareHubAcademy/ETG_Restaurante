@@ -1,8 +1,5 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
-<link rel="stylesheet" href="../assets/css/editar_usuarios/botao_editar_usuarios.css">
-<link rel="stylesheet" href="../assets/css/editar_senha/input_button_editar_senha.css">
-<link rel="stylesheet" href="../assets/css/editar_senha/editar_senha.css">
-<link rel="stylesheet" href="../assets/css/editar_usuarios/editar_usuarios.css">
+<link rel="stylesheet" href="../assets/css/editar_usuarios.css">
 <script src="https://code.jquery.com/jquery-3.7.0.js"integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM="crossorigin="anonymous"></script>
  
 <body class="pai-de-todos1">
@@ -11,7 +8,7 @@
     <main class="pai-de-todos">
         <form  class="form-minha-conta" method="POST" enctype="multipart/form-data">
             <section class="titulo">
-                <h1 class="titulo-perfil">Minha Conta</h1>
+                <h1 class="titulo-perfil">Editar Conta</h1>
             </section>
             
             

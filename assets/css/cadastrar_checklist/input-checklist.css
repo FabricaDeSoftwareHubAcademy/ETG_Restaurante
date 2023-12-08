@@ -39,6 +39,8 @@
     left: 10px;
   }
   
+
+  
   .input_label {
     position: absolute;
     top: 0;
@@ -53,6 +55,7 @@
     left: 10px;
     
   }
+
   
   .input_field:focus {
     padding-bottom: 6px;
