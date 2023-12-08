@@ -138,19 +138,20 @@ btn_submit.addEventListener('click', async (e ) => {
 
         const Toast = Swal.mixin({
             toast: true,
-            position: "top-end",
+            position: 'top-end',
             showConfirmButton: false,
             timer: 3000,
             timerProgressBar: true,
             didOpen: (toast) => {
-              toast.onmouseenter = Swal.stopTimer;
-              toast.onmouseleave = Swal.resumeTimer;
+                toast.addEventListener('mouseenter', Swal.stopTimer)
+                toast.addEventListener('mouseleave', Swal.resumeTimer)
             }
-          });
-          Toast.fire({
-            icon: "success",
-            title: "Signed in successfully"
-          });
+            })
+
+            Toast.fire({
+            icon: 'success',
+            title: 'Realizado'
+            })
           setTimeout(function() {
             window.location.href = "listar_salas.php";
         }, 1000);
