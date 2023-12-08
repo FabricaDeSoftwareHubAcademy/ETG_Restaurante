@@ -165,6 +165,7 @@ body{
     flex-direction: column; 
     position: relative;
     bottom: 2px;
+    left: 10px;
     top: 18px;
     
  }
