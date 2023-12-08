@@ -6,16 +6,13 @@ $(document).ready(function(){
         $('#upload-input').trigger('click');
     });
     $('#upload-input').change(event => {
-
-        console.log(event.target.files)
+ 
         
         if(event.target.files){
             //VARIAS IMAGENS
-            let filesAmount = event.target.files.length;
-            console.log(filesAmount)
+            let filesAmount = event.target.files.length; 
             if (filesAmount < 4 && filesAmount > 1)
-            {   
-                console.log('FOOOOOOOOOOOOOOOOOOOI')
+            {    
 
                 listasrc = []
                 for(c = 0; c < event.target.files.length; c++)
@@ -36,12 +33,10 @@ $(document).ready(function(){
                         `;
                         $(".upload-img").append(html);
                     }
-                    // console.log(arrayfotos)
+             
                     reader.readAsDataURL(event.target.files[c]);
-                    // console.log(event.target.files)
-                    // console.log(arrayfotos)
-
-                    console.log(reader)
+                     
+ 
                 }
                 $('.upload-img').css('padding', "20px");
 
@@ -106,10 +101,7 @@ $(document).ready(function(){
     });
 
     $(window).click(function(event){
-        
-        // console.log(disponiveis);
-        // console.log(dados);
-        console.log(listasrc)
+       
         if($(event.target).hasClass('remove-btn')){
             $(event.target).parent().remove();
                 btn = $(event.target).attr('btn');
