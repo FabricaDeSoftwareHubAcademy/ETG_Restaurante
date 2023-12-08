@@ -1,4 +1,5 @@
 <?php  
+session_start();
 require __DIR__."/../vendor/autoload.php";
 $titulo_page = 'Cadastrar Checklist Pre Aula';
 require("../includes/header/header.php");
@@ -25,7 +26,7 @@ if ($dados_pergunta)
 {
     foreach ($dados_pergunta as $linha)
     { 
-        if ($linha["tipo"] == "PRE")
+        if ($linha["tipo"] == "0" || $linha['tipo'] == '2')
         {
             $dados_imprimir .= '
             <div class="input_checklist">
@@ -63,7 +64,7 @@ require("../includes/main/main_cadastrar_checklist_preaula.php");
 
 foreach ($dados_pergunta as $linha)
 {
-    if ($linha["tipo"] == "PRE")
+    if ($linha["tipo"] == "0" || $linha['tipo'] == '2')
     {
         echo('<script>
         respondidas['.$linha['id_pergunta'].'] = null

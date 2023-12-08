@@ -12,6 +12,7 @@
     font-size: 40px;
     font-family: "Montserrat";
     transition: .3s;
+    margin-bottom: 25px;
 }
 .icon_card_recado_excluir, .icon_card_recado_editar{
     cursor: pointer;
@@ -51,6 +52,7 @@ button{
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: 50px;
     
 }
 .msg_aviso{

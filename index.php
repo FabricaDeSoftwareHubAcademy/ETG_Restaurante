@@ -9,7 +9,7 @@ use App\Entity\Usuario;
 
  
 if(isset($_SESSION['id_user'])){
-    header("Location: pages/mural.php");
+    header("Location: pages/listar_recados.php");
 }
     
 

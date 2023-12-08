@@ -58,7 +58,7 @@ border-radius: 10px;
 .card_sala{
     position: relative;
     width: 100%;
-    
+    min-height: 150px;
     display: flex;
     align-items: center;
     margin-top: 100px;
@@ -72,6 +72,7 @@ border-radius: 10px;
 .img_card_sala{
     height: 150px;
     width: 100%;
+    
     border-radius: 15px;
     object-fit: cover;
     position: relative;

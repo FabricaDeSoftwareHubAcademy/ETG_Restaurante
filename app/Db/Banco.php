@@ -132,7 +132,7 @@ class Banco{
     }
 
     public function delete($valor, $coluna)
-    {
+    {   
         $query = 'DELETE FROM '.$this->table.' WHERE ' . $coluna . ' = '. $valor;
         return $this->executarQuery($query);
     }
@@ -160,7 +160,7 @@ class Banco{
         $query = 'UPDATE '.$this->table.'
                   SET '. $setter . '
                   WHERE '. $where;
-        //echo $query;exit;
+        // echo $query;exit;
         return $this->executarQuery($query);    
         // terminar............ 
     }
