@@ -3,7 +3,7 @@ require __DIR__."/../vendor/autoload.php";
 $titulo_page = 'Listar Perfis';
 include_once("../includes/menu.php"); 
 if(!$ifperfil){
-    header('Location: ../');
+    header('Location: ./listar_recados.php');
 }
 require("../includes/header/header.php");
 
