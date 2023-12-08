@@ -95,9 +95,10 @@ header{
 }  */
 
 .meio{
-    width: 70%;
+    width: 55%;
     height: 85vh;
     background-color: var(--cor-do-meio);
+    max-width: 55%;
 }
 
 /* parte do mei (pergunta) */
