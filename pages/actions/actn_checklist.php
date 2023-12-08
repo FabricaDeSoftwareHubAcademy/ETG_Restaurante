@@ -1,7 +1,7 @@
 <?php
 
 // Supondo que os dados sejam enviados via método POST
-$result = 0;
+$result = false;
 if (isset($_POST['nome_checklist']) && isset($_POST['perguntas'])) {
     $nome_checklist = $_POST['nome_checklist'];
     $perguntas = $_POST['perguntas'];

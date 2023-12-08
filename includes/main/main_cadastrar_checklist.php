@@ -57,7 +57,7 @@
 
             <div class="inputs-cadastro-checklist">
                 <div class="input_group field">
-                    <input type="text" class="input_field" placeholder="" required="" name="nome_checklist" maxlength="45">
+                    <input type="text" class="input_field" placeholder="" required="" name="nome_checklist"  maxlength="45">
                     <label for="name" class="input_label">Nome da CheckList</label> <!--Alterar para o nome do input-->
 
 
@@ -76,7 +76,7 @@
                     <h1 id="titulo-pergunta-pos">Selecione as Perguntas Pré Aula:</h1>
                 </div>
                 <section class="selecao-pergunta">
-                    <table class="tabela-perguntas">
+                    <table class="tabela-perguntas" name="pergunta">
                         <tr class="topo-tabela">
                             <th>Selecione</th>
                             <th>Pergunta Pré</th>
@@ -133,65 +133,72 @@
                     <!--Botão Cadastrar-->
                     <div class="botao-padrao-cadastrar">
                         <!-- <a href="#"><input type="submit" class="botao-cadastrar-submit" name="btn_cadastrar" value="CADASTRAR"></a> -->
-                        <button name="btn_cadastrar" type="submit" class="botao-cadastrar-submit" id="botao-cadastrar-submit" value="CADASTRAR"> CADASTRAR </button>
+                        <button name="btn_cadastrar" type="submit" class="botao-cadastrar-submit" id="btn_cadastrar" value="CADASTRAR"> CADASTRAR </button>
                     </div>
                 </div>
             </div>
             <script>
-                let button = document.getElementById("botao-cadastrar-submit")
+                if(nome_checklist != ""  && pergunta != "" ){
+                        let button = document.getElementById("btn_cadastrar")
+                        button.addEventListener('click', async (e) => {
+                            // alert("dsadsa")
+                            e.preventDefault()
+                            let form = document.getElementById('meuFormulario')
+                            console.log(form)
 
-                button.addEventListener('click', async (e) => {
-                    // alert("dsadsa")
-                    e.preventDefault()
+                            let formData = new FormData(form)
+                            // console.log(formData)
 
-                    let form = document.getElementById('meuFormulario')
-                    console.log(form)
+                            var nome_checklist =  document.getElementById("nome_checklist")
+                            var pergunta = document.getElementById("pergunta")
+                            let dados_php = await fetch("../pages/actions/actn_checklist.php", {
+                                method: "POST",
+                                body: formData
+                            })
 
-                    let formData = new FormData(form)
-                    // console.log(formData)
+                            // alert("Ta chegando até aqui !")
+                            let response = await dados_php.json()
 
-                    let dados_php = await fetch("../pages/actions/actn_checklist.php", {
-                        method: "POST",
-                        body: formData
-                    })
-
-                    // alert("Ta chegando até aqui !")
-                    let response = await dados_php.json()
-
-                    console.log(response);
-
-
-                    console.log(response);
-
-                    if (response) {
-
-                        let popup = document.getElementById('popup-up-notificacao');
-                        let btn = document.getElementById("submit-btn-notificacao");
-
-                        // btn.style.display = "none";
-
-                        popup.classList.add("open-popup");
-
-                        let blur = document.getElementById("blur");
-
-                        blur.classList.add("active");
+                            console.log(response);
 
 
+                            console.log(response);
+                            
 
-                    } else {
-                        let popup = document.getElementById('popup-up-notificacao');
-                        let btn = document.getElementById("submit-btn-notificacao");
+                            if (response) {
 
-                        // btn.style.display = "none";
+                                let popup = document.getElementById('popup-up-notificacao');
+                                let btn = document.getElementById("submit-btn-notificacao");
 
-                        popup.classList.add("open-popup");
+                                // btn.style.display = "none";
 
-                        let blur = document.getElementById("blur");
+                                popup.classList.add("open-popup");
 
-                        blur.classList.add("active");
+                                let blur = document.getElementById("blur");
+
+                                blur.classList.add("active");
+
+
+
+                            } else {
+                                let popup = document.getElementById('popup-up-notificacao');
+                                let btn = document.getElementById("submit-btn-notificacao");
+
+                                // btn.style.display = "none";
+
+                                popup.classList.add("open-popup");
+
+                                let blur = document.getElementById("blur");
+
+                                blur.classList.add("active");
+                            }
+                      
+                        });
                     }
 
-                });
+
+                    
+               
             </script>
 
         </form>
