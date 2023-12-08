@@ -14,10 +14,6 @@
 
 <!-- <script defer src="../assets/js/effect_scroll.js" ></script> -->
 
-
-
-
-
 <body>
     
     <main class="meio">

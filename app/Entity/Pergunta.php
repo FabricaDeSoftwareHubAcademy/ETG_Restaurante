@@ -84,7 +84,7 @@ class Pergunta
     public static function getPerguntas()
     {
         $obj_banco = new Banco('cadastro_pergunta');
-        $dados = $obj_banco->select() -> fetchall(PDO::FETCH_ASSOC);
+        $dados = $obj_banco->select();
         // var_dump($dados);exit;
         if($dados)
         {

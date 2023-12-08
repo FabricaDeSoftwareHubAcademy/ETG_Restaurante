@@ -21,7 +21,7 @@ foreach ($dados as $rowdados) {
                         <td><input type='checkbox'  id='checkbox' name='perguntas[]' value='" . $rowdados['id'] . "'></td>
                         <td>" . $rowdados['descricao'] . "</td>   
                     </tr>";
-    } elseif ($rowdados['tipo']== '1' || $rowdados['tipo'] == '2') {
+    }if ($rowdados['tipo']== '1' || $rowdados['tipo'] == '2') {
         $trpos .= "    <tr> 
                         <td><input type='checkbox'  id='checkbox' name='perguntas[]' value='" . $rowdados['id'] . "'></td>
                         <td>" . $rowdados['descricao'] . "</td>   

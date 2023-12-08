@@ -57,7 +57,7 @@
 
             <div class="inputs-cadastro-checklist">
                 <div class="input_group field">
-                    <input type="text" class="input_field" placeholder="" required="" name="nome_checklist"  maxlength="45">
+                    <input type="text" class="input_field" placeholder="" required="" value="<?php echo $_POST["nome"]?>" name="nome_checklist"  maxlength="45">
                     <label for="name" class="input_label">Nome da CheckList</label> <!--Alterar para o nome do input-->
 
 
@@ -127,7 +127,7 @@
                 <div class="botoes-cadastro-checklist">
                     <!--Botão Voltar-->
                     <div class="botao-padrao-voltar">
-                        <a href="editar_sala.php"><input type="submit" class="botao-voltar-submit" value="VOLTAR"></a>
+                        <a href="#"><input type="submit" class="botao-voltar-submit" value="VOLTAR"></a>
                     </div>
 
                     <!--Botão Cadastrar-->
