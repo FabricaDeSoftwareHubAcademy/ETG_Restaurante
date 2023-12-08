@@ -31,7 +31,7 @@ if(isset(
     $_POST['matricula'],
     $_POST['senha'],
     ))  {
-            echo("DALEEEEEE");
+
             $objUsuario -> cadastrar(
             $_POST['nome'],
             $_POST['email'],
