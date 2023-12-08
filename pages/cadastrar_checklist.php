@@ -13,8 +13,7 @@ use App\Entity\Funcoes;
 
 $dados = Pergunta::getPerguntas();
 $trpre = "";
-$trpos = "";
-print_r($dados);
+$trpos = ""; 
 foreach ($dados as $rowdados) {
     if ($rowdados['tipo'] == '0' || $rowdados['tipo'] == '2') {
         $trpre .= "    <tr> 
