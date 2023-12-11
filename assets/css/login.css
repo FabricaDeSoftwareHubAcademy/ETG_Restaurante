@@ -162,10 +162,11 @@ body{
     width: 500px;
      
     display: flex;
-    flex-direction: column;
-    justify-content: end;
+    flex-direction: column; 
     position: relative;
     bottom: 2px;
+    left: 10px;
+    top: 18px;
     
  }
 
