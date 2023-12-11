@@ -70,6 +70,8 @@ class Sala
         return $salas;
     }
 
+ 
+
 
     //READ
     public static function getDadosById($id_sala)
