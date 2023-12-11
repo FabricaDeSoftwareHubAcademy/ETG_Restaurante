@@ -43,9 +43,7 @@ if ($dados_pergunta)
                     </div>
                 </div>
             </div>';
-        }
-    
-    
+        }  
     }
 }
 
