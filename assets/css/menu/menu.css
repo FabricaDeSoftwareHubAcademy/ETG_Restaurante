@@ -325,6 +325,65 @@
   padding: 6px;
   font-size: 20px;
 }
+
+
+
+.link_submenu3{
+  list-style: none;
+  /* margin-top: 130px; */
+}
+
+.link_submenu3 .link-menu i{
+  position: relative;
+  display: block;
+  color: #FAA916;
+  width: 100%;
+  text-align: center;
+  transform: scale(0); 
+  margin-top: 50px;
+  list-style: none;
+}
+
+.sub-menu3{
+  background: rgb(255, 255, 255);
+  position: absolute;
+  transition: 0.5s;
+  width: 350px;
+  align-items: center;
+  margin-left: 70px;
+  font-size: 15px;
+  top: 60%;
+  overflow: hidden;
+  display: none;
+  border-radius: 7px;
+}
+
+#fonte-submenu3{
+  font-family: "Montsserat";
+  font-style: normal;
+  text-decoration: none;
+  color: #FAA916;
+}
+
+#titulo-noti{
+  margin-left: 4px;
+}
+
+.iten-submenu3{
+  background-color: #fff;
+  padding: 6px;
+  font-size: 20px;
+  
+}
+
+#fonte-submenu3:hover{
+  color: rgba(6, 74, 140, 1);
+}
+
+.sub-menu3.active{
+  height: auto;
+  border: 2px solid #FAA916;
+}
 /* =============================================== POP UP ================================================================================ */
 .modal-container-menu{
   display: none;
@@ -607,6 +666,6 @@
   list-style: none;
   width: 100%; 
   text-align: center;
-  margin-top: 120%;
+  margin-top: 17%;
 }
   

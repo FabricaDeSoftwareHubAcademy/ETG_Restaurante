@@ -87,13 +87,23 @@ $ifreaac = $perfil['realizar_acao_corretiva'] == '1';
                     ?>
                 </li>
                 
-                <li class="li-menu">
-                    <a href="#" class="link-menu">
-                        <i id="check" class="bi bi-clipboard2-check"  style="--i:1"></i>   
-                        <h5 class="titulo-info" id="titulo-home" style="--i:1">Check-List</h5>                 
-                    </a>
-                </li>  
-                
+                <li class="link_submenu3">
+                    <li class="li-menu">
+                        <a href="#" class="link-menu">
+                            <i id="btnsubmenu3" class="bi bi-clipboard2-check" onclick="openSubmenu3()"></i>   
+                            <h5 class="titulo-info" id="titulo-home">Check-List</h5>                 
+                        </a>
+                        <ul class="sub-menu3">
+                            <?php
+
+                            echo '<li class="iten-submenu3"><a href="validar_checklist.php" id="fonte-submenu3">Validar Check-List</a></li>';
+                            echo '<li class="iten-submenu3"><a href="cadastrar_checklist.php" id="fonte-submenu3">Cadastrar Check-List</a></li>';
+                            ?>
+                        </ul>
+                    </li>
+                </li>
+
+
                 <li class="li-menu">
                     
                     <a href="../pages/listar_notificacoes.php" class="link-menu">
@@ -206,10 +216,11 @@ var toggleClick = document.querySelector(".toggleBox-menu");
         })
 
 
-        const modal = document.querySelector('.modal-container-menu')
+const modal = document.querySelector('.modal-container-menu')
 const submenu = document.querySelector('.sub-menu')
 const btn_submenu = document.getElementById('btnsubmenu')
-
+const submenu3 = document.querySelector('.sub-menu3')
+const btn_submenu3 = document.getElementById('btnsubmenu3')
 
 
 function openModal() {
@@ -234,9 +245,19 @@ function openSubmenu(){
   btn_submenu.setAttribute('onclick', 'closeSubmenu()')
 }
 
+function openSubmenu3(){
+  submenu3.classList.add('active')
+  btn_submenu3.setAttribute('onclick', 'closeSubmenu3()')
+}
+
 function closeSubmenu(){
   submenu.classList.remove('active')
   btn_submenu.setAttribute('onclick', 'openSubmenu()')
+}
+
+function closeSubmenu3(){
+  submenu3.classList.remove('active')
+  btn_submenu3.setAttribute('onclick', 'openSubmenu3()')
 
 }
 
@@ -244,6 +265,10 @@ document.addEventListener("click", function(event) {
     // Fechar o submenu quando clicar fora dele
     if (!submenu.contains(event.target) && !btn_submenu.contains(event.target)) {
         closeSubmenu();
+    }
+
+    if (!submenu3.contains(event.target) && !btn_submenu3.contains(event.target)) {
+        closeSubmenu3();
     }
 
     // Fechar a modal quando clicar fora dela
