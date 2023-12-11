@@ -7,12 +7,7 @@
 <!-- <link rel="stylesheet" href="../../assets/css/pop_ups/pop-up-verification.css"> -->
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
-<?php
 
-    include_once("../includes/modais/modal_salas.php");
-    
-
-?>
 <body class="tela-cadastro-salas">
 
 
@@ -404,15 +399,15 @@
 
                                 if(response){
                                     
-                                    // let popup = document.getElementById('popup-up-notificacao');
-                                    // let btn = document.getElementById("submit-btn-notificacao");
-                                    // // btn.style.display = "none";
-                                    // popup.classList.add("open-popup");
-                                    // let blur = document.getElementById("blur");
-                                    // blur.classList.add("active");
+                                    let popup = document.getElementById('popup-up-notificacao');
+                                    let btn = document.getElementById("submit-btn-notificacao");
+                                    // btn.style.display = "none";
+                                    popup.classList.add("open-popup");
+                                    let blur = document.getElementById("blur");
+                                    blur.classList.add("active");
 
                                     
-                                    openModal()
+                                    // openModal()
                                 
 
                                 }else{

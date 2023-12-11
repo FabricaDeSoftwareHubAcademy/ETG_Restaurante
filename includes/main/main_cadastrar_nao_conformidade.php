@@ -15,6 +15,7 @@
 
 <body>
     <!-- <i onclick="acao()" class="bi bi-x-circle"></i> -->
+  
     <main class="mom">
         <div class="meio">
             <div class="pergunta">
