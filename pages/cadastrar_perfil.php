@@ -23,11 +23,9 @@ if (isset($_POST['botao_salvar'], $_POST['nome']))
                             'realizar_checklist' => (isset($_POST['realizar_checklist']) ? 1 : 0),
                             'gerenciar_perguntas' => (isset($_POST['gerenciar_perguntas']) ? 1 : 0)]
 ); 
-    if ($objPerfil -> cadastrar())
-    {
         
-        // header("Location: listar_perfis.php");
-    } 
+    header("Location: listar_perfis.php");
+     
 
 }
  

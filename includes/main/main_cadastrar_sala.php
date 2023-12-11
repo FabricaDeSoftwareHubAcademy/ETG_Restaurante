@@ -464,7 +464,7 @@ $(document).ready(function() {
         var reader = new FileReader();
         reader.onload = function(e) {
             var fileExtension = file.name.split('.').pop().toLowerCase();
-            var aceitados = ['jpg', 'jpeg', 'gif', 'png'];
+            var aceitados = ['jpg', 'jpeg', 'gif', 'png','jfif'];
             if (aceitados.includes(fileExtension)) {
                 $('#imagem_agora_vai').attr('src', e.target.result);
                 remover.classList.add("active");
