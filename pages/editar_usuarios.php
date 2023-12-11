@@ -1,8 +1,10 @@
 <?php 
 session_start();
+include_once("../includes/menu.php");
 
-
-
+if(!$ifuser){
+    header("Location: ./listar_recados.php");
+}
 
 require __DIR__."/../vendor/autoload.php";
 
@@ -82,7 +84,6 @@ if(isset($_POST['btn_submit'])){
 
 
 require("../includes/header/header.php"); 
-include_once("../includes/menu.php");
 require("../includes/main/main_editar_usuarios.php");
 //FIM DAS REGRAS DE NEGOCIO
 require("../includes/footer/footer.php");

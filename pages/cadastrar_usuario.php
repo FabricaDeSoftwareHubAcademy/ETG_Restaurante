@@ -1,10 +1,12 @@
 <?php
 session_start();
-
 require __DIR__."/../vendor/autoload.php";
 $titulo_page = 'Cadastrar Usuario';
 require("../includes/header/header.php");
 include_once("./../includes/menu.php"); 
+if(!$ifuser){
+    header('Location: ./listar_recados.php');
+}
 
 
 use App\Entity\Perfil;
@@ -31,7 +33,6 @@ if(isset(
     $_POST['num_matricula'],
     $_POST['senha'],
     ))  {
-
             $objUsuario -> cadastrar(
             $_POST['nome'],
             $_POST['email'],
