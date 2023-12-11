@@ -15,6 +15,7 @@
 
 <body>
     <!-- <i onclick="acao()" class="bi bi-x-circle"></i> -->
+  
     <main class="mom">
         <div class="meio">
             <div class="pergunta">
@@ -32,7 +33,6 @@
                     </div>
                 </div>
             <div class="botoes">
-                    <span class="fundo-preto"></span>
                     <button class="botao-cancelar-submit"  onclick="fechar()">CANCELAR</button>
                     <button type="submit" name="btn_submit_modal"  class="botao-confirmar-submit" onclick="getDados()">CONFIRMAR</button>                
             </div>

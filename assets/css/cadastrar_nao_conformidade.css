@@ -61,7 +61,7 @@ header{
 /* parte do mei da tela */
 .mom{
     /* display: none; */
-    max-width: 832px;
+    width: 100%;
     /* height: 84vh; */
     
     background-color: var(--cor-da-main);
@@ -83,6 +83,12 @@ header{
     pointer-events: none;
 
 }
+
+@media screen and (max-width: 1920px) {
+	
+}
+    
+
 .mom.active{
     margin-top: 160px;
     opacity: 1;
@@ -94,18 +100,11 @@ header{
     from{opacity: 0;};
 }  */
 
-.fundo-preto{
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    background: rgba(0, 0, 0, 0.3);
-    opacity: 0;
-    pointer-events: none;
-}
+
 
 .meio{
     margin-top: 5%;
-    height: 92vh;
+    height: 100vh;
     background-color: var(--cor-do-meio);
     width: 50vh;
 }
