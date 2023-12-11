@@ -65,10 +65,6 @@ body{
 
 @media screen and (max-width:550px ){
 
-    .aunt{
-        height: 75vh;
-    }
-
     .cabecalho-menu{
         height: 100px;
     }
@@ -87,10 +83,6 @@ body{
 }
 
 @media screen and (max-height:898px ){
-
-    .aunt{
-        height: 75vh;
-    }
 
     .cabecalho-menu{
         height: 100px;
@@ -113,9 +105,6 @@ body{
  
 @media screen and (max-height:690px ){
 
-    .aunt{
-        height: 70vh;
-    }
 
     .cabecalho-menu{
         height: 100px;
