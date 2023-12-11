@@ -382,7 +382,6 @@
 .sub-menu3.active{
   height: auto;
   border: 2px solid #FAA916;
-  margin-left: 65px;
 }
 /* =============================================== POP UP ================================================================================ */
 .modal-container-menu{
@@ -666,6 +665,6 @@
   list-style: none;
   width: 100%; 
   text-align: center;
-  margin-top: 120%;
+  margin-top: 17%;
 }
   
