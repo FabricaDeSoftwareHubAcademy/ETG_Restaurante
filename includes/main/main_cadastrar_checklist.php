@@ -59,8 +59,7 @@
                 <div class="input_group field">
                     <input type="text" class="input_field" placeholder="" required="" name="nome_checklist"  maxlength="45">
                     <label for="name" class="input_label">Nome da CheckList</label> <!--Alterar para o nome do input-->
-
-
+                    
                 </div>
             </div>
 
@@ -69,6 +68,9 @@
                 <li class="tab-button active" id="btn_pre" onclick="showTab('tab1')">Pré-Aula</li>
                 <li class="tab-button" id="btn_pos" onclick="showTab('tab2')">Pós-Aula</li>
                 <div class="line" id="line"></div>
+                <div class="adicionar_pergunta">
+                        <a id="add_pergunta" href="../pages/cadastrar_pergunta.php"><i class="fa-solid fa-plus"  id="icon_add"></i></a>
+                </div>
             </ul>
             <!-- Conteúdo das abas -->
             <div id="tab1" class="tab" style="display: block;">

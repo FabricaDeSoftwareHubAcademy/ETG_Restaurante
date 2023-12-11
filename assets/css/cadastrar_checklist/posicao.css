@@ -76,10 +76,7 @@
 /* --------------INPUTS -------------- */
 .inputs-cadastro-checklist {
     display: flex;
-    flex-wrap: wrap;
-    /* Adiciona quebra de linha caso necessário */
-    justify-content: space-between;
-    /* Espaço entre os elementos */
+    flex-direction: row;
     width: 100%;
     padding: 20px;
 }
@@ -93,6 +90,8 @@
 }
 
 .input_group.field {
+    display: flex;
+    flex-direction: row;
     margin-bottom: 20px;
 }
 
