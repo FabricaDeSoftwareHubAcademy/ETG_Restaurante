@@ -190,5 +190,15 @@ class Banco{
         //preciso usar o fetch all aqui, ainda nao terminei!
         return $this ->  executarQuery($query);
     }
+
+    public function  selectJoinProfileUser()
+    {
+        $query = 'SELECT cadastro_usuario.id_perfil AS usuario_id_perfil,
+        cadastro_perfil.id AS id_perfil, 
+        cadastro_perfil.nome AS nome_perfil
+        FROM cadastro_usuario
+        JOIN cadastro_perfil ON cadastro_usuario.id_perfil = cadastro_perfil.id';
+        return $this ->  executarQuery($query);
+    }    
 }
 ?>
