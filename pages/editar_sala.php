@@ -2,6 +2,10 @@
 session_start();
 require __DIR__."/../vendor/autoload.php";
 $titulo_page = 'Editar Sala';
+include_once("../includes/menu.php"); 
+if(!$ifgensala){
+    header("Location: ./listar_recados.php");
+}
 
 
 
@@ -77,7 +81,6 @@ if (isset($_POST['btn_submit']))
     header("Location: ./listar_salas.php");
 }
 
-include_once("../includes/menu.php"); 
 require("../includes/header/header.php");
 require("../includes/main/main_editar_sala.php");
 ?>

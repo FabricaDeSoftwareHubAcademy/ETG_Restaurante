@@ -2,6 +2,9 @@
 session_start();
 require __DIR__."/../vendor/autoload.php";
 include_once("../includes/menu.php"); 
+if(!$ifuser){
+    header("Location: ./listar_recados.php");
+}
 $titulo_page = 'Lista Usuarios';
 require("../includes/header/header.php");
 
@@ -27,7 +30,7 @@ foreach ($dados_perfil as $row_perfil)
     </div>
     
     <a href="/ETG_Escola/pages/editar_perfil.php?id='.$row_perfil["id"].'"><img src="../assets/imgs/icons/icon_editar.png" alt="icone_editar" class="icone_editar"></a> 
-                                <a class="bi bi-trash" href="actions/perfil_delete_action.php?id='.$row_perfil["id"].'"></a> 
+                                <a class="bi bi-trash" id="btn_trash_excluir" btn_excluir="'.$row_perfil["id"].'"></a> 
                             </div>
                             </div>
                             </li> 

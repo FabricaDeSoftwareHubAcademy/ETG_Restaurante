@@ -29,7 +29,7 @@
     
                 <!--Botão Voltar-->
             <div class="botao-padrao-voltar">
-                <a href="../" class="botao-voltar-submit" >VOLTAR</a>
+                <a href="./main_relembrar_senha_2.php" class="botao-voltar-submit" >VOLTAR</a>
             </div>
 
                 <!--Botão Confirmar-->

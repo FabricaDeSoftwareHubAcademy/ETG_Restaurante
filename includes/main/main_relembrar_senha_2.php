@@ -41,7 +41,7 @@
     
                 <!--Botão Voltar-->
             <div class="botao-padrao-voltar">
-                <a href="../" class="botao-voltar-submit" >VOLTAR</a>
+                <a href="./relembrar_senha_1.php" class="botao-voltar-submit" >VOLTAR</a>
             </div>
 
                 <!--Botão Confirmar-->
