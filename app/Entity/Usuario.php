@@ -222,44 +222,16 @@ class Usuario
          
 
     }
+    
+     
   }
   public function setPasswordByEmail($email, $senha)
   {
     $obj_banco = new Banco('cadastro_usuario');
     $obj_banco -> update('email = "'.$email.'"', ['senha' => $senha]);
 
-  }
-
-
-  public static function deleteUser($id){
-
-    try{
-        
-        $objBanco = new Banco('recados');
-        $recados_id = $objBanco->select('id_autor = "'.$id.'"');
-        if($recados_id->rowCount() > 0){
-            return false;
-        }else{
-
-            $obBanco = new Banco('cadastro_usuario');
-            $obBanco->delete($id,'id');
-    
-            return true;
-
-
-        }
-        
-        
-
-    }catch(Exception $e){
-
-        return $e->getMessage();
-
-    }
-
-    
-
-
+    // $obj_Banco = new Banco('usuarios');
+    // $obj_Banco -> update('email = "'.$email.'"',['senha' => $senha]);
   }
 
 }
