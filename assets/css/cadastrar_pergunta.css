@@ -338,6 +338,53 @@ body{
     }
 }
 
+
+@media screen and (max-height: 898px){
+
+    #question_text{
+        font-size: 12px;
+        font-weight: bold;
+        padding: 3%;
+    }
+    
+    .question1{
+        padding-right: 25px;
+        min-height: 55px;
+    }
+
+    .perguntas{
+        height: 41vh;
+    }
+
+    .meio{
+        height: 65vh;
+    }
+}
+
+@media screen and (max-height: 690px){
+
+    #question_text{
+        font-size: 12px;
+        font-weight: bold;
+        padding: 3%;
+    }
+    
+    .question1{
+        padding-right: 25px;
+        min-height: 55px;
+    }
+
+    .perguntas{
+        height: 41vh;
+    }
+
+    .meio{
+        height: 65vh;
+    }
+}
+
+
+
 button.editar{
     border: none;
     background-color: #F9F8F8;
@@ -347,10 +394,6 @@ button.excluir{
     border: none;
     background-color: #F9F8F8;
 }
-
-
-
-
 
 
 
@@ -474,6 +517,28 @@ h4{
         justify-content: space-between;
         gap: 25px;
     }
+}
+
+@media screen and (max-height: 898px){
+
+    .popup_cadastrar.open-popup1{
+        width: 330px;
+        top: 55%;
+    }
+
+    .botao-confirmar-submit {
+        width: 115px;
+    }   
+
+    .botao-cancelar-submit{
+        width: 115px;
+    }
+
+    .botoes{
+        justify-content: space-between;
+        gap: 25px;
+    }
+
 }
 
 /* CAIXA DE TEXTO */
@@ -671,7 +736,6 @@ h4{
     .popup_editar.open-popup2{
         width: 330px;
         top: 55%;
-
     }
 
     .botao-confirmar-submit {
@@ -686,6 +750,28 @@ h4{
         justify-content: space-between;
         gap: 25px;
     }
+}
+
+@media screen and (max-height: 898px){
+
+    .popup_editar.open-popup2{
+        width: 330px;
+        top: 55%;
+    }
+
+    .botao-confirmar-submit {
+        width: 115px;
+    }   
+
+    .botao-cancelar-submit{
+        width: 115px;
+    }
+
+    .botoes{
+        justify-content: space-between;
+        gap: 25px;
+    }
+
 }
 
 /* CAIXA DE TEXTO */
