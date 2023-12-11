@@ -1,5 +1,5 @@
 <?php
-session_start();
+
 if(!isset($_SESSION['id_user'])){
     header('Location: ../');
 }
@@ -79,8 +79,8 @@ $ifreaac = $perfil['realizar_acao_corretiva'] == '1';
                             <ul class="submenu2" id="submenu-icon-pessoa">
                             
                             '.
-                            ($ifperfil ? '<li class="iten-submenu2"><a href="../pages/listar_perfis.php" id="fonte-submenu2">Gerenciar Perfis</a></li><li class="iten-submenu2"><a href="../pages/listar_perfis.php" id="fonte-submenu2">Cadastrar Perfil</a></li>' : '').
-                            ($ifuser ? '<li class="iten-submenu2"><a href="../pages/cadastrar_usuario.php" id="fonte-submenu2">Cadastrat Usuário</a></li>' : '')
+                            ($ifperfil ? '<li class="iten-submenu2"><a href="../pages/listar_perfis.php" id="fonte-submenu2">Gerenciar Perfis</a></li><li class="iten-submenu2"><a href="../pages/cadastrar_perfil.php" id="fonte-submenu2">Cadastrar Perfil</a></li>' : '').
+                            ($ifuser ? '<li class="iten-submenu2"><a href="../pages/cadastrar_usuario.php" id="fonte-submenu2">Cadastrar Usuário</a></li>' : '')
                             
                             .'
                             <li class="iten-submenu2"><a href="../pages/editar_usuario.php" id="fonte-submenu2">Minha Conta</a></li>
