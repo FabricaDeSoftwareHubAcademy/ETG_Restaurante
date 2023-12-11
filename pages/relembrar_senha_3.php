@@ -19,7 +19,7 @@ if (isset($_POST['btn_submit']) /* && isset($_SESSION['email_to_redef_secret']) 
     }
     else
     {
-        die('as senhas nao coincidem');
+        header('location: relembrar_senha_3.php');
     }
 }
 

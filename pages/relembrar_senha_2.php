@@ -14,7 +14,7 @@ if (isset($_POST['btn_submit']) && isset($_SESSION['cod_redef_senha']))
     }
     else
     {
-        die('ta errado!');  
+        header('location: relembrar_senha_2.php');
     }
 }
 
