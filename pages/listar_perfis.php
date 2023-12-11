@@ -1,4 +1,5 @@
 <?php
+session_start();
 require __DIR__."/../vendor/autoload.php";
 $titulo_page = 'Listar Perfis';
 include_once("../includes/menu.php"); 

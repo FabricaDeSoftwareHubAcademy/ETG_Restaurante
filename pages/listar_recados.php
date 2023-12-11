@@ -1,4 +1,5 @@
 <?php
+session_start();
 $titulo_page = 'Mural Recados'; 
 include_once("../includes/menu.php");
  
@@ -38,6 +39,8 @@ foreach($recados as $row_recados){
 
     $cards_recados .= '<div class="card">
                             <p class="msg_aviso">'.htmlspecialchars($row_recados['texto']).'</p>
+                            '.
+                            ($ifgenrec ? '
                             <div class="area_bot">
 
                                 <div class="bloco_bot">
@@ -46,7 +49,7 @@ foreach($recados as $row_recados){
                                     <img class="icon_card_recado_excluir" id_recado="'.$row_recados['id'].'" src="../assets/imgs/icons/icon_trash.png">
 
                                 </div>
-                            </div>
+                            </div>':'').'
                         </div>';
                         
 

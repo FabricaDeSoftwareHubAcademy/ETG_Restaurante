@@ -1,10 +1,13 @@
-
 <?php
 session_start();
 require __DIR__."/../vendor/autoload.php";
 $titulo_page = 'Cadastrar Sala';
 require("../includes/header/header.php");
 include_once("../includes/menu.php"); 
+
+if(!$ifgensala){
+    header("Location: ./listar_recados.php");
+}
 
 use App\Entity\Sala;
 use App\Entity\CadastroChecklist;
