@@ -1,8 +1,7 @@
-<?php  
+<?php
+session_start();
 if(!isset($_SESSION['id_user'])){
-
     header('Location: ../');
-
 }
 
 
@@ -67,32 +66,48 @@ $ifreaac = $perfil['realizar_acao_corretiva'] == '1';
                     </a>
                 </li>  
 
-            
+     
                 <li class="link_submenu2">
                     <?php 
-                        if($ifperfil || $ifuser){
-                            echo '
-                            <li class="li-menu">
-                                <a href="#" class="link-menu">
-                                    <i id="icon-pessoa" class="bi bi-person" style="--i:2"></i>
-                                    <h5 class="titulo-info" id="titulo-perf" style="--i:2">Usuários</h5>                    
-                                </a>
-        
-                                <ul class="submenu2" id="submenu-icon-pessoa">
-
-                                '.
-                                ($ifperfil ? '<li class="iten-submenu2"><a href="../pages/listar_perfis.php" id="fonte-submenu2">Gerenciar Perfis</a></li>' : '').
-                                ($ifuser ? '<li class="iten-submenu"><a href="../pages/cadastrar_usuario.php" id="fonte-submenu2">Cadastro de Usuário</a></li>' : '')
-                                .'
-                                </ul>
+                        echo '
+                        <li class="li-menu">
+                            <a href="#" class="link-menu">
+                            <i id="icon-pessoa" class="bi bi-person" style="--i:2"></i>
+                            <h5 class="titulo-info" id="titulo-perf" style="--i:2">Usuários</h5>                    
+                            </a>
+                            
+                            <ul class="submenu2" id="submenu-icon-pessoa">
+                            
+                            '.
+                            ($ifperfil ? '<li class="iten-submenu2"><a href="../pages/listar_perfis.php" id="fonte-submenu2">Gerenciar Perfis</a></li><li class="iten-submenu2"><a href="../pages/listar_perfis.php" id="fonte-submenu2">Cadastrar Perfil</a></li>' : '').
+                            ($ifuser ? '<li class="iten-submenu2"><a href="../pages/cadastrar_usuario.php" id="fonte-submenu2">Cadastrat Usuário</a></li>' : '')
+                            
+                            .'
+                            <li class="iten-submenu2"><a href="../pages/editar_usuario.php" id="fonte-submenu2">Minha Conta</a></li>
+                            </ul>
                             </li>';
-                        }
                     ?>
                 </li>
+                
+                <li class="link_submenu3">
+                    <li class="li-menu">
+                        <a href="#" class="link-menu">
+                            <i id="check" class="bi bi-clipboard2-check"  style="--i:1"></i>   
+                            <h5 class="titulo-info" id="titulo-home" style="--i:1">Check-List</h5>                 
+                        </a>
+                        <ul class="sub-menu3">
+                            <?php
 
-            
+                            echo '<li class="iten-submenu3"><a href="#" id="fonte-submenu3">Option 1</a></li>';
+                            echo '<li class="iten-submenu3"><a href="#" id="fonte-submenu3">Option 2</a></li>';
+                            ?>
+                        </ul>
+                    </li>
+                </li>
+
+
                 <li class="li-menu">
-
+                    
                     <a href="../pages/listar_notificacoes.php" class="link-menu">
                         <i id="icon-notificacao" class="bi bi-bell"  style="--i:3"></i>  
                         <h5 class="titulo-info" id="titulo-noti" style="--i:3">Notificações</h5>              
@@ -120,12 +135,12 @@ $ifreaac = $perfil['realizar_acao_corretiva'] == '1';
                            
                             <ul class="sub-menu">
                             '.
-                            ($ifgensala ? '<li class="iten-submenu"><a href="../pages/cadastrar_sala.php" id="fonte-submenu">Cadastro de Salas</a></li>' : '').
-                            ($ifgencheck ? '<li class="iten-submenu"><a href="../pages/cadastrar_checklist.php" id="fonte-submenu">Cadastro Checklist</a></li>' : '').
-                            ($ifgenperg ? '<li class="iten-submenu"><a href="../pages/cadastrar_pergunta.php" id="fonte-submenu">Cadastro de Perguntas</a></li>' : '').
-                            ($ifgennot ? '<li class="iten-submenu"><a href="../pages/cadastrar_notificacao.php" id="fonte-submenu">Cadastro de Notificações</a></li>' : '').
-                            ($ifuser ? '<li class="iten-submenu"><a href="../pages/cadastrar_usuario.php" id="fonte-submenu2">Cadastro de Usuário</a></li>' : '').
-                            ($ifperfil ? '<li class="iten-submenu"><a href="../pages/cadastrar_perfil.php" id="fonte-submenu2">Cadastro de Perfil</a></li>' : '')
+                            ($ifgensala ? '<li class="iten-submenu"><a href="../pages/cadastrar_sala.php" id="fonte-submenu">Cadastrar  Salas</a></li>' : '').
+                            ($ifgenperg ? '<li class="iten-submenu"><a href="../pages/cadastrar_pergunta.php" id="fonte-submenu">Cadastrar  Perguntas</a></li>' : '').
+                            ($ifgencheck ? '<li class="iten-submenu"><a href="../pages/cadastrar_checklist.php" id="fonte-submenu">Cadastrar Checklist</a></li>' : '').
+                            ($ifgennot ? '<li class="iten-submenu"><a href="../pages/cadastrar_notificacao.php" id="fonte-submenu">Cadastrar  Notificações</a></li>' : '').
+                            ($ifuser ? '<li class="iten-submenu"><a href="../pages/cadastrar_usuario.php" id="fonte-submenu2">Cadastrar  Usuário</a></li>' : '').
+                            ($ifperfil ? '<li class="iten-submenu"><a href="../pages/cadastrar_perfil.php" id="fonte-submenu2">Cadastrar  Perfil</a></li>' : '')
                             .'
                             </ul>
                         </li> ';
@@ -208,7 +223,6 @@ const submenu = document.querySelector('.sub-menu')
 const btn_submenu = document.getElementById('btnsubmenu')
 
 
-
 function openModal() {
   modal.classList.add('active')
      
@@ -286,7 +300,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 <?php
 
-ob_end_flush();
+// ob_end_flush();
 
 ?>
 
