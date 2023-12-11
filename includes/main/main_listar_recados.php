@@ -35,8 +35,10 @@
 <h1 class="title_principal">Mural de Recados</h1>
 <?php
 // include_once('../includes/pop-ups/pop_ups_mural_novo_recado/pop_ups_mural_recado.php');
-include_once("../includes/pop-ups/pop_ups_mural_recados/pop_ups_mural_novo_recado/pop_ups_mural_recado.php");
-include_once('../includes/pop-ups/pop_ups_mural_recados/pop_ups mural_editar/pop-up-mural-recados.php');
+if($ifgenrec){
+    include_once("../includes/pop-ups/pop_ups_mural_recados/pop_ups_mural_novo_recado/pop_ups_mural_recado.php");
+    include_once('../includes/pop-ups/pop_ups_mural_recados/pop_ups mural_editar/pop-up-mural-recados.php');
+}
 
 ?>
 

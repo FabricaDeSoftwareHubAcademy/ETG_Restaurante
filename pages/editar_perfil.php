@@ -2,7 +2,12 @@
 session_start();
 require __DIR__."/../vendor/autoload.php";
 $titulo_page = 'Editar Perfil';
+include_once("../includes/menu.php");
+if(!$ifperfil){
+    header('Location: ./listar_recados.php');
+}
 require("../includes/header/header.php");
+
 
 
 use App\Entity\Perfil;
@@ -25,8 +30,6 @@ $gerenciar_notificacoes = $dados[0] ['gerenciar_notificacoes'];
 $gerenciar_usuarios = $dados[0] ['gerenciar_usuarios'];
 $gerenciar_perfis = $dados[0] ['gerenciar_perfis'];
 
-
-include_once("../includes/menu.php"); 
 require("../includes/main/main_editar_perfil.php");
 require("../includes/footer/footer.php");
 ?>

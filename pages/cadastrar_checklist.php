@@ -3,7 +3,9 @@ session_start();
 require __DIR__ ."/../vendor/autoload.php";
 $titulo_page = 'Cadastrar Checklist';
 include_once("../includes/menu.php");
-
+if(!$ifgencheck){
+    header('Location: ./listar_recados.php');
+}
 
 use App\Entity\Pergunta;
 use App\Entity\CadastroChecklist;

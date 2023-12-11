@@ -43,7 +43,7 @@
                     
             
             <div class="botao-padrao-voltar">
-                    <a href="#"><input type="submit" class="botao-voltar-submit"  value="VOLTAR"></a>
+                    <a href="../" class="botao-voltar-submit">VOLTAR</a>
                 </div>
                 
            

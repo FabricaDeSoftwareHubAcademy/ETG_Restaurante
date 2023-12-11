@@ -81,7 +81,7 @@
 }
 
 .navItems-menu{
-  width: 100%;
+  width: 100%; 
   visibility: hidden;
   display: flex;
   flex-direction: column;

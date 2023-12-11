@@ -3,6 +3,9 @@ session_start();
 require "../vendor/autoload.php";
 $titulo_page = 'Cadastrar Notificacao';
 require("../includes/header/header.php");
+if(!$ifgennot){
+    header("Location: ./listar_recados.php");
+}
 
 use App\Entity\Notificacao;
 use App\Entity\Usuario;
