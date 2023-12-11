@@ -50,16 +50,14 @@ $("#btn_cad_pergunta").click(async function(event){
     event.preventDefault()
 
     // se todos os campos estiverem corretamente preenchidos
-    if((($('#nova_pergunta').val().trim().length) > 0) && $('#check1').prop('checked') || $('#check2').prop('checked')){
+    if((($('#nova_pergunta').val().trim().length) > 0) && ( $('#check1').prop('checked') || $('#check2').prop('checked')) ){
         let formData = new FormData($('#form_cad_pergunta')[0])    
         let dados_php = await fetch('./actions/cad_pergunta.php',{
             method:'POST',
             body: formData
         })
         let response = await dados_php.json()
-        console.log(response)
-        // let novaPergunta = '<div class="question1 move" animation="right"> <p name="question_text" id="question_text">'+dadosPerguntas[pergunta].descricao+' </p> <div class="icons-question1"> <button class="editar" onclick="openPopup2()"><i class="bi bi-pencil-square"></i></button> <button class="excluir" onclick="openPopup3()"><i class="bi bi-trash"></i></button> </div> </div>'
-        // $('#perguntas').prepend(novaDiv);
+        console.log(response) 
 
         closePopup1()
         $("#nova_pergunta").val('')
@@ -159,9 +157,11 @@ $("#botao-sim-submit").on('click',async function(event){
               toast.onmouseleave = Swal.resumeTimer;
             }
           });
+
+          // futuramente falar em qual checklist esta cadastrado :) 
           Toast.fire({
             icon: "error",
-            title: "Erro ao excluir pergunta, tente novamente mais tarde"
+            title: "Erro: A pergunta está cadastrada em um checklist"
           }); 
 
     }
