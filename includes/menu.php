@@ -1,10 +1,7 @@
 <?php
-session_start();
 if(!isset($_SESSION['id_user'])){
     header('Location: ../');
 }
-
-
 ob_start();
 require __DIR__."/../vendor/autoload.php";
 include_once("../includes/menu.php");
@@ -290,9 +287,4 @@ document.addEventListener("DOMContentLoaded", function() {
 </body>
 
 
-<?php
-
-// ob_end_flush();
-
-?>
 
