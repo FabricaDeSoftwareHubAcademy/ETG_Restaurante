@@ -83,6 +83,12 @@ header{
     pointer-events: none;
 
 }
+
+@media screen and (max-width: 1920px) {
+	
+}
+    
+
 .mom.active{
     margin-top: 160px;
     opacity: 1;
@@ -94,10 +100,13 @@ header{
     from{opacity: 0;};
 }  */
 
+
+
 .meio{
-    width: 70%;
-    height: 85vh;
+    margin-top: 5%;
+    height: 100vh;
     background-color: var(--cor-do-meio);
+    width: 50vh;
 }
 
 /* parte do mei (pergunta) */
@@ -197,8 +206,8 @@ figure{
 
 .beluga{
     display: flex;
-    max-width: 80%;
-    width: 500px;
+    max-width: 95%;
+    width: 425px;
     height: 200px;
     border-radius: 25px;
     object-fit: cover;
@@ -219,8 +228,9 @@ figure{
 
 .upload-img{
     width: 100%;
-    height: 30vh;
+    height: 21vh;
     display: flex;
+    padding: 0px;
     flex-direction: row;
     justify-content: space-evenly;
     align-items: center;
@@ -275,7 +285,7 @@ figure{
     position: absolute;
     background-color: rgb(0, 0, 0);
     color: rgb(255, 255, 255);
-    right: 10%;
+    right: 3%;
     top: 2%;
     height: 3vh;
     width: 20%;
@@ -298,6 +308,7 @@ figcaption{
     margin-top: 10px;
     justify-content: right;
     gap: 15px;
+    margin-left: 9%;
 }
 
 /* Css Botão Cancelar */
