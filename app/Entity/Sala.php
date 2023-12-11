@@ -94,6 +94,7 @@ class Sala
                                                         'cor_itens'         =>  $dados['cor_itens'],
                                                         'img_sala'         =>  $dados['img_sala'],
                                                         'descricao'            =>  $dados['descricao'],
+                                                        'status'            => $dados['status'],
                                                         'horarios'    =>  $dados['horarios'],
                                                         'id_check'     =>  $dados['id_check']
                                                             ]);
