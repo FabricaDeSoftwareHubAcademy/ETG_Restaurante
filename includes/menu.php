@@ -88,19 +88,24 @@ $ifreaac = $perfil['realizar_acao_corretiva'] == '1';
                 </li>
                 
                 <li class="link_submenu3">
-                    <li class="li-menu">
-                        <a href="#" class="link-menu">
-                            <i id="btnsubmenu3" class="bi bi-clipboard2-check" onclick="openSubmenu3()"></i>   
-                            <h5 class="titulo-info" id="titulo-home">Check-List</h5>                 
-                        </a>
-                        <ul class="sub-menu3">
-                            <?php
-
-                            echo '<li class="iten-submenu3"><a href="validar_checklist.php" id="fonte-submenu3">Validar Check-List</a></li>';
-                            echo '<li class="iten-submenu3"><a href="cadastrar_checklist.php" id="fonte-submenu3">Cadastrar Check-List</a></li>';
-                            ?>
-                        </ul>
-                    </li>
+                    <?php
+                    if($ifgencheck || $ifreaac){
+                        echo'
+                        <li class="li-menu">
+                            <a href="#" class="link-menu">
+                                <i id="btnsubmenu3" class="bi bi-clipboard2-check" onclick="openSubmenu3()"></i>   
+                                <h5 class="titulo-info" id="titulo-home">Check-List</h5>                 
+                            </a>
+                            <ul class="sub-menu3">
+                            '.
+                            ($ifreaac ? '<li class="iten-submenu3"><a href="validar_checklist.php" id="fonte-submenu3">Validar Check-List</a></li>' : '').
+                            ($ifgencheck ? '<li class="iten-submenu3"><a href="cadastrar_checklist.php" id="fonte-submenu3">Cadastrar Check-List</a></li>' : '')
+                            .'
+                            </ul>
+                        </li>
+                        ';
+                    }
+                    ?>
                 </li>
 
 
