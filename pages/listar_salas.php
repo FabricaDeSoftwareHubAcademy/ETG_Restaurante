@@ -26,17 +26,27 @@ if($ifgensala){
         $img_sala = "../storage/salas/".$sala['img_sala'];
 
         }
+         
+        $style='';
+        $link_view_sala = '';
+        
+        if($sala['status'] == "D"){ 
+            $style = "filter: grayscale(1);"; 
+        }
+        if($sala['status'] == "L"){ 
 
+            $link_view_sala = 'href="visualizar_sala.php?id_sala='.$sala['id'].'"';
 
+        } 
 
         if($count == 0){
             
             
             $salas .= '<div class="card_sala move" animation="right">
             
-                            <div class="border_card_sala" style=" border: 2px solid '.$sala['cor_itens'].'"></div>
-                            <a class="click_sala" href="visualizar_sala.php?id_sala='.$sala['id'].'"><img class="img_card_sala" src="../storage/salas/'.$sala['img_sala'].'" alt=""></a>
-                            <a href="editar_sala.php?id_sala='.$sala['id'].'"><img class="icon_editar_sala" src="../assets/imgs/icons/btn_editar.png" alt=""></a>
+                            <div class="border_card_sala" style=" border: 2px solid '.$sala['cor_itens'].'; '.$style.'"></div>
+                            <a class="click_sala" '. $link_view_sala .'><img style="'.$style.'" class="img_card_sala" src="../storage/salas/'.$sala['img_sala'].'" alt=""></a>
+                            <a href="editar_sala.php?id_sala='.$sala['id'].'"><img  class="icon_editar_sala" src="../assets/imgs/icons/btn_editar.png" alt=""></a>
                             <div class="area_title_sala">
                                 <h1 class="title_sala">'.$sala['nome'].'</h1>
                             </div>
@@ -49,9 +59,9 @@ if($ifgensala){
         {
             $salas .= '<div class="card_sala move" animation="left">
             
-                            <div class="border_card_sala2" style=" border: 2px solid '.$sala['cor_itens'].'"></div>
-                            <a class="click_sala" href="visualizar_sala.php?id_sala='.$sala['id'].'"><img class="img_card_sala" src="../storage/salas/'.$sala['img_sala'].'" alt=""></a>
-                            <a href="editar_sala.php?id_sala='.$sala['id'].'"><img class="icon_editar_sala" src="../assets/imgs/icons/btn_editar.png" alt=""></a>
+                            <div class="border_card_sala2" style=" border: 2px solid '.$sala['cor_itens'].'; '.$style.'"></div>
+                            <a class="click_sala" '. $link_view_sala .' ><img style="'.$style.'" class="img_card_sala" src="../storage/salas/'.$sala['img_sala'].'" alt=""></a>
+                            <a href="editar_sala.php?id_sala='.$sala['id'].'"><img  class="icon_editar_sala" src="../assets/imgs/icons/btn_editar.png" alt=""></a>
                             <div class="area_title_sala2">
                                 <h1 class="title_sala2">'.$sala['nome'].'</h1>
                             </div>

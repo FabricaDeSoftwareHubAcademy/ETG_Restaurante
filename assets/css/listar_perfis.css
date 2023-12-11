@@ -134,8 +134,8 @@ li{
 }
 
 .icone_editar{
-  width: 20px;
-  height: 20px;
+  width: 24px;
+  height: 24px;
   margin: 12px;
   display: flex;
   
@@ -310,11 +310,11 @@ li{
 
 @media (max-width: 832px) {
 
-  /* .icone_editar{
-    width: 22px;
-    height: 22px;
+  .icone_editar{
+    width: 24px;
+    height: 24px;
     margin: 8px;
-  } */
+  }
   .container_gp{
     max-height: 72vh; 
   }
@@ -323,5 +323,8 @@ li{
   }
   .alinar-botoes{
     height: 12vh;
+  }
+  .bi-trash{
+    font-size: 24px;
   }
 }

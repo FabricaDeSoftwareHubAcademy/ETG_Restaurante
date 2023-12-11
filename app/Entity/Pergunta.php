@@ -108,11 +108,20 @@ class Pergunta
         try{
             
             $obBanco = new Banco('relacao_pergunta_checklist');
-            $obBanco->delete($id,'id_pergunta');
+ 
+ 
+            $perguntas = $obBanco->select('id_pergunta = "'.$id.'"'); 
+            if($perguntas->rowCount() == 0){
+
+                $obj_banco = new Banco('cadastro_pergunta');
+                $obj_banco->delete($id,'id')->fetchAll(PDO::FETCH_ASSOC);
+                return true;
+
+            }else{
+                return false;
+            }
+
             
-            $obj_banco = new Banco('cadastro_pergunta');
-            $obj_banco->delete($id,'id')->fetchAll(PDO::FETCH_ASSOC);
-            return true;
 
         }catch(Exception $e){
 
