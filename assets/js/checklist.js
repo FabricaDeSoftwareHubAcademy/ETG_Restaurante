@@ -88,21 +88,21 @@ async function getDados()
 const btn_submit = document.getElementById('btn_submit');
 btn_submit.addEventListener('click', async (e ) => {
    e.preventDefault();
-    var continuar_rodando;
-    for (var chave in respondidas)
+   var continuar_rodando = true;
+   for (var chave in respondidas)
     {
         if (respondidas[chave] == null)
         {
-                continuar_rodando = false 
-                const Toast = Swal.mixin({
+            continuar_rodando = false 
+            const Toast = Swal.mixin({
                 toast: true,
                 position: "top-end",
                 showConfirmButton: false,
                 timer: 3000,
                 timerProgressBar: true,
                 didOpen: (toast) => {
-                toast.onmouseenter = Swal.stopTimer;
-                toast.onmouseleave = Swal.resumeTimer;
+                    toast.onmouseenter = Swal.stopTimer;
+                    toast.onmouseleave = Swal.resumeTimer;
                 }
             });
             Toast.fire({
@@ -110,11 +110,12 @@ btn_submit.addEventListener('click', async (e ) => {
                 title: "Preencha todas as perguntas"
             });
             break;
-
+            
         }
     }
     if (continuar_rodando)
-    {
+    {  
+        // console.log('teste');
         //pegando os dados para pasar pelo metodo GET
         // Obtém a string da URL atual
         var queryString = window.location.search;
@@ -132,7 +133,29 @@ btn_submit.addEventListener('click', async (e ) => {
        });
     
        let response = await data_php.json();
-       console.log(response);
+
+        console.log(response);
+
+        const Toast = Swal.mixin({
+            toast: true,
+            position: 'top-end',
+            showConfirmButton: false,
+            timer: 3000,
+            timerProgressBar: true,
+            didOpen: (toast) => {
+                toast.addEventListener('mouseenter', Swal.stopTimer)
+                toast.addEventListener('mouseleave', Swal.resumeTimer)
+            }
+            })
+
+            Toast.fire({
+            icon: 'success',
+            title: 'Realizado'
+            })
+          setTimeout(function() {
+            window.location.href = "listar_salas.php";
+        }, 1000);
+       
     }
 
 

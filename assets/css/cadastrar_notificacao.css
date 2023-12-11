@@ -82,7 +82,7 @@ align-items: center;
 
 .botao-confirmar-submit{
 width: 180px;
-height: 45px;
+height: 50px;
 background-color: var(--cor-primaria-botao-white);
 border: 3px solid var(--cor-primaria-botao-green);
 border-radius: 20px;
