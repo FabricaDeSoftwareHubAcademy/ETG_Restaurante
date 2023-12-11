@@ -50,7 +50,7 @@ $("#btn_cad_pergunta").click(async function(event){
     event.preventDefault()
 
     // se todos os campos estiverem corretamente preenchidos
-    if((($('#nova_pergunta').val().trim().length) > 0) && $('#check1').prop('checked') || $('#check2').prop('checked')){
+    if((($('#nova_pergunta').val().trim().length) > 0) && ( $('#check1').prop('checked') || $('#check2').prop('checked')) ){
         let formData = new FormData($('#form_cad_pergunta')[0])    
         let dados_php = await fetch('./actions/cad_pergunta.php',{
             method:'POST',
