@@ -76,7 +76,7 @@ $ifreaac = $perfil['realizar_acao_corretiva'] == '1';
                             
                             <ul class="submenu2" id="submenu-icon-pessoa">
                             
-                            <li class="iten-submenu2"><a href="../pages/visualizar_usuario.php" id="fonte-submenu2">Gerenciar Usuario</a></li>
+                            <li class="iten-submenu2"><a href="../pages/vizualizar_usuario.php" id="fonte-submenu2">Gerenciar Usuario</a></li>
                             '.
                             ($ifperfil ? '<li class="iten-submenu2"><a href="../pages/listar_perfis.php" id="fonte-submenu2">Gerenciar Perfis</a></li>' : '').
                             ($ifuser ? '<li class="iten-submenu2"><a href="../pages/visualizar_usuario.php" id="fonte-submenu2">Gerenciar Usuários</a></li>' : '')
