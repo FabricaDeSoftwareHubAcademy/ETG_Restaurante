@@ -4,10 +4,15 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="../assets/css/cadastrar_editar_sala.css"> 
-<link rel="stylesheet" href="../../assets/css/pop_ups/pop-up-verification.css">
+<!-- <link rel="stylesheet" href="../../assets/css/pop_ups/pop-up-verification.css"> -->
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
+<?php
 
+    include_once("../includes/modais/modal_salas.php");
+    
+
+?>
 <body class="tela-cadastro-salas">
 
 
@@ -392,24 +397,22 @@
                                 // alert("Ta chegando até aqui !")
                                 let response = await dados_php.json()
                                 
-                                console.log(response);
+                                // console.log(response);
 
                             
-                                console.log(response);
+                                // console.log(response);
 
                                 if(response){
                                     
-                                    let popup = document.getElementById('popup-up-notificacao');
-                                    let btn = document.getElementById("submit-btn-notificacao");
+                                    // let popup = document.getElementById('popup-up-notificacao');
+                                    // let btn = document.getElementById("submit-btn-notificacao");
+                                    // // btn.style.display = "none";
+                                    // popup.classList.add("open-popup");
+                                    // let blur = document.getElementById("blur");
+                                    // blur.classList.add("active");
 
-                                    // btn.style.display = "none";
                                     
-                                    popup.classList.add("open-popup");
-
-                                    let blur = document.getElementById("blur");
-
-                                    blur.classList.add("active");
-
+                                    openModal()
                                 
 
                                 }else{
@@ -464,7 +467,7 @@ $(document).ready(function() {
         var reader = new FileReader();
         reader.onload = function(e) {
             var fileExtension = file.name.split('.').pop().toLowerCase();
-            var aceitados = ['jpg', 'jpeg', 'gif', 'png'];
+            var aceitados = ['jpg', 'jpeg', 'gif', 'png','jfif'];
             if (aceitados.includes(fileExtension)) {
                 $('#imagem_agora_vai').attr('src', e.target.result);
                 remover.classList.add("active");

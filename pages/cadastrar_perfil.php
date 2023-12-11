@@ -3,7 +3,10 @@ session_start();
 require __DIR__."/../vendor/autoload.php";
 $titulo_page = 'Cadastrar Perfil';
 require("../includes/header/header.php");
-
+include_once("../includes/menu.php");
+if(!$ifperfil){
+    header('Location: ./listar_recados.php');
+}
 use App\Entity\Perfil;
 
 if (isset($_POST['botao_salvar'], $_POST['nome']))
@@ -21,15 +24,12 @@ if (isset($_POST['botao_salvar'], $_POST['nome']))
                             'realizar_checklist' => (isset($_POST['realizar_checklist']) ? 1 : 0),
                             'gerenciar_perguntas' => (isset($_POST['gerenciar_perguntas']) ? 1 : 0)]
 ); 
-    if ($objPerfil -> cadastrar())
-    {
         
-        // header("Location: listar_perfis.php");
-    } 
+    header("Location: listar_perfis.php");
+     
 
 }
-
-include_once("../includes/menu.php"); 
+ 
 require("../includes/main/main_cadastrar_perfil.php");
 require("../includes/footer/footer.php");
 ?>

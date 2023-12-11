@@ -4,6 +4,9 @@ require __DIR__."/../vendor/autoload.php";
 $titulo_page = 'Cadastrar Checklist Pre Aula';
 require("../includes/header/header.php");
 include_once("../includes/menu.php");
+if(!$ifreacheck){
+    header("Location: ./listar_recados.php");
+}
 use App\Entity\Checklist;
 use App\Entity\Pergunta;
 use App\Entity\Sala;
@@ -43,9 +46,7 @@ if ($dados_pergunta)
                     </div>
                 </div>
             </div>';
-        }
-    
-    
+        }  
     }
 }
 

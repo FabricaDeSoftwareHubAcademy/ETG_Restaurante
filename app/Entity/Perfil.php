@@ -53,18 +53,12 @@ class Perfil
     {
         $obj_banco = new Banco('cadastro_perfil');
         
-        $verificacao = $obj_banco -> select('nome = "'.$this -> nome.'"') -> fetchAll(PDO::FETCH_ASSOC);
-        if ($verificacao)
-        {
-            return false;
-        } 
-        else
-        {
+        // $verificacao = $obj_banco -> select('nome = "'.$this -> nome.'"') -> fetchAll(PDO::FETCH_ASSOC);
 
-            // var_dump($dados);exit;
-            $obj_banco -> insert($dados);           
-            return true;
-        }
+        // var_dump($dados);exit;
+        $obj_banco -> insert($dados);           
+        return true;
+
     }
 
     //READ
@@ -104,40 +98,49 @@ class Perfil
     public function deleteById($id)
     {
 
-        if ($this->checkForeignKey($id)) {
-         var_dump('teste');exit;
+        // if ($this->checkForeignKey($id)) {
+        //  var_dump('teste');exit;
+        //     return false;
+        // }
+        
+        $obj_banco = new Banco('cadastro_perfil');
+
+        $row_perfil = $obj_banco -> select('id = '.$id);
+
+        if($row_perfil -> rowCount() > 0)
+        {
+            $obj_banco -> delete($id,'id');
+
+            return true;
+        }
+        else
+        {
             return false;
         }
         
-        else{
-            $obj_banco = new Banco('cadastro_perfil');
+    }
 
-            $row_perfil = $obj_banco -> select('id = '.$id);
-
-            if($row_perfil -> rowCount() > 0)
-            {
-                $obj_banco -> delete($id,'id');
-
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-        }
+    public static function getDadosJoinUser ($id)
+    {
+        $obj_banco = new Banco('cadastro_usuario');
+        
+        $dados = $obj_banco -> select() -> fetchAll(PDO::FETCH_ASSOC);
+        
+        return $dados;
     }
 
     //Verifica se o perfil possui alguma FOREIGN KEY
-    public function checkForeignKey($id)
+    public static function checkForeignKey($id)
     {
         $obj_banco = new Banco('cadastro_usuario');
 
         $row_perfil = $obj_banco->select('id_perfil = '.$id);
         
-        if ($row_perfil->rowCount() > 0) {
-            
+        if ($row_perfil->rowCount() > 0)
+        {
             return true;
-        } else {
+        } else
+        {
             return false;
         }
     }

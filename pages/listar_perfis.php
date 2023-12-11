@@ -3,6 +3,9 @@ session_start();
 require __DIR__."/../vendor/autoload.php";
 $titulo_page = 'Listar Perfis';
 include_once("../includes/menu.php"); 
+if(!$ifperfil){
+    header('Location: ./listar_recados.php');
+}
 require("../includes/header/header.php");
 
 use App\Entity\Perfil;
@@ -11,9 +14,17 @@ use App\Entity\Perfil;
 $objPerfil = new Perfil;
 $dados_perfil = $objPerfil -> getDados();
 
-$imprimir = '';
 
-foreach ($dados_perfil as $row_perfil) {
+$imprimir = '';
+foreach ($dados_perfil as $row_perfil)
+{
+    $lock = 'false';
+    if (Perfil::checkForeignKey($row_perfil["id"]))
+    {
+        $lock = 'true';
+    }
+
+    
     $imprimir .= '
     <li>
         <div class="titulo_gp">
@@ -24,8 +35,8 @@ foreach ($dados_perfil as $row_perfil) {
                 <a href="/ETG_Escola/pages/editar_perfil.php?id='.$row_perfil["id"].'">
                     <img src="../assets/imgs/icons/icon_editar.png" alt="icone_editar" class="icone_editar">
                 </a> 
-                <div class="testebotao" onclick="callPopUp(this)">
-                    <a class="bi bi-trash btn_excluir"  dataid="'.$row_perfil["id"].'"></a>
+                <div class="testebotao"  id="botao-excluir-id" onclick="callPopUp(this)">
+                    <a class="bi bi-trash btn_excluir" lock='.$lock.'  dataid="'.$row_perfil["id"].'"></a>
                 </div>
             </div>
         </div>

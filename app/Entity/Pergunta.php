@@ -84,8 +84,7 @@ class Pergunta
     public static function getPerguntas()
     {
         $obj_banco = new Banco('cadastro_pergunta');
-        $dados = $obj_banco->select();
-        // var_dump($dados);exit;
+        $dados = $obj_banco->select(order:"id DESC");
         if($dados)
         {
             return $dados->fetchAll(PDO::FETCH_ASSOC);
@@ -107,10 +106,22 @@ class Pergunta
     public static function excluirPergunta($id){
 
         try{
+            
+            $obBanco = new Banco('relacao_pergunta_checklist');
+ 
+ 
+            $perguntas = $obBanco->select('id_pergunta = "'.$id.'"'); 
+            if($perguntas->rowCount() == 0){
 
-            $obj_banco = new Banco('cadastro_pergunta');
-            $obj_banco->delete($id,'id')->fetchAll(PDO::FETCH_ASSOC);
-            return true;
+                $obj_banco = new Banco('cadastro_pergunta');
+                $obj_banco->delete($id,'id')->fetchAll(PDO::FETCH_ASSOC);
+                return true;
+
+            }else{
+                return false;
+            }
+
+            
 
         }catch(Exception $e){
 

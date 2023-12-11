@@ -13,8 +13,8 @@
   
   .input_e-mail_group.field{
     width: 100%;
-    max-width: 700px;
-    min-width: 300px;
+    max-width: 84%;
+    min-width: 50%;
   } 
   
   .input_e-mail_group {
@@ -24,7 +24,7 @@
   }
   
   .input_e-mail_field {
-      width: 100%;
+      width: 119%;
       border: none;
       border-bottom: 2px solid #9b9b9b;
       outline: 0;
@@ -83,7 +83,7 @@
     box-shadow: none;
   }
   
-  /* Css Botão Confirmar */
+  /* Css Botão Confirmar
   
   .botao-padrao-confirmar{
     width: 100%;
@@ -92,8 +92,8 @@
     justify-content: center;
   }
   .botao-confirmar-submit{
-    width: 180px;
-    height: 45px;
+    width: 180%;
+    height: 4vh;
     background-color: var(--cor-primaria-botao-white);
     border: 3px solid var(--cor-primaria-botao-green);
     border-radius: 20px;
@@ -112,7 +112,7 @@
   
   /* Css Botão Voltar */
   
-  .botao-padrao-voltar{
+  /* .botao-padrao-voltar{
     width: 100%;
     display: flex;
     align-items: center;
@@ -120,6 +120,10 @@
   }
   
   .botao-voltar-submit{
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 180px;
     height: 45px;
     background-color: var(--cor-primaria-botao-white);
@@ -137,8 +141,8 @@
     transition: all 0.4s;
     background-color: var(--cor-primaria-botao-yellow);
     color: var(--cor-primaria-botao-white);
-  }
-  
+  } */
+   
 
 .tudo_esqueceu_senha1{
     width: 100%;
@@ -160,19 +164,106 @@
 }
 
 .centralizar_input_esqueceu_senha{
-  max-width: 652px;
+  max-width: 80%;
   margin: 15% auto;
   margin-top: 8%;
 }
 
 .centralizar_botoes_esqueceu_senha{
   display: flex;
-  justify-content: space-between;
-  text-align: center;
   margin-top: 34%;
+  max-width: 90%;
+  width: 100%;
 }
 
-@media (max-width: 882px) {
+
+/* -------------------- */
+
+/* Css Botão Confirmar */
+
+.botao-padrao-confirmar{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 7%; 
+}
+
+.botao-confirmar-submit{
+  width: 44%; /* 44%*/
+  height: 172%; /*170%*/
+  background-color: var(--cor-primaria-botao-white);
+  border: 3px solid var(--cor-primaria-botao-green);
+  border-radius: 20px;
+  cursor: pointer;
+  color: var(--cor-primaria-botao-green);
+  font-style: normal;
+  font-family: 'Montserrat';
+  font-weight: bold;
+  font-size: 100%;
+}
+
+.botao-confirmar-submit:hover{
+  transition: all 0.4s;
+  background-color: var(--cor-primaria-botao-green);
+  color: var(--cor-primaria-botao-white);
+}
+
+/* Css Botão Voltar */
+
+.botao-padrao-voltar{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 7%; 
+  text-decoration: none;
+}
+
+.botao-voltar-submit{
+  width: 44%; /*180px 44%*/
+  height: 150%; /*40px  150%*/
+  background-color: var(--cor-primaria-botao-white);
+  border: 3px solid var(--cor-primaria-botao-yellow);
+  border-radius: 20px;
+  cursor: pointer;
+  color: var(--cor-primaria-botao-yellow);
+  font-style: normal;
+  font-family: 'Montserrat';
+  font-weight: bold;
+  font-size: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+
+}
+
+.botao-voltar-submit:hover{
+  transition: all 0.4s;
+  background-color: var(--cor-primaria-botao-yellow);
+  color: var(--cor-primaria-botao-white);
+  text-decoration: none;
+}
+
+.centralizar_botoes_alterar_senha {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 832px;
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  padding: 10px;
+  background-color: #fff; /* Optional: add a background color for better visibility */
+  margin-bottom: 15%;
+  text-decoration: none;
+}
+
+
+/* @media (max-width: 882px) {
   .centralizar_botoes_esqueceu_senha{
     margin-top: 501px;
   }
@@ -188,4 +279,4 @@
   max-width: 832px;
   position: relative;
   margin: 0 auto;
-}
+} */

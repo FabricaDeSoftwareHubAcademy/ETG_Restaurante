@@ -15,19 +15,43 @@
                     
                 </section>   
                 
-                <section class="centralizar_botoes_esqueceu_senha">
+               
+               
+            <section class="centralizar_botoes_alterar_senha">
+    
+                    <!--Botão Voltar-->
+                <div class="botao-padrao-voltar">
+                    <a href="../" class="botao-voltar-submit" >VOLTAR</a>
+                </div>
+
+                    <!--Botão Confirmar-->
+                <div class="botao-padrao-confirmar">
+                    <input href="tela_esqueceu_senha2.php" name="btn_submit" type="submit" id="btn_submit" class="botao-confirmar-submit"  value="CONFIRMAR">
+                </div>
+
+            </section>
+               
+               
+               
+               
+               
+               
+               
+               
+               
+                <!-- <section class="centralizar_botoes_esqueceu_senha">
                     
-            <!--Botão Voltar-->
+            
             <div class="botao-padrao-voltar">
-                    <a href="#"><input type="submit" class="botao-voltar-submit"  value="VOLTAR"></a>
+                    <a href="../" class="botao-voltar-submit">VOLTAR</a>
                 </div>
                 
-            <!--Botão Confirmar-->
+           
             <div class="botao-padrao-confirmar">
                     <a href="tela_esqueceu_senha2.php"><input name="btn_submit" type="submit" class="botao-confirmar-submit"  value="CONFIRMAR"></a>
                 </div>
 
-            </section>
+            </section> -->
         </form>
     </main>
 

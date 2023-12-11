@@ -35,7 +35,7 @@
 
 
                     <div class="input_group">
-                        <input type="input" class="input_field_matricula" name="matricula" placeholder="Name" required="">
+                        <input type="input" class="input_field_matricula" name="num_matricula" placeholder="Name" required="">
                         <label for="name" class="input_label_matricula">N° de Matricula</label> <!--Alterar para o nome do input-->
                     </div>
                 </div>
@@ -50,7 +50,7 @@
             <section class="centralizar_botoes_cadastrar_usuario">
                 <!--Botão voltar-->
                 <div class="botao-padrao-voltar">
-                    <a href="listar_recados.php"><input type="submit" class="botao-voltar-submit" value="VOLTAR"></a>
+                    <a href="listar_recados.php"><input class="botao-voltar-submit" value="VOLTAR"></a>
                 </div>
 
             <!--Botão Confirmar-->
