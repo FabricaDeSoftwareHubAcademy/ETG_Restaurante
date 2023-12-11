@@ -195,6 +195,13 @@
                             <div class="alinar-botao-cor">
                                 <span id="selecao-cor-text">Cor da sala : </span> 
                                 <input value="<?=$dados_sala[0]['cor_itens']?>" class="botao-cor" name="cor_itens" type="color">
+                                
+                                <p class="texto_Status">Ativado/Desativado:</p>
+                                <label class="switch" for="">
+                                <input type="checkbox" name="status" <?php echo $dados_sala[0]['status']== "A" ? "checked" : "";?>>
+
+                                <span class="check"></span>
+                                </label>
                             </div>
                         </div>
                     </div>

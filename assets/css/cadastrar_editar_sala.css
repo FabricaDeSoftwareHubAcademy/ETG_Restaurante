@@ -7,6 +7,108 @@
   ;
 }
 
+
+
+/* BOTÃO LIGADO E DESLIGADO 
+
+
+
+
+
+*/
+.alinar-botao-cor .switch {
+  position: relative;
+  cursor: pointer;
+}
+
+.alinar-botao-cor .switch input {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  opacity: 0;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 99;
+  cursor: pointer;
+}
+
+.alinar-botao-cor .switch input:checked ~ .check {
+  background-color: #549b60;
+}
+
+.alinar-botao-cor .switch input:checked ~ .check::after {
+  transform: translateX(0px);
+}
+
+.alinar-botao-cor .switch input:checked ~ .check::before {
+  transform: translateX(50px) !important;
+}
+
+.alinar-botao-cor .switch .check {
+  width: 51px;
+  height: 30px;
+  position: relative;
+  display: block;
+  background-color: #E92E2E;
+  cursor: pointer;
+  border-radius: 15px;
+  overflow: hidden;
+  transition: all 0.5s ease-in;
+}
+
+.alinar-botao-cor .switch .check::after,
+.alinar-botao-cor .switch .check::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 30px;
+  height: 30px;
+  transition: all 0.5s ease-in;
+  border-radius: 50%;
+}
+
+.alinar-botao-cor .switch .check::before {
+  background-color: #fff;
+  right: 0px;
+}
+
+.alinar-botao-cor .switch .check::after {
+  transform: translateX(-60px);
+  background-color: #fff;
+  left: 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .tela-cadastro-salas{
   width: 100%;
   /* height: 100%; */
@@ -262,6 +364,7 @@
 
   /* The switch - the box around the slider */
 .switch {
+  margin: 20%;
   font-size: 17px;
   position: relative;
   display: inline-block;
@@ -314,6 +417,14 @@
 }
 
 
+
+
+.texto_Status{
+  margin-top: 20%;
+  font-size: 18px;
+  opacity: 0.7;
+}
+
 .text-area{
   align-items: center;
   display: flex;
@@ -322,6 +433,8 @@
 
     
 }
+
+
 #descrição{
   display: flex;
   align-items: center;

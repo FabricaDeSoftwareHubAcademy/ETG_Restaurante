@@ -16,6 +16,20 @@ foreach ($dados as $row_check ){
 
 $newimg = false;
 //CADASTRANDO A IMAGEM
+// echo(json_encode($_POST));exit;
+//  ($_POST['status'] == "on") ? "A" : null;
+
+if($_POST['status'] == "on")
+{
+    $status = 'A';
+
+}
+else
+{
+   $status = "D" ;
+}
+// echo(json_encode($status));exit;
+
 if (!empty($_FILES['img_sala']['name']))
 {
     // echo(json_encode($_FILES['img_sala']['name']));
@@ -52,6 +66,7 @@ $obj_sala -> setDados($_GET['id_sala'], ['nome' => $_POST['nome'],
                                         'cor_itens' => $_POST['cor_itens'],
                                         'img_sala' => ($newimg) ? $novo_nome_imagem : $dados_sala[0]['img_sala'],
                                         'descricao' => $_POST['descricao'],
+                                        'status' => $status,
                                         'horarios' => $dias_funcionamentoJson, //horarios
                                         'id_check' => $_POST['checklist']                                     
 ]);
