@@ -198,7 +198,7 @@
                                 
                                 <p class="texto_Status">Ativado/Desativado:</p>
                                 <label class="switch" for="">
-                                <input type="checkbox" name="status" <?php echo $dados_sala[0]['status']== "A" ? "checked" : "";?>>
+                                <input type="checkbox" name="status" <?php echo $dados_sala[0]['status']== "L" ? "checked" : "";?>>
 
                                 <span class="check"></span>
                                 </label>
@@ -235,7 +235,7 @@
                             
                             if(nome_sala.value.length > 0){
 
-                                console.log("Nome sala maior q zero");
+                                // console.log("Nome sala maior q zero");
 
                                 nome_sala = true ;
 
@@ -262,7 +262,7 @@
 
                             let codigo_sala = document.getElementById('codigo_sala')
                             if(codigo_sala.value.length > 0){
-                                console.log("codigo sala maior q zero");    
+                                // console.log("codigo sala maior q zero");    
                                 codigo_sala = true;
 
                             }else{
@@ -287,11 +287,11 @@
 
                             let checklist = document.getElementById('checklist')
 
-                            console.log(checklist.value);
+                            // console.log(checklist.value);
 
                             if(checklist.value > 0){
                                 
-                                console.log("checklist maior q zero");
+                                // console.log("checklist maior q zero");
 
                                 checklist = true ;
 
@@ -313,15 +313,15 @@
                                     icon: "error",
                                     title: "Selecione Um checklist !"
                                 });
-                                console.log("checklist vazio");    
+                                // console.log("checklist vazio");    
                             }
 
-                            console.log(nome_sala,codigo_sala,checklist)
+                            // console.log(nome_sala,codigo_sala,checklist)
                                 
                             if(nome_sala == true && codigo_sala == true && checklist == true){
 
                                 let form = document.getElementById('form_cad')
-                                console.log(form)
+                                // console.log(form)
 
                                 let formData = new FormData(form)
                                 // console.log(formData)
@@ -335,9 +335,6 @@
                                 
                                 console.log(response);
 
-                            
-                                // console.log(response);
-
                                 if(response){
                                     
                                     let popup = document.getElementById('popup-up-notificacao');
@@ -349,7 +346,7 @@
 
                                     // let blur = document.getElementById("blur");
 
-                                    blur.classList.add("active");
+                                    // blur.classList.add("active");
 
                                 
 
