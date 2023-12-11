@@ -38,6 +38,8 @@ if(isset(
             $_POST['num_matricula'],
             $_POST['senha'],
             $_POST['id_perfil']);
+
+            header("Location: ./visualizar_usuario.php");
             
         }
 
