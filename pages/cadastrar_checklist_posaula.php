@@ -29,7 +29,7 @@ if ($dados_pergunta)
 {
     foreach ($dados_pergunta as $linha)
     { 
-        if ($linha["tipo"] == "0" || $linha['tipo'] == '2')
+        if ($linha["tipo"] == "1" || $linha['tipo'] == '2')
         {
             $dados_imprimir .= '
             <div class="input_checklist">
@@ -61,11 +61,11 @@ var respondidas = {}
     </script>');
 
 //FIM DAS REGRAS DE NEGOCIO
-require("../includes/main/main_cadastrar_checklist_preaula.php");
+require("../includes/main/main_cadastrar_checklist_posaula.php");
 
 foreach ($dados_pergunta as $linha)
 {
-    if ($linha["tipo"] == "0" || $linha['tipo'] == '2')
+    if ($linha["tipo"] == "1" || $linha['tipo'] == '2')
     {
         echo('<script>
         respondidas['.$linha['id_pergunta'].'] = null

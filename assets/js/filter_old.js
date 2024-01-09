@@ -109,9 +109,7 @@ $("#btn_cancelar_cad_pergunta").click(async function(event){
     $('#check1').prop('checked',false)
     $('#check2').prop('checked',false)
 
-})
-
-
+}) 
 // botao sim excluir pergunta 
 $("#botao-sim-submit").on('click',async function(event){
     event.preventDefault()
@@ -121,8 +119,7 @@ $("#botao-sim-submit").on('click',async function(event){
 
     let response = await dados_php.json()
     console.log(response)
-    if(response.status){
-
+    if(response.status){ 
 
         listarPerguntas()
         const Toast = Swal.mixin({
@@ -141,9 +138,7 @@ $("#botao-sim-submit").on('click',async function(event){
             title: "Pergunta excluida com sucesso!"
           }); 
 
-          $("input").val('')
-
-
+          $("input").val('') 
 
     }else{
         const Toast = Swal.mixin({
@@ -165,8 +160,7 @@ $("#botao-sim-submit").on('click',async function(event){
           }); 
 
     }
-})
-
+}) 
 
 function setDadosPerguntaById(id){
     let dados_sala = ''
@@ -191,9 +185,7 @@ function setDadosPerguntaById(id){
         $('#check4').prop('checked',true)
     }
 
-    $("#text_editar_pergunta").val(dados_sala['descricao'])
- 
-    
+    $("#text_editar_pergunta").val(dados_sala['descricao'])  
 }
 
 // function botao cancelar editar 
@@ -203,9 +195,7 @@ $("#botao_cancelar_editar").on('click',async function(event){
 
     closePopup2()
     closePopup1()
-})
-
-
+})  
 
 // action editar pergunta  
 $("#botao_confirmar_editar").on('click',async function(e){
@@ -215,7 +205,6 @@ $("#botao_confirmar_editar").on('click',async function(e){
 
         let formData = new FormData($('#form_editar_pergunta')[0])    
 
-
         let dados_php = await fetch('./actions/action_editar_pergunta.php?id_pergunta='+id_atual_editar_pergunta,{
             method:"POST",
             body: formData
@@ -224,9 +213,7 @@ $("#botao_confirmar_editar").on('click',async function(e){
 
         let response = await dados_php.json()
         if(response.status){
-
-
-
+ 
             listarPerguntas()
 
             closePopup2()
@@ -246,11 +233,8 @@ $("#botao_confirmar_editar").on('click',async function(e){
               Toast.fire({
                 icon: "success",
                 title: "Editado com sucesso!"
-              }); 
-
-        }
-
-
+              });  
+        }  
     }else{
 
         const Toast = Swal.mixin({
