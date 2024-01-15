@@ -5,7 +5,7 @@
         <div class="modal-box">
             <i class="fa-regular fa-circle-check"></i>
             <h2 class="titulo_pop_up">Concluido</h2>
-            <h3 class="subtitulo_pop_up">sala cadastrada com sucesso!</h3>
+            <h3 class="subtitulo_pop_up">Sala Editada com sucesso!</h3>
 
         <div class="buttons-pop_up">
             <div class="container_dos_btns">
