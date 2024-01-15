@@ -11,7 +11,7 @@ foreach ($dados as $row_check ){
 }
 
 
-  
+    
     // var_dump($_FILES);exit;
     if (!empty($_FILES['img_sala']['name']))
     {
