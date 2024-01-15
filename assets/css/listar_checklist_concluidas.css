@@ -1,0 +1,14 @@
+*{
+    font-family: 'Montserrat';
+}
+body{
+    max-width: 832px;
+    position: relative;
+    margin: 0 auto;
+}
+.container_title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 25px;
+}
