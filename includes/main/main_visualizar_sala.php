@@ -1,4 +1,4 @@
-<!-- PARTE DA TELA QUE PEGA A COR DA BOX -->
+    <!-- PARTE DA TELA QUE PEGA A COR DA BOX -->
 <style>
         .card{
     border: solid  <?=$dados[0]['cor_itens']?>;
@@ -92,10 +92,7 @@
                     <!--Botão Checklist -->
                     <?php
                         if($ifreacheck){
-                            echo '
-                            <div class="botao-padrao-fazer-checklist">
-                                <a href="../pages/cadastrar_checklist_preaula.php?id_sala='.$_GET['id_sala'].'"><input type="submit" class="botao-fazer-checklist-submit"  value="FAZER CHECKLIST"></a>
-                            </div>';
+                            echo ($btn_checklist);
                         }
 
                     ?>
