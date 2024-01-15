@@ -28,9 +28,7 @@ foreach ($dados_perfil as $row_perfil)
     <div class="card_nome">
     <h2 class="tipo_perfil">'.$row_perfil["nome"].'</h2>
     </div>
-    
-    <a href="/ETG_Escola/pages/editar_usuarios.php?id='.$row_perfil["id"].'"><img src="../assets/imgs/icons/icon_editar.png" alt="icone_editar" class="icone_editar"></a> 
-                                <a class="bi bi-trash" href="actions/perfil_delete_action.php?id='.$row_perfil["id"].'"></a> 
+                                    <a class="bi bi-trash" href="actions/perfil_delete_action.php?id='.$row_perfil["id"].'"></a> 
                             </div>
                             </div>
                             </li> 
