@@ -10,6 +10,12 @@
 
 <body class="tela-cadastro-salas">
 
+<?php
+
+    include_once("../includes/modais/modal_salas.php");
+    
+
+?>
 
 
     <!-- <div class="container-pop-up-notificacao">
