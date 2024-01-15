@@ -2,7 +2,7 @@
 namespace App\Entity;
 
 use App\Db\Banco; 
-
+use PDO;
 class Checklist
 {
     public
@@ -22,4 +22,15 @@ class Checklist
         $obj_banco = new Banco('responder_check');
         $obj_banco -> insert($dados);                  
     }
+
+    public static function getLastCheck($id){
+
+        $obj_banco = new Banco('responder_check');
+        // select * from responder_check where id_usuario = 36 ORDER BY id DESC LIMIT 1;
+        return $obj_banco -> select('id_sala = "'.$id.'"', 'id DESC',1)->fetchAll(PDO::FETCH_ASSOC)[0];
+  
+    }
+
+
+
 }
