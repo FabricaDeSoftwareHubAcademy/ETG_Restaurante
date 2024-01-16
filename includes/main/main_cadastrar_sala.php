@@ -37,7 +37,7 @@
 
                         <div class="wrap-inputx margin-top-35 margin-bottomx-35">
                             <div class="input_group field ">
-                                <input type="input" class="input_field toguro" placeholder="Name" required="" id="codigo_sala" name="codigo_sala" maxLength="8">
+                                <input type="input" class="input_field toguro" placeholder="Name" required="" id="codigo_sala" name="codigo_sala" maxLength="8" style="text-transform:uppercase" />>
                                 <label for="name" class="input_label toguro" > Código </label> <!--Alterar para o nome do input-->
                             </div>
                         </div>
