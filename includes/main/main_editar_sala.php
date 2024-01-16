@@ -233,6 +233,21 @@
                 <script>
 
                         let button = document.getElementById("botao-cadastrar-submit") 
+                        
+                         
+
+                        const showModalnovoBtn = document.querySelector('.botao-cadastrar-submit');
+                        const closeModalnovoBtn = document.querySelector('.close-btn');
+                        // const openModalBtn = document.querySelector('.open-btn');
+                        const overlaynovo = document.querySelector('.overlay-modal');
+                        const modalnovo = document.querySelector('.modal-box');
+                        function openModal2() {
+                            console.log("qual quer coisa ai");
+                            overlaynovo.style.opacity = '1';
+                            overlaynovo.style.pointerEvents = 'auto';
+                            modalnovo.style.opacity = '1';
+                            modalnovo.style.pointerEvents = 'auto';
+}
 
                         button.addEventListener('click', async (e) => {
                             // alert("dsadsa")
@@ -269,7 +284,7 @@
                             }
 
                             let codigo_sala = document.getElementById('codigo_sala')
-                            if(codigo_sala.value.length > 0){
+                            if((codigo_sala.value.length > 0) && nome_sala){
                                 // console.log("codigo sala maior q zero");    
                                 codigo_sala = true;
 
@@ -297,7 +312,7 @@
 
                             // console.log(checklist.value);
 
-                            if(checklist.value > 0){
+                            if(checklist.value > 0 ){
                                 
                                 // console.log("checklist maior q zero");
 
@@ -341,20 +356,18 @@
                                 // alert("Ta chegando até aqui !")
                                 let response = await dados_php.json()
                                 
-                                console.log(response);
+                                console.log("resposta do action",response);
 
                                 if(response){
                                     
-                                    let popup = document.getElementById('popup-up-notificacao');
-                                    let btn = document.getElementById("submit-btn-notificacao");
+                                    // let popup = document.getElementById('popup-up-notificacao');
+                                    // let btn = document.getElementById("submit-btn-notificacao");
 
-                                    // btn.style.display = "none";
+                                  
                                     
-                                    popup.classList.add("open-popup");
-
-                                    // let blur = document.getElementById("blur");
-
-                                    // blur.classList.add("active");
+                                    // popup.classList.add("open-popup");
+                                    
+                                    openModal2();
 
                                 
 
