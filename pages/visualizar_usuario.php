@@ -10,7 +10,6 @@ use App\Entity\Usuario;
 //pegando dados perfil
 $objPerfil = new Usuario;
 $dados_perfil = $objPerfil -> getDados();
-
 $imprimir = '';
 
 //var_dump($dados_perfil);exit;
