@@ -78,6 +78,7 @@ $ifreaac = $perfil['realizar_acao_corretiva'] == '1';
                             
                             <ul class="submenu2" id="submenu-icon-pessoa">
                             
+                            <li class="iten-submenu2"><a href="../pages/visualizar_usuario.php" id="fonte-submenu2">Gerenciar Usuario</a></li>
                             '.
                             ($ifperfil ? '<li class="iten-submenu2"><a href="../pages/listar_perfis.php" id="fonte-submenu2">Gerenciar Perfis</a></li><li class="iten-submenu2"><a href="../pages/cadastrar_perfil.php" id="fonte-submenu2">Cadastrar Perfil</a></li>' : '').
                             ($ifuser ? '<li class="iten-submenu2"><a href="../pages/cadastrar_usuario.php" id="fonte-submenu2">Cadastrar Usuário</a></li>' : '')
@@ -97,7 +98,7 @@ $ifreaac = $perfil['realizar_acao_corretiva'] == '1';
                         </a>
                         <ul class="sub-menu3">
                             <?php
-
+                            echo '<li class="iten-submenu3"><a href="listar_checklist.php" id="fonte-submenu3">Vizualizar Check-List</a></li>';
                             echo '<li class="iten-submenu3"><a href="validar_checklist.php" id="fonte-submenu3">Validar Check-List</a></li>';
                             echo '<li class="iten-submenu3"><a href="cadastrar_checklist.php" id="fonte-submenu3">Cadastrar Check-List</a></li>';
                             ?>

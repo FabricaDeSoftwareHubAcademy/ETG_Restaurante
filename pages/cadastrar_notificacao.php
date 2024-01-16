@@ -3,6 +3,11 @@ session_start();
 require "../vendor/autoload.php";
 $titulo_page = 'Cadastrar Notificacao';
 require("../includes/header/header.php");
+include_once("../includes/menu.php");
+
+if(!$ifgennot){
+    header("Location: ./listar_recados.php");
+}
 
 use App\Entity\Notificacao;
 use App\Entity\Usuario;
@@ -30,7 +35,6 @@ if (isset($_POST['btn_submit']))
 } 
 
 
-include_once("../includes/menu.php"); 
 require("../includes/main/main_cadastrar_notificacao.php");
 require("../includes/footer/footer.php");
 ?>

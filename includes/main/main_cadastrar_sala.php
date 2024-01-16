@@ -4,80 +4,42 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="../assets/css/cadastrar_editar_sala.css"> 
-<link rel="stylesheet" href="../../assets/css/pop_ups/pop-up-verification.css">
+<!-- <link rel="stylesheet" href="../../assets/css/pop_ups/pop-up-verification.css"> -->
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 
 <body class="tela-cadastro-salas">
 
+<?php
 
+    include_once("../includes/modais/modal_salas.php");
+    
 
-    <div class="container-pop-up-notificacao">
-        <!-- <button type="submit" class="btn-pop-up-notificacao" id="submit-btn-notificacao" onclick="openPopupValidar()">Submit</button> -->
-        <div class="popup-notificacao" id="popup-up-notificacao">
-            <div class="div-img">
-                <img src="../includes/pop-ups/img/Check_ring.png" alt="carregando" id="img_check">
-                <p>Alteração Salva Com Sucesso! </p>
-            </div>
-            <div class="botao-padrao-ok">
-                <script>
-                    function closePopupValidar() {
-                                    let popup = document.getElementById("popup-up-notificacao");
-                                    let btn = document.getElementById("submit-btn-notificacao");
-
-                                    // btn.style.display = "block";
-
-                                    popup.classList.remove("open-popup");
-                                }
-                </script>
-                <a href="listar_salas.php"><input type="submit" class="botao-ok-submit" onclick="closePopupValidar()" value="OK"></a>
-            </div>
-        </div>
-    </div>
-      
+?>
 
     <section class="container">
    
         <div class="container-cadastro-salas">
             <div class="wrap-cadastro-salas">
-
-                <form class="cadastro-sala-form" id="form_cad" method="POST" enctype="multipart/form-data">
-
-                    
-
+                <form class="cadastro-sala-form" id="form_cad" method="POST" enctype="multipart/form-data">               
                     <div class="titulo_de_cadastro">
 
                         <h1> Cadastro De Salas </h1>
                         
-                    </div>
-                    
+                    </div>                    
                     <div class="cadastro_codigo">
-
                         <div class="wrap-input margin-top-35 margin-bottom-35">
-
-
-
                             <div class="input_group field" id="input_coisa_nome">
                                 <input type="input" class="input_field toguroo" id='nome_sala' placeholder="Name" required="" name="nome_sala" maxLength="32">
                                 <label for="name" class="input_label">Nome Da Sala </label> <!--Alterar para o nome do input-->
                             </div>
-
-
-
                         </div>
 
-
                         <div class="wrap-inputx margin-top-35 margin-bottomx-35">
-
-
-
                             <div class="input_group field ">
-                                <input type="input" class="input_field toguro" placeholder="Name" required="" id="codigo_sala" name="codigo_sala" maxLength="8">
+                                <input type="input" class="input_field toguro" placeholder="Name" required="" id="codigo_sala" name="codigo_sala" maxLength="8" style="text-transform:uppercase" />
                                 <label for="name" class="input_label toguro" > Código </label> <!--Alterar para o nome do input-->
                             </div>
-
-
-
                         </div>
 
                     </div>     
@@ -392,24 +354,22 @@
                                 // alert("Ta chegando até aqui !")
                                 let response = await dados_php.json()
                                 
-                                console.log(response);
+                                // console.log(response);
 
                             
-                                console.log(response);
+                                // console.log(response);
 
                                 if(response){
                                     
                                     let popup = document.getElementById('popup-up-notificacao');
                                     let btn = document.getElementById("submit-btn-notificacao");
-
                                     // btn.style.display = "none";
-                                    
                                     popup.classList.add("open-popup");
-
                                     let blur = document.getElementById("blur");
-
                                     blur.classList.add("active");
 
+                                    
+                                    // openModal()
                                 
 
                                 }else{

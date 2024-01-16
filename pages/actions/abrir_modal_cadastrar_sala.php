@@ -11,7 +11,7 @@ foreach ($dados as $row_check ){
 }
 
 
-  
+    
     // var_dump($_FILES);exit;
     if (!empty($_FILES['img_sala']['name']))
     {
@@ -47,7 +47,7 @@ foreach ($dados as $row_check ){
         $_POST      ['cor_sala'],
         $novo_nome_imagem,
         $_POST      ['descricao_sala'],
-        null, //status
+        'L', //status
         $dias_funcionamentoJson, //horarios
         $_POST['checklist'],
         null

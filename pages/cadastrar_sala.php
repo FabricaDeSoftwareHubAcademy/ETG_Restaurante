@@ -1,10 +1,13 @@
-
 <?php
 session_start();
 require __DIR__."/../vendor/autoload.php";
 $titulo_page = 'Cadastrar Sala';
 require("../includes/header/header.php");
 include_once("../includes/menu.php"); 
+
+if(!$ifgensala){
+    header("Location: ./listar_recados.php");
+}
 
 use App\Entity\Sala;
 use App\Entity\CadastroChecklist;
@@ -24,7 +27,8 @@ foreach ($dados as $row_check ){
 if (isset(
             $_POST      ['btn_submit']    
         ))
-{   
+{  
+    $status='L'; 
     // var_dump($_FILES);exit;
     if (!empty($_FILES['img_sala']['name']))
     {
@@ -54,13 +58,14 @@ if (isset(
     // $imagem = $objImagem::storeImg($_FILES['imagem_sala']['name']);
     $obj_sala = new Sala
     
+    
     (
         $_POST       ['nome_sala'],
         $_POST      ['codigo_sala'],
         $_POST      ['cor_sala'],
         $novo_nome_imagem,
         $_POST      ['descricao_sala'],
-        null, //status
+        'L', //status
         $dias_funcionamentoJson, //horarios
         $_POST['checklist'],
         null

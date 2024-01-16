@@ -2,7 +2,12 @@
 session_start();
 require __DIR__."/../vendor/autoload.php";
 $titulo_page = 'Editar Perfil';
+include_once("../includes/menu.php");
+if(!$ifperfil){
+    header('Location: ./listar_recados.php');
+}
 require("../includes/header/header.php");
+
 
 
 use App\Entity\Perfil;
@@ -12,21 +17,6 @@ if(isset($_GET['id'])){
     
 }
 //Se o botao_salvar e o nome do cargo estiverem setados
-if (isset($_POST['botao_salvar'], $_POST['nome']))
-{
-    $objeto_perfil -> setDados($id, ['nome' => $_POST['nome'],
-                                    'gerenciar_perguntas' => (isset($_POST['gerenciar_perguntas']) ? 1 : 0),
-                                    'gerenciar_salas' => (isset($_POST['gerenciar_salas']) ? 1 : 0),
-                                    'realizar_acao_corretiva' => (isset($_POST['realizar_nao_conformidade']) ? 1 : 0),
-                                    'realizar_checklist' => (isset($_POST['realizar_checklist']) ? 1 : 0),
-                                    'gerenciar_checklist' => (isset($_POST['gerenciar_checklists']) ? 1 : 0),
-                                    'gerenciar_recados' => (isset($_POST['gerenciar_recados']) ? 1 : 0),
-                                    'gerenciar_notificacoes' => (isset($_POST['gerenciar_notificacoes']) ? 1 : 0),
-                                    'gerenciar_usuarios' => (isset($_POST['gerenciar_usuarios']) ? 1 : 0),
-                                    'gerenciar_perfis' => (isset($_POST['gerenciar_perfis']) ? 1 : 0)]);
-    header("Location: listar_perfis.php");
-
-}
 
 $dados = $objeto_perfil -> getDadosById($id);
 $nome = $dados[0] ['nome'];
@@ -40,7 +30,6 @@ $gerenciar_notificacoes = $dados[0] ['gerenciar_notificacoes'];
 $gerenciar_usuarios = $dados[0] ['gerenciar_usuarios'];
 $gerenciar_perfis = $dados[0] ['gerenciar_perfis'];
 
-include_once("../includes/menu.php"); 
 require("../includes/main/main_editar_perfil.php");
 require("../includes/footer/footer.php");
 ?>

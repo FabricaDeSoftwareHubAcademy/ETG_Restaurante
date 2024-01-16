@@ -6,10 +6,16 @@
 
 <body class="tela-cadastro-salas"> 
 
+<?php
+
+    include_once("../includes/modais/modal_editar_sala.php");
+            
+?>
+
 
 <div class="container-pop-up-notificacao">
         <!-- <button type="submit" class="btn-pop-up-notificacao" id="submit-btn-notificacao" onclick="openPopupValidar()">Submit</button> -->
-        <div class="popup-notificacao" id="popup-up-notificacao">
+        <!-- <div class="popup-notificacao" id="popup-up-notificacao">
             <div class="div-img">
                 <img src="../includes/pop-ups/img/Check_ring.png" alt="carregando" id="img_check">
                 <p>Alteração Salva Com Sucesso! </p>
@@ -27,7 +33,9 @@
                 </script>
                 <a href="listar_salas.php"><input type="submit" class="botao-ok-submit" onclick="closePopupValidar()" value="OK"></a>
             </div>
-        </div>
+        </div> -->
+
+        
     </div>
     <section class="container">
         
@@ -68,7 +76,7 @@
 
 
                             <div class="input_group field ">
-                                <input type="input" value="<?=$dados_sala[0]['codigo']?>" class="input_field toguro" placeholder="Name" required="" name="codigo" maxLength="8"  id="codigo_sala" >
+                                <input type="input" value="<?=$dados_sala[0]['codigo']?>" class="input_field toguro" placeholder="Name" required="" name="codigo" maxLength="8"  id="codigo_sala" style="text-transform:uppercase" />
                                 <label for="name" class="input_label toguro" > Código </label> <!--Alterar para o nome do input-->
                             </div>
 
@@ -195,6 +203,13 @@
                             <div class="alinar-botao-cor">
                                 <span id="selecao-cor-text">Cor da sala : </span> 
                                 <input value="<?=$dados_sala[0]['cor_itens']?>" class="botao-cor" name="cor_itens" type="color">
+                                
+                                <p class="texto_Status">Ativado/Desativado:</p>
+                                <label class="switch" for="">
+                                <input type="checkbox" name="status" <?php echo $dados_sala[0]['status']== "L" ? "checked" : "";?>>
+
+                                <span class="check"></span>
+                                </label>
                             </div>
                         </div>
                     </div>
@@ -228,7 +243,7 @@
                             
                             if(nome_sala.value.length > 0){
 
-                                console.log("Nome sala maior q zero");
+                                // console.log("Nome sala maior q zero");
 
                                 nome_sala = true ;
 
@@ -255,7 +270,7 @@
 
                             let codigo_sala = document.getElementById('codigo_sala')
                             if(codigo_sala.value.length > 0){
-                                console.log("codigo sala maior q zero");    
+                                // console.log("codigo sala maior q zero");    
                                 codigo_sala = true;
 
                             }else{
@@ -280,11 +295,11 @@
 
                             let checklist = document.getElementById('checklist')
 
-                            console.log(checklist.value);
+                            // console.log(checklist.value);
 
                             if(checklist.value > 0){
                                 
-                                console.log("checklist maior q zero");
+                                // console.log("checklist maior q zero");
 
                                 checklist = true ;
 
@@ -306,15 +321,15 @@
                                     icon: "error",
                                     title: "Selecione Um checklist !"
                                 });
-                                console.log("checklist vazio");    
+                                // console.log("checklist vazio");    
                             }
 
-                            console.log(nome_sala,codigo_sala,checklist)
+                            // console.log(nome_sala,codigo_sala,checklist)
                                 
                             if(nome_sala == true && codigo_sala == true && checklist == true){
 
                                 let form = document.getElementById('form_cad')
-                                console.log(form)
+                                // console.log(form)
 
                                 let formData = new FormData(form)
                                 // console.log(formData)
@@ -328,9 +343,6 @@
                                 
                                 console.log(response);
 
-                            
-                                // console.log(response);
-
                                 if(response){
                                     
                                     let popup = document.getElementById('popup-up-notificacao');
@@ -342,7 +354,7 @@
 
                                     // let blur = document.getElementById("blur");
 
-                                    blur.classList.add("active");
+                                    // blur.classList.add("active");
 
                                 
 

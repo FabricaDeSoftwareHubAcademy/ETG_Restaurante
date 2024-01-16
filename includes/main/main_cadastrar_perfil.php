@@ -10,6 +10,8 @@
 
 <link rel="stylesheet" href="../assets/css/estilo_botoes_padronizados.css">
 <link rel="stylesheet" href="../assets/css/cadastrar_editar_perfil.css">
+<link href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@4/dark.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
 
 
 
@@ -19,7 +21,7 @@
         <div class="titulo_cad" >
             <h1 class="titulo_cad_perfil">Cadastro de Perfil</h1>
         </div>
-        <form method="POST" class="form_permissoes">
+        <form  class="form_permissoes" id="form_cad">
             <div class="input_group">
                 <input type="input" class="input_field" placeholder="Name" name="nome" maxlength=25>
                 <label for="name" class="input_label">Nome</label> <!--Alterar para o nome do input-->
@@ -39,7 +41,7 @@
                         <label class="label_permissao">Docente</label>
                         <input type="checkbox" class="checkbox_permissoes" name="mais_usados_docente" id="mais_usados_docente" autocomplete="off"/>
                     </div>
-            </div>
+                 </div>
             <div class="permissoes_salas">
                 <label class="titulo_permissoes">Gerenciamento de Cadastro:</label>
                 <div class="permissoes_salas_tipos">
@@ -71,7 +73,6 @@
                         <label class="label_permissao">Gerenciar Perfis</label>
                         <input type="checkbox" class="checkbox_permissoes" name="gerenciar_perfis"  id="gerenciar_perfis" autocomplete="off"/>
                     </div>
-
                 </div>
             </div>
             <div class="permissoes_salas">
@@ -87,21 +88,63 @@
                     </div>
                 </div>
             </div>
-            <div class="container_gp2">
-                <div class="botoes">
-                    <!--Botão Voltar-->
-                    <div class="botao-padrao-voltar">
-                        <a href="listar_perfis.php" class="botao-voltar-submit">VOLTAR</a>
-                    </div>
-                    <!--Botão Salvar-->
-                    <div class="botao-padrao-salvar" onclick="openPopupCad">
-                        <a><input name="botao_salvar" type="submit" class="botao-salvar-submit" value="SALVAR"></a>
-                    </div>
-                </div>
-            </div>
         </form>
     </div>     
+    <div class="container_gp2">
+        <div class="botoes">
+            <!--Botão Voltar-->
+            <div class="botao-padrao-voltar">
+                <a href="listar_perfis.php" class="botao-voltar-submit">VOLTAR</a>
+            </div>
+            <!--Botão Salvar-->
+            <div class="botao-padrao-salvar">
+                <input type="submit" id="btn-submit-cadastrar" class="botao-salvar-submit" value="SALVAR">
+            </div>
+        </div>
+    </div>
 </body>
 
+
+<script>
+    var btn_submit = document.getElementById('btn-submit-cadastrar');
+    btn_submit.addEventListener('click', async (e) => {
+        let form = document.getElementById('form_cad')
+        console.log(form)
+        let formData = new FormData(form)
+        // console.log(formData)
+
+
+        
+        let dados_php = await fetch("../pages/actions/action_cadastrar_perfil.php",{method:"POST",
+                                    body: formData
+                                })
+        // let dados_php = await dados_php_php.json()
+        let response = await dados_php.json();
+        console.log(response);
+
+        if (response == true)
+        {
+            const Toast = Swal.mixin({
+                    toast: true,
+                    position: 'top-end',
+                    showConfirmButton: false,
+                    timer: 3000,
+                    timerProgressBar: true,
+                    didOpen: (toast) => {
+                        toast.addEventListener('mouseenter', Swal.stopTimer)
+                        toast.addEventListener('mouseleave', Swal.resumeTimer)
+                    }
+                    })
+
+                    Toast.fire({
+                    icon: 'success',
+                    title: 'Cadastrado com sucesso!'
+                    })
+
+                    setTimeout(function(){window.location.href = "listar_perfis.php";}, 1500);
+        }
+    });
+
+</script>
 
 <script src="../assets/js/preencher_checkbox_mais_usados.js"></script>

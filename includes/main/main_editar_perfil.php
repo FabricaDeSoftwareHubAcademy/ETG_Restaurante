@@ -5,6 +5,9 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="../assets/css/cadastrar_editar_perfil.css">
+<link href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@4/dark.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
+
 
 <body class="tela_cadastro_perfil">
     <div class="container">
@@ -13,7 +16,7 @@
                 Edição de Perfil
             </h1>
         </div>
-        <form method="POST" class="form_permissoes">
+        <form class="form_permissoes" id="form_cad">
             <div class="input_group">
                 <input type="input" class="input_field" placeholder="Name" name="nome" maxlength="30"value="<?=$nome;?>">
                 <label for="name" class="input_label">Nome</label> 
@@ -65,20 +68,60 @@
                     </div>
                 </div>
             </div>
-            <div class="container_gp2">
-                <div class="botoes">
-                    <!--Botão Voltar-->
-                    <div class="botao-padrao-voltar">
-                        <a href="listar_perfis.php" class="botao-voltar-submit">VOLTAR</a>
-                    </div>
-                    <!--Botão Salvar-->
-                    <div class="botao-padrao-salvar">
-                        <a><input name="botao_salvar" type="submit" class="botao-salvar-submit" value="SALVAR"></a>
-                    </div>
+        </form>
+        <div class="container_gp2">
+            <div class="botoes">
+                <!--Botão Voltar-->
+                <div class="botao-padrao-voltar">
+                    <a href="listar_perfis.php" class="botao-voltar-submit">VOLTAR</a>
+                </div>
+                <!--Botão Salvar-->
+                <div class="botao-padrao-salvar">
+                    <input name="" id="botao_salvar" type="submit" class="botao-salvar-submit" value="SALVAR">
                 </div>
             </div>
-        </form>
+        </div>
     </div>
 <!-- </main>    -->
-
 </body>
+<script>
+    var btn_submit = document.getElementById('botao_salvar');
+    btn_submit.addEventListener('click', async (e) => {
+        let form = document.getElementById('form_cad')
+        console.log(form)
+        let formData = new FormData(form)
+        // console.log(formData)
+
+
+        
+        let dados_php = await fetch("../pages/actions/action_editar_perfil.php?id=<?=$_GET['id']?>",{method:"POST",
+                                    body: formData
+                                })
+        // let dados_php = await dados_php_php.json()
+        let response = await dados_php.json();
+        console.log(response);
+
+        if (response == true)
+        {
+            const Toast = Swal.mixin({
+                    toast: true,
+                    position: 'top-end',
+                    showConfirmButton: false,
+                    timer: 3000,
+                    timerProgressBar: true,
+                    didOpen: (toast) => {
+                        toast.addEventListener('mouseenter', Swal.stopTimer)
+                        toast.addEventListener('mouseleave', Swal.resumeTimer)
+                    }
+                    })
+
+                    Toast.fire({
+                    icon: 'success',
+                    title: 'Editado com sucesso!'
+                    })
+
+                    setTimeout(function(){window.location.href = "listar_perfis.php";}, 1500);
+        }
+    });
+
+</script>

@@ -14,7 +14,6 @@ if (isset($_POST['email'], $_POST['btn_submit'])){
     {
         if ($obj_email::sendEmail($_POST['email']))
         {
-            session_start();
             $_SESSION['email_to_redef_secret'] = $_POST['email'];
             header("Location: relembrar_senha_2.php");
         }
@@ -29,7 +28,7 @@ if (isset($_POST['email'], $_POST['btn_submit'])){
     else
     {
         
-        die ("email n existe");
+        header('location: relembrar_senha_1.php');
         
     }
 }

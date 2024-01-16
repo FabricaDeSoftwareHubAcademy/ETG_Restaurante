@@ -1,15 +1,15 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <section class="section_modal">
-        <button class="show-modal">Abrir</button>
+        <!-- <button class="show-modal">Abrir</button> -->
         <span class="overlay-modal"></span>
         <div class="modal-box">
             <i class="fa-regular fa-circle-check"></i>
             <h2 class="titulo_pop_up">Concluido</h2>
-            <h3 class="subtitulo_pop_up">Foto alterada com sucesso!</h3>
+            <h3 class="subtitulo_pop_up">Sala Editada com sucesso!</h3>
 
         <div class="buttons-pop_up">
             <div class="container_dos_btns">
-                <button type="submit" class="close-btn">Ok, fechar</button>
+                <a href="../pages/listar_salas.php"><button type="submit" class="close-btn">Ok, fechar</button></a>
             </div>
         </div>
         </div>
@@ -24,12 +24,12 @@
     box-sizing: border-box;
     font-family: "Poppins", sans-serif;
 }
-.section_modal{
+/* .section_modal{
     position: absolute;
     height: 100%;
     width: 100%;
     background-color: #e3f2fd;
-}
+} */
 button.show-modal,
 .modal-box{
     position: absolute;
@@ -57,6 +57,7 @@ button.show-modal:hover{
     background: rgba(0, 0, 0, 0.3);
     opacity: 0;
     pointer-events: none;
+    z-index: 1;
 }
 .modal-box{
     display: flex;
@@ -69,6 +70,7 @@ button.show-modal:hover{
     padding: 30px 20px;
     opacity: 0;
     pointer-events: none;
+    z-index: 2;
 
 }
 .modal-box i {
@@ -120,9 +122,9 @@ button.show-modal:hover{
 
     <script>
         document.addEventListener("DOMContentLoaded", function() {
-            const showModalBtn = document.querySelector('.show-modal');
+            const showModalBtn = document.querySelector('.botao-cadastrar-submit');
             const closeModalBtn = document.querySelector('.close-btn');
-            const openModalBtn = document.querySelector('.open-btn');
+            // const openModalBtn = document.querySelector('.open-btn');
             const overlay = document.querySelector('.overlay-modal');
             const modal = document.querySelector('.modal-box');
             function openModal() {
@@ -139,9 +141,8 @@ button.show-modal:hover{
             }
             showModalBtn.addEventListener('click', openModal);
             closeModalBtn.addEventListener('click', closeModal);
-            openModalBtn.addEventListener('click', openModal);
+            // openModalBtn.addEventListener('click', openModal);
         });
         
 
     </script>
-

@@ -56,26 +56,49 @@
     function callPopUp(data)
     {
         var idtemp = data['children'][0]['attributes']['dataid']['value']
-
-        Swal.fire({
-        title: "Deseja excluir esse perfil?",
-        text: "Essa ação não poderá ser desfeita!",
-        icon: "warning",
-        showCancelButton: true,
-        confirmButtonColor: "#3085d6",
-        cancelButtonColor: "#d33",
-        confirmButtonText: "Sim!"
-        }).then((result) => {
-        if (result.isConfirmed)
+        var lock = data['children'][0]['attributes']['lock']['value']
+        if (lock == 'true')
         {
-            deletarPerfil(idtemp);
+            const Toast = Swal.mixin({
+                    toast: true,
+                    position: 'top-end',
+                    showConfirmButton: false,
+                    timer: 3000,
+                    timerProgressBar: true,
+                    didOpen: (toast) => {
+                        toast.addEventListener('mouseenter', Swal.stopTimer)
+                        toast.addEventListener('mouseleave', Swal.resumeTimer)
+                    }
+                    })
+
+                    Toast.fire({
+                    icon: 'error',
+                    title: 'Não é possível excluir o Perfil!'
+                    })
+        }
+        else
+        {
             Swal.fire({
-            title: "Excluído!",
-            text: "O perfil foi excluído com sucesso!",
-            icon: "success"
+            title: "Deseja excluir esse perfil?",
+            text: "Essa ação não poderá ser desfeita!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Sim!"
+            }).then((result) => {
+            if (result.isConfirmed)
+            {
+                deletarPerfil(idtemp);
+                Swal.fire({
+                title: "Excluído!",
+                text: "O perfil foi excluído com sucesso!",
+                icon: "success"
+                });
+            }
             });
         }
-        });
+
        
     }
     

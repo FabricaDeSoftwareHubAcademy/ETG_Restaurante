@@ -24,8 +24,8 @@
                             <div class="item-timer">
                                 <h1 id="text-timer">Solicitar outro código:</h1>   
                                 <h1 id="timer">00:60</h1>
+                                
                             </div>
-
                             <div>
                                 <input type="submit" class="botao-enviar-dnv" id="actionBtn" name="btn_resend" value="Enviar novamente">
                             </div>
@@ -36,19 +36,34 @@
         </section>   
 
 
-        <section class="centralizar_botoes_esqueceu_senha">
+                
+        <section class="centralizar_botoes_alterar_senha">
+    
+                <!--Botão Voltar-->
+            <div class="botao-padrao-voltar">
+                <a href="./relembrar_senha_1.php" class="botao-voltar-submit" >VOLTAR</a>
+            </div>
 
-        <!--Botão Voltar-->
+                <!--Botão Confirmar-->
+            <div class="botao-padrao-confirmar">
+                <input name="btn_submit" type="submit" id="btn_submit" class="botao-confirmar-submit"  value="CONFIRMAR">
+            </div>
+
+        </section>
+
+        
+        <!-- <section class="centralizar_botoes_esqueceu_senha">
+
+
             <div class="botao-padrao-voltar">
                 <a href="tela_esqueceu_senha1.php"><input type="submit" class="botao-voltar-submit"  value="VOLTAR"></a>
             </div>
 
-        <!--Botão Confirmar-->
             <div class="botao-padrao-confirmar">
                 <input name="btn_submit" type="submit" class="botao-confirmar-submit"  value="CONFIRMAR">
             </div>
 
-        </section>
+        </section> -->
 
     </form>
     </main>
