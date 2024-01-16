@@ -126,7 +126,7 @@ button.show-modal:hover{
 
     </style>
 
-    <script>
+    <!-- <script>
         document.addEventListener("DOMContentLoaded", function() {
             const showModalBtn = document.querySelector('.botao-cadastrar-submit');
             const closeModalBtn = document.querySelector('.close-btn');
@@ -151,4 +151,4 @@ button.show-modal:hover{
         });
         
 
-    </script>
+    </script> -->

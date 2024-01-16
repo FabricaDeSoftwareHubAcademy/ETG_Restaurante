@@ -247,7 +247,7 @@
                             overlaynovo.style.pointerEvents = 'auto';
                             modalnovo.style.opacity = '1';
                             modalnovo.style.pointerEvents = 'auto';
-}
+                        }
 
                         button.addEventListener('click', async (e) => {
                             // alert("dsadsa")
