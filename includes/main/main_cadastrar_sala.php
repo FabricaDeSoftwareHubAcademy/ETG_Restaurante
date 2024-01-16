@@ -199,6 +199,19 @@
 
                         let button = document.getElementById("botao-cadastrar-submit") 
 
+                        const showModalnovoBtn = document.querySelector('.botao-cadastrar-submit');
+                        const closeModalnovoBtn = document.querySelector('.close-btn');
+                        // const openModalBtn = document.querySelector('.open-btn');
+                        const overlaynovo = document.querySelector('.overlay-modal');
+                        const modalnovo = document.querySelector('.modal-box');
+                        function openModal2() {
+                            console.log("qual quer coisa ai");
+                            overlaynovo.style.opacity = '1';
+                            overlaynovo.style.pointerEvents = 'auto';
+                            modalnovo.style.opacity = '1';
+                            modalnovo.style.pointerEvents = 'auto';
+                    }
+
                         button.addEventListener('click', async (e) => {
                             // alert("dsadsa")
                             e.preventDefault()
@@ -369,7 +382,7 @@
                                     blur.classList.add("active");
 
                                     
-                                    // openModal()
+                                    openModal2()
                                 
 
                                 }else{
