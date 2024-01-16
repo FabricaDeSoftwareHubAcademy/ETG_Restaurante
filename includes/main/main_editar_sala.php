@@ -76,7 +76,7 @@
 
 
                             <div class="input_group field ">
-                                <input type="input" value="<?=$dados_sala[0]['codigo']?>" class="input_field toguro" placeholder="Name" required="" name="codigo" maxLength="8"  id="codigo_sala" style="text-transform:uppercase" /> >
+                                <input type="input" value="<?=$dados_sala[0]['codigo']?>" class="input_field toguro" placeholder="Name" required="" name="codigo" maxLength="8"  id="codigo_sala" style="text-transform:uppercase" />
                                 <label for="name" class="input_label toguro" > Código </label> <!--Alterar para o nome do input-->
                             </div>
 
