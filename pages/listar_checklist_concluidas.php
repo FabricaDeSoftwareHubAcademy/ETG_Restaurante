@@ -1,9 +1,7 @@
 <?php
 session_start();
-$titulo_page = 'Mural Recados'; 
 include_once("../includes/menu.php");
  
-
 
 
 include_once("../includes/header/header.php");
