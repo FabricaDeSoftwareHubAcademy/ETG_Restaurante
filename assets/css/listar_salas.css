@@ -351,15 +351,17 @@ border-radius: 10px;
     margin-left: 8%;
     margin-top: 3%;
     color: orange;
-    font-size: 28px;
+    font-size: 30px;
 }
 
 .em-uso {
-    color: orange;
-    font-size: 16px;
+    color: #1f498b;
+    font-size: 12px;
+    font-weight: bold;
     margin-left: 76%;
     margin-top: 3%;
-    border: 3px solid orange;
-    width: 20%;
+    border: 2px solid #1f498b;
+    border-radius: 15px;
+    width: 15%;
     padding: 1%;
 }
