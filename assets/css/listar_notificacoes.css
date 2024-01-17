@@ -9,42 +9,34 @@
 
 
 .container{
-    
     display: flex;
     flex-wrap: wrap;
     overflow: hidden;
     overflow-y: auto;
     height: 60%;
-    
     /* max-width: 800px; */
     width: 97%;
-
-    
-
   }
 
   .container::-webkit-scrollbar{
-    
     width: 8px;
     background-color: #eeeeee;
     border-radius: 10px;
   }
   
   .container::-webkit-scrollbar-thumb{
-    
     background-color: #F28920;
     border-radius: 10px; 
   } 
 
 
-.titulo_tela_notificacao{
-
-    width: 100%;
+.titulo_tela_notificacao h1{
     justify-content: center;
+    font-family: "Montsserat";
+    font-style: normal;
     display: flex;
-    font-size: 22px;
+    font-size: 45px;
     margin-bottom: 30px;
-
 }
 
 
@@ -53,14 +45,11 @@
 }
 
 .area_not{
-
     /* margin-top: 40px; */
     display: flex;
     flex-direction: column;
     width: 100%;
     align-items: center;
-    
-
 }
  
 
@@ -68,8 +57,6 @@
     display: flex;
     width: 85%;
     height: 90px;
-    /* background-color: rgb(233, 233, 233); */
-    /* border-radius: 12px; */
     justify-content: space-around;
     box-shadow: 2px 2px 5px 0px;
     margin-bottom: 40px;

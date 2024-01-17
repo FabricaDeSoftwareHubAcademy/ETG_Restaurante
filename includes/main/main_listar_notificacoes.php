@@ -7,8 +7,8 @@
     <div class="titulo_tela_notificacao">
         <h1>Notificações</h1>  
     </div>
-    <section class="container">
-        
+
+    <section class="container">       
         <main class="area_not">
             <?=$todas_notificacao?>
         </main>   
@@ -18,9 +18,6 @@
                 <a href="listar_salas.php" class="botao-voltar-link">VOLTAR</a>
             </div>
         </div>
-
-
-
     </section>
     
     <script> 
