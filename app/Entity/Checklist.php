@@ -31,12 +31,12 @@ class Checklist
   
     }
 
-    public static function getChecklist($id){
-
+    public static function getData() {
         $obj_banco = new Banco('responder_check');
-        return $obj_banco -> select('id_sala = "'.$id.'"', 'id DESC',1)->fetchAll(PDO::FETCH_ASSOC)[0];
-  
+        $data = $obj_banco -> select() -> fetchAll(PDO::FETCH_ASSOC);
+        return $data;
     }
+
 
 
 }

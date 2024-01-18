@@ -4,7 +4,7 @@
         <span class="overlay-modal"></span>
         <div class="modal-box">
             <i class="fa-regular fa-circle-check"></i>
-            <h2 class="titulo_pop_up">Concluido</h2>
+            <h2 class="titulo_pop_up">Concluído</h2>
             <h3 class="subtitulo_pop_up">Sala Editada com sucesso!</h3>
 
         <div class="buttons-pop_up">
@@ -51,13 +51,17 @@ button.show-modal:hover{
 }
 
 .overlay-modal{
+    opacity: 1;
+    pointer-events: auto;
+    top: 0;
+    left: 0;
     position: absolute;
-    height: 100%;
-    width: 100%;
+    height: 100vh;
+    width: 100vw;
     background: rgba(0, 0, 0, 0.3);
-    opacity: 0;
-    pointer-events: none;
-    z-index: 1;
+    opacity: 0; 
+    pointer-events: none; 
+    z-index: 999;
 }
 .modal-box{
     display: flex;
@@ -70,7 +74,8 @@ button.show-modal:hover{
     padding: 30px 20px;
     opacity: 0;
     pointer-events: none;
-    z-index: 2;
+    z-index: 99969699999586554;
+
 
 }
 .modal-box i {
@@ -115,12 +120,13 @@ button.show-modal:hover{
     font-style: normal;
     font-size: 15px;
     font-weight: 580;
+    color: white;
 
 }
 
     </style>
 
-    <script>
+    <!-- <script>
         document.addEventListener("DOMContentLoaded", function() {
             const showModalBtn = document.querySelector('.botao-cadastrar-submit');
             const closeModalBtn = document.querySelector('.close-btn');
@@ -145,4 +151,4 @@ button.show-modal:hover{
         });
         
 
-    </script>
+    </script> -->
