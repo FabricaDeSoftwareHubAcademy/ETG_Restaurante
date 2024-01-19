@@ -71,6 +71,7 @@ body{
   align-items: center;
   padding-left: 50px;
   font-size: 20px;
+  padding-top: 25px;
  
 }
 /* Estilos opcionais para o conteúdo do pop-up */
@@ -203,7 +204,7 @@ body{
   .div-pop{
     width: 90%;
     left: 10%;
-    margin-top: 50px;
+    /* margin-top: 50px; */
   }
   .edita_recado{
     right: 80%;
