@@ -1,13 +1,14 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.18/dist/sweetalert2.all.min.js"></script>
 <link rel="stylesheet" href="estilo_perfil.css">
 <!-- <link rel="stylesheet" href="https/cdnjs.cloudflare.comlibs/font-awesome/6.4.0/css/all.min.css"> -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <link rel="stylesheet" href="../assets/css/cadastrar_checklist/input-checklist.css">
 <link rel="stylesheet" href="../assets/css/cadastrar_checklist/posicao.css">
-<link rel="stylesheet" href="../assets/js/cadastro-checklist.js">
 <link rel="stylesheet" href="../assets/css/cadastrar_checklist/caixa_pergunta.css">
 <link rel="stylesheet" href="../assets/css/cadastrar_checklist/botões-checklist.css">
+<script defer src="../assets/js/ajax_checklist.js"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.18/dist/sweetalert2.all.min.js"></script>
 
 
 <body class="pai_de_todos">
@@ -61,6 +62,15 @@
                     <label for="name" class="input_label">Nome da CheckList</label> <!--Alterar para o nome do input-->
                     
                 </div>
+                
+            </div>
+            <div class="inputs-cadastro-checklist">
+                <div class="input_group field">
+                    <input type="text" class="input_field" placeholder="" required="" name="nome_checklist"  maxlength="45">
+                    <label for="name" class="input_label">Nome da CheckList</label> <!--Alterar para o nome do input-->
+                    
+                </div>
+                
             </div>
 
             <!-- Menu das abas -->
