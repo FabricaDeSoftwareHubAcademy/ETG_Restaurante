@@ -56,7 +56,7 @@ button.show-modal:hover{
     left: 0;
     position: absolute;
     height: 100vh;
-    width: 90vw;
+    width: 100%;
     background: rgba(0, 0, 0, 0.3);
     opacity: 0;
     pointer-events: none;
