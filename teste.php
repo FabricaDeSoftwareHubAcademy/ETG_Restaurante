@@ -1,10 +1,10 @@
 <?php
 require __DIR__."/vendor/autoload.php";
 
-use \App\Entity\Checklist;
+use \App\Entity\Usuario;
 
 
-print_r(date('Y-m-d H:i:s'));
+Usuario::deleteById(7);
 
 
 
