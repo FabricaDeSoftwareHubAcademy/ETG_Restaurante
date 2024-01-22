@@ -10,6 +10,13 @@
 
     <!-- PARTE QUE IMPORTA A TELA DE NÃO CONFORMIDADE -->
     <?php include_once "../includes/main/main_cadastrar_nao_conformidade.php";
+
+
+
+    include_once("../includes/modais/checklist_criado.php");
+
+
+
     ?>
 
     <!-- TITULO DA PAGINA -->
@@ -41,5 +48,7 @@
         </form>
 
     </main>
+
+    
 
 </body>

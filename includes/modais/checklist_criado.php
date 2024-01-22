@@ -24,12 +24,12 @@
     box-sizing: border-box;
     font-family: "Poppins", sans-serif;
 }
-.section_modal{
+/* .section_modal{
     position: absolute;
     height: 100%;
     width: 100%;
     background-color: #e3f2fd;
-}
+} */
 button.show-modal,
 .modal-box{
     position: absolute;
