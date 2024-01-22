@@ -9,8 +9,9 @@
 
         <div class="buttons-pop_up">
             <div class="container_dos_btns">
-                <button type="submit" class="close-btn">Ok, fechar</button>
+                <button type="button" class="close-btn" onclick="window.location.href='listar_salas.php'">Ok, fechar</button>
             </div>
+        </div>
         </div>
         </div>
     </section>
@@ -56,7 +57,7 @@ button.show-modal:hover{
     left: 0;
     position: absolute;
     height: 100vh;
-    width: 90vw;
+    width: 100%;
     background: rgba(0, 0, 0, 0.3);
     opacity: 0;
     pointer-events: none;

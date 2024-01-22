@@ -4,13 +4,16 @@
 <link href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@4/dark.css" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
 
+    <!-- PARTE QUE IMPORTA A TELA DE NÃO CONFORMIDADE -->
+    <?php include_once "../includes/main/main_cadastrar_nao_conformidade.php";
+
+     //MODAL DE CHECKLIST CADASTRADO//
+     include_once "../includes/modais/checklist_criado.php";
+    ?>
 
 <!-- GERAL -->
 <body class="container_checklist">
 
-    <!-- PARTE QUE IMPORTA A TELA DE NÃO CONFORMIDADE -->
-    <?php include_once "../includes/main/main_cadastrar_nao_conformidade.php";
-    ?>
 
     <!-- TITULO DA PAGINA -->
     <h1 class="titulo_checklist">Checklist Pós-Aula</h1>
