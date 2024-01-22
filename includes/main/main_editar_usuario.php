@@ -1,3 +1,5 @@
+<link href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@4/dark.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
 <link rel="stylesheet" href="../assets/css/editar_usuario/botao_editar_usuario.css">
 <link rel="stylesheet" href="../assets/css/editar_senha/input_button_editar_senha.css">
@@ -34,7 +36,7 @@
                 <h2 class="name-name">Nome</h2>
             </section>
 
-            <div method="POST" class="alinhar-input">
+            <div class="alinhar-input">
                 
                 <div class="input_group field">
                     <input type="input" class="input_field" maxlength="45" id="input_name_cad" placeholder="Name" required="" name="nome" value="<?=$dados_editar["nome"]?>" maxLength="105">
@@ -50,37 +52,7 @@
                 
             </div>
 
-            <section class="editar_senha">
-                    <section class='titulo_alterar_senha'>
-                    <h1>Alterar Senha</h1>
-                </section>
-
-                <div class="centralizar-back"> 
-                    <section class="centralizar_input_alterar_senha">
-
-                        
-                       
-                        <div class="input_senha_group field">
-                            <input name="senhaantiga" type="password" class="input_senha_field" placeholder="Name">
-                            <label for="name" class="input_senha_label">Senha antiga</label> <!--Alterar para o nome do input-->
-                        </div>
-
-                        <div class="input_senha_group field2">
-                            <input name="novasenha" type="password" class="input_senha_field" placeholder="Name">
-                            <label for="name" class="input_senha_label">Criar nova senha</label> <!--Alterar para o nome do input-->
-                        </div>
-
-                        <div class="input_senha_group field3">
-                            <input name="confirmarnovasenha" type="password" class="input_senha_field" placeholder="Name" >
-                            <label for="name" class="input_senha_label">Confirmar nova senha</label> <!--Alterar para o nome do input-->
-                        </div>
-                    </section>
-
-                
-
-                    
-                </div>   
-            </section>
+            <?=$area_edit?>
 
             <section class="centralizar_botoes_alterar_senha">
     

@@ -15,7 +15,7 @@
     margin-top: 7%;
     font-family: 'Montserrat';
     font-weight: bold;
-    font-size: 240%;
+    font-size: 45px;
   }
   .form-minha-conta{
     margin-top: 2%; /* 50px*/
@@ -83,18 +83,11 @@
     flex-direction: column;
   }
 
- .alinhar-input{
-    /* margin-top: 2%;
+ .alinhar-input{ 
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column; */
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    margin: 15% auto;
+    flex-direction: column; 
     margin-top: 2%;
     width: 100%;
 

@@ -1,3 +1,7 @@
+<?php   
+        require("../includes/modal_excluir/excluir_pop_up.php"); 
+        
+    ?>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> 
@@ -9,20 +13,20 @@
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
 
 
+  
 
 <body class="tela_gerenciam_usuarios"> 
-    <?php  
-        require("../includes/modais/usuario_excluido.php"); 
-    ?>
 
 
         <main class="pai-de-todos">
             <form action="" method="GET">
                 <div class="container_gp">
                         <h1 class="Usuarios"> Usuários </h1>
-                        
+
                             <ul class="cardsgerenc">
-                                <?=$imprimir?>
+                                <?php
+                                //  echo($imprimir)
+                                ?>
                             </ul>
                 
                 </div>
