@@ -98,7 +98,7 @@ btn_submit.addEventListener('click', async (e ) => {
         {
             continuar_rodando = false 
             const Toast = Swal.mixin({
-                toast: true,
+               toast: true,
                 position: "top-end",
                 showConfirmButton: false,
                 timer: 3000,
