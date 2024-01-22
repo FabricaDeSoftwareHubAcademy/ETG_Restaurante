@@ -4,9 +4,9 @@
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
 
 <body class="tela_notificacao"> 
-    <div class="titulo_tela_notificacao">
-        <h1>Notificações</h1>  
-    </div>
+
+        <h1 id="titulo">Notificações</h1>  
+
 
     <section class="container">       
         <main class="area_not">

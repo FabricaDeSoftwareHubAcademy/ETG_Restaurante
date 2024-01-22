@@ -30,7 +30,7 @@
   } 
 
 
-.titulo_tela_notificacao h1{
+#titulo{
     justify-content: center;
     font-family: "Montsserat";
     font-style: normal;
@@ -75,7 +75,6 @@
     display: flex;
     align-items: center;
     font-size: 16px;
-
 }
 
 .tempo{
