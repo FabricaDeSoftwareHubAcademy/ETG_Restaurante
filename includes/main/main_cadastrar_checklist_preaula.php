@@ -6,12 +6,17 @@
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
 
 
-<!-- GERAL -->
-<body class="container_checklist">
 
     <!-- PARTE QUE IMPORTA A TELA DE NÃO CONFORMIDADE -->
     <?php include_once "../includes/main/main_cadastrar_nao_conformidade.php";
+
+    //MODAL DE CHECKLIST CADASTRADO//
+        include_once "../includes/modais/checklist_criado.php";
     ?>
+
+<!-- GERAL -->
+<body class="container_checklist">
+
 
     <!-- TITULO DA PAGINA -->
     <h1 class="titulo_checklist">Checklist Pré-Aula</h1>
@@ -40,6 +45,7 @@
             </div>
 
         </form>
+
 
     </main>
 
