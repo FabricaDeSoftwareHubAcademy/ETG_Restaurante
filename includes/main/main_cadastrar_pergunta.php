@@ -31,7 +31,7 @@
                 <div class="pesquisa">
                     <div class="input_group field">
                         <input type="input" id ="input" class="input_field" placeholder="." required="" name="nome-checklist" autocomplete="off">
-                        <label for="name" class="input_label">Descrição da pergunta</label> 
+                        <label for="name" class="input_label">Pesquisar pergunta</label> 
                         <i class="bi bi-search" id="lupa"></i>
                     </div>
                 </div>
