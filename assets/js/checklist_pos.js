@@ -138,27 +138,58 @@ btn_submit.addEventListener('click', async (e ) => {
 
         console.log(response);
 
-        const Toast = Swal.mixin({
-            toast: true,
-            position: 'top-end',
-            showConfirmButton: false,
-            timer: 3000,
-            timerProgressBar: true,
-            didOpen: (toast) => {
-                toast.addEventListener('mouseenter', Swal.stopTimer)
-                toast.addEventListener('mouseleave', Swal.resumeTimer)
-            }
-            })
-
-            Toast.fire({
-            icon: 'success',
-            title: 'Realizado'
-            })
-          setTimeout(function() {
-            window.location.href = "listar_salas.php";
-         }, 1000);
+        if(response == true){
+            openModal();
+        }
        
-    }
+        }
+    
+    
+        });
+        const showModalBtn = document.getElementById('btn_submit');
+        const closeModalBtn = document.querySelector('.close-btn');
+        const openModalBtn = document.querySelector('.open-btn');
+        const overlay = document.querySelector('.overlay-modal');
+        const modal3 = document.querySelector('.modal-box');
+        function openModal() {
+            overlay.style.opacity = '1';
+            overlay.style.pointerEvents = 'auto';
+            modal3.style.opacity = '1';
+            modal3.style.pointerEvents = 'auto';
+        }
+        function closeModal() {
+            overlay.style.opacity = '0';
+            overlay.style.pointerEvents = 'none';
+            modal3.style.opacity = '0';
+            modal3.style.pointerEvents = 'none';
+        }
+        // showModalBtn.addEventListener('click', openModal);
+        closeModalBtn.addEventListener('click', closeModal);
+        // openModalBtn.addEventListener('click', openModal);
+        
+        
+
+//         const Toast = Swal.mixin({
+//             toast: true,
+//             position: 'top-end',
+//             showConfirmButton: false,
+//             timer: 3000,
+//             timerProgressBar: true,
+//             didOpen: (toast) => {
+//                 toast.addEventListener('mouseenter', Swal.stopTimer)
+//                 toast.addEventListener('mouseleave', Swal.resumeTimer)
+//             }
+//             })
+
+//             Toast.fire({
+//             icon: 'success',
+//             title: 'Realizado'
+//             })
+//           setTimeout(function() {
+//             window.location.href = "listar_salas.php";
+//          }, 1000);
+       
+//     }
 
 
-});
+// });

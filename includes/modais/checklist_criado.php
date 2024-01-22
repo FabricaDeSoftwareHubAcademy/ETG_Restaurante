@@ -9,8 +9,9 @@
 
         <div class="buttons-pop_up">
             <div class="container_dos_btns">
-                <button type="submit" class="close-btn">Ok, fechar</button>
+                <button type="button" class="close-btn" onclick="window.location.href='listar_salas.php'">Ok, fechar</button>
             </div>
+        </div>
         </div>
         </div>
     </section>
