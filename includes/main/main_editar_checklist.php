@@ -1,18 +1,22 @@
-<!-- <link rel="stylesheet" href="estilo_perfil.css"> -->
-<!-- <link rel="stylesheet" href="https/cdnjs.cloudflare.comlibs/font-awesome/6.4.0/css/all.min.css"> -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-<link rel="stylesheet" href="../assets/css/cadastrar_checklist/input-checklist.css">
-<link rel="stylesheet" href="../assets/css/cadastrar_checklist/posicao.css">
-<link rel="stylesheet" href="../assets/js/cadastro-checklist.js">
-<link rel="stylesheet" href="../assets/css/cadastrar_checklist/caixa_pergunta.css">
-<link rel="stylesheet" href="../assets/css/cadastrar_checklist/botões-checklist.css">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.18/dist/sweetalert2.all.min.js"></script>
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>gerenciar checklist</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../assets/css/editar_checklist_input.css">
+    <link rel="stylesheet" href="../assets/css/editar_checklist_posicao.css">
+    <link rel="stylesheet" href="../assets/js/cadastro-checklist.js">
+    <link rel="stylesheet" href="../assets/css/editar_checklist_caixa_pergunta.css">
+    <link rel="stylesheet" href="../assets/css/editar_checklist_botões-checklist.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.18/dist/sweetalert2.all.min.js"></script>
+</head>
 
+<body>
 
-<body class="pai_de_todos">
-    <?php include_once("../includes/menu.php"); ?>
-    <div class="titulo-topo">
+<div class="titulo-topo">
         <h1 id="titulo">Cadastro de CheckList (andré q fez kkkkkk)</h1>
     </div>
     <div class="container-pop-up-notificacao">
@@ -205,3 +209,4 @@
     </main>
 
 </body>
+</html>
