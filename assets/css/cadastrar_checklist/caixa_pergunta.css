@@ -138,7 +138,9 @@ td {
   background-color: #F28920;
   border-radius: 10px; 
 } 
-
+.escondido{
+  display: none;
+}
 
 /* Adicionar Pergunta */
 .adicionar_pergunta{

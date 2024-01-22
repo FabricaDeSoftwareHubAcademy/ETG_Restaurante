@@ -66,8 +66,8 @@
             </div>
             <div class="inputs-cadastro-checklist">
                 <div class="input_group field">
-                    <input type="text" class="input_field" placeholder="" required="" name="nome_checklist"  maxlength="45">
-                    <label for="name" class="input_label">Nome da CheckList</label> <!--Alterar para o nome do input-->
+                    <input type="text" id="ajaxPergunta" class="input_field" placeholder=""    maxlength="45">
+                    <label for="name" class="input_label">Pesquisa a Pergunta</label> <!--Alterar para o nome do input-->
                     
                 </div>
                 
@@ -88,11 +88,15 @@
                     <h1 id="titulo-pergunta-pos">Selecione as Perguntas Pré Aula:</h1>
                 </div>
                 <section class="selecao-pergunta">
-                    <table class="tabela-perguntas" name="pergunta">
-                        <tr class="topo-tabela">
+                    <table class="tabela-perguntas" id = "tablePre" name="pergunta">
+                        <!-- <tr class="topo-tabela">
                             <th>Selecione</th>
                             <th>Pergunta Pré</th>
-                        </tr> <?= $trpre ?>
+                        </tr> -->
+                         <?php 
+                        
+                            // $trpre
+                         ?>
                     </table>
                 </section>
             </div>
@@ -101,16 +105,23 @@
                     <h1 id="titulo-pergunta-pos">Selecione as Perguntas Pós Aula:</h1>
                 </div>
                 <section class="selecao-pergunta">
-                    <table class="tabela-perguntas">
-                        <tr class="topo-tabela">
+                    <table class="tabela-perguntas" id="tablePos">
+                        <!-- <tr class="topo-tabela">
                             <th>Selecione</th>
                             <th>Pergunta Pós</th>
-                        </tr> <?= $trpos ?>
+                        </tr> -->
+                         <?php 
+                        //  $trpos 
+                        ?>
                     </table>
                 </section>
             </div>
             <script>
                 function showTab(tabId) {
+
+                    // $('#ajaxPergunta').val('')
+                    // listarPerguntas()
+                    
                     const tabs = document.querySelectorAll('.tab');
                     const buttons = document.querySelectorAll('.tab-button');
                     tabs.forEach(tab => tab.style.display = 'none');
