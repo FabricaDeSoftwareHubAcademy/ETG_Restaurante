@@ -14,7 +14,7 @@
         </section> -->
         <section class="container">
             <section class="lista">
-                <div class="card">
+                <a href="#" class="card">
                     <div class="card_img">
                         <img src="" alt="foto da sala">
                     </div>
@@ -25,18 +25,15 @@
                             </div>
                             
                             <div class="card_header_subtitle">
-                                <p>concluído às 10:10:10</p>
+                                <p>aberto às 10:10:10</p>
+                                <p>fechado às 10:10:10</p>
                             </div>
 
                         </div>
-                        
-                        <div class="card_btn">
-                            <a href="#">ver</a>
-                        </div>
 
                     </div>
-                </div>
-
+                </a>
+                <?php echo $list; ?>
             </section>
 
         </section>

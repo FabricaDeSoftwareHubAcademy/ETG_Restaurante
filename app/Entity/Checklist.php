@@ -37,6 +37,10 @@ class Checklist
         return $data;
     }
 
-
+    public static function getDoneCheck() {
+        $obj_banco = new Banco('check_concluidas');
+        $data = $obj_banco -> select() -> fetchAll(PDO::FETCH_ASSOC);
+        return $data;
+    }
 
 }
