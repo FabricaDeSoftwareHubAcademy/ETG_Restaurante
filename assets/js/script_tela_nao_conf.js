@@ -1,6 +1,7 @@
 var listasrc = []
 var disponiveis = {'1': false, '2': false, '3': false}
 var temporaria = null
+
 $(document).ready(function(){
     $(".upload-area").click(function(){
         $('#upload-input').trigger('click');
@@ -115,7 +116,11 @@ let currentID;
 function acao(id){
     currentID = id
     let modal = document.querySelector('.mom')
-    modal.classList.add('active');   
+
+    modal.classList.add('active');
+
+ 
+    
 }
 
 function fechar(){

@@ -1,10 +1,13 @@
 <?php
 require __DIR__."/vendor/autoload.php";
 
-use \App\Entity\Pergunta;
+use \App\Entity\Usuario;
 
 
-print_r(Pergunta::excluirPergunta(169));
+Usuario::deleteById(7);
+
+
+
 
 
 // TESTE

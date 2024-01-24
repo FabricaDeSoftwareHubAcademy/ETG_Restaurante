@@ -8,13 +8,14 @@
 <script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
 <script src="../assets/js/script_tela_nao_conf.js"></script>
 
-
+<!-- comentario aleatorio -->
 <link rel="stylesheet" href="../assets/css/cadastrar_nao_conformidade.css">
 
 <input type='hidden' value='$linha["gambiarra"]' name='gambiarra'>
 
 <body>
     <!-- <i onclick="acao()" class="bi bi-x-circle"></i> -->
+  
     <main class="mom">
         <div class="meio">
             <div class="pergunta">

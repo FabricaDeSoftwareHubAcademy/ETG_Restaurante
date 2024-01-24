@@ -30,7 +30,7 @@
 }
 .main_checklist{
   width: 78%;
-  max-width: 60vh;
+  max-width: 80%;
   max-height: 728px;
   margin-right: 2%;
 
@@ -54,7 +54,7 @@
     font-family: "Montserrat";
     color: #000;
     font-family: Montserrat;
-    font-size: 35px;
+    font-size: 45px;
     font-style: normal;
     font-weight: 300;
     line-height: 140%; /* 49px */

@@ -1,6 +1,6 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <section class="section_modal">
-        <button class="show-modal">Abrir</button>
+        <!-- <button class="show-modal">Abrir</button> -->
         <span class="overlay-modal"></span>
         <div class="modal-box">
             <i class="fa-regular fa-circle-check"></i>
@@ -9,8 +9,9 @@
 
         <div class="buttons-pop_up">
             <div class="container_dos_btns">
-                <button type="submit" class="close-btn">Ok, fechar</button>
+                <button type="button" class="close-btn" onclick="window.location.href='listar_salas.php'">Ok, fechar</button>
             </div>
+        </div>
         </div>
         </div>
     </section>
@@ -24,12 +25,12 @@
     box-sizing: border-box;
     font-family: "Poppins", sans-serif;
 }
-.section_modal{
+/* .section_modal{
     position: absolute;
     height: 100%;
     width: 100%;
     background-color: #e3f2fd;
-}
+} */
 button.show-modal,
 .modal-box{
     position: absolute;
@@ -44,15 +45,18 @@ button.show-modal,
     border-radius: 6px;
     cursor: pointer;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-
+    z-index: 9999;
 }
 button.show-modal:hover{
     background-color: #265df2;
 }
 
-.overlay-modal{
+.overlay-modal {
+    top: 0;
+    z-index: 9999;
+    left: 0;
     position: absolute;
-    height: 100%;
+    height: 100vh;
     width: 100%;
     background: rgba(0, 0, 0, 0.3);
     opacity: 0;
@@ -109,7 +113,7 @@ button.show-modal:hover{
     border: 3px solid var(--cor-primaria-botao-green);
     border-radius: 20px;
     cursor: pointer;
-    color: var(--cor-primaria-botao-green);
+    color: #fff;
     font-style: normal;
     font-size: 15px;
     font-weight: 580;
@@ -118,7 +122,7 @@ button.show-modal:hover{
 
     </style>
 
-    <script>
+    <!-- <script>
         document.addEventListener("DOMContentLoaded", function() {
             const showModalBtn = document.querySelector('.show-modal');
             const closeModalBtn = document.querySelector('.close-btn');
@@ -143,5 +147,5 @@ button.show-modal:hover{
         });
         
 
-    </script>
+    </script> -->
     

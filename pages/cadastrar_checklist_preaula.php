@@ -20,7 +20,7 @@ $obj_sala = new Sala();
 //REGRAS DE NEGOCIO ABAIXO
 $id_sala = $_GET["id_sala"]; //do metodo GET	
 $id_usuario = isset($_SESSION['id_user']) ? $_SESSION['id_user'] : ""; //do metodo GET
-$data_fechamento = "1970-01-01 00:00:01";
+$data_fechamento = null;
 
 $dados_pergunta = $obj_pergunta::getDados($id_sala);  
 $dados_sala = $obj_sala::getDadosById($id_sala);
