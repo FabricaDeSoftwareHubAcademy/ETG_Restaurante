@@ -16,7 +16,7 @@ $id_sala = $_GET['id_sala'];
 $id_last_insert = Checklist::getLastCheck($id_sala)['id'] ;
 
 $response=ResponderChecklist::cadastrar_pos($dados, $id_last_insert);
-echo(json_encode(true));exit;
+echo(json_encode($response));exit;
 
 
 
