@@ -119,8 +119,7 @@
             <script>
                 function showTab(tabId) {
 
-                    // $('#ajaxPergunta').val('')
-                    // listarPerguntas()
+                    ResetListaPerguntas() 
                     
                     const tabs = document.querySelectorAll('.tab');
                     const buttons = document.querySelectorAll('.tab-button');
