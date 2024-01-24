@@ -136,12 +136,11 @@ btn_submit.addEventListener('click', async (e ) => {
     //    });
     
     //    let response = await data_php.json();
-<<<<<<< HEAD
-=======
+
 
 
        let response = await data_php.json();
->>>>>>> 931ec7d28bbefdd76a639fd80f89b56150c3576e
+
 
     //     console.log(response);
 
