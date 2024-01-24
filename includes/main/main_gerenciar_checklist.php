@@ -46,6 +46,10 @@
                     
                 </section>
 
+                <!-- AJAXXXXXXX DO SIMÃO??? -->
+                <!-- <script>
+                    listarPerguntas()
+                </script> -->
                 
             <!-- BOTÃO DE CADASTRAR -->
                 <div class="botao">
