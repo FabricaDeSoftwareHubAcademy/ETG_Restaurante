@@ -42,9 +42,7 @@ if(isset($_FILES['foto'])){
 }
 if(isset($_POST['btn_submit'])){
      
-    // setar nome 
-    
-     
+    // setar nome  
     if(isset($_POST['nome'])){
 
 
@@ -59,9 +57,7 @@ if(isset($_POST['btn_submit'])){
      
     // if (    isset($_POST['senhaantiga'],$_POST['novasenha'],$_POST['confirmarnovasenha']))
     if (strlen($_POST['senhaantiga']) > 0 and strlen($_POST['novasenha']) > 0 and strlen($_POST['confirmarnovasenha']) > 0 )
-    {
-         
-        
+    { 
         if ($_POST['novasenha'] == $_POST['confirmarnovasenha']){
             $objUsuarios -> setPasswordByEmail($dados_editar['email'],$_POST['novasenha']); 
           

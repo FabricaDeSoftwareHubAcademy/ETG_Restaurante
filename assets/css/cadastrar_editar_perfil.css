@@ -56,15 +56,15 @@
 }
 .tela_cadastro_perfil .titulo_cad_perfil{
     color: var(--cor-label);
-    
-
-
     font-style: normal;
     font-family: 'Montserrat';
-
     justify-content: center;
 }
-  
+
+.titulo_cad_perfil{
+  font-size: 45px;
+}
+
   .input:placeholder-shown ~ .input {
     font-size: 17px;
     cursor: text;

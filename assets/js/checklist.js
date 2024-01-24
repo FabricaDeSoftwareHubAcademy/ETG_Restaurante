@@ -1,3 +1,4 @@
+
 // let awser = "";
 // const red = document.getElementById('red')
 var ids = document.getElementById('')
@@ -5,6 +6,8 @@ var id_atual = 0;
 var dados = Array();
 var somadados = Array();
 function atualizarValor(id, bool)
+
+
 {
 id_atual = id;
     if(bool)
@@ -127,36 +130,47 @@ btn_submit.addEventListener('click', async (e ) => {
         var parametro = params.get('id_sala');
     
        JSON.stringify(somadados);
-       let data_php = await fetch('./actions/cat_data_pergunta.php?id_sala='+parametro, {
-           method: 'POST',
-           body: JSON.stringify(somadados) 
-       });
+    //    let data_php = await fetch('./actions/cat_data_pergunta.php?id_sala='+parametro, {
+    //        method: 'POST',
+    //        body: JSON.stringify(somadados) 
+    //    });
     
+    //    let response = await data_php.json();
+
+
+
        let response = await data_php.json();
 
-        console.log(response);
 
-        const Toast = Swal.mixin({
-            toast: true,
-            position: 'top-end',
-            showConfirmButton: false,
-            timer: 3000,
-            timerProgressBar: true,
-            didOpen: (toast) => {
-                toast.addEventListener('mouseenter', Swal.stopTimer)
-                toast.addEventListener('mouseleave', Swal.resumeTimer)
-            }
-            })
+    //     console.log(response);
 
-            Toast.fire({
-            icon: 'success',
-            title: 'Realizado'
-            })
-          setTimeout(function() {
-            window.location.href = "listar_salas.php";
-        }, 1000);
+    if(response == true){
+        openModal();
+    }
+
+  
        
     }
 
 
-});
+    });
+    const showModalBtn = document.getElementById('btn_submit');
+    const closeModalBtn = document.querySelector('.close-btn');
+    const openModalBtn = document.querySelector('.open-btn');
+    const overlay = document.querySelector('.overlay-modal');
+    const modal3 = document.querySelector('.modal-box');
+    function openModal() {
+        overlay.style.opacity = '1';
+        overlay.style.pointerEvents = 'auto';
+        modal3.style.opacity = '1';
+        modal3.style.pointerEvents = 'auto';
+    }
+    function closeModal() {
+        overlay.style.opacity = '0';
+        overlay.style.pointerEvents = 'none';
+        modal3.style.opacity = '0';
+        modal3.style.pointerEvents = 'none';
+    }
+    // showModalBtn.addEventListener('click', openModal);
+    closeModalBtn.addEventListener('click', closeModal);
+    // openModalBtn.addEventListener('click', openModal);

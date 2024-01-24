@@ -78,7 +78,7 @@ class ResponderChecklist
             ];
             NaoConformidade::cadastrar(dados : $nao_conformidade);
         }
-
+        return true;
     }
 
     public static function cadastrar_pos($dados = [], $id_last_insert = 1)
@@ -156,6 +156,6 @@ class ResponderChecklist
             NaoConformidade::cadastrar(dados : $nao_conformidade);
         }
 
+        
     }
-
 }

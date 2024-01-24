@@ -4,11 +4,11 @@
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
 
 <body class="tela_notificacao"> 
-    <div class="titulo_tela_notificacao">
-        <h1>Notificações</h1>  
-    </div>
-    <section class="container">
-        
+
+        <h1 id="titulo">Notificações</h1>  
+
+
+    <section class="container">       
         <main class="area_not">
             <?=$todas_notificacao?>
         </main>   
@@ -18,9 +18,6 @@
                 <a href="listar_salas.php" class="botao-voltar-link">VOLTAR</a>
             </div>
         </div>
-
-
-
     </section>
     
     <script> 
