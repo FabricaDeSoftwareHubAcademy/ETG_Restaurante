@@ -13,4 +13,5 @@ class NaoConformidade
         $obj_banco = new Banco('reg_nc');
         $obj_banco -> insert($dados);
     }
+
 }

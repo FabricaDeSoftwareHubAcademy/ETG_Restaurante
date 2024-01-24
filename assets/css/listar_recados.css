@@ -7,9 +7,8 @@
     overflow-y: hidden; */
 }
 .title_principal{
-     
     text-align: center;
-    font-size: 40px;
+    font-size: 45px;
     font-family: "Montserrat";
     transition: .3s;
     margin-bottom: 25px;
@@ -222,6 +221,7 @@ border-radius: 10px;
     display: flex;
     align-items: center;
     justify-content: start;
+    padding-left: 10px;
 
 }
 

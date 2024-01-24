@@ -1,6 +1,5 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <section class="section_modal">
-        <!-- <button class="show-modal">Abrir</button> -->
         <span class="overlay-modal"></span>
         <div class="modal-box">
             <i class="fa-regular fa-circle-check"></i>
