@@ -130,17 +130,20 @@ btn_submit.addEventListener('click', async (e ) => {
         var parametro = params.get('id_sala');
     
        JSON.stringify(somadados);
-       let data_php = await fetch('./actions/cat_data_pergunta.php?id_sala='+parametro, {
-           method: 'POST',
-           body: JSON.stringify(somadados) 
-       });
+    //    let data_php = await fetch('./actions/cat_data_pergunta.php?id_sala='+parametro, {
+    //        method: 'POST',
+    //        body: JSON.stringify(somadados) 
+    //    });
     
     //    let response = await data_php.json();
+<<<<<<< HEAD
+=======
 
 
        let response = await data_php.json();
+>>>>>>> 931ec7d28bbefdd76a639fd80f89b56150c3576e
 
-        console.log(response);
+    //     console.log(response);
 
     if(response == true){
         openModal();
