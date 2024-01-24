@@ -17,6 +17,7 @@
             <div class="botao-padrao-voltar">
                 <a href="listar_salas.php" class="botao-voltar-link">VOLTAR</a>
             </div>
+            
         </div>
 
 
@@ -33,22 +34,7 @@
             if (response.status==true){
                 // location.reload()
 
-                const Toast = Swal.mixin({
-                    toast: true,
-                    position: 'top-end',
-                    showConfirmButton: false,
-                    timer: 3000,
-                    timerProgressBar: true,
-                    didOpen: (toast) => {
-                        toast.addEventListener('mouseenter', Swal.stopTimer)
-                        toast.addEventListener('mouseleave', Swal.resumeTimer)
-                    }
-                    })
-
-                    Toast.fire({
-                    icon: 'success',
-                    title: 'DESMARCADO'
-                    })
+        
 
                     const coracaoVazio = document.getElementById("coracaoVazio" + id);
                     const coracaoPreenchido = document.getElementById("coracaoPreenchido"+id);
@@ -59,15 +45,9 @@
                     card_notificacao.setAttribute("onclick",'trocar_coracao('+id+')' );
 
             }
-            else{
-                Swal.fire({
-                title: 'Erro ao desmarcar', //TITULO DO POP_UP DE ACORDO COM SUA TELA 
-                icon: 'error', // success, error e warning
-                confirmButtonColor: '#ff0000', // DEFINE A COR DO BOTÃO OK
-                confirmButtonText: 'OK'
-                });
+            
             }    
-        }
+        
 
 
         async function trocar_coracao(id){
@@ -99,31 +79,7 @@
                 //     imageHeight: 200,
                 //     imageAlt: 'Custom image',
                 // })
-                const Toast = Swal.mixin({
-                    toast: true,
-                    position: 'top-end',
-                    showConfirmButton: false,
-                    timer: 3000,
-                    timerProgressBar: true,
-                    didOpen: (toast) => {
-                        toast.addEventListener('mouseenter', Swal.stopTimer)
-                        toast.addEventListener('mouseleave', Swal.resumeTimer)
-                    }
-                    })
-
-                    Toast.fire({
-                    icon: 'success',
-                    title: 'VISUALIZADO'
-                    })
-            }else{
-
-                Swal.fire({
-                title: 'Erro ao visualizar', //TITULO DO POP_UP DE ACORDO COM SUA TELA 
-                icon: 'error', // success, error e warning
-                confirmButtonColor: '#ff0000', // DEFINE A COR DO BOTÃO OK
-                confirmButtonText: 'OK'
-                });
-
+                
             }
         
         }

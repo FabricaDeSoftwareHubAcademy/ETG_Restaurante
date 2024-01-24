@@ -144,7 +144,7 @@
   padding: 7px 0;
   background: transparent;
   transition: border-color 0.2s;
-  font-family: 'Montserrat';
+  
   font-style: normal;
   font-weight: 400;
   font-size: 20px;
@@ -165,15 +165,22 @@
 }
 
 
+.title_principal {
+  text-align: center;
+  font-size: 45px;
+  font-family: "Montserrat";
+  transition: .3s;
+  margin-bottom: 25px;
+}
 
 
 
 
-*{
+/* *{
 
   font-family:'Montserrat', sans-serif;
 
-}
+} */
 
 .tela-cadastro-salas .container-cadastro-salas{
   
@@ -577,7 +584,7 @@ input[type="file"] {
   border-radius: 7px;
   border: solid black 2px;
   cursor: pointer;
-  font-family: 'Montserrat';
+  
   
   font-size: 24px;
   cursor: pointer;
@@ -606,7 +613,7 @@ input[type="file"] {
   cursor: pointer;
   color: var(--cor-primaria-botao-green);
   font-style: normal;
-  font-family: 'Montserrat';
+  
   font-weight: bold;
   font-size: 15px;
 }
@@ -636,7 +643,7 @@ input[type="file"] {
   cursor: pointer;
   color: var(--cor-primaria-botao-yellow);
   font-style: normal;
-  font-family: 'Montserrat';
+  
   font-weight: bold;
   font-size: 15px;
 
@@ -776,7 +783,7 @@ input[type="file"] {
   padding: 7px 0;
   background: transparent;
   transition: border-color 0.2s;
-  font-family: 'Montserrat';
+  
   font-style: normal;
   font-weight: 400;
   font-size: 20px;
@@ -853,7 +860,7 @@ input[type="file"] {
   padding: 7px 0;
   background: transparent;
   transition: border-color 0.2s;
-  font-family: 'Montserrat';
+  
   font-style: normal;
   font-weight: 400;
   font-size: 20px;
@@ -879,7 +886,7 @@ input[type="file"] {
   transition: 0.2s;
   color: #9b9b9b;
   pointer-events: none; 
-  font-family: 'Montserrat';
+  
   font-style: normal;
   font-weight: 400;
   font-size: 20px;
@@ -925,7 +932,7 @@ width: 60%;
   padding: 7px 0;
   background: transparent;
   transition: border-color 0.2s;
-  font-family: 'Montserrat';
+  
   font-style: normal;
   font-weight: 400;
   font-size: 20px;
@@ -951,7 +958,7 @@ display: block;
 transition: 0.3s;
 color: #9b9b9b;
 pointer-events: none;
-font-family: 'Montserrat';
+
 font-style: normal;
 font-weight: 400;
 font-size: 20px;
@@ -1048,7 +1055,10 @@ box-shadow: none;
 
 .alinar_titulo_h3{
   margin-top: 3%;
-  font-size: 22px;
+  text-align: center;
+  font-size: 23px;
+  font-family: "Montserrat";
+  transition: .3s;
 }
 
 

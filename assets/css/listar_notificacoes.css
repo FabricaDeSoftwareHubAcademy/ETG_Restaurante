@@ -7,6 +7,9 @@
     margin: 0 auto;
 }
 
+*{
+    font-family: 'Montserrat', sans-serif;
+}
 
 .container{
     
@@ -139,6 +142,8 @@
     align-items: center;
     justify-content: center;
     width: 100%;
+    position: fixed;
+    bottom: 0;
 
 }
 
@@ -162,7 +167,7 @@
     border-radius: 20px;
     cursor: pointer;
     color: var(--cor-primaria-botao-yellow);
-    font-family: 'Montserrat', sans-serif; /* Corrigir a propriedade font-family */
+    /* Corrigir a propriedade font-family */
     font-weight: bold;
     font-size: 15px;
     text-decoration: none; /* Adicionar sublinhado ao texto do link */

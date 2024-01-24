@@ -24,7 +24,7 @@
                 <form class="cadastro-sala-form" id="form_cad" method="POST" enctype="multipart/form-data">               
                     <div class="titulo_de_cadastro">
 
-                        <h1> Cadastro De Salas </h1>
+                        <h1 class="title_principal"> Cadastro de Salas </h1>
                         
                     </div>                    
                     <div class="cadastro_codigo">
@@ -64,7 +64,7 @@
 
                     <div class="barra"></div>
 
-                    <h3 class="alinar_titulo_h3">Dias De Funcionamento </h3>
+                    <h3 class="alinar_titulo_h3">Dias de Funcionamento </h3>
 
                     <div class="area_Dos_check_box">
 
@@ -101,7 +101,7 @@
                     </div>
 
 
-                    <h3 class="alinar_titulo_h3">Turnos De Funcionamento </h3>
+                    <h3 class="alinar_titulo_h3">Turnos de Funcionamento </h3>
                     <div class="area_Dos_check_box">
 
                         
