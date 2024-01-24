@@ -121,7 +121,7 @@
 
 .titulo_de_cadastro h1{
   justify-content: center;
-  font-family: "Montsserat", sans-serif;
+  /* font-family: "Montsserat", sans-serif; */
   font-style: normal;
   display: flex;
   font-size: 45px;
@@ -148,7 +148,7 @@
   padding: 7px 0;
   background: transparent;
   transition: border-color 0.2s;
-  font-family: 'Montserrat';
+  /* font-family: 'Montserrat'; */
   font-style: normal;
   font-weight: 400;
   font-size: 20px;
@@ -561,7 +561,7 @@ input[type="file"] {
   border-radius: 7px;
   border: solid black 2px;
   cursor: pointer;
-  font-family: 'Montserrat';
+  /* font-family: 'Montserrat'; */
   
   font-size: 24px;
   cursor: pointer;
@@ -590,8 +590,8 @@ input[type="file"] {
   cursor: pointer;
   color: var(--cor-primaria-botao-green);
   font-style: normal;
-  font-family: 'Montserrat';
-  font-weight: bold;
+  /* font-family: 'Montserrat'; */
+  /* font-weight: bold; */
   font-size: 15px;
 }
 
@@ -620,8 +620,8 @@ input[type="file"] {
   cursor: pointer;
   color: var(--cor-primaria-botao-yellow);
   font-style: normal;
-  font-family: 'Montserrat';
-  font-weight: bold;
+  /* font-family: 'Montserrat'; */
+  /* font-weight: bold; */
   font-size: 15px;
 
 }
@@ -719,7 +719,7 @@ input[type="file"] {
   /* padding-right: 5%;*/
   font-size: 15px;
   height: 35px;
-  font-weight: bold;
+  /* font-weight: bold; */
   opacity: 0.6;
 
 }
@@ -760,7 +760,7 @@ input[type="file"] {
   padding: 7px 0;
   background: transparent;
   transition: border-color 0.2s;
-  font-family: 'Montserrat';
+  /* font-family: 'Montserrat'; */
   font-style: normal;
   font-weight: 400;
   font-size: 20px;
@@ -837,7 +837,7 @@ input[type="file"] {
   padding: 7px 0;
   background: transparent;
   transition: border-color 0.2s;
-  font-family: 'Montserrat';
+  /* font-family: 'Montserrat'; */
   font-style: normal;
   font-weight: 400;
   font-size: 20px;
@@ -863,7 +863,7 @@ input[type="file"] {
   transition: 0.2s;
   color: #9b9b9b;
   pointer-events: none; 
-  font-family: 'Montserrat';
+  /* font-family: 'Montserrat'; */
   font-style: normal;
   font-weight: 400;
   font-size: 20px;
@@ -909,7 +909,7 @@ width: 60%;
   padding: 7px 0;
   background: transparent;
   transition: border-color 0.2s;
-  font-family: 'Montserrat';
+  /* font-family: 'Montserrat'; */
   font-style: normal;
   font-weight: 400;
   font-size: 20px;
@@ -935,7 +935,7 @@ display: block;
 transition: 0.3s;
 color: #9b9b9b;
 pointer-events: none;
-font-family: 'Montserrat';
+/* font-family: 'Montserrat'; */
 font-style: normal;
 font-weight: 400;
 font-size: 20px;
@@ -1091,8 +1091,8 @@ box-shadow: none;
   border-radius: 20px;
   cursor: pointer;
   color: var(--cor-primaria-botao-yellow);
-  font-family: 'Montserrat', sans-serif; /* Corrigir a propriedade font-family */
-  font-weight: bold;
+ /* font-family: 'Montserrat', sans-serif;  Corrigir a propriedade font-family */
+  /* font-weight: bold; */
   font-size: 15px;
   text-decoration: none; /* Adicionar sublinhado ao texto do link */
 }
