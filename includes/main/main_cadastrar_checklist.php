@@ -161,63 +161,63 @@
                 </div>
             </div>
             <script>
-                if(nome_checklist != ""  && pergunta != "" ){
-                        let button = document.getElementById("btn_cadastrar")
-                        button.addEventListener('click', async (e) => {
-                            // alert("dsadsa")
-                            e.preventDefault()
-                            let form = document.getElementById('meuFormulario')
-                            console.log(form)
+                // if(nome_checklist != ""  && pergunta != "" ){
+                //         let button = document.getElementById("btn_cadastrar")
+                //         button.addEventListener('click', async (e) => {
+                //             // alert("dsadsa")
+                //             e.preventDefault()
+                //             let form = document.getElementById('meuFormulario')
+                //             console.log(form)
 
-                            let formData = new FormData(form)
-                            // console.log(formData)
+                //             let formData = new FormData(form)
+                //             // console.log(formData)
 
-                            var nome_checklist =  document.getElementById("nome_checklist")
-                            var pergunta = document.getElementById("pergunta")
-                            let dados_php = await fetch("../pages/actions/actn_checklist.php", {
-                                method: "POST",
-                                body: formData
-                            })
+                //             var nome_checklist =  document.getElementById("nome_checklist")
+                //             var pergunta = document.getElementById("pergunta")
+                //             let dados_php = await fetch("../pages/actions/actn_checklist.php", {
+                //                 method: "POST",
+                //                 body: formData
+                //             })
 
-                            // alert("Ta chegando até aqui !")
-                            let response = await dados_php.json()
+                //             // alert("Ta chegando até aqui !")
+                //             let response = await dados_php.json()
 
-                            console.log(response);
+                //             console.log(response);
 
 
-                            console.log(response);
+                //             console.log(response);
                             
 
-                            if (response) {
+                //             if (response) {
 
-                                let popup = document.getElementById('popup-up-notificacao');
-                                let btn = document.getElementById("submit-btn-notificacao");
+                //                 let popup = document.getElementById('popup-up-notificacao');
+                //                 let btn = document.getElementById("submit-btn-notificacao");
 
-                                // btn.style.display = "none";
+                //                 // btn.style.display = "none";
 
-                                popup.classList.add("open-popup");
+                //                 popup.classList.add("open-popup");
 
-                                let blur = document.getElementById("blur");
+                //                 let blur = document.getElementById("blur");
 
-                                blur.classList.add("active");
+                //                 blur.classList.add("active");
 
 
 
-                            } else {
-                                let popup = document.getElementById('popup-up-notificacao');
-                                let btn = document.getElementById("submit-btn-notificacao");
+                //             } else {
+                //                 let popup = document.getElementById('popup-up-notificacao');
+                //                 let btn = document.getElementById("submit-btn-notificacao");
 
-                                // btn.style.display = "none";
+                //                 // btn.style.display = "none";
 
-                                popup.classList.add("open-popup");
+                //                 popup.classList.add("open-popup");
 
-                                let blur = document.getElementById("blur");
+                //                 let blur = document.getElementById("blur");
 
-                                blur.classList.add("active");
-                            }
+                //                 blur.classList.add("active");
+                //             }
                       
-                        });
-                    }
+                //         });
+                //     }
 
 
                     
