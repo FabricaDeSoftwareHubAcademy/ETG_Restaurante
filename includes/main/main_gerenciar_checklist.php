@@ -41,14 +41,11 @@
                 <section class="perguntas" id="perguntas">
                     <?php
 
-                        // echo($divs);
+                        echo($divs);
                     ?>
                     
                 </section>
 
-                <script>
-                    listarPerguntas()
-                </script>
                 
             <!-- BOTÃO DE CADASTRAR -->
                 <div class="botao">
