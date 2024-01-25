@@ -13,8 +13,8 @@ foreach ($dados as $row_check ){
 
     
     // var_dump($_FILES);exit;
-    if (!empty($_FILES['img_sala']['name']))
-    {
+    // if (!empty($_FILES['img_sala']['name']))
+    // {
         $objImagem = new Imagens;
         // $imagem = $objImagem::storeImg($_FILES['imagem_sala']['name']);
         $novo_nome_imagem = $objImagem::storeImgAction($_FILES['img_sala']['name']); 
@@ -54,7 +54,7 @@ foreach ($dados as $row_check ){
     );
         $obj_sala -> cadastrar();
         // header("Location: listar_salas.php");
-    }
+    // }
     
   
 

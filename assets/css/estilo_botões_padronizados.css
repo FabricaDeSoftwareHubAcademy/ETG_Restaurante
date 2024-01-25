@@ -15,7 +15,7 @@
 
 .botao-padrao-ok {
     width: 100%;
-    height: 100vh;
+    
     display: flex;
     align-items: center;
     justify-content: center;
@@ -44,7 +44,7 @@
  
 .botao-padrao-fazer-checklist{
     width: 100%;
-    height: 100vh;
+    
     display: flex;
     align-items: center;
     justify-content: center;
@@ -76,7 +76,7 @@
 
 .botao-padrao-confirmar{
     width: 100%;
-    height: 100vh;
+    
     display: flex;
     align-items: center;
     justify-content: center;
@@ -106,7 +106,7 @@
 
 .botao-padrao-mural-aviso{
     width: 100%;
-    height: 100vh;
+    
     display: flex;
     align-items: center;
     justify-content: center;
@@ -137,7 +137,7 @@
 
 .botao-padrao-validar-checklist{
     width: 100%;
-    height: 100vh;
+    
     display: flex;
     align-items: center;
     justify-content: center;
@@ -168,7 +168,7 @@
 
 .botao-padrao-cancelar{
     width: 100%;
-    height: 100vh;
+    
     display: flex;
     align-items: center;
     justify-content: center;
@@ -199,7 +199,7 @@
 
 .botao-padrao-excluir{
     width: 100%;
-    height: 100vh;
+    
     display: flex;
     align-items: center;
     justify-content: center;
@@ -229,11 +229,11 @@
 /* Css Botão Voltar */
 
 .botao-padrao-voltar{
-    width: 100%;
+    /* width: 100%; */
     
     display: flex;
     align-items: center;
-    justify-content: center;
+    /* justify-content: center; */
 }
 
 .botao-voltar-submit{
@@ -261,7 +261,7 @@
 
 .botao-padrao-inicio{
     width: 100%;
-    height: 100vh;
+    
     display: flex;
     align-items: center;
     justify-content: center;
@@ -293,7 +293,7 @@
 
 .botao-padrao-sim{
     width: 100%;
-    height: 100vh;
+    
     display: flex;
     align-items: center;
     justify-content: center;
@@ -317,7 +317,7 @@
 
 .botao-padrao-nao{
     width: 100%;
-    height: 100vh;
+    
     display: flex;
     align-items: center;
     justify-content: center;
@@ -341,7 +341,7 @@
 
 .botao-padrao-entrar{
     width: 100%;
-    height: 100vh;
+    
     display: flex;
     align-items: center;
     justify-content: center;
@@ -365,7 +365,7 @@
 
 .botao-padrao-notificacao{
     width: 100%;
-    height: 100vh;
+    
     display: flex;
     align-items: center;
     justify-content: center;
@@ -395,7 +395,7 @@
 
 .botao-padrao-enviar{
     width: 100%;
-    height: 100vh;
+    
     display: flex;
     align-items: center;
     justify-content: center;
@@ -425,7 +425,7 @@
 
 .botao-padrao-finalizar{
     width: 100%;
-    height: 100vh;
+    
     display: flex;
     align-items: center;
     justify-content: center;
@@ -455,7 +455,7 @@
 
 .botao-padrao-salvar{
     width: 100%;
-    height: 100vh;
+    
     display: flex;
     align-items: center;
     justify-content: center;
@@ -485,7 +485,7 @@
 
 .botao-padrao-relatorio{
     width: 100%;
-    height: 100vh;
+    
     display: flex;
     align-items: center;
     justify-content: center;
@@ -509,7 +509,7 @@
 
 .botao-padrao-imprimir{
     width: 100%;
-    height: 100vh;
+    
     display: flex;
     align-items: center;
     justify-content: center;
@@ -538,11 +538,10 @@
 /* Css Botão Cadastrar */
 
 .botao-padrao-cadastrar{
-    width: 100%;
-    height: 100vh;
+    /* width: 100%; */
     display: flex;
     align-items: center;
-    justify-content: center;
+    /* justify-content: center; */
 }
 
 .botao-cadastrar-submit{
@@ -557,6 +556,7 @@
     font-size: 'Montserrat';
     font-weight: 580;
     font-size: 15px;
+    font-weight: bold;
 }
 
 .botao-cadastrar-submit:hover{
@@ -569,7 +569,7 @@
 
 .botao-padrao-novo-perfil{
     width: 100%;
-    height: 100vh;
+    
     display: flex;
     align-items: center;
     justify-content: center;
