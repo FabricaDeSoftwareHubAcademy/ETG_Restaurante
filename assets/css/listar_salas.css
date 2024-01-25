@@ -346,21 +346,22 @@ border-radius: 10px;
     
 }
 
-.bi-file-lock2::before {
-    content: "\f39f";
+.bi-lock-fill::before {
+    content: "\f47a";
     margin-left: 8%;
     margin-top: 3%;
-    color: orange;
-    font-size: 30px;
+    color: red;
+    font-size: 20px;
+
 }
 
 .em-uso {
-    color: #1f498b;
+    color: #008000;
     font-size: 12px;
     font-weight: bold;
     margin-left: 76%;
     margin-top: 3%;
-    border: 2px solid #1f498b;
+    border: 2px solid #008000;
     border-radius: 15px;
     width: 15%;
     padding: 1%;
