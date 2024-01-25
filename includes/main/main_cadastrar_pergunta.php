@@ -19,7 +19,7 @@
     <main class="meio">
 
         <!-- TÍTULO DA PÁGINA -->
-        <h1 id="titulo">Cadastro de Perguntas</h1>
+        <h1 id="titulo">Listar Perguntas</h1>
         <div class="aunt">
 
             <!-- PARTE DA PESQUISA  -->

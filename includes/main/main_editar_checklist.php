@@ -1,17 +1,22 @@
-<!-- <link rel="stylesheet" href="estilo_perfil.css"> -->
-<!-- <link rel="stylesheet" href="https/cdnjs.cloudflare.comlibs/font-awesome/6.4.0/css/all.min.css"> -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-<link rel="stylesheet" href="../assets/css/cadastrar_checklist/input-checklist.css">
-<link rel="stylesheet" href="../assets/css/cadastrar_checklist/posicao.css">
-<link rel="stylesheet" href="../assets/css/cadastrar_checklist/caixa_pergunta.css">
-<link rel="stylesheet" href="../assets/css/cadastrar_checklist/botões-checklist.css">
-<script defer src="../assets/js/ajax_checklist.js"></script>
-<link rel="preconnect" href="https://fonts.googleapis.com">
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>gerenciar checklist</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../assets/css/editar_checklist_input.css">
+    <link rel="stylesheet" href="../assets/css/editar_checklist_posicao.css">
+    <link rel="stylesheet" href="../assets/js/cadastro-checklist.js">
+    <link rel="stylesheet" href="../assets/css/editar_checklist_caixa_pergunta.css">
+    <link rel="stylesheet" href="../assets/css/editar_checklist_botões-checklist.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.18/dist/sweetalert2.all.min.js"></script>
+</head>
 
+<body>
 
-<body class="pai_de_todos">
-    <?php include_once("../includes/menu.php"); ?>
-    <div class="titulo-topo">
+<div class="titulo-topo">
         <h1 id="titulo">Cadastro de CheckList (andré q fez kkkkkk)</h1>
     </div>
     <div class="container-pop-up-notificacao">
@@ -58,17 +63,9 @@
                 <div class="input_group field">
                     <input type="text" class="input_field" placeholder="" required="" name="nome_checklist"  maxlength="45">
                     <label for="name" class="input_label">Nome da CheckList</label> <!--Alterar para o nome do input-->
-                    
+
+
                 </div>
-                
-            </div>
-            <div class="inputs-cadastro-checklist">
-                <div class="input_group field">
-                    <input type="text" id="ajaxPergunta" class="input_field" placeholder=""    maxlength="45">
-                    <label for="name" class="input_label">Pesquisa a Pergunta</label> <!--Alterar para o nome do input-->
-                    
-                </div>
-                
             </div>
 
             <!-- Menu das abas -->
@@ -76,9 +73,6 @@
                 <li class="tab-button active" id="btn_pre" onclick="showTab('tab1')">Pré-Aula</li>
                 <li class="tab-button" id="btn_pos" onclick="showTab('tab2')">Pós-Aula</li>
                 <div class="line" id="line"></div>
-                <div class="adicionar_pergunta">
-                        <a id="add_pergunta" href="../pages/cadastrar_pergunta.php"><i class="fa-solid fa-plus"  id="icon_add"></i></a>
-                </div>
             </ul>
             <!-- Conteúdo das abas -->
             <div id="tab1" class="tab" style="display: block;">
@@ -86,15 +80,11 @@
                     <h1 id="titulo-pergunta-pos">Selecione as Perguntas Pré Aula:</h1>
                 </div>
                 <section class="selecao-pergunta">
-                    <table class="tabela-perguntas" id = "tablePre" name="pergunta">
-                        <!-- <tr class="topo-tabela">
+                    <table class="tabela-perguntas" name="pergunta">
+                        <tr class="topo-tabela">
                             <th>Selecione</th>
                             <th>Pergunta Pré</th>
-                        </tr> -->
-                         <?php 
-                        
-                            // $trpre
-                         ?>
+                        </tr> <?= $trpre ?>
                     </table>
                 </section>
             </div>
@@ -103,22 +93,16 @@
                     <h1 id="titulo-pergunta-pos">Selecione as Perguntas Pós Aula:</h1>
                 </div>
                 <section class="selecao-pergunta">
-                    <table class="tabela-perguntas" id="tablePos">
-                        <!-- <tr class="topo-tabela">
+                    <table class="tabela-perguntas">
+                        <tr class="topo-tabela">
                             <th>Selecione</th>
                             <th>Pergunta Pós</th>
-                        </tr> -->
-                         <?php 
-                        //  $trpos 
-                        ?>
+                        </tr> <?= $trpos ?>
                     </table>
                 </section>
             </div>
             <script>
                 function showTab(tabId) {
-
-                    ResetListaPerguntas() 
-                    
                     const tabs = document.querySelectorAll('.tab');
                     const buttons = document.querySelectorAll('.tab-button');
                     tabs.forEach(tab => tab.style.display = 'none');
@@ -147,7 +131,7 @@
                 <div class="botoes-cadastro-checklist">
                     <!--Botão Voltar-->
                     <div class="botao-padrao-voltar">
-                        <a href="editar_sala.php"><input type="submit" class="botao-voltar-submit" value="VOLTAR"></a>
+                        <a href="#"><input type="submit" class="botao-voltar-submit" value="VOLTAR"></a>
                     </div>
 
                     <!--Botão Cadastrar-->
@@ -158,63 +142,63 @@
                 </div>
             </div>
             <script>
-                // if(nome_checklist != ""  && pergunta != "" ){
-                //         let button = document.getElementById("btn_cadastrar")
-                //         button.addEventListener('click', async (e) => {
-                //             // alert("dsadsa")
-                //             e.preventDefault()
-                //             let form = document.getElementById('meuFormulario')
-                //             console.log(form)
+                if(nome_checklist != ""  && pergunta != "" ){
+                        let button = document.getElementById("btn_cadastrar")
+                        button.addEventListener('click', async (e) => {
+                            // alert("dsadsa")
+                            e.preventDefault()
+                            let form = document.getElementById('meuFormulario')
+                            console.log(form)
 
-                //             let formData = new FormData(form)
-                //             // console.log(formData)
+                            let formData = new FormData(form)
+                            // console.log(formData)
 
-                //             var nome_checklist =  document.getElementById("nome_checklist")
-                //             var pergunta = document.getElementById("pergunta")
-                //             let dados_php = await fetch("../pages/actions/actn_checklist.php", {
-                //                 method: "POST",
-                //                 body: formData
-                //             })
+                            var nome_checklist =  document.getElementById("nome_checklist")
+                            var pergunta = document.getElementById("pergunta")
+                            let dados_php = await fetch("../pages/actions/actn_checklist.php", {
+                                method: "POST",
+                                body: formData
+                            })
 
-                //             // alert("Ta chegando até aqui !")
-                //             let response = await dados_php.json()
+                            // alert("Ta chegando até aqui !")
+                            let response = await dados_php.json()
 
-                //             console.log(response);
+                            console.log(response);
 
 
-                //             console.log(response);
+                            console.log(response);
                             
 
-                //             if (response) {
+                            if (response) {
 
-                //                 let popup = document.getElementById('popup-up-notificacao');
-                //                 let btn = document.getElementById("submit-btn-notificacao");
+                                let popup = document.getElementById('popup-up-notificacao');
+                                let btn = document.getElementById("submit-btn-notificacao");
 
-                //                 // btn.style.display = "none";
+                                // btn.style.display = "none";
 
-                //                 popup.classList.add("open-popup");
+                                popup.classList.add("open-popup");
 
-                //                 let blur = document.getElementById("blur");
+                                let blur = document.getElementById("blur");
 
-                //                 blur.classList.add("active");
+                                blur.classList.add("active");
 
 
 
-                //             } else {
-                //                 let popup = document.getElementById('popup-up-notificacao');
-                //                 let btn = document.getElementById("submit-btn-notificacao");
+                            } else {
+                                let popup = document.getElementById('popup-up-notificacao');
+                                let btn = document.getElementById("submit-btn-notificacao");
 
-                //                 // btn.style.display = "none";
+                                // btn.style.display = "none";
 
-                //                 popup.classList.add("open-popup");
+                                popup.classList.add("open-popup");
 
-                //                 let blur = document.getElementById("blur");
+                                let blur = document.getElementById("blur");
 
-                //                 blur.classList.add("active");
-                //             }
+                                blur.classList.add("active");
+                            }
                       
-                //         });
-                //     }
+                        });
+                    }
 
 
                     
@@ -225,3 +209,4 @@
     </main>
 
 </body>
+</html>
