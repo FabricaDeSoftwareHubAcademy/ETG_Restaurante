@@ -15,6 +15,7 @@ async function printPerguntas() {
     console.log(await getPerguntas())
 }
 
+
 async function listarPerguntas() {
     let dadosPerguntas = await getPerguntas()
     $("#tablePre").empty()
