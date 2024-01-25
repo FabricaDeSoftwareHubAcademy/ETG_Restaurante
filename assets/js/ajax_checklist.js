@@ -1,7 +1,7 @@
 var getPre = []
 var getPos = []
 
-$('document').on('ready',function() { 
+$('document').ready(function() { 
     listarPerguntas() 
 })
 

@@ -29,9 +29,7 @@ if(isset($_POST['antes_da_aula']) || isset($_POST['depois_da_aula'])){
     
         }
 
-    }
-
-    
+    } 
     
     $return = [
         'status'=>true
