@@ -115,7 +115,7 @@ if(isset($_FILES['foto'])){
         // unlink($path . $dados_editar['foto']);
     
         $objUsuario->setImage($dados_editar['email'],$new_name);
-      
+       
 
     }
 }
@@ -128,6 +128,8 @@ if(isset($_POST['btn_submit'])){
 
 
         $objUsuario -> setName($_POST['nome'],$dados_editar['email']);  
+        header("Location: {$_SERVER['PHP_SELF']}");
+        exit();
 
     }else{
 
@@ -141,6 +143,7 @@ if(isset($_POST['btn_submit'])){
 
         if ($_POST['novasenha'] == $_POST['confirmarnovasenha']){
             $objUsuario -> setPasswordByEmail($dados_editar['email'],$_POST['novasenha']); 
+            
           
             
         }else{
@@ -154,53 +157,56 @@ if(isset($_POST['btn_submit'])){
         $erro = true; 
     } 
 
-    if(strlen($_POST['email']) > 0 and strlen($_POST['matricula']) > 0){
-
-
-        try{
-
-            $dadosByEmail     = Usuario::getDadosByEmail($_POST['email']);
-            $dadosByMatricula = Usuario::getDadosByMatricula($_POST['matricula']);
-
+    if(isset($_POST['email'])){
  
-            if(empty($dadosByEmail) || empty($dadosByMatricula)){
-
-                if(empty($dadosByEmail)){
-                    
-                    Usuario::setEmail($_GET['id_user'],$_POST['email']);
-                    $msg_temp = 'Email editado com sucesso';
-                    
-                    $_SESSION['msg_editar_user'] = $msg_temp;
+        if(strlen($_POST['email']) > 0 and strlen($_POST['matricula']) > 0){
     
-                }else{
-                    // retornar que E-Mail ja esta sendo utilizado por outro usuario
-                }
-                
-                if(empty($dadosByMatricula)){ 
-
-                    Usuario::setMatricula($_GET['id_user'],$_POST['matricula']);
-
-                    $msg_temp = 'Matricula editada com sucesso';
-
-                    if(isset($_SESSION['msg_editar_user'])){
-
-                        $_SESSION['msg_editar_user'] .= ' e ' . $msg_temp;
-
-                    }else{
-
+    
+            try{
+    
+                $dadosByEmail     = Usuario::getDadosByEmail($_POST['email']);
+                $dadosByMatricula = Usuario::getDadosByMatricula($_POST['matricula']);
+    
+     
+                if(empty($dadosByEmail) || empty($dadosByMatricula)){
+    
+                    if(empty($dadosByEmail)){
+                        
+                        Usuario::setEmail($_GET['id_user'],$_POST['email']);
+                        $msg_temp = 'Email editado com sucesso';
+                        
                         $_SESSION['msg_editar_user'] = $msg_temp;
+        
+                    }else{
+                        // retornar que E-Mail ja esta sendo utilizado por outro usuario
                     }
-                
-                }else{
-                    // retornar que matricula ja esta sendo utilizado por outro usuario
+                    
+                    if(empty($dadosByMatricula)){ 
+    
+                        Usuario::setMatricula($_GET['id_user'],$_POST['matricula']);
+    
+                        $msg_temp = 'Matricula editada com sucesso';
+    
+                        if(isset($_SESSION['msg_editar_user'])){
+    
+                            $_SESSION['msg_editar_user'] .= ' e ' . $msg_temp;
+    
+                        }else{
+    
+                            $_SESSION['msg_editar_user'] = $msg_temp;
+                        }
+                    
+                    }else{
+                        // retornar que matricula ja esta sendo utilizado por outro usuario
+                    }
+    
                 }
-
+                 
+            }catch(PDOException $e){
+                echo($e->getMessage());
             }
-             
-        }catch(PDOException $e){
-            echo($e->getMessage());
+    
         }
-
     }
 
     
