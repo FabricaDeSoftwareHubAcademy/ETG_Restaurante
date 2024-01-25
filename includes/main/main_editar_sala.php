@@ -233,8 +233,6 @@
                 <script>
 
                         let button = document.getElementById("botao-cadastrar-submit") 
-                        
-                         
 
                         const showModalnovoBtn = document.querySelector('.botao-cadastrar-submit');
                         const closeModalnovoBtn = document.querySelector('.close-btn');
@@ -250,21 +248,19 @@
                         }
 
                         button.addEventListener('click', async (e) => {
-                            // alert("dsadsa")
+                            
                             e.preventDefault()
 
 
                             let nome_sala = document.getElementById('nome_sala')
-                            
+
                             if(nome_sala.value.length > 0){
-
-                                // console.log("Nome sala maior q zero");
-
+                                
                                 nome_sala = true ;
 
-
                             }else{
-
+                                nome_sala = false;
+                                
                                 const Toast = Swal.mixin({
                                 toast: true,
                                 position: "top-end",
@@ -283,71 +279,82 @@
 
                             }
 
-                            let codigo_sala = document.getElementById('codigo_sala')
-                            if((codigo_sala.value.length > 0) && nome_sala){
-                                // console.log("codigo sala maior q zero");    
-                                codigo_sala = true;
+                            let codigo_sala = document.getElementById('codigo_sala') 
+
+                            
+                            if(nome_sala){
+                                
+                                if((codigo_sala.value.length > 0)){
+                                    
+                                    codigo_sala = true;
+
+                                }else{ 
+                                    
+                                    codigo_sala = false
+                                    
+                                    const Toast = Swal.mixin({
+                                    toast: true,
+                                    position: "top-end",
+                                    showConfirmButton: false,
+                                    timer: 3000,
+                                    timerProgressBar: true,
+                                    didOpen: (toast) => {
+                                    toast.onmouseenter = Swal.stopTimer;
+                                    toast.onmouseleave = Swal.resumeTimer;
+                                    }
+                                    });
+                                    Toast.fire({
+                                        icon: "error",
+                                        title: "Codigo não pode estar vazio !"
+                                    }); 
+                                } 
 
                             }else{
-
-                                const Toast = Swal.mixin({
-                                toast: true,
-                                position: "top-end",
-                                showConfirmButton: false,
-                                timer: 3000,
-                                timerProgressBar: true,
-                                didOpen: (toast) => {
-                                toast.onmouseenter = Swal.stopTimer;
-                                toast.onmouseleave = Swal.resumeTimer;
-                                }
-                                });
-                                Toast.fire({
-                                    icon: "error",
-                                    title: "Codigo não pode estar vazio !"
-                                });
-
+                                codigo_sala = false
                             }
+
+                            console.log(codigo_sala)
 
                             let checklist = document.getElementById('checklist')
 
-                            // console.log(checklist.value);
 
-                            if(checklist.value > 0 ){
+                            if(codigo_sala){
+
+                                if((checklist.value > 0)){
+                                    
+                                    console.log(codigo_sala);
+
+                                    checklist = true ;
+
+                                }else{
                                 
-                                // console.log("checklist maior q zero");
-
-                                checklist = true ;
-
-
+                                    const Toast = Swal.mixin({
+                                    toast: true,
+                                    position: "top-end",
+                                    showConfirmButton: false,
+                                    timer: 3000,
+                                    timerProgressBar: true,
+                                    didOpen: (toast) => {
+                                    toast.onmouseenter = Swal.stopTimer;
+                                    toast.onmouseleave = Swal.resumeTimer;
+                                    }
+                                    });
+                                    Toast.fire({
+                                        icon: "error",
+                                        title: "Selecione Um checklist !"
+                                    }); 
+                                }  
                             }else{
-
-                                const Toast = Swal.mixin({
-                                toast: true,
-                                position: "top-end",
-                                showConfirmButton: false,
-                                timer: 3000,
-                                timerProgressBar: true,
-                                didOpen: (toast) => {
-                                toast.onmouseenter = Swal.stopTimer;
-                                toast.onmouseleave = Swal.resumeTimer;
-                                }
-                                });
-                                Toast.fire({
-                                    icon: "error",
-                                    title: "Selecione Um checklist !"
-                                });
-                                // console.log("checklist vazio");    
+                                checklist = false
                             }
 
-                            // console.log(nome_sala,codigo_sala,checklist)
                                 
                             if(nome_sala == true && codigo_sala == true && checklist == true){
 
                                 let form = document.getElementById('form_cad')
                                 // console.log(form)
 
-                                let formData = new FormData(form)
-                                // console.log(formData)
+                                let formData = new FormData(form) 
 
                                 let dados_php = await fetch("../pages/actions/abrir_modal_editar_sala.php?id_sala=<?=$_GET['id_sala']?>",{method:"POST",
                                     body: formData

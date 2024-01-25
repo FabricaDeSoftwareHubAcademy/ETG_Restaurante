@@ -7,14 +7,10 @@ $('document').ready(function() {
 
 async function getPerguntas() {
     let data_php = await fetch("./actions/action_get_perguntas.php")
-    let dados = await data_php.json()
-    // console.log(dados);
+    let dados = await data_php.json() 
     return dados
 }
-
-// var dadosPerguntas = getPerguntas()
-
-// console.log(dadosPerguntas);
+ 
 
 async function printPerguntas() {
     console.log(await getPerguntas())
@@ -112,11 +108,8 @@ async function filterPerguntas(elementInput){
                 }
             })
         });
- 
     // repete a função a cada 10ms
-    },10)
-
-
+    },10) 
 } 
 
 function mostrarPerguntas(){ 
