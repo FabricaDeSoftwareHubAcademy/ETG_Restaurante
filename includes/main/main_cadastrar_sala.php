@@ -30,14 +30,14 @@
                     <div class="cadastro_codigo">
                         <div class="wrap-input margin-top-35 margin-bottom-35">
                             <div class="input_group field" id="input_coisa_nome">
-                                <input type="input" class="input_field toguroo" id='nome_sala' placeholder="Name" required="" name="nome_sala" maxLength="32">
+                                <input type="input" class="input_field toguroo" id='nome_sala' placeholder="Name"  name="nome_sala" maxLength="32" required>
                                 <label for="name" class="input_label">Nome Da Sala </label> <!--Alterar para o nome do input-->
                             </div>
                         </div>
 
                         <div class="wrap-inputx margin-top-35 margin-bottomx-35">
                             <div class="input_group field ">
-                                <input type="input" class="input_field toguro" placeholder="Name" required="" id="codigo_sala" name="codigo_sala" maxLength="8" style="text-transform:uppercase" />
+                                <input type="input" class="input_field toguro" placeholder="Name" id="codigo_sala" name="codigo_sala" maxLength="8" style="text-transform:uppercase" required/>
                                 <label for="name" class="input_label toguro" > Código </label> <!--Alterar para o nome do input-->
                             </div>
                         </div>
@@ -213,36 +213,19 @@
                     }
 
                         button.addEventListener('click', async (e) => {
-                            // alert("dsadsa")
+                            
                             e.preventDefault()
 
 
                             let nome_sala = document.getElementById('nome_sala')
+
                             if(nome_sala.value.length > 0){
-
-                                // const Toast = Swal.mixin({
-                                // toast: true,
-                                // position: "top-end",
-                                // showConfirmButton: false,
-                                // timer: 3000,
-                                // timerProgressBar: true,
-                                // didOpen: (toast) => {
-                                // toast.onmouseenter = Swal.stopTimer;
-                                // toast.onmouseleave = Swal.resumeTimer;
-                                // }
-                                // });
-                                // Toast.fire({
-                                //     icon: "success",
-                                //     title: "deu bom"
-                                // });
-
-                                console.log("Nome sala maior q zero");
-
+                                
                                 nome_sala = true ;
 
-
                             }else{
-
+                                nome_sala = false;
+                                
                                 const Toast = Swal.mixin({
                                 toast: true,
                                 position: "top-end",
@@ -261,160 +244,101 @@
 
                             }
 
-                            let codigo_sala = document.getElementById('codigo_sala')
-                            if(codigo_sala.value.length > 0){
+                            let codigo_sala = document.getElementById('codigo_sala') 
 
-                                // const Toast = Swal.mixin({
-                                // toast: true,
-                                // position: "top-end",
-                                // showConfirmButton: false,
-                                // timer: 3000,
-                                // timerProgressBar: true,
-                                // didOpen: (toast) => {
-                                // toast.onmouseenter = Swal.stopTimer;
-                                // toast.onmouseleave = Swal.resumeTimer;
-                                // }
-                                // });
-                                // Toast.fire({
-                                //     icon: "success",
-                                //     title: "deu bom"
-                                // });
-                                console.log("codigo sala maior q zero");    
+                            
+                            if(nome_sala){
                                 
-                                codigo_sala = true;
+                                if((codigo_sala.value.length > 0)){
+                                    
+                                    codigo_sala = true;
+    
+                                }else{ 
+                                    
+                                    codigo_sala = false
+                                    
+                                    const Toast = Swal.mixin({
+                                    toast: true,
+                                    position: "top-end",
+                                    showConfirmButton: false,
+                                    timer: 3000,
+                                    timerProgressBar: true,
+                                    didOpen: (toast) => {
+                                    toast.onmouseenter = Swal.stopTimer;
+                                    toast.onmouseleave = Swal.resumeTimer;
+                                    }
+                                    });
+                                    Toast.fire({
+                                        icon: "error",
+                                        title: "Codigo não pode estar vazio !"
+                                    }); 
+                                } 
 
                             }else{
-
-                                const Toast = Swal.mixin({
-                                toast: true,
-                                position: "top-end",
-                                showConfirmButton: false,
-                                timer: 3000,
-                                timerProgressBar: true,
-                                didOpen: (toast) => {
-                                toast.onmouseenter = Swal.stopTimer;
-                                toast.onmouseleave = Swal.resumeTimer;
-                                }
-                                });
-                                Toast.fire({
-                                    icon: "error",
-                                    title: "Codigo não pode estar vazio !"
-                                });
-
+                                codigo_sala = false
                             }
+
+                            console.log(codigo_sala)
 
                             let checklist = document.getElementById('checklist')
 
-                            console.log(checklist.value);
 
-                            if(checklist.value > 0){
+                            if(codigo_sala){
 
-                                // const Toast = Swal.mixin({
-                                // toast: true,
-                                // position: "top-end",
-                                // showConfirmButton: false,
-                                // timer: 3000,
-                                // timerProgressBar: true,
-                                // didOpen: (toast) => {
-                                // toast.onmouseenter = Swal.stopTimer;
-                                // toast.onmouseleave = Swal.resumeTimer;
-                                // }
-                                // });
-                                // Toast.fire({
-                                //     icon: "success",
-                                //     title: "deu bom"
-                                // });
-                                
-                                console.log("checklist maior q zero");
-
-                                checklist = true ;
-
-
+                                if((checklist.value > 0)){
+                                    
+                                    console.log(codigo_sala);
+    
+                                    checklist = true ;
+    
+                                }else{
+                                   
+                                    const Toast = Swal.mixin({
+                                    toast: true,
+                                    position: "top-end",
+                                    showConfirmButton: false,
+                                    timer: 3000,
+                                    timerProgressBar: true,
+                                    didOpen: (toast) => {
+                                    toast.onmouseenter = Swal.stopTimer;
+                                    toast.onmouseleave = Swal.resumeTimer;
+                                    }
+                                    });
+                                    Toast.fire({
+                                        icon: "error",
+                                        title: "Selecione Um checklist !"
+                                    }); 
+                                }  
                             }else{
-
-                                const Toast = Swal.mixin({
-                                toast: true,
-                                position: "top-end",
-                                showConfirmButton: false,
-                                timer: 3000,
-                                timerProgressBar: true,
-                                didOpen: (toast) => {
-                                toast.onmouseenter = Swal.stopTimer;
-                                toast.onmouseleave = Swal.resumeTimer;
-                                }
-                                });
-                                Toast.fire({
-                                    icon: "error",
-                                    title: "Selecione Um checklist !"
-                                });
-                                console.log("checklist vazio");    
+                                checklist = false
                             }
-
-                            console.log(nome_sala,codigo_sala,checklist)
+ 
                                 
                             if(nome_sala == true && codigo_sala == true && checklist == true){
 
                                 let form = document.getElementById('form_cad')
-                                console.log(form)
+                                // console.log(form)
 
-                                let formData = new FormData(form)
-                                // console.log(formData)
-
+                                let formData = new FormData(form)       
                                 let dados_php = await fetch("../pages/actions/abrir_modal_cadastrar_sala.php",{method:"POST",
                                     body: formData
                                 })
-                                
-                                // alert("Ta chegando até aqui !")
+                                                               
                                 let response = await dados_php.json()
                                 
-                                // console.log(response);
-
-                            
-                                // console.log(response);
-
                                 if(response){
-                                    
-                                    // let popup = document.getElementById('popup-up-notificacao');
-                                    // let btn = document.getElementById("submit-btn-notificacao");
-                                    // btn.style.display = "none";
-                                    // popup.classList.add("open-popup");
-                                    // let blur = document.getElementById("blur");
-                                    // blur.classList.add("active");
-
-                                    
+                                                                      
                                     openModal2()
                                 
-
                                 }else{
                                     console.log("2")
                                 }
 
                             }else{
-                                console.log("deu merda piá");
+                                // console.log("deu merda piá");
                             }  
                         }
                         )
-                    
-
-                        // function openPopupValidar() {
-                        //     let popup = document.getElementById('popup-up-notificacao');
-                        //     let btn = document.getElementById("submit-btn-notificacao");
-
-                        //     btn.style.display = "none";
-                        //     popup.classList.add("open-popup");
-                        // }
-
-                        // function closePopupValidar() {
-                        //     let popup = document.getElementById("popup-up-notificacao");
-                        //     let btn = document.getElementById("submit-btn-notificacao");
-
-                        //     btn.style.display = "block";
-
-                        //     popup.classList.remove("open-popup");
-                        // }
-
-
-
                     </script>
                 
                     
