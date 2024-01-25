@@ -23,6 +23,9 @@ async function listarPerguntas() {
     getPre = []
     getPos = []
 
+
+    // esta comitado 
+
     dadosPerguntas.forEach(element => {
         
         if ((element.tipo == "0") || (element.tipo == "2")) {
