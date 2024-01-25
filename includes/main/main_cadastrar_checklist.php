@@ -1,5 +1,5 @@
-<!-- <link rel="stylesheet" href="estilo_perfil.css"> -->
-<!-- <link rel="stylesheet" href="https/cdnjs.cloudflare.comlibs/font-awesome/6.4.0/css/all.min.css"> -->
+<link rel="stylesheet" href="estilo_perfil.css">
+<link rel="stylesheet" href="https/cdnjs.cloudflare.comlibs/font-awesome/6.4.0/css/all.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <link rel="stylesheet" href="../assets/css/cadastrar_checklist/input-checklist.css">
 <link rel="stylesheet" href="../assets/css/cadastrar_checklist/posicao.css">
@@ -12,7 +12,7 @@
 <body class="pai_de_todos">
     <?php include_once("../includes/menu.php"); ?>
     <div class="titulo-topo">
-        <h1 id="titulo">Cadastro de CheckList (andré q fez kkkkkk)</h1>
+        <h1 id="titulo">Cadastro de CheckList</h1>
     </div>
     <div class="container-pop-up-notificacao">
         <!-- <button type="submit" class="btn-pop-up-notificacao" id="submit-btn-notificacao" onclick="openPopupValidar()">Submit</button> -->
