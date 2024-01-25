@@ -10,8 +10,7 @@ async function getPerguntas() {
     let dados = await data_php.json() 
     return dados
 }
- 
-
+  
 async function printPerguntas() {
     console.log(await getPerguntas())
 }
