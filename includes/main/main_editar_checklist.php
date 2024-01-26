@@ -14,7 +14,7 @@
 <body class="pai_de_todos">
     <?php include_once("../includes/menu.php"); ?>
     <div class="titulo-topo">
-        <h1 id="titulo">Cadastro de CheckList</h1>
+        <h1 id="titulo">Editar CheckList</h1>
     </div>
     <div class="container-pop-up-notificacao">
         <!-- <button type="submit" class="btn-pop-up-notificacao" id="submit-btn-notificacao" onclick="openPopupValidar()">Submit</button> -->
