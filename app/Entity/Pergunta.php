@@ -46,22 +46,79 @@ class Pergunta
     }
 
     //READ
-    public static function getDados($id_sala)
-{        $obj_banco = new Banco('perguntas_da_sala');
+    public static function getDados($id_sala) {
+        
+        $objBanco = new Banco('perguntas_da_sala');
+        $dataFromTable = $objBanco -> select(where:'id_sala = '.$id_sala.' AND ') -> fetchAll(PDO::FETCH_ASSOC);
+        // var_dump($dataFromTable);exit;
+        $notDuplicatedIds =  Pergunta::returnNotDuplicatedIds(dataFromTable: $dataFromTable);
+        $dataFromTableCorrected = array();
 
-        $dados = $obj_banco -> select(where:'id_sala = '.$id_sala.'');
 
-        if($dados -> rowCount() > 0){
 
-            return $dados -> fetchall(PDO::FETCH_ASSOC);
+        // Array para rastrear id_perguntas já vistas
+        $subarraysFiltradas = array();  
+        $idPerguntasVistas = array();
+
+        foreach ($seuArray as $subarray) {
+        $idPergunta = $subarray["id_pergunta"];
+
+        // Verificar se a id_pergunta já foi vista
+        if (!in_array($idPergunta, $idPerguntasVistas)) {
+            // Se não duplicada, adicionar ao array de id_perguntas vistas
+            $idPerguntasVistas[] = $idPergunta;
+            
+            // Adicionar a subarray ao array resultante
+            $subarraysFiltradas[] = $subarray;
         }
-        else
-        {
-            return false;
-        }
-
-
+}
+     
+        var_dump($seuArrayFiltrado);exit;
+        // if($dataFromTable -> rowCount() > 0) {
+        //     return $dataFromTable ->fetchAll(PDO::FETCH_ASSOC);
+        // } else {
+        //     return false;
+        // }
     }
+
+    public static function returnNotDuplicatedIds($dataFromTable) {
+        $existingIds = Pergunta::sumIds(dataFromTable: $dataFromTable);
+        $idsSepareted = array_unique($existingIds);
+        return $idsSepareted;
+
+
+
+
+        // $arrayCorrected = array();
+        // foreach ($dataFromTable as $row) {
+        //     if (count($existingIds) < 1) {
+        //         $existingIds[] = $row["id_pergunta"];
+        //         continue;
+        //     } else {
+        //         $idFromTable = $row["id_pergunta"];
+        //         if(array_search($idFromTable, $existingIds)) {
+        //             continue;
+        //         }
+        //         $arrayCorrected[] = $row;
+        //     }
+        //     return $arrayCorrected;     
+        // }
+    }
+    
+    public static function sumIds($dataFromTable) {
+        $existingIds = array();
+        foreach ($dataFromTable as $row) {
+            $existingIds[] = $row["id_pergunta"];
+        }
+        return $existingIds;
+    }
+
+    public static function CheckIfIdsAreEqual($ids) {
+        $return = array_unique($ids);
+        return $return;
+    }
+
+
 
     //READ
     //de GetPerguntasById para GetDadosById
