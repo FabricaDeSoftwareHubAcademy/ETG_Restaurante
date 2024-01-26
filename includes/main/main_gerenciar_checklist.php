@@ -53,7 +53,7 @@
                 
             <!-- BOTÃO DE CADASTRAR -->
                 <div class="botao">
-                    <button  class="botao-cadastrar-submit"   value="CADASTRAR" onclick="">CADASTRAR</button>
+                    <a id="cadastrar" href="../pages/cadastrar_checklist.php"><button  class="botao-cadastrar-submit">CADASTRAR</button></a>
                 </div>
         </div>
 
