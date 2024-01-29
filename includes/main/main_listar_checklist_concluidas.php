@@ -3,7 +3,7 @@
 <body class="body-tela">
     <main class="main_page">
         <div class="container_title">
-            <h1>Listar Checklist Concluidas</h1>
+            <h1>Listar Checklist Encerrada</h1>
         </div>
         <!-- <section class='search'>
             <div class="search_input">

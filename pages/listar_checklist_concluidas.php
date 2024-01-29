@@ -25,8 +25,8 @@ foreach($checklist as $gp){
                             </div>
                             
                             <div class="card_header_subtitle">
-                                <p>aberto às '.$row['data_abertura'].'</p>
-                                <p>fechado às '.$row['data_fechamento'].'</p>
+                                <p>Aberto: '.$row['data_abertura'].'</p>
+                                <p>Fechado: '.$row['data_fechamento'].'</p>
                             </div>
     
                         </div>
