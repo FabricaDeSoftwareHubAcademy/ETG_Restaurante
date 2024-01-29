@@ -653,8 +653,24 @@ input[type="file"] {
 }
 
 
+h4{
+  display: none;
+  font-size: 14px;
+  color: red;
+  
+}
+
+.diferentao{
+  display: none;
+  font-size: 14px;
+  color: red;
+  padding-left:50%;
 
 
+}
+.span_semmod{
+  color: black;
+}
 .input-linha{
   display: flex;
   flex-direction: row;
@@ -664,7 +680,9 @@ input[type="file"] {
 } 
 
 
-
+.cadastro_codigo .input_field.error {
+  border-bottom: 2px solid red; /* Muda a cor da borda quando a classe 'error' está presente */
+}
 
 
 
