@@ -51,8 +51,7 @@ class Pergunta
 
         $dados = $obj_banco -> select(where:'id_sala = '.$id_sala.'');
 
-        if($dados -> rowCount() > 0){
-
+        if($dados -> rowCount() > 0){ 
             return $dados -> fetchall(PDO::FETCH_ASSOC);
         }
         else
