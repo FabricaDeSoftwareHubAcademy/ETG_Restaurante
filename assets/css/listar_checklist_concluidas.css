@@ -1,3 +1,14 @@
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+input[type=number]{
+    -moz-appearance: textfield;
+}
+h1{
+    text-align: center;
+}
 *{
     font-family: 'Montserrat';
     
@@ -62,4 +73,23 @@ a{
     flex-direction: column;
     justify-content: center;
     height: 100%;
+}
+.pagination{
+    display: flex;
+    flex-direction: row;
+    margin-top: 20px;
+    color: #000 ;
+    font-weight: bold;
+}
+.input_pagination{
+    width: 25px;
+    text-align: right;
+    border: none;
+    border-bottom: #000 solid 1px;
+    font-weight: bold;
+    font-size: 16px;
+}
+.btn_pagination{
+    margin-left: 5px;
+    padding: 0 10px;
 }
