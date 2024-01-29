@@ -1,4 +1,5 @@
 <link rel="stylesheet" href="../assets/css/listar_checklist_concluidas.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
 <body class="body-tela">
     <main class="main_page">
         <div class="container_title">
@@ -14,7 +15,7 @@
         </section> -->
         <section class="container">
             <section class="lista">
-                <a href="#" class="card">
+                <!-- <a href="#" class="card">
                     <div class="card_img">
                         <img src="" alt="foto da sala">
                     </div>
@@ -32,10 +33,38 @@
                         </div>
 
                     </div>
-                </a>
-                <?php echo $list; ?>
+                </a> -->
+                <?php echo $arr[$_GET['pagina']]; ?>
             </section>
+            <div class="pagination">
+                <?php
+                $length = count($arr);
+                if($_GET['pagina'] > 0){
 
+                    echo '<a href="listar_checklist_concluidas.php?pagina='.($_GET['pagina']-1).'"><i class="bi bi-caret-left-fill"></i></a>';
+                }
+
+                // echo '<input type="number" vlaue="'.$_GET['pagina']+1.'">'.$length;
+
+                // echo $_GET['pagina']+1,'/', $length;
+
+                echo "<input type='number' value='".$_GET['pagina']+1,"' class='input_pagination'>/$length";
+
+                echo '<button type="button" class="btn_pagination">ir</button>';
+                if($_GET['pagina'] < $length-1){
+                    echo '<a href="listar_checklist_concluidas.php?pagina='.($_GET['pagina']+1).'"><i class="bi bi-caret-right-fill"></i></a>';
+                }
+                ?>
+            </div>
         </section>
     </main>
+    <script>
+        var btn = document.querySelector('.btn_pagination');
+        btn.addEventListener('click',pagination)
+        function pagination(){
+            var input = document.querySelector('.input_pagination');
+            var pagina = input.value;
+            location.href = 'listar_checklist_concluidas.php?pagina='+(pagina-1);
+        }
+    </script>
 </body>

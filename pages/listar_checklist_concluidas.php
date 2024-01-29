@@ -2,13 +2,18 @@
 session_start();
 include_once("../includes/menu.php");
 use App\Entity\Checklist;
-$checklist = Checklist::getDoneCheck();
-var_dump($checklist);
+$checklist = array_chunk(Checklist::getDoneCheck(), 5);
+// var_dump($checklist);
 
 
-$list = '';
+$arr = [];
 foreach($checklist as $gp){
+    $list = '';
+    // var_dump($gp);
+    // echo "<br><br>";
     foreach($gp as $row){
+        // var_dump($row);
+        // echo "<br><br>";
         $list .= '<a href="validar_checklist.php?id_realizacao='.$row['id_responder'].'" class="card">
                     <div class="card_img">
                         <img src="../assets/img/sala.jpg" alt="foto da sala">
@@ -29,10 +34,8 @@ foreach($checklist as $gp){
                     </div>
                 </a>';
     }
-    array_push($_GET,$list);
+    array_push($arr,$list);
 }
-
-var_dump($_GET);
 
 
 include_once("../includes/header/header.php");
