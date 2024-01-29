@@ -57,6 +57,7 @@ $("#btn_cad_pergunta").click(async function(event){
             body: formData
         })
         let response = await dados_php.json()
+
         console.log(response) 
 
         closePopup1()

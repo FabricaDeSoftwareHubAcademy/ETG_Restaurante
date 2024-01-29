@@ -36,7 +36,7 @@ if (isset(
         // $imagem = $objImagem::storeImg($_FILES['imagem_sala']['name']);
         $novo_nome_imagem = $objImagem::storeImg($_FILES['img_sala']['name']); 
         
-    
+    }
             
     $dias_funcionamento = array("segunda" => (isset($_POST['segunda']) && $_POST['segunda'] == 'on' ? 'sim' : 'nao'),
          
@@ -72,7 +72,7 @@ if (isset(
     );
         $obj_sala -> cadastrar();
         // header("Location: listar_salas.php");
-    }
+    
 }   
 
 

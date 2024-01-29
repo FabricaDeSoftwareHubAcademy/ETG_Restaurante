@@ -41,91 +41,27 @@
                 <section class="perguntas" id="perguntas">
                     <?php
 
-                        // echo($divs);
+                        echo($divs);
                     ?>
                     
                 </section>
 
-                <script>
+                <!-- AJAXXXXXXX DO SIMÃO??? -->
+                <!-- <script>
                     listarPerguntas()
-                </script>
+                </script> -->
                 
             <!-- BOTÃO DE CADASTRAR -->
                 <div class="botao">
-                    <button  class="botao-cadastrar-submit"   value="CADASTRAR" onclick="openPopup1()">CADASTRAR</button>
+                    <a id="cadastrar" href="../pages/cadastrar_checklist.php"><button  class="botao-cadastrar-submit">CADASTRAR</button></a>
                 </div>
         </div>
- 
-        <!-- POPUP DE CADASTRAR PERGUNTA -->
-
-        <form id='form_cad_pergunta' class="overlay" style="opacity: 1;">
-            <div class="popup_cadastrar" id="popup-cadastro-pergunta">
-                <h4>Cadastrar pergunta:</h4>
-
-                <textarea maxlength="255" name="nova_pergunta" id="nova_pergunta"  class="nova_pergunta" placeholder= "Escreva a pergunta"cols="30" rows="10" autocomplete= "off"></textarea>
-
-                <h4>Selecione a categoria da pergunta:</h4>
-
-                <!-- DIV DAS 2 CHECKBOX'S -->
-                
-                <div class="checks">
-                    <div class="check1">
-                        <input type="checkbox" name="antes_da_aula" id="check1"> Pré-Aula
-                    </div>
-                    <div class="check2">
-                        <input type="checkbox" name="depois_da_aula" id="check2"> Pós-Aula
-                    </div>
-                </div>
-
-                <!-- DIV DOS BOTÕES (cancelar e confirmar) -->
-                <div class="botoes">
-                    <button class="botao-cancelar-submit" id="btn_cancelar_cad_pergunta" value="CANCELAR"  >CANCELAR</button>
-                    <button class="botao-confirmar-submit" id="btn_cad_pergunta" value="CONFIRMAR">CONFIRMAR</button>
-                </div>
-            </div>
-        </form>
-
- 
-        
-
-            <!-- POPUP EDITAR PERGUNTA -->
-
-        <form class="overlay" id="form_editar_pergunta" style="opacity: 1;">
-
-            <div class="popup_editar" id="popup-editar-pergunta">
-                <h4>Editar pergunta:</h4>
-
-                <textarea maxlength="255" name="nova_pergunta" id="text_editar_pergunta" class="nova_pergunta" placeholder= "Escreva a pergunta"cols="30" rows="10" autocomplete= "off"></textarea>
-
-                <h4>Selecione a categoria da pergunta:</h4>
-
-                <!-- DIV DAS 2 CHECKBOX'S -->
-                
-                <div class="checks">
-                    <div class="check1">
-                        <input type="checkbox" name="antes_da_aula" id="check3"> Pré-Aula
-                    </div>
-                    <div class="check2">
-                        <input type="checkbox" name="depois_da_aula" id="check4"> Pós-Aula
-                    </div>
-                </div>
-
-                <!-- DIV DOS BOTÕES (cancelar e confirmar) -->
-
-                <div class="botoes">
-                    <button class="botao-cancelar-submit" id='botao_cancelar_editar' value="CANCELAR" >CANCELAR</button>
-                    <button class="botao-confirmar-submit" id='botao_confirmar_editar' value="CONFIRMAR">CONFIRMAR</button>
-                </div>
-            </div>
-        </form>
-        
-         
 
             <!-- POPUP DE CONFIRMAÇÃO DE EXCLUSÃO DA PERGUNTA -->
         <form class="overlay" id="overlay" style="opacity: 1;">
 
             <div class="popup_conf_exclusao" id="popup_conf_exclusao">
-                <h9>Tem certeza que deseja excluir a pergunta?</h9>
+                <h9>Tem certeza que deseja excluir o checklist?</h9>
 
                 <!-- DIV DOS BOTÕES (sim e não) -->
 

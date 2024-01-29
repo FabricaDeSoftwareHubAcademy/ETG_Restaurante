@@ -25,10 +25,7 @@ async function listarPerguntas(){
 
         setDadosPerguntaById($(this).attr('btn_editar'))
         
-    })
-
-
-
+    }) 
 
     // depois no botao de 'NAO' adicionar função para resetar o id_atual 
     

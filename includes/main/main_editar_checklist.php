@@ -3,10 +3,10 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-<link rel="stylesheet" href="../assets/css/cadastrar_checklist/input-checklist.css">
-<link rel="stylesheet" href="../assets/css/cadastrar_checklist/posicao.css">
-<link rel="stylesheet" href="../assets/css/cadastrar_checklist/caixa_pergunta.css">
-<link rel="stylesheet" href="../assets/css/cadastrar_checklist/botões-checklist.css">
+<link rel="stylesheet" href="../assets/css/editar_checklist_input.css">
+<link rel="stylesheet" href="../assets/css/editar_checklist_posicao.css">
+<link rel="stylesheet" href="../assets/css/editar_checklist_caixa_pergunta.css">
+<link rel="stylesheet" href="../assets/css/editar_checklist_botoes.css">
 <script defer src="../assets/js/ajax_checklist.js"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 
@@ -14,7 +14,7 @@
 <body class="pai_de_todos">
     <?php include_once("../includes/menu.php"); ?>
     <div class="titulo-topo">
-        <h1 id="titulo">Cadastro de CheckList</h1>
+        <h1 id="titulo">Editar CheckList</h1>
     </div>
     <div class="container-pop-up-notificacao">
         <!-- <button type="submit" class="btn-pop-up-notificacao" id="submit-btn-notificacao" onclick="openPopupValidar()">Submit</button> -->

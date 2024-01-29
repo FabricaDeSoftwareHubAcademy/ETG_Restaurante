@@ -84,8 +84,7 @@ class ResponderChecklist
     public static function cadastrar_pos($dados = [], $id_last_insert = 1)
     {   
 
-        // adicionar valor na data de fechamento do checklist respondido 
-       
+        // adicionar valor na data de fechamento do checklist respondido  
         $obj_banco = new Banco('responder_check'); 
 
         $dados_update  =  [

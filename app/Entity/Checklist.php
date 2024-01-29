@@ -42,5 +42,19 @@ class Checklist
         $data = $obj_banco -> select() -> fetchAll(PDO::FETCH_ASSOC);
         return $data;
     }
+    public static function getChecklist()
+    {
+        $obj_banco = new Banco('cadastro_checklist');
+        $dados = $obj_banco->select(order:"id DESC");
+        if($dados)
+        {
+            return $dados->fetchAll(PDO::FETCH_ASSOC);
+        }
+        else
+        {
+            return false;
+        } 
+    }
+
 
 }

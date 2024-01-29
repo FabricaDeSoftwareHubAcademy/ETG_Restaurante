@@ -34,11 +34,19 @@ class CadastroChecklist
     //CREATE
     public static function cadastrarPergunta($dados, $idCheck){
        $obBanco = new Banco("relacao_pergunta_checklist");
+       $pergJaCad = [];
        foreach($dados as $idPergunta){
-        $idLista = [
-            'id_pergunta' => $idPergunta,
-            'id_check' => $idCheck];
-            $obBanco -> insert($idLista);
+            $idLista = [
+                'id_pergunta' => $idPergunta,
+                'id_check' => $idCheck
+            ];
+            if(!(in_array($idPergunta,$pergJaCad))){
+
+                $obBanco -> insert($idLista); 
+                array_push($pergJaCad,$idPergunta);
+
+                echo($idPergunta);
+            }
        }
     }
     
