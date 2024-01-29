@@ -40,6 +40,8 @@ if(isset(
             $_POST['senha'],
             $_POST['id_perfil']);
             
+        echo '<script>openPopupValidar();</script>';
+
         }
 
 //  VALUES ('$nome', '$email', '$matricula', '$senha', '$id_perfil')";

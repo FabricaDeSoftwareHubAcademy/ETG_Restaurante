@@ -1,5 +1,6 @@
 <link rel="stylesheet" href="../assets/css/cadastrar_usuario.css">
 <link rel="stylesheet" href="../assets/css/estilo_botoes_padronizados.css">
+<link rel="stylesheet" href="../../assets/css/pop_ups/pop_ups-usuario_cadastrado.css">
 
 <body class="Pai-de-todos">
 
@@ -55,7 +56,7 @@
 
             <!--Botão Confirmar-->
                 <div class="botao-padrao-confirmar">
-                    <a><input type="submit" class="botao-confirmar-submit" name="btn_submit" value="CONFIRMAR"></a>
+                    <a><input type="submit" class="botao-confirmar-submit" name="btn_submit" value="CONFIRMAR"  onclick="openPopupUserCadastrado()"></a>
                 </div>
             </section>
 
