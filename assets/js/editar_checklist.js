@@ -1,4 +1,3 @@
-
 var getPre = []
 var getPos = []
 
@@ -41,17 +40,17 @@ async function listarPerguntas() {
 
 
     let trTopo = document.createElement("tr")
-    trTopo.innerHTML = '<tr class="topo-tabela"> <th>Selecione</th> <th>Pergunta Pré</th> </tr>'
+    trTopo.innerHTML = '<tr class="topo-tabela"> <th>Pergunta Pré</th> <th></th>  </tr>'
 
     let trTopoPos = document.createElement("tr")
-    trTopoPos.innerHTML = '<tr class="topo-tabela"> <th>Selecione</th> <th>Pergunta Pós</th> </tr>'
+    trTopoPos.innerHTML = '<tr class="topo-tabela"> <th>Pergunta Pós</th> <th></th>  </tr>'
 
     $("#tablePre").append(trTopo)
     $("#tablePos").append(trTopoPos)
 
     getPre.forEach(element => {
         let tr = document.createElement("tr")
-        tr.innerHTML = "<tr> <td><input type='checkbox'  id='checkbox' name='perguntas[]' value='" + element['id'] + "'></td> <td>" + element['descricao'] + "</td> </tr>"
+        tr.innerHTML = "<tr> <td>" + element['descricao'] + "</td> <td><i class='bi bi-trash'></i> </td> </tr>"
         tr.setAttribute('preId', element.id)
 
         $("#tablePre").append(tr)
@@ -59,7 +58,7 @@ async function listarPerguntas() {
 
     getPos.forEach(element => {
         let tr = document.createElement("tr")
-        tr.innerHTML = "<tr id='pergPos'> <td><input type='checkbox'  id='checkbox' name='perguntas[]' value='" + element['id'] + "'></td> <td>" + element['descricao'] + "</td> </tr>"
+        tr.innerHTML = "<tr id='pergPos'> <td>" + element['descricao'] + "</td> <td><i class='bi bi-pencil-square'></i> </td> </tr>"
         tr.setAttribute('posId', element.id)
 
         $("#tablePos").append(tr)

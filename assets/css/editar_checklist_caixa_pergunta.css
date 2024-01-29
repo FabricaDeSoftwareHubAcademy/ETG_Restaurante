@@ -88,6 +88,11 @@ td {
   font-weight: bold;    
 }
 
+.bi.bi-trash {
+  font-size: 30px;
+  color: rgb(255, 89, 89);
+  cursor: pointer;
+}
 
 
 /* Estilizando CheckBox */
