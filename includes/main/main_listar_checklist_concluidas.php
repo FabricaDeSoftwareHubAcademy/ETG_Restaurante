@@ -39,7 +39,7 @@
                     $_GET['pagina'] = 0;
                 }
                 $length = count($arr);
-                echo ($_GET['pagina']<=$length) ? $arr[$_GET['pagina']] : '<h1>nenhum registro encontrado</h1>' ; 
+                echo ($_GET['pagina']<$length) ? $arr[$_GET['pagina']] : '<h1>nenhum registro encontrado</h1>' ; 
                 ?>
             </section>
             <div class="pagination">
