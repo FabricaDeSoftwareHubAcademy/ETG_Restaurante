@@ -63,7 +63,8 @@
 
  
                             <div class="input_group field">
-                                <input value="<?=$dados_sala[0]['nome']?>" type="input" class="input_field toguroo" placeholder="Name" required="" name="nome" maxLength="32" id='nome_sala'>
+                                <input value="<?=$dados_sala[0]['nome']?>" type="input" class="input_field toguroo required" placeholder="Name" required="" name="nome" maxLength="32" id='nome_sala'>
+                                <h4 class="span-required">Preenchimento obrigatório</h4>
                                 <label for="name" class="input_label">Nome Da Sala</label> <!--Alterar para o nome do input-->
                             </div>
 
@@ -76,7 +77,8 @@
 
 
                             <div class="input_group field ">
-                                <input type="input" value="<?=$dados_sala[0]['codigo']?>" class="input_field toguro" placeholder="Name" required="" name="codigo" maxLength="8"  id="codigo_sala" style="text-transform:uppercase" />
+                                <input type="input" value="<?=$dados_sala[0]['codigo']?>" class="input_field toguro required" placeholder="Name" required="" name="codigo" maxLength="8"  id="codigo_sala" style="text-transform:uppercase" />
+                                <h4 class="span-required diferentao">Preenchimento obrigatório</h4>
                                 <label for="name" class="input_label toguro" > Código </label> <!--Alterar para o nome do input-->
                             </div>
 
@@ -87,7 +89,7 @@
                     
                     <div class="dropdown-ck">
 
-                        <select name="checklist" class="option" id="checklist">
+                        <select name="checklist" class="option required" id="checklist">
                         <?php
                                 foreach ($checklists as $id => $nome)
                                 {
@@ -106,7 +108,7 @@
                     </div>
 
                         <div class="barra"></div>
-
+                        <h4 class="span-required">Preenchimento obrigatório</h4>        
 
 
                     
@@ -221,7 +223,7 @@
                         </div>
 
                         <div class="botao-padrao-cadastrar">        
-                            <button name="btn_submit" type="submit" class="botao-cadastrar-submit" id="botao-cadastrar-submit" value="SALVAR"> Salvar </button>
+                            <button name="btn_submit" type="submit" class="botao-cadastrar-submit" id="botao-cadastrar-submit" value="SALVAR"> SALVAR </button>
                         </div>
                     </div>
                 
@@ -231,6 +233,22 @@
                 </form>  
 
                 <script>
+
+                        const campos =document.querySelectorAll(".required");
+                        const spans = document.querySelectorAll(".span-required");
+                        
+                        
+                        // console.log(spans);
+
+                        function setError(index){
+                            campos[index].classList.add('error'); // Adiciona a classe 'error' ao elemento
+                            spans[index].style = 'display: block; width: 100%;';
+                        }
+
+                        function removeError(index) {
+                            campos[index].classList.remove('error'); // Remove a classe 'error' do elemento
+                            spans[index].style.display = 'none';
+                        }
 
                         let button = document.getElementById("botao-cadastrar-submit") 
 
@@ -258,24 +276,14 @@
                                 
                                 nome_sala = true ;
 
+                                removeError(0);     
+
                             }else{
                                 nome_sala = false;
+
+                                setError(0);
                                 
-                                const Toast = Swal.mixin({
-                                toast: true,
-                                position: "top-end",
-                                showConfirmButton: false,
-                                timer: 3000,
-                                timerProgressBar: true,
-                                didOpen: (toast) => {
-                                toast.onmouseenter = Swal.stopTimer;
-                                toast.onmouseleave = Swal.resumeTimer;
-                                }
-                                });
-                                Toast.fire({
-                                    icon: "error",
-                                    title: "Nome da sala não pode estar vazio !"
-                                });
+                                // console.log("nome nao pode estar vazio ")
 
                             }
 
@@ -288,32 +296,20 @@
                                     
                                     codigo_sala = true;
 
+                                    removeError(1);
+    
                                 }else{ 
                                     
                                     codigo_sala = false
                                     
-                                    const Toast = Swal.mixin({
-                                    toast: true,
-                                    position: "top-end",
-                                    showConfirmButton: false,
-                                    timer: 3000,
-                                    timerProgressBar: true,
-                                    didOpen: (toast) => {
-                                    toast.onmouseenter = Swal.stopTimer;
-                                    toast.onmouseleave = Swal.resumeTimer;
-                                    }
-                                    });
-                                    Toast.fire({
-                                        icon: "error",
-                                        title: "Codigo não pode estar vazio !"
-                                    }); 
+                                    setError(1);
                                 } 
 
                             }else{
                                 codigo_sala = false
                             }
 
-                            console.log(codigo_sala)
+                            // console.log(codigo_sala)
 
                             let checklist = document.getElementById('checklist')
 
@@ -322,72 +318,44 @@
 
                                 if((checklist.value > 0)){
                                     
-                                    console.log(codigo_sala);
-
+                                    // console.log(codigo_sala);
+    
                                     checklist = true ;
-
+                                    removeError(2);
+    
                                 }else{
-                                
-                                    const Toast = Swal.mixin({
-                                    toast: true,
-                                    position: "top-end",
-                                    showConfirmButton: false,
-                                    timer: 3000,
-                                    timerProgressBar: true,
-                                    didOpen: (toast) => {
-                                    toast.onmouseenter = Swal.stopTimer;
-                                    toast.onmouseleave = Swal.resumeTimer;
-                                    }
-                                    });
-                                    Toast.fire({
-                                        icon: "error",
-                                        title: "Selecione Um checklist !"
-                                    }); 
+                                   
+                                    setError(2);
                                 }  
                             }else{
                                 checklist = false
                             }
-
+ 
                                 
                             if(nome_sala == true && codigo_sala == true && checklist == true){
 
                                 let form = document.getElementById('form_cad')
                                 // console.log(form)
 
-                                let formData = new FormData(form) 
-
-                                let dados_php = await fetch("../pages/actions/abrir_modal_editar_sala.php?id_sala=<?=$_GET['id_sala']?>",{method:"POST",
-                                    body: formData
-                                })
-                                
-                                // alert("Ta chegando até aqui !")
+                                let formData = new FormData(form)       
+                                let dados_php = await fetch("../pages/actions/abrir_modal_editar_sala.php?id_sala=<?=$_GET['id_sala']?>",{method:"POST", body: formData })
+                                                               
                                 let response = await dados_php.json()
                                 
-                                console.log("resposta do action",response);
-
                                 if(response){
-                                    
-                                    // let popup = document.getElementById('popup-up-notificacao');
-                                    // let btn = document.getElementById("submit-btn-notificacao");
-
-                                  
-                                    
-                                    // popup.classList.add("open-popup");
-                                    
-                                    openModal2();
-
+                                                                      
+                                    openModal2()
                                 
-
                                 }else{
                                     console.log("2")
                                 }
 
                             }else{
-                                console.log("deu merda piá");
+                                // console.log("deu merda piá");
                             }  
                         }
                         )
-                </script>                  
+                    </script>                 
             </div>
         </div>
     </section>
