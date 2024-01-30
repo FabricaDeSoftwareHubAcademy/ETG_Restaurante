@@ -24,13 +24,12 @@ $data_fechamento = null;
 
 $dados_pergunta = $obj_pergunta::getDados($id_sala);  
 $dados_sala = $obj_sala::getDadosById($id_sala);
-var_dump($dados_pergunta);exit;
+// var_dump($dados_pergunta);exit;
 if ($dados_pergunta)
 {
     foreach ($dados_pergunta as $linha)
     { 
-        echo '<br>';
-        if ($linha["tipo"] == '0' || $linha['tipo'] == '2')
+        if ($linha["tipo"] == "0" || $linha['tipo'] == '2')
         {
             $dados_imprimir .= '
             <div class="input_checklist">
@@ -47,9 +46,8 @@ if ($dados_pergunta)
                     </div>
                 </div>
             </div>';
-            continue;
         }  
-    }exit;
+    }
 }
 
 
