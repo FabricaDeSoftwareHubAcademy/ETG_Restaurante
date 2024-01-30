@@ -89,7 +89,7 @@ async function getDados()
 
 }
 const btn_submit = document.getElementById('btn_submit');
-btn_submit.addEventListener('click', async (e ) => {
+btn_submit.addEventListener('click', async (e) => {
    e.preventDefault();
    var continuar_rodando = true;
    for (var chave in respondidas)
@@ -139,7 +139,7 @@ btn_submit.addEventListener('click', async (e ) => {
        let response = await data_php.json();
 
 
-    //     console.log(response);
+        console.log(response);
 
     if(response == true){
         openModal();

@@ -51,5 +51,26 @@ class Checklist
         } 
     }
 
+    public static function deleteChecklist($id_checklist){
+
+        $obj_banco = new Banco('responder_check');  
+        if(($obj_banco->select('id_checklist = "'.$id_checklist.'"') -> rowCount()) ==  0){
+
+            $ob_relacao = new Banco(`relacao_pergunta_checklist`);
+            $ob_relacao->delete($id_checklist,'id_check');
+
+            $obCheck = new Banco('cadastro_checklist');
+            $obCheck->delete($id_checklist,'id');
+
+            return true;
+
+            
+        }
+
+
+
+
+    }
+
 
 }
