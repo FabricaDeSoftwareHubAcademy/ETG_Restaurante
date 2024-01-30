@@ -74,11 +74,15 @@ a{
     justify-content: center;
     height: 100%;
 }
-.card .card_header_titel{
+.card .card_header_title{
     font-weight: bold;
-    font-size: 16px;
+    font-size: 25px;
     margin-bottom: 5px;
-
+}
+.card .card_header_subtitle{
+    max-height: fit-content;
+    font-size: 20px;
+    margin-bottom: 5px;
 }
 .pagination{
     display: flex;
