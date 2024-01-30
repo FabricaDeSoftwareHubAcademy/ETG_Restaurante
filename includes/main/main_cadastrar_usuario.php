@@ -1,5 +1,6 @@
 <link rel="stylesheet" href="../assets/css/cadastrar_usuario.css">
 <link rel="stylesheet" href="../assets/css/estilo_botoes_padronizados.css">
+<!-- <link rel="stylesheet" href="../modais/usuario_cadastrado.php"> -->
 
 <body class="Pai-de-todos">
 
@@ -60,5 +61,9 @@
             </section>
 
         </form>
+        <?php include_once("./../includes/modais/usuario_cadastrado.php"); ?>
     </main>
+
+
+
 </body>
