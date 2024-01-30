@@ -98,8 +98,8 @@ $ifreaac = $perfil['realizar_acao_corretiva'] == '1';
                         </a>
                         <ul class="sub-menu3">
                             <?php
-                            echo '<li class="iten-submenu3"><a href="listar_checklist.php" id="fonte-submenu3">Vizualizar Check-List</a></li>';
-                            echo '<li class="iten-submenu3"><a href="validar_checklist.php" id="fonte-submenu3">Validar Check-List</a></li>';
+                            echo '<li class="iten-submenu3"><a href="gerenciar_checklist.php" id="fonte-submenu3">Vizualizar Check-List</a></li>';
+                            echo '<li class="iten-submenu3"><a href="listar_checklist_concluidas.php" id="fonte-submenu3">Validar Check-List</a></li>';
                             echo '<li class="iten-submenu3"><a href="cadastrar_checklist.php" id="fonte-submenu3">Cadastrar Check-List</a></li>';
                             ?>
                         </ul>

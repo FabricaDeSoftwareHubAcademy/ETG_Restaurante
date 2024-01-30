@@ -49,7 +49,7 @@ body{
     font-style: normal;
     font-weight: 300;
     line-height: 140%; /* 42px */
-    letter-spacing: 0.2px;s
+    letter-spacing: 0.2px;
 }
 
 /* PARTE FUNCIONAL (pesquisa, cards e botão) */
@@ -307,6 +307,18 @@ body{
     cursor: pointer;
 }
 
+.bi.bi-file-earmark-plus{
+    font-size: 32px;
+    color: #064A8C;
+    cursor: pointer;
+}
+/* 
+.bi.bi-card-checklist{
+    font-size: 30px;
+    color: #064A8C;
+    cursor: pointer;
+} */
+
 :root{
     --move_low: 75px;
     --move_low_reverse: -75px;
@@ -410,6 +422,11 @@ button.editar{
 }
 
 button.excluir{
+    border: none;
+    background-color: #F9F8F8;
+}
+
+button.checklist{
     border: none;
     background-color: #F9F8F8;
 }
