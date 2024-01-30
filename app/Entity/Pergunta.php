@@ -45,22 +45,47 @@ class Pergunta
         
     }
 
-    //READ
-    public static function getDados($id_sala)
-{        $obj_banco = new Banco('perguntas_da_sala');
+   
+     
 
-        $dados = $obj_banco -> select(where:'id_sala = '.$id_sala.'');
-
-        if($dados -> rowCount() > 0){ 
-            return $dados -> fetchall(PDO::FETCH_ASSOC);
-        }
-        else
-        {
-            return false;
-        }
+    public static function returnNotDuplicatedIds($dataFromTable) {
+        $existingIds = Pergunta::sumIds(dataFromTable: $dataFromTable);
+        $idsSepareted = array_unique($existingIds);
+        return $idsSepareted;
 
 
+
+
+        // $arrayCorrected = array();
+        // foreach ($dataFromTable as $row) {
+        //     if (count($existingIds) < 1) {
+        //         $existingIds[] = $row["id_pergunta"];
+        //         continue;
+        //     } else {
+        //         $idFromTable = $row["id_pergunta"];
+        //         if(array_search($idFromTable, $existingIds)) {
+        //             continue;
+        //         }
+        //         $arrayCorrected[] = $row;
+        //     }
+        //     return $arrayCorrected;     
+        // }
     }
+    
+    public static function sumIds($dataFromTable) {
+        $existingIds = array();
+        foreach ($dataFromTable as $row) {
+            $existingIds[] = $row["id_pergunta"];
+        }
+        return $existingIds;
+    }
+
+    public static function CheckIfIdsAreEqual($ids) {
+        $return = array_unique($ids);
+        return $return;
+    }
+
+
 
     //READ
     //de GetPerguntasById para GetDadosById
