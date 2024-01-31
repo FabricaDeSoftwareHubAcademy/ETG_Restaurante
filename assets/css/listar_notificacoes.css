@@ -16,7 +16,7 @@
     flex-wrap: wrap;
     overflow: hidden;
     overflow-y: auto;
-    height: 60%;
+    height: 69%;
     /* max-width: 800px; */
     width: 97%;
   }
@@ -122,16 +122,18 @@
 }
 
 .alinhar_botao_voltar{
+    /* margin-top: 15px; */
     height: 10%;
     display: flex;
     /* position: relative; */
-    align-items: center;
+    /* align-items: center; */
     justify-content: space-evenly;
     /* justify-content: center; */
     width: 100%;
-    position: fixed;
+    position: sticky;
     bottom: 0;
     left: 0;
+    background-color: white;
 
 }
 

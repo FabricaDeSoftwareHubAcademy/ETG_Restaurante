@@ -10,20 +10,25 @@
 
     <section class="container">       
         <main class="area_not">
-            <?=$todas_notificacao?>
+            <?=$todas_notificacao?>  
+            
+            
+            
         </main>   
         
-        <div class="alinhar_botao_voltar">
-            <div class="botao-padrao-voltar">
-                <a href="listar_salas.php" class="botao-voltar-link">VOLTAR</a>
-            </div>
-
-            <div class="botao-padrao-cadastrar">
-                <a href="cadastrar_notificacao.php"><input type="submit" class="botao-cadastrar-submit"  value="CADASTRAR"></a>
-            </div>
-            
-        </div>
+        
     </section>
+
+    <div class="alinhar_botao_voltar">
+                <div class="botao-padrao-voltar">
+                    <a href="listar_salas.php" class="botao-voltar-link">VOLTAR</a>
+                </div>
+
+                <div class="botao-padrao-cadastrar">
+                    <a href="cadastrar_notificacao.php"><input type="submit" class="botao-cadastrar-submit"  value="CADASTRAR"></a>
+                </div>
+            
+            </div>
     
     <script> 
         async function desmarcar (id){
@@ -85,4 +90,5 @@
         
         }
     </script>
+
 </body>

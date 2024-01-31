@@ -23,7 +23,7 @@
     <main class="meio">
 
         <!-- TÍTULO DA PÁGINA -->
-        <h1 id="titulo">Gerenciar checklists</h1>
+        <h1 id="titulo">Listar Checklists</h1>
         <div class="aunt">
 
             <!-- PARTE DA PESQUISA  -->
