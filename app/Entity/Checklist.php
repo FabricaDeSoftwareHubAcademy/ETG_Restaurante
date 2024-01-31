@@ -3,6 +3,8 @@ namespace App\Entity;
 
 use App\Db\Banco; 
 use PDO;
+use PDOException;
+
 class Checklist
 {
     public
@@ -54,19 +56,26 @@ class Checklist
     public static function deleteChecklist($id_checklist){
 
         $obj_banco = new Banco('responder_check');  
-        if(($obj_banco->select('id_checklist = "'.$id_checklist.'"') -> rowCount()) ==  0){
 
-            $ob_relacao = new Banco(`relacao_pergunta_checklist`);
-            $ob_relacao->delete($id_checklist,'id_check');
+        if($obj_banco->select('id_checklist = "'.$id_checklist.'"') -> rowCount() == 0){
+            try{
 
-            $obCheck = new Banco('cadastro_checklist');
-            $obCheck->delete($id_checklist,'id');
 
-            return true;
+                $obRelacao = new Banco('relacao_pergunta_checklist');
+                $obRelacao->delete($id_checklist,'id_check');
 
-            
+                $obCadCheck = new Banco('cadastro_checklist');
+                $obCadCheck->delete($id_checklist,'id');
+
+                return true;
+
+
+            }catch(PDOException $e){
+
+                return $e->getMessage();
+            }
+
         }
-
 
 
 

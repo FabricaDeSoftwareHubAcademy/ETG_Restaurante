@@ -121,46 +121,16 @@ $("#botao-sim-submit").on('click',async function(event){
     let dados_php = await fetch('../pages/actions/action_excluir_checklist.php?id_checklist='+id_atual_excluir_pergunta)
 
     let response = await dados_php.json()
-    console.log(response)
     if(response.status){ 
 
-        listarPerguntas()
-        const Toast = Swal.mixin({
-            toast: true,
-            position: "top-end",
-            showConfirmButton: false,
-            timer: 1500,
-            timerProgressBar: true,
-            didOpen: (toast) => {
-              toast.onmouseenter = Swal.stopTimer;
-              toast.onmouseleave = Swal.resumeTimer;
-            }
-          });
-          Toast.fire({
-            icon: "success",
-            title: "Pergunta excluida com sucesso!"
-          }); 
+        listarChecklists()
+        modalStatus('Checklist excluida com sucesso!','success')
 
-          $("input").val('') 
+        $("input").val('') 
 
     }else{
-        const Toast = Swal.mixin({
-            toast: true,
-            position: "top-end",
-            showConfirmButton: false,
-            timer: 1500,
-            timerProgressBar: true,
-            didOpen: (toast) => {
-              toast.onmouseenter = Swal.stopTimer;
-              toast.onmouseleave = Swal.resumeTimer;
-            }
-          });
 
-          // futuramente falar em qual checklist esta cadastrado :) 
-          Toast.fire({
-            icon: "error",
-            title: "Erro: A pergunta está cadastrada em um checklist"
-          }); 
+        modalStatus('A pergunta está cadastrada em um checklist','error')
 
     }
 }) 

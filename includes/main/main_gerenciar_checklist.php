@@ -1,8 +1,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
-<link href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@4/dark.css" rel="stylesheet">
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
+<script src="../assets/js/modais.js"></script>
+
 <title>Cadastro de Perguntas</title>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
@@ -22,7 +22,7 @@
     <main class="meio">
 
         <!-- TÍTULO DA PÁGINA -->
-        <h1 id="titulo">Gerenciar checklists ERROR SQL</h1>
+        <h1 id="titulo">Gerenciar Checklist</h1>
         <div class="aunt">
 
             <!-- PARTE DA PESQUISA  -->
