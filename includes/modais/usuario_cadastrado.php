@@ -119,28 +119,49 @@ button.show-modal:hover{
     </style>
 
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            // const showModalBtnUserConfirmed = document.querySelector('.show-modal');
-            const showModalBtnUserConfirmed = document.querySelector('.botao-confirmar-submit');
-            const closeModalBtnUserConfirmed = document.querySelector('.close-btn');
-            const openModalBtnUserConfirmed = document.querySelector('.open-btn');
-            const overlay = document.querySelector('.overlay-modal');
-            const modal = document.querySelector('.modal-box');
-            function openModalConfirmed() {
-                overlay.style.opacity = '1';
-                overlay.style.pointerEvents = 'auto';
-                modal.style.opacity = '1';
-                modal.style.pointerEvents = 'auto';
+  
+    // document.addEventListener('DOMContentLoaded', function() {
+        // const showModalBtnUserConfirmed = document.querySelector('.botao-confirmar-submit');
+        // const closeModalBtnUserConfirmed = document.querySelector('.close-btn');
+        // const overlay = document.querySelector('.overlay-modal');
+        // const modalConfirmar = document.querySelector('.modal-box');
+        // const button = document.getElementById('botao-confirmar-submit');
+
+        // function openModalConfirmed() {
+        //     overlay.style.opacity = '1';
+        //     overlay.style.pointerEvents = 'auto';
+        //     modal.style.opacity = '1';
+        //     modal.style.pointerEvents = 'auto';
+        // }
+
+        // function closeModal() {
+        //     overlay.style.opacity = '0';
+        //     overlay.style.pointerEvents = 'none';
+        //     modal.style.opacity = '0';
+        //     modal.style.pointerEvents = 'none';
+        // }
+
+        // showModalBtnUserConfirmed.addEventListener('click', openModalConfirmed);
+        // closeModalBtnUserConfirmed.addEventListener('click', closeModal);
+
+        // button.addEventListener('click', async (e) => {
+        //     e.preventDefault()
+
+        //     let nome = document.getElementById('nome').value;
+        //     let email = document.getElementById('email').value;
+        //     let options = document.getElementById('options').value;
+        //     let matricula = document.getElementById('matricula').value;
+        //     let senha = document.getElementById('senha').value;
+
+            if (nome.length > 0 && email.length > 0 && options.length > 0 && matricula.length > 0 && senha.length > 0) {
+
+                console.log("Todos os campos estão preenchidos.");
+            } else {
+                // Algum campo está vazio
+                console.log("Preencha todos os campos.");
             }
-            function closeModal() {
-                overlay.style.opacity = '0';
-                overlay.style.pointerEvents = 'none';
-                modal.style.opacity = '0';
-                modal.style.pointerEvents = 'none';
-            }
-            showModalBtnUserConfirmed.addEventListener('click', openModalConfirmed);
-            closeModalBtnUserConfirmed.addEventListener('click', closeModal);
-        });
-        
+        // });
+    // });
+
 
     </script>
