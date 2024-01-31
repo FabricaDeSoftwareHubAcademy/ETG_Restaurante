@@ -8,7 +8,7 @@ if(!$ifgenperg){
 $titulo_page = 'Cadastrar Pergunta';
 require("../includes/header/header.php");
 
-
+    
 
 require("../includes/main/main_cadastrar_pergunta.php");
 require("../includes/footer/footer.php");
