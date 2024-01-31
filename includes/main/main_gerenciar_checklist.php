@@ -22,7 +22,9 @@
     <main class="meio">
 
         <!-- TÍTULO DA PÁGINA -->
+
         <h1 id="titulo">Gerenciar Checklist</h1>
+
         <div class="aunt">
 
             <!-- PARTE DA PESQUISA  -->

@@ -22,7 +22,10 @@ if(isset($_POST['status']))
 }
 else{
     $status = 'D'; 
+
+    
 }
+
 
 
 if (!empty($_FILES['img_sala']['name']))
