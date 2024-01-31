@@ -396,6 +396,28 @@ body{
     .perguntas{
         height: 50vh;
     }
+
+    .icons-question1{
+        gap: 13.5px;
+    }
+    
+    .bi.bi-trash{
+        font-size: 20px;
+        color: rgb(255, 89, 89);
+        cursor: pointer;
+    }
+    
+    .bi.bi-pencil-square{
+        font-size: 20px;
+        color: black;
+        cursor: pointer;
+    }
+    
+    .bi.bi-file-earmark-plus{
+        font-size: 22px;
+        color: #064A8C;
+        cursor: pointer;
+    }
 }
 
 @media screen and (max-height:690px ){
