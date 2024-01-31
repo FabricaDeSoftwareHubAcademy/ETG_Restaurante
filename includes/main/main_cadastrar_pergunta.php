@@ -229,7 +229,9 @@
         popup_cad_checklist.classList.add("open-popup4");
         
     }
-    function closePopup4(){
+    function closePopup4(){ 
+        
+        document.getElementById("overlay").style.visibility= 'hidden';
         popup_cad_checklist.classList.remove("open-popup4");
     }
 
