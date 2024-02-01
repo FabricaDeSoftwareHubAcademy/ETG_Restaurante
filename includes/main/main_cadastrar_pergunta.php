@@ -92,7 +92,7 @@
                 <h4>Escolha um checklist para inserir as perguntas:</h4>
 
                 <div class="area_checklists">
-                    <h5> AQUI VAI FICAR A LISTINHA DOS CHECKLISTS</h5>
+                    <h4> AQUI VAI FICAR A LISTINHA DOS CHECKLISTS</h4>
                 </div>
 
                 <h4>Selecione a categoria da pergunta:</h4>

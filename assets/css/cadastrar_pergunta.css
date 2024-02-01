@@ -543,17 +543,14 @@ button.checklist{
 h4{
     width: 100%;
     margin-top: 2%; 
-}
+} 
 
-h5{
-    width: 100%;
-}
 /* RESPONSIVIDADE DO POPUP DE CADASTRAR PERGUNTAS */
 
 @media screen and (max-width: 700px ){
 
     .popup_cadastrar.open-popup1{
-        width: 340px;
+        width: 330px;
         top: 55%;
     }
 
@@ -568,10 +565,6 @@ h5{
     .botoes{
         justify-content: space-between;
         gap: 25px;
-    }
-
-    h4{
-        font-size: 15px;
     }
 
 }
@@ -752,16 +745,17 @@ textarea{
 
 h4{
     width: 100%;
-    display: flex;
     margin-top: 2%;
 }
+
+
 
 /* RESPONSIVIDADE DO POPUP DE CADASTRAR PERGUNTAS NO CHECKLSIT */
 
 @media screen and (max-width: 700px ){
 
     .popup_cad_checklist.open-popup4{
-        width: 330px;
+        width: 360px;
         top: 55%;
     }
 
@@ -776,6 +770,11 @@ h4{
     .botoes{
         justify-content: space-between;
         gap: 25px;
+    }
+
+    h4{
+        font-size: 15px;
+        margin-top: 3%;
     }
 }
 
