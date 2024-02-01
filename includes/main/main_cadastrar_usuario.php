@@ -68,18 +68,26 @@
     <script>
 
     document.addEventListener('DOMContentLoaded', function() {
-        const nome = document.getElementById('nomes').value;
-        const email = document.getElementById('emails').value;
+        const nomes = document.getElementById('nomes').value;
+        const emails = document.getElementById('emails').value;
         const options = document.getElementById('options').value;
         const matricula = document.getElementById('matricula').value;
-        const senha = document.getElementById('senhas').value;
+        const senhas = document.getElementById('senhas').value;
     
+        if (nomes.length == 0) {
+            console.log("Campo de nome não preenchido");
+        } 
+        // else (nomes.length > 0) {
+        //     console.log("Campo de nome preenchido");
+        // } 
         
-        if (nomes.length > 0 && emails.length > 0 && options.length > 0 && matricula.length > 0 && senhas.length > 0) {
-            console.log("Todos os campos estão preenchidos.");
-        } else {
-            console.log("Preencha todos os campos.");
-        }
+
+        // if (nomes.length == 0 || emails.length == 0 || options.length == 0 || matricula.length == 0 || senhas.length == 0) {
+        //     console.log("Todos os campos estão preenchidos.");
+        // } 
+        // else {
+        //     console.log("Preencha todos os campos.");
+        // }
     });
 
     </script>

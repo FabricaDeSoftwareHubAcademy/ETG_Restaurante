@@ -120,29 +120,29 @@ button.show-modal:hover{
 
     <script>
   
-    // document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener('DOMContentLoaded', function() {
         // const showModalBtnUserConfirmed = document.querySelector('.botao-confirmar-submit');
-        // const closeModalBtnUserConfirmed = document.querySelector('.close-btn');
-        // const overlay = document.querySelector('.overlay-modal');
-        // const modalConfirmar = document.querySelector('.modal-box');
-        // const button = document.getElementById('botao-confirmar-submit');
+        const closeModalBtnUserConfirmed = document.querySelector('.close-btn');
+        const overlay = document.querySelector('.overlay-modal');
+        const modalConfirmar = document.querySelector('.modal-box');
+        const button = document.getElementById('botao-confirmar-submit');
 
-        // function openModalConfirmed() {
-        //     overlay.style.opacity = '1';
-        //     overlay.style.pointerEvents = 'auto';
-        //     modal.style.opacity = '1';
-        //     modal.style.pointerEvents = 'auto';
-        // }
+        function openModalConfirmed() {
+            overlay.style.opacity = '1';
+            overlay.style.pointerEvents = 'auto';
+            modalConfirmar.style.opacity = '1';
+            modalConfirmar.style.pointerEvents = 'auto';
+        }
 
-        // function closeModal() {
-        //     overlay.style.opacity = '0';
-        //     overlay.style.pointerEvents = 'none';
-        //     modal.style.opacity = '0';
-        //     modal.style.pointerEvents = 'none';
-        // }
+        function closeModal() {
+            overlay.style.opacity = '0';
+            overlay.style.pointerEvents = 'none';
+            modalConfirmar.style.opacity = '0';
+            modalConfirmar.style.pointerEvents = 'none';
+        }
 
         // showModalBtnUserConfirmed.addEventListener('click', openModalConfirmed);
-        // closeModalBtnUserConfirmed.addEventListener('click', closeModal);
+        closeModalBtnUserConfirmed.addEventListener('click', closeModal);
 
         // button.addEventListener('click', async (e) => {
         //     e.preventDefault()
@@ -154,7 +154,7 @@ button.show-modal:hover{
         //     let senha = document.getElementById('senha').value;
 
         // });
-    // });
+    });
 
 
     </script>
