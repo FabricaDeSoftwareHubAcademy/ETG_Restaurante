@@ -3,9 +3,6 @@ input::-webkit-inner-spin-button {
     -webkit-appearance: none;
     margin: 0;
 }
-input[type=number]{
-    -moz-appearance: textfield;
-}
 h1{
     text-align: center;
 }
@@ -36,7 +33,6 @@ a{
     justify-content: center;
     align-items: center;
     min-height: 500px;
-    max-height: 700px;
     font-family: 'Montserrat';
 }
 .lista{
@@ -44,6 +40,7 @@ a{
 }
 .card{
     display: flex;
+    justify-content: space-between;
     align-items: center;
     max-width: 100%;
     background-color: #F9F8F8;
@@ -61,9 +58,9 @@ a{
 }
 .card_info{
     display: flex;
-    flex-grow: 1;
     justify-content: space-between;
     align-items: center;
+    flex-grow: 1;
     margin-left: 10px;
     height: 100%;
 
@@ -73,6 +70,25 @@ a{
     flex-direction: column;
     justify-content: center;
     height: 100%;
+}
+.card .card_header_title{
+    font-weight: bold;
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+.card .card_header_subtitle{
+    max-height: fit-content;
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+.card .card_icon{
+    font-size: 25px;
+}
+.card .card_icon .bi-exclamation-octagon{
+    color: #FF0000;
+}
+.card .card_icon .bi-check-square{
+    color: #00a000;
 }
 .pagination{
     display: flex;
