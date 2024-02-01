@@ -543,7 +543,14 @@ button.checklist{
 h4{
     width: 100%;
     display: flex;
+    margin-top: 2%; 
+}
+
+h5{
+    width: 100%;
+    display: flex;
     margin-top: 2%;
+    padding-left: 55px;
 }
 
 /* RESPONSIVIDADE DO POPUP DE CADASTRAR PERGUNTAS */
@@ -775,14 +782,14 @@ h4{
 
 /* CAIXA DE TEXTO */
 
-textarea{
-    font-family: 'Montserrat', sans-serif;
-    font-size: 1rem;
-    letter-spacing: 1px;
-    padding: 10px;
-    resize: none;
-    outline: none;
-    background-color: #f9f8f8;
+.area_checklists{
+    width: 100%;
+    height: 330px;
+    background-color: #efefef;
+    border-radius: 20px;
+    margin-top: 2%;
+    display: flex;
+    align-items: center;
 }
 
 .nova_pergunta{
@@ -939,8 +946,7 @@ textarea{
 
 h4{
     width: 100%;
-    display: flex;
-    margin-top: 2%;
+    margin-top: 4%;
 }
 
 /* RESPONSIVIDADE DO POPUP DE EDIÇÃO DE PERGUNTAS */

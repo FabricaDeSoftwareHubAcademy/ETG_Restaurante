@@ -91,7 +91,9 @@
             <div class="popup_cad_checklist" id="popup_cad_checklist">
                 <h4>Escolha um checklist para inserir as perguntas:</h4>
 
-                
+                <div class="area_checklists">
+                    <h5> AQUI VAI FICAR A LISTINHA DOS CHECKLISTS</h5>
+                </div>
 
                 <h4>Selecione a categoria da pergunta:</h4>
 
