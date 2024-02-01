@@ -542,15 +542,11 @@ button.checklist{
 
 h4{
     width: 100%;
-    display: flex;
     margin-top: 2%; 
 }
 
 h5{
     width: 100%;
-    display: flex;
-    margin-top: 2%;
-    padding-left: 55px;
 }
 
 /* RESPONSIVIDADE DO POPUP DE CADASTRAR PERGUNTAS */
