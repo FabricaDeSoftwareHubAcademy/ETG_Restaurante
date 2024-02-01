@@ -548,7 +548,6 @@ h4{
 h5{
     width: 100%;
 }
-
 /* RESPONSIVIDADE DO POPUP DE CADASTRAR PERGUNTAS */
 
 @media screen and (max-width: 700px ){
@@ -570,6 +569,11 @@ h5{
         justify-content: space-between;
         gap: 25px;
     }
+
+    h4{
+        font-size: 15px;
+    }
+
 }
 
 
