@@ -8,13 +8,15 @@ class ResponderChecklist
 {
 
 
-    public static function cadastrar($dados = [], $id_sala = 1)
+    public static function cadastrar($dados = [], $id_sala = 1, $id_check)
     {
         $responder_check = [
             'id_usuario' =>  $_SESSION['id_user'],
-            'id_sala' => $id_sala
+            'id_sala' => $id_sala,
+            'id_checklist' => $id_check
         ];
         $obj_banco = new Banco('responder_check');
+
         $last_id = $obj_banco -> insertRecoverId($responder_check);
 
         foreach ($dados as $pergunta)
