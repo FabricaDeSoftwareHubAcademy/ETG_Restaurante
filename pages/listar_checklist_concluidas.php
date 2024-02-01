@@ -20,7 +20,7 @@ foreach($checklist as $gp){
         $list .= '<a href="validar_checklist.php?id_realizacao='.$row['id_responder'].'" class="card">
                     <div class="card_detalhes">
                         <div class="card_img">
-                            <img class="img_sala" src="../assets/img/'.$row['img_sala'].'" alt="foto da sala">
+                            <img class="img_sala" src="../storage/salas/'.$row['img_sala'].'" alt="foto da sala">
                         </div>
                         <div class="card_info">
                             <div class="card_text">
