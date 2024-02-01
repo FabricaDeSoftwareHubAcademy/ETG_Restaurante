@@ -89,9 +89,9 @@
         <form class="overlay" id="form_cad_pergunta_checklist" style="opacity: 1;">
 
             <div class="popup_cad_checklist" id="popup_cad_checklist">
-                <h4>Editar pergunta:</h4>
+                <h4>Escolha um checklist para inserir as perguntas:</h4>
 
-                <textarea maxlength="255" name="nova_pergunta" id="text_editar_pergunta" class="nova_pergunta" placeholder= "Escreva a pergunta"cols="30" rows="10" autocomplete= "off"></textarea>
+                
 
                 <h4>Selecione a categoria da pergunta:</h4>
 
@@ -99,17 +99,17 @@
                 
                 <div class="checks">
                     <div class="check1">
-                        <input type="checkbox" name="antes_da_aula" id="check3"> Pré-Aula
+                        <input type="checkbox" name="antes_da_aula" id="check5"> Pré-Aula
                     </div>
                     <div class="check2">
-                        <input type="checkbox" name="depois_da_aula" id="check4"> Pós-Aula
+                        <input type="checkbox" name="depois_da_aula" id="check6"> Pós-Aula
                     </div>
                 </div>
-
+                
                 <!-- DIV DOS BOTÕES (cancelar e confirmar) -->
 
                 <div class="botoes">
-                    <button class="botao-cancelar-submit" id='botao_cancelar_editar' value="CANCELAR" >CANCELAR</button>
+                    <button class="botao-cancelar-submit" onclick="closePopup4()" id='botao_cancelar_editar' value="CANCELAR" >CANCELAR</button>
                     <button class="botao-confirmar-submit" id='botao_confirmar_editar' value="CONFIRMAR">CONFIRMAR</button>
                 </div>
             </div>
@@ -229,7 +229,9 @@
         popup_cad_checklist.classList.add("open-popup4");
         
     }
-    function closePopup4(){
+    function closePopup4(){ 
+        
+        document.getElementById("overlay").style.visibility="hidden";
         popup_cad_checklist.classList.remove("open-popup4");
     }
 
