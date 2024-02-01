@@ -38,6 +38,12 @@ a{
 .lista{
     width: 75%;
 }
+@media screen and (max-width: 420px){
+    .lista{
+        width: 90%;
+    }
+    
+}
 .card{
     display: flex;
     justify-content: space-between;
