@@ -153,13 +153,6 @@ button.show-modal:hover{
         //     let matricula = document.getElementById('matricula').value;
         //     let senha = document.getElementById('senha').value;
 
-            if (nome.length > 0 && email.length > 0 && options.length > 0 && matricula.length > 0 && senha.length > 0) {
-
-                console.log("Todos os campos estão preenchidos.");
-            } else {
-                // Algum campo está vazio
-                console.log("Preencha todos os campos.");
-            }
         // });
     // });
 

@@ -13,13 +13,13 @@
             <section class="centralizar_input_cadastrar_usuario">                
                 <!-- input nome -->
                 <div class="input_group field">
-                    <input type="input" maxlength="45" class="input_field" name="nome" id="nome" placeholder="Name" required="">
+                    <input type="input" maxlength="45" class="input_field" name="nome" id="nomes" placeholder="Name" required="">
                     <label for="name" class="input_label">Nome</label> <!--Alterar para o nome do input-->
                 </div>
                 
                 <!--Input Email-->
                 <div class="input_e-mail_group field">
-                    <input type="email" class="input_e-mail_field" name="email" id="email"  placeholder="Name" required="" autocomplete="on">
+                    <input type="email" class="input_e-mail_field" name="email" id="emails"  placeholder="Name" required="" autocomplete="on">
                     <label for="name" class="input_e-mail_label">E-mail</label> <!--Alterar para o nome do input-->
                 </div>
                 
@@ -43,7 +43,7 @@
                     
             <!--Input Senha-->
             <div class="input_senha_group field">
-                <input type="password" class="input_senha_field" name="senha" id="senha" placeholder="Name" required="">
+                <input type="password" class="input_senha_field" name="senha" id="senhas" placeholder="Name" required="">
                 <label for="name" class="input_senha_label">Senha</label> <!--Alterar para o nome do input-->
             </div>
         </section>   
@@ -63,7 +63,28 @@
         </form>
     </main>
     
+
+
+    <script>
+
+    document.addEventListener('DOMContentLoaded', function() {
+        const nome = document.getElementById('nomes').value;
+        const email = document.getElementById('emails').value;
+        const options = document.getElementById('options').value;
+        const matricula = document.getElementById('matricula').value;
+        const senha = document.getElementById('senhas').value;
     
+        
+        if (nomes.length > 0 && emails.length > 0 && options.length > 0 && matricula.length > 0 && senhas.length > 0) {
+            console.log("Todos os campos estão preenchidos.");
+        } else {
+            console.log("Preencha todos os campos.");
+        }
+    });
+
+    </script>
+    
+
     
     <?php include_once("./../includes/modais/usuario_cadastrado.php"); ?>
 </body>
