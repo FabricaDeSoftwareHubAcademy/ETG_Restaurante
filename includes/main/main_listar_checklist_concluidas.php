@@ -6,14 +6,14 @@
             <h1>Listar Checklist Encerrada</h1>
         </div>
         <section class="container">
-                <section class='search'>
+                <!-- <section class='search'>
                     <div class="search_input">
                         <input type="text" placeholder="Pesquisar">
                     </div>
                     <div class="search_btn">
                         <button>Pesquisar</button>
                     </div>
-                </section>
+                </section> -->
                 <section class="lista">
                     <?php 
                 if(!isset($_GET['pagina'])){
