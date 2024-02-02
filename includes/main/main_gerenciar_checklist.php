@@ -1,29 +1,30 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
-<link href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@4/dark.css" rel="stylesheet">
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
+<script src="../assets/js/modais.js"></script>
+
 <title>Cadastro de Perguntas</title>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
 
 <link rel="stylesheet" href="../assets/css/gerenciar_checklist.css">
 
-<script src="../assets/js/filter.js"></script>
-<script defer src="../assets/js/filter_old.js"></script> 
+
+
+<script src="../assets/js/filter_checklist.js"></script>
+<script defer src="../assets/js/filter_old_checklist.js"></script> 
 
 <!-- <script defer src="../assets/js/effect_scroll.js" ></script> -->
 
-
-
-
-
+ 
 <body>
     
     <main class="meio">
 
         <!-- TÍTULO DA PÁGINA -->
-        <h1 id="titulo">Gerenciar checklists</h1>
+
+        <h1 id="titulo">Gerenciar Checklist</h1>
+
         <div class="aunt">
 
             <!-- PARTE DA PESQUISA  -->
@@ -41,15 +42,15 @@
                 <section class="perguntas" id="perguntas">
                     <?php
 
-                        echo($divs);
+                        // echo($divs);
                     ?>
                     
                 </section>
 
                 <!-- AJAXXXXXXX DO SIMÃO??? -->
-                <!-- <script>
-                    listarPerguntas()
-                </script> -->
+                <script>
+                    listarChecklists()
+                </script>
                 
             <!-- BOTÃO DE CADASTRAR -->
                 <div class="botao">
@@ -91,7 +92,7 @@
     function closePopup1(){ 
         
         document.getElementById("overlay").style.visibility= 'hidden';
-        popup_cadastro_pergunta.classList.remove("open-popup1");
+        // popup_cadastro_pergunta.classList.remove("open-popup3");
     }
 
     // SCRIPT DO POPUP DE EDITAR PERGUNTAS
@@ -115,6 +116,7 @@
         
     }
     function closePopup3(){
+        document.getElementById("overlay").style.visibility="none";
         popup_conf_exclusao.classList.remove("open-popup3");
     }
 

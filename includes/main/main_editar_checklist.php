@@ -7,7 +7,7 @@
 <link rel="stylesheet" href="../assets/css/editar_checklist_posicao.css">
 <link rel="stylesheet" href="../assets/css/editar_checklist_caixa_pergunta.css">
 <link rel="stylesheet" href="../assets/css/editar_checklist_botoes.css">
-<script defer src="../assets/js/ajax_checklist.js"></script>
+<script defer src="../assets/js/editar_checklist.js"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 
 
@@ -155,7 +155,7 @@
                     <!--Botão Cadastrar-->
                     <div class="botao-padrao-cadastrar">
                         <!-- <a href="#"><input type="submit" class="botao-cadastrar-submit" name="btn_cadastrar" value="CADASTRAR"></a> -->
-                        <button name="btn_cadastrar" type="submit" class="botao-cadastrar-submit" id="btn_cadastrar" value="CADASTRAR"> CADASTRAR </button>
+                        <button name="btn_cadastrar" type="submit" class="botao-cadastrar-submit" id="btn_cadastrar" value="CADASTRAR"> SALVAR </button>
                     </div>
                 </div>
             </div>

@@ -1,10 +1,10 @@
 <?php
 require __DIR__."/vendor/autoload.php";
 
-use \App\Entity\Usuario;
+use \App\Entity\Checklist;
 
 
-Usuario::deleteById(7);
+Checklist::deleteChecklist(4);
 
 
 
