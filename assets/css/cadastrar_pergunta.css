@@ -755,7 +755,7 @@ h4{
 @media screen and (max-width: 700px ){
 
     .popup_cad_checklist.open-popup4{
-        width: 350px;
+        width: 360px;
         top: 55%;
     }
 
@@ -776,6 +776,15 @@ h4{
         font-size: 15px;
         margin-top: 3%;
     }
+}
+
+@media screen and (max-width: 370px ){
+
+    .popup_cad_checklist.open-popup4{
+        width: 325px;
+        top: 55%;
+    }
+
 }
 
 
