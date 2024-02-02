@@ -1,4 +1,5 @@
 <link rel="stylesheet" href="../assets/css/cadastrar_usuario.css">
+
 <!-- <link rel="stylesheet" href="../assets/css/estilo_botoes_padronizados.css"> -->
 <!-- <link rel="stylesheet" href="../modais/usuario_cadastrado.php"> -->
 
@@ -88,21 +89,21 @@ button.addEventListener('click', async (e) =>{
     // } 
     
     if (nomes.length > 0 && emails.length > 0 && options.length > 0 && matricula.length > 0 && senhas.length > 0) {
-        console.log("Todos os campos estão preenchidos.");
-
+        console.log("DSAdsad")
         let form = document.getElementById('form_cad')
         console.log(form)
 
         let formData = new FormData(form)
-        let dados_php = await fetch("../pages/actions/cad_usuario.php",{method:"POST",
+        let dados_php = await fetch("../pages/actions/action_cadastrar_user.php",{
+            method:"POST",
             body: formData
         })
 
         let response = await dados_php.json()
-
+ 
         console.log(response)
 
-        if(response){
+        if(response.status){
 
             console.log("funfou")
 
@@ -120,7 +121,6 @@ button.addEventListener('click', async (e) =>{
 
 </script>
     
-
-    
     <?php include_once("./../includes/modais/usuario_cadastrado.php"); ?>
+
 </body>
