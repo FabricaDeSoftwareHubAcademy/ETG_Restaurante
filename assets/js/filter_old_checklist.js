@@ -129,7 +129,7 @@ $("#botao-sim-submit").on('click',async function(event){
         $("input").val('') 
 
     }else{
-
+        
         modalStatus('A pergunta está cadastrada em um checklist','error')
 
     }
@@ -234,6 +234,8 @@ $("#botao_confirmar_editar").on('click',async function(e){
 $("#botao-nao-submit-excluir-pergunta").on('click',function(e){
   e.preventDefault()
   closePopup3()
+  closePopup1()
+
    
 
 })

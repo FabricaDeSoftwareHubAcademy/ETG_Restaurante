@@ -8,40 +8,45 @@
 <script src="sweetalert2.min.js"></script>
 <link rel="stylesheet" href="sweetalert2.min.css">
 
+
 <script
   src="https://code.jquery.com/jquery-3.7.1.min.js"
   integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
   crossorigin="anonymous"></script>
-
+  
+  <?php 
+    include_once('../includes/modal_excluir/perfil_bloqueado.php');
+    ?>
 <body class="tela_gerenciam_perfis">
-
-        <main class="pai-de-todos">
-            <form action="" method="GET">
-                <div class="container_gp">
-                        <h1 class="Perfis">Perfis</h1>
-                            <ul class="cardsgerenc">
-                                <?=$imprimir?>
-                            </ul>
+    <main class="pai-de-todos">
+        <form action="" method="GET">
+            <div class="container_gp">
+                <h1 class="Perfis">Perfis</h1>
+                <ul class="cardsgerenc">
+                    <?=$imprimir?>
+                </ul>
                 
-                </div>
-                <div class="container_gp2">
+            </div>
+            <div class="container_gp2">
+                
+                <div class="alinar-botoes">
+                    
+                    <div class="botao-padrao-voltar">
+                        <a href="listar_salas.php" class="botao-voltar-submit">VOLTAR</a>
+                    </div>
+                    
+                    <div class="botao-padrao-cadastrar">
+                        <a href="cadastrar_perfil.php" class="botao-cadastrar-link">CADASTRAR</a>
+                    </div>
+
+                </div>  
                         
-                    <div class="alinar-botoes">
+            </div> 
+        </form>
+    </main>
+    <script src="../includes/modal_excluir/perfil_bloqueado.js"></script>
+</body>
 
-                        <div class="botao-padrao-voltar">
-                            <a href="listar_salas.php" class="botao-voltar-submit">VOLTAR</a>
-                        </div>
-
-                        <div class="botao-padrao-cadastrar">
-                            <a href="cadastrar_perfil.php" class="botao-cadastrar-link">CADASTRAR</a>
-                        </div>
-
-                    </div>  
-                        
-                </div> 
-            </form>
-        </main>
-    </body>
 <script>
 
 
@@ -59,22 +64,8 @@
         var lock = data['children'][0]['attributes']['lock']['value']
         if (lock == 'true')
         {
-            const Toast = Swal.mixin({
-                    toast: true,
-                    position: 'top-end',
-                    showConfirmButton: false,
-                    timer: 3000,
-                    timerProgressBar: true,
-                    didOpen: (toast) => {
-                        toast.addEventListener('mouseenter', Swal.stopTimer)
-                        toast.addEventListener('mouseleave', Swal.resumeTimer)
-                    }
-                    })
-
-                    Toast.fire({
-                    icon: 'error',
-                    title: 'Não é possível excluir o Perfil!'
-                    })
+             openModal2()
+        
         }
         else
         {

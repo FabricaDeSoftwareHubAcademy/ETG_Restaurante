@@ -4,14 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport">
     <title>Document</title>
+    <script src="./assets/js/modais.js" defer></script>
 </head>
 <body>
-    <form action="">
-        <input type="" required>
 
-        <button>cadastrar</button>
+    
+    
+    <button onclick="modalStatus('Testeee','success')">cadastrar</button>
 
-    </form>
+    
     
 </body>
 </html>

@@ -1,4 +1,15 @@
 function modalStatus(texto,tipo){
+    var sectionModal = document.querySelectorAll(".section_modal");
+
+// Verifique se o elemento foi encontrado antes de tentar removê-lo
+    if (sectionModal) {
+        sectionModal.forEach((item) => {
+
+            item.remove()
+
+        })
+    } 
+
     let icon_modal = '';
     let tit_modal = ''
     let color_btn_modal = ''
@@ -34,7 +45,7 @@ function modalStatus(texto,tipo){
     var sectionModal = document.createElement('section')
 
     sectionModal.innerHTML = '<section class="section_modal"> <span class="overlay-modal"></span> <div class="modal-box">'+icon_modal+' <h2 class="titulo_pop_up">'+tit_modal+'</h2> <h3 class="subtitulo_pop_up">'+texto+'</h3> <div class="buttons-pop_up"> <div class="container_dos_btns"> <button class="close-btn" style="background-color: '+color_btn_modal+'">Ok, fechar</button> </div> </div> </div> </section>'
-    // sectionModal.style.display = 'none'
+    
     sectionModal.classList.add('section_modal') 
 
     document.body.insertBefore(sectionModal, document.body.firstChild);
@@ -49,8 +60,7 @@ function modalStatus(texto,tipo){
     closeModalBtn.addEventListener('click', closeModal);
 
      
-    function openModal() {
-        console.log("qual quer coisa ai");
+    function openModal() { 
         overlay.style.opacity = '1';
         overlay.style.pointerEvents = 'auto';
         modal.style.opacity = '1';
