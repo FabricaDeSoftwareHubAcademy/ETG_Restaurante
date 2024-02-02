@@ -39,10 +39,9 @@ class Checklist
         return $data;
     }
 
-    public static function getDoneCheck() {
+    public static function getDoneCheck($inicio = 0) {
         $obj_banco = new Banco('check_concluidas');
-        // $limit = "$inicio, $fim";
-        $data = $obj_banco -> select() -> fetchAll(PDO::FETCH_ASSOC);
+        $data = [$obj_banco -> select(limit: "$inicio, 5") -> fetchAll(PDO::FETCH_ASSOC), $obj_banco -> select(campos: 'count(*) as total') -> fetch(PDO::FETCH_ASSOC)];
         return $data;
     }
     public static function getChecklist()
