@@ -129,7 +129,7 @@ $("#botao-sim-submit").on('click',async function(event){
         $("input").val('') 
 
     }else{
-
+        
         modalStatus('A pergunta está cadastrada em um checklist','error')
 
     }

@@ -1,4 +1,16 @@
 function modalStatus(texto,tipo){
+    var sectionModal = document.querySelectorAll(".section_modal");
+
+// Verifique se o elemento foi encontrado antes de tentar removê-lo
+    if (sectionModal) {
+        sectionModal.forEach((item) => {
+
+            item.remove()
+
+        })
+    }
+
+
     let icon_modal = '';
     let tit_modal = ''
     let color_btn_modal = ''
