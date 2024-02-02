@@ -454,9 +454,7 @@ select {
  
   .input_senha_label{
     margin-left: 2%;
-  }
-   
-
+  } 
 }
 
 @media (max-width: 735px) {

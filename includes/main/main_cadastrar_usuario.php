@@ -1,4 +1,6 @@
 <link rel="stylesheet" href="../assets/css/cadastrar_usuario.css">
+<script src="../assets/js/modais.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
 <!-- <link rel="stylesheet" href="../assets/css/estilo_botoes_padronizados.css"> -->
 <!-- <link rel="stylesheet" href="../modais/usuario_cadastrado.php"> -->
@@ -89,38 +91,50 @@ button.addEventListener('click', async (e) =>{
     // } 
     
     if (nomes.length > 0 && emails.length > 0 && options.length > 0 && matricula.length > 0 && senhas.length > 0) {
-        console.log("DSAdsad")
-        let form = document.getElementById('form_cad')
-        console.log(form)
 
-        let formData = new FormData(form)
-        let dados_php = await fetch("../pages/actions/action_cadastrar_user.php",{
-            method:"POST",
-            body: formData
-        })
+        if(emails.includes('@')){ 
 
-        let response = await dados_php.json()
- 
-        console.log(response)
+            let form = document.getElementById('form_cad')
+              
+            let formData = new FormData(form)
+            let dados_php = await fetch("../pages/actions/action_cadastrar_user.php",{
+                method:"POST",
+                body: formData
+            }) 
+            let response = await dados_php.json() 
+    
+            if(response.status){ 
 
-        if(response.status){
+                $('#nomes').val('')
+                $('#emails').val('')
+                $('#matricula').val('')
+                $('#senhas').val('') 
 
-            console.log("funfou")
+
+
+                modalStatus('Usuário cadastrado com Sucesso!','success')
+    
+            }
+            else{
+                modalStatus('Ocorreu um erro, tente novamente mais tarde!','error')
+            }
+
+        }else{
+
+            modalStatus('Insira um E-mail Válido!','error')
+
 
         }
-        else{
-            console.log("nao funfou")
-        }
+     
 
 
     } else {
-        console.log("Preencha todos os campos.");
+        modalStatus('Preencha todos os campos!','error')
     }
 
 });
 
 </script>
-    
-    <?php include_once("./../includes/modais/usuario_cadastrado.php"); ?>
+     
 
 </body>
