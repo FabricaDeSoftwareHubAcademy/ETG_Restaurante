@@ -2,6 +2,9 @@
 session_start();
 include_once("../includes/menu.php");
 use App\Entity\Checklist;
+
+
+// $_GET['pagina'] = $_GET['pagina'] ?? 1;
 $checklist = array_chunk(Checklist::getDoneCheck(), 5);
 // var_dump($checklist);
 

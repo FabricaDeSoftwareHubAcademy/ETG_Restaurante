@@ -41,6 +41,7 @@ class Checklist
 
     public static function getDoneCheck() {
         $obj_banco = new Banco('check_concluidas');
+        // $limit = "$inicio, $fim";
         $data = $obj_banco -> select() -> fetchAll(PDO::FETCH_ASSOC);
         return $data;
     }
