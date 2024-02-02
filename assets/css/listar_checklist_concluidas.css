@@ -38,6 +38,12 @@ a{
 .lista{
     width: 75%;
 }
+@media screen and (max-width: 420px){
+    .lista{
+        width: 90%;
+    }
+    
+}
 .card{
     display: flex;
     justify-content: space-between;
@@ -49,21 +55,40 @@ a{
     padding: 15px;
     margin-bottom: 10px;
 }
+.card .card_detalhes{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-right: 10px;
+}
+@media screen and (max-width: 680px){
+    .card .card_detalhes{
+        flex-wrap: wrap;
+    }
+}
 .card_img{
     width: 250px;
+    height: 20px;
     min-height: 100px;
     border-radius: 5px;
     background-color: #C4C4C4;
 
 }
+.img_sala{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+}
 .card_info{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    flex-grow: 1;
+    /* flex-grow: 1; */
     margin-left: 10px;
     height: 100%;
-
+    /* width: 100%; */
 }
 .card .card_text{
     display: flex;
