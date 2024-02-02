@@ -15,32 +15,23 @@
                     </div>
                 </section> -->
                 <section class="lista">
-                    <?php 
-                if(!isset($_GET['pagina'])){
-                    $_GET['pagina'] = 0;
-                }
-                $length = count($arr);
-                echo ($_GET['pagina']<$length) ? $arr[$_GET['pagina']] : '<h1>nenhum registro encontrado</h1>' ; 
+                <?php 
+                    echo $_GET['pagina']>$length? '<h1>nenhum registro encontrado</h1>' : $list;
                 ?>
-            </section>
+                </section>
             <div class="pagination">
                 <?php
-                if($_GET['pagina'] > 0){
-                    echo '<a href="listar_checklist_concluidas.php?pagina=0"><i class="bi bi-chevron-double-left"></i></a>';
-                    echo '<a href="listar_checklist_concluidas.php?pagina='.($_GET['pagina']-1).'"><i class="bi bi-chevron-left"></i></i></a>';
-                }
+                    if($_GET['pagina'] > 1){
+                        echo '<a href="listar_checklist_concluidas.php?pagina=1"><i class="bi bi-chevron-double-left"></i></a>';
+                        echo '<a href="listar_checklist_concluidas.php?pagina='.($_GET['pagina']-1).'"><i class="bi bi-chevron-left"></i></i></a>';
+                    }
+                    echo "<input type='number' value='".$_GET['pagina'],"' class='input_pagination'><div>/$length</div>";
 
-                // echo '<input type="number" vlaue="'.$_GET['pagina']+1.'">'.$length;
-
-                // echo $_GET['pagina']+1,'/', $length;
-
-                echo "<input type='number' value='".$_GET['pagina']+1,"' class='input_pagination'><div>/$length</div>";
-
-                echo '<button type="button" class="btn_pagination">ir</button>';
-                if($_GET['pagina'] < $length-1){
-                    echo '<a href="listar_checklist_concluidas.php?pagina='.($_GET['pagina']+1).'"><i class="bi bi-chevron-right"></i></a>';
-                    echo '<a href="listar_checklist_concluidas.php?pagina='.($length-1).'"><i class="bi bi-chevron-double-right"></i></a>';
-                }
+                    echo '<button type="button" class="btn_pagination">ir</button>';
+                    if($_GET['pagina'] < $length){
+                        echo '<a href="listar_checklist_concluidas.php?pagina='.($_GET['pagina']+1).'"><i class="bi bi-chevron-right"></i></a>';
+                        echo '<a href="listar_checklist_concluidas.php?pagina='.($length).'"><i class="bi bi-chevron-double-right"></i></a>';
+                    }
                 ?>
             </div>
         </section>
