@@ -248,13 +248,17 @@ body{
 }
 
 .leg_azul{
-    display: flex;
+    /* display: flex;
     width: 30px;
     height: 23px;
-    background-color: #2020f2;
-    border-radius: 8px;
+    border-radius: 8px; 
+    background-color: #2020f2; */
 }
 
+.fa-solid, .fas{
+    font-size: 30px;
+    color: #064a8c;
+}
 
 .leg_laranja{
     display: flex;
