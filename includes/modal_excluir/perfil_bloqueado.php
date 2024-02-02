@@ -3,7 +3,7 @@
 
         <span class="overlay-modal"></span>
         <div class="modal-box">
-            <i class="fas fa-lock" id="icon-pergunta"></i>
+            <i class="fa-regular fa-circle-xmark" id="icon-pergunta"></i>
             <h2 class="titulo_pop_up">Esse perfil não pode ser excluído.</h2>
             <h3 class="subtitulo_pop_up">O perfil está associado a um um usuário!</h3>
 
@@ -14,4 +14,6 @@
                 <!-- <button class="close-modal-btn" style="display: none;">Fechar</button> -->
             </div>
         </div> 
+
         
+      
