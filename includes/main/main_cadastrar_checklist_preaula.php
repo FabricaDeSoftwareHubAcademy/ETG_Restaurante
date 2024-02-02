@@ -26,8 +26,8 @@
 
     <!-- PARTE DO MEIO (checklist e botões) -->
     <main class="main_checklist">
-        <form method="POST" class="checklist_pre_aula">
-
+        <form method="POST" class="checklist_pre_aula"> 
+ 
             <!-- PARTE DO CHECKLIST -->
             <div class="list-pre-aula"> <?=$dados_imprimir ?> </div>
 

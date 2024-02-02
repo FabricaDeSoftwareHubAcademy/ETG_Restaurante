@@ -23,8 +23,8 @@ $id_usuario = isset($_SESSION['id_user']) ? $_SESSION['id_user'] : ""; //do meto
 $data_fechamento = null;
 
 $dados_pergunta = $obj_pergunta::getDados($id_sala);  
-$dados_sala = $obj_sala::getDadosById($id_sala);
-// var_dump($dados_pergunta);exit;
+// $dados_sala = $obj_sala::getDadosById($id_sala);
+
 if ($dados_pergunta)
 {
     foreach ($dados_pergunta as $linha)

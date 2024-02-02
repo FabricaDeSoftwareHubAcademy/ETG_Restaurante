@@ -50,7 +50,7 @@ class Notificacao
 
     return $dados;
     }
-
+ 
     public static function getDados()
     {
     $obj_banco = new Banco ('notificacao');

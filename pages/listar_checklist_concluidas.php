@@ -14,24 +14,32 @@ foreach($checklist as $gp){
     foreach($gp as $row){
         // var_dump($row);
         // echo "<br><br>";
+        $row['data_abertura'] = date('d/m/Y H:i', strtotime($row['data_abertura']));
+        $row['data_fechamento'] = date('d/m/Y H:i', strtotime($row['data_fechamento']));
+        $row['conf_logis'] = ($row['conf_logis']=='n') ? '<i class="bi bi-exclamation-octagon"></i>' : '<i class="bi bi-check-square"></i>';
         $list .= '<a href="validar_checklist.php?id_realizacao='.$row['id_responder'].'" class="card">
-                    <div class="card_img">
-                        <img src="../assets/img/sala.jpg" alt="foto da sala">
-                    </div>
-                    <div class="card_info">
-                        <div class="card_text">
-                            <div class="card_header_title">
-                                <h3>'.$row['nome_sala'].'</h3>
-                            </div>
-                            
-                            <div class="card_header_subtitle">
-                                <p>aberto às '.$row['data_abertura'].'</p>
-                                <p>fechado às '.$row['data_fechamento'].'</p>
-                            </div>
-    
+                    <div class="card_detalhes">
+                        <div class="card_img">
+                            <img class="img_sala" src="../storage/salas/'.$row['img_sala'].'" alt="foto da sala">
                         </div>
-    
+                        <div class="card_info">
+                            <div class="card_text">
+                                <div class="card_header_title">
+                                    <h3>'.$row['nome_sala'].'</h3>
+                                </div>
+                                
+                                <div class="card_header_subtitle">
+                                    <p>Aberto: '.$row['data_abertura'].'</p>
+                                    <p>Fechado: '.$row['data_fechamento'].'</p>
+                                </div>
+        
+                            </div>
+                        </div>
                     </div>
+                    
+                    <div class="card_icon">'.
+                    $row['conf_logis']
+                    .'</div>
                 </a>';
     }
     array_push($arr,$list);
