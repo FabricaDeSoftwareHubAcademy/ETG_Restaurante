@@ -31,6 +31,12 @@
                         <i class="bi bi-search" id="lupa"></i>
                     </div>
                 </div>
+
+                <!-- AQUI É A PARTE DA LEGENDA -->
+
+                <section class = "legenda">
+                    legenda
+                </section>
             
             <!-- AQUI ELE ESTÁ PRINTANDO AS PERGUNTAS DO BANCO NOS CARDS (ver em "cadastrar_pergunta.php")-->
                 
