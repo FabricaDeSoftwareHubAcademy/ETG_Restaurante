@@ -7,6 +7,6 @@
     <script src="../assets/js/modais.js"></script>
 </head>
 <body>
-    <button onclick="modal('Testado!','error')">Clique Me!!!</button>
+    <button onclick="modalStatus('Testado!','error')">Clique Me!!!</button>
 </body>
 </html>
