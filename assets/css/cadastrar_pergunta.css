@@ -56,7 +56,7 @@ body{
 
 .aunt{
     width: 100%;
-    height: 70000vh;
+    height: 75vh;
     display: flex;      
     justify-content: space-evenly;
     align-items: center;
@@ -66,7 +66,7 @@ body{
 @media screen and (max-width:550px ){
 
     .aunt{
-        height: 65vh;
+        height: 67vh;
     }
     
     .cabecalho-menu{
@@ -152,7 +152,7 @@ body{
 .pesquisa{
     display: block;
     width: 85%;
-    height: 9vh;
+    height: 7vh;
     background-color: rgb(255, 255, 255);
 }
 
@@ -239,8 +239,42 @@ body{
 
 .legenda{
     display: flex;
+    justify-content: center;
+    width: 85%;
+    height: 3vh;
+    background-color: rgb(255, 255, 255);
+    gap: 8px;
+    padding-left: 2px;
+    align-items: center;
 }
 
+.leg_azul{
+    display: flex;
+    width: 100px;
+    height: 40px;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+}
+
+.fa-solid, .fas{
+    font-size: 30px;
+    color: #064a8c;
+}
+
+.leg_laranja{
+   display: flex;
+    width: 115px;
+    height: 40px;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+}
+
+.fa-solid.fa-square{
+    font-size: 29px;
+    color: #F28920;
+}
 
 
 
@@ -291,7 +325,7 @@ body{
 
 .perguntas{
     width: 85%;    
-    height:50vh;
+    height:54vh;
     max-width: 832px;
     background-color: rgb(255, 255, 255);
     overflow: hidden;
@@ -420,7 +454,12 @@ body{
 
 
 
-
+.botao{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
 
 
@@ -468,6 +507,11 @@ body{
         color: #064A8C;
         cursor: pointer;
     }
+
+    .legenda{
+        margin-top: 7px;
+        margin-bottom: 5px;
+    }
 }
 
 @media screen and (max-height:690px ){
@@ -477,11 +521,15 @@ body{
     }
 
     .perguntas{
-        height: 41vh;
+        height: 29vh;
     }
 
     .aunt{
         height: 60vh;
+    }
+
+    .legenda{
+        margin-top: 6px; 
     }
 
 }

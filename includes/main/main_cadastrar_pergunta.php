@@ -1,6 +1,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
+<link rel="stylesheet" href="//use.fontawesome.com/releases/v6.5.1/css/all.css">
 <link href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@4/dark.css" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
 <title>Cadastro de Perguntas</title>
@@ -35,9 +36,11 @@
                 <!-- AQUI É A PARTE DA LEGENDA -->
 
                 <section class = "legenda">
-                    legenda
+                    <div class="leg_azul"><i class="fa-solid fa-play fa-rotate-270"></i>Pré-aula</div>
+                    <div class="leg_laranja"><i class="fa-solid fa-square"></i>Pós-aula</div>
                 </section>
             
+        
             <!-- AQUI ELE ESTÁ PRINTANDO AS PERGUNTAS DO BANCO NOS CARDS (ver em "cadastrar_pergunta.php")-->
                 
                 <section class="perguntas" id="perguntas">
