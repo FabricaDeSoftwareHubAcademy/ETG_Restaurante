@@ -521,11 +521,15 @@ body{
     }
 
     .perguntas{
-        height: 41vh;
+        height: 29vh;
     }
 
     .aunt{
         height: 60vh;
+    }
+
+    .legenda{
+        margin-top: 6px; 
     }
 
 }
