@@ -32,13 +32,6 @@
                         <i class="bi bi-search" id="lupa"></i>
                     </div>
                 </div>
-
-                <!-- AQUI É A PARTE DA LEGENDA -->
-
-                <section class = "legenda">
-                    <div class="leg_azul"><i class="fa-solid fa-play fa-rotate-270"></i>Pré-aula</div>
-                    <div class="leg_laranja"><i class="fa-solid fa-square"></i>Pós-aula</div>
-                </section>
             
         
             <!-- AQUI ELE ESTÁ PRINTANDO AS PERGUNTAS DO BANCO NOS CARDS (ver em "cadastrar_pergunta.php")-->
@@ -98,6 +91,7 @@
         <form class="overlay" id="form_cad_pergunta_checklist" style="opacity: 1;">
 
             <div class="popup_cad_checklist" id="popup_cad_checklist">
+
                 <h4>Escolha um checklist para inserir ou excluir a pergunta:</h4>
 
                 <div class="area_checklists">

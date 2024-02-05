@@ -237,44 +237,18 @@ body{
 
 
 
-.legenda{
-    display: flex;
-    justify-content: center;
-    width: 85%;
-    height: 3vh;
-    background-color: rgb(255, 255, 255);
-    gap: 8px;
-    padding-left: 2px;
-    align-items: center;
-}
 
-.leg_azul{
-    display: flex;
-    width: 100px;
-    height: 40px;
-    align-items: center;
-    justify-content: center;
-    gap: 7px;
-}
 
-.fa-solid, .fas{
-    font-size: 30px;
-    color: #064a8c;
-}
 
-.leg_laranja{
-   display: flex;
-    width: 115px;
-    height: 40px;
-    align-items: center;
-    justify-content: center;
-    gap: 7px;
-}
 
-.fa-solid.fa-square{
-    font-size: 29px;
-    color: #F28920;
-}
+
+
+
+
+
+
+
+
 
 
 
@@ -325,13 +299,13 @@ body{
 
 .perguntas{
     width: 85%;    
-    height:54vh;
+    height:50vh;
     max-width: 832px;
     background-color: rgb(255, 255, 255);
     overflow: hidden;
     overflow-y: scroll;
     border-radius: 10px;
-    padding: 5px;
+    padding: 7px;
 }
 
 .perguntas::-webkit-scrollbar{
@@ -347,23 +321,22 @@ body{
 
 .question1{
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    background-color: #F9F8F8;    ;
+    justify-content: space-between;
+    background-color: #F9F8F8;
     width: 99%;
     min-height: 100px;
     border-radius: 18px;
     margin-bottom: 2vh;
     box-shadow: 1px 4px 4px 1px rgba(0, 0, 0, 0.25);
-    gap: 20px;
     padding-left: 10px;
-    padding-right: 50px;
+    padding-right: 20px;
     position: relative;
     
 }
 
 #question_text{
-    max-width: 520px;
+    max-width: 454px;
     width: 100%;
     word-wrap: break-word;
     font-size: medium;
@@ -472,13 +445,13 @@ body{
 @media screen and (max-width:550px ){
 
     #question_text{
-        font-size: 12px;
+        font-size: 11px;
         font-weight: bold;
         padding: 3%;
     }
     
     .question1{
-        padding-right: 25px;
+        padding-right: 10px;
         min-height: 90px;
     }
 
@@ -514,7 +487,7 @@ body{
     }
 }
 
-@media screen and (max-height:690px ){
+@media screen and (max-height:810px ){
 
     .question1{
         min-height: 70px;
@@ -534,6 +507,29 @@ body{
 
 }
 
+@media screen and (max-width:610px ){
+
+    #question_text {
+        max-width: 275px;
+    }
+ 
+}
+
+@media screen and (max-width:460px ){
+
+    #question_text {
+        max-width: 200px;
+    }
+ 
+}
+
+@media screen and (max-width:430px ){
+
+    #question_text {
+        font-size: 10px;
+    }
+ 
+}
 
 
 button.editar{
