@@ -346,23 +346,28 @@ border-radius: 10px;
     
 }
 
-.bi-lock-fill::before {
-    content: "\f47a";
-    margin-left: 8%;
-    margin-top: 3%;
-    color: red;
-    font-size: 24px;
 
-}
 
 .em-uso {
-    color: #008000;
+    color: #ea8c2f;
     font-size: 12px;
     font-weight: bold;
     margin-left: 76%;
     margin-top: 3%;
-    border: 2px solid #008000;
+    border: 2px solid #ea8c2f;
     border-radius: 15px;
     width: 15%;
+    padding: 1%;
+}
+
+.block {
+    color: red;
+    font-size: 12px;
+    font-weight: bold;
+    margin-left: 2%;
+    margin-top: 3%;
+    border: 2px solid red;
+    border-radius: 15px;
+    width: 20%;
     padding: 1%;
 }
