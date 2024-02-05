@@ -1,8 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,100&family=Poppins:wght@300;400;500;600&family=Raleway:wght@200&display=swap');
+
 *{
-    font-family: "Poppins", sans-serif;
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+.section_modal{ 
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.3);
 }
 button.show-modal,
 .modal-box{
@@ -25,20 +33,19 @@ button.show-modal:hover{
 }
 
 .overlay-modal{
-    opacity: 1;
-    pointer-events: auto;
-    top: 0;
-    left: 0;
-    position: absolute;
+    position: fixed;
+    z-index: 99999;
     height: 100vh;
-    width: 100vw;
+    left: 0;
+    top: 0;
+    width: 100%;
     background: rgba(0, 0, 0, 0.3);
-    opacity: 0; 
-    pointer-events: none; 
-    z-index: 99998;
+    opacity: 0;
+    pointer-events: none;
 }
 .modal-box{
     display: flex;
+    z-index: 99999;
     flex-direction: column;
     align-items: center;
     max-width: 380px;
@@ -48,16 +55,19 @@ button.show-modal:hover{
     padding: 30px 20px;
     opacity: 0;
     pointer-events: none;
-    z-index: 99969699999586554;
-
 
 }
-.modal-box i {
+.modal-box #icon-pergunta {
     font-size: 70px;
-    color: #609437;
+    color: #609437; 
+}
+
+       
+.modal-box .fa-regular.fa-circle-xmark {
+    color: #CB1010 !important; 
 }
 .modal-box .titulo_pop_up{
-    margin-top: 20;
+    margin-top: 20px;
     font-size: 25px;
     font-weight: 500;
     color: #333;
@@ -86,13 +96,40 @@ button.show-modal:hover{
     margin-top: 20px;
     width: 120px;
     height: 45px;
-    background-color: #609437;
+    background-color: #CB1010; 
     border-radius: 20px;
     cursor: pointer;
-    color: var(--cor-primaria-botao-green);
+    color: white;
     font-style: normal;
     font-size: 15px;
     font-weight: 580;
-    color: white;
 
+}
+.open-btn-excluir{
+    margin-top: 20px;
+    width: 120px;
+    height: 45px;
+    background-color: #609437;
+    border: 3px solid var(--cor-primaria-botao-green);
+    border-radius: 20px;
+    cursor: pointer;
+    color: #e3f2fd;
+    font-style: normal;
+    font-size: 15px;
+    font-weight: 580;
+}
+.close-modal-btn{
+    margin-top: 20px;
+    width: 120px;
+    height: 45px;
+    background-color: #609437; 
+    border-radius: 20px;
+    cursor: pointer;
+    color: white;
+    font-style: normal;
+    font-size: 15px;
+    font-weight: 580;
+}
+.fa-circle-xmark  {
+    color: #CB1010;
 }
