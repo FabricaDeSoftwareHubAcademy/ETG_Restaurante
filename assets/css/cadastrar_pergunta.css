@@ -56,7 +56,7 @@ body{
 
 .aunt{
     width: 100%;
-    height: 70000vh;
+    height: 75vh;
     display: flex;      
     justify-content: space-evenly;
     align-items: center;
@@ -66,7 +66,7 @@ body{
 @media screen and (max-width:550px ){
 
     .aunt{
-        height: 65vh;
+        height: 67vh;
     }
     
     .cabecalho-menu{
@@ -325,7 +325,7 @@ body{
 
 .perguntas{
     width: 85%;    
-    height:50vh;
+    height:54vh;
     max-width: 832px;
     background-color: rgb(255, 255, 255);
     overflow: hidden;
@@ -454,7 +454,12 @@ body{
 
 
 
-
+.botao{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
 
 
@@ -501,6 +506,11 @@ body{
         font-size: 27px;
         color: #064A8C;
         cursor: pointer;
+    }
+
+    .legenda{
+        margin-top: 7px;
+        margin-bottom: 5px;
     }
 }
 
