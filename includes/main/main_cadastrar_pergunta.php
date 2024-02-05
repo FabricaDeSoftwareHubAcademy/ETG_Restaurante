@@ -36,8 +36,8 @@
                 <!-- AQUI É A PARTE DA LEGENDA -->
 
                 <section class = "legenda">
-                    <div class="leg_azul" ></div> <i class="fa-solid fa-play fa-rotate-270"></i>Pré-aula 
-                    <div class="leg_laranja"></div> Pós-aula
+                    <div class="leg_azul"><i class="fa-solid fa-play fa-rotate-270"></i>Pré-aula</div>
+                    <div class="leg_laranja"><i class="fa-solid fa-square"></i>Pós-aula</div>
                 </section>
             
         
