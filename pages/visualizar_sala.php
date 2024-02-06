@@ -15,17 +15,21 @@ if(isset($_GET['id_sala'])){
 
     $dados = Sala::getDadosById($id_sala);
  
-} 
+}
 
-$btn_checklist = ''; 
-if(Checklist::getLastCheck($id_sala)["data_fechamento"] == null){
+$btn_checklist = '';
+
+$objCheck = new Checklist();
+$teste = $objCheck->getLastCheck($id_sala);
+
+if($teste[0]["data_abertura"] == null){
     $btn_checklist = '
     <div class="botao-padrao-fazer-checklist">
         <a href="../pages/cadastrar_checklist_preaula.php?id_sala='.$_GET['id_sala'].'"><input type="submit" class="botao-fazer-checklist-submit"  value="FAZER CHECKLIST"></a>
     </div>';
 }else{
     
-    if(Checklist::getLastCheck($id_sala)["data_fechamento"] != null){
+    if($teste[0]["data_fechamento"] != null){
     
         $btn_checklist = '
         <div class="botao-padrao-fazer-checklist">
