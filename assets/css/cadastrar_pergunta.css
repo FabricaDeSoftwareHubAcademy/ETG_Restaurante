@@ -532,6 +532,23 @@ body{
 }
 
 
+@media screen and (max-width:400px ){
+
+    #question_text {
+        max-width: 150px;
+    }
+ 
+}
+
+@media screen and (max-width:350px ){
+
+    #question_text {
+        max-width: 100px;
+    }
+ 
+}
+
+
 button.editar{
     border: none;
     background-color: #F9F8F8;
