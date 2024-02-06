@@ -1,6 +1,10 @@
 <?php
 session_start();
 include_once("../includes/menu.php");
+if(!$ifgencheck){
+    header("Location: ../pages/listar_recados.php");
+}
+
 use App\Entity\Checklist;
 
 
