@@ -266,9 +266,9 @@ function closeSubmenu3(){
 
 document.addEventListener("click", function(event) {
     // Fechar o submenu quando clicar fora dele
-    // if (!submenu.contains(event.target) && !btn_submenu.contains(event.target)) {
-    //     closeSubmenu();
-    // }
+    if (!submenu.contains(event.target) && !btn_submenu.contains(event.target)) {
+        closeSubmenu();
+    }
 
     if (!submenu3.contains(event.target) && !btn_submenu3.contains(event.target)) {
         closeSubmenu3();
@@ -283,8 +283,8 @@ document.addEventListener("click", function(event) {
     if (!container.contains(event.target) && !toggleClick.contains(event.target)) {
         toggleClick.classList.remove("active");
         container.classList.remove("active");
-        // submenu.classList.remove('active');
-        // btn_submenu.setAttribute('onclick', 'openSubmenu()');
+        submenu.classList.remove('active');
+        btn_submenu.setAttribute('onclick', 'openSubmenu()');
         closeModal();
     }
 });
