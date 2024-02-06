@@ -197,10 +197,8 @@ button.show-modal:hover{
                 
             }
 
-            function changeIconAndMessageReverse() {
-
-                
-
+            function changeIconAndMessageReverse() { 
+                 
                 const icon = document.querySelector('.fa-regular.fa-circle-check');
                 const title = document.querySelector('.titulo_pop_up');
                 const message = document.querySelector('.subtitulo_pop_up');
