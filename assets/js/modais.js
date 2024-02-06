@@ -1,12 +1,7 @@
-function modalStatus(texto,tipo){
-    var sectionModal = document.querySelectorAll(".section_modal");
-
-// Verifique se o elemento foi encontrado antes de tentar removê-lo
-    if (sectionModal) {
-        sectionModal.forEach((item) => {
-            item.remove()
-        })
-    } 
+function modalStatus(texto,tipo, callbackFunction = null){
+    
+    resetModalSections()
+    
 
     let icon_modal = '';
     let tit_modal = ''
@@ -45,7 +40,7 @@ function modalStatus(texto,tipo){
         linkElement.href = '../assets/css/modalQuestion.css';
         document.head.appendChild(linkElement);
 
-        htmlModal = '<span class="overlay-modal"></span> <div class="modal-box"> <i class="fa-solid fa-question" id="icon-pergunta"></i> <h2 class="titulo_pop_up">Tem certeza</h2> <h3 class="subtitulo_pop_up">que deseja excluir?</h3> <div class="buttons-pop_up"> <button class="close-btn" id="close-btn-exclur">Cancelar</button> <button class="open-btn-excluir" >Sim</button> <!-- Adicionando um botão de fechar --> <button class="close-modal-btn" style="display: none;">Fechar</button> </div> </div>'
+        htmlModal = '<span class="overlay-modal"></span> <div class="modal-box"> <i class="fa-solid fa-question" id="icon-pergunta"></i> <h2 class="titulo_pop_up">Tem certeza</h2> <h3 class="subtitulo_pop_up">'+texto+'</h3> <div class="buttons-pop_up"> <button class="close-btn" id="close-btn-exclur">Cancelar</button> <button class="open-btn-excluir" >Sim</button> <!-- Adicionando um botão de fechar --> <button class="close-modal-btn" style="display: none;">Fechar</button> </div> </div>'
 
     }
 
@@ -66,10 +61,10 @@ function modalStatus(texto,tipo){
  
 
     var sectionModal = document.createElement('section')
-
     sectionModal.innerHTML = htmlModal
+    sectionModal.id = 'area_modal_del'
     
-    sectionModal.classList.add('section_modal') 
+    
 
     // insere no html 
     document.body.insertBefore(sectionModal, document.body.firstChild);
@@ -78,16 +73,11 @@ function modalStatus(texto,tipo){
     let modal = document.querySelector(".modal-box")
 
    
-    let closeModalBtn = document.querySelector('.close-btn');
-
-     
-    closeModalBtn.addEventListener('click', closeModal);
-    console.log('teste')
-    console.log(closeModalBtn)
-     
+    
 
     if((tipo == "success") || (tipo == "error")){
 
+        
 
         function openModal() { 
             overlay.style.opacity = '1';
@@ -101,15 +91,26 @@ function modalStatus(texto,tipo){
             modal.style.opacity = '0';
             modal.style.pointerEvents = 'none';
         }
+
+        let closeModalBtn = document.querySelector('.close-btn');
+
+     
+        closeModalBtn.addEventListener('click', function(){  
+            resetModalSections()
+            if(callbackFunction != null){ 
+                
+                callbackFunction()
+            }
+
+            
+            closeModal()
+        });
+    
 
 
     }else if(tipo == "question"){
 
-        document.querySelector('.open-btn-excluir').addEventListener('click',function(){
-
-            closeModal()
-
-        })
+        
 
         function openModal() { 
             overlay.style.opacity = '1';
@@ -118,22 +119,55 @@ function modalStatus(texto,tipo){
             modal.style.pointerEvents = 'auto'; 
         }
 
-        function closeModal() {
-            console.log('teste')
+        function closeModal() { 
             overlay.style.opacity = '0';
             overlay.style.pointerEvents = 'none';
             modal.style.opacity = '0';
             modal.style.pointerEvents = 'none';
         }
+
+
+        document.querySelector('.open-btn-excluir').addEventListener('click',function(){ 
+            
+            if(callbackFunction != null){  
+                callbackFunction()
+            }
+            
+            closeModal() 
+        })
+
+        document.querySelector('#close-btn-exclur').addEventListener('click',function(){ 
+            
+            closeModal() 
+        })
+
        
 
     }
 
-
-   
+ 
 
     openModal()
      
-    
+}
+
+
+function resetModalSections(){
+
+    var sectionModal = document.querySelectorAll(".section_modal");
+    var area_modal_del = document.querySelectorAll("#area_modal_del")
+     
+// Verifique se o elemento foi encontrado antes de tentar removê-lo
+    if (sectionModal) {
+        sectionModal.forEach((item) => {
+            item.remove()
+        })
+    } 
+
+    if (area_modal_del) {
+        area_modal_del.forEach((item) => {
+            item.remove()
+        })
+    } 
 
 }

@@ -6,7 +6,18 @@
     <title>Document</title>
     <script src="../assets/js/modais.js"></script>
 </head>
+<script>
+
+    function teste123(teste){ 
+        alert(teste) 
+    }
+    error = false
+
+</script>
 <body>
-    <button onclick="modalStatus('teste','question')">Modal</button>
+    
+    <!-- <button onclick="modalStatus('Deu Certo!!!','question', () => modalStatus('Error!','error'))" >Teste</button> -->
+
+    <button onclick="modalStatus('Deseja deletar esse perfil?','question',  modalStatus('Erro ao deletar Perfil!','error')  )">Cadastrar</button>
 </body>
 </html>
