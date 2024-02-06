@@ -65,40 +65,12 @@ $("#btn_cad_pergunta").click(async function(event){
         $('#check1').prop('checked',false)
         $('#check2').prop('checked',false)
 
-        const Toast = Swal.mixin({
-            toast: true,
-            position: "top-end",
-            showConfirmButton: false,
-            timer: 3000,
-            timerProgressBar: true,
-            didOpen: (toast) => {
-              toast.onmouseenter = Swal.stopTimer;
-              toast.onmouseleave = Swal.resumeTimer;
-            }
-          });
-          Toast.fire({
-            icon: "success",
-            title: "Cadastrado com sucesso"
-          });
+        modalStatus('cadastrado com sucesso!','success')
 
         listarPerguntas()
     }else{
-
-        const Toast = Swal.mixin({
-            toast: true,
-            position: "top-end",
-            showConfirmButton: false,
-            timer: 3000,
-            timerProgressBar: true,
-            didOpen: (toast) => {
-              toast.onmouseenter = Swal.stopTimer;
-              toast.onmouseleave = Swal.resumeTimer;
-            }
-          });
-          Toast.fire({
-            icon: "error",
-            title: "Preencha todos os campos"
-          }); 
+      modalStatus('preencha todos os dados corretamente!','error')
+        
     } 
 })  
 
@@ -123,42 +95,10 @@ $("#botao-sim-submit").on('click',async function(event){
     if(response.status){ 
 
         listarPerguntas()
-        const Toast = Swal.mixin({
-            toast: true,
-            position: "top-end",
-            showConfirmButton: false,
-            timer: 1500,
-            timerProgressBar: true,
-            didOpen: (toast) => {
-              toast.onmouseenter = Swal.stopTimer;
-              toast.onmouseleave = Swal.resumeTimer;
-            }
-          });
-          Toast.fire({
-            icon: "success",
-            title: "Pergunta excluida com sucesso!"
-          }); 
-
-          $("input").val('') 
+          modalStatus('Pergunta excluída com sucesso!','success')
 
     }else{
-        const Toast = Swal.mixin({
-            toast: true,
-            position: "top-end",
-            showConfirmButton: false,
-            timer: 1500,
-            timerProgressBar: true,
-            didOpen: (toast) => {
-              toast.onmouseenter = Swal.stopTimer;
-              toast.onmouseleave = Swal.resumeTimer;
-            }
-          });
-
-          // futuramente falar em qual checklist esta cadastrado :) 
-          Toast.fire({
-            icon: "error",
-            title: "Erro: A pergunta está cadastrada em um checklist"
-          }); 
+      modalStatus('Pergunta já cadastrada num checklist!','error')
 
     }
 }) 
@@ -220,40 +160,11 @@ $("#botao_confirmar_editar").on('click',async function(e){
             closePopup2()
             closePopup1()
 
-            const Toast = Swal.mixin({
-                toast: true,
-                position: "top-end",
-                showConfirmButton: false,
-                timer: 3000,
-                timerProgressBar: true,
-                didOpen: (toast) => {
-                  toast.onmouseenter = Swal.stopTimer;
-                  toast.onmouseleave = Swal.resumeTimer;
-                }
-              });
-              Toast.fire({
-                icon: "success",
-                title: "Editado com sucesso!"
-              });  
+            modalStatus('editado com sucesso!','success') 
         }  
     }else{
 
-        const Toast = Swal.mixin({
-            toast: true,
-            position: "top-end",
-            showConfirmButton: false,
-            timer: 3000,
-            timerProgressBar: true,
-            didOpen: (toast) => {
-              toast.onmouseenter = Swal.stopTimer;
-              toast.onmouseleave = Swal.resumeTimer;
-            }
-          });
-          Toast.fire({
-            icon: "error",
-            title: "Preencha todos os campos"
-          }); 
-        
+      modalStatus('Preencha todos os campos!','error')
     }
 
 })
