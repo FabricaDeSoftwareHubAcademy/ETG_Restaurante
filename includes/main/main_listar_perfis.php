@@ -15,7 +15,7 @@
   crossorigin="anonymous"></script>
   
   <?php 
-    include_once('../includes/modal_excluir/perfil_bloqueado.php');
+    // include_once('../includes/modal_excluir/perfil_bloqueado.php');
     ?>
 <body class="tela_gerenciam_perfis">
     <main class="pai-de-todos">
@@ -44,7 +44,8 @@
             </div> 
         </form>
     </main>
-    <script src="../includes/modal_excluir/perfil_bloqueado.js"></script>
+    <!-- <script src="../includes/modal_excluir/perfil_bloqueado.js"></script> -->
+    <script src="../assets/js/modais.js"></script>
 </body>
 
 <script>
@@ -54,7 +55,7 @@
     {
         let dados = await fetch('./actions/perfil_delete_action.php?id_perfil='+id);
         let response = await dados.json();
-        window.location.reload();
+        // window.location.reload();
         
     }
 
@@ -64,30 +65,18 @@
         var lock = data['children'][0]['attributes']['lock']['value']
         if (lock == 'true')
         {
-             openModal2()
+        
+            modalStatus('Esse perfil não pode ser excluído!!', 'error')
         
         }
         else
         {
-            Swal.fire({
-            title: "Deseja excluir esse perfil?",
-            text: "Essa ação não poderá ser desfeita!",
-            icon: "warning",
-            showCancelButton: true,
-            confirmButtonColor: "#3085d6",
-            cancelButtonColor: "#d33",
-            confirmButtonText: "Sim!"
-            }).then((result) => {
-            if (result.isConfirmed)
-            {
+            modalStatus('Tem certeza que deseja excluir esse perfil?', 'question', () => {
+                modalStatus('Perfil excluído com sucesso!', 'success', () => {
+                    window.location.reload();
+                })
                 deletarPerfil(idtemp);
-                Swal.fire({
-                title: "Excluído!",
-                text: "O perfil foi excluído com sucesso!",
-                icon: "success"
-                });
-            }
-            });
+            })
         }
 
        
