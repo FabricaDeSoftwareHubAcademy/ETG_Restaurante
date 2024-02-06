@@ -94,6 +94,30 @@ class Pergunta
         } 
     }
 
+    public static function getPerguntasByChecklist($id_checklist)
+    {
+        $ids_pergunta = [];
+        $obj_banco = new Banco('relacao_pergunta_checklist');
+        $dados = $obj_banco->select(where:"id_check = '".$id_checklist."'" , order:"id DESC");
+        
+        if($dados){ 
+            
+            $data = $dados->fetchAll(PDO::FETCH_ASSOC);
+            foreach($data as $relacao){
+                array_push($ids_pergunta,$relacao['id']);
+            }
+            
+            $obPergunta = new Banco('cadastro_pergunta');
+            return $obPergunta->select(where:"id IN ('".implode("', '",$ids_pergunta)."')" )->fetchAll(PDO::FETCH_ASSOC);
+
+        }
+        else
+        {
+            return false;
+        } 
+        // return $ids_pergunta;
+    }
+
     public static function filter($nome)
     {
         $obj_banco = new Banco('cadastro_pergunta');

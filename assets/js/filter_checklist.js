@@ -10,7 +10,7 @@ async function listarChecklists(){
     console.log(dadosPerguntas)
     for(check in dadosPerguntas){
         
-         let divPergunta = '<div class="question1 move" animation="right"> <div class="resp_pergunta"> <p name="question_text" id="question_text">'+dadosPerguntas[check].nome+' </p> </div> <div class="icons-question1"> <button class="editar" id="btn_pencil_editar_pergunta" btn_editar="'+dadosPerguntas[check].id+'" onclick="openPopup2()"><i class="bi bi-pencil-square"></i></button> <button class="excluir" id="btn_trash_excluir_pergunta" btn_excluir="'+dadosPerguntas[check].id+'" onclick="openPopup3()"><i class="bi bi-trash"></i></button> </div> </div>'
+         let divPergunta = '<div class="question1 move" animation="right"> <div class="resp_pergunta"> <p name="question_text" id="question_text">'+dadosPerguntas[check].nome+' </p> </div> <div class="icons-question1"> <button class="editar" id="btn_pencil_editar_pergunta" btn_editar="'+dadosPerguntas[check].id+'" ><i class="bi bi-pencil-square"></i></button> <button class="excluir" id="btn_trash_excluir_pergunta" btn_excluir="'+dadosPerguntas[check].id+'" onclick="openPopup3()"><i class="bi bi-trash"></i></button> </div> </div>'
  
         $('#perguntas').append(divPergunta)
     }  
@@ -23,7 +23,7 @@ async function listarChecklists(){
 
     $('[id="btn_pencil_editar_pergunta"]').on('click',async function(){ 
 
-        setDadosPerguntaById($(this).attr('btn_editar'))
+        toEditarChecklist($(this).attr('btn_editar'))
         
     }) 
 
@@ -43,8 +43,7 @@ async function listarChecklists(){
     }) 
     
     var hiddenElements = document.querySelectorAll('.move');
-    hiddenElements.forEach((el) => observer.observe(el))
-
+    hiddenElements.forEach((el) => observer.observe(el)) 
 
 };
 

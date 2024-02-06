@@ -117,6 +117,34 @@
                 </section>
             </div>
             <script>
+                $('#meuFormulario').on('submit', async function (event) {
+                    event.preventDefault();
+                    
+                    let form = document.getElementById('meuFormulario');
+
+                    let formData = new FormData(form);
+                    
+                    let data = await fetch('./actions/action_cad_checklist.php',{
+                        method:'POST',
+                        body: formData
+                    });
+                    let response = await data.json();
+                    if(response){
+
+                        modalStatus('Checklist cadastrado com sucesso!','success',() => {
+
+                            location.href = 'gerenciar_checklist.php'
+
+                        })
+
+                    }
+
+                    
+
+
+                })
+                                
+
                 function showTab(tabId) {
 
                     ResetListaPerguntas() 

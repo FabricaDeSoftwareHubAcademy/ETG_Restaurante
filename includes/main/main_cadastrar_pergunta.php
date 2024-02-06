@@ -33,21 +33,34 @@
                     </div>
                 </div>
 
-
+                
 
             
             <!-- PARTE DO FILTRO -->
 
             <section class="filtro">
 
-                FILTRO:
+                <a class="text_filtro">SELECIONE:</a>
 
-                <div class="pre_aula_filtro">
+                <label class="checkbox-container1">
+                    <input class="custom-checkbox" checked="" type="checkbox">
+                    <a class="text_filtro">Pré-Aula</a>
+                    <span class="checkmark"></span>
+                </label>
+
+                
+                <label class="checkbox-container2">
+                    <input class="custom-checkbox" checked="" type="checkbox">
+                    <a class="text_filtro">Pós-Aula</a>
+                    <span class="checkmark"></span>
+                </label>
+
+                <!-- <div class="pre_aula_filtro">
                     <input type="checkbox" name="pre_aula" id="check_pre_aula"> Pré-Aula
-                </div>
+                </div> 
                 <div class="pos_aula_filtro">
                     <input type="checkbox" name="pos_aula" id="check_pos_aula"> Pós-Aula
-                </div>
+                </div> -->
 
             </section>
             
