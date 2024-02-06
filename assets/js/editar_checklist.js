@@ -58,7 +58,7 @@ async function listarPerguntas() {
 
     getPos.forEach(element => {
         let tr = document.createElement("tr")
-        tr.innerHTML = "<tr id='pergPos'> <td>" + element['descricao'] + "</td> <td><i class='bi bi-pencil-square'></i> </td> </tr>"
+        tr.innerHTML = "<tr id='pergPos'> <td>" + element['descricao'] + "</td> <td><i class='bi bi-trash'></i> </td> </tr>"
         tr.setAttribute('posId', element.id)
 
         $("#tablePos").append(tr)
