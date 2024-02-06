@@ -12,8 +12,8 @@ $("#input").on("input", async function(){
             let descricao =  dadosPerguntas[pergunta].nome.toLowerCase()
             
             if(descricao.includes($("#input").val().toLowerCase())){
-                 let divPergunta = '<div class="question1 move" animation="right"> <div class="resp_pergunta"> <p name="question_text" id="question_text">'+dadosPerguntas[pergunta].nome+' </p></div> <div class="icons-question1"> <button class="editar" id="btn_pencil_editar_pergunta" btn_editar="'+dadosPerguntas[pergunta].id+'" onclick="openPopup2()"><i class="bi bi-pencil-square"></i></button> <button class="excluir" btn_excluir="'+dadosPerguntas[pergunta].id+'" id="btn_trash_excluir_pergunta" onclick="openPopup3()"><i class="bi bi-trash"></i></button> </div> </div>'
-                
+                let divPergunta = '<div class="question1 move" animation="right"> <div class="resp_pergunta"> <p name="question_text" id="question_text">'+dadosPerguntas[check].nome+' </p> </div> <div class="icons-question1"> <button class="editar" id="btn_pencil_editar_pergunta" btn_editar="'+dadosPerguntas[check].id+'" ><i class="bi bi-pencil-square"></i></button> <button class="excluir" id="btn_trash_excluir_pergunta" btn_excluir="'+dadosPerguntas[check].id+'" onclick="openPopup3()"><i class="bi bi-trash"></i></button> </div> </div>'
+
                 $('#perguntas').append(divPergunta)
             }
         }
@@ -23,7 +23,7 @@ $("#input").on("input", async function(){
 
         $('[id="btn_pencil_editar_pergunta"]').on('click',async function(){ 
 
-            setDadosPerguntaById($(this).attr('btn_editar'))
+            toEditarChecklist($(this).attr('btn_editar'))
             
         })
 
@@ -85,7 +85,7 @@ $("#btn_cad_pergunta").click(async function(event){
 
         listarPerguntas()
     }else{
-
+        
         const Toast = Swal.mixin({
             toast: true,
             position: "top-end",
@@ -135,39 +135,13 @@ $("#botao-sim-submit").on('click',async function(event){
     }
 }) 
 
-function setDadosPerguntaById(id){
-    let dados_sala = ''
-    for(let i = 0; i < dadosPerguntas.length; i++){
-        if(dadosPerguntas[i]['id'] == id){
-            dados_sala = dadosPerguntas[i]
-        }
-    }
-    id_atual_editar_pergunta = dados_sala['id']
-    console.log(id_atual_editar_pergunta)
-    if(dados_sala['tipo'] == '0'){
-        $('#check3').prop('checked',true)
-    }
-
-    if(dados_sala['tipo'] == '1'){
-        $('#check4').prop('checked',true)
-    }
-
-    if(dados_sala['tipo'] == '2'){
-        $('#check3').prop('checked',true)
-
-        $('#check4').prop('checked',true)
-    }
-
-    $("#text_editar_pergunta").val(dados_sala['descricao'])  
-}
-
-// function botao cancelar editar 
 $("#botao_cancelar_editar").on('click',async function(event){
 
-    event.preventDefault()  
+    event.preventDefault()   
 
     closePopup2()
     closePopup1()
+ 
 })  
 
 // action editar pergunta  
@@ -227,7 +201,7 @@ $("#botao_confirmar_editar").on('click',async function(e){
           }); 
         
     }
-
+    
 })
 
 
@@ -235,7 +209,7 @@ $("#botao-nao-submit-excluir-pergunta").on('click',function(e){
   e.preventDefault()
   closePopup3()
   closePopup1()
-
-   
-
-})
+}) 
+function toEditarChecklist(id){ 
+    location.href = "./editar_checklist.php?id_checklist="+id 
+}

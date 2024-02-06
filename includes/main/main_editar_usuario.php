@@ -6,6 +6,7 @@
 <link rel="stylesheet" href="../assets/css/editar_senha/editar_senha.css">
 <link rel="stylesheet" href="../assets/css/editar_usuario/editar_usuario.css">
 <script src="https://code.jquery.com/jquery-3.7.0.js"integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM="crossorigin="anonymous"></script>
+<script scr="../assets/js/modais.js"></script>
  
 <body class="pai-de-todos1">
 

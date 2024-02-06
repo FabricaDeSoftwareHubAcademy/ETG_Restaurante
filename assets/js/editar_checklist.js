@@ -6,26 +6,33 @@ $('document').ready(function() {
 })
 
 async function getPerguntas() {
-    let data_php = await fetch("./actions/action_get_perguntas.php")
+
+    const urlParams = new URLSearchParams(window.location.search);
+    const id_checklist = urlParams.get('id_checklist');
+    if(id_checklist == null){
+
+        location.href = "gerenciar_checklist.php"
+
+    }
+
+
+    let data_php = await fetch("./actions/action_get_perguntas_checklist.php?id_checklist="+id_checklist)
     let dados = await data_php.json() 
+ 
     return dados
 }
   
 async function printPerguntas() {
     console.log(await getPerguntas())
 }
-
-
+ 
 async function listarPerguntas() {
     let dadosPerguntas = await getPerguntas()
     $("#tablePre").empty()
     $("#tablePos").empty()
     getPre = []
     getPos = []
-
-
-    // esta comitado 
-
+ 
     dadosPerguntas.forEach(element => {
         
         if ((element.tipo == "0") || (element.tipo == "2")) {
@@ -50,22 +57,24 @@ async function listarPerguntas() {
 
     getPre.forEach(element => {
         let tr = document.createElement("tr")
-        tr.innerHTML = "<tr> <td>" + element['descricao'] + "</td> <td><i class='bi bi-trash'></i> </td> </tr>"
+        tr.innerHTML = "<tr> <td>" + element['descricao'] + "</td> <td><i class='bi bi-trash' id='perg_del' id_excluir="+element.id+" ></i> </td> </tr>"
         tr.setAttribute('preId', element.id)
-
-        $("#tablePre").append(tr)
+         $("#tablePre").append(tr)
     });
 
     getPos.forEach(element => {
         let tr = document.createElement("tr")
-        tr.innerHTML = "<tr id='pergPos'> <td>" + element['descricao'] + "</td> <td><i class='bi bi-trash'></i> </td> </tr>"
+        tr.innerHTML = "<tr id='pergPos'> <td>" + element['descricao'] + "</td> <td><i class='bi bi-trash' id='perg_del' id_excluir="+element.id+" ></i> </td> </tr>"
         tr.setAttribute('posId', element.id)
-
+ 
         $("#tablePos").append(tr)
     });
 
 }
- 
+
+$('[id=perg_del]').on('click',function(){
+    console.log(123123)
+})
 
 var intervalo 
 
@@ -133,52 +142,4 @@ function ResetListaPerguntas(){
     mostrarPerguntas()
 
 }
- 
 
-
-// async function filterPerguntas(e){
-
-//     clearTimeout(intervalo)
-    
-//     intervalo = setTimeout(() => {
-//         // console.log(e.target.value)
-//         $("#tablePre").empty();
-//         $("#tablePos").empty();
-    
-//         // inserindo o topo da tabela 
-//         let trTopo = document.createElement("tr")
-//         trTopo.innerHTML = '<tr class="topo-tabela"> <th>Selecione</th> <th>Pergunta Pré</th> </tr>'
-//         $("#tablePre").append(trTopo)
-    
-//         // inserindo o topo da tabela POS 
-//         let trTopoPos = document.createElement("tr")
-//         trTopoPos.innerHTML = '<tr class="topo-tabela"> <th>Selecione</th> <th>Pergunta Pré</th> </tr>'
-//         $("#tablePos").append(trTopoPos)
-
-
-//         getPre.forEach(element => {
-            
-//             if(element.descricao.toLowerCase().includes(e.target.value.toLowerCase())){
-
-//                 let tr = document.createElement("tr")
-//                 tr.innerHTML = "<tr> <td><input type='checkbox'  id='checkbox' name='perguntas[]' value='" + element['id'] + "'></td> <td>" + element['descricao'] + "</td> </tr>"
-//                 $("#tablePre").append(tr) 
-//             } 
-//         })
-
-
-//         getPos.forEach(element => {
-            
-//             if(element.descricao.toLowerCase().includes(e.target.value.toLowerCase())){
-
-//                 let tr = document.createElement("tr")
-//                 tr.innerHTML = "<tr> <td><input type='checkbox'  id='checkbox' name='perguntas[]' value='" + element['id'] + "'></td> <td>" + element['descricao'] + "</td> </tr>"
-//                 $("#tablePos").append(tr) 
-//             } 
-//         })
-
-//     // repete a função a cada 10ms
-//     },10)
-
-
-// }

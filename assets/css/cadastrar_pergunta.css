@@ -257,27 +257,24 @@ body{
 
 
 
+.filtro{
+    width: 80%;
+    height: 3vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+@media screen and (max-width:350px ){
 
 
+    .filtro{
+        font-size: 13px;
+    }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+}
 
 
 
@@ -494,7 +491,7 @@ body{
     }
 
     .perguntas{
-        height: 29vh;
+        height: 27vh;
     }
 
     .aunt{
@@ -527,6 +524,23 @@ body{
 
     #question_text {
         font-size: 10px;
+    }
+ 
+}
+
+
+@media screen and (max-width:400px ){
+
+    #question_text {
+        max-width: 150px;
+    }
+ 
+}
+
+@media screen and (max-width:350px ){
+
+    #question_text {
+        max-width: 100px;
     }
  
 }

@@ -32,6 +32,24 @@
                         <i class="bi bi-search" id="lupa"></i>
                     </div>
                 </div>
+
+
+
+            
+            <!-- PARTE DO FILTRO -->
+
+            <section class="filtro">
+
+                FILTRO:
+
+                <div class="pre_aula_filtro">
+                    <input type="checkbox" name="pre_aula" id="check_pre_aula"> Pré-Aula
+                </div>
+                <div class="pos_aula_filtro">
+                    <input type="checkbox" name="pos_aula" id="check_pos_aula"> Pós-Aula
+                </div>
+
+            </section>
             
         
             <!-- AQUI ELE ESTÁ PRINTANDO AS PERGUNTAS DO BANCO NOS CARDS (ver em "cadastrar_pergunta.php")-->
