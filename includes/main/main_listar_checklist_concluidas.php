@@ -25,9 +25,11 @@
                         echo '<a href="listar_checklist_concluidas.php?pagina=1"><i class="bi bi-chevron-double-left"></i></a>';
                         echo '<a href="listar_checklist_concluidas.php?pagina='.($_GET['pagina']-1).'"><i class="bi bi-chevron-left"></i></i></a>';
                     }
+
                     echo "<input type='number' value='".$_GET['pagina'],"' class='input_pagination'><div>/$length</div>";
 
                     echo '<button type="button" class="btn_pagination">ir</button>';
+                    
                     if($_GET['pagina'] < $length){
                         echo '<a href="listar_checklist_concluidas.php?pagina='.($_GET['pagina']+1).'"><i class="bi bi-chevron-right"></i></a>';
                         echo '<a href="listar_checklist_concluidas.php?pagina='.($length).'"><i class="bi bi-chevron-double-right"></i></a>';
@@ -42,7 +44,7 @@
         function pagination(){
             var input = document.querySelector('.input_pagination');
             var pagina = input.value;
-            location.href = 'listar_checklist_concluidas.php?pagina='+(pagina-1);
+            location.href = 'listar_checklist_concluidas.php?pagina='+pagina;
         }
     </script>
 </body>
