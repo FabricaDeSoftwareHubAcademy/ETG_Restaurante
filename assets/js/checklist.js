@@ -130,7 +130,7 @@ btn_submit.addEventListener('click', async (e) => {
 
         if(response){
             modalStatus("Cadastrado com sucesso!","success",() => {
-                alert('123123')
+                location.href="listar_salas.php"
             
             });
         }

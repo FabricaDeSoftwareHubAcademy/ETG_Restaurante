@@ -124,8 +124,11 @@ btn_submit.addEventListener('click', async (e ) => {
 
         console.log(response);
 
-        if(response == true){
-            modalStatus("Cadastrado com sucesso!","success",() => {location.href="./listar_salas.php"});
+        if(response){
+            modalStatus("Cadastrado com sucesso!","success",() => {
+                location.href="listar_salas.php"
+            
+            });
         }
        
         }
