@@ -1,16 +1,18 @@
 var intervaloInput 
 
 $("#input").on("input", async function(){ 
+
     clearTimeout(intervaloInput); 
+
     // definindo setTimeout para que dps de 500ms apareça as perguntas
     intervaloInput = setTimeout(async function(){
         $("#perguntas").empty()
         for(pergunta in dadosPerguntas){
 
-            let descricao =  dadosPerguntas[pergunta].descricao.toLowerCase()
+            let descricao =  dadosPerguntas[pergunta].nome.toLowerCase()
+            
             if(descricao.includes($("#input").val().toLowerCase())){
-
-                let divPergunta = '<div class="question1 move" animation="right"> <div class="resp_pergunta"> <p name="question_text" id="question_text">'+dadosPerguntas[pergunta].descricao+' </p></div> <div class="icons-question1"><button class="checklist" id="popup_cad_checklist" onclick="openPopup4()"><i class="bi bi-file-earmark-plus"></i></button> <button class="editar" id="btn_pencil_editar_pergunta" btn_editar="'+dadosPerguntas[pergunta].id+'" onclick="openPopup2()"><i class="bi bi-pencil-square"></i></button> <button class="excluir" btn_excluir="'+dadosPerguntas[pergunta].id+'" id="btn_trash_excluir_pergunta" onclick="openPopup3()"><i class="bi bi-trash"></i></button> </div> </div>'
+                 let divPergunta = '<div class="question1 move" animation="right"> <div class="resp_pergunta"> <p name="question_text" id="question_text">'+dadosPerguntas[pergunta].nome+' </p></div> <div class="icons-question1"> <button class="editar" id="btn_pencil_editar_pergunta" btn_editar="'+dadosPerguntas[pergunta].id+'" onclick="openPopup2()"><i class="bi bi-pencil-square"></i></button> <button class="excluir" btn_excluir="'+dadosPerguntas[pergunta].id+'" id="btn_trash_excluir_pergunta" onclick="openPopup3()"><i class="bi bi-trash"></i></button> </div> </div>'
                 
                 $('#perguntas').append(divPergunta)
             }
@@ -116,49 +118,19 @@ $("#botao-sim-submit").on('click',async function(event){
     event.preventDefault()
     closePopup3()
     closePopup1()
-    let dados_php = await fetch('../pages/actions/action_excluir_pergunta.php?id_pergunta='+id_atual_excluir_pergunta)
+    let dados_php = await fetch('../pages/actions/action_excluir_checklist.php?id_checklist='+id_atual_excluir_pergunta)
 
     let response = await dados_php.json()
-    console.log(response)
     if(response.status){ 
 
-        listarPerguntas()
-        const Toast = Swal.mixin({
-            toast: true,
-            position: "top-end",
-            showConfirmButton: false,
-            timer: 1500,
-            timerProgressBar: true,
-            didOpen: (toast) => {
-              toast.onmouseenter = Swal.stopTimer;
-              toast.onmouseleave = Swal.resumeTimer;
-            }
-          });
-          Toast.fire({
-            icon: "success",
-            title: "Pergunta excluida com sucesso!"
-          }); 
+        listarChecklists()
+        modalStatus('Checklist excluida com sucesso!','success')
 
-          $("input").val('') 
+        $("input").val('') 
 
     }else{
-        const Toast = Swal.mixin({
-            toast: true,
-            position: "top-end",
-            showConfirmButton: false,
-            timer: 1500,
-            timerProgressBar: true,
-            didOpen: (toast) => {
-              toast.onmouseenter = Swal.stopTimer;
-              toast.onmouseleave = Swal.resumeTimer;
-            }
-          });
-
-          // futuramente falar em qual checklist esta cadastrado :) 
-          Toast.fire({
-            icon: "error",
-            title: "Erro: A pergunta está cadastrada em um checklist"
-          }); 
+        
+        modalStatus('A pergunta está cadastrada em um checklist','error')
 
     }
 }) 
@@ -264,5 +236,6 @@ $("#botao-nao-submit-excluir-pergunta").on('click',function(e){
   closePopup3()
   closePopup1()
 
+   
 
 })

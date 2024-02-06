@@ -1,6 +1,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
+<link rel="stylesheet" href="//use.fontawesome.com/releases/v6.5.1/css/all.css">
 <link href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@4/dark.css" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
 <title>Cadastro de Perguntas</title>
@@ -32,6 +33,7 @@
                     </div>
                 </div>
             
+        
             <!-- AQUI ELE ESTÁ PRINTANDO AS PERGUNTAS DO BANCO NOS CARDS (ver em "cadastrar_pergunta.php")-->
                 
                 <section class="perguntas" id="perguntas">
@@ -77,6 +79,29 @@
                 <div class="botoes">
                     <button class="botao-cancelar-submit" id="btn_cancelar_cad_pergunta" value="CANCELAR"  >CANCELAR</button>
                     <button class="botao-confirmar-submit" id="btn_cad_pergunta" value="CONFIRMAR">CONFIRMAR</button>
+                </div>
+            </div>
+        </form>
+
+
+
+
+        <!-- POPUP CADASTRAR PERGUNTA NO CHECKLIST-->
+
+        <form class="overlay" id="form_cad_pergunta_checklist" style="opacity: 1;">
+
+            <div class="popup_cad_checklist" id="popup_cad_checklist">
+
+                <h4>Escolha um checklist para inserir ou excluir a pergunta:</h4>
+
+                <div class="area_checklists">
+                    <h4> AQUI VAI FICAR A LISTINHA DOS CHECKLISTS</h4>
+                </div>
+                
+                <!-- DIV DOS BOTÕES (cancelar e confirmar) -->
+
+                <div class="botoes">
+                    <button class="botao-ok-submit" onclick="closePopup4()" id='botao_cancelar_editar' value="OK" > OK, FECHAR</button>
                 </div>
             </div>
         </form>
@@ -154,6 +179,8 @@
         popup_cadastro_pergunta.classList.remove("open-popup1");
     }
 
+
+
     // SCRIPT DO POPUP DE EDITAR PERGUNTAS
 
     let popup_editar_pergunta = document.getElementById("popup-editar-pergunta");
@@ -167,6 +194,10 @@
         popup_editar_pergunta.classList.remove("open-popup2");
     }
 
+
+
+    // SCRIPT DO POPUP DE EXCLUIR PERGUNTAS
+
     let popup_conf_exclusao = document.getElementById("popup_conf_exclusao");
     function openPopup3(){
 
@@ -176,6 +207,23 @@
     }
     function closePopup3(){
         popup_conf_exclusao.classList.remove("open-popup3");
+    }
+
+
+
+    // SCRIPT DO POPUP DE INSERIR PERGUNTAS NO CHECKLIST
+
+    let popup_cad_checklist = document.getElementById("popup_cad_checklist");
+    function openPopup4(){
+
+        document.getElementById("overlay").style.visibility="visible";
+        popup_cad_checklist.classList.add("open-popup4");
+        
+    }
+    function closePopup4(){ 
+        
+        document.getElementById("overlay").style.visibility="hidden";
+        popup_cad_checklist.classList.remove("open-popup4");
     }
 
 </script>

@@ -59,7 +59,7 @@ if($ifgensala){
         {
             $salas .= '<div class="card_sala move" animation="left">
             
-                            <div class="border_card_sala2" style=" border: 2px solid '.$sala['cor_itens'].'; '.$style.'"> <i class="bi bi-file-lock2"></i></div>
+                            <div class="border_card_sala2" style=" border: 2px solid '.$sala['cor_itens'].'; '.$style.'"> <i class="bi bi-lock-fill"></i></div>
                             <a class="click_sala" '. $link_view_sala .' ><img style="'.$style.'" class="img_card_sala" src="../storage/salas/'.$sala['img_sala'].'" alt=""></a>
                             <a href="editar_sala.php?id_sala='.$sala['id'].'"><img  class="icon_editar_sala" src="../assets/imgs/icons/btn_editar.png" alt=""></a>
                             <div class="area_title_sala2">
