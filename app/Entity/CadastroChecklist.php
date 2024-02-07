@@ -45,7 +45,7 @@ class CadastroChecklist
                 $obBanco -> insert($idLista); 
                 array_push($pergJaCad,$idPergunta);
 
-                echo($idPergunta);
+                 
             }
        }
     }
