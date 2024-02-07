@@ -85,7 +85,6 @@
 
 
 .label_checklist{
-  display: flex;
   max-width: 533px;
   height: 104px;
   flex-shrink: 0;
@@ -94,6 +93,10 @@
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
   padding: 15px;
   width: 100%;
+  overflow: hidden;
+  /* flex-wrap: wrap; */
+  word-wrap: break-word;
+
 }
 
 /* icons */
