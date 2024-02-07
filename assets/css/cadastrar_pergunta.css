@@ -1109,7 +1109,7 @@ h4{
     align-items: center;
     top: 55%;
     left: 50%;
-    transform: translate(-50%, -50%) scale(0.1);
+    transform: translate(-50%, -50%) scale(0);
     text-align: center;
     padding: 0 30px 30px;
     color: #333;
@@ -1385,7 +1385,7 @@ h9{
 #form_cad_pergunta {
 
     position: absolute;
-    z-index: 9999999999999;
+    z-index: 999999999;
 
 }
 
@@ -1393,7 +1393,7 @@ h9{
 
 
     position: absolute;
-    z-index: 9999999999999;
+    z-index: 999999999;
 
 }
 .overlay {
