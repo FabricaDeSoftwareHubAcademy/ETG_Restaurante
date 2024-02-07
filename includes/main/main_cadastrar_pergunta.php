@@ -4,6 +4,7 @@
 <link rel="stylesheet" href="//use.fontawesome.com/releases/v6.5.1/css/all.css">
 <link href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@4/dark.css" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
+<script defer src="../assets/js/ajax_checklist.js"></script>
 <title>Cadastro de Perguntas</title>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
@@ -119,9 +120,21 @@
 
                 <h4>Escolha um checklist para inserir ou excluir a pergunta:</h4>
 
-                <div class="area_checklists">
-                    <h4> AQUI VAI FICAR A LISTINHA DOS CHECKLISTS</h4>
-                </div>
+                <section class="area_checklists">
+                    <div class="checklist_card"></div>
+                    <div class="checklist_card"></div>
+                    <div class="checklist_card"></div>
+                    <div class="checklist_card"></div>
+                    <div class="checklist_card"></div>
+                    <div class="checklist_card"></div>
+                    <div class="checklist_card"></div>
+                    <div class="checklist_card"></div>
+                    <div class="checklist_card"></div>
+                    <div class="checklist_card"></div>
+                    <div class="checklist_card"></div>
+                    <div class="checklist_card"></div>
+                    <div class="checklist_card"></div>
+                </section>
                 
                 <!-- DIV DOS BOTÕES (cancelar e confirmar) -->
 
