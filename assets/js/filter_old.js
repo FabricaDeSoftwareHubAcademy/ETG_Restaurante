@@ -70,9 +70,7 @@ $("#btn_cad_pergunta").click(async function(event){
             body: formData
         })
         let response = await dados_php.json()
-
-        console.log(response) 
-
+ 
         closePopup1()
         $("#nova_pergunta").val('')
         $('#check1').prop('checked',false)
@@ -114,8 +112,7 @@ $("#botao-sim-submit").on('click',async function(event){
       modalStatus('Pergunta já cadastrada num checklist!','error')
 
     }
-}) 
-
+})  
 function setDadosPerguntaById(id){
     let dados_sala = ''
     for(let i = 0; i < dadosPerguntas.length; i++){
@@ -140,8 +137,7 @@ function setDadosPerguntaById(id){
     }
 
     $("#text_editar_pergunta").val(dados_sala['descricao'])  
-}
-
+} 
 // function botao cancelar editar 
 $("#botao_cancelar_editar").on('click',async function(event){
 
@@ -163,8 +159,7 @@ $("#botao_confirmar_editar").on('click',async function(e){
             method:"POST",
             body: formData
 
-        })
-
+        }) 
         let response = await dados_php.json()
         if(response.status){
  
@@ -178,17 +173,13 @@ $("#botao_confirmar_editar").on('click',async function(e){
     }else{
 
       modalStatus('Preencha todos os campos!','error')
-    }
-
-})
-
+    } 
+}) 
 
 $("#botao-nao-submit-excluir-pergunta").on('click',function(e){
   e.preventDefault()
   closePopup3()
-  closePopup1()
-
-
+  closePopup1() 
 })
 
 $('#checkPre').on('change',function(e){ 
