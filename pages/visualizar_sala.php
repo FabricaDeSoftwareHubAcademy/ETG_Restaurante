@@ -47,8 +47,6 @@ if (isset($teste[0]["data_abertura"]) == null) {
     }
 }
 
-
-
 // print_r($dados);
 // echo($dados['funcionamento']);
 $funcionamento = json_decode($dados[0]['horarios'], true);
