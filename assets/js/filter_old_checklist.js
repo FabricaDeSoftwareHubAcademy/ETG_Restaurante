@@ -9,10 +9,13 @@ $("#input").on("input", async function(){
         $("#perguntas").empty()
         for(pergunta in dadosPerguntas){
 
+            let nome_pergunta = dadosPerguntas[pergunta].nome
             let descricao =  dadosPerguntas[pergunta].nome.toLowerCase()
             
             if(descricao.includes($("#input").val().toLowerCase())){
-                let divPergunta = '<div class="question1 move" animation="right"> <div class="resp_pergunta"> <p name="question_text" id="question_text">'+dadosPerguntas[check].nome+' </p> </div> <div class="icons-question1"> <button class="editar" id="btn_pencil_editar_pergunta" btn_editar="'+dadosPerguntas[check].id+'" ><i class="bi bi-pencil-square"></i></button> <button class="excluir" id="btn_trash_excluir_pergunta" btn_excluir="'+dadosPerguntas[check].id+'" onclick="openPopup3()"><i class="bi bi-trash"></i></button> </div> </div>'
+                console.log(descricao)
+                let divPergunta = ''
+                divPergunta = '<div class="question1 move" animation="right"> <div class="resp_pergunta"> <p name="question_text" id="question_text">'+nome_pergunta+' </p> </div> <div class="icons-question1"> <button class="editar" id="btn_pencil_editar_pergunta" btn_editar="'+dadosPerguntas[check].id+'" ><i class="bi bi-pencil-square"></i></button> <button class="excluir" id="btn_trash_excluir_pergunta" btn_excluir="'+dadosPerguntas[check].id+'" onclick="openPopup3()"><i class="bi bi-trash"></i></button> </div> </div>'
 
                 $('#perguntas').append(divPergunta)
             }
