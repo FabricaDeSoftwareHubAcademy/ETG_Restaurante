@@ -78,14 +78,15 @@ th {
 }
 
 td {
-  
-  border-bottom: 2px solid rgb(166, 166, 166);
-  font-family: 'Montserrat';
-  border-radius: 8px;
-  padding: 8px;
-  text-align: center;
-  color: rgb(0, 0, 0);
-  font-weight: bold;    
+    max-width: 100px;
+    border-bottom: 2px solid rgb(166, 166, 166);
+    font-family: 'Montserrat';
+    border-radius: 8px;
+    padding: 8px;
+    text-align: center;
+    word-wrap: break-word;
+    color: rgb(0, 0, 0);
+    font-weight: bold;
 }
 
 

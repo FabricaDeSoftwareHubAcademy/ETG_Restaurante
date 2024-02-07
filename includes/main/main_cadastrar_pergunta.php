@@ -10,6 +10,7 @@
 
 <link rel="stylesheet" href="../assets/css/cadastrar_pergunta.css">
 
+<script src="../assets/js/modais.js"></script>
 <script src="../assets/js/filter.js"></script>
 <script defer src="../assets/js/filter_old.js"></script> 
 
@@ -43,24 +44,17 @@
                 <a class="text_filtro">SELECIONE:</a>
 
                 <label class="checkbox-container1">
-                    <input class="custom-checkbox" checked="" type="checkbox">
+                    <input class="custom-checkbox" id="checkPre" checked="" type="checkbox">
                     <a class="text_filtro">Pré-Aula</a>
                     <span class="checkmark"></span>
                 </label>
 
                 
                 <label class="checkbox-container2">
-                    <input class="custom-checkbox" checked="" type="checkbox">
+                    <input class="custom-checkbox" id="checkPos" checked="" type="checkbox">
                     <a class="text_filtro">Pós-Aula</a>
                     <span class="checkmark"></span>
                 </label>
-
-                <!-- <div class="pre_aula_filtro">
-                    <input type="checkbox" name="pre_aula" id="check_pre_aula"> Pré-Aula
-                </div> 
-                <div class="pos_aula_filtro">
-                    <input type="checkbox" name="pos_aula" id="check_pos_aula"> Pós-Aula
-                </div> -->
 
             </section>
             

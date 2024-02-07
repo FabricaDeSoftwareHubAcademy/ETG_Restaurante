@@ -7,6 +7,7 @@
 <link rel="stylesheet" href="../assets/css/cadastrar_checklist/posicao.css">
 <link rel="stylesheet" href="../assets/css/cadastrar_checklist/caixa_pergunta.css">
 <link rel="stylesheet" href="../assets/css/cadastrar_checklist/botões-checklist.css">
+<script defer src="../assets/js/modais.js"></script>
 <script defer src="../assets/js/ajax_checklist.js"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 
@@ -117,6 +118,34 @@
                 </section>
             </div>
             <script>
+                $('#meuFormulario').on('submit', async function (event) {
+                    event.preventDefault();
+                    
+                    let form = document.getElementById('meuFormulario');
+
+                    let formData = new FormData(form);
+                    
+                    let data = await fetch('./actions/action_cad_checklist.php',{
+                        method:'POST',
+                        body: formData
+                    });
+                    let response = await data.json();
+                    if(response){
+
+                        modalStatus('Checklist cadastrado com sucesso!','success',() => {
+
+                            location.href = 'gerenciar_checklist.php'
+
+                        })
+
+                    }
+
+                    
+
+
+                })
+                                
+
                 function showTab(tabId) {
 
                     ResetListaPerguntas() 
