@@ -59,11 +59,9 @@
 
 .ajusta-botao2{
   display: flex;
-  position: relative;
-
-  background-color: aqua;
-  width: 100%;
+  width: 135.5%;
   justify-content: space-between;
+  margin-top: 5%;
 }
 
 
@@ -331,13 +329,7 @@
 }
 
 
-.ajusta-input2{
-  /* background-color: aqua; */
-  width: 100%;
-  display: flex;  
-  justify-content: space-between;
 
-}
 
 
 .dropdown-ck{
@@ -351,12 +343,14 @@
 }
 
 .dropdown-ck .option{
+  width: 210px;
   font-weight: 600;  
   background-color: rgb(255, 255, 255);
   font-size: 'Montserrat';
   border-bottom: black;
   font-size: 17px;
   opacity: 0.4;
+  margin-top: 18%;
 }
 
 
@@ -376,7 +370,7 @@
 }
 
 .input_field_M {
-  width: 120%;
+  width: 100%;
   border: none;
   border-bottom: 2px solid #9b9b9b;
   outline: 0;
@@ -410,7 +404,7 @@
   font-style: normal;
   font-weight: 400;
   font-size: 20px;
-  left: -9%;
+  left: 3px;
 }
 
 .input_field_M:focus {
@@ -439,8 +433,7 @@
 
 select {
   border: 0px solid #aaa; 
-  border-radius: 5px; 
-  margin-top: 5.5%;
+
 }
 
 /* CSS Botão VOLTAR NOVO NEW */

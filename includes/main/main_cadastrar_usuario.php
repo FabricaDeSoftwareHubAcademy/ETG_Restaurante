@@ -36,14 +36,16 @@
                             
                         </select> 
                         <div class="barra"></div> 
-                        
-                        
-                        <div class="input_group_M field">
-                            <input type="input" class="input_field_M" name="num_matricula" id="matricula" placeholder="Name" required="">
-                            <label for="name" class="input_label_M">N° de Matricula</label> <!--Alterar para o nome do input-->
-                        </div>
                     </div>
-                    
+
+
+                    <div class="input_group_M field">
+                        <input type="input" class="input_field_M" name="num_matricula" id="matricula" placeholder="Name" required="">
+                        <label for="name" class="input_label_M">N° de Matricula</label> 
+                    </div> 
+                        
+                        
+
                 </div>
                     
     
