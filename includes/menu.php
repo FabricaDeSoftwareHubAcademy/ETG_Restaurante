@@ -86,7 +86,7 @@ $ifreaac = $perfil['realizar_acao_corretiva'] == '1';
                             .'
                             <li class="iten-submenu2"><a href="../pages/editar_usuario.php" id="fonte-submenu2">Minha Conta</a></li>
                             </ul>
-                            </li>';
+                        </li>';
                     ?>
                 </li>
                 
@@ -102,11 +102,11 @@ $ifreaac = $perfil['realizar_acao_corretiva'] == '1';
                             </a>
                             <ul class="sub-menu3">
                                 '.
-                                ($ifgencheck ?? '<li class="iten-submenu3"><a href="gerenciar_checklist.php" id="fonte-submenu3">Vizualizar Check-List</a></li>').
+                                ($ifgencheck ? '<li class="iten-submenu3"><a href="gerenciar_checklist.php" id="fonte-submenu3">Vizualizar Check-List</a></li>':'').
                                 
-                                ($ifreaac ?? '<li class="iten-submenu3"><a href="listar_checklist_concluidas.php" id="fonte-submenu3">Validar Check-List</a></li>')
+                                ($ifreaac ? '<li class="iten-submenu3"><a href="listar_checklist_concluidas.php" id="fonte-submenu3">Validar Check-List</a></li>': '').
                                 
-                                ($ifgencheck ?? '<li class="iten-submenu3"><a href="cadastrar_checklist.php" id="fonte-submenu3">Cadastrar Check-List</a></li>')
+                                ($ifgencheck ?'<li class="iten-submenu3"><a href="cadastrar_checklist.php" id="fonte-submenu3">Cadastrar Check-List</a></li>':'')
                             .'</ul>
                         </li>';
                     }
