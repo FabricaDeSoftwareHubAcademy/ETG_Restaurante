@@ -97,21 +97,8 @@ btn_submit.addEventListener('click', async (e) => {
         if (respondidas[chave] == null)
         {
             continuar_rodando = false 
-            const Toast = Swal.mixin({
-                toast: true,
-                position: "top-end",
-                showConfirmButton: false,
-                timer: 3000,
-                timerProgressBar: true,
-                didOpen: (toast) => {
-                    toast.onmouseenter = Swal.stopTimer;
-                    toast.onmouseleave = Swal.resumeTimer;
-                }
-            });
-            Toast.fire({
-                icon: "error",
-                title: "Preencha todas as perguntas"
-            });
+            
+            modalStatus("Marque todos os campos","error")
             break;
             
         }
@@ -139,11 +126,14 @@ btn_submit.addEventListener('click', async (e) => {
        let response = await data_php.json();
 
 
-        console.log(response);
+        console.log("response");
 
-    if(response == true){
-        openModal();
-    }
+        if(response){
+            modalStatus("Cadastrado com sucesso!","success",() => {
+                location.href="listar_salas.php"
+            
+            });
+        }
 
   
        
@@ -151,23 +141,22 @@ btn_submit.addEventListener('click', async (e) => {
 
 
     });
-    const showModalBtn = document.getElementById('btn_submit');
-    const closeModalBtn = document.querySelector('.close-btn');
-    const openModalBtn = document.querySelector('.open-btn');
-    const overlay = document.querySelector('.overlay-modal');
-    const modal3 = document.querySelector('.modal-box');
-    function openModal() {
-        overlay.style.opacity = '1';
-        overlay.style.pointerEvents = 'auto';
-        modal3.style.opacity = '1';
-        modal3.style.pointerEvents = 'auto';
-    }
-    function closeModal() {
-        overlay.style.opacity = '0';
-        overlay.style.pointerEvents = 'none';
-        modal3.style.opacity = '0';
-        modal3.style.pointerEvents = 'none';
-    }
-    // showModalBtn.addEventListener('click', openModal);
-    closeModalBtn.addEventListener('click', closeModal);
-    // openModalBtn.addEventListener('click', openModal);
+    // const showModalBtn = document.getElementById('btn_submit');
+    // const closeModalBtn = document.querySelector('.close-btn');
+    // const openModalBtn = document.querySelector('.open-btn');
+    // const overlay = document.querySelector('.overlay-modal');
+    // const modal3 = document.querySelector('.modal-box');
+    // function openModal() {
+    //     overlay.style.opacity = '1';
+    //     overlay.style.pointerEvents = 'auto';
+    //     modal3.style.opacity = '1';
+    //     modal3.style.pointerEvents = 'auto';
+    // }
+    // function closeModal() {
+    //     overlay.style.opacity = '0';
+    //     overlay.style.pointerEvents = 'none';
+    //     modal3.style.opacity = '0';
+    //     modal3.style.pointerEvents = 'none';
+    // }
+    // closeModalBtn.addEventListener('click', closeModal);
+    
