@@ -1148,15 +1148,6 @@ box-shadow: none;
     width: 50%;
   
 }
-
-.input_field.toguro::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-}
-
-.input_field.toguro {
-  -moz-appearance: textfield;
-}
-
   }
   .cadastro_codigo .toguro{
     width: 60%;
@@ -1196,7 +1187,7 @@ box-shadow: none;
     
     border: dashed  black 2px;
   }
-}
+
 
 
 
