@@ -216,3 +216,5 @@ $("#botao-nao-submit-excluir-pergunta").on('click',function(e){
 function toEditarChecklist(id){ 
     location.href = "./editar_checklist.php?id_checklist="+id 
 }
+
+
