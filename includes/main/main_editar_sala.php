@@ -77,7 +77,7 @@
 
 
                             <div class="input_group field ">
-                                <input type="input" value="<?=$dados_sala[0]['codigo']?>" class="input_field toguro required" placeholder="Name" required="" name="codigo" maxLength="8"  id="codigo_sala" style="text-transform:uppercase" />
+                                <input type="text" value="<?=$dados_sala[0]['codigo']?>" class="input_field toguro required" placeholder="Name" required="" name="codigo" maxLength="4"  id="codigo_sala" style="text-transform:uppercase" />
                                 <h4 class="span-required diferentao">Preenchimento obrigatório</h4>
                                 <label for="name" class="input_label toguro" > Código </label> <!--Alterar para o nome do input-->
                             </div>
@@ -292,7 +292,7 @@
                             
                             if(nome_sala){
                                 
-                                if((codigo_sala.value.length > 0)){
+                                if((codigo_sala.trim() !== '' && !isNaN(codigo_sala))){
                                     
                                     codigo_sala = true;
 

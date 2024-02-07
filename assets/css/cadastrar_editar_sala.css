@@ -1146,7 +1146,16 @@ box-shadow: none;
   .input_field.toguro{
 
     width: 50%;
+  
+}
 
+.input_field.toguro::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+.input_field.toguro {
+  -moz-appearance: textfield;
+}
 
   }
   .cadastro_codigo .toguro{
