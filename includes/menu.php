@@ -195,7 +195,7 @@ $ifreaac = $perfil['realizar_acao_corretiva'] == '1';
         <!-- <script src="js.js"></script>     -->
         <div class="container-logo">
             <div class="logo">
-                <ul class="cabecalho_logo"><img src="../assets/imgs/logos/MicrosoftTeams-image.png" alt="Carregando" id = "img-logo"></ul>
+                <ul class="cabecalho_logo"><img src="../assets/imgs/logos/senacFec_colored.png" alt="Carregando" id = "img-logo"></ul>
             </div>
             <div class="fitas">
                 <ul class="sub-fita"><div id="bloc1"></div></ul>

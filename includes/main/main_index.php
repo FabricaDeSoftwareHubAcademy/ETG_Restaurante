@@ -11,7 +11,7 @@
     <img class="wave_login" src="assets/imgs/waves/wave (4).png" alt="">
     <img class="wave_login wave2" src="assets/imgs/waves/wave 2.png" alt="">
     <img class="wave_login wave3" src="assets/imgs/waves/wave 2.png" alt="">
-    <img class="img_logo_login" src="assets/imgs/icons/logo.png" alt="">
+    <img class="img_logo_login" src="assets/imgs/logos/senacFec_white.png" alt="">
          
 
         <div class="quadrado_input_login"></div>
