@@ -32,15 +32,16 @@
     height: 30px;
     display: flex;
     text-align: center;
-    padding-top: 10px;
+    /* padding-top: 10px; */
+    justify-content: space-between;
 }
 
 .titulo-selecione-pergunta-pos {
     height: 30px;
     display: flex;
     text-align: center;
-    padding-top: 10px;
-
+    /* padding-top: 10px; */
+    justify-content: space-between;
 }
 
 .titulo-topo {
