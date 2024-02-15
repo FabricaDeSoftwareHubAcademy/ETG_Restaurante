@@ -92,11 +92,14 @@ async function confirmarEditar(){
    
        response = await request.json();
        console.log(response)
-       if(response['status']){
-   
-           closePopup()
-           location.reload();
-   
+       if(response['status']){ 
+
+        // modalStatus('Recado editado com Sucesso!','success',() => { 
+
+        location.reload(); 
+        // })
+
+
        }else{
            // mensagem de erro 
        }
@@ -104,27 +107,9 @@ async function confirmarEditar(){
 
     }else{
 
-        const Toast = Swal.mixin({
-            toast: true,
-            position: 'top-end',
-            showConfirmButton: false,
-            timer: 3000,
-            timerProgressBar: true,
-            didOpen: (toast) => {
-              toast.addEventListener('mouseenter', Swal.stopTimer)
-              toast.addEventListener('mouseleave', Swal.resumeTimer)
-            }
-        })
-        
-        Toast.fire({
-            icon: 'error',
-            title: 'Digite algo'
-        })
+      modalStatus('Digite algo','error')
 
-    }
-
-
-
+    } 
 }
 
 function openModalExcluir(){
@@ -135,12 +120,13 @@ function openModalExcluir(){
      
     btn_confirmar.setAttribute('id_recado',id_recado);
     
-    modalExcluirRecado.classList.add('active');
-    overlay_excluir.classList.add('active');
+    modalStatus('Deseja excluir esse recado?','question',() => {
+        deletarRecado()
+    })
 
-    bnt_excluir.forEach(btn => {
-        btn.removeEventListener('click', openModalExcluir)
-    })  
+    // bnt_excluir.forEach(btn => {
+    //     btn.removeEventListener('click', openModalExcluir)
+    // })  
 
 }
 function retornaAlgo(){
@@ -167,11 +153,14 @@ async function deletarRecado(){
  
     const response = await dados.json();
     if(response['status']){
-
-        location.reload()
+        modalStatus('Recado excluído com Sucesso!','success',() => { 
+            location.reload() 
+        })
 
     }else{
-        console.log("Algo inesperado aconteceu")
+        modalStatus('Algo inesperado aconteceu','error',() => { 
+            location.reload() 
+        })
     } 
 }
  
@@ -195,16 +184,15 @@ async function cadastrarRecado(){
 
         const response = await dados.json()
         if(response['status']){
-            location.reload()
-        }else{
+            modalStatus('Cadastrado com Sucesso!','success',() => {
+                location.reload()
+            })
+
+        }else{ 
             console.log(response['status'])
         } 
-    }else{
- 
-        modalStatus('Digite Algo','error')
-        
-        
-
+    }else{ 
+        modalStatus('Digite Algo','error') 
     }
 
 
