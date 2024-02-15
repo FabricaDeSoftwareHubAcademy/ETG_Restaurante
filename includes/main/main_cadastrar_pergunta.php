@@ -45,14 +45,14 @@
                 <a class="text_filtro">SELECIONE:</a>
 
                 <label class="checkbox-container1">
-                    <input class="custom-checkbox" checked="" type="checkbox">
+                    <input class="custom-checkbox" id="checkPre" checked="" type="checkbox">
                     <a class="text_filtro">Pré-Aula</a>
                     <span class="checkmark"></span>
                 </label>
 
                 
                 <label class="checkbox-container2">
-                    <input class="custom-checkbox" checked="" type="checkbox">
+                    <input class="custom-checkbox" id="checkPos" checked="" type="checkbox">
                     <a class="text_filtro">Pós-Aula</a>
                     <span class="checkmark"></span>
                 </label>
