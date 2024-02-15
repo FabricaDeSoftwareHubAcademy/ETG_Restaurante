@@ -20,6 +20,7 @@ button.show-modal,
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
 
 }
+
 button.show-modal:hover{
     background-color: #265df2;
 }
@@ -35,7 +36,7 @@ button.show-modal:hover{
     background: rgba(0, 0, 0, 0.3);
     opacity: 0; 
     pointer-events: none; 
-    z-index: 9999999;
+    z-index: 9999999999;
 }
 .modal-box{
     display: flex;

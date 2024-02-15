@@ -7,6 +7,7 @@
 <link rel="stylesheet" href="../assets/css/cadastrar_checklist/posicao.css">
 <link rel="stylesheet" href="../assets/css/cadastrar_checklist/caixa_pergunta.css">
 <link rel="stylesheet" href="../assets/css/cadastrar_checklist/botões-checklist.css">
+<script defer src="../assets/js/modais.js"></script>
 <script defer src="../assets/js/ajax_checklist.js"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 

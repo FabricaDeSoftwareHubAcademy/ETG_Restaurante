@@ -996,13 +996,26 @@ h4{
 /* CAIXA DE TEXTO */
 
 .area_checklists{
-    width: 100%;
+    border-radius: 5px;
+    margin-top: 1%;
+    width: 98%;
     height: 400px;
+    max-width: 832px;
     background-color: #efefef;
-    border-radius: 20px;
-    margin-top: 2%;
-    display: flex;
-    align-items: center;
+    overflow: hidden;
+    overflow-y: scroll;
+    border: 2px solid #064a8c;
+}
+
+.area_checklists::-webkit-scrollbar {
+    width: 8px;
+    background-color: #e9e8e8;
+    border-radius: 10px;
+}
+
+.area_checklists::-webkit-scrollbar-thumb {
+    background-color: #F28920;
+    border-radius: 10px;
 }
 
 .nova_pergunta{
@@ -1069,13 +1082,41 @@ h4{
 }
 
 
+/* CARDS ONDE FICAM A LISTA DOS CHECKLISTS */
 
+.checklist_card{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #F9F8F8;
+    width: 99%;
+    min-height: 65px;
+    border-radius: 5px;
+    margin-bottom: 0.5vh;
+    box-shadow: 1px 4px 4px 1px rgba(0, 0, 0, 0.25);
+    padding-left: 20px;
+    padding-right: 20px;
+    position: relative;
+}
 
+/* BOTÃO DO CARD DE CHECKLIST */
 
+.bi.bi-plus-circle{
+    font-size: 30px;
+    color: #064A8C;
+    cursor: pointer;
+}
 
+/* TEXTO DO CARD CHECKLIST */
 
-
-
+.card_text{
+    max-width: 454px;
+    width: 100%;
+    word-wrap: break-word;
+    font-size: medium;
+    font-weight: bold;
+    padding: 3%;
+}
 
 
 
@@ -1109,7 +1150,7 @@ h4{
     align-items: center;
     top: 55%;
     left: 50%;
-    transform: translate(-50%, -50%) scale(0.1);
+    transform: translate(-50%, -50%) scale(0);
     text-align: center;
     padding: 0 30px 30px;
     color: #333;
@@ -1385,7 +1426,7 @@ h9{
 #form_cad_pergunta {
 
     position: absolute;
-    z-index: 9999999999999;
+    z-index: 999999999;
 
 }
 
@@ -1393,7 +1434,7 @@ h9{
 
 
     position: absolute;
-    z-index: 9999999999999;
+    z-index: 999999999;
 
 }
 .overlay {

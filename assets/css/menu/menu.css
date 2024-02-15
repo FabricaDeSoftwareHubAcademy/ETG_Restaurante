@@ -585,10 +585,12 @@
 
 }
 #img-logo{
-  width: 130px;
-  height: 80px;
-  
+  width: 200px;
+  height: 56px;
+  margin-top: 6px;
 }
+
+
 
 @keyframes bloc2 {
   from {height: 90px;top: 0px; background-color:  #F28920 ;}
@@ -623,6 +625,11 @@
   @keyframes bloc2 {
     from {height: 67px;top: 0px; background-color: #064A8C;}
     to {height: 90px ;}   
+  }
+  #img-logo{
+    width: 130px;
+    height: 36px;
+  
   }
 }
 
