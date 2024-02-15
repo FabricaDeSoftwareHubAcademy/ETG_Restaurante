@@ -26,30 +26,24 @@
                     <label for="name" class="input_e-mail_label">E-mail</label> <!--Alterar para o nome do input-->
                 </div>
                 
-           
-                <div class="ajusta-botao2">
-
+                
+                <div class="mover_input">
                     <div class="dropdown-ck">
                         <select name="id_perfil" id="options" class="option">
                             <option value="">Selecione seu Perfil</option>
                             <?=$options?>
                             
                         </select> 
-                        <div class="barra"></div> 
-                    </div>
-
-
-                    <div class="input_group_M field">
-                        <input type="input" class="input_field_M" name="num_matricula" id="matricula" placeholder="Name" required="">
-                        <label for="name" class="input_label_M">N° de Matricula</label> 
-                    </div> 
-                        
-                        
-
+                    <div class="barra"></div> 
                 </div>
+
+                
+                <div class="input_group">
+                    <input type="input" class="input_field_matricula" name="num_matricula" id="matricula" placeholder="Name" required="">
+                    <label for="name" class="input_label_matricula">N° de Matricula</label> <!--Alterar para o nome do input-->
+                </div>
+            </div>
                     
-    
-            
             <!--Input Senha-->
             <div class="input_senha_group field">
                 <input type="password" class="input_senha_field" name="senha" id="senhas" placeholder="Name" required="">
