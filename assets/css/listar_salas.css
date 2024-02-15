@@ -178,7 +178,7 @@ border-radius: 10px;
     border-radius: 20px;
     cursor: pointer;
     color: var(--cor-primaria-botao-green);
-    font-style: normal;
+    font-G: normal;
     font-size: 'Montserrat';
     font-weight: bold;
     font-size: 15px;
@@ -360,7 +360,84 @@ border-radius: 10px;
     padding: 1%;
 }
 
+.livre {
+    color:green;
+    font-size: 12px;
+    font-weight: bold;
+    margin-left: 76%;
+    margin-top: 3%;
+    border: 2px solid green;
+    border-radius: 15px;
+    width: 15%;
+    padding: 1%;
+}
+
+.desativado{
+    color:gray;
+    font-size: 12px;
+    font-weight: bold;
+    margin-left: 76%;
+    margin-top: 3%;
+    border: 2px solid gray;
+    border-radius: 15px;
+    width: 15%;
+    padding: 1%;
+
+}
+
 .block {
+    color: red;
+    font-size: 12px;
+    font-weight: bold;
+    margin-left: 2%;
+    margin-top: 3%;
+    border: 2px solid red;
+    border-radius: 15px;
+    width: 20%;
+    padding: 1%;
+}
+
+/* -------- */
+
+
+.em-uso2 {
+    color: #ea8c2f;
+    font-size: 12px;
+    font-weight: bold;
+    margin-left: 20px;
+    margin-top: 3%;
+    border: 2px solid #ea8c2f;
+    border-radius: 15px;
+    width: 15%;
+    padding: 1%;
+}
+
+.livre2 {
+    color: green;
+    font-size: 12px;
+    font-weight: bold;
+    margin-left: 20px;
+    margin-top: 3%;
+    border: 2px solid green;
+    border-radius: 15px;
+    width: 15%;
+    padding: 1%;
+}
+
+.desativado2{
+    color:gray;
+    font-size: 12px;
+    font-weight: bold;
+    margin-left: 20px;
+    margin-top: 3%;
+    border: 2px solid gray;
+    border-radius: 15px;
+    width: 15%;
+    padding: 1%;
+
+}
+
+.block2 {
     color: red;
     font-size: 12px;
     font-weight: bold;
