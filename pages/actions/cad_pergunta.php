@@ -21,10 +21,8 @@ if(isset($_POST['antes_da_aula'],$_POST['depois_da_aula'])){
 }elseif(isset($_POST['depois_da_aula'])){
     // apenas depois 
     $obPergunta->cadastrar('1');
-
 }
- 
-
+  
 echo(json_encode($_POST));
 
 ?>
