@@ -77,14 +77,12 @@
                 <li class="tab-button active" id="btn_pre" onclick="showTab('tab1')">Pré-Aula</li>
                 <li class="tab-button" id="btn_pos" onclick="showTab('tab2')">Pós-Aula</li>
                 <div class="line" id="line"></div>
-                <div class="adicionar_pergunta">
-                        <a id="add_pergunta" href="../pages/cadastrar_pergunta.php"><i class="fa-solid fa-plus"  id="icon_add"></i></a>
-                </div>
             </ul>
             <!-- Conteúdo das abas -->
             <div id="tab1" class="tab" style="display: block;">
                 <div class="titulo-selecione-pergunta-pre">
                     <h1 id="titulo-pergunta-pos">Selecione as Perguntas Pré Aula:</h1>
+                    <i class="bi bi-plus-circle"></i>
                 </div>
                 <section class="selecao-pergunta">
                     <table class="tabela-perguntas" id = "tablePre" name="pergunta">

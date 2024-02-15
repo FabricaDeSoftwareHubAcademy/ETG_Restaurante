@@ -148,7 +148,8 @@ td {
 }
 
 /* Adicionar Pergunta */
-.adicionar_pergunta{
+
+/* .adicionar_pergunta{
   display: flex;
     height: 30px;
     width: 30px;
@@ -173,8 +174,14 @@ td {
 #add_pergunta:hover,#icon_add:hover{
   transition: all 0.2s ease-in-out;
   background-color: #064A8C;
-  color: white;
+  color: white; 
+}*/
+
+.bi.bi-plus-circle{
+  font-size: 27px;
+  color: #064A8C;
+  cursor: pointer;
+  padding-right: 25px;
+  left: 740px;
+  position: absolute;
 }
-
-
- 
