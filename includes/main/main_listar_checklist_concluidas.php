@@ -20,31 +20,45 @@
                 ?>
                 </section>
             <div class="pagination">
-                <?php
-                    if($_GET['pagina'] > 1){
-                        echo '<a href="listar_checklist_concluidas.php?pagina=1"><i class="bi bi-chevron-double-left"></i></a>';
-                        echo '<a href="listar_checklist_concluidas.php?pagina='.($_GET['pagina']-1).'"><i class="bi bi-chevron-left"></i></i></a>';
-                    }
+                <div class='numeros'>
+                    <?php
+                        if($_GET['pagina'] > 1){
+                            echo '<a href="listar_checklist_concluidas.php?pagina=1"><i class="bi bi-chevron-double-left"></i></a>';
+                            echo '<a href="listar_checklist_concluidas.php?pagina='.($_GET['pagina']-1).'"><i class="bi bi-chevron-left"></i></i></a>';
+                        }
 
-                    echo "<input type='number' value='".$_GET['pagina'],"' class='input_pagination'><div>/$length</div>";
+                        echo "<label>".$_GET['pagina']."/$length</label>";
+                        
+                        if($_GET['pagina'] < $length){
+                            echo '<a href="listar_checklist_concluidas.php?pagina='.($_GET['pagina']+1).'"><i class="bi bi-chevron-right"></i></a>';
+                            echo '<a href="listar_checklist_concluidas.php?pagina='.($length).'"><i class="bi bi-chevron-double-right"></i></a>';
+                        }
 
-                    echo '<button type="button" class="btn_pagination">ir</button>';
-                    
-                    if($_GET['pagina'] < $length){
-                        echo '<a href="listar_checklist_concluidas.php?pagina='.($_GET['pagina']+1).'"><i class="bi bi-chevron-right"></i></a>';
-                        echo '<a href="listar_checklist_concluidas.php?pagina='.($length).'"><i class="bi bi-chevron-double-right"></i></a>';
-                    }
-                ?>
+                    ?>
+                </div>
+                <form class='form_pages'>
+                    <label for="select_pages">pagina:</label>
+                    <select name="pagina" id="select_pages">
+                        <option value="" disabled selected></option>
+                        <?php
+                            for($i=1; $i<=$length; $i++){
+                                echo "<option value='$i'>$i</option>";
+                            }
+                        ?>
+                    </select>
+                    <button class='btn_pagination'><i class="bi bi-search"></i></button>
+                </form>
             </div>
         </section>
     </main>
     <script>
-        var btn = document.querySelector('.btn_pagination');
-        btn.addEventListener('click',pagination)
-        function pagination(){
-            var input = document.querySelector('.input_pagination');
-            var pagina = input.value;
-            location.href = 'listar_checklist_concluidas.php?pagina='+pagina;
-        }
+        // var btn = document.querySelector('.btn_pagination');
+        // btn.addEventListener('click',pagination)
+        // function pagination(){
+        //     var input = document.getElementById('.input_pagination');
+        //     console.log(input);
+            // var pagina = input.value;
+            // location.href = 'listar_checklist_concluidas.php?pagina='+pagina;
+        // }
     </script>
 </body>
