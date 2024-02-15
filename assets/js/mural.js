@@ -184,10 +184,11 @@ async function cadastrarRecado(){
 
         const response = await dados.json()
         if(response['status']){
+
             modalStatus('Cadastrado com Sucesso!','success',() => {
                 location.reload()
-            })
-
+            }) 
+            
         }else{ 
             console.log(response['status'])
         } 
