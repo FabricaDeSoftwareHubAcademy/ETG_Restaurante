@@ -121,19 +121,10 @@
                 <h4>Escolha um checklist para inserir ou excluir a pergunta:</h4>
 
                 <section class="area_checklists">
-                    <div class="checklist_card"></div>
-                    <div class="checklist_card"></div>
-                    <div class="checklist_card"></div>
-                    <div class="checklist_card"></div>
-                    <div class="checklist_card"></div>
-                    <div class="checklist_card"></div>
-                    <div class="checklist_card"></div>
-                    <div class="checklist_card"></div>
-                    <div class="checklist_card"></div>
-                    <div class="checklist_card"></div>
-                    <div class="checklist_card"></div>
-                    <div class="checklist_card"></div>
-                    <div class="checklist_card"></div>
+                    <div class="checklist_card">
+                    <i class="bi bi-plus-circle"></i>
+                    <div class="card_text"> Nome de checklist </div>
+                    </div>
                 </section>
                 
                 <!-- DIV DOS BOTÕES (cancelar e confirmar) -->

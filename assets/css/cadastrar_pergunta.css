@@ -996,15 +996,14 @@ h4{
 /* CAIXA DE TEXTO */
 
 .area_checklists{
-    border-radius: 20px;
+    border-radius: 5px;
     margin-top: 1%;
-    width: 100%;
+    width: 98%;
     height: 400px;
     max-width: 832px;
     background-color: #efefef;
     overflow: hidden;
     overflow-y: scroll;
-    padding: 7px;
     border: 2px solid #064a8c;
 }
 
@@ -1077,15 +1076,40 @@ h4{
     justify-content: space-between;
     background-color: #F9F8F8;
     width: 99%;
-    min-height: 100px;
-    border-top: 0.5px solid black;
-    padding-left: 10px;
+    min-height: 65px;
+    border-radius: 5px;
+    margin-bottom: 0.5vh;
+    box-shadow: 1px 4px 4px 1px rgba(0, 0, 0, 0.25);
+    padding-left: 20px;
     padding-right: 20px;
     position: relative;
 }
 
+.area_checklists::-webkit-scrollbar {
+    width: 8px;
+    background-color: #e9e8e8;
+    border-radius: 10px;
+}
 
+.area_checklists::-webkit-scrollbar-thumb {
+    background-color: #F28920;
+    border-radius: 10px;
+}
 
+.bi.bi-plus-circle{
+    font-size: 30px;
+    color: #064A8C;
+    cursor: pointer;
+}
+
+.card_text{
+    max-width: 454px;
+    width: 100%;
+    word-wrap: break-word;
+    font-size: medium;
+    font-weight: bold;
+    padding: 3%;
+}
 
 
 
