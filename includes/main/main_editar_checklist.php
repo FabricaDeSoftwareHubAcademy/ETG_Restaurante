@@ -82,7 +82,29 @@
             <div id="tab1" class="tab" style="display: block;">
                 <div class="titulo-selecione-pergunta-pre">
                     <h1 id="titulo-pergunta-pos">Selecione as Perguntas Pré Aula:</h1>
-                    <i class="bi bi-plus-circle"></i>
+
+
+                    <button class="pergunta_popup" id="popup_cad_pergunta" onclick="openPopup5()"><i class="bi bi-plus-circle"></i></button>
+                    <form class="overlay" id="form_cad_checklist_pergunta" style="opacity: 1;">
+
+                        <div class="popup_cad_pergunta" id="popup_cad_pergunta">
+
+                            <h4>Escolha um checklist para inserir ou excluir a pergunta:</h4>
+
+                            <section class="area_pergunta">
+                                <div class="pergunta_card">
+                                <i class="bi bi-plus-circle"></i>
+                                <div class="card_text"> Nome de checklist </div>
+                                </div>
+                            </section>
+                
+                            <!-- DIV DOS BOTÕES (cancelar e confirmar) -->
+
+                            <div class="botoes">
+                                <button class="botao-ok-submit" onclick="closePopup5()" id='botao_cancelar_editar' value="OK" > OK, FECHAR</button>
+                            </div>
+                        </div>
+                    </form>
                 </div>
                 <section class="selecao-pergunta">
                     <table class="tabela-perguntas" id = "tablePre" name="pergunta">
@@ -100,6 +122,7 @@
             <div id="tab2" class="tab">
                 <div class="titulo-selecione-pergunta-pos">
                     <h1 id="titulo-pergunta-pos">Selecione as Perguntas Pós Aula:</h1>
+                    <i class="bi bi-plus-circle"></i>
                 </div>
                 <section class="selecao-pergunta">
                     <table class="tabela-perguntas" id="tablePos">
@@ -156,68 +179,24 @@
                     </div>
                 </div>
             </div>
+
+            
             <script>
-                // if(nome_checklist != ""  && pergunta != "" ){
-                //         let button = document.getElementById("btn_cadastrar")
-                //         button.addEventListener('click', async (e) => {
-                //             // alert("dsadsa")
-                //             e.preventDefault()
-                //             let form = document.getElementById('meuFormulario')
-                //             console.log(form)
+                
+                let popup_cad_pergunta = document.getElementById("popup_cad_pergunta");
+                function openPopup4(){
 
-                //             let formData = new FormData(form)
-                //             // console.log(formData)
+                    document.getElementById("overlay").style.visibility="visible";
+                    popup_cad_pergunta.classList.add("open-popup5");
+        
+                }
 
-                //             var nome_checklist =  document.getElementById("nome_checklist")
-                //             var pergunta = document.getElementById("pergunta")
-                //             let dados_php = await fetch("../pages/actions/actn_checklist.php", {
-                //                 method: "POST",
-                //                 body: formData
-                //             })
+                function closePopup4(){ 
+        
+                    document.getElementById("overlay").style.visibility="hidden";
+                    popup_cad_pergunta.classList.remove("open-popup5");
+                }
 
-                //             // alert("Ta chegando até aqui !")
-                //             let response = await dados_php.json()
-
-                //             console.log(response);
-
-
-                //             console.log(response);
-                            
-
-                //             if (response) {
-
-                //                 let popup = document.getElementById('popup-up-notificacao');
-                //                 let btn = document.getElementById("submit-btn-notificacao");
-
-                //                 // btn.style.display = "none";
-
-                //                 popup.classList.add("open-popup");
-
-                //                 let blur = document.getElementById("blur");
-
-                //                 blur.classList.add("active");
-
-
-
-                //             } else {
-                //                 let popup = document.getElementById('popup-up-notificacao');
-                //                 let btn = document.getElementById("submit-btn-notificacao");
-
-                //                 // btn.style.display = "none";
-
-                //                 popup.classList.add("open-popup");
-
-                //                 let blur = document.getElementById("blur");
-
-                //                 blur.classList.add("active");
-                //             }
-                      
-                //         });
-                //     }
-
-
-                    
-               
             </script>
 
         </form>
