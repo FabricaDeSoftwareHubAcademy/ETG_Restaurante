@@ -10,8 +10,7 @@
 
 <link rel="stylesheet" href="../assets/css/estilo_botoes_padronizados.css">
 <link rel="stylesheet" href="../assets/css/cadastrar_editar_perfil.css">
-<link href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@4/dark.css" rel="stylesheet">
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
+<script src = "../assets/js/modais.js"></script>
 
 
 
@@ -124,24 +123,9 @@
 
         if (response == true)
         {
-            const Toast = Swal.mixin({
-                    toast: true,
-                    position: 'top-end',
-                    showConfirmButton: false,
-                    timer: 3000,
-                    timerProgressBar: true,
-                    didOpen: (toast) => {
-                        toast.addEventListener('mouseenter', Swal.stopTimer)
-                        toast.addEventListener('mouseleave', Swal.resumeTimer)
-                    }
-                    })
-
-                    Toast.fire({
-                    icon: 'success',
-                    title: 'Cadastrado com sucesso!'
-                    })
-
-                    setTimeout(function(){window.location.href = "listar_perfis.php";}, 1500);
+            modalStatus('Perfil cadastrado com sucesso!', 'success', () => {
+                window.location.href="listar_perfis.php";
+            })
         }
     });
 
