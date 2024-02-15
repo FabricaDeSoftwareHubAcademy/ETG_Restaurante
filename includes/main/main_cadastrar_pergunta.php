@@ -10,7 +10,9 @@
 
 <link rel="stylesheet" href="../assets/css/cadastrar_pergunta.css">
 
+<!-- importando modais  -->
 <script src="../assets/js/modais.js"></script>
+
 <script src="../assets/js/filter.js"></script>
 <script defer src="../assets/js/filter_old.js"></script> 
 
