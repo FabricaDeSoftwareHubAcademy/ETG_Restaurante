@@ -585,18 +585,12 @@
 
 }
 #img-logo{
-  width: 32vw;
-  height: 9vh;
+  width: 200px;
+  height: 56px;
   margin-top: 6px;
 }
 
-@media screen and (min-width: 768px){
-  #img-logo{
-    width: 14vw;
 
-  }
-  
-}
 
 @keyframes bloc2 {
   from {height: 90px;top: 0px; background-color:  #F28920 ;}
@@ -631,6 +625,11 @@
   @keyframes bloc2 {
     from {height: 67px;top: 0px; background-color: #064A8C;}
     to {height: 90px ;}   
+  }
+  #img-logo{
+    width: 130px;
+    height: 36px;
+  
   }
 }
 
