@@ -73,7 +73,6 @@ var intervalo
 $("#ajaxPergunta").on("input", function(elementInput) { 
    filterPerguntas(elementInput); 
 })
-
 async function filterPerguntas(elementInput){
 
     clearTimeout(intervalo)

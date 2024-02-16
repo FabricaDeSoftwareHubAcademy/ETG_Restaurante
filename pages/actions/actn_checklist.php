@@ -21,3 +21,7 @@ if (isset($_POST['nome_checklist']) && isset($_POST['perguntas'])) {
 echo(json_encode($result));
 
 ?>
+
+
+
+
