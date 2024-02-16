@@ -1,7 +1,8 @@
-function modalStatus(texto, tipo, callbackFunction = null){
+function modalStatus(texto,tipo, callbackFunction = null){
     
     resetModalSections()
-     
+    
+
     let icon_modal = '';
     let tit_modal = ''
     let color_btn_modal = ''
@@ -69,9 +70,14 @@ function modalStatus(texto, tipo, callbackFunction = null){
     document.body.insertBefore(sectionModal, document.body.firstChild);
 
     let overlay = document.querySelector(".overlay-modal")
-    let modal = document.querySelector(".modal-box") 
+    let modal = document.querySelector(".modal-box")
+
+   
+    
 
     if((tipo == "success") || (tipo == "error")){
+
+        
 
         function openModal() { 
             overlay.style.opacity = '1';
@@ -79,7 +85,6 @@ function modalStatus(texto, tipo, callbackFunction = null){
             modal.style.opacity = '1';
             modal.style.pointerEvents = 'auto'; 
         }
-
         function closeModal() {
             overlay.style.opacity = '0';
             overlay.style.pointerEvents = 'none';
@@ -87,8 +92,9 @@ function modalStatus(texto, tipo, callbackFunction = null){
             modal.style.pointerEvents = 'none';
         }
 
-        let closeModalBtn = document.querySelector('.close-btn'); 
+        let closeModalBtn = document.querySelector('.close-btn');
 
+     
         closeModalBtn.addEventListener('click', function(){  
             resetModalSections()
             if(callbackFunction != null){ 
@@ -98,10 +104,14 @@ function modalStatus(texto, tipo, callbackFunction = null){
 
             
             closeModal()
-        }); 
-        
+        });
+    
+
+
     }else if(tipo == "question"){
- 
+
+        
+
         function openModal() { 
             overlay.style.opacity = '1';
             overlay.style.pointerEvents = 'auto';
@@ -114,30 +124,40 @@ function modalStatus(texto, tipo, callbackFunction = null){
             overlay.style.pointerEvents = 'none';
             modal.style.opacity = '0';
             modal.style.pointerEvents = 'none';
-        } 
-        
+        }
+
+
         document.querySelector('.open-btn-excluir').addEventListener('click',function(){ 
             
             if(callbackFunction != null){  
                 callbackFunction()
-            } 
+            }
+            
             closeModal() 
         })
 
         document.querySelector('#close-btn-exclur').addEventListener('click',function(){ 
             
             closeModal() 
-        }) 
-    } 
-    openModal() 
-} 
+        })
+
+       
+
+    }
+
+ 
+
+    openModal()
+     
+}
+
 
 function resetModalSections(){
 
     var sectionModal = document.querySelectorAll(".section_modal");
     var area_modal_del = document.querySelectorAll("#area_modal_del")
      
-    // Verifique se o elemento foi encontrado antes de tentar removê-lo
+// Verifique se o elemento foi encontrado antes de tentar removê-lo
     if (sectionModal) {
         sectionModal.forEach((item) => {
             item.remove()
