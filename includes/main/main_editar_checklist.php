@@ -85,8 +85,7 @@
 
 
                     <button class="pergunta_popup" id="popup_cad_pergunta" onclick="openPopup5()"><i class="bi bi-plus-circle"></i></button>
-                    
-                    <form class="overlay" id="form_cad_checklist_pergunta" style="opacity: 1;">
+                    <form class="form_cad_checklist_pergunta" id="overlay" style="opacity: 1;">
 
                         <div class="popup_cad_pergunta" id="popup_cad_pergunta">
 
@@ -105,9 +104,7 @@
                                 <button class="botao-ok-submit" onclick="closePopup5()" id='botao_cancelar_editar' value="OK" > OK, FECHAR</button>
                             </div>
                         </div>
-                        
                     </form>
-                    
                 </div>
                 <section class="selecao-pergunta">
                     <table class="tabela-perguntas" id = "tablePre" name="pergunta">
@@ -187,14 +184,14 @@
             <script>
                 
                 let popup_cad_pergunta = document.getElementById("popup_cad_pergunta");
-                function openPopup5(){
+                function openPopup4(){
 
                     document.getElementById("overlay").style.visibility="visible";
                     popup_cad_pergunta.classList.add("open-popup5");
         
                 }
 
-                function closePopup5(){ 
+                function closePopup4(){ 
         
                     document.getElementById("overlay").style.visibility="hidden";
                     popup_cad_pergunta.classList.remove("open-popup5");
