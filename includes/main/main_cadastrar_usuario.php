@@ -1,7 +1,4 @@
 <link rel="stylesheet" href="../assets/css/cadastrar_usuario.css">
-<script src="../assets/js/modais.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-
 <!-- <link rel="stylesheet" href="../assets/css/estilo_botoes_padronizados.css"> -->
 <!-- <link rel="stylesheet" href="../modais/usuario_cadastrado.php"> -->
 
@@ -9,6 +6,7 @@
     
     <main class="tudo_esqueceu_senha1">
         <form method="POST" id="form_cad">
+
             <section class='titulo_cadastro_usuario'>
                 <h1>Cadastrar Usuário</h1>
             </section>
@@ -26,52 +24,52 @@
                     <label for="name" class="input_e-mail_label">E-mail</label> <!--Alterar para o nome do input-->
                 </div>
                 
-           
+                
                 <div class="ajusta-botao2">
 
-                    <div class="dropdown-ck">
+                    <div class="dropdown-ck">                       
                         <select name="id_perfil" id="options" class="option">
                             <option value="">Selecione seu Perfil</option>
-                            <?=$options?>
-                            
+                            <?=$options?>                            
                         </select> 
+
                         <div class="barra"></div> 
+
                     </div>
 
-
+                
                     <div class="input_group_M field">
                         <input type="input" class="input_field_M" name="num_matricula" id="matricula" placeholder="Name" required="">
                         <label for="name" class="input_label_M">N° de Matricula</label> 
                     </div> 
-                        
-                        
 
                 </div>
                     
-    
-            
             <!--Input Senha-->
-            <div class="input_senha_group field">
-                <input type="password" class="input_senha_field" name="senha" id="senhas" placeholder="Name" required="">
-                <label for="name" class="input_senha_label">Senha</label> <!--Alterar para o nome do input-->
-            </div>
-        </section>   
+                <div class="input_senha_group field">
+                    <input type="password" class="input_senha_field" name="senha" id="senhas" placeholder="Name" required="">
+                    <label for="name" class="input_senha_label">Senha</label> <!--Alterar para o nome do input-->
+                </div>
 
-        <section class="centralizar_botoes_cadastrar_usuario">
+            </section>   
+
+            <section class="centralizar_botoes_cadastrar_usuario">
             <!--Botão voltar-->
-            <div class="botao-padrao-voltar">
-                <a href="listar_recados.php"><input class="botao-voltar-submit" value="VOLTAR"></a>
-            </div>
+                <div class="botao-padrao-voltar">
+                    <a href="listar_recados.php"><input class="botao-voltar-submit" value="VOLTAR"></a>
+                </div>
             
             <!--Botão Confirmar-->
-            <div class="botao-padrao-confirmar">
+                <div class="botao-padrao-confirmar">
                     <a><input type="submit" class="botao-confirmar-submit" id="botao-confirmar-submit" name="btn_submit" value="CONFIRMAR"></a>
                 </div>
-            </section>
-            
+
+
+            </section>       
         </form>
     </main>
-    
+
+        
 
 
 <script>
@@ -141,6 +139,6 @@ button.addEventListener('click', async (e) =>{
 });
 
 </script>
-     
+ 
 
 </body>

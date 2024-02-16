@@ -727,3 +727,32 @@ select {
   }
 
 }
+
+
+@media (max-height:725px){
+
+.form_user{
+  width: 94%;
+  margin-top: 2%; /* 50px*/
+  overflow-y: scroll;
+  overflow-x: hidden;
+  scrollbar-color: #F28920;
+  max-height: 60vh; /*60vh*/
+}
+
+.form_user::-webkit-scrollbar{
+  width: 8px;
+  background-color: #eeeeee;
+  border-radius: 10px;
+}
+
+.form_user::-webkit-scrollbar-thumb{
+  background-color: #F28920;
+  border-radius: 10px; 
+} 
+
+.ajusta-botao2{
+  width: 69.4%;  
+}
+  
+}
