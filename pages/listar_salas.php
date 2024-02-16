@@ -51,7 +51,7 @@ if($ifgensala){
         if($sala['status'] == "D"){ 
             $style = "filter: grayscale(1);"; 
         }
-        if($sala['status'] == "L"){ 
+        if($sala['status'] == "L" || $sala['status'] == "A" ){ 
 
             $link_view_sala = 'href="visualizar_sala.php?id_sala='.$sala['id'].'"';
 
