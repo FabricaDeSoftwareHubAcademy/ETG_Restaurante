@@ -7,17 +7,22 @@
     <script src="../assets/js/modais.js"></script>
 </head>
 <script>
+    var error = true
 
-    function teste123(teste){ 
-        alert(teste) 
+    function teste123(){ 
+        if(error){
+
+            modalStatus('erro ao cadastrar!','error')
+        }else{
+            modalStatus('Sucesso!','success')
+        }
     }
-    error = false
 
 </script>
 <body>
     
     <!-- <button onclick="modalStatus('Deu Certo!!!','question', () => modalStatus('Error!','error'))" >Teste</button> -->
 
-    <button onclick="modalStatus('Deseja deletar esse perfil?','question',  modalStatus('Erro ao deletar Perfil!','error')  )">Cadastrar</button>
+    <button onclick="modalStatus('Deseja deletar esse perfil?','question', () => teste123() )">Cadastrar</button>
 </body>
 </html>
