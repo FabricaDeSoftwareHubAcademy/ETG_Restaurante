@@ -1,6 +1,10 @@
 <?php
 session_start();
 include_once("../includes/menu.php");
+if(!$ifgencheck){
+    header("Location: ../pages/listar_recados.php");
+}
+
 use App\Entity\Checklist;
 
 
@@ -19,8 +23,9 @@ foreach($checklist as $row){
     $row['conf_logis'] = ($row['conf_logis']=='n') ? '<i class="bi bi-exclamation-octagon"></i>' : '<i class="bi bi-check-square"></i>';
     $list .= '<a href="validar_checklist.php?id_realizacao='.$row['id_responder'].'" class="card">
                 <div class="card_detalhes">
-                    <div class="card_img">
+                    <div class="card_img" style="border: 2px solid'.$row['cor'].'">
                         <img class="img_sala" src="../storage/salas/'.$row['img_sala'].'" alt="foto da sala">
+                        <h3 class="cod_sala">'.$row['codigo'].'</h3>
                     </div>
                     <div class="card_info">
                         <div class="card_text">
