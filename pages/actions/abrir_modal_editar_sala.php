@@ -4,6 +4,7 @@ use App\Entity\Sala;
 use App\Entity\CadastroChecklist;
 use App\Entity\Imagens;
 
+
 $objCadastroChecklist = new CadastroChecklist();
 $dados = $objCadastroChecklist -> getDados();
 $dados_sala = Sala::getDadosById($_GET['id_sala']);
@@ -21,7 +22,10 @@ if(isset($_POST['status']))
 }
 else{
     $status = 'D'; 
+
+    
 }
+
 
 
 if (!empty($_FILES['img_sala']['name']))

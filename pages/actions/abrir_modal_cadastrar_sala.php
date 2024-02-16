@@ -13,11 +13,18 @@ foreach ($dados as $row_check ){
 
     
     // var_dump($_FILES);exit;
-    if (!empty($_FILES['img_sala']['name']))
-    {
+    // if (!empty($_FILES['img_sala']['name']))
+    // {
         $objImagem = new Imagens;
-        // $imagem = $objImagem::storeImg($_FILES['imagem_sala']['name']);
-        $novo_nome_imagem = $objImagem::storeImgAction($_FILES['img_sala']['name']); 
+        
+        if (isset($_FILES['img_sala']) && !empty($_FILES['img_sala']['name'])) {
+            // O arquivo não está vazio, então execute o trecho de código
+            $objImagem = new Imagens;
+            $novo_nome_imagem = $objImagem::storeImgAction($_FILES['img_sala']['name']);
+        } else {
+            // O arquivo está vazio, atribua um nome padrão
+            $novo_nome_imagem = "imagempadrao.jpg"; // Substitua "nome_default.jpg" pelo nome desejado
+        }
         
     
             
@@ -54,7 +61,7 @@ foreach ($dados as $row_check ){
     );
         $obj_sala -> cadastrar();
         // header("Location: listar_salas.php");
-    }
+    // }
     
   
 

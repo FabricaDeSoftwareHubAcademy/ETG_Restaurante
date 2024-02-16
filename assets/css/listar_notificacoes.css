@@ -7,60 +7,51 @@
     margin: 0 auto;
 }
 
+*{
+    font-family: 'Montserrat', sans-serif;
+}
 
 .container{
-    
     display: flex;
     flex-wrap: wrap;
     overflow: hidden;
     overflow-y: auto;
-    height: 60%;
-    
+    height: 69%;
     /* max-width: 800px; */
     width: 97%;
-
-    
-
   }
 
   .container::-webkit-scrollbar{
-    
     width: 8px;
     background-color: #eeeeee;
     border-radius: 10px;
   }
   
   .container::-webkit-scrollbar-thumb{
-    
     background-color: #F28920;
     border-radius: 10px; 
   } 
 
 
-.titulo_tela_notificacao{
-
-    width: 100%;
+#titulo{
     justify-content: center;
+    font-family: "Montsserat";
+    font-style: normal;
     display: flex;
-    font-size: 22px;
+    font-size: 45px;
     margin-bottom: 30px;
-
 }
-
 
 .bi.bi-heart-fill{
     color:#F28920;
 }
 
 .area_not{
-
     /* margin-top: 40px; */
     display: flex;
     flex-direction: column;
     width: 100%;
     align-items: center;
-    
-
 }
  
 
@@ -68,8 +59,6 @@
     display: flex;
     width: 85%;
     height: 90px;
-    /* background-color: rgb(233, 233, 233); */
-    /* border-radius: 12px; */
     justify-content: space-around;
     box-shadow: 2px 2px 5px 0px;
     margin-bottom: 40px;
@@ -88,7 +77,6 @@
     display: flex;
     align-items: center;
     font-size: 16px;
-
 }
 
 .tempo{
@@ -134,25 +122,21 @@
 }
 
 .alinhar_botao_voltar{
+    /* margin-top: 15px; */
+    height: 10%;
     display: flex;
-    position: relative;
-    align-items: center;
-    justify-content: center;
+    /* position: relative; */
+    /* align-items: center; */
+    justify-content: space-evenly;
+    /* justify-content: center; */
     width: 100%;
+    position: sticky;
+    bottom: 0;
+    left: 0;
+    background-color: white;
 
 }
 
-.botao-padrao-voltar {
-    width: 100%;
-    display: flex;
-    height: 120px;
-    align-items: center;
-    justify-content: center;
-    background: white;
-    position: fixed;
-    bottom: 0;
-  }
-  
   .botao-voltar-link {
     /* width: 110px; */
     display: inline-block;
@@ -162,7 +146,7 @@
     border-radius: 20px;
     cursor: pointer;
     color: var(--cor-primaria-botao-yellow);
-    font-family: 'Montserrat', sans-serif; /* Corrigir a propriedade font-family */
+    /* Corrigir a propriedade font-family */
     font-weight: bold;
     font-size: 15px;
     text-decoration: none; /* Adicionar sublinhado ao texto do link */
@@ -220,5 +204,6 @@
 
     
 }
+
 
 

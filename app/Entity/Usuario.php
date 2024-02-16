@@ -125,6 +125,23 @@ class Usuario
 
     }
 
+    public static function getDadosByMatricula($matricula) 
+    {   
+        $objBanco = new Banco('cadastro_usuario');
+        
+        $dados = $objBanco -> select("matricula = '".$matricula."'") -> fetchAll(PDO::FETCH_ASSOC);
+        if ($dados)
+        {
+            return $dados;
+        }
+        else
+        {
+            return false;
+        }
+
+
+    }
+
     static function getDadosById($id) : array 
     {
          
@@ -145,6 +162,53 @@ class Usuario
         $objBanco -> update('email = "'.$email.'"',['senha' => $senha,'nome' => $nome]);
         echo("testeeee");
 
+    }
+
+
+    public static function setDadosMatriculaEmail($id,$matricula,$email)
+    { 
+        try{
+
+            $objBanco = new Banco('cadastro_usuario');
+            $objBanco -> update('id = "'.$id.'"',['matricula' => $matricula,'email' => $email]);
+
+            return true;
+
+        }catch(PDOException $e){
+            return $e->getMessage();
+        }
+         
+
+    }
+
+    public static function setEmail($id,$email)
+    { 
+        try{
+
+            $objBanco = new Banco('cadastro_usuario');
+            $objBanco -> update('id = "'.$id.'"',['email' => $email]);
+            
+            return true;
+
+        }catch(PDOException $e){
+            return $e->getMessage();
+        }
+          
+    }
+
+    public static function setMatricula($id,$matricula)
+    { 
+        try{
+
+            $objBanco = new Banco('cadastro_usuario');
+            $objBanco -> update('id = "'.$id.'"',['matricula' => $matricula]);
+            
+            return true;
+
+        }catch(PDOException $e){
+            return $e->getMessage();
+        }
+          
     }
 
     public function emailValidate($email) : bool
@@ -225,6 +289,25 @@ class Usuario
     
      
   }
+
+  public static function deleteById($id)
+    { 
+        $obj_banco = new Banco('cadastro_usuario'); 
+        $row_user = $obj_banco -> select('id = '.$id);
+
+        if($row_user -> rowCount() > 0)
+        {
+            $obj_banco -> delete($id,'id'); 
+            return true;
+        }
+        else
+        {
+            return false;
+        } 
+    }
+
+
+
   public function setPasswordByEmail($email, $senha)
   {
     $obj_banco = new Banco('cadastro_usuario');

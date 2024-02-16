@@ -4,24 +4,32 @@
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
 
 <body class="tela_notificacao"> 
-    <div class="titulo_tela_notificacao">
-        <h1>Notificações</h1>  
-    </div>
-    <section class="container">
-        
+
+        <h1 id="titulo">Notificações</h1>  
+
+
+    <section class="container">       
         <main class="area_not">
-            <?=$todas_notificacao?>
+            <?=$todas_notificacao?>  
+            
+            
+            
         </main>   
         
-        <div class="alinhar_botao_voltar">
-            <div class="botao-padrao-voltar">
-                <a href="listar_salas.php" class="botao-voltar-link">VOLTAR</a>
-            </div>
-        </div>
-
-
-
+        
     </section>
+
+    <div class="alinhar_botao_voltar">
+                <div class="botao-padrao-voltar">
+                    <a href="listar_salas.php" class="botao-voltar-link">VOLTAR</a>
+                </div>
+
+                
+                <div class="botao-padrao-cadastrar">
+                    <a href="cadastrar_notificacao.php"><input type="submit" class="botao-cadastrar-submit"  value="CADASTRAR"></a>
+                </div>
+            
+            </div>
     
     <script> 
         async function desmarcar (id){
@@ -33,22 +41,7 @@
             if (response.status==true){
                 // location.reload()
 
-                const Toast = Swal.mixin({
-                    toast: true,
-                    position: 'top-end',
-                    showConfirmButton: false,
-                    timer: 3000,
-                    timerProgressBar: true,
-                    didOpen: (toast) => {
-                        toast.addEventListener('mouseenter', Swal.stopTimer)
-                        toast.addEventListener('mouseleave', Swal.resumeTimer)
-                    }
-                    })
-
-                    Toast.fire({
-                    icon: 'success',
-                    title: 'DESMARCADO'
-                    })
+        
 
                     const coracaoVazio = document.getElementById("coracaoVazio" + id);
                     const coracaoPreenchido = document.getElementById("coracaoPreenchido"+id);
@@ -59,15 +52,9 @@
                     card_notificacao.setAttribute("onclick",'trocar_coracao('+id+')' );
 
             }
-            else{
-                Swal.fire({
-                title: 'Erro ao desmarcar', //TITULO DO POP_UP DE ACORDO COM SUA TELA 
-                icon: 'error', // success, error e warning
-                confirmButtonColor: '#ff0000', // DEFINE A COR DO BOTÃO OK
-                confirmButtonText: 'OK'
-                });
+            
             }    
-        }
+        
 
 
         async function trocar_coracao(id){
@@ -99,33 +86,10 @@
                 //     imageHeight: 200,
                 //     imageAlt: 'Custom image',
                 // })
-                const Toast = Swal.mixin({
-                    toast: true,
-                    position: 'top-end',
-                    showConfirmButton: false,
-                    timer: 3000,
-                    timerProgressBar: true,
-                    didOpen: (toast) => {
-                        toast.addEventListener('mouseenter', Swal.stopTimer)
-                        toast.addEventListener('mouseleave', Swal.resumeTimer)
-                    }
-                    })
-
-                    Toast.fire({
-                    icon: 'success',
-                    title: 'VISUALIZADO'
-                    })
-            }else{
-
-                Swal.fire({
-                title: 'Erro ao visualizar', //TITULO DO POP_UP DE ACORDO COM SUA TELA 
-                icon: 'error', // success, error e warning
-                confirmButtonColor: '#ff0000', // DEFINE A COR DO BOTÃO OK
-                confirmButtonText: 'OK'
-                });
-
+                
             }
         
         }
     </script>
+
 </body>

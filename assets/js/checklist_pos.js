@@ -94,21 +94,7 @@ btn_submit.addEventListener('click', async (e ) => {
         if (respondidas[chave] == null)
         {
             continuar_rodando = false 
-            const Toast = Swal.mixin({
-                toast: true,
-                position: "top-end",
-                showConfirmButton: false,
-                timer: 3000,
-                timerProgressBar: true,
-                didOpen: (toast) => {
-                    toast.onmouseenter = Swal.stopTimer;
-                    toast.onmouseleave = Swal.resumeTimer;
-                }
-            });
-            Toast.fire({
-                icon: "error",
-                title: "Preencha todas as perguntas"
-            });
+            modalStatus("Marque todos os campos","error")
             break;
             
         }
@@ -138,27 +124,14 @@ btn_submit.addEventListener('click', async (e ) => {
 
         console.log(response);
 
-        const Toast = Swal.mixin({
-            toast: true,
-            position: 'top-end',
-            showConfirmButton: false,
-            timer: 3000,
-            timerProgressBar: true,
-            didOpen: (toast) => {
-                toast.addEventListener('mouseenter', Swal.stopTimer)
-                toast.addEventListener('mouseleave', Swal.resumeTimer)
-            }
-            })
-
-            Toast.fire({
-            icon: 'success',
-            title: 'Realizado'
-            })
-          setTimeout(function() {
-            window.location.href = "listar_salas.php";
-         }, 1000);
+        if(response){
+            modalStatus("Cadastrado com sucesso!","success",() => {
+                location.href="listar_salas.php"
+            
+            });
+        }
        
-    }
-
-
-});
+        }
+    
+    
+        });       

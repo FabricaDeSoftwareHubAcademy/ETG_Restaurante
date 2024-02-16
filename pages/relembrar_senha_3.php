@@ -15,7 +15,7 @@ if (isset($_POST['btn_submit']) /* && isset($_SESSION['email_to_redef_secret']) 
         $email = $_SESSION['email_to_redef_secret'];
         $obj_user -> setPasswordByEmail($email, $_POST['senha']);
         unset($_SESSION['email_to_redef_secret']);
-        die('funcionou');
+        header('location: ../');
     }
     else
     {

@@ -39,7 +39,7 @@
 .botao-voltar-submit{
   text-align: center;
   width: 180px;
-  height: 45px;
+  height: 39px;
   background-color: var(--cor-primaria-botao-white);
   border: 3px solid var(--cor-primaria-botao-yellow);
   border-radius: 20px;
@@ -79,7 +79,7 @@
 
 .titulo_cadastro_usuario h1{
   font-family: 'Montserrat';
-  font-size: 40px;
+  font-size: 45px;
   font-style: normal;
   text-align: center;
   display: flex;

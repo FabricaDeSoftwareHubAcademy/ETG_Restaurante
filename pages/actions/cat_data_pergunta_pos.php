@@ -13,10 +13,10 @@ $dados = json_decode(file_get_contents('php://input'), true);
 $id_sala = $_GET['id_sala'];
 
 // select para pegar o ultimo registro  
-$id_last_insert = Checklist::getLastCheck($id_sala)['id'] ;
- 
-ResponderChecklist::cadastrar_pos($dados, $id_last_insert);
-echo(json_encode($dados));exit;
+$id_last_insert = Checklist::getLastCheck($id_sala)[0]['id'] ;
+
+$response=ResponderChecklist::cadastrar_pos($dados, $id_last_insert);
+echo(json_encode(true));exit;
 
 
 

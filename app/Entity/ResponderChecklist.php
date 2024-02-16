@@ -8,13 +8,15 @@ class ResponderChecklist
 {
 
 
-    public static function cadastrar($dados = [], $id_sala = 1)
+    public static function cadastrar($dados = [], $id_sala = 1, $id_check)
     {
         $responder_check = [
             'id_usuario' =>  $_SESSION['id_user'],
-            'id_sala' => $id_sala
+            'id_sala' => $id_sala,
+            'id_checklist' => $id_check
         ];
         $obj_banco = new Banco('responder_check');
+
         $last_id = $obj_banco -> insertRecoverId($responder_check);
 
         foreach ($dados as $pergunta)
@@ -78,14 +80,13 @@ class ResponderChecklist
             ];
             NaoConformidade::cadastrar(dados : $nao_conformidade);
         }
-
+        return true;
     }
 
     public static function cadastrar_pos($dados = [], $id_last_insert = 1)
     {   
 
-        // adicionar valor na data de fechamento do checklist respondido 
-       
+        // adicionar valor na data de fechamento do checklist respondido  
         $obj_banco = new Banco('responder_check'); 
 
         $dados_update  =  [
@@ -157,6 +158,6 @@ class ResponderChecklist
             NaoConformidade::cadastrar(dados : $nao_conformidade);
         }
 
+        
     }
-
 }

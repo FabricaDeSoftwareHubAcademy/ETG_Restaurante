@@ -8,6 +8,7 @@ if(!$ifperfil){
 }
 require("../includes/header/header.php");
 
+
 use App\Entity\Perfil;
 
 //pegando dados perfil

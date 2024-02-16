@@ -1,14 +1,4 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <title>...</title>
-</head>
-<body>
-    <section class="section_modal">
-        <button class="show-modal">Show modal</button>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
         <span class="overlay-modal"></span>
         <div class="modal-box">
             <i class="fa-solid fa-question" id="icon-pergunta"></i>
@@ -16,15 +6,14 @@
             <h3 class="subtitulo_pop_up">que deseja excluir?</h3>
 
             <div class="buttons-pop_up">
-                <button class="close-btn">cancelar</button>
-                <button class="open-btn">Sim</button>
+                <button class="close-btn" id="close-btn-exclur">Cancelar</button>
+                <button class="open-btn-excluir" >Sim</button>
                 <!-- Adicionando um botão de fechar -->
                 <button class="close-modal-btn" style="display: none;">Fechar</button>
             </div>
-        </div>
-    </section>
+        </div> 
         <style>
-            @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,100&family=Poppins:wght@300;400;500;600&family=Raleway:wght@200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,100&family=Poppins:wght@300;400;500;600&family=Raleway:wght@200&display=swap');
 
 *{
     margin: 0;
@@ -32,10 +21,7 @@
     box-sizing: border-box;
     font-family: "Poppins", sans-serif;
 }
-.section_modal{
-    /* display: flex;
-    align-items: center;
-    justify-content: center; */
+.section_modal{ 
     position: absolute;
     height: 100%;
     width: 100%;
@@ -62,8 +48,11 @@ button.show-modal:hover{
 }
 
 .overlay-modal{
-    position: absolute;
-    height: 100%;
+    position: fixed;
+    z-index: 99999;
+    height: 100vh;
+    left: 0;
+    top: 0;
     width: 100%;
     background: rgba(0, 0, 0, 0.3);
     opacity: 0;
@@ -71,6 +60,7 @@ button.show-modal:hover{
 }
 .modal-box{
     display: flex;
+    z-index: 99999;
     flex-direction: column;
     align-items: center;
     max-width: 380px;
@@ -121,17 +111,16 @@ button.show-modal:hover{
     margin-top: 20px;
     width: 120px;
     height: 45px;
-    background-color: #CB1010;
-    border: 3px solid var(--cor-primaria-botao-green);
+    background-color: #CB1010; 
     border-radius: 20px;
     cursor: pointer;
-    color: var(--cor-primaria-botao-green);
+    color: white;
     font-style: normal;
     font-size: 15px;
     font-weight: 580;
 
 }
-.open-btn{
+.open-btn-excluir{
     margin-top: 20px;
     width: 120px;
     height: 45px;
@@ -148,11 +137,10 @@ button.show-modal:hover{
     margin-top: 20px;
     width: 120px;
     height: 45px;
-    background-color: #CB1010;
-    border: 3px solid var(--cor-primaria-botao-green);
+    background-color: #609437; 
     border-radius: 20px;
     cursor: pointer;
-    color: var(--cor-primaria-botao-green);
+    color: white;
     font-style: normal;
     font-size: 15px;
     font-weight: 580;
@@ -163,63 +151,79 @@ button.show-modal:hover{
 
         </style>
 
-        <script>
-           document.addEventListener("DOMContentLoaded", function() {
-            const showModalBtn = document.querySelector('.show-modal');
-            const closeModalBtn = document.querySelector('.close-btn');
-            const openModalBtn = document.querySelector('.open-btn');
+        <script> 
+            // const showModalBtn = document.querySelector('.show-modal');
+            // const closeModalBtn = document.querySelector('.close-btn');
+            const openModalBtn = document.querySelector('.open-btn-excluir');
             const closeFinalBtn = document.querySelector('.close-modal-btn');
             const overlay = document.querySelector('.overlay-modal');
-            const modal = document.querySelector('.modal-box');
+            const modal2 = document.querySelector('.modal-box');
 
-            function openModal() {
+            function openModal2() {
+                console.log('teste')
                 overlay.style.opacity = '1';
                 overlay.style.pointerEvents = 'auto';
-                modal.style.opacity = '1';
-                modal.style.pointerEvents = 'auto';
-            }
+                modal2.style.opacity = '1';
+                modal2.style.pointerEvents = 'auto'; 
+            }   
 
-            function closeModal() {
+            function closeModalExcluir() {
+                console.log('teste')
                 overlay.style.opacity = '0';
                 overlay.style.pointerEvents = 'none';
-                modal.style.opacity = '0';
-                modal.style.pointerEvents = 'none';
+                modal2.style.opacity = '0';
+                modal2.style.pointerEvents = 'none';
             }
 
             function changeIconAndMessage() {
                 const icon = document.querySelector('.fa-solid.fa-question');
                 const title = document.querySelector('.titulo_pop_up');
                 const message = document.querySelector('.subtitulo_pop_up');
+
                 const cancelButton = document.querySelector('.close-btn');
-                const confirmButton = document.querySelector('.open-btn');
+                const confirmButton = document.querySelector('.open-btn-excluir');
 
                 icon.classList.remove('fa-solid', 'fa-question');
-                icon.classList.add('fa-regular', 'fa-circle-xmark'); // Corrigindo a classe do ícone
+                icon.classList.add('fa-regular', 'fa-circle-check'); // Corrigindo a classe do ícone
 
                 title.textContent = 'Excluído com sucesso';
                 message.textContent = 'O item foi excluído com sucesso!';
 
                 cancelButton.style.display = 'none';
                 confirmButton.style.display = 'none';
-                closeFinalBtn.style.display = 'block';
+                closeFinalBtn.style.display = 'block';  
+                closeFinalBtn.addEventListener('click',fecharPopup)
+
+                
             }
 
-            showModalBtn.addEventListener('click', openModal);
-            closeModalBtn.addEventListener('click', closeModal);
-            openModalBtn.addEventListener('click', function() {
-                openModal();
-                openModalBtn.addEventListener('click', changeIconAndMessage, { once: true });
-            });
+            function changeIconAndMessageReverse() { 
+                 
+                const icon = document.querySelector('.fa-regular.fa-circle-check');
+                const title = document.querySelector('.titulo_pop_up');
+                const message = document.querySelector('.subtitulo_pop_up');
 
-            closeFinalBtn.addEventListener('click', closeModal);
-        });
+                const cancelButton = document.querySelector('.close-btn');
+                const confirmButton = document.querySelector('.open-btn-excluir');
+
+                icon.classList.remove('fa-regular', 'fa-circle-check'); // Corrigindo a classe do ícone
+                icon.classList.add('fa-solid', 'fa-question');
+
+                title.textContent = 'Tem certeza';
+                message.textContent = 'que deseja excluir?';
+
+                cancelButton.style.display = 'block';
+                confirmButton.style.display = 'block';
+                closeFinalBtn.style.display = 'none';   
+            }
+            
+
+            function fecharPopup(){
+
+                changeIconAndMessageReverse()
+                closeModalExcluir()
+            }
 
             
         </script>
-    
-    
-
-
-
-</body>
-</html>
+ 

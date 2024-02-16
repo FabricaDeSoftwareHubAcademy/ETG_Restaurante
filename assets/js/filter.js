@@ -10,7 +10,7 @@ async function listarPerguntas(){
     for(pergunta in dadosPerguntas){
         
         // pausei aqui algo
-        let divPergunta = '<div class="question1 move" animation="right"> <div class="resp_pergunta"> <p name="question_text" id="question_text">'+dadosPerguntas[pergunta].descricao+' </p> </div> <div class="icons-question1"> <button class="editar" id="btn_pencil_editar_pergunta" btn_editar="'+dadosPerguntas[pergunta].id+'" onclick="openPopup2()"><i class="bi bi-pencil-square"></i></button> <button class="excluir" id="btn_trash_excluir_pergunta" btn_excluir="'+dadosPerguntas[pergunta].id+'" onclick="openPopup3()"><i class="bi bi-trash"></i></button> </div> </div>'
+        let divPergunta = '<div class="question1 move" animation="right"><div class="resp_pergunta"> <p name="question_text" id="question_text">'+dadosPerguntas[pergunta].descricao+' </p> </div> <div class="icons-question1"> <button class="checklist" id="popup_cad_checklist" onclick="openPopup4()"><i class="bi bi-file-earmark-plus"></i></button><button class="editar" id="btn_pencil_editar_pergunta" btn_editar="'+dadosPerguntas[pergunta].id+'" onclick="openPopup2()"><i class="bi bi-pencil-square"></i></button> <button class="excluir" id="btn_trash_excluir_pergunta" btn_excluir="'+dadosPerguntas[pergunta].id+'" onclick="openPopup3()"><i class="bi bi-trash"></i></button> </div> </div>'
  
         $('#perguntas').append(divPergunta)
     }  
@@ -25,10 +25,7 @@ async function listarPerguntas(){
 
         setDadosPerguntaById($(this).attr('btn_editar'))
         
-    })
-
-
-
+    }) 
 
     // depois no botao de 'NAO' adicionar função para resetar o id_atual 
     

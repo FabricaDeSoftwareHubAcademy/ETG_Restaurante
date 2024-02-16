@@ -24,20 +24,22 @@
                 <form class="cadastro-sala-form" id="form_cad" method="POST" enctype="multipart/form-data">               
                     <div class="titulo_de_cadastro">
 
-                        <h1> Cadastro De Salas </h1>
+                        <h1 class="title_principal"> Cadastro de Salas </h1>
                         
                     </div>                    
                     <div class="cadastro_codigo">
                         <div class="wrap-input margin-top-35 margin-bottom-35">
                             <div class="input_group field" id="input_coisa_nome">
-                                <input type="input" class="input_field toguroo" id='nome_sala' placeholder="Name" required="" name="nome_sala" maxLength="32">
+                                <input type="input" class="input_field toguroo required" id='nome_sala' placeholder="Name"  name="nome_sala" maxLength="32">
+                                <h4 class="span-required">Preenchimento obrigatório</h4>
                                 <label for="name" class="input_label">Nome Da Sala </label> <!--Alterar para o nome do input-->
                             </div>
                         </div>
 
                         <div class="wrap-inputx margin-top-35 margin-bottomx-35">
                             <div class="input_group field ">
-                                <input type="input" class="input_field toguro" placeholder="Name" required="" id="codigo_sala" name="codigo_sala" maxLength="8" style="text-transform:uppercase" />
+                                <input type="input" class="input_field toguro required" placeholder="Name" id="codigo_sala" name="codigo_sala" maxLength="8" style="text-transform:uppercase">
+                                <h4 class="span-required diferentao">Preenchimento obrigatório</h4>
                                 <label for="name" class="input_label toguro" > Código </label> <!--Alterar para o nome do input-->
                             </div>
                         </div>
@@ -46,25 +48,27 @@
 
                     
                     <div class="dropdown-ck">
-
-                        <select name="checklist" class="option" id="checklist">
-
+                        <select name="checklist" class="option required" id="checklist">
+                            
                             <option>Selecione O Checklist </option>
-
-                                <?=$options?>
+                            
+                            <?=$options?>
                             
                         </select> 
                         
-    
+                        
                         <a href="cadastrar_checklist.php" style="color: black;">
                             <i class="bi bi-plus-circle " style="font-size: 30px; opacity: 0.7;"></i>
                         </a>
                         
                     </div>
-
+                    
                     <div class="barra"></div>
+                    <h4 class="span-required">Preenchimento obrigatório</h4>
 
-                    <h3 class="alinar_titulo_h3">Dias De Funcionamento </h3>
+                    
+
+                    <h3 class="alinar_titulo_h3">Dias de Funcionamento </h3>
 
                     <div class="area_Dos_check_box">
 
@@ -101,7 +105,7 @@
                     </div>
 
 
-                    <h3 class="alinar_titulo_h3">Turnos De Funcionamento </h3>
+                    <h3 class="alinar_titulo_h3">Turnos de Funcionamento </h3>
                     <div class="area_Dos_check_box">
 
                         
@@ -126,7 +130,7 @@
                     <div class="img-area"> 
                         
                         <div class="text-area">
-                            <span id=descrição>Descrição</span>
+                            <span class="span_semmod" id=descrição>Descrição</span>
     
                             <textarea  placeholder="Area de texto " name="descricao_sala" id="" cols="70" rows="10" class="text-descricao" maxLength="254"></textarea>
                         </div>
@@ -134,7 +138,7 @@
                             <div class="alinar-img">
 
                                 <div class="coisas_enilda">
-                                    <span id="img-text"> Insira a imagem : Resolução 416x150 </span>
+                                    <span class="span_semmod" id="img-text"> Insira a imagem : Resolução 416x150 </span>
 
                                     <label id="botão-img" for="arquivo" >Selecionar Foto</label>
                                 </div>
@@ -153,7 +157,7 @@
                                 </div>
                             </div>    
                             <div class="alinar-botao-cor">
-                                <span id="selecao-cor-text">Cor da sala : </span> 
+                                <span class="span_semmod" id="selecao-cor-text">Cor da sala : </span> 
                                 <input class="botao-cor" name="cor_sala" type="color">
                             </div>
                         </div>
@@ -197,211 +201,129 @@
 
                     <script>
 
+                        const campos =document.querySelectorAll(".required");
+                        const spans = document.querySelectorAll(".span-required");
+                        
+                        
+                        // console.log(spans);
+
+                        function setError(index){
+                            campos[index].classList.add('error'); // Adiciona a classe 'error' ao elemento
+                            spans[index].style = 'display: block; width: 100%;';
+                        }
+
+                        function removeError(index) {
+                            campos[index].classList.remove('error'); // Remove a classe 'error' do elemento
+                            spans[index].style.display = 'none';
+                        }
+
                         let button = document.getElementById("botao-cadastrar-submit") 
 
+                        const showModalnovoBtn = document.querySelector('.botao-cadastrar-submit');
+                        const closeModalnovoBtn = document.querySelector('.close-btn');
+                        // const openModalBtn = document.querySelector('.open-btn');
+                        const overlaynovo = document.querySelector('.overlay-modal');
+                        const modalnovo = document.querySelector('.modal-box');
+                        function openModal2() {
+                            console.log("qual quer coisa ai");
+                            overlaynovo.style.opacity = '1';
+                            overlaynovo.style.pointerEvents = 'auto';
+                            modalnovo.style.opacity = '1';
+                            modalnovo.style.pointerEvents = 'auto';
+                        }
+
                         button.addEventListener('click', async (e) => {
-                            // alert("dsadsa")
+                            
                             e.preventDefault()
 
 
                             let nome_sala = document.getElementById('nome_sala')
+
                             if(nome_sala.value.length > 0){
-
-                                // const Toast = Swal.mixin({
-                                // toast: true,
-                                // position: "top-end",
-                                // showConfirmButton: false,
-                                // timer: 3000,
-                                // timerProgressBar: true,
-                                // didOpen: (toast) => {
-                                // toast.onmouseenter = Swal.stopTimer;
-                                // toast.onmouseleave = Swal.resumeTimer;
-                                // }
-                                // });
-                                // Toast.fire({
-                                //     icon: "success",
-                                //     title: "deu bom"
-                                // });
-
-                                console.log("Nome sala maior q zero");
-
+                                
                                 nome_sala = true ;
 
+                                removeError(0);     
 
                             }else{
+                                nome_sala = false;
 
-                                const Toast = Swal.mixin({
-                                toast: true,
-                                position: "top-end",
-                                showConfirmButton: false,
-                                timer: 3000,
-                                timerProgressBar: true,
-                                didOpen: (toast) => {
-                                toast.onmouseenter = Swal.stopTimer;
-                                toast.onmouseleave = Swal.resumeTimer;
-                                }
-                                });
-                                Toast.fire({
-                                    icon: "error",
-                                    title: "Nome da sala não pode estar vazio !"
-                                });
-
-                            }
-
-                            let codigo_sala = document.getElementById('codigo_sala')
-                            if(codigo_sala.value.length > 0){
-
-                                // const Toast = Swal.mixin({
-                                // toast: true,
-                                // position: "top-end",
-                                // showConfirmButton: false,
-                                // timer: 3000,
-                                // timerProgressBar: true,
-                                // didOpen: (toast) => {
-                                // toast.onmouseenter = Swal.stopTimer;
-                                // toast.onmouseleave = Swal.resumeTimer;
-                                // }
-                                // });
-                                // Toast.fire({
-                                //     icon: "success",
-                                //     title: "deu bom"
-                                // });
-                                console.log("codigo sala maior q zero");    
+                                setError(0);
                                 
-                                codigo_sala = true;
-
-                            }else{
-
-                                const Toast = Swal.mixin({
-                                toast: true,
-                                position: "top-end",
-                                showConfirmButton: false,
-                                timer: 3000,
-                                timerProgressBar: true,
-                                didOpen: (toast) => {
-                                toast.onmouseenter = Swal.stopTimer;
-                                toast.onmouseleave = Swal.resumeTimer;
-                                }
-                                });
-                                Toast.fire({
-                                    icon: "error",
-                                    title: "Codigo não pode estar vazio !"
-                                });
+                                // console.log("nome nao pode estar vazio ")
 
                             }
+
+                            let codigo_sala = document.getElementById('codigo_sala') 
+
+                            
+                            if(nome_sala){
+                                
+                                if((codigo_sala.value.length > 0)){
+                                    
+                                    codigo_sala = true;
+
+                                    removeError(1);
+    
+                                }else{ 
+                                    
+                                    codigo_sala = false
+                                    
+                                    setError(1);
+                                } 
+
+                            }else{
+                                codigo_sala = false
+                            }
+
+                            // console.log(codigo_sala)
 
                             let checklist = document.getElementById('checklist')
 
-                            console.log(checklist.value);
 
-                            if(checklist.value > 0){
+                            if(codigo_sala){
 
-                                // const Toast = Swal.mixin({
-                                // toast: true,
-                                // position: "top-end",
-                                // showConfirmButton: false,
-                                // timer: 3000,
-                                // timerProgressBar: true,
-                                // didOpen: (toast) => {
-                                // toast.onmouseenter = Swal.stopTimer;
-                                // toast.onmouseleave = Swal.resumeTimer;
-                                // }
-                                // });
-                                // Toast.fire({
-                                //     icon: "success",
-                                //     title: "deu bom"
-                                // });
-                                
-                                console.log("checklist maior q zero");
-
-                                checklist = true ;
-
-
+                                if((checklist.value > 0)){
+                                    
+                                    // console.log(codigo_sala);
+    
+                                    checklist = true ;
+                                    removeError(2);
+    
+                                }else{
+                                   
+                                    setError(2);
+                                }  
                             }else{
-
-                                const Toast = Swal.mixin({
-                                toast: true,
-                                position: "top-end",
-                                showConfirmButton: false,
-                                timer: 3000,
-                                timerProgressBar: true,
-                                didOpen: (toast) => {
-                                toast.onmouseenter = Swal.stopTimer;
-                                toast.onmouseleave = Swal.resumeTimer;
-                                }
-                                });
-                                Toast.fire({
-                                    icon: "error",
-                                    title: "Selecione Um checklist !"
-                                });
-                                console.log("checklist vazio");    
+                                checklist = false
                             }
-
-                            console.log(nome_sala,codigo_sala,checklist)
+ 
                                 
                             if(nome_sala == true && codigo_sala == true && checklist == true){
 
                                 let form = document.getElementById('form_cad')
-                                console.log(form)
+                                // console.log(form)
 
-                                let formData = new FormData(form)
-                                // console.log(formData)
-
+                                let formData = new FormData(form)       
                                 let dados_php = await fetch("../pages/actions/abrir_modal_cadastrar_sala.php",{method:"POST",
                                     body: formData
                                 })
-                                
-                                // alert("Ta chegando até aqui !")
+                                                               
                                 let response = await dados_php.json()
                                 
-                                // console.log(response);
-
-                            
-                                // console.log(response);
-
                                 if(response){
-                                    
-                                    let popup = document.getElementById('popup-up-notificacao');
-                                    let btn = document.getElementById("submit-btn-notificacao");
-                                    // btn.style.display = "none";
-                                    popup.classList.add("open-popup");
-                                    let blur = document.getElementById("blur");
-                                    blur.classList.add("active");
-
-                                    
-                                    // openModal()
+                                                                      
+                                    openModal2()
                                 
-
                                 }else{
                                     console.log("2")
                                 }
 
                             }else{
-                                console.log("deu merda piá");
+                                // console.log("deu merda piá");
                             }  
                         }
                         )
-                    
-
-                        // function openPopupValidar() {
-                        //     let popup = document.getElementById('popup-up-notificacao');
-                        //     let btn = document.getElementById("submit-btn-notificacao");
-
-                        //     btn.style.display = "none";
-                        //     popup.classList.add("open-popup");
-                        // }
-
-                        // function closePopupValidar() {
-                        //     let popup = document.getElementById("popup-up-notificacao");
-                        //     let btn = document.getElementById("submit-btn-notificacao");
-
-                        //     btn.style.display = "block";
-
-                        //     popup.classList.remove("open-popup");
-                        // }
-
-
-
                     </script>
                 
                     

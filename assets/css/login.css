@@ -327,7 +327,8 @@ body{
   position: absolute;
   top: 35px;
   right: 35px;
-
+  width: 20%;
+  margin-right: 5px;
 }
 
 
