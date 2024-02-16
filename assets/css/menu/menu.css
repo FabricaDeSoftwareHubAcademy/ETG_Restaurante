@@ -667,4 +667,15 @@
   text-align: center;
   margin-top: 17%;
 }
-  
+
+
+@media (max-height:626px){
+
+.icon-perfil{
+  width: 35px;
+  height: 33px;
+  margin-top: 41px;
+}
+
+
+}
