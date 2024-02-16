@@ -38,7 +38,7 @@
 
                         <div class="wrap-inputx margin-top-35 margin-bottomx-35">
                             <div class="input_group field ">
-                                <input type="input" class="input_field toguro required" placeholder="Name" id="codigo_sala" name="codigo_sala" maxLength="8" style="text-transform:uppercase">
+                                <input type="number" class="input_field toguro required" placeholder="Name" id="codigo_sala" name="codigo_sala" maxLength="4" style="text-transform:uppercase">
                                 <h4 class="span-required diferentao">Preenchimento obrigatório</h4>
                                 <label for="name" class="input_label toguro" > Código </label> <!--Alterar para o nome do input-->
                             </div>

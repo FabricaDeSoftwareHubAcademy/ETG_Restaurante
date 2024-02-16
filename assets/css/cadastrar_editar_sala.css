@@ -1146,8 +1146,8 @@ box-shadow: none;
   .input_field.toguro{
 
     width: 50%;
-
-
+  
+}
   }
   .cadastro_codigo .toguro{
     width: 60%;
@@ -1187,7 +1187,7 @@ box-shadow: none;
     
     border: dashed  black 2px;
   }
-}
+
 
 
 
