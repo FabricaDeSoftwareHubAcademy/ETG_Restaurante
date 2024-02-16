@@ -384,15 +384,18 @@ body{
 
     }
 
+    .quadrado_input_login {
+        width: 85vh;
+        height: 85vh;
+
 }
 
 @media (min-height:820px){
 
     .wave_login{
-
         height: 60%;
-
     }
+
 
 }
 
