@@ -178,7 +178,6 @@ border-radius: 10px;
     border-radius: 20px;
     cursor: pointer;
     color: var(--cor-primaria-botao-green);
-    font-G: normal;
     font-size: 'Montserrat';
     font-weight: bold;
     font-size: 15px;
@@ -349,6 +348,7 @@ border-radius: 10px;
 
 
 .em-uso {
+    text-align:center;
     color: #ea8c2f;
     font-size: 12px;
     font-weight: bold;
@@ -361,6 +361,7 @@ border-radius: 10px;
 }
 
 .livre {
+    text-align:center;
     color:green;
     font-size: 12px;
     font-weight: bold;
@@ -373,6 +374,7 @@ border-radius: 10px;
 }
 
 .desativado{
+    text-align:center;
     color:gray;
     font-size: 12px;
     font-weight: bold;
@@ -380,16 +382,17 @@ border-radius: 10px;
     margin-top: 3%;
     border: 2px solid gray;
     border-radius: 15px;
-    width: 15%;
+    width: 20%;
     padding: 1%;
 
 }
 
 .block {
+    text-align:center;
     color: red;
     font-size: 12px;
     font-weight: bold;
-    margin-left: 2%;
+    margin-left: 76%;
     margin-top: 3%;
     border: 2px solid red;
     border-radius: 15px;
@@ -401,10 +404,11 @@ border-radius: 10px;
 
 
 .em-uso2 {
+    text-align:center;
     color: #ea8c2f;
     font-size: 12px;
     font-weight: bold;
-    margin-left: 20px;
+    margin-left: 3%;
     margin-top: 3%;
     border: 2px solid #ea8c2f;
     border-radius: 15px;
@@ -413,10 +417,12 @@ border-radius: 10px;
 }
 
 .livre2 {
+    text-align: center;
+    text-align:center;
     color: green;
     font-size: 12px;
     font-weight: bold;
-    margin-left: 20px;
+    margin-left: 3%;
     margin-top: 3%;
     border: 2px solid green;
     border-radius: 15px;
@@ -425,10 +431,11 @@ border-radius: 10px;
 }
 
 .desativado2{
+    text-align:center;
     color:gray;
     font-size: 12px;
     font-weight: bold;
-    margin-left: 20px;
+    margin-left: 3%;
     margin-top: 3%;
     border: 2px solid gray;
     border-radius: 15px;
@@ -438,10 +445,11 @@ border-radius: 10px;
 }
 
 .block2 {
+    text-align:center;
     color: red;
     font-size: 12px;
     font-weight: bold;
-    margin-left: 2%;
+    margin-left: 3%;
     margin-top: 3%;
     border: 2px solid red;
     border-radius: 15px;

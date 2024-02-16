@@ -30,7 +30,7 @@ if($ifgensala){
         $style='';
         $link_view_sala = '';
         $status = [
-            'D' => 'Desativado',
+            'D' => 'Desativada',
             'L' => 'Livre',
             'A' => 'Em uso',
             'B' => 'Bloqueada'
