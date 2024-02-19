@@ -2,6 +2,9 @@
 session_start();
 require __DIR__."/../vendor/autoload.php";
 include_once("../includes/menu.php"); 
+if(!$ifuser){
+    header("Location: ../pages/listar_recados.php");
+}
 $titulo_page = 'Lista Usuarios';
 require("../includes/header/header.php");
 

@@ -78,32 +78,50 @@ $ifreaac = $perfil['realizar_acao_corretiva'] == '1';
                             
                             <ul class="submenu2" id="submenu-icon-pessoa">
                             
-                            <li class="iten-submenu2"><a href="../pages/visualizar_usuario.php" id="fonte-submenu2">Gerenciar Usuario</a></li>
+                            
                             '.
+                            ($ifuser ? '<li class="iten-submenu2"><a href="../pages/visualizar_usuario.php" id="fonte-submenu2">Gerenciar Usuários</a></li>' : '').
                             ($ifperfil ? '<li class="iten-submenu2"><a href="../pages/listar_perfis.php" id="fonte-submenu2">Gerenciar Perfis</a></li><li class="iten-submenu2"><a href="../pages/cadastrar_perfil.php" id="fonte-submenu2">Cadastrar Perfil</a></li>' : '').
                             ($ifuser ? '<li class="iten-submenu2"><a href="../pages/cadastrar_usuario.php" id="fonte-submenu2">Cadastrar Usuário</a></li>' : '')
-                            
                             .'
                             <li class="iten-submenu2"><a href="../pages/editar_usuario.php" id="fonte-submenu2">Minha Conta</a></li>
                             </ul>
-                            </li>';
+                        </li>';
                     ?>
                 </li>
                 
+                
                 <li class="link_submenu3">
-                    <li class="li-menu">
+                    <?php
+                    if($ifgencheck || $ifreaac){
+                        echo '
+                        <li class="li-menu">
+                            <a href="#" class="link-menu">
+                                <i id="btnsubmenu3" class="bi bi-clipboard2-check" onclick="openSubmenu3()"></i>   
+                                <h5 class="titulo-info" id="titulo-home">Check-List</h5>                 
+                            </a>
+                            <ul class="sub-menu3">
+                                '.
+                                ($ifgencheck ? '<li class="iten-submenu3"><a href="gerenciar_checklist.php" id="fonte-submenu3">Vizualizar Check-List</a></li>':'').
+                                
+                                ($ifreaac ? '<li class="iten-submenu3"><a href="listar_checklist_concluidas.php" id="fonte-submenu3">Validar Check-List</a></li>': '').
+                                
+                                ($ifgencheck ?'<li class="iten-submenu3"><a href="cadastrar_checklist.php" id="fonte-submenu3">Cadastrar Check-List</a></li>':'')
+                            .'</ul>
+                        </li>';
+                    }
+                    ?>
+                    <!-- <li class="li-menu">
                         <a href="#" class="link-menu">
                             <i id="btnsubmenu3" class="bi bi-clipboard2-check" onclick="openSubmenu3()"></i>   
                             <h5 class="titulo-info" id="titulo-home">Check-List</h5>                 
                         </a>
                         <ul class="sub-menu3">
-                            <?php
-                            echo '<li class="iten-submenu3"><a href="gerenciar_checklist.php" id="fonte-submenu3">Vizualizar Check-List</a></li>';
-                            echo '<li class="iten-submenu3"><a href="listar_checklist_concluidas.php" id="fonte-submenu3">Validar Check-List</a></li>';
-                            echo '<li class="iten-submenu3"><a href="cadastrar_checklist.php" id="fonte-submenu3">Cadastrar Check-List</a></li>';
-                            ?>
+                            <li class="iten-submenu3"><a href="gerenciar_checklist.php" id="fonte-submenu3">Vizualizar Check-List</a></li>
+                            <li class="iten-submenu3"><a href="listar_checklist_concluidas.php" id="fonte-submenu3">Validar Check-List</a></li>
+                            <li class="iten-submenu3"><a href="cadastrar_checklist.php" id="fonte-submenu3">Cadastrar Check-List</a></li>
                         </ul>
-                    </li>
+                    </li> -->
                 </li>
 
 
