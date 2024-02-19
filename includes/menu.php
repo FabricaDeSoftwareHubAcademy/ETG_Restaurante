@@ -80,7 +80,7 @@ $ifreaac = $perfil['realizar_acao_corretiva'] == '1';
                             
                             
                             '.
-                            ($ifuser ? '<li class="iten-submenu2"><a href="../pages/listar_usuarios.php" id="fonte-submenu2">Gerenciar Usuários</a></li>' : '').
+                            ($ifuser ? '<li class="iten-submenu2"><a href="../pages/visualizar_usuario.php" id="fonte-submenu2">Gerenciar Usuários</a></li>' : '').
                             ($ifperfil ? '<li class="iten-submenu2"><a href="../pages/listar_perfis.php" id="fonte-submenu2">Gerenciar Perfis</a></li><li class="iten-submenu2"><a href="../pages/cadastrar_perfil.php" id="fonte-submenu2">Cadastrar Perfil</a></li>' : '').
                             ($ifuser ? '<li class="iten-submenu2"><a href="../pages/cadastrar_usuario.php" id="fonte-submenu2">Cadastrar Usuário</a></li>' : '')
                             .'
