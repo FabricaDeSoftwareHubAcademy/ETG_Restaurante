@@ -84,7 +84,7 @@
                     <h1 id="titulo-pergunta-pos">Selecione as Perguntas Pré Aula:</h1>
 
 
-                    <button class="pergunta_popup" id="popup_cad_pergunta" onclick="openPopup5()"><i class="bi bi-plus-circle"></i></button>
+                    <!-- <button class="pergunta_popup" id="popup_cad_pergunta" onclick="openPopup5()"><i class="bi bi-plus-circle"></i></button>
                     <form class="form_cad_checklist_pergunta" id="overlay" style="opacity: 1;">
 
                         <div class="popup_cad_pergunta" id="popup_cad_pergunta">
@@ -98,13 +98,14 @@
                                 </div>
                             </section>
                 
-                            <!-- DIV DOS BOTÕES (cancelar e confirmar) -->
 
                             <div class="botoes">
                                 <button class="botao-ok-submit" onclick="closePopup5()" id='botao_cancelar_editar' value="OK" > OK, FECHAR</button>
                             </div>
                         </div>
-                    </form>
+                    </form> -->
+
+
                 </div>
                 <section class="selecao-pergunta">
                     <table class="tabela-perguntas" id = "tablePre" name="pergunta">
@@ -122,7 +123,9 @@
             <div id="tab2" class="tab">
                 <div class="titulo-selecione-pergunta-pos">
                     <h1 id="titulo-pergunta-pos">Selecione as Perguntas Pós Aula:</h1>
-                    <i class="bi bi-plus-circle"></i>
+
+                    <!-- <i class="bi bi-plus-circle"></i> -->
+                    
                 </div>
                 <section class="selecao-pergunta">
                     <table class="tabela-perguntas" id="tablePos">
