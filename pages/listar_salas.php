@@ -29,44 +29,24 @@ if($ifgensala){
          
         $style='';
         $link_view_sala = '';
-        $status = [
-            'D' => 'Desativada',
-            'L' => 'Livre',
-            'A' => 'Em uso',
-            'B' => 'Bloqueada'
-        ];
-        $classes = [
-            'D' => 'desativado',
-            'L' => 'livre',
-            'A' => 'em-uso',
-            'B' => 'block'
-        ];
-        $classes2 = [
-            'D' => 'desativado2',
-            'L' => 'livre2',
-            'A' => 'em-uso2',
-            'B' => 'block2'
-        ];
         
         if($sala['status'] == "D"){ 
             $style = "filter: grayscale(1);"; 
         }
-        if($sala['status'] == "L" || $sala['status'] == "A" ){ 
+        if($sala['status'] == "L"){ 
 
             $link_view_sala = 'href="visualizar_sala.php?id_sala='.$sala['id'].'"';
 
-        }
-        
-        
+        } 
+
         if($count == 0){
-            
             
             
             $salas .= '<div class="card_sala move" animation="right">
             
-                            <div class="border_card_sala" style=" border: 2px solid '.$sala['cor_itens'].'; '.$style.'"> <p class="'.$classes[$sala['status']].'">'.$status[$sala['status']].'</p> </div>
-                            <a class="click_sala" '. $link_view_sala .'><img style="'.$style.'" class="img_card_sala" src="../storage/salas/'.$sala['img_sala'].'" alt=""></a>
-                            <a href="editar_sala.php?id_sala='.$sala['id'].'"><img  class="icon_editar_sala" src="../assets/imgs/icons/btn_editar.png" alt=""></a>
+                            <div class="border_card_sala" style=" border: 2px solid '.$sala['cor_itens'].'; '.$style.'"> <p class="em-uso">Em uso</p> </div>
+                            <a class="click_sala" '. $link_view_sala .'><img style="'.$style.'" class="img_card_sala" src="../storage/salas/'.$sala['img_sala'].'" alt=""> <h3 class="cod_sala">'.$sala['codigo'].'</h3> </a>
+                            <a href="editar_sala.php?id_sala='.$sala['id'].'"><img  class="icon_editar_sala" src="../assets/imgs/icons/btn_editar.png" alt=""> </a>
                             <div class="area_title_sala">
                                 
                                 <h1 class="title_sala">'.$sala['nome'].'</h1>
@@ -76,12 +56,11 @@ if($ifgensala){
                             
                             $count = 1;
         }
-        
-        else    
+        else
         {
             $salas .= '<div class="card_sala move" animation="left">
             
-                            <div class="border_card_sala2" style=" border: 2px solid '.$sala['cor_itens'].'; '.$style.'"> <p class="'.$classes2[$sala['status']].'">'.$status[$sala['status']].'</p> </div>
+                            <div class="border_card_sala2" style=" border: 2px solid '.$sala['cor_itens'].'; '.$style.'"> <i class="bi bi-lock-fill"></i></div>
                             <a class="click_sala" '. $link_view_sala .' ><img style="'.$style.'" class="img_card_sala" src="../storage/salas/'.$sala['img_sala'].'" alt=""></a>
                             <a href="editar_sala.php?id_sala='.$sala['id'].'"><img  class="icon_editar_sala" src="../assets/imgs/icons/btn_editar.png" alt=""></a>
                             <div class="area_title_sala2">
@@ -90,9 +69,7 @@ if($ifgensala){
                             
                         </div>';
                             $count = 0;
-        }
-        
-        
+        }                    
     }
 }
 else

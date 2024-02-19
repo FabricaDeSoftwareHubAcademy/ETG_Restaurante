@@ -62,6 +62,65 @@
             
         </form>
     </main>
- 
+    
 
+
+<script>
+
+let button =document.getElementById('botao-confirmar-submit')
+        
+button.addEventListener('click', async (e) =>{
+        
+    e.preventDefault()
+    
+    const nomes = document.getElementById('nomes').value;
+    const emails = document.getElementById('emails').value;
+    const options = document.getElementById('options').value;
+    const matricula = document.getElementById('matricula').value;
+    const senhas = document.getElementById('senhas').value;
+    // console.log(nomes);
+    
+    // if (nomes.length > 0) {
+    //     console.log("Campo de nome preenchido");
+    // } 
+    // else{
+    //     console.log("Campo de nome não preenchido");
+    // } 
+    
+    if (nomes.length > 0 && emails.length > 0 && options.length > 0 && matricula.length > 0 && senhas.length > 0) {
+        console.log("Todos os campos estão preenchidos.");
+
+        let form = document.getElementById('form_cad')
+        console.log(form)
+
+        let formData = new FormData(form)
+        let dados_php = await fetch("../pages/actions/cad_usuario.php",{method:"POST",
+            body: formData
+        })
+
+        let response = await dados_php.json()
+
+        console.log(response)
+
+        if(response){
+
+            console.log("funfou")
+
+        }
+        else{
+            console.log("nao funfou")
+        }
+
+
+    } else {
+        console.log("Preencha todos os campos.");
+    }
+
+});
+
+</script>
+    
+
+    
+    <?php include_once("./../includes/modais/usuario_cadastrado.php"); ?>
 </body>

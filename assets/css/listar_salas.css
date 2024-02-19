@@ -179,6 +179,7 @@ border-radius: 10px;
     border-radius: 20px;
     cursor: pointer;
     color: var(--cor-primaria-botao-green);
+    font-style: normal;
     font-size: 'Montserrat';
     font-weight: bold;
     font-size: 15px;
@@ -347,114 +348,33 @@ border-radius: 10px;
     
 }
 
+.bi-lock-fill::before {
+    content: "\f47a";
+    margin-left: 8%;
+    margin-top: 3%;
+    color: red;
+    font-size: 24px;
 
+}
 
 .em-uso {
-    text-align:center;
-    color: #ea8c2f;
+    color: #008000;
     font-size: 12px;
     font-weight: bold;
     margin-left: 76%;
     margin-top: 3%;
-    border: 2px solid #ea8c2f;
+    border: 2px solid #008000;
     border-radius: 15px;
     width: 15%;
     padding: 1%;
 }
-
-.livre {
-    text-align:center;
-    color:green;
-    font-size: 12px;
-    font-weight: bold;
-    margin-left: 76%;
-    margin-top: 3%;
-    border: 2px solid green;
-    border-radius: 15px;
-    width: 15%;
-    padding: 1%;
-}
-
-.desativado{
-    text-align:center;
-    color:gray;
-    font-size: 12px;
-    font-weight: bold;
-    margin-left: 76%;
-    margin-top: 3%;
-    border: 2px solid gray;
-    border-radius: 15px;
-    width: 20%;
-    padding: 1%;
-
-}
-
-.block {
-    text-align:center;
-    color: red;
-    font-size: 12px;
-    font-weight: bold;
-    margin-left: 76%;
-    margin-top: 3%;
-    border: 2px solid red;
-    border-radius: 15px;
-    width: 20%;
-    padding: 1%;
-}
-
-/* -------- */
-
-
-.em-uso2 {
-    text-align:center;
-    color: #ea8c2f;
-    font-size: 12px;
-    font-weight: bold;
-    margin-left: 3%;
-    margin-top: 3%;
-    border: 2px solid #ea8c2f;
-    border-radius: 15px;
-    width: 15%;
-    padding: 1%;
-}
-
-.livre2 {
+.cod_sala{
+    position: absolute; 
+    right: 15px;
+    bottom: 15px;
+    padding: 2px 5px;
+    background: #212121c7;
+    border-radius: 5px;
     text-align: center;
-    text-align:center;
-    color: green;
-    font-size: 12px;
-    font-weight: bold;
-    margin-left: 3%;
-    margin-top: 3%;
-    border: 2px solid green;
-    border-radius: 15px;
-    width: 15%;
-    padding: 1%;
-}
-
-.desativado2{
-    text-align:center;
-    color:gray;
-    font-size: 12px;
-    font-weight: bold;
-    margin-left: 3%;
-    margin-top: 3%;
-    border: 2px solid gray;
-    border-radius: 15px;
-    width: 20%;
-    padding: 1%;
-
-}
-
-.block2 {
-    text-align:center;
-    color: red;
-    font-size: 12px;
-    font-weight: bold;
-    margin-left: 3%;
-    margin-top: 3%;
-    border: 2px solid red;
-    border-radius: 15px;
-    width: 20%;
-    padding: 1%;
+    color: white;
 }
