@@ -1,7 +1,7 @@
 <?php
 session_start();
 require __DIR__."/../vendor/autoload.php";
-$titulo_page = 'Lista Salas';
+$titulo_page = 'Listar Salas';
 include_once("../includes/menu.php"); 
 require("../includes/header/header.php");
 
@@ -51,7 +51,7 @@ if($ifgensala){
         if($sala['status'] == "D"){ 
             $style = "filter: grayscale(1);"; 
         }
-        if($sala['status'] == "L"){ 
+        if($sala['status'] == "L"||$sala['status'] == "A"){ 
 
             $link_view_sala = 'href="visualizar_sala.php?id_sala='.$sala['id'].'"';
 
