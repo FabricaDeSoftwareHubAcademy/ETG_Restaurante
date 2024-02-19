@@ -72,7 +72,7 @@ align-items: center;
 .Enviar-notificacao h1{
   display: flex;
   justify-content: center;
-  font-size: 45px; 
+  font-size: 40px; 
   font-family: 'Montserrat';
   margin-top: 9%;
 }
@@ -82,7 +82,7 @@ align-items: center;
 
 .botao-confirmar-submit{
 width: 180px;
-height: 50px;
+height: 45px;
 background-color: var(--cor-primaria-botao-white);
 border: 3px solid var(--cor-primaria-botao-green);
 border-radius: 20px;
@@ -112,7 +112,7 @@ justify-content: center;
 .botao-voltar-submit{
 text-decoration: none;
 width: 180px;
-height: 45px;
+height: 40px;
 background-color: var(--cor-primaria-botao-white);
 border: 3px solid var(--cor-primaria-botao-yellow);
 border-radius: 20px;

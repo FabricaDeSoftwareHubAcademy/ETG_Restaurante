@@ -62,7 +62,7 @@
 }
 
 .titulo_cad_perfil{
-  font-size: 45px;
+  font-size: 40px;
 }
 
   .input:placeholder-shown ~ .input {
@@ -131,7 +131,7 @@
   padding: 20px  0px;
   max-width: 832px;
   margin-left: 8%;
-
+  margin-top: 3%;
   
 }
 
