@@ -56,15 +56,25 @@ async function listarPerguntas() {
     $("#tablePos").append(trTopoPos)
 
     getPre.forEach(element => {
+
+        let checkedBox = ''
+        if(dadosPerguntas.some(item => item.id === element.id)){
+
+            checkedBox = 'checked'
+
+        };
+        
+        // puxar todas as perguntas disponiveis 
+
         let tr = document.createElement("tr")
-        tr.innerHTML = "<tr> <td>" + element['descricao'] + "</td> <td><i class='bi bi-trash' id='perg_del' id_excluir="+element.id+" ></i> </td> </tr>"
+        tr.innerHTML = "<tr> <td><input type='checkbox' "+checkedBox+"  id='checkbox' name='perguntas[]' value='" + element['id'] + "'></td> <td>" + element['descricao'] + "</td> </tr>"
         tr.setAttribute('preId', element.id)
          $("#tablePre").append(tr)
     });
 
     getPos.forEach(element => {
         let tr = document.createElement("tr")
-        tr.innerHTML = "<tr id='pergPos'> <td>" + element['descricao'] + "</td> <td><i class='bi bi-trash' id='perg_del' id_excluir="+element.id+" ></i> </td> </tr>"
+        tr.innerHTML = "<tr id='pergPos'> <td><input type='checkbox'  id='checkbox' name='perguntas[]' value='" + element['id'] + "'></td> <td>" + element['descricao'] + "</td> </tr>"
         tr.setAttribute('posId', element.id)
  
         $("#tablePos").append(tr)

@@ -100,15 +100,21 @@ class Pergunta
         $obj_banco = new Banco('relacao_pergunta_checklist');
         $dados = $obj_banco->select(where:"id_check = '".$id_checklist."'" , order:"id DESC");
         
-        if($dados){ 
+        if($dados->rowCount() > 0){ 
             
             $data = $dados->fetchAll(PDO::FETCH_ASSOC);
+            
             foreach($data as $relacao){
-                array_push($ids_pergunta,$relacao['id']);
+                 
+                array_push($ids_pergunta,$relacao['id_pergunta']);
             }
             
+            // print_r($ids_pergunta);
             $obPergunta = new Banco('cadastro_pergunta');
-            return $obPergunta->select(where:"id IN ('".implode("', '",$ids_pergunta)."')" )->fetchAll(PDO::FETCH_ASSOC);
+
+            $sql_in = "'".implode("', '",$ids_pergunta)."'";
+             
+            return $obPergunta->select(where:"id IN (".$sql_in.")" )->fetchAll(PDO::FETCH_ASSOC) ;
 
         }
         else
