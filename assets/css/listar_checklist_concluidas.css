@@ -140,7 +140,12 @@ a{
 .pagination .numeros{
     display: flex;
     justify-content: center;
+    align-items: center;
     /* margin-left: 5px; */
+}
+.pagination .numeros a{
+    margin: 0 5px 0 5px;
+    padding: 5px; 
 }
 .pagination .form_pages{
     display: flex;
