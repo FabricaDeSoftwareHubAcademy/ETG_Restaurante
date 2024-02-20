@@ -5,7 +5,5 @@ use App\Entity\Pergunta;
 
 echo(json_encode(Pergunta::getPerguntas()))
 
-
-
-
+ 
 ?>

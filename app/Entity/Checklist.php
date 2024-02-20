@@ -58,6 +58,20 @@ class Checklist
         } 
     }
 
+    public static function getChecklistById($id_check)
+    {
+        $obj_banco = new Banco('cadastro_checklist');
+        $dados = $obj_banco->select(order:"id DESC",where:"id = '".$id_check."'");
+        if($dados)
+        {
+            return $dados->fetchAll(PDO::FETCH_ASSOC);
+        }
+        else
+        {
+            return false;
+        } 
+    }
+
     public static function deleteChecklist($id_checklist){
 
         $obj_banco = new Banco('responder_check');  
