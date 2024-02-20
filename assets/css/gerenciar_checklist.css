@@ -45,11 +45,12 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 30px;
+    font-size: 35px;
     font-style: normal;
     font-weight: 300;
     line-height: 140%; /* 42px */
     letter-spacing: 0.2px;
+    font-weight: bold;
 }
 
 /* PARTE FUNCIONAL (pesquisa, cards e botão) */
