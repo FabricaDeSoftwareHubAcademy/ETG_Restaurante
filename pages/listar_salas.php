@@ -19,11 +19,11 @@ if($ifgensala){
         $img_sala = '';
         if($sala['img_sala'] == ''){
 
-        $img_sala = 'https://iili.io/JI1SMfR.png';
+            $img_sala = 'https://iili.io/JI1SMfR.png';
 
         }else{
 
-        $img_sala = "../storage/salas/".$sala['img_sala'];
+            $img_sala = "../storage/salas/".$sala['img_sala'];
 
         }
          
@@ -61,7 +61,7 @@ if($ifgensala){
             $salas .= '<div class="card_sala move" animation="left">
             
                             <div class="border_card_sala2" style=" border: 2px solid '.$sala['cor_itens'].'; '.$style.'"> <i class="bi bi-lock-fill"></i></div>
-                            <a class="click_sala" '. $link_view_sala .' ><img style="'.$style.'" class="img_card_sala" src="../storage/salas/'.$sala['img_sala'].'" alt=""></a>
+                            <a class="click_sala" '. $link_view_sala .' ><img style="'.$style.'" class="img_card_sala" src="../storage/salas/'.$sala['img_sala'].'" alt=""><h3 class="cod_sala">'.$sala['codigo'].'</h3></a>
                             <a href="editar_sala.php?id_sala='.$sala['id'].'"><img  class="icon_editar_sala" src="../assets/imgs/icons/btn_editar.png" alt=""></a>
                             <div class="area_title_sala2">
                                 <h1 class="title_sala2">'.$sala['nome'].' - '.$sala['codigo'].'</h1>
@@ -82,7 +82,7 @@ else
             $salas .= '<div class="card_sala move" animation="right">
             
                             <div class="border_card_sala" style=" border: 2px solid '.$sala['cor_itens'].'"></div>
-                            <a class="click_sala" href="visualizar_sala.php?id_sala='.$sala['id'].'"><img class="img_card_sala" src="../storage/salas/'.$sala['img_sala'].'" alt=""></a> 
+                            <a class="click_sala" href="visualizar_sala.php?id_sala='.$sala['id'].'"><img class="img_card_sala" src="../storage/salas/'.$sala['img_sala'].'" alt=""> <h3 class="cod_sala">'.$sala['codigo'].'</h3></a> 
                             <div class="area_title_sala">
                                 <h1 class="title_sala">'.$sala['nome'].'</h1>
                             </div>
@@ -96,7 +96,7 @@ else
             $salas .= '<div class="card_sala move" animation="left">
             
                             <div class="border_card_sala2" style=" border: 2px solid '.$sala['cor_itens'].'"></div>
-                            <a class="click_sala" href="visualizar_sala.php?id_sala='.$sala['id'].'"><img class="img_card_sala" src="../storage/salas/'.$sala['img_sala'].'" alt=""></a>
+                            <a class="click_sala" href="visualizar_sala.php?id_sala='.$sala['id'].'"><img class="img_card_sala" src="../storage/salas/'.$sala['img_sala'].'" alt=""> <h3 class="cod_sala">'.$sala['codigo'].'</h3></a>
                             <div class="area_title_sala2">
                                 <h1 class="title_sala2">'.$sala['nome'].'</h1>
                             </div>
