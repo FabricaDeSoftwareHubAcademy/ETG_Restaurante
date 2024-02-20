@@ -70,7 +70,14 @@ class Sala
         return $salas;
     }
 
- 
+    public static function getSalaAberta()
+    {
+        $obj_banco = new Banco('quem_abriu');
+
+        $salas = $obj_banco -> select() -> fetchAll(PDO::FETCH_ASSOC);
+
+        return $salas;
+    }
 
 
     //READ

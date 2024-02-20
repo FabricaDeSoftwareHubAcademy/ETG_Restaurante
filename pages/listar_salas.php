@@ -10,6 +10,7 @@ use App\Entity\Sala;
 
 $salas = "";
 $dados = Sala::getDados();
+$responsavel = Sala::getSalaAberta();
 //var_dump($dados);exit;
 $count = 0;
 if($ifgensala){
@@ -55,6 +56,17 @@ if($ifgensala){
 
             $link_view_sala = 'href="visualizar_sala.php?id_sala='.$sala['id'].'"';
 
+        }
+        elseif($responsavel['$responsavel']){
+            if($sala['status'] == "A" && $responsavel['responsavel']!==$_SESSION['id']){
+
+                break;
+
+            }
+            else{
+                $link_view_sala = 'href="visualizar_sala.php?id_sala='.$sala['id'].'"';
+            }
+            break;
         }
         
         
