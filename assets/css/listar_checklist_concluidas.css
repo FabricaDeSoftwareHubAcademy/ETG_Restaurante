@@ -98,6 +98,7 @@ a{
     margin-left: 10px;
     height: 100%;
     min-width: 310px;
+    max-width: 310px;
 }
 .card .card_text{
     display: flex;
@@ -162,7 +163,6 @@ a{
 @media screen and (max-width: 750px){
     .card_info{
         justify-content: center;
-        min-width: 0; 
     }
     .card .card_detalhes{
         flex-wrap: wrap;
