@@ -106,7 +106,6 @@ a{
     flex-direction: column;
     justify-content: center;
     height: 100%;
-    white-space: nowrap;
 }
 .card .card_header_title{
     font-weight: bold;
@@ -176,6 +175,9 @@ a{
     
 }
 @media screen and (max-width: 460px){
+    .card_info{
+        min-width: 0;
+    }
     .card .card_header_title{
         font-size: 16px;
     }
@@ -183,6 +185,6 @@ a{
         font-size: 13px;
     }
     .card .card_img{
-        min-width: 200px;
+        min-width: 0;
     }
 }
