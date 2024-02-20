@@ -38,7 +38,7 @@
 
                         <div class="wrap-inputx margin-top-35 margin-bottomx-35">
                             <div class="input_group field ">
-                                <input type="input" class="input_field toguro required" placeholder="Name" id="codigo_sala" name="codigo_sala" maxLength="8" style="text-transform:uppercase">
+                                <input type="number" class="input_field toguro required" placeholder="Name" id="codigo_sala" name="codigo_sala" maxLength="4" style="text-transform:uppercase">
                                 <h4 class="span-required diferentao">Preenchimento obrigatório</h4>
                                 <label for="name" class="input_label toguro" > Código </label> <!--Alterar para o nome do input-->
                             </div>
@@ -201,6 +201,13 @@
 
                     <script>
 
+                        document.querySelectorAll('input[type="number"]').forEach(input=>{
+                            input.oninput = () => {
+                                if(input.value.length>input.maxLength) input.value = input.value.slice(0,input.maxLength);
+                            };
+                        });
+
+
                         const campos =document.querySelectorAll(".required");
                         const spans = document.querySelectorAll(".span-required");
                         
@@ -235,6 +242,9 @@
                         button.addEventListener('click', async (e) => {
                             
                             e.preventDefault()
+                          
+
+                           
 
 
                             let nome_sala = document.getElementById('nome_sala')
@@ -254,7 +264,11 @@
 
                             }
 
-                            let codigo_sala = document.getElementById('codigo_sala') 
+                            let codigo_sala = document.getElementById('codigo_sala')
+                           // codigo_sala.addEventListener(){
+                            //     function 
+                            // }
+
 
                             
                             if(nome_sala){
