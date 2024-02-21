@@ -55,8 +55,8 @@
             </div>
             
             <!--Botão Confirmar-->
-            <div class="botao-padrao-confirmar">
-                    <a><input type="submit" class="botao-confirmar-submit" id="botao-confirmar-submit" name="btn_submit" value="CONFIRMAR"></a>
+                <div class="botao-padrao-confirmar">
+                    <a><input type="submit" class="botao-confirmar-submit" name="btn_submit" value="CONFIRMAR"  onclick="openPopupUserCadastrado()"></a>
                 </div>
             </section>
             
