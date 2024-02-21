@@ -10,8 +10,7 @@ use App\Entity\Sala;
 
 $salas = "";
 $dados = Sala::getDados();
-$responsavel = Sala::getSalaAberta();
-//var_dump($dados);exit;
+// var_dump($dados);exit;
 $count = 0;
 if($ifgensala){
     foreach($dados as $sala){
@@ -48,8 +47,17 @@ if($ifgensala){
             'A' => 'em-uso2',
             'B' => 'block2'
         ];
-        
-        if($sala['status'] == "D"){ 
+        echo $sala['status'];
+        if($sala['status']=='A'){
+            if($sala['responsavel'] ==$_SESSION['id_user']){
+                $link_view_sala = 'href="visualizar_sala.php?id_sala='.$sala['id'].'"';
+            }
+            else{
+                continue;
+            }
+        }
+        if($sala['status'] == "D"){
+
             $style = "filter: grayscale(1);"; 
         }
         elseif($sala['status'] == "L"){ 
@@ -57,18 +65,6 @@ if($ifgensala){
             $link_view_sala = 'href="visualizar_sala.php?id_sala='.$sala['id'].'"';
 
         }
-        elseif($responsavel['$responsavel']){
-            if($sala['status'] == "A" && $responsavel['responsavel']!==$_SESSION['id']){
-
-                break;
-
-            }
-            else{
-                $link_view_sala = 'href="visualizar_sala.php?id_sala='.$sala['id'].'"';
-            }
-            break;
-        }
-        
         
         if($count == 0){
             
