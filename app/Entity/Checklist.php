@@ -65,20 +65,16 @@ class Checklist
             }
  
             $this->updateChecklistRelacao($ids_perguntas);
-            
-
-
-
+             
         }catch(PDOException $e){
 
             return $e->getMessage();
 
         }
-
-
-
-
+ 
     }
+
+    
 
     private function updateNameChecklist( $nome){
         
@@ -112,6 +108,21 @@ class Checklist
 
     }
 
+
+    public static function checklistResp($id_checklist){
+        // se o checklist ja foi repondido retorna true, caso contrario false 
+        try {
+            $obBanco = new Banco('responder_check');
+            if($obBanco->select('id_checklist = "'.$id_checklist.'"')->rowCount() > 0){
+                return true;
+            }else{
+                return false;
+            }
+        } catch (PDOException $e) {
+            return $e->getMessage();
+        }
+
+    }
 
     public static function getChecklistById($id_check)
     {
