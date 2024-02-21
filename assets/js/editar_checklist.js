@@ -13,14 +13,12 @@ $('document').ready(function() {
     listarPerguntas() 
 })
 
-async function getDadosChecklist(id_checklist){
- 
+async function getDadosChecklist(id_checklist){ 
 
     let data_php = await fetch('./actions/action_get_checklist_by_id.php?id_checklist='+id_checklist)
     let dados = await data_php.json()  
     return dados
-    
-
+     
 }
 
 
@@ -68,8 +66,13 @@ async function printPerguntas() {
 }
 
 function pergInCheck(id_perg, dPC){
-  
-    return dPC.find(e => id_perg == e.id) !== undefined
+    
+    // retorna true ou false 
+    if(dPC.length > 0){ 
+        return dPC.find(e => id_perg == e.id) !== undefined 
+    }else{
+        return false
+    }
 
 }
 
@@ -175,9 +178,7 @@ async function listarPerguntas() {
 
 }
 
-$('[id=perg_del]').on('click',function(){
-    console.log(123123)
-})
+ 
 
 var intervalo 
 
@@ -246,3 +247,37 @@ function ResetListaPerguntas(){
 
 }
 
+
+$('#btn_cadastrar').on('click',(e) => {
+    e.preventDefault()
+    
+    updateChecklist()
+
+
+})
+
+async function updateChecklist(){
+
+    const urlParams = new URLSearchParams(window.location.search);
+    const id_checklist = urlParams.get('id_checklist');
+
+
+    let form = $('#meuFormulario')[0]
+    let formData = new FormData(form)
+
+    let request = await fetch('./actions/action_update_checklist.php?id_checklist='+id_checklist,{
+        method: "POST",
+        body:formData
+    })
+    let res = await request.json()
+    if(res.status){
+
+        modalStatus('Checklist editado com Sucesso!','success',() => {
+
+            location.reload()
+
+        })
+
+    }
+
+}

@@ -2,12 +2,13 @@
 <!-- <link rel="stylesheet" href="https/cdnjs.cloudflare.comlibs/font-awesome/6.4.0/css/all.min.css"> -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <link rel="stylesheet" href="../assets/css/cadastrar_checklist/input-checklist.css">
-<link rel="stylesheet" href="../assets/css/cadastrar_checklist/posicao.css">
-<link rel="stylesheet" href="../assets/js/cadastro-checklist.js">
+<link rel="stylesheet" href="../assets/css/cadastrar_checklist/posicao.css"> 
+<!-- <link rel="stylesheet" href="../assets/js/cadastro-checklist.js"> -->
 <link rel="stylesheet" href="../assets/css/cadastrar_checklist/caixa_pergunta.css">
 <link rel="stylesheet" href="../assets/css/cadastrar_checklist/botões-checklist.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.18/dist/sweetalert2.all.min.js"></script>
+
+<script src="../assets/js/modais.js"></script>
 
 
 <body class="pai_de_todos">

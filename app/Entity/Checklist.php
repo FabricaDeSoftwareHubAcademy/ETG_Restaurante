@@ -1,22 +1,20 @@
 <?php
 namespace App\Entity;
 
-use App\Db\Banco; 
+use App\Db\Banco;
+use App\Entity\CadastroChecklist; 
 use PDO;
 use PDOException;
 
 class Checklist
 {
     public
-    $id_usuario,
-    $id_sala,
-    $data_fechamento;
+    $id_checklist;
 
-    public function __construct()
+    public function __construct($id_checklist = null)
     {
-        $this -> id_usuario      = null;
-        $this -> id_sala         = null;
-        $this -> data_fechamento = null;
+        $this -> id_checklist = $id_checklist;
+    
     }
 
     public function cadastrar($dados = array())
@@ -57,6 +55,63 @@ class Checklist
             return false;
         } 
     }
+
+    
+    public function updateChecklist($ids_perguntas, $nome = null){
+
+        try{
+            if($nome != null && strlen($nome) > 0){ 
+                 $this->updateNameChecklist($nome); 
+            }
+ 
+            $this->updateChecklistRelacao($ids_perguntas);
+            
+
+
+
+        }catch(PDOException $e){
+
+            return $e->getMessage();
+
+        }
+
+
+
+
+    }
+
+    private function updateNameChecklist( $nome){
+        
+        try{ 
+            $banco = new Banco('cadastro_checklist');
+            $dados = [ 
+                'nome' => $nome
+            ]; 
+            $banco->update('id = "'.$this->id_checklist.'"', $dados);
+            return true;
+
+        }catch(PDOException $e){ 
+            return $e->getMessage(); 
+        }
+
+
+    }
+
+    private function updateChecklistRelacao($id_perguntas){
+        
+        try{ 
+            $obBanco = new Banco('relacao_pergunta_checklist'); 
+            $obBanco->delete($this->id_checklist,'id_check'); 
+    
+            return CadastroChecklist::cadastrarPergunta($id_perguntas,$this->id_checklist);
+
+        }catch(PDOException $e){ 
+            return $e->getMessage(); 
+        }
+
+
+    }
+
 
     public static function getChecklistById($id_check)
     {

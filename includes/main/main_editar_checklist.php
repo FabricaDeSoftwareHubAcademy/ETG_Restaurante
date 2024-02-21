@@ -7,6 +7,8 @@
 <link rel="stylesheet" href="../assets/css/editar_checklist_caixa_pergunta.css">
 <link rel="stylesheet" href="../assets/css/editar_checklist_botoes.css">
 <script defer src="../assets/js/editar_checklist.js"></script>
+<script src="../assets/js/modais.js"></script>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 
 
@@ -124,7 +126,7 @@
                     buttons.forEach(button => button.classList.remove('active'));
                     document.getElementById(tabId).style.display = 'block';
                     document.querySelector(`[onclick="showTab('${tabId}')"`).classList.add('active');
-                }
+                } 
                 const btn_pos = document.getElementById('btn_pos');
                 btn_pos.addEventListener('click', proxTab);
 

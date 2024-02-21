@@ -25,8 +25,7 @@ class Pergunta
                         'descricao' => $this -> descricao,
                         'tipo' => $tipo
                      ];
-    
-    
+     
             // atualmente retonando true or false  
             if($obj_banco -> insert($dados))
             {
@@ -123,6 +122,12 @@ class Pergunta
         } 
         // return $ids_pergunta;
     }
+    // public static function updateChecklistRelacao($id_checklist, $ids_pergunta){
+
+    //     $obBanco = new Banco(`relacao_pergunta_checklist`); 
+    //     $obBanco->delete($id_checklist,'id_check'); 
+
+    // }
 
     public static function filter($nome)
     {
