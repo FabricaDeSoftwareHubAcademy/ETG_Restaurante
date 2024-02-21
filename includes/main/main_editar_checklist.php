@@ -148,7 +148,7 @@
                 <div class="botoes-cadastro-checklist">
                     <!--Botão Voltar-->
                     <div class="botao-padrao-voltar">
-                        <a href="editar_sala.php"><input type="submit" class="botao-voltar-submit" value="VOLTAR"></a>
+                        <a href="gerenciar_checklist.php" class="botao-voltar-submit" >VOLTAR</a>
                     </div>
 
                     <!--Botão Cadastrar-->
