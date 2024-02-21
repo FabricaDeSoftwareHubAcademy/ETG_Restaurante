@@ -63,14 +63,21 @@ class Sala
     //READ
     public static function getDados()
     {
-        $obj_banco = new Banco('cadastro_sala');
+        $obj_banco = new Banco('quem_abriu');
 
         $salas = $obj_banco -> select(order:"status ASC") -> fetchAll(PDO::FETCH_ASSOC);
 
         return $salas;
     }
 
- 
+    // public static function getSalaAberta()
+    // {
+    //     $obj_banco = new Banco('quem_abriu');
+
+    //     $salas = $obj_banco -> select() -> fetch(PDO::FETCH_ASSOC);
+
+    //     return $salas;
+    // }
 
 
     //READ
