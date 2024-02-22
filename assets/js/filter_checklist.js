@@ -13,7 +13,7 @@ async function listarChecklists(){
  
         $('#perguntas').append(divPergunta)
     }  
-
+ 
 
     $('[id="btn_trash_excluir_pergunta"]').on('click',async function(){ 
         id_atual_excluir_pergunta = $(this).attr('btn_excluir')  
@@ -21,8 +21,22 @@ async function listarChecklists(){
     })
 
     $('[id="btn_pencil_editar_pergunta"]').on('click',async function(){ 
+        
+        let id_checklist = $(this).attr('btn_editar')
+        
 
-        toEditarChecklist($(this).attr('btn_editar'))
+        let data_php = await fetch('../pages/actions/action_get_checklist_resp.php?id_checklist='+id_checklist)
+        let res = await data_php.json()
+
+        if(res){
+            // checklist ja foi respondido pelo menos uma vez 
+            modalStatus('Impossível editar esse checklist, ele ja foi respondido pelo menos uma vez!','error')
+
+        }else{
+            toEditarChecklist($(this).attr('btn_editar'))
+
+        }
+
         
     }) 
 
