@@ -35,6 +35,7 @@
 
 #titulo{
     justify-content: center;
+    font-family: "Montsserat";
     font-style: normal;
     display: flex;
     font-size: 45px;

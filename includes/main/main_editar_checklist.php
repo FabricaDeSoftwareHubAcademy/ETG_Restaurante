@@ -7,6 +7,8 @@
 <link rel="stylesheet" href="../assets/css/editar_checklist_caixa_pergunta.css">
 <link rel="stylesheet" href="../assets/css/editar_checklist_botoes.css">
 <script defer src="../assets/js/editar_checklist.js"></script>
+<script src="../assets/js/modais.js"></script>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 
 
@@ -38,26 +40,14 @@
         </div>
     </div>
 
-    <div class="container-pop-up-notificacao">
-        
-        <div class="popup-notificacao" id="popup-up-notificacao">
-            <div class="div-img">
-                <img src="img/erro.png" alt="carregando" id="img_check">
-                <p>Recado excluído com sucesso! </p>
-            </div>
-            <div class="botao-padrao-ok">
-                <a href="#"><input type="submit" class="botao-ok-submit" onclick="closePopupValidar()" value="OK"></a>
-            </div>
-        </div>
-    </div>
-
+    
     <main class="todo-projeto">
 
         <form class="cadastro-checklist" method="POST" name="form-perguntas" id="meuFormulario">
 
             <div class="inputs-cadastro-checklist">
                 <div class="input_group field">
-                    <input type="text" class="input_field" placeholder="" required="" name="nome_checklist"  maxlength="45">
+                    <input type="text" id="input_nome_checklist" class="input_field" placeholder="" required="" name="nome_checklist"  maxlength="45">
                     <label for="name" class="input_label">Nome da CheckList</label> <!--Alterar para o nome do input-->
                     
                 </div>
@@ -82,30 +72,7 @@
             <div id="tab1" class="tab" style="display: block;">
                 <div class="titulo-selecione-pergunta-pre">
                     <h1 id="titulo-pergunta-pos">Selecione as Perguntas Pré Aula:</h1>
-
-
-                    <!-- <button class="pergunta_popup" id="popup_cad_pergunta" onclick="openPopup5()"><i class="bi bi-plus-circle"></i></button>
-                    <form class="form_cad_checklist_pergunta" id="overlay" style="opacity: 1;">
-
-                        <div class="popup_cad_pergunta" id="popup_cad_pergunta">
-
-                            <h4>Escolha um checklist para inserir ou excluir a pergunta:</h4>
-
-                            <section class="area_pergunta">
-                                <div class="pergunta_card">
-                                <i class="bi bi-plus-circle"></i>
-                                <div class="card_text"> Nome de checklist </div>
-                                </div>
-                            </section>
-                
-
-                            <div class="botoes">
-                                <button class="botao-ok-submit" onclick="closePopup5()" id='botao_cancelar_editar' value="OK" > OK, FECHAR</button>
-                            </div>
-                        </div>
-                    </form> -->
-
-
+                    <i class="bi bi-plus-circle"></i>
                 </div>
                 <section class="selecao-pergunta">
                     <table class="tabela-perguntas" id = "tablePre" name="pergunta">
@@ -123,9 +90,6 @@
             <div id="tab2" class="tab">
                 <div class="titulo-selecione-pergunta-pos">
                     <h1 id="titulo-pergunta-pos">Selecione as Perguntas Pós Aula:</h1>
-
-                    <!-- <i class="bi bi-plus-circle"></i> -->
-                    
                 </div>
                 <section class="selecao-pergunta">
                     <table class="tabela-perguntas" id="tablePos">
@@ -150,7 +114,7 @@
                     buttons.forEach(button => button.classList.remove('active'));
                     document.getElementById(tabId).style.display = 'block';
                     document.querySelector(`[onclick="showTab('${tabId}')"`).classList.add('active');
-                }
+                } 
                 const btn_pos = document.getElementById('btn_pos');
                 btn_pos.addEventListener('click', proxTab);
 
@@ -172,7 +136,7 @@
                 <div class="botoes-cadastro-checklist">
                     <!--Botão Voltar-->
                     <div class="botao-padrao-voltar">
-                        <a href="editar_sala.php"><input type="submit" class="botao-voltar-submit" value="VOLTAR"></a>
+                        <a href="gerenciar_checklist.php" class="botao-voltar-submit" >VOLTAR</a>
                     </div>
 
                     <!--Botão Cadastrar-->
@@ -182,24 +146,68 @@
                     </div>
                 </div>
             </div>
-
-            
             <script>
-                
-                let popup_cad_pergunta = document.getElementById("popup_cad_pergunta");
-                function openPopup4(){
+                // if(nome_checklist != ""  && pergunta != "" ){
+                //         let button = document.getElementById("btn_cadastrar")
+                //         button.addEventListener('click', async (e) => {
+                //             // alert("dsadsa")
+                //             e.preventDefault()
+                //             let form = document.getElementById('meuFormulario')
+                //             console.log(form)
 
-                    document.getElementById("overlay").style.visibility="visible";
-                    popup_cad_pergunta.classList.add("open-popup5");
-        
-                }
+                //             let formData = new FormData(form)
+                //             // console.log(formData)
 
-                function closePopup4(){ 
-        
-                    document.getElementById("overlay").style.visibility="hidden";
-                    popup_cad_pergunta.classList.remove("open-popup5");
-                }
+                //             var nome_checklist =  document.getElementById("nome_checklist")
+                //             var pergunta = document.getElementById("pergunta")
+                //             let dados_php = await fetch("../pages/actions/actn_checklist.php", {
+                //                 method: "POST",
+                //                 body: formData
+                //             })
 
+                //             // alert("Ta chegando até aqui !")
+                //             let response = await dados_php.json()
+
+                //             console.log(response);
+
+
+                //             console.log(response);
+                            
+
+                //             if (response) {
+
+                //                 let popup = document.getElementById('popup-up-notificacao');
+                //                 let btn = document.getElementById("submit-btn-notificacao");
+
+                //                 // btn.style.display = "none";
+
+                //                 popup.classList.add("open-popup");
+
+                //                 let blur = document.getElementById("blur");
+
+                //                 blur.classList.add("active");
+
+
+
+                //             } else {
+                //                 let popup = document.getElementById('popup-up-notificacao');
+                //                 let btn = document.getElementById("submit-btn-notificacao");
+
+                //                 // btn.style.display = "none";
+
+                //                 popup.classList.add("open-popup");
+
+                //                 let blur = document.getElementById("blur");
+
+                //                 blur.classList.add("active");
+                //             }
+                      
+                //         });
+                //     }
+
+
+                    
+               
             </script>
 
         </form>

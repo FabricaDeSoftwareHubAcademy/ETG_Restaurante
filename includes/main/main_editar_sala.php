@@ -77,7 +77,7 @@
 
 
                             <div class="input_group field ">
-                                <input type="number" value="<?=$dados_sala[0]['codigo']?>" class="input_field toguro required" placeholder="Name" required="" name="codigo" maxLength="4"  id="codigo_sala" style="text-transform:uppercase" />
+                                <input type="input" value="<?=$dados_sala[0]['codigo']?>" class="input_field toguro required" placeholder="Name" required="" name="codigo" maxLength="8"  id="codigo_sala" style="text-transform:uppercase" />
                                 <h4 class="span-required diferentao">Preenchimento obrigatório</h4>
                                 <label for="name" class="input_label toguro" > Código </label> <!--Alterar para o nome do input-->
                             </div>
@@ -233,11 +233,6 @@
                 </form>  
 
                 <script>
-                    document.querySelectorAll('input[type="number"]').forEach(input=>{
-                            input.oninput = () => {
-                                if(input.value.length>input.maxLength) input.value = input.value.slice(0,input.maxLength);
-                            };
-                        });
 
                         const campos =document.querySelectorAll(".required");
                         const spans = document.querySelectorAll(".span-required");

@@ -4,7 +4,8 @@
     <link rel="stylesheet" href="../assets/css/relatorio.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     <script src="../assets/js/relatorio.js" defer></script>
- 
+    <script src="../assets/js/relatorio.js"></script>
+
 <body class="paidetodos">
 <main class="report_principal">
         <h1 class="titulo_filtros">Filtros</h1>

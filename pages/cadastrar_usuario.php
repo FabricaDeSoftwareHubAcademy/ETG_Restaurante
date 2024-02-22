@@ -40,7 +40,7 @@ if(isset(
             $_POST['senha'],
             $_POST['id_perfil']);
             
-        echo '<script>openPopupValidar();</script>';
+            // echo '<script>openModalConfirmed();</script>';
 
         }
         
