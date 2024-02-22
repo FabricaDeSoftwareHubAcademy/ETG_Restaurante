@@ -63,7 +63,13 @@
                         <input type="password" name="senha" class="input_default_login" required="" >
                         <label for="" class="label_for_input_login">Senha</label>
                         <div class="line_login"></div>
-                         
+                        <?php
+                        // Verifica se existe uma mensagem de erro na URL
+                        if (isset($_GET['erro']) && $_GET['erro'] == 'credenciais_incorretas') {
+                            echo '<p style="color: red; margin-top:20px;">Credenciais incorretas. Por favor, tente novamente.</p>';
+                        }
+                        ?>
+
                     </div>
 
                 </div>
