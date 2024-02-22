@@ -10,7 +10,6 @@
 <link rel="stylesheet" href="../assets/css/gerenciar_checklist.css">
 
 
-<script src="../assets/js/modais.js"></script>
 
 <script src="../assets/js/filter_checklist.js"></script>
 <script defer src="../assets/js/filter_old_checklist.js"></script> 
