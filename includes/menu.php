@@ -51,13 +51,23 @@ $ifreaac = $perfil['realizar_acao_corretiva'] == '1';
 
             <ul class="navItems-menu">
 
-                <li class="parte-perfil">
-                    <a href="../pages/editar_usuario.php" id="teste" class="link-menu">                           
-                        <img src="../assets/imgs/users/<?=$dados[0]["foto"]?>" class="icon-perfil" style="--i:2" alt="...">                    
-                        <h5 class="titulo-nome"><?=substr($dados[0]["nome"], 0, 10)?></h5>
-                    </a>
-                </li>
-    
+            <li class="parte-perfil">
+                <a href="../pages/editar_usuario.php" id="teste" class="link-menu">                           
+                    <img src="../assets/imgs/users/<?= $dados[0]["foto"] ?>" class="icon-perfil" style="--i:2" alt="...">                    
+                    <?php
+                    $nome = $dados[0]["nome"]; 
+
+                    if (strlen($nome) > 5 && $nome === strtoupper($nome)) {
+                        echo "<h5 class='titulo-nome' id='nome' style='font-size: 9px;'>".substr($nome, 0, 10)."</h5>";
+                    } 
+                    
+                    else {
+                        echo "<h5 class='titulo-nome' id='nome' style='font-size:13px;'>".substr($nome, 0, 10)."</h5>";
+                    }
+                    
+                    ?>
+                </a>
+            </li> 
                 
                 <li class="li-menu">
                     <a href="../pages/listar_recados.php" class="link-menu">
