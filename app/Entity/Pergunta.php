@@ -25,7 +25,8 @@ class Pergunta
                         'descricao' => $this -> descricao,
                         'tipo' => $tipo
                      ];
-     
+    
+    
             // atualmente retonando true or false  
             if($obj_banco -> insert($dados))
             {
@@ -99,21 +100,15 @@ class Pergunta
         $obj_banco = new Banco('relacao_pergunta_checklist');
         $dados = $obj_banco->select(where:"id_check = '".$id_checklist."'" , order:"id DESC");
         
-        if($dados->rowCount() > 0){ 
+        if($dados){ 
             
             $data = $dados->fetchAll(PDO::FETCH_ASSOC);
-            
             foreach($data as $relacao){
-                 
-                array_push($ids_pergunta,$relacao['id_pergunta']);
+                array_push($ids_pergunta,$relacao['id']);
             }
             
-            // print_r($ids_pergunta);
             $obPergunta = new Banco('cadastro_pergunta');
-
-            $sql_in = "'".implode("', '",$ids_pergunta)."'";
-             
-            return $obPergunta->select(where:"id IN (".$sql_in.")" )->fetchAll(PDO::FETCH_ASSOC) ;
+            return $obPergunta->select(where:"id IN ('".implode("', '",$ids_pergunta)."')" )->fetchAll(PDO::FETCH_ASSOC);
 
         }
         else
@@ -122,12 +117,6 @@ class Pergunta
         } 
         // return $ids_pergunta;
     }
-    // public static function updateChecklistRelacao($id_checklist, $ids_pergunta){
-
-    //     $obBanco = new Banco(`relacao_pergunta_checklist`); 
-    //     $obBanco->delete($id_checklist,'id_check'); 
-
-    // }
 
     public static function filter($nome)
     {

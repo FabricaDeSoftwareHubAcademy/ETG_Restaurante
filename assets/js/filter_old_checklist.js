@@ -133,7 +133,7 @@ $("#botao-sim-submit").on('click',async function(event){
 
     }else{
         
-        modalStatus('O checklist está cadastrado em uma sala!','error')
+        modalStatus('A pergunta está cadastrada em um checklist','error')
 
     }
 }) 

@@ -1,19 +1,19 @@
- 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-
+<link rel="stylesheet" href="estilo_perfil.css">
+<!-- <link rel="stylesheet" href="https/cdnjs.cloudflare.comlibs/font-awesome/6.4.0/css/all.min.css"> -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-<link rel="stylesheet" href="../assets/css/editar_checklist_input.css">
-<link rel="stylesheet" href="../assets/css/editar_checklist_posicao.css">
-<link rel="stylesheet" href="../assets/css/editar_checklist_caixa_pergunta.css">
-<link rel="stylesheet" href="../assets/css/editar_checklist_botoes.css">
-<script defer src="../assets/js/editar_checklist.js"></script>
+<link rel="stylesheet" href="../assets/css/cadastrar_checklist/input-checklist.css">
+<link rel="stylesheet" href="../assets/css/cadastrar_checklist/posicao.css">
+<link rel="stylesheet" href="../assets/js/cadastro-checklist.js">
+<link rel="stylesheet" href="../assets/css/cadastrar_checklist/caixa_pergunta.css">
+<link rel="stylesheet" href="../assets/css/cadastrar_checklist/botões-checklist.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.18/dist/sweetalert2.all.min.js"></script>
 
 
 <body class="pai_de_todos">
     <?php include_once("../includes/menu.php"); ?>
     <div class="titulo-topo">
-        <h1 id="titulo">Editar CheckList</h1>
+        <h1 id="titulo">Cadastro de CheckList</h1>
     </div>
     <div class="container-pop-up-notificacao">
         <!-- <button type="submit" class="btn-pop-up-notificacao" id="submit-btn-notificacao" onclick="openPopupValidar()">Submit</button> -->
@@ -57,19 +57,11 @@
 
             <div class="inputs-cadastro-checklist">
                 <div class="input_group field">
-                    <input type="text" class="input_field" placeholder="" required="" name="nome_checklist"  maxlength="45">
+                    <input type="text" class="input_field" placeholder="" required="" value="<?php echo $_POST["nome"]?>" name="nome_checklist"  maxlength="45">
                     <label for="name" class="input_label">Nome da CheckList</label> <!--Alterar para o nome do input-->
-                    
+
+
                 </div>
-                
-            </div>
-            <div class="inputs-cadastro-checklist">
-                <div class="input_group field">
-                    <input type="text" id="ajaxPergunta" class="input_field" placeholder=""    maxlength="45">
-                    <label for="name" class="input_label">Pesquisa a Pergunta</label> <!--Alterar para o nome do input-->
-                    
-                </div>
-                
             </div>
 
             <!-- Menu das abas -->
@@ -82,68 +74,31 @@
             <div id="tab1" class="tab" style="display: block;">
                 <div class="titulo-selecione-pergunta-pre">
                     <h1 id="titulo-pergunta-pos">Selecione as Perguntas Pré Aula:</h1>
-
-
-                    <!-- <button class="pergunta_popup" id="popup_cad_pergunta" onclick="openPopup5()"><i class="bi bi-plus-circle"></i></button>
-                    <form class="form_cad_checklist_pergunta" id="overlay" style="opacity: 1;">
-
-                        <div class="popup_cad_pergunta" id="popup_cad_pergunta">
-
-                            <h4>Escolha um checklist para inserir ou excluir a pergunta:</h4>
-
-                            <section class="area_pergunta">
-                                <div class="pergunta_card">
-                                <i class="bi bi-plus-circle"></i>
-                                <div class="card_text"> Nome de checklist </div>
-                                </div>
-                            </section>
-                
-
-                            <div class="botoes">
-                                <button class="botao-ok-submit" onclick="closePopup5()" id='botao_cancelar_editar' value="OK" > OK, FECHAR</button>
-                            </div>
-                        </div>
-                    </form> -->
-
-
                 </div>
                 <section class="selecao-pergunta">
-                    <table class="tabela-perguntas" id = "tablePre" name="pergunta">
-                        <!-- <tr class="topo-tabela">
+                    <table class="tabela-perguntas" name="pergunta">
+                        <tr class="topo-tabela">
                             <th>Selecione</th>
                             <th>Pergunta Pré</th>
-                        </tr> -->
-                         <?php 
-                        
-                            // $trpre
-                         ?>
+                        </tr> <?= $trpre ?>
                     </table>
                 </section>
             </div>
             <div id="tab2" class="tab">
                 <div class="titulo-selecione-pergunta-pos">
                     <h1 id="titulo-pergunta-pos">Selecione as Perguntas Pós Aula:</h1>
-
-                    <!-- <i class="bi bi-plus-circle"></i> -->
-                    
                 </div>
                 <section class="selecao-pergunta">
-                    <table class="tabela-perguntas" id="tablePos">
-                        <!-- <tr class="topo-tabela">
+                    <table class="tabela-perguntas">
+                        <tr class="topo-tabela">
                             <th>Selecione</th>
                             <th>Pergunta Pós</th>
-                        </tr> -->
-                         <?php 
-                        //  $trpos 
-                        ?>
+                        </tr> <?= $trpos ?>
                     </table>
                 </section>
             </div>
             <script>
                 function showTab(tabId) {
-
-                    ResetListaPerguntas() 
-                    
                     const tabs = document.querySelectorAll('.tab');
                     const buttons = document.querySelectorAll('.tab-button');
                     tabs.forEach(tab => tab.style.display = 'none');
@@ -172,34 +127,78 @@
                 <div class="botoes-cadastro-checklist">
                     <!--Botão Voltar-->
                     <div class="botao-padrao-voltar">
-                        <a href="editar_sala.php"><input type="submit" class="botao-voltar-submit" value="VOLTAR"></a>
+                        <a href="#"><input type="submit" class="botao-voltar-submit" value="VOLTAR"></a>
                     </div>
 
                     <!--Botão Cadastrar-->
                     <div class="botao-padrao-cadastrar">
                         <!-- <a href="#"><input type="submit" class="botao-cadastrar-submit" name="btn_cadastrar" value="CADASTRAR"></a> -->
-                        <button name="btn_cadastrar" type="submit" class="botao-cadastrar-submit" id="btn_cadastrar" value="CADASTRAR"> SALVAR </button>
+                        <button name="btn_cadastrar" type="submit" class="botao-cadastrar-submit" id="btn_cadastrar" value="CADASTRAR"> CADASTRAR </button>
                     </div>
                 </div>
             </div>
-
-            
             <script>
-                
-                let popup_cad_pergunta = document.getElementById("popup_cad_pergunta");
-                function openPopup4(){
+                if(nome_checklist != ""  && pergunta != "" ){
+                        let button = document.getElementById("btn_cadastrar")
+                        button.addEventListener('click', async (e) => {
+                            // alert("dsadsa")
+                            e.preventDefault()
+                            let form = document.getElementById('meuFormulario')
+                            console.log(form)
 
-                    document.getElementById("overlay").style.visibility="visible";
-                    popup_cad_pergunta.classList.add("open-popup5");
-        
-                }
+                            let formData = new FormData(form)
+                            // console.log(formData)
 
-                function closePopup4(){ 
-        
-                    document.getElementById("overlay").style.visibility="hidden";
-                    popup_cad_pergunta.classList.remove("open-popup5");
-                }
+                            var nome_checklist =  document.getElementById("nome_checklist")
+                            var pergunta = document.getElementById("pergunta")
+                            let dados_php = await fetch("../pages/actions/actn_checklist.php", {
+                                method: "POST",
+                                body: formData
+                            })
 
+                            // alert("Ta chegando até aqui !")
+                            let response = await dados_php.json()
+
+                            console.log(response);
+
+
+                            console.log(response);
+                            
+
+                            if (response) {
+
+                                let popup = document.getElementById('popup-up-notificacao');
+                                let btn = document.getElementById("submit-btn-notificacao");
+
+                                // btn.style.display = "none";
+
+                                popup.classList.add("open-popup");
+
+                                let blur = document.getElementById("blur");
+
+                                blur.classList.add("active");
+
+
+
+                            } else {
+                                let popup = document.getElementById('popup-up-notificacao');
+                                let btn = document.getElementById("submit-btn-notificacao");
+
+                                // btn.style.display = "none";
+
+                                popup.classList.add("open-popup");
+
+                                let blur = document.getElementById("blur");
+
+                                blur.classList.add("active");
+                            }
+                      
+                        });
+                    }
+
+
+                    
+               
             </script>
 
         </form>
