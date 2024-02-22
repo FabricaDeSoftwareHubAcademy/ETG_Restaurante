@@ -17,35 +17,34 @@ $objUsuario = new Usuario();
 
 
 $dados = $objCadastroPerfil -> getDados();
-  
+//die("teste");
+
 $options = '';
 foreach ($dados as $row_check ){
-     $options .= '<option  class="ops" value="'.$row_check['id'].'"> '.$row_check['nome'].' </option>'; 
+    //var_dump($row_check);exit;
+    $options .= '<option  class="ops" value="'.$row_check['id'].'"> '.$row_check['nome'].' </option>'; 
 }
- 
-// if(isset(
-//     $_POST['btn_submit'],
-//     $_POST['nome'],
-//     $_POST['id_perfil'],
-//     $_POST['num_matricula'],
-//     $_POST['senha'],
-//     ))  
-//     {
-//         $objUsuario -> cadastrar(
-//         $_POST['nome'],
-//         $_POST['email'],
-//         $_POST['num_matricula'],
-//         $_POST['senha'],
-//         $_POST['id_perfil']);
+// }
+
+if(isset(
+    $_POST['btn_submit'],
+    $_POST['nome'],
+    $_POST['id_perfil'],
+    $_POST['num_matricula'],
+    $_POST['senha'],
+    ))  {
+            $objUsuario -> cadastrar(
+            $_POST['nome'],
+            $_POST['email'],
+            $_POST['num_matricula'],
+            $_POST['senha'],
+            $_POST['id_perfil']);
             
-<<<<<<< HEAD
         echo '<script>openPopupValidar();</script>';
-=======
-//     }
 
->>>>>>> modal-cadastroUser
-
+        }
         
+
 //  VALUES ('$nome', '$email', '$matricula', '$senha', '$id_perfil')";
 // echo($objUsuario -> cadastrar($nome,$email,$matricula,$senha,$id_perfil)); 
 include_once("./../includes/main/main_cadastrar_usuario.php");
