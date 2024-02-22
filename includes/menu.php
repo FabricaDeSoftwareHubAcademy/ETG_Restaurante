@@ -60,7 +60,7 @@ $ifreaac = $perfil['realizar_acao_corretiva'] == '1';
                     if (strlen($nome) > 5 && $nome === strtoupper($nome)) {
                         echo "<h5 class='titulo-nome' id='nome' style='font-size: 9px;'>".substr($nome, 0, 10)."</h5>";
                     } 
-                    
+
                     else {
                         echo "<h5 class='titulo-nome' id='nome' style='font-size:13px;'>".substr($nome, 0, 10)."</h5>";
                     }
