@@ -16,6 +16,8 @@ $obj_checklist = new Checklist();
 $obj_pergunta = new Pergunta();
 $dados_imprimir = "";
 $obj_sala = new Sala();
+
+
  
 //REGRAS DE NEGOCIO ABAIXO
 $id_sala = $_GET["id_sala"]; //do metodo GET	
@@ -23,6 +25,14 @@ $id_usuario = isset($_SESSION['id_user']) ? $_SESSION['id_user'] : ""; //do meto
 $data_fechamento = null;
 
 $dados_pergunta = $obj_pergunta::getDados($id_sala);  
+
+echo('<script>
+
+    let perguntas = '.json_encode($dados_pergunta).'
+
+</script>');
+
+
 $dados_sala = $obj_sala::getDadosById($id_sala);
 
 if ($dados_pergunta)

@@ -5,23 +5,57 @@ var ids = document.getElementById('')
 var id_atual = 0; 
 var dados = Array();
 var somadados = Array();
+
+
+// status true é quando é conforme  
+let listaData = { 
+
+    // '8':{
+    //     'status':true,
+    //     'descricao':'as panelas estavam sujas' ,
+    //     'imgs': []
+    // }
+
+
+
+}
+
 function atualizarValor(id, bool)
 
 
 {
-id_atual = id;
+    id_atual = id;
+    
+
     if(bool)
     {
+        listaData[id_atual] = {
+            'status':true,
+            'descricao': '',
+            'imgs': []
+        }
+
         let  green = document.getElementById('green'+id)
         let  red = document.getElementById('red'+id)
         green.classList = 'bi bi-check-circle'
         red.classList = 'bi bi-x'
         
-        respondidas[id] = true
     }
     else
     {
+        console.log()
+        if(listaData[id_atual] !== undefined){ 
+            $('#descricao_nao_conf').val(listaData[id_atual].descricao)
+            loadImgs()
+        }else{
 
+            listaData[id_atual] = {
+                'status':true,
+                'descricao': '',
+                'imgs': []
+            }
+
+        }
         let  green = document.getElementById('green'+id)
         let  red = document.getElementById('red'+id)
         green.classList = 'bi bi-check'
@@ -31,67 +65,123 @@ id_atual = id;
 
 
     }
+}
 
+$("#btn_confirm_cad").on('click',(e) => {
+    e.preventDefault()
+    if(($('#descricao_nao_conf').val().length > 0 ) && (listaData[id_atual].imgs.length > 0)){
+
+        listaData[id_atual].descricao = $('#descricao_nao_conf').val()
+        listaData[id_atual].status = false
+
+        fecharModal()
+
+    }else{
+        modalStatus('Preencha todos os campos!','error')
+    }
+
+
+})
+
+function fecharModal(){
+ 
+    
+    $(".upload-img").empty()
+    $("#descricao_nao_conf").val('')
+    let modal = document.querySelector('.mom')
+    modal.classList.remove('active');
+ 
+}
+
+function cancelarNc(){
+
+    listaData[id_atual] = {
+        'descricao': '',
+        'imgs': []
+    }
+    fecharModal()
+
+    let  red = document.getElementById('red'+currentID)
+    red.classList = 'bi bi-x'
 
 }
+
 async function getDados()
 { 
     let descricao_nao_conf = document.getElementById('descricao_nao_conf');
-    if (descricao_nao_conf.value != '' && (typeof listasrc[0] != 'undefined') && (typeof listasrc[1] != 'undefined') && (typeof listasrc[2] != 'undefined'))
-    {
-        dados = {
-            'id_pergu': id_atual,
-            'descricao_NC': descricao_nao_conf.value,
-            'img1': (typeof listasrc[0] === 'undefined') ? null : listasrc[0],
-            'img2': (typeof listasrc[1] === 'undefined') ? null : listasrc[1],
-            'img3': (typeof listasrc[2] === 'undefined') ? null : listasrc[2]
-        };
+   
+    dados = {
+        'id_pergu': id_atual,
+        'descricao_NC': descricao_nao_conf.value,
+        'img1': (typeof listasrc[0] === 'undefined') ? null : listasrc[0],
+        'img2': (typeof listasrc[1] === 'undefined') ? null : listasrc[1],
+        'img3': (typeof listasrc[2] === 'undefined') ? null : listasrc[2]
+    };
+
     
-        
+
+    somadados.push(dados); 
+    descricao_nao_conf.value = "";
     
-        somadados.push(dados); 
-        descricao_nao_conf.value = "";
-        
-        removerimgs()
-        let modal = document.querySelector('.mom')
-        modal.classList.remove('active');
-        for (var chave in disponiveis)
-        {
-            disponiveis[chave] = false
-        }
-        
-        listasrc = [] 
-        dados = {}
-        
-        $('#btn_x'+id_atual).removeAttr('onclick');
-    }
-    else
+    removerimgs()
+    let modal = document.querySelector('.mom')
+    modal.classList.remove('active');
+    for (var chave in disponiveis)
     {
-        const Toast = Swal.mixin({
-            toast: true,
-            position: "top-end",
-            showConfirmButton: false,
-            timer: 3000,
-            timerProgressBar: true,
-            didOpen: (toast) => {
-              toast.onmouseenter = Swal.stopTimer;
-              toast.onmouseleave = Swal.resumeTimer;
-            }
-          });
-          Toast.fire({
-            icon: "error",
-            title: "Insira a descricao e ao menos 3 fotos"
-          });
+        disponiveis[chave] = false
     }
-
-
-
+    
+    listasrc = [] 
+    dados = {}
+    
+    $('#btn_x'+id_atual).removeAttr('onclick');
 
 }
+
+
+function loadImgs(){
+    let count = 0
+
+    if(id_atual != 0){
+        $(".upload-img").empty()
+        
+        listaData[id_atual].imgs.forEach(element => {
+
+             
+            carregarImg(element,count)
+            count+=1
+        });
+       
+        return true
+
+    }else{
+        return false
+    }
+    
+
+}
+
+
+function carregarImg(img64,index){
+
+   
+    let html = `
+        <div class = "uploaded-img" btn_rm="${index}">
+            <img  src = "${img64}" class = "beluga">
+            <button type = "button"  class = "remove-btn">
+                <i class = "fas fa-times btn-remove-x"></i>
+            </button>
+        </div>`;
+
+    $(".upload-img").append(html);
+
+}
+
+
 const btn_submit = document.getElementById('btn_submit');
 btn_submit.addEventListener('click', async (e) => {
    e.preventDefault();
-   var continuar_rodando = true;
+   
    for (var chave in respondidas)
     {
         if (respondidas[chave] == null)
@@ -141,22 +231,4 @@ btn_submit.addEventListener('click', async (e) => {
 
 
     });
-    // const showModalBtn = document.getElementById('btn_submit');
-    // const closeModalBtn = document.querySelector('.close-btn');
-    // const openModalBtn = document.querySelector('.open-btn');
-    // const overlay = document.querySelector('.overlay-modal');
-    // const modal3 = document.querySelector('.modal-box');
-    // function openModal() {
-    //     overlay.style.opacity = '1';
-    //     overlay.style.pointerEvents = 'auto';
-    //     modal3.style.opacity = '1';
-    //     modal3.style.pointerEvents = 'auto';
-    // }
-    // function closeModal() {
-    //     overlay.style.opacity = '0';
-    //     overlay.style.pointerEvents = 'none';
-    //     modal3.style.opacity = '0';
-    //     modal3.style.pointerEvents = 'none';
-    // }
-    // closeModalBtn.addEventListener('click', closeModal);
-    
+ 

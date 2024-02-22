@@ -3,110 +3,54 @@ var disponiveis = {'1': false, '2': false, '3': false}
 var temporaria = null
 
 $(document).ready(function(){
-    $(".upload-area").click(function(){
+    $(".upload-area").click(function(){  
         $('#upload-input').trigger('click');
+
     });
-    $('#upload-input').change(event => {
+
+
+    $('#upload-input').change( async (event) => {
  
         
         if(event.target.files){
-            //VARIAS IMAGENS
-            let filesAmount = event.target.files.length; 
-            if (filesAmount < 4 && filesAmount > 1)
-            {    
-
-                listasrc = []
-                for(c = 0; c < event.target.files.length; c++)
-                {
-                    let reader = new FileReader();
-                    let figCap = document.createElement("figcaption");
-                    reader.onload = function(event)
-                    {   
-                        
-                        listasrc.push(event.target.result);
-                        let html = `
-                            <div class = "uploaded-img">
-                                <img  src = "${event.target.result}" class = "beluga">
-                                <button type = "button" btn="${temporaria}"  class = "remove-btn">
-                                    <i class = "fas fa-times btn-remove-x"></i>
-                                </button>
-                            </div>
-                        `;
-                        $(".upload-img").append(html);
-                    }
-             
-                    reader.readAsDataURL(event.target.files[c]);
-                     
  
-                }
-                $('.upload-img').css('padding', "20px");
+            // se tiver vagas nas imgs 
+            if(listaData[id_atual].imgs.length < 3){
 
+                // if(listaData[id_atual].imgs.length)
+                let file = event.target.files[0];
+                    
+                let reader = new FileReader();
+                
+                reader.onload = (e) => {
+    
+                    listaData[id_atual].imgs.push(e.target.result)
+                    loadImgs()
+                }
+    
+                reader.readAsDataURL(file) 
+
+            }else{  
+                modalStatus('Você pode cadastrar no máximo 3 imagens','error')
             }
-            //UMA IMAGEM POR VEZ
-            else
-            {
-                let arrayfotos = []
-                let files = event.target.files;
-                arrayfotos.push(files[0])
 
-
-                for(c = 0; c < arrayfotos.length; c++)
-                {   
-                    
-                    let reader = new FileReader();
-                    let figCap = document.createElement("figcaption");
-
-                    reader.onload = function(event)
-                    {
-
-                    for (var key in disponiveis)
-                    {
-
-                        if (disponiveis[key] == false)
-                        {
-                            temporaria = key;
-                            disponiveis[key] = true;
-                            break;
-                        }
-                        else{
-                            temporaria = false;
-                        }
-                    }
-                    if (temporaria != false)
-                    {
-                        // ESQUECEMOS OQ E ISSO, ENTENDA DEPOIS
-                        listasrc.push(event.target.result);
-                        let html = `
-                            <div class = "uploaded-img">
-                                <img  src = "${event.target.result}" class = "beluga">
-                                <button type = "button" btn="${temporaria}"  class = "remove-btn">
-                                    <i class = "fas fa-times btn-remove-x"></i>
-                                </button>
-                            </div>
-                        `;
-                        $(".upload-img").append(html);
-                    }
-                    
-                    }
-
-                    reader.readAsDataURL(arrayfotos[c]);
-
-                }
-                $('.upload-img').css('padding', "20px");
-            } 
+        } 
             
             
+
+
             $('#upload-input').val('');
 
-        }
     });
 
     $(window).click(function(event){
        
-        if($(event.target).hasClass('remove-btn')){
+        if($(event.target).hasClass('remove-btn')){ 
+            listaData[id_atual].imgs.pop($(event.target).parent().attr('btn_rm')) 
             $(event.target).parent().remove();
-                btn = $(event.target).attr('btn');
-                disponiveis[btn] = false;
+            loadImgs()
+            // btn = $(event.target).attr('btn');
+            
         }
     })
 
@@ -124,7 +68,7 @@ function acao(id){
 }
 
 function fechar(){
-    listasrc = []
+    
     removerimgs()
 
     let modal = document.querySelector('.mom')
