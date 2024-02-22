@@ -40,19 +40,7 @@
         </div>
     </div>
 
-    <div class="container-pop-up-notificacao">
-        
-        <div class="popup-notificacao" id="popup-up-notificacao">
-            <div class="div-img">
-                <img src="img/erro.png" alt="carregando" id="img_check">
-                <p>Recado excluído com sucesso! </p>
-            </div>
-            <div class="botao-padrao-ok">
-                <a href="#"><input type="submit" class="botao-ok-submit" onclick="closePopupValidar()" value="OK"></a>
-            </div>
-        </div>
-    </div>
-
+    
     <main class="todo-projeto">
 
         <form class="cadastro-checklist" method="POST" name="form-perguntas" id="meuFormulario">

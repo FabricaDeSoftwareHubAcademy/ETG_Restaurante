@@ -249,9 +249,22 @@ function ResetListaPerguntas(){
 
 
 $('#btn_cadastrar').on('click',(e) => {
+
     e.preventDefault()
+
+    let tablePre = $('#tablePre')[0]
+    let checkboxesPre = tablePre.querySelectorAll('input[type="checkbox"][name="perguntas[]"]:checked');
     
-    updateChecklist()
+    let tablePos = $('#tablePos')[0]
+    let checkboxesPos = tablePos.querySelectorAll('input[type="checkbox"][name="perguntas[]"]:checked');
+    
+    if((checkboxesPos.length > 0) && (checkboxesPre.length)){ 
+        updateChecklist() 
+    }else{ 
+        modalStatus('Necessário marcar pelo menos uma pergunta pré e pós!','error') 
+    }
+    
+    
 
 
 })
@@ -272,9 +285,8 @@ async function updateChecklist(){
     let res = await request.json()
     if(res.status){
 
-        modalStatus('Checklist editado com Sucesso!','success',() => {
-
-            location.reload()
+        modalStatus('Checklist editado com Sucesso!','success',() => { 
+            location.href = 'gerenciar_checklist.php'
 
         })
 
