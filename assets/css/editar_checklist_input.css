@@ -5,7 +5,13 @@
   width: 100%;
   
 }
+.text_tipo_perg{
 
+  position: absolute;
+  background-color: transparent;
+  width: 63px;
+
+}
 .input_group {
     position: relative;
     padding: 20px 0 0;

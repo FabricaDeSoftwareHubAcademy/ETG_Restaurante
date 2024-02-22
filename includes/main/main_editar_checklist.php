@@ -7,6 +7,8 @@
 <link rel="stylesheet" href="../assets/css/editar_checklist_caixa_pergunta.css">
 <link rel="stylesheet" href="../assets/css/editar_checklist_botoes.css">
 <script defer src="../assets/js/editar_checklist.js"></script>
+<script src="../assets/js/modais.js"></script>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 
 
@@ -38,26 +40,14 @@
         </div>
     </div>
 
-    <div class="container-pop-up-notificacao">
-        
-        <div class="popup-notificacao" id="popup-up-notificacao">
-            <div class="div-img">
-                <img src="img/erro.png" alt="carregando" id="img_check">
-                <p>Recado excluído com sucesso! </p>
-            </div>
-            <div class="botao-padrao-ok">
-                <a href="#"><input type="submit" class="botao-ok-submit" onclick="closePopupValidar()" value="OK"></a>
-            </div>
-        </div>
-    </div>
-
+    
     <main class="todo-projeto">
 
         <form class="cadastro-checklist" method="POST" name="form-perguntas" id="meuFormulario">
 
             <div class="inputs-cadastro-checklist">
                 <div class="input_group field">
-                    <input type="text" class="input_field" placeholder="" required="" name="nome_checklist"  maxlength="45">
+                    <input type="text" id="input_nome_checklist" class="input_field" placeholder="" required="" name="nome_checklist"  maxlength="45">
                     <label for="name" class="input_label">Nome da CheckList</label> <!--Alterar para o nome do input-->
                     
                 </div>
@@ -150,7 +140,7 @@
                     buttons.forEach(button => button.classList.remove('active'));
                     document.getElementById(tabId).style.display = 'block';
                     document.querySelector(`[onclick="showTab('${tabId}')"`).classList.add('active');
-                }
+                } 
                 const btn_pos = document.getElementById('btn_pos');
                 btn_pos.addEventListener('click', proxTab);
 
@@ -172,7 +162,7 @@
                 <div class="botoes-cadastro-checklist">
                     <!--Botão Voltar-->
                     <div class="botao-padrao-voltar">
-                        <a href="editar_sala.php"><input type="submit" class="botao-voltar-submit" value="VOLTAR"></a>
+                        <a href="gerenciar_checklist.php" class="botao-voltar-submit" >VOLTAR</a>
                     </div>
 
                     <!--Botão Cadastrar-->
