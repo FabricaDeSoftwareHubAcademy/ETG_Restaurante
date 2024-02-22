@@ -225,7 +225,6 @@ body{
 }
 
 .area_link_login{
-
     width: 80%;
     display: flex;
     justify-content: end;
@@ -284,6 +283,7 @@ body{
     color: #004A8D;
     text-decoration: none;
     position: absolute;
+    margin-right: 3%;
 
 
 }
@@ -296,7 +296,7 @@ body{
     width: 100%;
     display: flex;
     justify-content: start;
-
+    margin-top: 5%;
 }
 
 .btn_sub_login{
@@ -329,6 +329,13 @@ body{
   right: 35px;
   width: 20%;
   margin-right: 5px;
+}
+
+.credIncor{
+    color: red;
+    width: 90%;
+    margin-top: 50px;
+    position: absolute;
 }
 
 
