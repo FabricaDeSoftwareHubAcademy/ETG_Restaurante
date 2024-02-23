@@ -26,21 +26,20 @@ $data_fechamento = null;
 
 $dados_pergunta = $obj_pergunta::getDados($id_sala);  
 
-echo('<script>
 
-    let perguntas = '.json_encode($dados_pergunta).'
-
-</script>');
-
+$perguntaPre = [];
 
 $dados_sala = $obj_sala::getDadosById($id_sala);
 
+ 
 if ($dados_pergunta)
 {
     foreach ($dados_pergunta as $linha)
     { 
         if ($linha["tipo"] == "0" || $linha['tipo'] == '2')
-        {
+        {   
+            array_push($perguntaPre,$linha);
+
             $dados_imprimir .= '
             <div class="input_checklist">
 
@@ -60,6 +59,16 @@ if ($dados_pergunta)
     }
 }
 
+$idsPergPre = [];
+foreach($perguntaPre as $perguntaOb ){
+
+    array_push($idsPergPre, $perguntaOb['id_pergunta']);
+}
+
+echo('  <script>
+            let id_checklist = '.$dados_sala[0]['id_check'].'
+            let perguntasPre = '.json_encode($idsPergPre).'
+        </script>');
 
 $dados_imprimir .= '
 <input type="hidden" id="valor_booleano" name="valor_booleano" value="0">';

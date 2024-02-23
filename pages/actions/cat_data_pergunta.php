@@ -5,16 +5,22 @@ use App\Entity\ResponderChecklist;
 use App\Entity\Sala;
 
 $id_sala = $_GET['id_sala'];
-
+$id_checklist  = $_GET['id_checklist'];
+ 
 $dados = json_decode(file_get_contents('php://input'), true);
 
+$status = false;
 
-$obj_sala = new Sala(); 
-$dados_sala = $obj_sala::getDadosById($id_sala);
-$id_check = $dados_sala[0]['id_check']; 
+
+if(isset($id_sala,$id_checklist)){
+
+    
+    ResponderChecklist::cadastrar($dados, $id_sala, $id_checklist);
+ 
+}
+
  
 
-$response=ResponderChecklist::cadastrar($dados, $id_sala, $id_check);
 
-echo(json_encode(true));
+
  

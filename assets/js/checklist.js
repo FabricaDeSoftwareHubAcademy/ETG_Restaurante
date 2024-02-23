@@ -6,6 +6,7 @@ var id_atual = 0;
 var dados = Array();
 var somadados = Array();
 
+console.log(perguntasPre)
 
 // status true é quando é conforme  
 let listaData = { 
@@ -95,10 +96,7 @@ function fecharModal(){
 
 function cancelarNc(){
 
-    listaData[id_atual] = {
-        'descricao': '',
-        'imgs': []
-    }
+    delete listaData[id_atual]
     fecharModal()
 
     let  red = document.getElementById('red'+currentID)
@@ -177,58 +175,63 @@ function carregarImg(img64,index){
 
 }
 
+function todasPergResp(){
+
+    let todasResp = true
+
+    perguntasPre.forEach((e) => { 
+        if(listaData[e] == undefined){ 
+            todasResp = false 
+        }
+    })
+
+    return todasResp
+
+    
+
+}
 
 const btn_submit = document.getElementById('btn_submit');
 btn_submit.addEventListener('click', async (e) => {
-   e.preventDefault();
-   
-   for (var chave in respondidas)
-    {
-        if (respondidas[chave] == null)
-        {
-            continuar_rodando = false 
-            
-            modalStatus("Marque todos os campos","error")
-            break;
-            
-        }
+
+    e.preventDefault();
+    JSON.stringify()
+
+    const urlParams = new URLSearchParams(window.location.search);
+    const id_sala = urlParams.get('id_sala');
+    
+     
+    if(todasPergResp()){
+
+        let data_php = await fetch('./actions/cat_data_pergunta.php?id_sala='+id_sala+'&id_checklist='+id_checklist, {
+            method: 'POST',
+            body: JSON.stringify(listaData) 
+        });
+        
+        let res = await data_php.json()
+        
+        console.log(res)
+
+
+    }else{
+
+        modalStatus('Responda todo o formulário!','error')
+
     }
-    if (continuar_rodando)
-    {  
-        // console.log('teste');
-        //pegando os dados para pasar pelo metodo GET
-        // Obtém a string da URL atual
-        var queryString = window.location.search;
     
-        // Cria um objeto URLSearchParams com a string da URL
-        var params = new URLSearchParams(queryString);
-    
-        // Obtém o valor de um parâmetro específico
-        var parametro = params.get('id_sala');
-    
-       JSON.stringify(somadados);
-       let data_php = await fetch('./actions/cat_data_pergunta.php?id_sala='+parametro, {
-           method: 'POST',
-           body: JSON.stringify(somadados) 
-       });
-    
-    //    let response = await data_php.json();
-       let response = await data_php.json();
+
+    // let response = await data_php.json();
 
 
-        console.log("response");
 
-        if(response){
-            modalStatus("Cadastrado com sucesso!","success",() => {
-                location.href="listar_salas.php"
-            
-            });
-        }
+    // if(response){
+    //     modalStatus("Cadastrado com sucesso!","success",() => {
+    //         location.href="listar_salas.php"
+        
+    //     });
+    // }
 
   
        
-    }
-
-
     });
  
