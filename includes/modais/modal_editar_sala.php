@@ -8,7 +8,7 @@
 
         <div class="buttons-pop_up">
             <div class="container_dos_btns">
-                <a href="../pages/listar_salas.php"><button type="submit" class="close-btn">Ok, fechar</button></a>
+                <a href="../pages/listar_salas.php"><button type="submit" class="close-btn">Ok</button></a>
             </div>
         </div>
         </div>
