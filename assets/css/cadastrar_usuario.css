@@ -62,6 +62,7 @@
   width: 135.5%;
   justify-content: space-between;
   margin-top: 5%;
+  flex-wrap: wrap;
 }
 
 
@@ -516,35 +517,57 @@ select {
 
 @media (max-width: 669px) {
 
-  .input_e-mail_field{
-    width: 380px;
-  }
+.input_e-mail_field{
+  width: 380px;
+}
 
-  .input_senha_field{
-    width: 380px;
-  }
+.input_senha_field{
+  width: 380px;
+}
 
+.input_field {
+  width: 381px;
+}
 
+.input_label {
+  margin-left: 45%;
+}
 
-  .input_e-mail_label{
-    margin-left: 45%;
-  }
- 
-  .input_senha_label{
-    margin-left: 45%;
-  }
+.input_field_M {
+  width: 70%;
+}
 
-  .botao-confirmar-submit{
-    width: 140px;
-    font-size: 13px;
-    margin-left: 20%;
-  }
+.dropdown-ck .option {
+  width: 80%
+}
 
-  .botao-voltar-submit{
-    width: 140px;
-    font-size: 13px;
-    margin-left: -20%;
-  }
+.barra{
+  width: 80%
+}
+
+.ajusta-botao2 {
+  width: 109%;
+}
+
+.input_e-mail_label{
+  margin-left: 45%;
+}
+
+.input_senha_label{
+  margin-left: 45%;
+}
+
+.botao-confirmar-submit{
+  width: 140px;
+  font-size: 13px;
+  margin-left: 20%;
+}
+
+.botao-voltar-submit{
+  width: 140px;
+  font-size: 13px;
+  margin-left: -20%;
+}
 }
 
 
