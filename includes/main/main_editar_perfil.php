@@ -5,8 +5,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="../assets/css/cadastrar_editar_perfil.css">
-<link href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@4/dark.css" rel="stylesheet">
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
+<script src = "../assets/js/modais.js"></script>
 
 
 <body class="tela_cadastro_perfil">
@@ -52,7 +51,7 @@
                         <label class="label_permissao">Gerenciar Perfis</label>
                         <input type="checkbox" class="checkbox_permissoes" name="gerenciar_perfis" id="gerenciar_perfis" autocomplete="off" <?php echo $gerenciar_perfis == 1 ? "checked" : "";?>/>
                     </div>
-
+                    
                 </div>
             </div>
             <div class="permissoes_salas">
@@ -91,37 +90,23 @@
         console.log(form)
         let formData = new FormData(form)
         // console.log(formData)
-
-
         
         let dados_php = await fetch("../pages/actions/action_editar_perfil.php?id=<?=$_GET['id']?>",{method:"POST",
-                                    body: formData
-                                })
+            body: formData
+        })
         // let dados_php = await dados_php_php.json()
         let response = await dados_php.json();
         console.log(response);
-
+        
         if (response == true)
         {
-            const Toast = Swal.mixin({
-                    toast: true,
-                    position: 'top-end',
-                    showConfirmButton: false,
-                    timer: 3000,
-                    timerProgressBar: true,
-                    didOpen: (toast) => {
-                        toast.addEventListener('mouseenter', Swal.stopTimer)
-                        toast.addEventListener('mouseleave', Swal.resumeTimer)
-                    }
-                    })
-
-                    Toast.fire({
-                    icon: 'success',
-                    title: 'Editado com sucesso!'
-                    })
-
-                    setTimeout(function(){window.location.href = "listar_perfis.php";}, 1500);
+            
+            modalStatus('Perfil editado com sucesso!', 'success', () => {
+                window.location.href = "listar_perfis.php";
+            })
+            
         }
     });
-
+    
 </script>
+ 
