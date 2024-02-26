@@ -3,7 +3,7 @@ session_start();
 
 include_once("../includes/menu.php");
 
-
+echo "<script src='../assets/js/modais.js'> </script>";
 
 require __DIR__."/../vendor/autoload.php";
 
@@ -115,7 +115,9 @@ if(isset($_FILES['foto'])){
         // unlink($path . $dados_editar['foto']);
     
         $objUsuario->setImage($dados_editar['email'],$new_name);
-       
+        // header("Location: Refresh: 0");
+
+        $_SESSION["msg_edit"]='Salvo com sucesso!';
 
     }
 }
@@ -128,12 +130,14 @@ if(isset($_POST['btn_submit'])){
 
 
         $objUsuario -> setName($_POST['nome'],$dados_editar['email']);  
-        header("Location: {$_SERVER['PHP_SELF']}");
-        exit();
+        // header("Location: {$_SERVER['PHP_SELF']}");
+        $_SESSION["msg_edit"]='Salvo com sucesso!';
+
 
     }else{
 
         $objUsuario -> setName($dados_editar['nome'],$dados_editar['email']); 
+        $_SESSION["msg_edit"]='Salvo com sucesso!';
 
     }
     
@@ -143,7 +147,7 @@ if(isset($_POST['btn_submit'])){
 
         if ($_POST['novasenha'] == $_POST['confirmarnovasenha']){
             $objUsuario -> setPasswordByEmail($dados_editar['email'],$_POST['novasenha']); 
-            
+            $_SESSION["msg_edit"]='Salvo com sucesso!';
           
             
         }else{
@@ -173,9 +177,7 @@ if(isset($_POST['btn_submit'])){
                     if(empty($dadosByEmail)){
                         
                         Usuario::setEmail($_GET['id_user'],$_POST['email']);
-                        $msg_temp = 'Email editado com sucesso';
-                        
-                        $_SESSION['msg_editar_user'] = $msg_temp;
+                        $_SESSION["msg_edit"]='Salvo com sucesso!';
         
                     }else{
                         // retornar que E-Mail ja esta sendo utilizado por outro usuario
@@ -185,16 +187,7 @@ if(isset($_POST['btn_submit'])){
     
                         Usuario::setMatricula($_GET['id_user'],$_POST['matricula']);
     
-                        $msg_temp = 'Matricula editada com sucesso';
-    
-                        if(isset($_SESSION['msg_editar_user'])){
-    
-                            $_SESSION['msg_editar_user'] .= ' e ' . $msg_temp;
-    
-                        }else{
-    
-                            $_SESSION['msg_editar_user'] = $msg_temp;
-                        }
+                        $_SESSION["msg_edit"]='Salvo com sucesso!';
                     
                     }else{
                         // retornar que matricula ja esta sendo utilizado por outro usuario
@@ -219,32 +212,19 @@ require("../includes/header/header.php");
 include_once("../includes/menu.php");
 require("../includes/main/main_editar_usuario.php");
 
-if(isset($_SESSION['msg_editar_user'])){
-    echo('<script>
-        const Toast = Swal.mixin({
-            toast: true,
-            position: "top-end",
-            showConfirmButton: false,
-            timer: 2000,
-            timerProgressBar: true,
-            didOpen: (toast) => {
-                toast.onmouseenter = Swal.stopTimer;
-                toast.onmouseleave = Swal.resumeTimer;
-            }
-        });
-        Toast.fire({
-            icon: "success",
-            title: "'.$_SESSION['msg_editar_user'].'"
-        });
-
-        setTimeout(function(){
-            location.reload(); // Recarrega a página após 2 segundos
-        }, 2000);
-    </script>');
+if(isset($_SESSION['msg_edit'])){
+    echo"<script>modalStatus('Salvo com sucesso!','success',()=>{
+        location.href='editar_usuario.php'
+    })</script>";
     
-    unset($_SESSION['msg_editar_user']);
+    unset($_SESSION['msg_edit']);
 }
 
 //FIM DAS REGRAS DE NEGOCIO
 require("../includes/footer/footer.php");
 ?>
+
+
+<!-- echo"<script>modalStatus('Salvo com sucesso!','success',()=>{
+            location.reload()
+        })</script>"; -->
