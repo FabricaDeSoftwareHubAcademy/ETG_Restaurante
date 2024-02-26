@@ -16,6 +16,8 @@ $obj_checklist = new Checklist();
 $obj_pergunta = new Pergunta();
 $dados_imprimir = "";
 $obj_sala = new Sala();
+
+
  
 //REGRAS DE NEGOCIO ABAIXO
 $id_sala = $_GET["id_sala"]; //do metodo GET	
@@ -23,14 +25,21 @@ $id_usuario = isset($_SESSION['id_user']) ? $_SESSION['id_user'] : ""; //do meto
 $data_fechamento = null;
 
 $dados_pergunta = $obj_pergunta::getDados($id_sala);  
+
+
+$perguntaPre = [];
+
 $dados_sala = $obj_sala::getDadosById($id_sala);
 
+ 
 if ($dados_pergunta)
 {
     foreach ($dados_pergunta as $linha)
     { 
         if ($linha["tipo"] == "0" || $linha['tipo'] == '2')
-        {
+        {   
+            array_push($perguntaPre,$linha);
+
             $dados_imprimir .= '
             <div class="input_checklist">
 
@@ -50,6 +59,16 @@ if ($dados_pergunta)
     }
 }
 
+$idsPergPre = [];
+foreach($perguntaPre as $perguntaOb ){
+
+    array_push($idsPergPre, $perguntaOb['id_pergunta']);
+}
+
+echo('  <script>
+            let id_checklist = '.$dados_sala[0]['id_check'].'
+            let perguntasPre = '.json_encode($idsPergPre).'
+        </script>');
 
 $dados_imprimir .= '
 <input type="hidden" id="valor_booleano" name="valor_booleano" value="0">';

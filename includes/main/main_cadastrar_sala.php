@@ -4,8 +4,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="../assets/css/cadastrar_editar_sala.css"> 
-<!-- <link rel="stylesheet" href="../../assets/css/pop_ups/pop-up-verification.css"> -->
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<!-- <link rel="stylesheet" href="../../assets/css/pop_ups/pop-up-verification.css"> --> 
 
 
 <body class="tela-cadastro-salas">
