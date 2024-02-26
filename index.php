@@ -24,8 +24,9 @@ if(isset($_POST['btn_sub'])){
             header("Location: pages/listar_recados.php");
         }else{
             // mensagem de usuario ou senha invalidos
-            echo("Senha IN VA LI DA !!!");
-        }
+            header("Location: index.php?erro=credenciais_incorretas");
+            exit();
+        }   
     }else{
         // nao esta setado -> modal ou pop up, notificando que nao esta setado!
     }
