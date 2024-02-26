@@ -14,10 +14,21 @@ $status = false;
 
 if(isset($id_sala,$id_checklist)){
 
+    try{
+
+        ResponderChecklist::cadastrar($dados, $id_sala, $id_checklist);
+        $status = true;
+
+    }catch(Exception $e){ 
+        $status = $e->getMessage(); 
+    }
     
-    ResponderChecklist::cadastrar($dados, $id_sala, $id_checklist);
  
 }
+
+echo(json_encode([
+    'status'=>$status
+]));
 
  
 

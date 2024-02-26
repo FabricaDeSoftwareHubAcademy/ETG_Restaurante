@@ -33,7 +33,8 @@ function atualizarValor(id, bool)
         listaData[id_atual] = {
             'status':true,
             'descricao': '',
-            'imgs': []
+            'imgs': [],
+            'id_pergunta':id_atual
         }
 
         let  green = document.getElementById('green'+id)
@@ -53,7 +54,8 @@ function atualizarValor(id, bool)
             listaData[id_atual] = {
                 'status':true,
                 'descricao': '',
-                'imgs': []
+                'imgs': [],
+                'id_pergunta':id_atual
             }
 
         }
@@ -210,7 +212,15 @@ btn_submit.addEventListener('click', async (e) => {
         
         let res = await data_php.json()
         
-        console.log(res)
+        if(res.status){
+
+            modalStatus('Checklist efetuado com Sucesso!','success',() => {
+
+                location.href = 'visualizar_sala.php?id_sala='+id_sala
+
+            })
+
+        }
 
 
     }else{
