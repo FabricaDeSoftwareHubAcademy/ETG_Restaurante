@@ -29,7 +29,7 @@ function modalStatus(texto, tipo, callbackFunction = null){
         linkElement.href = '../assets/css/modalSucesso.css';
         document.head.appendChild(linkElement);
 
-        htmlModal = '<section class="section_modal"> <span class="overlay-modal"></span> <div class="modal-box">'+icon_modal+' <h2 class="titulo_pop_up">'+tit_modal+'</h2> <h3 class="subtitulo_pop_up">'+texto+'</h3> <div class="buttons-pop_up"> <div class="container_dos_btns"> <button class="close-btn" style="background-color: '+color_btn_modal+'">Ok, fechar</button> </div> </div> </div> </section>'
+        htmlModal = '<section class="section_modal"> <span class="overlay-modal"></span> <div class="modal-box">'+icon_modal+' <h2 class="titulo_pop_up">'+tit_modal+'</h2> <h3 class="subtitulo_pop_up">'+texto+'</h3> <div class="buttons-pop_up"> <div class="container_dos_btns"> <button class="close-btn" style="background-color: '+color_btn_modal+'">Ok</button> </div> </div> </div> </section>'
 
 
     }else if(tipo == "question"){
