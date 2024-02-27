@@ -71,6 +71,69 @@ class ResponderChecklist
          
     }
 
+
+    public static function cadastrarPos($id_last_insert, $dadosResp = [])
+    {   
+        try{ 
+
+            // adicionar valor na data de fechamento do checklist respondido  
+            $obj_banco = new Banco('responder_check'); 
+
+            $dados_update  =  [
+                'data_fechamento' => date('Y-m-d H:i:s')
+            ];
+
+            $obj_banco -> update('id = "'.$id_last_insert.'"',$dados_update);
+            
+ 
+            
+            foreach ($dadosResp as $dataResp)
+            {
+    
+                // se for uma não conformidade  
+                if($dataResp['status'] == false){ 
+    
+                    $imgs_nc = [];
+                    
+                    foreach($dataResp['imgs'] as $img_64){
+                        
+                        //LOGICA DA IMAGEM
+                        list($type, $data) = explode(';', $img_64);
+                        list(, $data) = explode(',', $data); 
+                        $img2decodificada = base64_decode($data); 
+                        $nome2 = uniqid().'_nc.png'; 
+                        $caminho_salvar = '../../storage/n_conformidade/'.$nome2;
+                        file_put_contents($caminho_salvar, $img2decodificada);
+                        
+                        array_push($imgs_nc,$nome2);
+                   }
+     
+                   $nao_conformidade = [
+                       'id_realiza' =>  $id_last_insert,
+                       'id_prof' => $_SESSION['id_user'],
+                       'id_pergu' => $dataResp['id_pergunta'],
+                       'descricao_NC' => $dataResp['descricao'],
+                       'img1' => (isset($imgs_nc[0])) ? $imgs_nc[0] : '',
+                       'img2' => (isset($imgs_nc[1])) ? $imgs_nc[1] : '',
+                       'img3' => (isset($imgs_nc[2])) ? $imgs_nc[2] : '',
+                       
+                    ];
+                    // echo(json_encode($nao_conformidade));
+    
+                    NaoConformidade::cadastrar(dados : $nao_conformidade);
+                }
+
+            } 
+
+            return true;
+        }catch(PDOException $e){ 
+            return $e->getMessage();
+
+        }
+         
+    }
+
+
     public static function cadastrar_pos($dados = [], $id_last_insert = 1)
     {   
 

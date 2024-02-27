@@ -212,9 +212,15 @@ btn_submit.addEventListener('click', async (e) => {
         
         let res = await data_php.json()
         
-        if(res.status){
+        if(res.status == true){
 
             modalStatus('Checklist efetuado com Sucesso!','success',() => { 
+                location.href = 'visualizar_sala.php?id_sala='+id_sala 
+            })
+
+        }else{
+
+            modalStatus('Aconteceu, tente novamente mais tarde','error',() => { 
                 location.href = 'visualizar_sala.php?id_sala='+id_sala 
             })
 

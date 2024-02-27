@@ -58,12 +58,13 @@ $(document).ready(function(){
 });
 let currentID;
 function acao(id){
+    
+    console.log(id)
+
     currentID = id
     let modal = document.querySelector('.mom')
 
-    modal.classList.add('active');
-
- 
+    modal.classList.add('active'); 
     
 }
 
