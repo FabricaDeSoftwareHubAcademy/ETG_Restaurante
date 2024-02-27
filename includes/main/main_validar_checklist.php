@@ -1,309 +1,44 @@
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
 <link rel="stylesheet" href="../assets/css/validar_checklist.css">
-
-<body>
-    
-    <h1 class="titulo">Validação De Checklist</h1>
-        <form action="" class="cardsgerenc" method="GET">
-            <div class="container_gp">
-
-                    <div>
-
-                            <div class="div_card_perfil">
-                                <div class="titulo_gp">
-                                    <div class="card_perfil">
-                                        <div class="card_nome">
-                                            <h2 class="tipo_perfil">AS COISAS NAO ESTAO CERTAS</h2>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="botoes_direita">                        
-                                    <a class="bi bi-check-circle"> </a>
-                                    <a><img src="../assets/imgs/icons/menu_icon_3.svg" alt="icone_editar" class="icone_menu"></a> 
-                                </div>
-                            </div>
+<script type="module" src="../assets/js/validarChecklist/main.js"></script>
 
 
+<script>
+    var perguntasJson = <?php echo $perguntasJson;?>
+</script>
 
+<!-- GERAL -->
+<body class="container_checklist">
 
+    <!-- TITULO DA PAGINA -->
+    <h1 class="titulo_checklist">Validar Checklist</h1>
 
+    <!-- TIULO DA SALA (importado do banco) -->
+    <h2 class="nome_sala"><?= $dados_sala[0]['nome']?></h2>
 
-                    </div>
-                    <div>
+    <!-- PARTE DO MEIO (checklist e botões) -->
+    <main class="main_checklist">
+        <form method="POST" class="checklist_pre_aula">
 
-                            <div class="div_card_perfil">
-                                <div class="titulo_gp">
-                                    <div class="card_perfil">
-                                        <div class="card_nome">
-                                            <h2 class="tipo_perfil">AS COISAS NAO ESTAO CERTAS</h2>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="botoes_direita">                        
-                                    <a class="bi bi-check-circle"> </a>
-                                    <a><img src="../assets/imgs/icons/menu_icon_3.svg" alt="icone_editar" class="icone_menu"></a> 
-                                </div>
-                            </div>
-
-
-
-
-
-
-                    </div>
-                    <div>
-
-                            <div class="div_card_perfil">
-                                <div class="titulo_gp">
-                                    <div class="card_perfil">
-                                        <div class="card_nome">
-                                            <h2 class="tipo_perfil">AS COISAS NAO ESTAO CERTAS</h2>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="botoes_direita">                        
-                                    <a class="bi bi-check-circle"> </a>
-                                    <a><img src="../assets/imgs/icons/menu_icon_3.svg" alt="icone_editar" class="icone_menu"></a> 
-                                </div>
-                            </div>
-
-
-
-
-
-
-                    </div>
-                    <div>
-
-                            <div class="div_card_perfil">
-                                <div class="titulo_gp">
-                                    <div class="card_perfil">
-                                        <div class="card_nome">
-                                            <h2 class="tipo_perfil">AS COISAS NAO ESTAO CERTAS</h2>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="botoes_direita">                        
-                                    <a class="bi bi-check-circle"> </a>
-                                    <a><img src="../assets/imgs/icons/menu_icon_3.svg" alt="icone_editar" class="icone_menu"></a> 
-                                </div>
-                            </div>
-
-
-
-
-
-
-                    </div>
-                    <div>
-
-                            <div class="div_card_perfil">
-                                <div class="titulo_gp">
-                                    <div class="card_perfil">
-                                        <div class="card_nome">
-                                            <h2 class="tipo_perfil">AS COISAS NAO ESTAO CERTAS</h2>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="botoes_direita">                        
-                                    <a class="bi bi-check-circle"> </a>
-                                    <a><img src="../assets/imgs/icons/menu_icon_3.svg" alt="icone_editar" class="icone_menu"></a> 
-                                </div>
-                            </div>
-
-
-
-
-
-
-                    </div>
-                    <div>
-
-                            <div class="div_card_perfil">
-                                <div class="titulo_gp">
-                                    <div class="card_perfil">
-                                        <div class="card_nome">
-                                            <h2 class="tipo_perfil">AS COISAS NAO ESTAO CERTAS</h2>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="botoes_direita">                        
-                                    <a class="bi bi-check-circle"> </a>
-                                    <a><img src="../assets/imgs/icons/menu_icon_3.svg" alt="icone_editar" class="icone_menu"></a> 
-                                </div>
-                            </div>
-
-
-
-
-
-
-                    </div>
-                    <div>
-
-                            <div class="div_card_perfil">
-                                <div class="titulo_gp">
-                                    <div class="card_perfil">
-                                        <div class="card_nome">
-                                            <h2 class="tipo_perfil">AS COISAS NAO ESTAO CERTAS</h2>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="botoes_direita">                        
-                                    <a class="bi bi-check-circle"> </a>
-                                    <a><img src="../assets/imgs/icons/menu_icon_3.svg" alt="icone_editar" class="icone_menu"></a> 
-                                </div>
-                            </div>
-
-
-
-
-
-
-                    </div>
-
-
-                    <!-- <ul class="cardsgerenc"> -->
-                        <!-- <li>
-                            <div class="div_card_perfil">
-                                <div class="titulo_gp">
-                                    <div class="card_perfil">
-                                        <div class="card_nome">
-                                            <h2 class="tipo_perfil">AS COISAS NAO ESTAO CERTAS</h2>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="botoes_direita">                        
-                                    <a class="bi bi-check-circle"> </a>
-                                    <a><img src="../assets/imgs/icons/menu_icon_3.svg" alt="icone_editar" class="icone_menu"></a> 
-                                </div>
-                            </div>
-                        </li> -->
-                        <!-- <li>
-                            <div class="div_card_perfil">
-                                <div class="titulo_gp">
-                                    <div class="card_perfil">
-                                        <div class="card_nome">
-                                            <h2 class="tipo_perfil">AS COISAS NAO ESTAO CERTAS</h2>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="botoes_direita">                        
-                                    <a class="bi bi-check-circle"> </a>
-                                    <a><img src="../assets/imgs/icons/menu_icon_3.svg" alt="icone_editar" class="icone_menu"></a> 
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="div_card_perfil">
-                                <div class="titulo_gp">
-                                    <div class="card_perfil">
-                                        <div class="card_nome">
-                                            <h2 class="tipo_perfil">AS COISAS NAO ESTAO CERTAS</h2>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="botoes_direita">                        
-                                    <a class="bi bi-check-circle"> </a>
-                                    <a><img src="../assets/imgs/icons/menu_icon_3.svg" alt="icone_editar" class="icone_menu"></a> 
-                                </div>
-                            </div>
-                        </li>
-    
-                        <li>
-                            <div class="div_card_perfil">
-                                <div class="titulo_gp">
-                                    <div class="card_perfil">
-                                        <div class="card_nome">
-                                            <h2 class="tipo_perfil">AS COISAS NAO ESTAO CERTAS</h2>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="botoes_direita">                        
-                                    <a class="bi bi-check-circle"> </a>
-                                    <a><img src="../assets/imgs/icons/menu_icon_3.svg" alt="icone_editar" class="icone_menu"></a> 
-                                </div>
-                            </div>
-                        </li>
-    
-                        <li>
-                            <div class="div_card_perfil">
-                                <div class="titulo_gp">
-                                    <div class="card_perfil">
-                                        <div class="card_nome">
-                                            <h2 class="tipo_perfil">AS COISAS NAO ESTAO CERTAS</h2>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="botoes_direita">                        
-                                    <a class="bi bi-check-circle"> </a>
-                                    <a><img src="../assets/imgs/icons/menu_icon_3.svg" alt="icone_editar" class="icone_menu"></a> 
-                                </div>
-                            </div>
-                        </li>
-    
-                        <li>
-                            <div class="div_card_perfil">
-                                <div class="titulo_gp">
-                                    <div class="card_perfil">
-                                        <div class="card_nome">
-                                            <h2 class="tipo_perfil">AS COISAS NAO ESTAO CERTAS</h2>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="botoes_direita">                        
-                                    <a class="bi bi-check-circle"> </a>
-                                    <a><img src="../assets/imgs/icons/menu_icon_3.svg" alt="icone_editar" class="icone_menu"></a> 
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="div_card_perfil">
-                                <div class="titulo_gp">
-                                    <div class="card_perfil">
-                                        <div class="card_nome">
-                                            <h2 class="tipo_perfil">AS COISAS NAO ESTAO CERTAS</h2>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="botoes_direita">                        
-                                    <a class="bi bi-check-circle"> </a>
-                                    <a><img src="../assets/imgs/icons/menu_icon_3.svg" alt="icone_editar" class="icone_menu"></a> 
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="div_card_perfil">
-                                <div class="titulo_gp">
-                                    <div class="card_perfil">
-                                        <div class="card_nome">
-                                            <h2 class="tipo_perfil">AS COISAS NAO ESTAO CERTAS</h2>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="botoes_direita">                        
-                                    <a class="bi bi-check-circle"> </a>
-                                    <a><img src="../assets/imgs/icons/menu_icon_3.svg" alt="icone_editar" class="icone_menu"></a> 
-                                </div>
-                            </div>
-                        </li>
-                    </ul> -->
+            <!-- PARTE DO CHECKLIST -->
+            <div class="list-pre-aula">
+                
             </div>
-            
+
+                      <!-- PARTE DOS BOTÕES -->
+            <div class="alinar-botoes">
+            <!--Botão voltar-->
+                <div class="botao-padrao-voltar">
+                    <a href="listar_salas.php" class="botao-voltar-link" id="buttonBackModalNaoConf">Voltar</a>
+                </div>
+                <div class="botao-padrao-cadastrar">
+                    <button name="btn_submit" type="submit" class="botao-cadastrar-submit" id="botao-cadastrar-submit" value="CADASTRAR">Ação Corretiva</button>
+                </div>
+            </div>
+
         </form>
-        <div class="container_gp2">
-                    
-                <div class="alinar-botoes">
-    
-                    <div class="botao-padrao-voltar">
-                        <a href="listar_salas.php" class="botao-voltar-submit">VOLTAR</a>
-                    </div>
-    
-                    <div class="botao-padrao-cadastrar">
-                        <a href="cadastrar_checklist.php" class="botao-cadastrar-link">CADASTRAR</a>
-                    </div>
-    
-                </div>  
-                    
-            </div> 
+
+    </main>
+
     
 </body>

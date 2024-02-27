@@ -1,230 +1,293 @@
-
 *{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Montserrat";
 }
+
 :root{
   --cor-primaria-botao-white: white; 
   --cor-primaria-botao-green: green;
   --cor-primaria-botao-red:   red;
   --cor-primaria-botao-yellow:rgba(255, 199, 0, 1);
   --cor-primaria-botao-blue:  rgba(6, 74, 140, 1);
+  --cor-label:black;
+} 
+
+
+.container_checklist{
+max-width: 832px;
+position: relative;
+margin: 0 auto;
+display: flex;
+flex-direction: column;
+align-items: center;
 }
 
-body
-{
-  max-width: 832px;
-  
-  margin: auto;
-  height: 100%;
-  overflow: hidden;
-  font-family: 'Montserrat';
+.main_checklist {
+width: 78%;
+max-width: 80%;
+max-height: 728px;
+margin-right: 2%;
 }
 
-li
-{
-  list-style: none; 
-}   
 
-
-
-
-.cardsgerenc
-{
-height: 70% ;
-width: 97%;
-overflow-y: scroll;
-padding: 0px 0px 0px 20px;
-}
-
-.cardsgerenc::-webkit-scrollbar{
+.list-pre-aula::-webkit-scrollbar{
 width: 8px;
 background-color: #eeeeee;
 border-radius: 10px;
 }
 
-.cardsgerenc::-webkit-scrollbar-thumb{
+.list-pre-aula::-webkit-scrollbar-thumb{
 background-color: #F28920;
 border-radius: 10px; 
 } 
 
-.titulo
-{
-  font-family: 'Montserrat';
-  font-size: 40px;
-  text-align: center;
-  margin-bottom: 20px;
-
-}
-
-.div_card_perfil
-{
-  display: flex;
-
-}
-
-.card_perfil
-{
-padding: 40px;
-width: 100%;
-/* background-color: red; */
-border-radius: 28px;
-box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-border-radius: 28px;
-border: 1px solid #FFF;
-background: #f9f9f9;
-box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-cursor: pointer;
-}
-
-.botoes_direita
-{
-  display: flex;
-  align-items: center;
-  margin: 0 30px 0 30px;
-}
-.botoes_direita a
-{
-  font-size: 40px;
-}
-
-.icone_menu
-{
-  width: 30px;
-  height: 30px;
-  margin: 12px;
-  display: flex;
-}
-
-.tipo_perfil
-{
-color: #000;
-font-size: 20px;
-font-style: normal;
-font-weight: 600;
-letter-spacing: 0.2px;
-margin-right: 20px;
-font-family: 'Montserrat';
-}
-
-.titulo_gp
-{
-  margin: 10px 0 10px 0;
-  width: 80%;
-}
 
 
-.botao-voltar-submit{
-  width: 180px;
-  height: 45px;
-  background-color: var(--cor-primaria-botao-white);
-  border: 3px solid var(--cor-primaria-botao-yellow);
-  border-radius: 20px;
-  cursor: pointer;
-  color: var(--cor-primaria-botao-yellow);
+.titulo_checklist{
+  font-family: "Montserrat";
+  color: #000;
+  font-family: Montserrat;
+  font-size: 35px;
   font-style: normal;
-  font-family: 'Montserrat';
+  font-weight: 300;
+  line-height: 140%; /* 49px */
+  letter-spacing: 0.2px;
+}
+
+.nome_sala{
+  color: #000;
+  font-family: Montserrat;
+  font-size: 25px;
+  font-style: normal;
   font-weight: bold;
+  line-height: 140%; /* 35px */
+  letter-spacing: 0.2px;
+  margin-bottom:30px;
+}
+
+
+.input_checklist{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  margin: 0 0 30px 0;
+}
+
+
+/* ---------------------------------- */
+
+.label_checklist-right{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  max-width: 600px;
+  height: 100px;
+  border-radius: 20px;
+  border: 3px solid green;
+  /* background-color: green; */
+  width: 100%;
+  transition: height 0.3s ease; 
+  }
+  
+  .label_checklist-right h1{
   font-size: 15px;
+  margin: 35px 0 0 30px;
+  }
+  
+  .label_checklist-right i {
+  margin: 35px 30px 0 0;
+  font-size: 25px;
+  }
+
+  /* ---------------------------------- */
+
+.label_checklist-wrong{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  max-width: 600px;
+  height: 100px;
+  border-radius: 20px;
+  border: 3px solid red;
+  /* background-color: green; */
+  width: 100%;
+  transition: height 0.3s ease; 
+  }
+  
+  .label_checklist-wrong h1{
+  font-size: 15px;
+  margin: 35px 0 0 30px;
+  }
+  
+  .label_checklist-wrong i {
+  margin: 35px 30px 0 0;
+  font-size: 25px;
+  }
+
+
+
+
+/* Scrool */
+.list-pre-aula{
+  max-height: 550px;
+  overflow: hidden;
+  overflow-y: scroll
+}
+
+
+
+/* Botões */
+
+.alinar-botoes{
+  width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    bottom: 0px;
+    background: rgb(255, 255, 255);
+    height: 90px;
+    max-width: 832px;
+}
+
+.botao-padrao-voltar {
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
-  text-decoration: none;
 }
 
-.botao-voltar-submit:hover{
-  transition: all 0.4s;
-  background-color: var(--cor-primaria-botao-yellow);
-  color: var(--cor-primaria-botao-white);
-}
-
-.container_gp{
-  height: 60vh;
-}
-.container_gp2
-{
-  width: 97%;
-  padding: 30px 0 40px 0;
-}
-
-.alinar-botoes
-{
+.botao-padrao-cadastrar{
+  width: 100%;
   display: flex;
-  justify-content: space-evenly;
+  align-items: center;
+  justify-content: center;
 }
 
-.botao-cadastrar-link {
-  display: inline-block;
-  padding: 12px 40px;
+.botao-cadastrar-submit{
+  width: 180px;
+  height: 45px;
   background-color: var(--cor-primaria-botao-white);
   border: 3px solid var(--cor-primaria-botao-green);
   border-radius: 20px;
   cursor: pointer;
   color: var(--cor-primaria-botao-green);
+  font-style: normal;
+  
+  font-weight: bold;
+  font-size: 15px;
+}
+
+.botao-cadastrar-submit:hover{
+  transition: all 0.4s;
+  background-color: var(--cor-primaria-botao-green);
+  color: var(--cor-primaria-botao-white);
+}
+
+.botao-voltar-link {
+  /* width: 110px; */
+  display: inline-block;
+  padding: 10px 60px;
+  background-color: var(--cor-primaria-botao-white);
+  border: 3px solid var(--cor-primaria-botao-yellow);
+  border-radius: 20px;
+  cursor: pointer;
+  color: var(--cor-primaria-botao-yellow);
   font-family: 'Montserrat', sans-serif; /* Corrigir a propriedade font-family */
   font-weight: bold;
   font-size: 15px;
   text-decoration: none; /* Adicionar sublinhado ao texto do link */
 }
 
-.botao-cadastrar-link:hover {
-transition: all 0.4s;
-background-color: var(--cor-primaria-botao-green);
-color: var(--cor-primaria-botao-white);
+.botao-voltar-link:hover {
+  transition: all 0.4s;
+  background-color: var(--cor-primaria-botao-yellow);
+  color: var(--cor-primaria-botao-white);
 }
 
+/* Botões Labels*/
 
 
-@media (max-width: 400px)
-{
-
-  .card_perfil
-  {
-    height: 5vh;
-    display: flex;
-    align-items: center;
-  }
-
-
-  .Perfis
-  {
-    font-size: 30px;
-  }
-
-
-  .botoes_direita
-  {
-    margin: 0 10px 0 10px;
-  }
-  .botoes_direita a
-  {
-    font-size: 22px;
-  }
-
-  .icone_menu
-{
-  width: 17px;
-  height: 17px;
-}
-  
-  .tipo_perfil
-  {
-    font-size: 12px;
-  }
-
-
-.botao-voltar-submit
-{
-  width: 120px;
-}
-
-.botao-cadastrar-link
-{
-  width: 120px;
+.alinar-botoes-label{
   display: flex;
-  align-items: center;
-  justify-content: center;
+  justify-content: space-between;
+  position: relative;
+  bottom: 30px;
 }
 
+.botao-padrao-voltar-label {
+  width: 100%;
+  /* display: flex;
+  align-items: center;
+  justify-content: center; */
+}
+
+.botao-padrao-cadastrar-label{
+  width: 100%;
+}
+
+.botao-cadastrar-submit-label{
+  float: right;
+  position: relative;
+  right: 30px;
+  width: 60%;
+  height: 45px;
+  background-color: var(--cor-primaria-botao-white);
+  border: 3px solid var(--cor-primaria-botao-green);
+  border-radius: 20px;
+  cursor: pointer;
+  color: var(--cor-primaria-botao-green);
+  font-style: normal;
+  
+  font-weight: bold;
+  font-size: 15px;
+}
+
+
+.botao-voltar-link-label {
+  float: left;
+  position: relative;
+  left: 30px;
+  width: 60%;
+  height: 45px;
+  background-color: var(--cor-primaria-botao-white);
+  border: 3px solid var(--cor-primaria-botao-yellow);
+  border-radius: 20px;
+  cursor: pointer;
+  color: var(--cor-primaria-botao-yellow);
+  font-family: 'Montserrat', sans-serif; /* Corrigir a propriedade font-family */
+  font-weight: bold;
+  font-size: 15px;
+  text-decoration: none; /* Adicionar sublinhado ao texto do link */
+}
+
+.botao-cadastrar-submit-label:hover{
+  transition: all 0.4s;
+  background-color: var(--cor-primaria-botao-green);
+  color: var(--cor-primaria-botao-white);
+}
+
+.botao-voltar-link-label:hover {
+  transition: all 0.4s;
+  background-color: var(--cor-primaria-botao-yellow);
+  color: var(--cor-primaria-botao-white);
+}
+
+.divH1andButton {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+
+@media(max-width:1400px){
+  .botoes{
+    margin-top: 10%;
   }
+
+  .main_checklist{
+    flex-wrap: wrap;
+  } 
+}
+
