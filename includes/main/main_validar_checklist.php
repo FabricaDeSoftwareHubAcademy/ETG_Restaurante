@@ -14,7 +14,7 @@
     <h1 class="titulo_checklist">Validar Checklist</h1>
 
     <!-- TIULO DA SALA (importado do banco) -->
-    <h2 class="nome_sala"><?= $dados_sala[0]['nome']?></h2>
+    <h2 class="nome_sala"><?=isset($dados_sala[0]['nome']) ? $dados_sala[0]['nome'] : ''?></h2>
 
     <!-- PARTE DO MEIO (checklist e botões) -->
     <main class="main_checklist">
