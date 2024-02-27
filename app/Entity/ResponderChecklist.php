@@ -68,37 +68,7 @@ class ResponderChecklist
             return $e->getMessage();
 
         }
-        
-
-
-            
-
-            // return ($dataResp);
-            
-            // //LOGICA DA IMAGEM
-            // list($type, $data) = explode(';', $img2_64);
-            // list(, $data) = explode(',', $data);
-            // $img2decodificada = base64_decode($data);
-            // $data = '';
-            // $nome2 = uniqid().'_nc.png';
-            // $caminho_salvar = '../../storage/n_conformidade/'.$nome2;
-            // file_put_contents($caminho_salvar, $img2decodificada);
-            
-             
-
-            // // cadastrando não conformidade  
-            // $nao_conformidade = [
-            //     'id_realiza' =>  $last_id,
-            //     'id_prof' => $_SESSION['id_user'],
-            //     'id_pergu' => $pergunta['id_pergu'],
-            //     'descricao_NC' => $pergunta['descricao_NC'],
-            //     'img1' => (isset($nome1)) ? $nome1 : '',
-            //     'img2' => (isset($nome2)) ? $nome2 : '',
-            //     'img3' => (isset($nome3)) ? $nome3 : '',
-            // ];
-            // NaoConformidade::cadastrar(dados : $nao_conformidade);
-        
-       
+         
     }
 
     public static function cadastrar_pos($dados = [], $id_last_insert = 1)

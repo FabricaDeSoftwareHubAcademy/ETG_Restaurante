@@ -10,8 +10,6 @@ if(!$ifreacheck){
 use App\Entity\Checklist;
 use App\Entity\Pergunta;
 use App\Entity\Sala;
-use App\Entity\NaoConformidade;
-use App\Entity\Funcoes;
 $obj_checklist = new Checklist();
 $obj_pergunta = new Pergunta();
 $dados_imprimir = "";

@@ -214,10 +214,8 @@ btn_submit.addEventListener('click', async (e) => {
         
         if(res.status){
 
-            modalStatus('Checklist efetuado com Sucesso!','success',() => {
-
-                location.href = 'visualizar_sala.php?id_sala='+id_sala
-
+            modalStatus('Checklist efetuado com Sucesso!','success',() => { 
+                location.href = 'visualizar_sala.php?id_sala='+id_sala 
             })
 
         }
