@@ -1,15 +1,16 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
 <link rel="stylesheet" href="../assets/css/cadastrar_checklist_preaula.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+
 <script src="../assets/js/modais.js"></script>
-<script src="../assets/js/checklist_pos.js" defer></script>
-<link href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@4/dark.css" rel="stylesheet">
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
+<script src="../assets/js/checklist_pos.js" defer></script> 
+<script src="../assets/js/script_tela_nao_conf.js"></script>
 
     <!-- PARTE QUE IMPORTA A TELA DE NÃO CONFORMIDADE -->
-    <?php include_once "../includes/main/main_cadastrar_nao_conformidade.php";
-
-     //MODAL DE CHECKLIST CADASTRADO//
-     include_once "../includes/modais/checklist_criado.php";
+    <?php        
+     include_once "../includes/main/main_cadastrar_nao_conformidade.php"; 
+ 
     ?>
 
 <!-- GERAL -->

@@ -3,22 +3,37 @@
 
 // PRECISA DAR UM UPDATE NA TABELA ADICIONANDO A DATA DE FECHAMENTO 
 
+
 session_start();
 require __DIR__."/../../vendor/autoload.php";
 use App\Entity\ResponderChecklist;
 use App\Entity\Checklist;
 
-$dados = json_decode(file_get_contents('php://input'), true);
-
-$id_sala = $_GET['id_sala'];
-
-// select para pegar o ultimo registro  
-$id_last_insert = Checklist::getLastCheck($id_sala)[0]['id'] ;
-
-$response=ResponderChecklist::cadastrar_pos($dados, $id_last_insert);
-echo(json_encode(true));exit;
 
 
 
 
+$status = false;
 
+try {
+
+    $dados = json_decode(file_get_contents('php://input'), true);
+    
+    
+    $id_sala = $_GET['id_sala'];
+    
+    $data_last_insert = Checklist::getLastCheck($id_sala)[0] ;
+
+    $response=ResponderChecklist::cadastrarPos($data_last_insert['id'], $dados);
+
+    $status = $response ;
+      
+ } catch (Exception $e) {
+
+    $status = $e->getMessage();
+
+}
+
+echo(json_encode([
+    'status' => $status
+])); 

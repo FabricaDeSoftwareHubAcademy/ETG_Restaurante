@@ -6,7 +6,9 @@ use App\Entity\Sala;
 
 $id_sala = $_GET['id_sala'];
 $id_checklist  = $_GET['id_checklist']; 
+
 $dados = json_decode(file_get_contents('php://input'), true); 
+
 $status = false; 
 if(isset($id_sala,$id_checklist)){
 

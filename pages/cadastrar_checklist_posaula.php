@@ -9,9 +9,7 @@ if(!$ifreacheck){
 }
 use App\Entity\Checklist;
 use App\Entity\Pergunta;
-use App\Entity\Sala;
-use App\Entity\NaoConformidade;
-use App\Entity\Funcoes;
+use App\Entity\Sala; 
 $obj_checklist = new Checklist();
 $obj_pergunta = new Pergunta();
 $dados_imprimir = "";
@@ -25,12 +23,19 @@ $data_fechamento = null;
 $dados_pergunta = $obj_pergunta::getDados($id_sala);  
 $dados_sala = $obj_sala::getDadosById($id_sala);
 // var_dump($dados_pergunta);exit;
+
+$perguntaPos = [];
+
+
 if ($dados_pergunta)
 {
     foreach ($dados_pergunta as $linha)
     { 
         if ($linha["tipo"] == "1" || $linha['tipo'] == '2')
         {
+
+            array_push($perguntaPos, $linha);
+
             $dados_imprimir .= '
             <div class="input_checklist">
 
@@ -55,6 +60,20 @@ $dados_imprimir .= '
 <input type="hidden" id="valor_booleano" name="valor_booleano" value="0">';
 
 // $dados = json_decode(file_get_contents('php://input'), true);
+
+
+$idsPergPos = [];
+foreach($perguntaPos as $perguntaOb ){
+
+    array_push($idsPergPos, $perguntaOb['id_pergunta']);
+}
+
+echo('  <script>
+            let id_checklist = '.$dados_sala[0]['id_check'].'
+            let perguntasPos = '.json_encode($idsPergPos).'
+        </script>');
+
+
 
 echo('<script>
 var respondidas = {}
