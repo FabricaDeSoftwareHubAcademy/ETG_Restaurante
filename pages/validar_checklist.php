@@ -5,6 +5,8 @@ use App\Entity\Checklist;
 use App\Entity\NaoConformidade;
 use App\Entity\ValidarChecklist;
 session_start();
+$dados_sala = isset($dados_sala) ? $dados_sala : null;
+
 include_once("../includes/menu.php");
 // $titulo_page = 'Validar checklist';
 $idResponderCheck = $_GET["id_realizacao"];
