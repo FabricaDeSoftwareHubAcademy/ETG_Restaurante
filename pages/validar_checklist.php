@@ -10,6 +10,7 @@ include_once("../includes/menu.php");
 $idResponderCheck = $_GET["id_realizacao"];
 $objValidarChecklist = new ValidarChecklist();  
 $idSala = $objValidarChecklist -> getIdSala(idResponderCheck: $idResponderCheck);
+// die("asd");
 $perguntas = $objValidarChecklist -> getPerguntas(idSala: $idSala);
 
 foreach ($perguntas as &$row) {

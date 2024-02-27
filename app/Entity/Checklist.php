@@ -165,6 +165,12 @@ class Checklist
 
 
     }
+    public static function getDataById($id) {
+        $obj_banco = new Banco('responder_check');
+        $data = $obj_banco -> select(where:'id = '.$id.'') -> fetchAll(PDO::FETCH_ASSOC);
+        return $data;
+    }
+
 
 
 }
