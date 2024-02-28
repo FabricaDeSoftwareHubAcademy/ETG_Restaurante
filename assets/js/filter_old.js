@@ -13,14 +13,14 @@ async function filter_listar_perguntas(){
         $("#perguntas").empty()
         for(pergunta in dadosPerguntas){
             
-            
+            // <button class="checklist" id="popup_cad_checklist" onclick="openPopup4()"><i class="bi bi-file-earmark-plus"></i></button>
             
             let descricao =  dadosPerguntas[pergunta].descricao.toLowerCase()
             if(descricao.includes($("#input").val().toLowerCase())){
                 
                 if(   (((dadosPerguntas[pergunta].tipo == 0) || dadosPerguntas[pergunta].tipo == 2) && filter_perguntas[0]) || (((dadosPerguntas[pergunta].tipo == 1) || dadosPerguntas[pergunta].tipo == 2) && filter_perguntas[1])  ){
 
-                    let divPergunta = '<div class="question1 move" animation="right"> <div class="resp_pergunta"> <p name="question_text" id="question_text">'+dadosPerguntas[pergunta].descricao+' </p></div> <div class="icons-question1"><button class="checklist" id="popup_cad_checklist" onclick="openPopup4()"><i class="bi bi-file-earmark-plus"></i></button> <button class="editar" id="btn_pencil_editar_pergunta" btn_editar="'+dadosPerguntas[pergunta].id+'" onclick="openPopup2()"><i class="bi bi-pencil-square"></i></button> <button class="excluir" btn_excluir="'+dadosPerguntas[pergunta].id+'" id="btn_trash_excluir_pergunta" onclick="openPopup3()"><i class="bi bi-trash"></i></button> </div> </div>'
+                    let divPergunta = '<div class="question1 move" animation="right"> <div class="resp_pergunta"> <p name="question_text" id="question_text">'+dadosPerguntas[pergunta].descricao+' </p></div> <div class="icons-question1"> <button class="editar" id="btn_pencil_editar_pergunta" btn_editar="'+dadosPerguntas[pergunta].id+'" onclick="openPopup2()"><i class="bi bi-pencil-square"></i></button> <button class="excluir" btn_excluir="'+dadosPerguntas[pergunta].id+'" id="btn_trash_excluir_pergunta" onclick="openPopup3()"><i class="bi bi-trash"></i></button> </div> </div>'
                     
                     $('#perguntas').append(divPergunta)
                 }
