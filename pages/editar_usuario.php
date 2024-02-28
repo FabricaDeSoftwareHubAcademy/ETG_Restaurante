@@ -75,6 +75,7 @@ if(!isset($_GET['id_user'])){
         <section class="centralizar_input_alterar_senha">
 
             <div class="input_senha_group field">
+                <i class="bi bi-pencil-square kkk"></i>
                 <input name="email" type="text" class="input_senha_field" placeholder="Name" value="'.$dados_editar['email'].'">
                 <label for="name" class="input_senha_label">E-Mail</label> <!--Alterar para o nome do input-->
             </div>
@@ -91,6 +92,7 @@ if(!isset($_GET['id_user'])){
         <section class="centralizar_input_alterar_senha">
 
             <div class="input_senha_group field">
+                <i class="bi bi-pencil-square kkk"></i>
                 <input name="matricula" type="text" class="input_senha_field" placeholder="Name" value="'.$dados_editar['matricula'].'">
                 <label for="name" class="input_senha_label">Número de Matrícula</label> <!--Alterar para o nome do input-->
             </div>
