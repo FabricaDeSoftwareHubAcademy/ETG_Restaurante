@@ -115,30 +115,46 @@ export class Dom {
 
         function descerNormal()
         {
-            montarBotoes();
+            
             labelDiv.classList.add("active");
             if (labelDiv.classList.contains("label_checklist-wrong")) {
                 labelDiv.style.backgroundColor = 'transparent';
                 labelDiv.style.border = '3px solid red';
                 button.className = "bi bi-chevron-down"
-                labelDiv.style.height = (labelDiv.offsetHeight + 400) + "px";
-
+                labelDiv.style.height = (labelDiv.offsetHeight + 250) + "px";
+                
                 let imagens = document.createElement("div");
                 imagens.className = "imagens-container";
-                imagens.style.backgroundColor = "red";
+                // imagens.style.backgroundColor = "red";
                 imagens.style.width = "100%";
-                imagens.style.height = "280px";
-
-                let divImg = document.createElement("div");
-                let img = document.createElement("img");
-
-
-                let nextDivToInsert = document.querySelector(".alinar-botoes-label");
-                let dadElement = nextDivToInsert.parentNode;
-
-                dadElement.insertBefore(imagens, nextDivToInsert);
+                imagens.style.height = "300px";
+                // imagens.style.marginBottom = "10px";
+                imagens.style.display = "flex";
+                // imagens.style.justifyContent = "space-between";
+                imagens.style.alignItems = "center";
+                // imagens.style.justifyContent = "center";
+                
+                for (let i = 0; i < 3; i++) {
+                    let divImg = document.createElement("div");
+                    divImg.style.display = "flex";
+                    divImg.style.justifyContent = "center";
+                    let img = document.createElement("img");
+                    img.className = "beluga";
+                    // img.style.width = "100% %";
+                    img.src = "https://img.freepik.com/fotos-premium/melhor-foto-aleatoria_865967-90776.jpg";
+    
+                    divImg.appendChild(img);
+                    imagens.appendChild(divImg)
+                }
+                
+                labelDiv.appendChild(imagens)
+                // let nextDivToInsert = document.querySelector(".alinar-botoes-label");
+                // let dadElement = nextDivToInsert.parentNode;
+                
+                // dadElement.insertBefore(imagens, nextDivToInsert);
             }
             else if (labelDiv.classList.contains("label_checklist-right")) {
+                montarBotoes();
                 labelDiv.style.backgroundColor = 'transparent';
                 labelDiv.style.border = '3px solid green';
                 button.className = "bi bi-chevron-down"
@@ -166,17 +182,13 @@ export class Dom {
         {
             if (labelDiv.querySelector(".imagens-container") !== null) {
                 labelDiv.querySelector(".imagens-container").remove();
-                labelDiv.style.height = (labelDiv.offsetHeight - 400) + "px";
+                labelDiv.style.height = (labelDiv.offsetHeight - 250) + "px";
                 labelDiv.classList.remove("active");
-                labelDiv.removeChild(motherButtons);
             } else {
                 labelDiv.style.height = (labelDiv.offsetHeight - 125) + "px";
                 labelDiv.classList.remove("active");
                 labelDiv.removeChild(motherButtons);
             }
-
-
-
 
             if (labelDiv.classList.contains("correct")) {
                 labelDiv.classList.remove("correct");
