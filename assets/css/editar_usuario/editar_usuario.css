@@ -221,7 +221,15 @@
 
 }
 
-@media(max-width: 832px){
+@media(min-width: 832px){
+  #icon-input{
+    margin-top: 1%;
 
+  }
 
+}
+
+.bi.bi-pencil-square.kkk{
+  position: absolute;
+  right: 20px;
 }
