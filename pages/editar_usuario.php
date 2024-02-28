@@ -29,7 +29,7 @@ if(!isset($_GET['id_user'])){
 
     $sla = '<h1 class="titulo-perfil">Minha Conta</h1>';
 
-    $voltar = '<a href="editar_usuario.php" class="botao-voltar-submit" >VOLTAR</a>';
+    $voltar = '<a href="listar_recados.php" class="botao-voltar-submit" >VOLTAR</a>';
     
     $area_edit = '<section class="editar_senha">
     <section class="titulo_alterar_senha">
