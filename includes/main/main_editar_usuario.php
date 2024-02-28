@@ -57,7 +57,7 @@
     
                                 <!--Botão Voltar-->
                             <div class="botao-padrao-voltar">
-                                <a href="listar_recados.php" class="botao-voltar-submit" >VOLTAR</a>
+                                
                             </div>
     
                                 <!--Botão Confirmar-->

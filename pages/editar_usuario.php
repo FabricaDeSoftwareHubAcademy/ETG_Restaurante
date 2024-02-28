@@ -28,6 +28,8 @@ $foto = $dados_editar['foto'];
 if(!isset($_GET['id_user'])){
 
     $sla = '<h1 class="titulo-perfil">Minha Conta</h1>';
+
+    $voltar = '<a href="editar_usuario.php" class="botao-voltar-submit" >VOLTAR</a>';
     
     $area_edit = '<section class="editar_senha">
     <section class="titulo_alterar_senha">
@@ -164,11 +166,21 @@ if(!isset($_GET['id_user'])){
         
     }
 
+    if(isset($_SESSION['msg_edit'])){
+        echo"<script>modalStatus('Salvo com sucesso!','success',()=>{
+            location.href='editar_usuario.php'
+        })</script>";
+        
+        unset($_SESSION['msg_edit']);
+    }
+
 
 
 }else{
 
     $sla = '<h1 class="titulo-perfil">Editar Conta</h1>';
+
+    $voltar = '<a href="visualizar_usuario.php" class="botao-voltar-submit" >VOLTAR</a>';
 
     $area_edit = '
     <section class="editar_senha">
@@ -312,6 +324,14 @@ if(!isset($_GET['id_user'])){
         
     }
 
+    if(isset($_SESSION['msg_edit'])){
+        echo"<script>modalStatus('Salvo com sucesso!','success',()=>{
+            location.href='visualizar_usuario.php'
+        })</script>";
+        
+        unset($_SESSION['msg_edit']);
+    }
+
 
 }
 
@@ -321,13 +341,13 @@ require("../includes/header/header.php");
 include_once("../includes/menu.php");
 require("../includes/main/main_editar_usuario.php");
 
-if(isset($_SESSION['msg_edit'])){
-    echo"<script>modalStatus('Salvo com sucesso!','success',()=>{
-        location.href='editar_usuario.php'
-    })</script>";
+// if(isset($_SESSION['msg_edit'])){
+//     echo"<script>modalStatus('Salvo com sucesso!','success',()=>{
+//         location.href='editar_usuario.php'
+//     })</script>";
     
-    unset($_SESSION['msg_edit']);
-}
+//     unset($_SESSION['msg_edit']);
+// }
 
 //FIM DAS REGRAS DE NEGOCIO
 require("../includes/footer/footer.php");
