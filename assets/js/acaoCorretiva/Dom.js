@@ -101,28 +101,8 @@ export class Dom {
         {
             montarBotoes();
             labelDiv.classList.add("active");
-            if (labelDiv.classList.contains("label_checklist-wrong") && labelDiv.classList.contains("active")) {
-                labelDiv.style.backgroundColor = 'transparent';
-                labelDiv.style.border = '3px solid red';
-                button.className = "bi bi-chevron-down"
-                labelDiv.style.height = (labelDiv.offsetHeight + 400) + "px";
 
-                let imagens = document.createElement("div");
-                imagens.className = "imagens-container";
-                imagens.style.backgroundColor = "red";
-                imagens.style.width = "100%";
-                imagens.style.height = "280px";
-
-                let divImg = document.createElement("div");
-                let img = document.createElement("img");
-
-
-                let nextDivToInsert = document.querySelector(".alinar-botoes-label");
-                let dadElement = nextDivToInsert.parentNode;
-
-                dadElement.insertBefore(imagens, nextDivToInsert);
-            }
-            else if (labelDiv.classList.contains("label_checklist-wrong")) {
+            if (labelDiv.classList.contains("label_checklist-wrong")) {
                 labelDiv.style.backgroundColor = 'transparent';
                 labelDiv.style.border = '3px solid red';
                 button.className = "bi bi-chevron-down"
@@ -165,7 +145,6 @@ export class Dom {
                 labelDiv.classList.remove("incorrect");
             }
         }
-
 
         function verde()
         {
@@ -278,7 +257,6 @@ export class Dom {
         // ARMAZENANDO AS IMAGENS
         for (let i = 0; i < images.length; i++) {
             var src = images[i].getAttribute("src");
-            console.log(src)
             imagesToPHP[i] = src;
         }
     
@@ -287,7 +265,7 @@ export class Dom {
         data["imagesToPHP"] = imagesToPHP;
 
         this.dataNaoConf.push(data);
-        // console.log(this.dataNaoConf)
+        console.log(this.dataNaoConf)
 
     }
 
@@ -324,8 +302,7 @@ export class Dom {
     
         for (let i = 0; i < IMAGES_TO_PROCESS; i++) {
             const FILE = MULTIPLE_FILES[i];
-
-            
+    
             if (!FILE.type.startsWith("image/")) {
                 continue;
             }
@@ -334,18 +311,7 @@ export class Dom {
             IMG.className = "beluga";
             
             
-
-            let reader = new FileReader();
-
-            reader.onload = (e) => {
-    
-                IMG.src = e.target.result
-             }
-
-            reader.readAsDataURL(FILE) 
-
-
-             
+            IMG.src = URL.createObjectURL(FILE);
             
             var container_img = document.createElement("div");
     
