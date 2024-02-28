@@ -101,8 +101,28 @@ export class Dom {
         {
             montarBotoes();
             labelDiv.classList.add("active");
+            if (labelDiv.classList.contains("label_checklist-wrong") && labelDiv.classList.contains("active")) {
+                labelDiv.style.backgroundColor = 'transparent';
+                labelDiv.style.border = '3px solid red';
+                button.className = "bi bi-chevron-down"
+                labelDiv.style.height = (labelDiv.offsetHeight + 400) + "px";
 
-            if (labelDiv.classList.contains("label_checklist-wrong")) {
+                let imagens = document.createElement("div");
+                imagens.className = "imagens-container";
+                imagens.style.backgroundColor = "red";
+                imagens.style.width = "100%";
+                imagens.style.height = "280px";
+
+                let divImg = document.createElement("div");
+                let img = document.createElement("img");
+
+
+                let nextDivToInsert = document.querySelector(".alinar-botoes-label");
+                let dadElement = nextDivToInsert.parentNode;
+
+                dadElement.insertBefore(imagens, nextDivToInsert);
+            }
+            else if (labelDiv.classList.contains("label_checklist-wrong")) {
                 labelDiv.style.backgroundColor = 'transparent';
                 labelDiv.style.border = '3px solid red';
                 button.className = "bi bi-chevron-down"
@@ -145,6 +165,7 @@ export class Dom {
                 labelDiv.classList.remove("incorrect");
             }
         }
+
 
         function verde()
         {
