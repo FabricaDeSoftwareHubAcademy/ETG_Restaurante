@@ -175,10 +175,9 @@ if(!isset($_GET['id_user'])){
     }
 
 
-
 }else{
 
-    $sla = '<h1 class="titulo-perfil">Editar Conta</h1>';
+    $sla = '<h1 class="titulo-perfil">Editar Usuário</h1>';
 
     $voltar = '<a href="visualizar_usuario.php" class="botao-voltar-submit" >VOLTAR</a>';
 
