@@ -7,14 +7,24 @@ export class Dom {
         this.dataPerguta = this.objPergunta.getAll();
     }
 
+    addNaoConfToDataNaoConf() {
+        for (var pergunta of this.dataPerguta) {
+            if (pergunta["NaoConformidade"]) {
+                console.log(true)
+            }
+
+        }
+    }
+
     showPerguntas() {
+        // this.showPerguntas();
+        // console.log(this.dataPerguta);
         for (var pergunta of this.dataPerguta) {
             // var perguntaMae = document.querySelector(".pergunta_nao_conf");
             // var descricaoPergunta = document.createElement("h6");
             // descricaoPergunta.innerText = pergunta["pergunta"];
             // console.log(pergunta);
             // perguntaMae.appendChild(descricaoPergunta);
-            console.log(this.dataPerguta)
             if (pergunta["NaoConformidade"]) {
                 this.createOneRedElement(pergunta["pergunta"], pergunta["id_pergunta"]); //checando se a pergunta tem uma nao conformidade
                 continue;
@@ -88,7 +98,13 @@ export class Dom {
             buttonSubmit.textContent = "Correto";
             buttonSubmit.type = "button";
             buttonSubmit.onclick = function() {
-                verde();
+                if (labelDiv.classList.contains("label_checklist-wrong") && labelDiv.classList.contains("active")) {
+                    vermelho();
+                }
+                else
+                {
+                    verde();
+                }
             }
             divBack.appendChild(buttonIncorrect);
             divSubmit.appendChild(buttonSubmit);
@@ -101,7 +117,7 @@ export class Dom {
         {
             montarBotoes();
             labelDiv.classList.add("active");
-            if (labelDiv.classList.contains("label_checklist-wrong") && labelDiv.classList.contains("active")) {
+            if (labelDiv.classList.contains("label_checklist-wrong")) {
                 labelDiv.style.backgroundColor = 'transparent';
                 labelDiv.style.border = '3px solid red';
                 button.className = "bi bi-chevron-down"
@@ -121,12 +137,6 @@ export class Dom {
                 let dadElement = nextDivToInsert.parentNode;
 
                 dadElement.insertBefore(imagens, nextDivToInsert);
-            }
-            else if (labelDiv.classList.contains("label_checklist-wrong")) {
-                labelDiv.style.backgroundColor = 'transparent';
-                labelDiv.style.border = '3px solid red';
-                button.className = "bi bi-chevron-down"
-                labelDiv.style.height = (labelDiv.offsetHeight + 125) + "px";
             }
             else if (labelDiv.classList.contains("label_checklist-right")) {
                 labelDiv.style.backgroundColor = 'transparent';
@@ -154,9 +164,19 @@ export class Dom {
 
         function subirNormal()
         {
-            labelDiv.style.height = (labelDiv.offsetHeight - 125) + "px";
-            labelDiv.classList.remove("active");
-            labelDiv.removeChild(motherButtons);
+            if (labelDiv.querySelector(".imagens-container") !== null) {
+                labelDiv.querySelector(".imagens-container").remove();
+                labelDiv.style.height = (labelDiv.offsetHeight - 400) + "px";
+                labelDiv.classList.remove("active");
+                labelDiv.removeChild(motherButtons);
+            } else {
+                labelDiv.style.height = (labelDiv.offsetHeight - 125) + "px";
+                labelDiv.classList.remove("active");
+                labelDiv.removeChild(motherButtons);
+            }
+
+
+
 
             if (labelDiv.classList.contains("correct")) {
                 labelDiv.classList.remove("correct");
@@ -177,10 +197,19 @@ export class Dom {
 
         function vermelho()
         {
-            //vermelho
-            labelDiv.style.backgroundColor = 'red';
-            labelDiv.classList.add("incorrect");
-            button.className = "bi bi-arrow-clockwise";
+            if (labelDiv.classList.contains("label_checklist-wrong")) {
+                //vermelho
+                labelDiv.style.backgroundColor = 'red';
+                labelDiv.classList.add("correct");
+                button.className = "bi bi-arrow-clockwise";
+            }
+            else 
+            {
+                //vermelho
+                labelDiv.style.backgroundColor = 'red';
+                labelDiv.classList.add("incorrect");
+                button.className = "bi bi-arrow-clockwise";
+            }
         }
 
         var motherButtons;
