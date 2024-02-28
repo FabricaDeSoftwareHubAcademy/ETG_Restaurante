@@ -27,6 +27,8 @@ $foto = $dados_editar['foto'];
 
 if(!isset($_GET['id_user'])){
 
+    $sla = '<h1 class="titulo-perfil">Minha Conta</h1>';
+
 
     $area_edit = '<section class="editar_senha">
     <section class="titulo_alterar_senha">
