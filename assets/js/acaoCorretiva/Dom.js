@@ -257,7 +257,6 @@ export class Dom {
         // ARMAZENANDO AS IMAGENS
         for (let i = 0; i < images.length; i++) {
             var src = images[i].getAttribute("src");
-            console.log(src)
             imagesToPHP[i] = src;
         }
     
@@ -266,7 +265,7 @@ export class Dom {
         data["imagesToPHP"] = imagesToPHP;
 
         this.dataNaoConf.push(data);
-        // console.log(this.dataNaoConf)
+        console.log(this.dataNaoConf)
 
     }
 
@@ -303,8 +302,7 @@ export class Dom {
     
         for (let i = 0; i < IMAGES_TO_PROCESS; i++) {
             const FILE = MULTIPLE_FILES[i];
-
-            
+    
             if (!FILE.type.startsWith("image/")) {
                 continue;
             }
@@ -313,18 +311,7 @@ export class Dom {
             IMG.className = "beluga";
             
             
-
-            let reader = new FileReader();
-
-            reader.onload = (e) => {
-    
-                IMG.src = e.target.result
-             }
-
-            reader.readAsDataURL(FILE) 
-
-
-             
+            IMG.src = URL.createObjectURL(FILE);
             
             var container_img = document.createElement("div");
     
