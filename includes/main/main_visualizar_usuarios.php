@@ -19,32 +19,26 @@
 
 
         <main class="pai-de-todos">
-            <form action="" method="GET">
+            <form action="" method="GET" class="formss">
                 <div class="container_gp">
                         <h1 class="Usuarios"> Usuários </h1>
 
-                            <ul class="cardsgerenc">
-                                <?php
-                                //  echo($imprimir)
-                                ?>
-                            </ul>
+                            <ul class="cardsgerenc"></ul>
                 
                 </div>
-                <div class="container_gp2">
                         
-                    <div class="alinar-botoes">
+                <div class="alinar-botoes">
 
-                        <div class="botao-padrao-voltar">
-                            <a href="listar_salas.php" class="botao-voltar-submit">VOLTAR</a>
-                        </div>
+                    <div class="botao-padrao-voltar">
+                        <a href="listar_salas.php" class="botao-voltar-submit">VOLTAR</a>
+                    </div>
 
-                        <div class="botao-padrao-cadastrar">
-                            <a href="cadastrar_usuario.php" class="botao-cadastrar-link">CADASTRAR</a>
-                        </div>
+                    <div class="botao-padrao-cadastrar">
+                        <a href="cadastrar_usuario.php" class="botao-cadastrar-link">CADASTRAR</a>
+                    </div>
 
-                    </div>  
+                </div>  
                         
-                </div> 
             </form>
         </main>
     </body>
