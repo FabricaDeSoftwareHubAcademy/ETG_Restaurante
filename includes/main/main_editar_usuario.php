@@ -14,7 +14,7 @@
     <main class="pai-de-todos">
         <form  class="form-minha-conta" method="POST" enctype="multipart/form-data">
             <section class="titulo">
-                <h1 class="titulo-perfil">Minha Conta</h1>
+                <?=$sla?>
             </section>
             
             
