@@ -57,7 +57,7 @@
     
                                 <!--Botão Voltar-->
                             <div class="botao-padrao-voltar">
-                                
+                            <?=$voltar?>
                             </div>
     
                                 <!--Botão Confirmar-->
