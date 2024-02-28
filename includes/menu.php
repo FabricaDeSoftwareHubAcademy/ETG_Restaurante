@@ -77,7 +77,7 @@ $ifreaac = $perfil['realizar_acao_corretiva'] == '1';
                             <li class="li-menu">
                             <a href="#" class="link-menu">
                             <i id="icon-pessoa" class="bi bi-person" style="--i:2"></i>
-                            <h5 class="titulo-info" id="icon-pessoa" style="--i:2">Usuários</h5>                    
+                            <h5 class="titulo-user" style="--i:2">Usuários</h5>          
                             </a>
                             
                             <ul class="submenu2" id="submenu-icon-pessoa">
@@ -202,7 +202,9 @@ $ifreaac = $perfil['realizar_acao_corretiva'] == '1';
 </body>
 
 
+
 <script>
+
 // Declaração de variáveis e eventos
 var toggleClick = document.querySelector(".toggleBox-menu");
 var container = document.querySelector(".container-menu");
@@ -278,6 +280,59 @@ function clickOutside(event) {
         closeModal();
     }
 }
+
+document.addEventListener("DOMContentLoaded", function() {
+    const submenuIconPessoa = document.getElementById("submenu-icon-pessoa");
+
+    function toggleSubmenu(submenu) {
+        submenu.classList.toggle("active");
+    }
+
+    document.getElementById("icon-pessoa").addEventListener("click", function(event) {
+        event.preventDefault();
+        toggleSubmenu(submenuIconPessoa);
+    });
+
+
+    document.addEventListener("click", function(event) {
+        if (!submenuIconPessoa.contains(event.target) && !document.getElementById("icon-pessoa").contains(event.target)) {
+            submenuIconPessoa.classList.remove("active");
+        }
+
+    }); 
+
+    document.addEventListener("DOMContentLoaded", function() {
+    const submenuIconPessoa = document.getElementById("submenu-icon-pessoa");
+    const tituloUser = document.querySelector(".titulo-user"); // Seleciona o elemento com a classe titulo-user
+
+    function toggleSubmenu(submenu) {
+        submenu.classList.toggle("active");
+    }
+
+    function openModal() {
+        modal.classList.add('active');
+    }
+
+    tituloUser.addEventListener("click", function(event) {
+        event.preventDefault();
+        openModal(); // Abre o modal quando a classe titulo-user for clicada
+    });
+
+    document.getElementById("icon-pessoa").addEventListener("click", function(event) {
+        event.preventDefault();
+        toggleSubmenu(submenuIconPessoa);
+    });
+
+    document.addEventListener("click", function(event) {
+        if (!submenuIconPessoa.contains(event.target) && !document.getElementById("icon-pessoa").contains(event.target)) {
+            submenuIconPessoa.classList.remove("active");
+        }
+    });
+});
+
+
+});
+
 
 </script>       
 
