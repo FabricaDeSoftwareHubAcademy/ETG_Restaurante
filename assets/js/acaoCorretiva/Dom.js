@@ -7,24 +7,14 @@ export class Dom {
         this.dataPerguta = this.objPergunta.getAll();
     }
 
-    addNaoConfToDataNaoConf() {
-        for (var pergunta of this.dataPerguta) {
-            if (pergunta["NaoConformidade"]) {
-                console.log(true)
-            }
-
-        }
-    }
-
     showPerguntas() {
-        // this.showPerguntas();
-        // console.log(this.dataPerguta);
         for (var pergunta of this.dataPerguta) {
             // var perguntaMae = document.querySelector(".pergunta_nao_conf");
             // var descricaoPergunta = document.createElement("h6");
             // descricaoPergunta.innerText = pergunta["pergunta"];
             // console.log(pergunta);
             // perguntaMae.appendChild(descricaoPergunta);
+            console.log(this.dataPerguta)
             if (pergunta["NaoConformidade"]) {
                 this.createOneRedElement(pergunta["pergunta"], pergunta["id_pergunta"]); //checando se a pergunta tem uma nao conformidade
                 continue;
@@ -98,13 +88,7 @@ export class Dom {
             buttonSubmit.textContent = "Correto";
             buttonSubmit.type = "button";
             buttonSubmit.onclick = function() {
-                if (labelDiv.classList.contains("label_checklist-wrong") && labelDiv.classList.contains("active")) {
-                    vermelho();
-                }
-                else
-                {
-                    verde();
-                }
+                verde();
             }
             divBack.appendChild(buttonIncorrect);
             divSubmit.appendChild(buttonSubmit);
@@ -115,46 +99,16 @@ export class Dom {
 
         function descerNormal()
         {
-            
+            montarBotoes();
             labelDiv.classList.add("active");
+
             if (labelDiv.classList.contains("label_checklist-wrong")) {
                 labelDiv.style.backgroundColor = 'transparent';
                 labelDiv.style.border = '3px solid red';
                 button.className = "bi bi-chevron-down"
-                labelDiv.style.height = (labelDiv.offsetHeight + 250) + "px";
-                
-                let imagens = document.createElement("div");
-                imagens.className = "imagens-container";
-                // imagens.style.backgroundColor = "red";
-                imagens.style.width = "100%";
-                imagens.style.height = "300px";
-                // imagens.style.marginBottom = "10px";
-                imagens.style.display = "flex";
-                // imagens.style.justifyContent = "space-between";
-                imagens.style.alignItems = "center";
-                // imagens.style.justifyContent = "center";
-                
-                for (let i = 0; i < 3; i++) {
-                    let divImg = document.createElement("div");
-                    divImg.style.display = "flex";
-                    divImg.style.justifyContent = "center";
-                    let img = document.createElement("img");
-                    img.className = "beluga";
-                    // img.style.width = "100% %";
-                    img.src = "https://img.freepik.com/fotos-premium/melhor-foto-aleatoria_865967-90776.jpg";
-    
-                    divImg.appendChild(img);
-                    imagens.appendChild(divImg)
-                }
-                
-                labelDiv.appendChild(imagens)
-                // let nextDivToInsert = document.querySelector(".alinar-botoes-label");
-                // let dadElement = nextDivToInsert.parentNode;
-                
-                // dadElement.insertBefore(imagens, nextDivToInsert);
+                labelDiv.style.height = (labelDiv.offsetHeight + 125) + "px";
             }
             else if (labelDiv.classList.contains("label_checklist-right")) {
-                montarBotoes();
                 labelDiv.style.backgroundColor = 'transparent';
                 labelDiv.style.border = '3px solid green';
                 button.className = "bi bi-chevron-down"
@@ -180,15 +134,9 @@ export class Dom {
 
         function subirNormal()
         {
-            if (labelDiv.querySelector(".imagens-container") !== null) {
-                labelDiv.querySelector(".imagens-container").remove();
-                labelDiv.style.height = (labelDiv.offsetHeight - 250) + "px";
-                labelDiv.classList.remove("active");
-            } else {
-                labelDiv.style.height = (labelDiv.offsetHeight - 125) + "px";
-                labelDiv.classList.remove("active");
-                labelDiv.removeChild(motherButtons);
-            }
+            labelDiv.style.height = (labelDiv.offsetHeight - 125) + "px";
+            labelDiv.classList.remove("active");
+            labelDiv.removeChild(motherButtons);
 
             if (labelDiv.classList.contains("correct")) {
                 labelDiv.classList.remove("correct");
@@ -197,7 +145,6 @@ export class Dom {
                 labelDiv.classList.remove("incorrect");
             }
         }
-
 
         function verde()
         {
@@ -209,19 +156,10 @@ export class Dom {
 
         function vermelho()
         {
-            if (labelDiv.classList.contains("label_checklist-wrong")) {
-                //vermelho
-                labelDiv.style.backgroundColor = 'red';
-                labelDiv.classList.add("correct");
-                button.className = "bi bi-arrow-clockwise";
-            }
-            else 
-            {
-                //vermelho
-                labelDiv.style.backgroundColor = 'red';
-                labelDiv.classList.add("incorrect");
-                button.className = "bi bi-arrow-clockwise";
-            }
+            //vermelho
+            labelDiv.style.backgroundColor = 'red';
+            labelDiv.classList.add("incorrect");
+            button.className = "bi bi-arrow-clockwise";
         }
 
         var motherButtons;
@@ -319,7 +257,6 @@ export class Dom {
         // ARMAZENANDO AS IMAGENS
         for (let i = 0; i < images.length; i++) {
             var src = images[i].getAttribute("src");
-            console.log(src)
             imagesToPHP[i] = src;
         }
     
@@ -328,7 +265,7 @@ export class Dom {
         data["imagesToPHP"] = imagesToPHP;
 
         this.dataNaoConf.push(data);
-        // console.log(this.dataNaoConf)
+        console.log(this.dataNaoConf)
 
     }
 
@@ -365,8 +302,7 @@ export class Dom {
     
         for (let i = 0; i < IMAGES_TO_PROCESS; i++) {
             const FILE = MULTIPLE_FILES[i];
-
-            
+    
             if (!FILE.type.startsWith("image/")) {
                 continue;
             }
@@ -375,18 +311,7 @@ export class Dom {
             IMG.className = "beluga";
             
             
-
-            let reader = new FileReader();
-
-            reader.onload = (e) => {
-    
-                IMG.src = e.target.result
-             }
-
-            reader.readAsDataURL(FILE) 
-
-
-             
+            IMG.src = URL.createObjectURL(FILE);
             
             var container_img = document.createElement("div");
     
