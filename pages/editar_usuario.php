@@ -63,6 +63,8 @@ if(!isset($_GET['id_user'])){
 
 }else{
 
+    $sla = '<h1 class="titulo-perfil">Editar Conta</h1>';
+
     $area_edit = '
     <section class="editar_senha">
     <section class="titulo_alterar_senha">
