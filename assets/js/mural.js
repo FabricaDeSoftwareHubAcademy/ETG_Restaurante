@@ -11,10 +11,10 @@ bnt_editar = document.querySelectorAll(".icon_card_recado_editar");
 overlay_excluir = document.querySelector(".overlay_modal_excluir_recado");
 
 const btn_salvar_editar = document.querySelector('.botao-salvar-submit');
-const btn_salvar_excluir = document.querySelector('.botao-excluir-submit');
+// const btn_salvar_excluir = document.querySelector('.botao-excluir-submit');
 
 
-btn_salvar_excluir.addEventListener('click',deletarRecado);
+// btn_salvar_excluir.addEventListener('click',deletarRecado);
 
 btn_salvar_editar.addEventListener('click',confirmarEditar);
 
@@ -59,7 +59,7 @@ async function openModalEditar(){
 
     textareaEditar.value = conteudo['texto']
 
-    btn_salvar_excluir.setAttribute('id_recado',conteudo['id'])
+    // btn_salvar_excluir.setAttribute('id_recado',conteudo['id'])
     btn_salvar_editar.setAttribute('id_recado',conteudo['id'])
 
 }
