@@ -27,13 +27,13 @@
             <div class="botao-padrao-ok">
                 <script>
                     function closePopupValidar() {
-                                    let popup = document.getElementById("popup-up-notificacao");
-                                    let btn = document.getElementById("submit-btn-notificacao");
+                        let popup = document.getElementById("popup-up-notificacao");
+                        let btn = document.getElementById("submit-btn-notificacao");
 
-                                    // btn.style.display = "block";
+                        // btn.style.display = "block";
 
-                                    popup.classList.remove("open-popup");
-                                }
+                        popup.classList.remove("open-popup");
+                    }
                 </script>
                 <a href="cadastrar_checklist.php"><input type="submit" class="botao-ok-submit" onclick="closePopupValidar()" value="OK"></a>
             </div>
@@ -41,7 +41,7 @@
     </div>
 
     <div class="container-pop-up-notificacao">
-        
+
         <div class="popup-notificacao" id="popup-up-notificacao">
             <div class="div-img">
                 <img src="img/erro.png" alt="carregando" id="img_check">
@@ -59,19 +59,19 @@
 
             <div class="inputs-cadastro-checklist">
                 <div class="input_group field">
-                    <input type="text" class="input_field" placeholder="" required="" name="nome_checklist"  maxlength="45">
+                    <input type="text" class="input_field" placeholder="" required="" name="nome_checklist" maxlength="45">
                     <label for="name" class="input_label">Nome da CheckList</label> <!--Alterar para o nome do input-->
-                    
+
                 </div>
-                
+
             </div>
             <div class="inputs-cadastro-checklist">
                 <div class="input_group field">
-                    <input type="text" id="ajaxPergunta" class="input_field" placeholder=""    maxlength="45">
+                    <input type="text" id="ajaxPergunta" class="input_field" placeholder="" maxlength="45">
                     <label for="name" class="input_label">Pesquisa a Pergunta</label> <!--Alterar para o nome do input-->
-                    
+
                 </div>
-                
+
             </div>
 
             <!-- Menu das abas -->
@@ -80,8 +80,42 @@
                 <li class="tab-button" id="btn_pos" onclick="showTab('tab2')">Pós-Aula</li>
                 <div class="line" id="line"></div>
                 <div class="adicionar_pergunta">
-                        <a id="add_pergunta" href="../pages/cadastrar_pergunta.php"><i class="fa-solid fa-plus"  id="icon_add"></i></a>
+                    <a id="add_pergunta" onclick="openPopup1()"><i class="fa-solid fa-plus" id="icon_add"></i></a>
                 </div>
+
+
+                <!-- POPUP DE CADASTRAR PERGUNTA -->
+
+                <form id='form_cad_pergunta' class="overlay" style="opacity: 1;">
+                    <div class="popup_cadastrar" id="popup-cadastro-pergunta">
+                        <h4>Cadastrar pergunta:</h4>
+
+                        <textarea maxlength="210" name="nova_pergunta" id="nova_pergunta"  class="nova_pergunta" placeholder= "Escreva a pergunta"cols="30" rows="10" autocomplete= "off"></textarea>
+
+                        <h4>Selecione a categoria da pergunta:</h4>
+
+                        <!-- DIV DAS 2 CHECKBOX'S -->
+                        
+                        <div class="checks">
+                            <div class="check1">
+                                <input type="checkbox" name="antes_da_aula" id="check1"> Pré-Aula
+                            </div>
+                            <div class="check2">
+                                <input type="checkbox" name="depois_da_aula" id="check2"> Pós-Aula
+                            </div>
+                        </div>
+
+                        <!-- DIV DOS BOTÕES (cancelar e confirmar) -->
+                        <div class="botoes">
+                            <button class="botao-cancelar-submit" id="btn_cancelar_cad_pergunta" value="CANCELAR" onclick="closePopup1()">CANCELAR</button>
+                            <button class="botao-confirmar-submit" id="btn_cad_pergunta" value="CONFIRMAR">CONFIRMAR</button>
+                        </div>
+                    </div>
+                </form>
+
+                <form class="overlay" id="overlay" style="opacity: 1;"></form>
+
+
             </ul>
             <!-- Conteúdo das abas -->
             <div id="tab1" class="tab" style="display: block;">
@@ -89,15 +123,15 @@
                     <h1 id="titulo-pergunta-pos">Selecione as Perguntas Pré Aula:</h1>
                 </div>
                 <section class="selecao-pergunta">
-                    <table class="tabela-perguntas" id = "tablePre" name="pergunta">
+                    <table class="tabela-perguntas" id="tablePre" name="pergunta">
                         <!-- <tr class="topo-tabela">
                             <th>Selecione</th>
                             <th>Pergunta Pré</th>
                         </tr> -->
-                         <?php 
-                        
-                            // $trpre
-                         ?>
+                        <?php
+
+                        // $trpre
+                        ?>
                     </table>
                 </section>
             </div>
@@ -111,28 +145,28 @@
                             <th>Selecione</th>
                             <th>Pergunta Pós</th>
                         </tr> -->
-                         <?php 
+                        <?php
                         //  $trpos 
                         ?>
                     </table>
                 </section>
             </div>
             <script>
-                $('#meuFormulario').on('submit', async function (event) {
+                $('#meuFormulario').on('submit', async function(event) {
                     event.preventDefault();
-                    
+
                     let form = document.getElementById('meuFormulario');
 
                     let formData = new FormData(form);
-                    
-                    let data = await fetch('./actions/action_cad_checklist.php',{
-                        method:'POST',
+
+                    let data = await fetch('./actions/action_cad_checklist.php', {
+                        method: 'POST',
                         body: formData
                     });
                     let response = await data.json();
-                    if(response){
+                    if (response) {
 
-                        modalStatus('Checklist cadastrado com sucesso!','success',() => {
+                        modalStatus('Checklist cadastrado com sucesso!', 'success', () => {
 
                             location.href = 'gerenciar_checklist.php'
 
@@ -140,16 +174,16 @@
 
                     }
 
-                    
+
 
 
                 })
-                                
+
 
                 function showTab(tabId) {
 
-                    ResetListaPerguntas() 
-                    
+                    ResetListaPerguntas()
+
                     const tabs = document.querySelectorAll('.tab');
                     const buttons = document.querySelectorAll('.tab-button');
                     tabs.forEach(tab => tab.style.display = 'none');
@@ -189,67 +223,22 @@
                 </div>
             </div>
             <script>
-                // if(nome_checklist != ""  && pergunta != "" ){
-                //         let button = document.getElementById("btn_cadastrar")
-                //         button.addEventListener('click', async (e) => {
-                //             // alert("dsadsa")
-                //             e.preventDefault()
-                //             let form = document.getElementById('meuFormulario')
-                //             console.log(form)
 
-                //             let formData = new FormData(form)
-                //             // console.log(formData)
+                // SCRIPT DO POPUP DE CADASTRAR PERGUNTAS
 
-                //             var nome_checklist =  document.getElementById("nome_checklist")
-                //             var pergunta = document.getElementById("pergunta")
-                //             let dados_php = await fetch("../pages/actions/actn_checklist.php", {
-                //                 method: "POST",
-                //                 body: formData
-                //             })
+                let popup_cadastro_pergunta = document.getElementById("popup-cadastro-pergunta");
+                function openPopup1(){
 
-                //             // alert("Ta chegando até aqui !")
-                //             let response = await dados_php.json()
-
-                //             console.log(response);
-
-
-                //             console.log(response);
-                            
-
-                //             if (response) {
-
-                //                 let popup = document.getElementById('popup-up-notificacao');
-                //                 let btn = document.getElementById("submit-btn-notificacao");
-
-                //                 // btn.style.display = "none";
-
-                //                 popup.classList.add("open-popup");
-
-                //                 let blur = document.getElementById("blur");
-
-                //                 blur.classList.add("active");
-
-
-
-                //             } else {
-                //                 let popup = document.getElementById('popup-up-notificacao');
-                //                 let btn = document.getElementById("submit-btn-notificacao");
-
-                //                 // btn.style.display = "none";
-
-                //                 popup.classList.add("open-popup");
-
-                //                 let blur = document.getElementById("blur");
-
-                //                 blur.classList.add("active");
-                //             }
-                      
-                //         });
-                //     }
-
-
+                    document.getElementById("overlay").style.visibility="visible";
+                    popup_cadastro_pergunta.classList.add("open-popup1");
                     
-               
+                }
+                function closePopup1(){ 
+                    
+                    document.getElementById("overlay").style.visibility= 'hidden';
+                    popup_cadastro_pergunta.classList.remove("open-popup1");
+                }
+
             </script>
 
         </form>
