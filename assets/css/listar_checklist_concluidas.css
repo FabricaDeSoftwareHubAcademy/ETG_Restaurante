@@ -137,7 +137,12 @@ a{
 .pagination .numeros{
     display: flex;
     justify-content: center;
+    align-items: center;
     /* margin-left: 5px; */
+}
+.pagination .numeros a{
+    margin: 0 5px 0 5px;
+    padding: 5px; 
 }
 .pagination .form_pages{
     display: flex;
@@ -157,4 +162,27 @@ a{
     cursor: pointer;
     outline: none;
     border: none;
+}
+@media screen and (max-width: 750px){
+    .card_info{
+        justify-content: center;
+    }
+    .card .card_detalhes{
+        flex-wrap: wrap;
+    }
+    
+}
+@media screen and (max-width: 460px){
+    .card_info{
+        min-width: 0;
+    }
+    .card .card_header_title{
+        font-size: 16px;
+    }
+    .card .card_header_subtitle{
+        font-size: 13px;
+    }
+    .card .card_img{
+        min-width: 0;
+    }
 }
