@@ -12,6 +12,12 @@
   --cor-primaria-botao-yellow:rgba(255, 199, 0, 1);
 }
 
+.span-required{
+  display: none;
+  font-size: 15px;
+  margin: 3px 0 0 1px;
+  color: #970505;
+}
 
 .botao-confirmar-submit{
   width: 180px;

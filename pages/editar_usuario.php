@@ -40,17 +40,20 @@ if(!isset($_GET['id_user'])){
            
             <div class="input_senha_group field">
                 <input name="senhaantiga" type="password" class="input_senha_field" placeholder="Name">
-                <label for="name" class="input_senha_label">Senha antiga</label> <!--Alterar para o nome do input-->
+                <label for="name" class="input_senha_label">Senha antiga</label>
+                <span class="span-required">preenchimento obrigatorio!</span> <!--Alterar para o nome do input-->
             </div>
 
             <div class="input_senha_group field2">
                 <input name="novasenha" type="password" class="input_senha_field" placeholder="Name">
-                <label for="name" class="input_senha_label">Criar nova senha</label> <!--Alterar para o nome do input-->
+                <label for="name" class="input_senha_label">Criar nova senha</label>
+                <span class="span-required">preenchimento obrigatorio!</span> <!--Alterar para o nome do input-->
             </div>
 
             <div class="input_senha_group field3">
-                <input name="confirmarnovasenha" type="password" class="input_senha_field" placeholder="Name" >
+                <input name="confirmarnovasenha" type="password" class="input_senha_field" placeholder="Name">
                 <label for="name" class="input_senha_label">Confirmar nova senha</label> <!--Alterar para o nome do input-->
+                <span class="span-required">preenchimento obrigatorio!</span>
             </div>
             </section> 
         </div> 
@@ -117,7 +120,7 @@ if(isset($_FILES['foto'])){
         $objUsuario->setImage($dados_editar['email'],$new_name);
         // header("Location: Refresh: 0");
 
-        $_SESSION["msg_edit"]='Salvo com sucesso!';
+        $_SESSION["msg_edit"]='Alterações realizadas com sucesso!';
 
     }
 }
@@ -131,13 +134,13 @@ if(isset($_POST['btn_submit'])){
 
         $objUsuario -> setName($_POST['nome'],$dados_editar['email']);  
         // header("Location: {$_SERVER['PHP_SELF']}");
-        $_SESSION["msg_edit"]='Salvo com sucesso!';
+        $_SESSION["msg_edit"]='Alterações realizadas com sucesso!';
 
 
     }else{
 
         $objUsuario -> setName($dados_editar['nome'],$dados_editar['email']); 
-        $_SESSION["msg_edit"]='Salvo com sucesso!';
+        $_SESSION["msg_edit"]='Alterações realizadas com sucesso!';
 
     }
     
@@ -147,7 +150,7 @@ if(isset($_POST['btn_submit'])){
 
         if ($_POST['novasenha'] == $_POST['confirmarnovasenha']){
             $objUsuario -> setPasswordByEmail($dados_editar['email'],$_POST['novasenha']); 
-            $_SESSION["msg_edit"]='Salvo com sucesso!';
+            $_SESSION["msg_edit"]='Alterações realizadas com sucesso!';
           
             
         }else{
@@ -177,7 +180,7 @@ if(isset($_POST['btn_submit'])){
                     if(empty($dadosByEmail)){
                         
                         Usuario::setEmail($_GET['id_user'],$_POST['email']);
-                        $_SESSION["msg_edit"]='Salvo com sucesso!';
+                        $_SESSION["msg_edit"]='Alterações realizadas com sucesso!';
         
                     }else{
                         // retornar que E-Mail ja esta sendo utilizado por outro usuario
@@ -187,7 +190,7 @@ if(isset($_POST['btn_submit'])){
     
                         Usuario::setMatricula($_GET['id_user'],$_POST['matricula']);
     
-                        $_SESSION["msg_edit"]='Salvo com sucesso!';
+                        $_SESSION["msg_edit"]='Alterações realizadas com sucesso!';
                     
                     }else{
                         // retornar que matricula ja esta sendo utilizado por outro usuario
@@ -213,7 +216,7 @@ include_once("../includes/menu.php");
 require("../includes/main/main_editar_usuario.php");
 
 if(isset($_SESSION['msg_edit'])){
-    echo"<script>modalStatus('Salvo com sucesso!','success',()=>{
+    echo"<script>modalStatus('Alterações realizadas com sucesso!','success',()=>{
         location.href='editar_usuario.php'
     })</script>";
     
@@ -225,6 +228,8 @@ require("../includes/footer/footer.php");
 ?>
 
 
-<!-- echo"<script>modalStatus('Salvo com sucesso!','success',()=>{
+<!-- echo"<script>modalStatus('Alterações realizadas com sucesso!','success',()=>{
             location.reload()
         })</script>"; -->
+
+

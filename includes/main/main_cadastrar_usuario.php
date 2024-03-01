@@ -40,8 +40,9 @@
 
 
                     <div class="input_group_M field">
-                        <input type="input" class="input_field_M" name="num_matricula" id="matricula" placeholder="Name" required="">
+                        <input type="input" class="input_field_M" name="num_matricula" id="matricula" placeholder="Name"  oninput="nameValidate()">
                         <label for="name" class="input_label_M">N° de Matricula</label> 
+                        <span class="span-required">preenchimento obrigatorio</span>
                     </div> 
                         
                         
@@ -84,6 +85,10 @@ button.addEventListener('click', async (e) =>{
     const options = document.getElementById('options').value;
     const matricula = document.getElementById('matricula').value;
     const senhas = document.getElementById('senhas').value;
+    const form = document.getElementById('form_cad');
+    const spans = document.querySelector(".span-required");
+    const inputs = document.querySelector('.input_field_M');
+
     // console.log(nomes);
     
     // if (nomes.length > 0) {
@@ -144,8 +149,33 @@ button.addEventListener('click', async (e) =>{
 
 });
 
+function setError(index){
+  inputs[index].style.border = '2px solid #d10c0c';
+  spans[index].style.display = 'block';
+
+}
+
+function removeError(index){
+  inputs[index].style.border = '2px solid green';
+  spans[index].style.display = 'none';
+}
+
+function nameValidate(){
+  if(inputs[0].value.length < 3)
+  {
+    setError(0);
+  }
+  else
+  {
+    removeError(0)
+  }
+  
+}
+
+
 </script>
      
 
 </body>
 
+  
