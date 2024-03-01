@@ -132,7 +132,7 @@ export class Dom {
                     let basepath = "../storage/n_conformidade/";
                     let caminhoAbsoluto = basepath + imgNameInServer;
                     img.className = "beluga";
-                    // img.style.width = "100% %";
+                    img.style.width = "100%";
                     // img.src = basepath + "65de2c242e07b_nc.png"; //teste
                     img.src = caminhoAbsoluto;
                     // console.log(dadosPergunta["imagesToPHP"][i])
