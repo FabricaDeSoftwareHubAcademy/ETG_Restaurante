@@ -12,11 +12,10 @@ export class Dom {
     }
 
     showPerguntas() {
-        console.log(this.dataPerguta);
         for (var pergunta of this.dataPerguta) {
             if (pergunta["NaoConformidade"]) {
                 this.addNaoConfToDataNaoConf(pergunta);
-                this.createOneRedElement(pergunta["pergunta"], pergunta["id_pergunta"]); //checando se a pergunta tem uma nao conformidade
+                this.createOneRedElement(pergunta["pergunta"], pergunta["id_pergunta"], pergunta); //checando se a pergunta tem uma nao conformidade
                 continue;
             }
             this.createOneGreenElement(pergunta["pergunta"], pergunta["id_pergunta"], pergunta);
@@ -27,8 +26,8 @@ export class Dom {
         this.createLabelElement("label_checklist-right", pergunta, idPergunta, dadosPergunta);
     }
 
-    createOneRedElement(pergunta, idPergunta) {
-        this.createLabelElement("label_checklist-wrong", pergunta, idPergunta);
+    createOneRedElement(pergunta, idPergunta, dadosPergunta) {
+        this.createLabelElement("label_checklist-wrong", pergunta, idPergunta, dadosPergunta);
     }
 
     createLabelElement(labelClass, pergunta, idPergunta, dadosPergunta) {
@@ -105,7 +104,7 @@ export class Dom {
 
         function descerNormal()
         {
-            console.log(self_1.dataNaoConf)
+            // console.log(self_1.dataNaoConf)
             labelDiv.classList.add("active");
             if (labelDiv.classList.contains("label_checklist-wrong")) {
                 labelDiv.style.backgroundColor = 'transparent';
@@ -129,10 +128,14 @@ export class Dom {
                     divImg.style.display = "flex";
                     divImg.style.justifyContent = "center";
                     let img = document.createElement("img");
+                    let imgNameInServer = dadosPergunta["imagesToPHP"][i];
+                    let basepath = "../storage/n_conformidade/";
+                    let caminhoAbsoluto = basepath + imgNameInServer;
                     img.className = "beluga";
                     // img.style.width = "100% %";
-                    img.src = "https://img.freepik.com/fotos-premium/melhor-foto-aleatoria_865967-90776.jpg";
-    
+                    // img.src = basepath + "65de2c242e07b_nc.png"; //teste
+                    img.src = caminhoAbsoluto;
+                    // console.log(dadosPergunta["imagesToPHP"][i])
                     divImg.appendChild(img);
                     imagens.appendChild(divImg)
                 }
@@ -313,7 +316,7 @@ export class Dom {
             imagesToPHP[i] = src;
         }
         
-        console.log(dadosPergunta)
+        // console.log(dadosPergunta)
         data["responsavel"] = "logistica";
         data["NaoConformidade"] = true;
         data["nome_check"] = dadosPergunta["nome_check"];
@@ -326,7 +329,7 @@ export class Dom {
         data["imagesToPHP"] = imagesToPHP;
 
         this.dataNaoConf.push(data);
-        console.log(this.dataNaoConf)
+        // console.log(this.dataNaoConf)
 
     }
 
