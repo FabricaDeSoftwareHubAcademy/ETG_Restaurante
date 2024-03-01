@@ -87,6 +87,23 @@ border-radius: 10px;
   margin-bottom: 20px;
 }
 
+
+@media screen and (max-width:610px ){
+
+  .Perfis{
+    font-size: 30px;
+  }
+
+}
+
+@media screen and (max-width:350px ){
+
+  .Perfis{
+    font-size: 25px;
+  }
+
+}
+
 .card_perfil{
 display: flex;
 align-items: center;
@@ -157,8 +174,47 @@ display: flex;
 flex-direction: row;
 justify-content: space-between;
 align-items: center;
-gap: 22.5px;
+width: 120px;
+/* gap: 22.5px; */
 }
+
+/* KKKKKKKKKKKKKKKKKKKKKKKkkkkkkkkkKKKKK */
+@media screen and (max-width:710px ){
+  .icons-question1{
+    width: 135px;
+  }
+}
+@media screen and (max-width:660px ){
+  .icons-question1{
+    width: 155px;
+  }
+}
+@media screen and (max-width:535px ){
+  .icons-question1{
+    width: 180px;
+  }
+}
+@media screen and (max-width:450px ){
+  .icons-question1{
+    width: 195px;
+  }
+}
+@media screen and (max-width:410px ){
+  .icons-question1{
+    width: 215px;
+  }
+}
+@media screen and (max-width:370px ){
+  .icons-question1{
+    width: 240px;
+  }
+}
+@media screen and (max-width:350px ){
+  .icons-question1{
+    width: 285px;
+  }
+}
+
 
 .bi.bi-pencil-square{
 font-size: 30px;
