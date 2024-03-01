@@ -113,6 +113,8 @@ h1.nome-sala{
     font-style: normal;
     font-family: 'Montserrat';
     font-size: 16px;
+    word-break: break-all;
+    word-wrap: break-word;
 
 }
 
