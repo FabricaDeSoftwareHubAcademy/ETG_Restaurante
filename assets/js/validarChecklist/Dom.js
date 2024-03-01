@@ -16,7 +16,7 @@ export class Dom {
             if (pergunta["NaoConformidade"]) {
                 this.addNaoConfToDataNaoConf(pergunta);
                 this.createOneRedElement(pergunta["pergunta"], pergunta["id_pergunta"], pergunta); //checando se a pergunta tem uma nao conformidade
-                console.log(pergunta);
+                // console.log(pergunta);
                 continue;
             }
             this.createOneGreenElement(pergunta["pergunta"], pergunta["id_pergunta"], pergunta);
@@ -309,7 +309,7 @@ export class Dom {
         for (var i = childs.length - 1; i >= 0; i--) {
             document.querySelector(".pergunta_nao_conf").removeChild(childs[i]);
         }
-        }
+    }
 
     save(textAreaContent, images, dadosPergunta) {
         var data = {};
