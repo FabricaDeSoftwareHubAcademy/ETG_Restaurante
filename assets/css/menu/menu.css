@@ -86,6 +86,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  font-family: "Montsserat";
+  font-style: normal;
 }
   
 .container-menu.active .navItems-menu{
@@ -383,6 +385,54 @@
   height: auto;
   border: 2px solid #FAA916;
 }
+
+.link_submenu4{
+  list-style: none;
+  /* margin-top: 130px; */
+}
+
+.link_submenu4 .link-menu i{
+  position: relative;
+  display: block;
+  color: #FAA916;
+  width: 100%;
+  text-align: center;
+  transform: scale(0); 
+  margin-top: 50px;
+  list-style: none;
+}
+
+.sub-menu4{
+  background: rgb(255, 255, 255);
+  position: absolute;
+  transition: 0.5s;
+  width: 350px;
+  align-items: center;
+  margin-left: 70px;
+  font-size: 15px;
+  top: 60%;
+  overflow: hidden;
+  display: none;
+  border-radius: 7px;
+}
+
+
+.iten-submenu4{
+  background-color: #fff;
+  padding: 6px;
+  font-size: 20px;
+  
+}
+
+
+.sub-menu4.active{
+  height: auto;
+  border: 2px solid #FAA916;
+  margin-left: 65px;
+}
+
+
+
 /* =============================================== POP UP ================================================================================ */
 .modal-container-menu{
   display: none;
@@ -394,57 +444,6 @@
   top: 20%;
 }
 
-@media (max-width: 832px){
- 
-  .modal-container-menu{
-    left: 30%;
-  }
-}
-
-@media (max-height:724px){
-
-  .li-menu .link-menu i{
-    font-size: 20px;
-    padding-top: 17px;
-  }
-
-}
-
-
-@media (max-height:807px){
-
-  .navItems-menu{
-    margin-top: -40%;
-
-  }
-  
-  @media (max-height:624px){
-  
-    .navItems-menu{
-      margin-top: -90%;
-    }
-  
-  } 
-
-  .li-menu{
-    top: 15px;
-  }
-  
-}
-
-
-@media (max-width: 836px){
-  .submenu2.active{
-    width: 200px;
-  }
- 
-  .sub-menu.active{
-    width: 280px;
-    height: 220px;
-    margin-top: -80px;
-  }
-
-}
 
 .modal-menu{
   display: flex;
@@ -608,6 +607,86 @@
   z-index: 2;
 }
 
+.icon-perfil{
+  width: 50px;
+  height: 50px;
+  border-radius: 60px;
+  margin: auto;
+  display: block;
+  object-fit: cover;
+}
+
+.titulo-nome{
+  color: #F28920;
+  font-family: "Montsserat";
+  font-style: normal;
+  font-size: 13px;
+}
+
+.parte-perfil{
+  list-style: none;
+  width: 100%; 
+  text-align: center;
+  margin-top: 17%;
+}
+
+
+
+@media (max-height:925px){
+  .navItems-menu{
+    margin-top: -40%;
+  }
+}
+
+@media (max-width: 836px){
+  .submenu2.active{
+    width: 200px;
+  }
+
+  .sub-menu.active{
+    width: 280px;
+    height: 220px;
+    margin-top: -80px;
+  }
+}
+
+@media (max-width: 832px){
+  .modal-container-menu{
+    left: 30%;
+  }
+}
+
+@media (max-height:894px){
+  .li-menu .link-menu i{
+    font-size: 20px;
+    padding-top: 17px;
+  }
+}
+
+  
+
+@media (max-height:720px){
+  .li-menu{
+    top: 15px;
+  } 
+}
+
+@media (max-height:642px){
+  .container-menu.active {
+    height: 90vh;
+  }
+}
+
+
+@media (max-width:720px){
+  .sub-menu3{
+    width: 200px;
+  }
+  .sub-menu4{
+    width: 200px;
+  }
+}
+
 
 @media (max-width: 610px){
   #bloc1{
@@ -651,27 +730,3 @@
     to {height: 80px ;}   
   }
 }
-
-.icon-perfil{
-  width: 50px;
-  height: 50px;
-  border-radius: 60px;
-  margin: auto;
-  display: block;
-  object-fit: cover;
-}
-
-.titulo-nome{
-  color: #F28920;
-  font-family: "Montsserat";
-  font-style: normal;
-  font-size: 13px;
-}
-
-.parte-perfil{
-  list-style: none;
-  width: 100%; 
-  text-align: center;
-  margin-top: 17%;
-}
-  
