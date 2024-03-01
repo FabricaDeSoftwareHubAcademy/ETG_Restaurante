@@ -19,7 +19,7 @@
     ?>
 <body class="tela_gerenciam_perfis">
     <main class="pai-de-todos">
-        <form action="" method="GET">
+        <form action="" method="GET" class="renner">
             <div class="container_gp">
                 <h1 class="Perfis">Perfis</h1>
                 <ul class="cardsgerenc">

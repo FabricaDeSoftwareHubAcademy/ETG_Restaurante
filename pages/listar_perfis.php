@@ -33,11 +33,13 @@ foreach ($dados_perfil as $row_perfil)
                 <div class="card_nome">
                     <h2 class="tipo_perfil">'.$row_perfil["nome"].'</h2>
                 </div>
+                <div class="icons-question1">
                 <a href="/ETG_Escola/pages/editar_perfil.php?id='.$row_perfil["id"].'">
-                    <img src="../assets/imgs/icons/icon_editar.png" alt="icone_editar" class="icone_editar">
+                    <i class="bi bi-pencil-square"></i>
                 </a> 
                 <div class="testebotao"  id="botao-excluir-id" onclick="callPopUp(this)">
                     <a class="bi bi-trash btn_excluir" lock='.$lock.'  dataid="'.$row_perfil["id"].'"></a>
+                </div>
                 </div>
             </div>
         </div>

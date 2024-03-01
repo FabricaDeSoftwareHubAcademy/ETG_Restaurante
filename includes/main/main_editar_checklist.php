@@ -17,6 +17,8 @@
     <div class="titulo-topo">
         <h1 id="titulo">Editar CheckList</h1>
     </div>
+
+    <div class="wasd"></div>
     <div class="container-pop-up-notificacao">
         <!-- <button type="submit" class="btn-pop-up-notificacao" id="submit-btn-notificacao" onclick="openPopupValidar()">Submit</button> -->
         <div class="popup-notificacao" id="popup-up-notificacao">
@@ -72,7 +74,7 @@
             <div id="tab1" class="tab" style="display: block;">
                 <div class="titulo-selecione-pergunta-pre">
                     <h1 id="titulo-pergunta-pos">Selecione as Perguntas Pré Aula:</h1>
-                    <i class="bi bi-plus-circle"></i>
+                    <!-- <i class="bi bi-plus-circle"></i> -->
                 </div>
                 <section class="selecao-pergunta">
                     <table class="tabela-perguntas" id = "tablePre" name="pergunta">
