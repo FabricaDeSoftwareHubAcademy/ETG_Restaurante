@@ -443,8 +443,28 @@ body{
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    gap: 22.5px;
+    width: 105px;
 }
+
+
+/* KKKKKKKKKKKKKKKKKKKKKKKkkkkkkkkkKKKKK */
+@media screen and (max-width:660px ){
+    .icons-question1{
+      width: 85px;
+    }
+  }
+
+  @media screen and (max-width:450px ){
+    .icons-question1{
+      width: 75px;
+    }
+  }
+  @media screen and (max-width:410px ){
+    .icons-question1{
+      width: 70px;
+    }
+  } 
+  
 
 .bi.bi-trash{
     font-size: 30px;
@@ -553,10 +573,6 @@ body{
         height: 50vh;
     }
 
-    .icons-question1{
-        gap: 13.5px;
-    }
-    
     .bi.bi-trash{
         font-size: 25px;
         color: rgb(255, 89, 89);
@@ -646,11 +662,13 @@ body{
 button.editar{
     border: none;
     background-color: #F9F8F8;
+    width: 100%;
 }
 
 button.excluir{
     border: none;
     background-color: #F9F8F8;
+    width: 100%;
 }
 
 button.checklist{

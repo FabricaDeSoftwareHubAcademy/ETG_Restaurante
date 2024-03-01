@@ -54,7 +54,7 @@
                 </script>
                 
             <!-- BOTÃO DE CADASTRAR -->
-                <div class="botao">
+                <div class="botaoo">
                     <a id="cadastrar" href="../pages/cadastrar_checklist.php"><button  class="botao-cadastrar-submit">CADASTRAR</button></a>
                 </div>
         </div>

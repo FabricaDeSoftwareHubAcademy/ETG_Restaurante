@@ -190,6 +190,7 @@ body{
     text-decoration: none;
     outline: none;
     color: white;
+    margin-top: 2vh;
 }
   
 .input_field::placeholder {
@@ -279,7 +280,7 @@ body{
     box-shadow: 1px 4px 4px 1px rgba(0, 0, 0, 0.25);
     gap: 20px;
     padding-left: 10px;
-    padding-right: 50px;
+    padding-right: 15px;
     position: relative;
     
 }
@@ -298,7 +299,11 @@ body{
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    gap: 22.5px;
+    width: 95px;
+}
+
+.botaoo{
+    margin-top: 2vh;
 }
 
 .bi.bi-trash{
@@ -413,11 +418,13 @@ body{
 button.editar{
     border: none;
     background-color: #F9F8F8;
+    width: 100%;
 }
 
 button.excluir{
     border: none;
     background-color: #F9F8F8;
+    width: 100%;
 }
 
 
