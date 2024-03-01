@@ -12,12 +12,26 @@ include_once("../includes/menu.php");
 $idResponderCheck = $_GET["id_realizacao"];
 $objValidarChecklist = new ValidarChecklist();  
 $idSala = $objValidarChecklist -> getIdSala(idResponderCheck: $idResponderCheck);
-// die("asd");
 $perguntas = $objValidarChecklist -> getPerguntas(idSala: $idSala);
+// var_dump($perguntas);exit;
 
 foreach ($perguntas as &$row) {
     $NaoConformidade = $objValidarChecklist -> hasNaoConf(idPergunta: $row["id_pergunta"], idRealiza: $idResponderCheck);
-    $row["NaoConformidade"] = $NaoConformidade;
+    if ($NaoConformidade != false) {
+        
+        // var_dump($NaoConformidade);exit;
+        $row["textAreaContent"] = $NaoConformidade[1]["descricao_NC"];
+        $row["imagesToPHP"] = [
+            0 => $NaoConformidade[1]["img1"],
+            1 => $NaoConformidade[1]["img2"],
+            2 => $NaoConformidade[1]["img3"]
+        ];
+        $row["id_nao_conformidade"] = $NaoConformidade[1]["id"];
+        $row["NaoConformidade"] = true;
+        $row["responsavel"] = "docente";
+    }
+
+
 }
 // var_dump($perguntas);exit;
  

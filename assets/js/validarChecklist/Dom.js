@@ -7,41 +7,31 @@ export class Dom {
         this.dataPerguta = this.objPergunta.getAll();
     }
 
-    addNaoConfToDataNaoConf() {
-        for (var pergunta of this.dataPerguta) {
-            if (pergunta["NaoConformidade"]) {
-                console.log(true)
-            }
-
-        }
+    addNaoConfToDataNaoConf(pergunta) {
+        this.dataNaoConf.push(pergunta);
     }
 
     showPerguntas() {
-        // this.showPerguntas();
-        // console.log(this.dataPerguta);
+        console.log(this.dataPerguta);
         for (var pergunta of this.dataPerguta) {
-            // var perguntaMae = document.querySelector(".pergunta_nao_conf");
-            // var descricaoPergunta = document.createElement("h6");
-            // descricaoPergunta.innerText = pergunta["pergunta"];
-            // console.log(pergunta);
-            // perguntaMae.appendChild(descricaoPergunta);
             if (pergunta["NaoConformidade"]) {
+                this.addNaoConfToDataNaoConf(pergunta);
                 this.createOneRedElement(pergunta["pergunta"], pergunta["id_pergunta"]); //checando se a pergunta tem uma nao conformidade
                 continue;
             }
-            this.createOneGreenElement(pergunta["pergunta"], pergunta["id_pergunta"]);
+            this.createOneGreenElement(pergunta["pergunta"], pergunta["id_pergunta"], pergunta);
         }
     }
 
-    createOneGreenElement(pergunta, idPergunta) {
-        this.createLabelElement("label_checklist-right", pergunta, idPergunta);
+    createOneGreenElement(pergunta, idPergunta, dadosPergunta) {
+        this.createLabelElement("label_checklist-right", pergunta, idPergunta, dadosPergunta);
     }
 
     createOneRedElement(pergunta, idPergunta) {
         this.createLabelElement("label_checklist-wrong", pergunta, idPergunta);
     }
 
-    createLabelElement(labelClass, pergunta, idPergunta) {
+    createLabelElement(labelClass, pergunta, idPergunta, dadosPergunta) {
         var mainDiv = document.createElement("div");
         mainDiv.className = "input_checklist";
         
@@ -85,7 +75,7 @@ export class Dom {
                     var textAreaContent = document.querySelector(".descricao_nao_conf").value
                     var varPreview = document.querySelector(".upload-img");
                     var images = varPreview.querySelectorAll("img");
-                    self_2.save(textAreaContent, images, idPergunta);
+                    self_2.save(textAreaContent, images, dadosPergunta);
                     self_2.close();
                 }
             }
@@ -115,7 +105,7 @@ export class Dom {
 
         function descerNormal()
         {
-            
+            console.log(self_1.dataNaoConf)
             labelDiv.classList.add("active");
             if (labelDiv.classList.contains("label_checklist-wrong")) {
                 labelDiv.style.backgroundColor = 'transparent';
@@ -174,7 +164,7 @@ export class Dom {
                     // console.log("AAAAAAAAAAAAAAAAAAAAAAAAAA")
                 }
             }
-            console.log(self_1.dataNaoConf);
+            // console.log(self_1.dataNaoConf);
 
         }
 
@@ -233,12 +223,12 @@ export class Dom {
             else if (labelDiv.classList.contains("active") && !labelDiv.classList.contains("correct") && !labelDiv.classList.contains("incorrect"))
             {
                 subirNormal();
-                console.log("subiu normal transparente");
+                // console.log("subiu normal transparente");
             }
             else
             {
                 descerNormal();
-                console.log("desceu normal transparente");
+                // console.log("desceu normal transparente");
             }
         }
 
@@ -312,19 +302,27 @@ export class Dom {
         }
         }
 
-    save(textAreaContent, images, idPergunta) {
-        var data = [];
-        var imagesToPHP = [];
+    save(textAreaContent, images, dadosPergunta) {
+        var data = {};
+        var imagesToPHP = {};
     
         // ARMAZENANDO AS IMAGENS
         for (let i = 0; i < images.length; i++) {
             var src = images[i].getAttribute("src");
-            console.log(src)
+            // console.log(src)
             imagesToPHP[i] = src;
         }
-    
-        data["idPergunta"] = idPergunta;
+        
+        console.log(dadosPergunta)
+        data["responsavel"] = "logistica";
+        data["NaoConformidade"] = true;
+        data["nome_check"] = dadosPergunta["nome_check"];
+        data["id_sala"] = dadosPergunta ["id_sala"];
+        data["id_pergunta"] = dadosPergunta ["id_pergunta"];
+        data["nome_sala"] = dadosPergunta ["nome_sala"];
+        data["pergunta"] = dadosPergunta ["pergunta"];
         data["textAreaContent"] = textAreaContent;
+        data["tipo"] = dadosPergunta ["tipo"];
         data["imagesToPHP"] = imagesToPHP;
 
         this.dataNaoConf.push(data);
