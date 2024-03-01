@@ -1,26 +1,16 @@
-import { Pergunta } from './Pergunta.js';
 
 export class Dom {     
     constructor(dataNaoConf) {
         this.dataNaoConf = dataNaoConf;
-        this.objPergunta = new Pergunta(perguntasJson);
-        this.dataPerguta = this.objPergunta.getAll();
     }
 
     showPerguntas() {
-        for (var pergunta of this.dataPerguta) {
-            // var perguntaMae = document.querySelector(".pergunta_nao_conf");
-            // var descricaoPergunta = document.createElement("h6");
-            // descricaoPergunta.innerText = pergunta["pergunta"];
-            // console.log(pergunta);
-            // perguntaMae.appendChild(descricaoPergunta);
-            console.log(this.dataPerguta)
-            if (pergunta["NaoConformidade"]) {
-                this.createOneRedElement(pergunta["pergunta"], pergunta["id_pergunta"]); //checando se a pergunta tem uma nao conformidade
-                continue;
-            }
-            this.createOneGreenElement(pergunta["pergunta"], pergunta["id_pergunta"]);
-        }
+        for (var pergunta of this.dataNaoConf) {
+            console.log(pergunta)
+             
+            
+            this.createOneRedElement(pergunta["textAreaContent"], pergunta["idPergunta"]); //checando se a pergunta tem uma nao conformidade 
+         }
     }
 
     createOneGreenElement(pergunta, idPergunta) {
@@ -32,6 +22,7 @@ export class Dom {
     }
 
     createLabelElement(labelClass, pergunta, idPergunta) {
+         
         var mainDiv = document.createElement("div");
         mainDiv.className = "input_checklist";
         
@@ -46,7 +37,9 @@ export class Dom {
 
         
         var h1Title = document.createElement("h1");
-        h1Title.textContent = pergunta;
+        h1Title.textContent = pergunta
+
+
         
         var button = document.createElement("i");
         button.className = "bi bi-chevron-down";
@@ -64,14 +57,36 @@ export class Dom {
             var divBack = document.createElement("div");
             divBack.className = "botao-padrao-voltar-label";
 
-            var buttonIncorrect = document.createElement("button");
-            buttonIncorrect.className = "botao-voltar-link-label";
-            buttonIncorrect.textContent = "Incorreto";
-            buttonIncorrect.onclick = function() {
+            // var buttonIncorrect = document.createElement("button");
+            // buttonIncorrect.className = "botao-voltar-link-label";
+            // buttonIncorrect.textContent = "Incorreto";
+            // buttonIncorrect.onclick = function() {
+            //     self_2.call(pergunta)
+            //     var buttonConfirmNaoConf = document.querySelector(".botao-confirmar-submit");
+            //     buttonConfirmNaoConf.onclick = function() {
+            //         vermelho();
+            //         var textAreaContent = document.querySelector(".descricao_nao_conf").value
+            //         var varPreview = document.querySelector(".upload-img");
+            //         var images = varPreview.querySelectorAll("img");
+            //         self_2.save(textAreaContent, images, idPergunta);
+            //         self_2.close();
+            //     }
+            // }
+
+            var divSubmit = document.createElement("div");
+            divSubmit.className = "botao-padrao-cadastrar-label";
+
+            var buttonSubmit = document.createElement("button");
+            buttonSubmit.className = "botao-cadastrar-submit-label";
+            buttonSubmit.textContent = "Resolver";
+            buttonSubmit.type = "button";
+            buttonSubmit.onclick = function() {
+                // verde();
+
                 self_2.call(pergunta)
                 var buttonConfirmNaoConf = document.querySelector(".botao-confirmar-submit");
                 buttonConfirmNaoConf.onclick = function() {
-                    vermelho();
+                    verde();
                     var textAreaContent = document.querySelector(".descricao_nao_conf").value
                     var varPreview = document.querySelector(".upload-img");
                     var images = varPreview.querySelectorAll("img");
@@ -79,22 +94,15 @@ export class Dom {
                     self_2.close();
                 }
             }
-
-            var divSubmit = document.createElement("div");
-            divSubmit.className = "botao-padrao-cadastrar-label";
-
-            var buttonSubmit = document.createElement("button");
-            buttonSubmit.className = "botao-cadastrar-submit-label";
-            buttonSubmit.textContent = "Correto";
-            buttonSubmit.type = "button";
-            buttonSubmit.onclick = function() {
-                verde();
-            }
-            divBack.appendChild(buttonIncorrect);
+            // divBack.appendChild(buttonIncorrect);
             divSubmit.appendChild(buttonSubmit);
             motherButtons.appendChild(divBack);
             motherButtons.appendChild(divSubmit);
             labelDiv.appendChild(motherButtons);
+        }
+
+        function encontrarObjetoPorId(array, id) {
+            return array.find(objeto => objeto.idPergunta === id);
         }
 
         function descerNormal()
@@ -106,8 +114,44 @@ export class Dom {
                 labelDiv.style.backgroundColor = 'transparent';
                 labelDiv.style.border = '3px solid red';
                 button.className = "bi bi-chevron-down"
-                labelDiv.style.height = (labelDiv.offsetHeight + 125) + "px";
+                labelDiv.style.height = (labelDiv.offsetHeight + 400) + "px";
+
+                let imagens = document.createElement("div");
+                imagens.className = "imagens-container-acao-corretiva areaImgPergunta"+idPergunta;
+                imagens.style.width = "100%";
+                imagens.style.height = "300px";
+                imagens.style.display = "flex";
+                imagens.style.alignItems = "center";
+
+                // let divImg = document.createElement("div");
+                // let img = document.createElement("img");
+
+                // console.log(encontrarObjetoPorId(self_1.dataNaoConf,idPergunta))
+                let dataPergunta = encontrarObjetoPorId(self_1.dataNaoConf,idPergunta)
+                let imgsPergunta = dataPergunta['imagesToPHP']
+
+
+                imgsPergunta.forEach(img_base64 => {
+                    
+                    let img_element = document.createElement('img')
+                    if(img_base64.startsWith('data:image')){
+
+                        img_element.src = img_base64
+                    }else{
+                        img_element.src = '../storage/salas/'+img_base64
+                    }
+                    img_element.style.width = '30%'
+                    img_element.classList.add('beluga')
+                    imagens.appendChild(img_element)
+
+                }); 
+ 
+                let nextDivToInsert = document.querySelector(".alinar-botoes-label");
+                let dadElement = labelDiv;
+
+                dadElement.insertBefore(imagens, labelDiv.querySelector('.alinar-botoes-label'));
             }
+
             else if (labelDiv.classList.contains("label_checklist-right")) {
                 labelDiv.style.backgroundColor = 'transparent';
                 labelDiv.style.border = '3px solid green';
@@ -121,22 +165,31 @@ export class Dom {
             if (labelDiv.classList.contains("incorrect")) {
                 labelDiv.classList.remove("incorrect");
             }
-            for (var i = 0; i < self_1.dataNaoConf.length; i++) {
-                var Nconf = self_1.dataNaoConf[i];
-                if (Nconf["idPergunta"] == idPergunta) {
-                    self_1.dataNaoConf.splice(i, 1);
-                    // console.log("AAAAAAAAAAAAAAAAAAAAAAAAAA")
-                }
-            }
+            // for (var i = 0; i < self_1.dataNaoConf.length; i++) {
+            //     var Nconf = self_1.dataNaoConf[i];
+            //     if (Nconf["idPergunta"] == idPergunta) {
+            //         self_1.dataNaoConf.splice(i, 1);
+            //         // console.log("AAAAAAAAAAAAAAAAAAAAAAAAAA")
+            //     }
+            // }
             console.log(self_1.dataNaoConf);
 
         }
 
         function subirNormal()
         {
-            labelDiv.style.height = (labelDiv.offsetHeight - 125) + "px";
-            labelDiv.classList.remove("active");
-            labelDiv.removeChild(motherButtons);
+            if (labelDiv.querySelector(".imagens-container-acao-corretiva") !== null) {
+                labelDiv.querySelector(".imagens-container-acao-corretiva").remove();
+                labelDiv.style.height = (labelDiv.offsetHeight - 400) + "px";
+                labelDiv.classList.remove("active");
+                labelDiv.removeChild(motherButtons);
+            } else {
+                labelDiv.style.height = (labelDiv.offsetHeight - 125) + "px";
+                labelDiv.classList.remove("active");
+                labelDiv.removeChild(motherButtons);
+            }
+
+
 
             if (labelDiv.classList.contains("correct")) {
                 labelDiv.classList.remove("correct");
@@ -203,21 +256,8 @@ export class Dom {
 
         var confirmButton = document.createElement("button");
         confirmButton.className = "botao-confirmar-submit";
-        confirmButton.textContent = "Confirmar";
-        // confirmButton.onclick = function() {
-        //     labelDiv = document.querySelector("#label-div");
-        //     labelDiv.classList.add("incorrect");
-            //vermelho
-            // labelDiv.style.backgroundColor = 'red';
-            // labelDiv.classList.add("incorrect");
-            // buttonBIBI.className = "bi bi-arrow-clockwise";
-
-        //     var textAreaContent = document.querySelector(".descricao_nao_conf").value
-        //     var varPreview = document.querySelector(".upload-img");
-        //     var images = varPreview.querySelectorAll("img");
-        //     self.save(textAreaContent, images);
-        //     self.close();
-        // }
+        confirmButton.textContent = "Resolver";
+         
 
         divBotoes.appendChild(cancelButton);
         divBotoes.appendChild(confirmButton);
@@ -251,7 +291,7 @@ export class Dom {
         }
 
     save(textAreaContent, images, idPergunta) {
-        var data = [];
+        var data = {};
         var imagesToPHP = [];
     
         // ARMAZENANDO AS IMAGENS
@@ -311,7 +351,14 @@ export class Dom {
             IMG.className = "beluga";
             
             
-            IMG.src = URL.createObjectURL(FILE);
+            let reader = new FileReader();
+
+            reader.onload = (e) => {
+    
+                IMG.src = e.target.result
+             }
+
+            reader.readAsDataURL(FILE)  
             
             var container_img = document.createElement("div");
     
