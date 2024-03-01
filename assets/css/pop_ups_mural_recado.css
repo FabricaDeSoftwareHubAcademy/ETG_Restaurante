@@ -52,8 +52,8 @@ body{
 .popup-mural-recado {
   background: var(--gray-white, #FFF);
     display: flex;
-    width: 642px;
-    height: 465px;
+    width: 395px;
+    height: 310px;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -81,7 +81,7 @@ body{
   align-items: center;
   padding-left: 50px;
   font-size: 20px;
-  padding-top: 25px;
+  padding-top: 10px;
     
 }
 
