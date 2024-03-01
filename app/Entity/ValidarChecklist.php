@@ -18,12 +18,13 @@ class ValidarChecklist
         return Pergunta::getDados(id_sala: $idSala);
     }
 
-    public function hasNaoConf($idPergunta, $idRealiza) : bool {
-        $hasNaoConf = NaoConformidade::getNaoConfByIdPerguntaAndIdRealiza(idPergunta: $idPergunta, idRealiza: $idRealiza);
-        if ($hasNaoConf) {
-            return true;
-        } else {
-            return false;
-        }
+    public function hasNaoConf($idPergunta, $idRealiza) {
+        return NaoConformidade::getNaoConfByIdPerguntaAndIdRealiza(idPergunta: $idPergunta, idRealiza: $idRealiza);
+        // var_dump($naoConf);exit;
+        // if ($hasNaoConf) {
+        //     return true;
+        // } else {
+        //     return false;
+        // }
     }
 }
