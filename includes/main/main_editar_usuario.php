@@ -7,14 +7,12 @@
 <link rel="stylesheet" href="../assets/css/editar_usuario/editar_usuario.css">
 <script src="https://code.jquery.com/jquery-3.7.0.js"integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM="crossorigin="anonymous"></script>
 <script scr="../assets/js/modais.js"></script>
- 
+
 <body class="pai-de-todos1">
-
-
     <main class="pai-de-todos">
         <form  class="form-minha-conta" method="POST" enctype="multipart/form-data">
             <section class="titulo">
-                <h1 class="titulo-perfil">Minha Conta</h1>
+                <?=$sla?>
             </section>
             
             
@@ -59,7 +57,7 @@
     
                                 <!--Botão Voltar-->
                             <div class="botao-padrao-voltar">
-                                <a href="listar_recados.php" class="botao-voltar-submit" >VOLTAR</a>
+                            <?=$voltar?>
                             </div>
     
                                 <!--Botão Confirmar-->

@@ -136,7 +136,7 @@ async function listarPerguntas() {
 
 
         let tr = document.createElement("tr")
-        tr.innerHTML = "<tr>   <td> <h3 class='text_tipo_perg'>"+tipoPrint+"</h3>  <input "+classAmbas+" type='checkbox' "+checkedBox+"  id='checkbox' name='perguntas[]' value='" + element['id'] + "'></td> <td>" + element['descricao'] + "</td> </tr>"
+        tr.innerHTML = "<tr>   <td> <div class='wasd'><h3 class='text_tipo_perg'>"+tipoPrint+"</h3>  <input "+classAmbas+" type='checkbox' "+checkedBox+"  id='checkbox' name='perguntas[]' value='" + element['id'] + "'></div></td> <td>" + element['descricao'] + "</td> </tr>"
         tr.setAttribute('preId', element.id)
         $("#tablePre").append(tr)
 
@@ -161,7 +161,7 @@ async function listarPerguntas() {
         let classAmbas = element.tipo == 2 ? "class='ambasCheck"+element.id+"'" : ''
 
         let tr = document.createElement("tr")
-        tr.innerHTML = "<tr id='pergPos'> <td> <h3 class='text_tipo_perg'>"+tipoPrint+"</h3> <input "+classAmbas+" type='checkbox' "+checkedBox+" id='checkbox' name='perguntas[]' value='" + element['id'] + "'></td> <td>" + element['descricao'] + "</td> </tr>"
+        tr.innerHTML = "<tr id='pergPos'> <td> <div class='wasd'> <h3 class='text_tipo_perg'>"+tipoPrint+"</h3> <input "+classAmbas+" type='checkbox' "+checkedBox+" id='checkbox' name='perguntas[]' value='" + element['id'] + "'></div></td> <td>" + element['descricao'] + "</td> </tr>"
         tr.setAttribute('posId', element.id)
         
         $("#tablePos").append(tr)

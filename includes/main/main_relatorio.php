@@ -4,7 +4,7 @@
     <link rel="stylesheet" href="../assets/css/relatorio.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     <script src="../assets/js/relatorio.js" defer></script>
-    <script src="../assets/js/relatorio.js"></script>
+    
 
 <body class="paidetodos">
 <main class="report_principal">
@@ -12,26 +12,44 @@
 
         <section class="teste">
             <div class="testePrimeiraSecao">
+                <div id="accordion_salas" class="accordion">
+                        <!-- <div class="link"><i class="bi bi-door-open"></i>Salas<i class="fa fa-chevron-down"></i></div> -->
+                        <select name="" id="" class="link">
+                        <option selected>Salas</option>
+                        <?php
+                            foreach($dadosSala as $row) {
+                                echo 
+                                "
+                                <option>".$row["nome"]."</option>
+                                ";
+                            }
+                            ?>
+                        </select>
+                    </div>
 
-            <ul id="accordion_salas" class="accordion">
-                    <li>
-                    <div class="link"><i class="bi bi-door-open"></i>Salas<i class="fa fa-chevron-down"></i></div>
-                    <ul class="submenu">
-                        <li><a href="#">Cozinha Didatica0</a></li>
-                    </ul>
-                    </li>
-                </ul>
-
-                <ul id="user_relatorio" class="user-filter">
+                    <div id="user_relatorio" class="user_relatorio">
+                        <!-- <div class="link"><i class="bi bi-door-open"></i>Salas<i class="fa fa-chevron-down"></i></div> -->
+                        <select name="" id="" class="link">
+                        <option selected>Usuários</option>
+                        <?php
+                            foreach($dadosUsuario as $row) {
+                                echo 
+                                "
+                                <option>".$row["nome"]."</option>
+                                ";
+                            }
+                            ?>
+                        </select>
+                    </div>
+                <!-- <ul id="user_relatorio" class="c">
                     <li>
                     <div class="user-report"><i class="bi bi-person-square"></i>Usuários<i class="fa fa-chevron-down"></i></div>
                     <ul class="submenu_users">
-                        <li><a href="#">Docente</a></li>
+                        <li><a href="#">Docente</a></li>                        
                         <li><a href="#">Administrador</a></li>
                         <li><a href="#">Logistica</a></li>
                     </ul>
-                    </li>
-                </ul>
+                    </li> -->
 
 
                 <ul id="periodo" class="periodo">
@@ -92,7 +110,6 @@
    
     </main>
         <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-        <script src="../assets/js/relatorio.js" defer></script>
 </body>
 
 </html>

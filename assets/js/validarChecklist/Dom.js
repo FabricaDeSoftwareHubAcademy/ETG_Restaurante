@@ -7,31 +7,31 @@ export class Dom {
         this.dataPerguta = this.objPergunta.getAll();
     }
 
+    addNaoConfToDataNaoConf(pergunta) {
+        this.dataNaoConf.push(pergunta);
+    }
+
     showPerguntas() {
+        console.log(this.dataPerguta);
         for (var pergunta of this.dataPerguta) {
-            // var perguntaMae = document.querySelector(".pergunta_nao_conf");
-            // var descricaoPergunta = document.createElement("h6");
-            // descricaoPergunta.innerText = pergunta["pergunta"];
-            // console.log(pergunta);
-            // perguntaMae.appendChild(descricaoPergunta);
-            console.log(this.dataPerguta)
             if (pergunta["NaoConformidade"]) {
+                this.addNaoConfToDataNaoConf(pergunta);
                 this.createOneRedElement(pergunta["pergunta"], pergunta["id_pergunta"]); //checando se a pergunta tem uma nao conformidade
                 continue;
             }
-            this.createOneGreenElement(pergunta["pergunta"], pergunta["id_pergunta"]);
+            this.createOneGreenElement(pergunta["pergunta"], pergunta["id_pergunta"], pergunta);
         }
     }
 
-    createOneGreenElement(pergunta, idPergunta) {
-        this.createLabelElement("label_checklist-right", pergunta, idPergunta);
+    createOneGreenElement(pergunta, idPergunta, dadosPergunta) {
+        this.createLabelElement("label_checklist-right", pergunta, idPergunta, dadosPergunta);
     }
 
     createOneRedElement(pergunta, idPergunta) {
         this.createLabelElement("label_checklist-wrong", pergunta, idPergunta);
     }
 
-    createLabelElement(labelClass, pergunta, idPergunta) {
+    createLabelElement(labelClass, pergunta, idPergunta, dadosPergunta) {
         var mainDiv = document.createElement("div");
         mainDiv.className = "input_checklist";
         
@@ -75,7 +75,7 @@ export class Dom {
                     var textAreaContent = document.querySelector(".descricao_nao_conf").value
                     var varPreview = document.querySelector(".upload-img");
                     var images = varPreview.querySelectorAll("img");
-                    self_2.save(textAreaContent, images, idPergunta);
+                    self_2.save(textAreaContent, images, dadosPergunta);
                     self_2.close();
                 }
             }
@@ -88,7 +88,13 @@ export class Dom {
             buttonSubmit.textContent = "Correto";
             buttonSubmit.type = "button";
             buttonSubmit.onclick = function() {
-                verde();
+                if (labelDiv.classList.contains("label_checklist-wrong") && labelDiv.classList.contains("active")) {
+                    vermelho();
+                }
+                else
+                {
+                    verde();
+                }
             }
             divBack.appendChild(buttonIncorrect);
             divSubmit.appendChild(buttonSubmit);
@@ -99,16 +105,46 @@ export class Dom {
 
         function descerNormal()
         {
-            montarBotoes();
+            console.log(self_1.dataNaoConf)
             labelDiv.classList.add("active");
-
             if (labelDiv.classList.contains("label_checklist-wrong")) {
                 labelDiv.style.backgroundColor = 'transparent';
                 labelDiv.style.border = '3px solid red';
                 button.className = "bi bi-chevron-down"
-                labelDiv.style.height = (labelDiv.offsetHeight + 125) + "px";
+                labelDiv.style.height = (labelDiv.offsetHeight + 250) + "px";
+                
+                let imagens = document.createElement("div");
+                imagens.className = "imagens-container";
+                // imagens.style.backgroundColor = "red";
+                imagens.style.width = "100%";
+                imagens.style.height = "300px";
+                // imagens.style.marginBottom = "10px";
+                imagens.style.display = "flex";
+                // imagens.style.justifyContent = "space-between";
+                imagens.style.alignItems = "center";
+                // imagens.style.justifyContent = "center";
+                
+                for (let i = 0; i < 3; i++) {
+                    let divImg = document.createElement("div");
+                    divImg.style.display = "flex";
+                    divImg.style.justifyContent = "center";
+                    let img = document.createElement("img");
+                    img.className = "beluga";
+                    // img.style.width = "100% %";
+                    img.src = "https://img.freepik.com/fotos-premium/melhor-foto-aleatoria_865967-90776.jpg";
+    
+                    divImg.appendChild(img);
+                    imagens.appendChild(divImg)
+                }
+                
+                labelDiv.appendChild(imagens)
+                // let nextDivToInsert = document.querySelector(".alinar-botoes-label");
+                // let dadElement = nextDivToInsert.parentNode;
+                
+                // dadElement.insertBefore(imagens, nextDivToInsert);
             }
             else if (labelDiv.classList.contains("label_checklist-right")) {
+                montarBotoes();
                 labelDiv.style.backgroundColor = 'transparent';
                 labelDiv.style.border = '3px solid green';
                 button.className = "bi bi-chevron-down"
@@ -128,15 +164,21 @@ export class Dom {
                     // console.log("AAAAAAAAAAAAAAAAAAAAAAAAAA")
                 }
             }
-            console.log(self_1.dataNaoConf);
+            // console.log(self_1.dataNaoConf);
 
         }
 
         function subirNormal()
         {
-            labelDiv.style.height = (labelDiv.offsetHeight - 125) + "px";
-            labelDiv.classList.remove("active");
-            labelDiv.removeChild(motherButtons);
+            if (labelDiv.querySelector(".imagens-container") !== null) {
+                labelDiv.querySelector(".imagens-container").remove();
+                labelDiv.style.height = (labelDiv.offsetHeight - 250) + "px";
+                labelDiv.classList.remove("active");
+            } else {
+                labelDiv.style.height = (labelDiv.offsetHeight - 125) + "px";
+                labelDiv.classList.remove("active");
+                labelDiv.removeChild(motherButtons);
+            }
 
             if (labelDiv.classList.contains("correct")) {
                 labelDiv.classList.remove("correct");
@@ -145,6 +187,7 @@ export class Dom {
                 labelDiv.classList.remove("incorrect");
             }
         }
+
 
         function verde()
         {
@@ -156,10 +199,19 @@ export class Dom {
 
         function vermelho()
         {
-            //vermelho
-            labelDiv.style.backgroundColor = 'red';
-            labelDiv.classList.add("incorrect");
-            button.className = "bi bi-arrow-clockwise";
+            if (labelDiv.classList.contains("label_checklist-wrong")) {
+                //vermelho
+                labelDiv.style.backgroundColor = 'red';
+                labelDiv.classList.add("correct");
+                button.className = "bi bi-arrow-clockwise";
+            }
+            else 
+            {
+                //vermelho
+                labelDiv.style.backgroundColor = 'red';
+                labelDiv.classList.add("incorrect");
+                button.className = "bi bi-arrow-clockwise";
+            }
         }
 
         var motherButtons;
@@ -171,12 +223,12 @@ export class Dom {
             else if (labelDiv.classList.contains("active") && !labelDiv.classList.contains("correct") && !labelDiv.classList.contains("incorrect"))
             {
                 subirNormal();
-                console.log("subiu normal transparente");
+                // console.log("subiu normal transparente");
             }
             else
             {
                 descerNormal();
-                console.log("desceu normal transparente");
+                // console.log("desceu normal transparente");
             }
         }
 
@@ -250,19 +302,27 @@ export class Dom {
         }
         }
 
-    save(textAreaContent, images, idPergunta) {
-        var data = [];
-        var imagesToPHP = [];
+    save(textAreaContent, images, dadosPergunta) {
+        var data = {};
+        var imagesToPHP = {};
     
         // ARMAZENANDO AS IMAGENS
         for (let i = 0; i < images.length; i++) {
             var src = images[i].getAttribute("src");
-        
+
             imagesToPHP[i] = src;
         }
-    
-        data["idPergunta"] = idPergunta;
+        
+        console.log(dadosPergunta)
+        data["responsavel"] = "logistica";
+        data["NaoConformidade"] = true;
+        data["nome_check"] = dadosPergunta["nome_check"];
+        data["id_sala"] = dadosPergunta ["id_sala"];
+        data["id_pergunta"] = dadosPergunta ["id_pergunta"];
+        data["nome_sala"] = dadosPergunta ["nome_sala"];
+        data["pergunta"] = dadosPergunta ["pergunta"];
         data["textAreaContent"] = textAreaContent;
+        data["tipo"] = dadosPergunta ["tipo"];
         data["imagesToPHP"] = imagesToPHP;
 
         this.dataNaoConf.push(data);
