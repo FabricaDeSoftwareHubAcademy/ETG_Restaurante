@@ -442,57 +442,6 @@
   top: 20%;
 }
 
-@media (max-width: 832px){
- 
-  .modal-container-menu{
-    left: 30%;
-  }
-}
-
-@media (max-height:724px){
-
-  .li-menu .link-menu i{
-    font-size: 20px;
-    padding-top: 17px;
-  }
-
-}
-
-
-@media (max-height:807px){
-
-  .navItems-menu{
-    margin-top: -40%;
-
-  }
-  
-  @media (max-height:624px){
-  
-    .navItems-menu{
-      margin-top: -90%;
-    }
-  
-  } 
-
-  .li-menu{
-    top: 15px;
-  }
-  
-}
-
-
-@media (max-width: 836px){
-  .submenu2.active{
-    width: 200px;
-  }
- 
-  .sub-menu.active{
-    width: 280px;
-    height: 220px;
-    margin-top: -80px;
-  }
-
-}
 
 .modal-menu{
   display: flex;
@@ -656,6 +605,86 @@
   z-index: 2;
 }
 
+.icon-perfil{
+  width: 50px;
+  height: 50px;
+  border-radius: 60px;
+  margin: auto;
+  display: block;
+  object-fit: cover;
+}
+
+.titulo-nome{
+  color: #F28920;
+  font-family: "Montsserat";
+  font-style: normal;
+  font-size: 13px;
+}
+
+.parte-perfil{
+  list-style: none;
+  width: 100%; 
+  text-align: center;
+  margin-top: 17%;
+}
+
+
+
+@media (max-height:925px){
+  .navItems-menu{
+    margin-top: -40%;
+  }
+}
+
+@media (max-width: 836px){
+  .submenu2.active{
+    width: 200px;
+  }
+
+  .sub-menu.active{
+    width: 280px;
+    height: 220px;
+    margin-top: -80px;
+  }
+}
+
+@media (max-width: 832px){
+  .modal-container-menu{
+    left: 30%;
+  }
+}
+
+@media (max-height:894px){
+  .li-menu .link-menu i{
+    font-size: 20px;
+    padding-top: 17px;
+  }
+}
+
+  
+
+@media (max-height:720px){
+  .li-menu{
+    top: 15px;
+  } 
+}
+
+@media (max-height:642px){
+  .container-menu.active {
+    height: 90vh;
+  }
+}
+
+
+@media (max-width:720px){
+  .sub-menu3{
+    width: 200px;
+  }
+  .sub-menu4{
+    width: 200px;
+  }
+}
+
 
 @media (max-width: 610px){
   #bloc1{
@@ -699,27 +728,3 @@
     to {height: 80px ;}   
   }
 }
-
-.icon-perfil{
-  width: 50px;
-  height: 50px;
-  border-radius: 60px;
-  margin: auto;
-  display: block;
-  object-fit: cover;
-}
-
-.titulo-nome{
-  color: #F28920;
-  font-family: "Montsserat";
-  font-style: normal;
-  font-size: 13px;
-}
-
-.parte-perfil{
-  list-style: none;
-  width: 100%; 
-  text-align: center;
-  margin-top: 17%;
-}
-  
