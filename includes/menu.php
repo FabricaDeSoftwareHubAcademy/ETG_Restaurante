@@ -75,21 +75,21 @@ $ifreaac = $perfil['realizar_acao_corretiva'] == '1';
                     <?php 
                         echo '
                             <li class="li-menu">
-                            <a href="#" class="link-menu">
-                            <i id="icon-pessoa" class="bi bi-person" style="--i:2"></i>
-                            <h5 class="titulo-user" style="--i:2">Usuários</h5>          
-                            </a>
+                                <a href="#" class="link-menu">
+                                    <i id="icon-pessoa" class="bi bi-person" style="--i:2"></i>
+                                    <h5 class="titulo-info" style="--i:2">Usuários</h5>          
+                                </a>
                             
-                            <ul class="submenu2" id="submenu-icon-pessoa">
-                            
-                            
-                            '.
-                            ($ifuser ? '<li class="iten-submenu2"><a href="../pages/visualizar_usuario.php" id="fonte-submenu2">Gerenciar Usuários</a></li>' : '').
-                            ($ifperfil ? '<li class="iten-submenu2"><a href="../pages/listar_perfis.php" id="fonte-submenu2">Gerenciar Perfis</a></li><li class="iten-submenu2"><a href="../pages/cadastrar_perfil.php" id="fonte-submenu2">Cadastrar Perfil</a></li>' : '').
-                            ($ifuser ? '<li class="iten-submenu2"><a href="../pages/cadastrar_usuario.php" id="fonte-submenu2">Cadastrar Usuário</a></li>' : '')
-                            .'
-                            <li class="iten-submenu2"><a href="../pages/editar_usuario.php" id="fonte-submenu2">Minha Conta</a></li>
-                            </ul>
+                                <ul class="submenu2" id="submenu-icon-pessoa">
+                                 
+                                '.
+                                ($ifuser ? '<li class="iten-submenu2"><a href="../pages/visualizar_usuario.php" id="fonte-submenu2">Gerenciar Usuários</a></li>' : '').
+                                ($ifperfil ? '<li class="iten-submenu2"><a href="../pages/listar_perfis.php" id="fonte-submenu2">Gerenciar Perfis</a></li><li class="iten-submenu2"><a href="../pages/cadastrar_perfil.php" id="fonte-submenu2">Cadastrar Perfil</a></li>' : '').
+                                ($ifuser ? '<li class="iten-submenu2"><a href="../pages/cadastrar_usuario.php" id="fonte-submenu2">Cadastrar Usuário</a></li>' : '')
+                                .'
+
+                                <li class="iten-submenu2"><a href="../pages/editar_usuario.php" id="fonte-submenu2">Minha Conta</a></li>
+                                </ul>
                         </li>';
                     ?>
                 </li>
@@ -156,14 +156,37 @@ $ifreaac = $perfil['realizar_acao_corretiva'] == '1';
                             </li> ';
                         }
                     ?>         
-                </li>         
+                </li>       
+                
+                
+                <li class="link_submenu4"> 
+                    <?php
+                        if($ifgensala || $ifperfil){
+                            echo '
+                            <li class="li-menu">   
+                                <a href="#" class="link-menu">
+                                    <i class="bi bi-graph-up" id="btnsubmenu4" onclick="openSubmenu4()" style="--i:6"></i>
+                                    <h5 class="titulo-info" id="titulo-cad" style="--i:6">Relatório</h5>
+                                </a>
+                                
+                                <ul class="sub-menu4">
+                                '.
+                                ($ifgensala ? '<li class="iten-submenu4"><a href="../pages/cadastrar_sala.php" id="fonte-submenu">Cadastrar  Salas</a></li>' : '').
+                                ($ifperfil ? '<li class="iten-submenu4"><a href="../pages/cadastrar_perfil.php" id="fonte-submenu2">Cadastrar  Perfil</a></li>' : '')
+                                .'
+                                </ul>
+                            </li> ';
+                        }
+                    ?>         
+                </li>       
+                
 
 
                 <li class="saida">
                     <button class="btnOpenmodal-menu" onclick="openModal()">  
                         <a href="actions/sair.php" class="link-menu">
-                            <i class="bi bi-box-arrow-left" style="--i:6"></i>
-                            <h5 class="titulo-info" onclick="openModal()" id="titulo-sair" style="--i:6">Sair</h5>
+                            <i class="bi bi-box-arrow-left" style="--i:7"></i>
+                            <h5 class="titulo-info" onclick="openModal()" id="titulo-sair" style="--i:7">Sair</h5>
                         </a>
                     </button>
                 </li>        
@@ -213,6 +236,8 @@ var submenu = document.querySelector('.sub-menu');
 var btn_submenu = document.getElementById('btnsubmenu');
 var submenu3 = document.querySelector('.sub-menu3');
 var btn_submenu3 = document.getElementById('btnsubmenu3');
+var submenu4 = document.querySelector('.sub-menu4');
+var btn_submenu4 = document.getElementById('btnsubmenu4');
 
 toggleClick.addEventListener("click", toggleMenu);
 document.addEventListener("click", clickOutside);
@@ -241,19 +266,30 @@ function openSubmenu(){
     btn_submenu.setAttribute('onclick', 'closeSubmenu()');
 }
 
-function openSubmenu3(){
-    submenu3.classList.add('active');
-    btn_submenu3.setAttribute('onclick', 'closeSubmenu3()');
-}
 
 function closeSubmenu(){
     submenu.classList.remove('active');
     btn_submenu.setAttribute('onclick', 'openSubmenu()');
 }
 
+function openSubmenu3(){
+    submenu3.classList.add('active');
+    btn_submenu3.setAttribute('onclick', 'closeSubmenu3()');
+}
+
 function closeSubmenu3(){
     submenu3.classList.remove('active');
     btn_submenu3.setAttribute('onclick', 'openSubmenu3()');
+}
+
+function openSubmenu4(){
+    submenu4.classList.add('active');
+    btn_submenu4.setAttribute('onclick', 'closeSubmenu4()');
+}
+
+function closeSubmenu4(){
+    submenu4.classList.remove('active');
+    btn_submenu4.setAttribute('onclick', 'openSubmenu4()');
 }
 
 function clickOutside(event) {
@@ -266,6 +302,9 @@ function clickOutside(event) {
         closeSubmenu3();
     }
 
+    if (!submenu4.contains(event.target) && !btn_submenu4.contains(event.target)) {
+        closeSubmenu4();
+    }
     // Fechar a modal quando clicar fora dela
     if (!modal.contains(event.target) && event.target !== document.querySelector('button[onclick="openModal()"]')) {
         closeModal(0);
@@ -283,6 +322,8 @@ function clickOutside(event) {
 
 document.addEventListener("DOMContentLoaded", function() {
     const submenuIconPessoa = document.getElementById("submenu-icon-pessoa");
+    const tituloUser = document.querySelector(".titulo-user"); // Seleciona o elemento com a classe titulo-user
+
 
     function toggleSubmenu(submenu) {
         submenu.classList.toggle("active");
@@ -302,36 +343,13 @@ document.addEventListener("DOMContentLoaded", function() {
     }); 
 
     document.addEventListener("DOMContentLoaded", function() {
-    const submenuIconPessoa = document.getElementById("submenu-icon-pessoa");
-    const tituloUser = document.querySelector(".titulo-user"); // Seleciona o elemento com a classe titulo-user
-
-    function toggleSubmenu(submenu) {
-        submenu.classList.toggle("active");
-    }
-
-    function openModal() {
-        modal.classList.add('active');
-    }
-
-    tituloUser.addEventListener("click", function(event) {
-        event.preventDefault();
-        openModal(); // Abre o modal quando a classe titulo-user for clicada
-    });
-
-    document.getElementById("icon-pessoa").addEventListener("click", function(event) {
-        event.preventDefault();
-        toggleSubmenu(submenuIconPessoa);
-    });
-
-    document.addEventListener("click", function(event) {
-        if (!submenuIconPessoa.contains(event.target) && !document.getElementById("icon-pessoa").contains(event.target)) {
-            submenuIconPessoa.classList.remove("active");
-        }
+    const submenuIconPessoa = document.getElementById("submenu-icon-pessoa")
     });
 });
 
 
-});
+
+
 
 
 </script>       

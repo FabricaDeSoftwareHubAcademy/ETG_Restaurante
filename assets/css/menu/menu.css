@@ -383,6 +383,54 @@
   height: auto;
   border: 2px solid #FAA916;
 }
+
+.link_submenu4{
+  list-style: none;
+  /* margin-top: 130px; */
+}
+
+.link_submenu4 .link-menu i{
+  position: relative;
+  display: block;
+  color: #FAA916;
+  width: 100%;
+  text-align: center;
+  transform: scale(0); 
+  margin-top: 50px;
+  list-style: none;
+}
+
+.sub-menu4{
+  background: rgb(255, 255, 255);
+  position: absolute;
+  transition: 0.5s;
+  width: 350px;
+  align-items: center;
+  margin-left: 70px;
+  font-size: 15px;
+  top: 60%;
+  overflow: hidden;
+  display: none;
+  border-radius: 7px;
+}
+
+
+.iten-submenu4{
+  background-color: #fff;
+  padding: 6px;
+  font-size: 20px;
+  
+}
+
+
+.sub-menu4.active{
+  height: auto;
+  border: 2px solid #FAA916;
+  margin-left: 65px;
+}
+
+
+
 /* =============================================== POP UP ================================================================================ */
 .modal-container-menu{
   display: none;
