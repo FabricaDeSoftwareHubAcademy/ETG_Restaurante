@@ -21,7 +21,7 @@
         <main class="pai-de-todos">
             <form action="" method="GET" class="formss">
                 <div class="container_gp">
-                        <h1 class="Usuarios"> Usuários </h1>
+                        <h1 class="Usuarios"> Usuários Cadastrados</h1>
 
                             <ul class="cardsgerenc"></ul>
                 
