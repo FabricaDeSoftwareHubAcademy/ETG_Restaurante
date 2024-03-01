@@ -218,11 +218,6 @@ if(!isset($_GET['id_user'])){
 
     </section>';
 
-<<<<<<< HEAD
-    if(isset($_FILES['foto'])){
-
-        if(strlen($_FILES['foto']['name']) > 0 ){ 
-=======
     
 
 if(isset($_FILES['foto'])){
@@ -271,7 +266,6 @@ if(isset($_POST['btn_submit'])){
         if ($_POST['novasenha'] == $_POST['confirmarnovasenha']){
             $objUsuario -> setPasswordByEmail($dados_editar['email'],$_POST['novasenha']); 
             $_SESSION["msg_edit"]='Alterações realizadas com sucesso!';
->>>>>>> e076f424ffc78e6d839b4e89086b72884ad52b26
           
              
             $name_img = $_FILES['foto']['name'];
@@ -279,9 +273,6 @@ if(isset($_POST['btn_submit'])){
             $path = '../assets/imgs/users/';
             move_uploaded_file($_FILES['foto']['tmp_name'], $path.$new_name);
             
-<<<<<<< HEAD
-            // unlink($path . $dados_editar['foto']);
-=======
         }else{
             
             $erro = true;
@@ -310,14 +301,10 @@ if(isset($_POST['btn_submit'])){
                         
                         Usuario::setEmail($_GET['id_user'],$_POST['email']);
                         $_SESSION["msg_edit"]='Alterações realizadas com sucesso!';
->>>>>>> e076f424ffc78e6d839b4e89086b72884ad52b26
         
             $objUsuario->setImage($dados_editar['email'],$new_name);
             // header("Location: Refresh: 0");
     
-<<<<<<< HEAD
-            $_SESSION["msg_edit"]='Salvo com sucesso!';
-=======
                         Usuario::setMatricula($_GET['id_user'],$_POST['matricula']);
     
                         $_SESSION["msg_edit"]='Alterações realizadas com sucesso!';
@@ -331,7 +318,6 @@ if(isset($_POST['btn_submit'])){
             }catch(PDOException $e){
                 echo($e->getMessage());
             }
->>>>>>> e076f424ffc78e6d839b4e89086b72884ad52b26
     
         }
     }
@@ -438,17 +424,10 @@ require("../includes/header/header.php");
 include_once("../includes/menu.php");
 require("../includes/main/main_editar_usuario.php");
 
-<<<<<<< HEAD
-// if(isset($_SESSION['msg_edit'])){
-//     echo"<script>modalStatus('Salvo com sucesso!','success',()=>{
-//         location.href='editar_usuario.php'
-//     })</script>";
-=======
 if(isset($_SESSION['msg_edit'])){
     echo"<script>modalStatus('Alterações realizadas com sucesso!','success',()=>{
         location.href='editar_usuario.php'
     })</script>";
->>>>>>> e076f424ffc78e6d839b4e89086b72884ad52b26
     
     unset($_SESSION['msg_edit']);
 }
@@ -457,10 +436,3 @@ if(isset($_SESSION['msg_edit'])){
 require("../includes/footer/footer.php");
 ?>
 
-<<<<<<< HEAD
-
-<!-- echo"<script>modalStatus('Salvo com sucesso!','success',()=>{
-            location.reload()
-        })</script>"; -->
-=======
->>>>>>> e076f424ffc78e6d839b4e89086b72884ad52b26
