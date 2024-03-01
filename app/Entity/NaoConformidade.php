@@ -19,7 +19,10 @@ class NaoConformidade
         $dados = $objBanco -> select("id_pergu = ".$idPergunta . " AND id_realiza = " .$idRealiza);
         // var_dump($dados -> fetchAll(PDO::FETCH_ASSOC));exit;
         if ($dados -> rowCount()) {
-            return true;
+            $dados = $dados-> fetchAll(PDO::FETCH_ASSOC)[0];
+            // var_dump($dados);exit;
+
+            return array(true, $dados);
         } else {
             return false;
         } 

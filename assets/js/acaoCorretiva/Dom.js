@@ -1,37 +1,28 @@
-import { Pergunta } from './Pergunta.js';
 
 export class Dom {     
     constructor(dataNaoConf) {
         this.dataNaoConf = dataNaoConf;
-        this.objPergunta = new Pergunta(perguntasJson);
-        this.dataPerguta = this.objPergunta.getAll();
-    }
-
-    addNaoConfToDataNaoConf(pergunta) {
-        this.dataNaoConf.push(pergunta);
     }
 
     showPerguntas() {
-        for (var pergunta of this.dataPerguta) {
-            if (pergunta["NaoConformidade"]) {
-                this.addNaoConfToDataNaoConf(pergunta);
-                this.createOneRedElement(pergunta["pergunta"], pergunta["id_pergunta"], pergunta); //checando se a pergunta tem uma nao conformidade
-                // console.log(pergunta);
-                continue;
-            }
-            this.createOneGreenElement(pergunta["pergunta"], pergunta["id_pergunta"], pergunta);
-        }
+        for (var pergunta of this.dataNaoConf) {
+            console.log(pergunta)
+             
+            
+            this.createOneRedElement(pergunta["textAreaContent"], pergunta["idPergunta"]); //checando se a pergunta tem uma nao conformidade 
+         }
     }
 
-    createOneGreenElement(pergunta, idPergunta, dadosPergunta) {
-        this.createLabelElement("label_checklist-right", pergunta, idPergunta, dadosPergunta);
+    createOneGreenElement(pergunta, idPergunta) {
+        this.createLabelElement("label_checklist-right", pergunta, idPergunta);
     }
 
-    createOneRedElement(pergunta, idPergunta, dadosPergunta) {
-        this.createLabelElement("label_checklist-wrong", pergunta, idPergunta, dadosPergunta);
+    createOneRedElement(pergunta, idPergunta) {
+        this.createLabelElement("label_checklist-wrong", pergunta, idPergunta);
     }
 
-    createLabelElement(labelClass, pergunta, idPergunta, dadosPergunta) {
+    createLabelElement(labelClass, pergunta, idPergunta) {
+         
         var mainDiv = document.createElement("div");
         mainDiv.className = "input_checklist";
         
@@ -46,7 +37,9 @@ export class Dom {
 
         
         var h1Title = document.createElement("h1");
-        h1Title.textContent = pergunta;
+        h1Title.textContent = pergunta
+
+
         
         var button = document.createElement("i");
         button.className = "bi bi-chevron-down";
@@ -64,96 +57,102 @@ export class Dom {
             var divBack = document.createElement("div");
             divBack.className = "botao-padrao-voltar-label";
 
-            var buttonIncorrect = document.createElement("button");
-            buttonIncorrect.className = "botao-voltar-link-label";
-            buttonIncorrect.textContent = "Incorreto";
-            buttonIncorrect.onclick = function() {
-                self_2.call(pergunta)
-                var buttonConfirmNaoConf = document.querySelector(".botao-confirmar-submit");
-                buttonConfirmNaoConf.onclick = function() {
-                    vermelho();
-                    var textAreaContent = document.querySelector(".descricao_nao_conf").value
-                    var varPreview = document.querySelector(".upload-img");
-                    var images = varPreview.querySelectorAll("img");
-                    self_2.save(textAreaContent, images, dadosPergunta);
-                    self_2.close();
-                }
-            }
+            // var buttonIncorrect = document.createElement("button");
+            // buttonIncorrect.className = "botao-voltar-link-label";
+            // buttonIncorrect.textContent = "Incorreto";
+            // buttonIncorrect.onclick = function() {
+            //     self_2.call(pergunta)
+            //     var buttonConfirmNaoConf = document.querySelector(".botao-confirmar-submit");
+            //     buttonConfirmNaoConf.onclick = function() {
+            //         vermelho();
+            //         var textAreaContent = document.querySelector(".descricao_nao_conf").value
+            //         var varPreview = document.querySelector(".upload-img");
+            //         var images = varPreview.querySelectorAll("img");
+            //         self_2.save(textAreaContent, images, idPergunta);
+            //         self_2.close();
+            //     }
+            // }
 
             var divSubmit = document.createElement("div");
             divSubmit.className = "botao-padrao-cadastrar-label";
 
             var buttonSubmit = document.createElement("button");
             buttonSubmit.className = "botao-cadastrar-submit-label";
-            buttonSubmit.textContent = "Correto";
+            buttonSubmit.textContent = "Resolver";
             buttonSubmit.type = "button";
             buttonSubmit.onclick = function() {
-                if (labelDiv.classList.contains("label_checklist-wrong") && labelDiv.classList.contains("active")) {
-                    vermelho();
-                }
-                else
-                {
+                // verde();
+
+                self_2.call(pergunta)
+                var buttonConfirmNaoConf = document.querySelector(".botao-confirmar-submit");
+                buttonConfirmNaoConf.onclick = function() {
                     verde();
+                    var textAreaContent = document.querySelector(".descricao_nao_conf").value
+                    var varPreview = document.querySelector(".upload-img");
+                    var images = varPreview.querySelectorAll("img");
+                    self_2.save(textAreaContent, images, idPergunta);
+                    self_2.close();
                 }
             }
-            divBack.appendChild(buttonIncorrect);
+            // divBack.appendChild(buttonIncorrect);
             divSubmit.appendChild(buttonSubmit);
             motherButtons.appendChild(divBack);
             motherButtons.appendChild(divSubmit);
             labelDiv.appendChild(motherButtons);
         }
 
+        function encontrarObjetoPorId(array, id) {
+            return array.find(objeto => objeto.idPergunta === id);
+        }
+
         function descerNormal()
         {
-            // console.log(self_1.dataNaoConf)
+            montarBotoes();
             labelDiv.classList.add("active");
+
             if (labelDiv.classList.contains("label_checklist-wrong")) {
                 labelDiv.style.backgroundColor = 'transparent';
                 labelDiv.style.border = '3px solid red';
                 button.className = "bi bi-chevron-down"
-                labelDiv.style.height = (labelDiv.offsetHeight + 250) + "px";
-                
+                labelDiv.style.height = (labelDiv.offsetHeight + 400) + "px";
+
                 let imagens = document.createElement("div");
-                imagens.className = "imagens-container";
-                // imagens.style.backgroundColor = "red";
+                imagens.className = "imagens-container-acao-corretiva areaImgPergunta"+idPergunta;
                 imagens.style.width = "100%";
                 imagens.style.height = "300px";
-                // imagens.style.marginBottom = "10px";
                 imagens.style.display = "flex";
-                // imagens.style.justifyContent = "space-between";
                 imagens.style.alignItems = "center";
-                // imagens.style.justifyContent = "center";
-                
-                for (let i = 0; i < 3; i++) {
-                    let divImg = document.createElement("div");
-                    divImg.style.display = "flex";
-                    divImg.style.justifyContent = "center";
+
+                // let divImg = document.createElement("div");
+                // let img = document.createElement("img");
+
+                // console.log(encontrarObjetoPorId(self_1.dataNaoConf,idPergunta))
+                let dataPergunta = encontrarObjetoPorId(self_1.dataNaoConf,idPergunta)
+                let imgsPergunta = dataPergunta['imagesToPHP']
+
+
+                imgsPergunta.forEach(img_base64 => {
                     
-                    if (dadosPergunta["imagesToPHP"][i] != "") {
-                        let img = document.createElement("img");
-                        img.className = "beluga";
-                        img.style.width = "100%";
+                    let img_element = document.createElement('img')
+                    if(img_base64.startsWith('data:image')){
 
-
-                        let imgNameInServer = dadosPergunta["imagesToPHP"][i];
-                        let basepath = "../storage/n_conformidade/";
-                        let caminhoAbsoluto = basepath + imgNameInServer;
-                        // img.src = basepath + "65de2c242e07b_nc.png"; //teste
-                        img.src = caminhoAbsoluto;
-                        // console.log(dadosPergunta["imagesToPHP"][i])
-                        divImg.appendChild(img);
-                        imagens.appendChild(divImg)
+                        img_element.src = img_base64
+                    }else{
+                        img_element.src = '../storage/salas/'+img_base64
                     }
-                }
-                
-                labelDiv.appendChild(imagens)
-                // let nextDivToInsert = document.querySelector(".alinar-botoes-label");
-                // let dadElement = nextDivToInsert.parentNode;
-                
-                // dadElement.insertBefore(imagens, nextDivToInsert);
+                    img_element.style.width = '30%'
+                    img_element.classList.add('beluga')
+                    imagens.appendChild(img_element)
+
+                }); 
+ 
+                let nextDivToInsert = document.querySelector(".alinar-botoes-label");
+                let dadElement = labelDiv;
+
+                dadElement.insertBefore(imagens, labelDiv.querySelector('.alinar-botoes-label'));
             }
+
             else if (labelDiv.classList.contains("label_checklist-right")) {
-                montarBotoes();
                 labelDiv.style.backgroundColor = 'transparent';
                 labelDiv.style.border = '3px solid green';
                 button.className = "bi bi-chevron-down"
@@ -166,28 +165,31 @@ export class Dom {
             if (labelDiv.classList.contains("incorrect")) {
                 labelDiv.classList.remove("incorrect");
             }
-            for (var i = 0; i < self_1.dataNaoConf.length; i++) {
-                var Nconf = self_1.dataNaoConf[i];
-                if (Nconf["idPergunta"] == idPergunta) {
-                    self_1.dataNaoConf.splice(i, 1);
-                    // console.log("AAAAAAAAAAAAAAAAAAAAAAAAAA")
-                }
-            }
-            // console.log(self_1.dataNaoConf);
+            // for (var i = 0; i < self_1.dataNaoConf.length; i++) {
+            //     var Nconf = self_1.dataNaoConf[i];
+            //     if (Nconf["idPergunta"] == idPergunta) {
+            //         self_1.dataNaoConf.splice(i, 1);
+            //         // console.log("AAAAAAAAAAAAAAAAAAAAAAAAAA")
+            //     }
+            // }
+            console.log(self_1.dataNaoConf);
 
         }
 
         function subirNormal()
         {
-            if (labelDiv.querySelector(".imagens-container") !== null) {
-                labelDiv.querySelector(".imagens-container").remove();
-                labelDiv.style.height = (labelDiv.offsetHeight - 250) + "px";
+            if (labelDiv.querySelector(".imagens-container-acao-corretiva") !== null) {
+                labelDiv.querySelector(".imagens-container-acao-corretiva").remove();
+                labelDiv.style.height = (labelDiv.offsetHeight - 400) + "px";
                 labelDiv.classList.remove("active");
+                labelDiv.removeChild(motherButtons);
             } else {
                 labelDiv.style.height = (labelDiv.offsetHeight - 125) + "px";
                 labelDiv.classList.remove("active");
                 labelDiv.removeChild(motherButtons);
             }
+
+
 
             if (labelDiv.classList.contains("correct")) {
                 labelDiv.classList.remove("correct");
@@ -196,7 +198,6 @@ export class Dom {
                 labelDiv.classList.remove("incorrect");
             }
         }
-
 
         function verde()
         {
@@ -208,19 +209,10 @@ export class Dom {
 
         function vermelho()
         {
-            if (labelDiv.classList.contains("label_checklist-wrong")) {
-                //vermelho
-                labelDiv.style.backgroundColor = 'red';
-                labelDiv.classList.add("correct");
-                button.className = "bi bi-arrow-clockwise";
-            }
-            else 
-            {
-                //vermelho
-                labelDiv.style.backgroundColor = 'red';
-                labelDiv.classList.add("incorrect");
-                button.className = "bi bi-arrow-clockwise";
-            }
+            //vermelho
+            labelDiv.style.backgroundColor = 'red';
+            labelDiv.classList.add("incorrect");
+            button.className = "bi bi-arrow-clockwise";
         }
 
         var motherButtons;
@@ -232,12 +224,12 @@ export class Dom {
             else if (labelDiv.classList.contains("active") && !labelDiv.classList.contains("correct") && !labelDiv.classList.contains("incorrect"))
             {
                 subirNormal();
-                // console.log("subiu normal transparente");
+                console.log("subiu normal transparente");
             }
             else
             {
                 descerNormal();
-                // console.log("desceu normal transparente");
+                console.log("desceu normal transparente");
             }
         }
 
@@ -264,21 +256,8 @@ export class Dom {
 
         var confirmButton = document.createElement("button");
         confirmButton.className = "botao-confirmar-submit";
-        confirmButton.textContent = "Confirmar";
-        // confirmButton.onclick = function() {
-        //     labelDiv = document.querySelector("#label-div");
-        //     labelDiv.classList.add("incorrect");
-            //vermelho
-            // labelDiv.style.backgroundColor = 'red';
-            // labelDiv.classList.add("incorrect");
-            // buttonBIBI.className = "bi bi-arrow-clockwise";
-
-        //     var textAreaContent = document.querySelector(".descricao_nao_conf").value
-        //     var varPreview = document.querySelector(".upload-img");
-        //     var images = varPreview.querySelectorAll("img");
-        //     self.save(textAreaContent, images);
-        //     self.close();
-        // }
+        confirmButton.textContent = "Resolver";
+         
 
         divBotoes.appendChild(cancelButton);
         divBotoes.appendChild(confirmButton);
@@ -309,33 +288,24 @@ export class Dom {
         for (var i = childs.length - 1; i >= 0; i--) {
             document.querySelector(".pergunta_nao_conf").removeChild(childs[i]);
         }
-    }
+        }
 
-    save(textAreaContent, images, dadosPergunta) {
+    save(textAreaContent, images, idPergunta) {
         var data = {};
-        var imagesToPHP = {};
+        var imagesToPHP = [];
     
         // ARMAZENANDO AS IMAGENS
         for (let i = 0; i < images.length; i++) {
             var src = images[i].getAttribute("src");
-
             imagesToPHP[i] = src;
         }
-        
-        // console.log(dadosPergunta)
-        data["responsavel"] = "logistica";
-        data["NaoConformidade"] = true;
-        data["nome_check"] = dadosPergunta["nome_check"];
-        data["id_sala"] = dadosPergunta ["id_sala"];
-        data["id_pergunta"] = dadosPergunta ["id_pergunta"];
-        data["nome_sala"] = dadosPergunta ["nome_sala"];
-        data["pergunta"] = dadosPergunta ["pergunta"];
+    
+        data["idPergunta"] = idPergunta;
         data["textAreaContent"] = textAreaContent;
-        data["tipo"] = dadosPergunta ["tipo"];
         data["imagesToPHP"] = imagesToPHP;
 
         this.dataNaoConf.push(data);
-        // console.log(this.dataNaoConf)
+        console.log(this.dataNaoConf)
 
     }
 
@@ -372,8 +342,7 @@ export class Dom {
     
         for (let i = 0; i < IMAGES_TO_PROCESS; i++) {
             const FILE = MULTIPLE_FILES[i];
-
-            
+    
             if (!FILE.type.startsWith("image/")) {
                 continue;
             }
@@ -382,7 +351,6 @@ export class Dom {
             IMG.className = "beluga";
             
             
-
             let reader = new FileReader();
 
             reader.onload = (e) => {

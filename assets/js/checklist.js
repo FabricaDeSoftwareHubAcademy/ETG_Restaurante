@@ -21,7 +21,7 @@ let listaData = {
 
 }
 
-function atualizarValor(id, bool)
+function atualizarValor(id, bool, descPergunta)
 
 
 {
@@ -64,7 +64,7 @@ function atualizarValor(id, bool)
         green.classList = 'bi bi-check'
         red.classList = 'bi bi-x-circle'
         respondidas[id] = false
-        acao(id)
+        acao(id, descPergunta)
 
 
     }

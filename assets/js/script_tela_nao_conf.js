@@ -57,10 +57,17 @@ $(document).ready(function(){
 
 });
 let currentID;
-function acao(id){
+function acao(id, descPergunta){
     
     console.log(id)
-
+    var areaPergunta = document.querySelector(".pergunta");
+    // areaPergunta.style.textAlign = "center";
+    areaPergunta.style.display = "flex";
+    areaPergunta.style.justifyContent = "center";
+    var descricaoPergunta = document.createElement("p");
+    descricaoPergunta.textContent = descPergunta;
+    // descricaoPergunta.style.textAlign = "center";
+    areaPergunta.appendChild(descricaoPergunta);
     currentID = id
     let modal = document.querySelector('.mom')
 

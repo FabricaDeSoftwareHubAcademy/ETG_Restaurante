@@ -200,6 +200,39 @@ height: 100%;
 border-radius: 1000000%;
 
 }
+<<<<<<< HEAD
+=======
+/* 
+@media (max-width: 832px) {
+  .name-name{
+    font-family: 'Montserrat';
+    font-weight: bold;
+    margin-top: 16%;
+    padding-left: 3%;
+  }
+
+  .alinhar-input{
+    margin-top: 2%;
+    padding-left: 3%;
+} 
+  
+.alinhar-botao{
+  margin-top: 30%;
+
+}
+
+  }
+.centralizar_botoes_alterar_senha{
+
+  margin-top: 40px;
+}
+.centralizar_input_alterar_senha{
+
+  margin: 0% auto;
+  margin-bottom: 50px;
+
+} */
+>>>>>>> e076f424ffc78e6d839b4e89086b72884ad52b26
 
 @media(min-width: 832px){
 #icon-input{
