@@ -16,6 +16,7 @@ export class Dom {
             if (pergunta["NaoConformidade"]) {
                 this.addNaoConfToDataNaoConf(pergunta);
                 this.createOneRedElement(pergunta["pergunta"], pergunta["id_pergunta"], pergunta); //checando se a pergunta tem uma nao conformidade
+                console.log(pergunta);
                 continue;
             }
             this.createOneGreenElement(pergunta["pergunta"], pergunta["id_pergunta"], pergunta);
@@ -127,17 +128,22 @@ export class Dom {
                     let divImg = document.createElement("div");
                     divImg.style.display = "flex";
                     divImg.style.justifyContent = "center";
-                    let img = document.createElement("img");
-                    let imgNameInServer = dadosPergunta["imagesToPHP"][i];
-                    let basepath = "../storage/n_conformidade/";
-                    let caminhoAbsoluto = basepath + imgNameInServer;
-                    img.className = "beluga";
-                    img.style.width = "100%";
-                    // img.src = basepath + "65de2c242e07b_nc.png"; //teste
-                    img.src = caminhoAbsoluto;
-                    // console.log(dadosPergunta["imagesToPHP"][i])
-                    divImg.appendChild(img);
-                    imagens.appendChild(divImg)
+                    
+                    if (dadosPergunta["imagesToPHP"][i] != "") {
+                        let img = document.createElement("img");
+                        img.className = "beluga";
+                        img.style.width = "100%";
+
+
+                        let imgNameInServer = dadosPergunta["imagesToPHP"][i];
+                        let basepath = "../storage/n_conformidade/";
+                        let caminhoAbsoluto = basepath + imgNameInServer;
+                        // img.src = basepath + "65de2c242e07b_nc.png"; //teste
+                        img.src = caminhoAbsoluto;
+                        // console.log(dadosPergunta["imagesToPHP"][i])
+                        divImg.appendChild(img);
+                        imagens.appendChild(divImg)
+                    }
                 }
                 
                 labelDiv.appendChild(imagens)
