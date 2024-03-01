@@ -326,12 +326,13 @@ font-size: 20px;
 resize: none;
 }
 
-.quadrado_text { 
-line-height: 1.5;
-width: 100%;
-border-radius: 5px;
-border: 1px solid #ccc;
-box-shadow: 1px 1px 1px #999;
+.quadrado_text {
+  padding: 10px; 
+  line-height: 1.5;
+  width: 100%;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  box-shadow: 1px 1px 1px #999;
 }
 
 .titulo-notificacao{
