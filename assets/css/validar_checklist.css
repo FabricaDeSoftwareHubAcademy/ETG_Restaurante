@@ -280,6 +280,15 @@ border-radius: 10px;
   justify-content: space-between;
 }
 
+.imagens-container-acao-corretiva{
+
+  
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+
+
+}
 
 @media(max-width:1400px){
   .botoes{
