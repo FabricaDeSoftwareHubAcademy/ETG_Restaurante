@@ -319,7 +319,7 @@ export class Dom {
         // ARMAZENANDO AS IMAGENS
         for (let i = 0; i < images.length; i++) {
             var src = images[i].getAttribute("src");
-            console.log(src)
+        
             imagesToPHP[i] = src;
         }
     
@@ -328,7 +328,7 @@ export class Dom {
         data["imagesToPHP"] = imagesToPHP;
 
         this.dataNaoConf.push(data);
-        // console.log(this.dataNaoConf)
+        console.log(this.dataNaoConf)
 
     }
 
@@ -383,10 +383,7 @@ export class Dom {
                 IMG.src = e.target.result
              }
 
-            reader.readAsDataURL(FILE) 
-
-
-             
+            reader.readAsDataURL(FILE)  
             
             var container_img = document.createElement("div");
     
