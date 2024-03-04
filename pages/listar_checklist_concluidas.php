@@ -36,7 +36,7 @@ foreach($checklist as $row){
                             <div class="card_header_subtitle">
                                 <p>Aberto: '.$row['data_abertura'].'</p>
                                 <p>Fechado: '.$row['data_fechamento'].'</p>
-                                <p>Responsavel: '.strtok($row['nome'],' ').'</p>
+                                <p>Docente: '.strtok($row['nome'],' ').'</p>
                             </div>
 
                         </div>
