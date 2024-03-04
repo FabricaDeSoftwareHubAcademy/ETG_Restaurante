@@ -61,11 +61,11 @@ class Sala
 
 
     //READ
-    public static function getDados($col = '', $where = '')
+    public static function getDados($col = '*', $where = null)
     {
         $obj_banco = new Banco('quem_abriu');
 
-        $salas = $obj_banco -> select(order:"status ASC",campos: $col,where: $where) -> fetchAll(PDO::FETCH_ASSOC);
+        $salas = $obj_banco -> select(order:"status ASC, id asc",campos: $col,where: $where) -> fetchAll(PDO::FETCH_ASSOC);
 
         return $salas;
     }
