@@ -30,7 +30,7 @@
                     <a href="listar_salas.php" class="botao-voltar-link" id="buttonBackModalNaoConf">Voltar</a>
                 </div>
                 <div class="botao-padrao-cadastrar">
-                    <button name="btn_submit" type="submit" class="botao-cadastrar-submit" id="botao-cadastrar-submit" value="CADASTRAR">Ação Corretiva</button>
+                    <button name="btn_submit" type="submit" class="botao-cadastrar-submit" id="btn-cadastrar-acao-corretiva" value="CADASTRAR">Ação Corretiva</button>
                 </div>
             </div>
 
