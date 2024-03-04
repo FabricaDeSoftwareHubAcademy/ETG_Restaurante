@@ -13,7 +13,7 @@ $usuario = new Usuario();
 $sala = new Sala();
 
 $dadosRelatorio = $relatorio -> getAll();
-$dadosUsuario = $usuario::getDados();
+$dadosUsuario = $relatorio::getUsers();
 $dadosSala = $sala::getDados();
 
 // foreach($dadosSala as $row) {
