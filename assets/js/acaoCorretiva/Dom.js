@@ -118,7 +118,7 @@ export class Dom {
         {
             montarBotoes();
             labelDiv.classList.add("active");
-            console.log(self_1.dataAcaoCorretiva);
+            // console.log(self_1.dataAcaoCorretiva);
 
             if (labelDiv.classList.contains("label_checklist-wrong")) {
                 labelDiv.style.backgroundColor = 'transparent';
@@ -174,16 +174,17 @@ export class Dom {
             if (labelDiv.classList.contains("incorrect")) {
                 labelDiv.classList.remove("incorrect");
             }
+            console.log(self_1.dataAcaoCorretiva);
             for (var i = 0; i < self_1.dataAcaoCorretiva.length; i++) {
                 var Acorretiva = self_1.dataAcaoCorretiva[i];
                 
+                // console.log(Acorretiva);
                 if (Acorretiva["id_pergunta"] == idPergunta) {
                     self_1.dataAcaoCorretiva.splice(i, 1);
                     // console.log("AAAAAAAAAAAAAAAAAAAAAAAAAA")
                 }
-            }
-            console.log(self_1.dataAcaoCorretiva);
 
+            }
         }
 
         function subirNormal()
@@ -312,7 +313,7 @@ export class Dom {
         }
         
         dataAcaoCorretiva["acaoCorretiva"] = true;
-        dataAcaoCorretiva["idPergunta"] = dataNaoConformidade["id_pergunta"];
+        dataAcaoCorretiva["id_pergunta"] = dataNaoConformidade["id_pergunta"];
         dataAcaoCorretiva["textAreaContent"] = textArea_AcaoCorretiva;
         dataAcaoCorretiva["imagesToPHP"] = imagesToPHP;
 
