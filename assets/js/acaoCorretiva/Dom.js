@@ -1,12 +1,13 @@
 
 export class Dom {     
-    constructor(dataNaoConf) {
+    constructor(dataNaoConf, dataAcaoCorretiva) {
         this.dataNaoConf = dataNaoConf;
+        this.dataAcaoCorretiva = dataAcaoCorretiva
     }
 
     showPerguntas() {
         for (var pergunta of this.dataNaoConf) {
-            console.log(pergunta)
+            // console.log(pergunta)
              
             
             this.createOneRedElement(pergunta["textAreaContent"], pergunta["idPergunta"]); //checando se a pergunta tem uma nao conformidade 
@@ -171,7 +172,7 @@ export class Dom {
             //         // console.log("AAAAAAAAAAAAAAAAAAAAAAAAAA")
             //     }
             // }
-            console.log(self_1.dataNaoConf);
+            // console.log(self_1.dataNaoConf);
 
         }
 
@@ -223,12 +224,12 @@ export class Dom {
             else if (labelDiv.classList.contains("active") && !labelDiv.classList.contains("correct") && !labelDiv.classList.contains("incorrect"))
             {
                 subirNormal();
-                console.log("subiu normal transparente");
+                // console.log("subiu normal transparente");
             }
             else
             {
                 descerNormal();
-                console.log("desceu normal transparente");
+                // console.log("desceu normal transparente");
             }
         }
 
@@ -303,8 +304,8 @@ export class Dom {
         data["textAreaContent"] = textAreaContent;
         data["imagesToPHP"] = imagesToPHP;
 
-        this.dataNaoConf.push(data);
-        console.log(this.dataNaoConf)
+        this.dataAcaoCorretiva.push(data);
+        console.log(this.dataAcaoCorretiva)
 
     }
 
