@@ -9,7 +9,11 @@ if(!$ifreacheck){
 }
 use App\Entity\Checklist;
 use App\Entity\Pergunta;
-use App\Entity\Sala; 
+use App\Entity\Sala;
+$cond = Sala::getDados('responsavel, status','id = '.$_GET['id']);
+if($_SESSION['id_user'] != $cond[0]['responsavel'] || $cond[0]['status'] != 'A'){
+    header("Location: ./listar_recados.php");
+}
 $obj_checklist = new Checklist();
 $obj_pergunta = new Pergunta();
 $dados_imprimir = "";
@@ -20,7 +24,7 @@ $id_sala = $_GET["id_sala"]; //do metodo GET
 $id_usuario = isset($_SESSION['id_user']) ? $_SESSION['id_user'] : ""; //do metodo GET
 $data_fechamento = null;
 
-$dados_pergunta = $obj_pergunta::getDados($id_sala);  
+$dados_pergunta = $obj_pergunta::getDados($id_sala); 
 $dados_sala = $obj_sala::getDadosById($id_sala);
 // var_dump($dados_pergunta);exit;
 

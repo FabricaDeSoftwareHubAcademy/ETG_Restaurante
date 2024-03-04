@@ -161,7 +161,7 @@ $ifreaac = $perfil['realizar_acao_corretiva'] == '1';
                 
                 <li class="link_submenu4"> 
                     <?php
-                        if($ifgensala || $ifperfil){
+                        if($ifreaac){
                             echo '
                             <li class="li-menu">   
                                 <a href="#" class="link-menu">
@@ -170,10 +170,9 @@ $ifreaac = $perfil['realizar_acao_corretiva'] == '1';
                                 </a>
                                 
                                 <ul class="sub-menu4">
-                                '.
-                                ($ifgensala ? '<li class="iten-submenu4"><a href="../pages/cadastrar_sala.php" id="fonte-submenu">Cadastrar  Salas</a></li>' : '').
-                                ($ifperfil ? '<li class="iten-submenu4"><a href="../pages/cadastrar_perfil.php" id="fonte-submenu2">Cadastrar  Perfil</a></li>' : '')
-                                .'
+                                    <li class="iten-submenu4"><a href="../pages/cadastrar_sala.php" id="fonte-submenu">relatorio geral</a></li>
+                                    <li class="iten-submenu4"><a href="../pages/relatorio_usuarios.php" id="fonte-submenu">relatorio usuarios</a></li>
+                                    <li class="iten-submenu4"><a href="../pages/relatorio.php" id="fonte-submenu">relatorio salas</a></li>
                                 </ul>
                             </li> ';
                         }
