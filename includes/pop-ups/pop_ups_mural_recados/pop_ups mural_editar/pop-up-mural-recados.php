@@ -14,9 +14,9 @@
                <textarea maxlength="100"  placeholder="Digite seu recado: " name="descricao_sala" cols="70" rows="10" class="text-descricao-pop-up" id="text-descricao-pop-up"  name="text-descricao-pop-up"></textarea>
            </div>
            <section class="container-pop-up-botaoes">
-             <div class="botao-padrao-excluir">
+             <!-- <div class="botao-padrao-excluir">
                <input type="reset" class="botao-excluir-submit"  value="EXCLUIR" onclick="closePopup()"></a>
-             </div>
+             </div> -->
              <div class="botao-padrao-voltar">
                <input type="reset" class="botao-voltar-submit"  value="VOLTAR" onclick="closePopup()"></a>
              </div>

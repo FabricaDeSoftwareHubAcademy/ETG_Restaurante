@@ -5,13 +5,20 @@
   width: 100%;
   
 }
+
 .text_tipo_perg{
-
-  position: absolute;
+  font-family: 'Montserrat', sans-serif;
+  /* position: absolute; */
   background-color: transparent;
-  width: 30px;
-
+  width: 70px;
+  font-size: 17px;
 }
+
+.wasd{
+  display: flex;
+  align-items: center;
+}
+
 .input_group {
     position: relative;
     padding: 20px 0 0;

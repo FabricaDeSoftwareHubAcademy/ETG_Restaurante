@@ -27,9 +27,8 @@ foreach ($dados_user as $row_user)
                 <div class="card_nome">
                     <h2 class="tipo_perfil">'.$row_user["nome"].'</h2>
                 </div>
-    
-                <a href="/ETG_Escola/pages/editar_usuarios.php?id='.$row_user["id"].'"><img src="../assets/imgs/icons/icon_editar.png" alt="icone_editar" class="icone_editar"></a> 
-                <a class="bi bi-trash" href="actions/perfil_delete_action.php?id='.$row_user["id"].'"></a> 
+                <i href="/ETG_Escola/pages/editar_usuarios.php?id='.$row_user["id"].'" class="bi bi-pencil-square" alt="icone_editar"></i>
+                <a class="bi bi-trash" href="actions/perfil_delete_action.php?id='.$row_user["id"].'"></a>
             </div>
         </div>
     </li>';
@@ -39,3 +38,7 @@ foreach ($dados_user as $row_user)
 require("../includes/main/main_visualizar_usuarios.php");
 require("../includes/footer/footer.php");
 ?>
+
+
+<!-- <a href="/ETG_Escola/pages/editar_usuarios.php?id='.$row_user["id"].'"><img src="../assets/imgs/icons/icon_editar.png"           alt="icone_editar" class="icone_editar"></a>
+     <a class="bi bi-trash" href="actions/perfil_delete_action.php?id='.$row_user["id"].'"></a>  -->

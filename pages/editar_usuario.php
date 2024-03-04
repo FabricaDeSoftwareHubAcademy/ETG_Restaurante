@@ -27,7 +27,10 @@ $foto = $dados_editar['foto'];
 
 if(!isset($_GET['id_user'])){
 
+    $sla = '<h1 class="titulo-perfil">Minha Conta</h1>';
 
+    $voltar = '<a href="listar_recados.php" class="botao-voltar-submit" >VOLTAR</a>';
+    
     $area_edit = '<section class="editar_senha">
     <section class="titulo_alterar_senha">
         <h1>Alterar Senha</h1>
@@ -57,9 +60,126 @@ if(!isset($_GET['id_user'])){
 
     </section>';
 
+    
+    if(isset($_FILES['foto'])){
+
+        if(strlen($_FILES['foto']['name']) > 0 ){ 
+        
+            
+            $name_img = $_FILES['foto']['name'];
+            $new_name  = uniqid(). '-' . substr($name_img, 0, 20);
+            $path = '../assets/imgs/users/';
+            move_uploaded_file($_FILES['foto']['tmp_name'], $path.$new_name);
+            
+            // unlink($path . $dados_editar['foto']);
+        
+            $objUsuario->setImage($dados_editar['email'],$new_name);
+            // header("Location: Refresh: 0");
+
+            $_SESSION["msg_edit"]='Alterações realizadas com sucesso!';
+
+        }
+    }
+    if(isset($_POST['btn_submit'])){
+        
+        // setar nome 
+        
+        
+        if(isset($_POST['nome'])){
+
+
+            $objUsuario -> setName($_POST['nome'],$dados_editar['email']);  
+            // header("Location: {$_SERVER['PHP_SELF']}");
+            $_SESSION["msg_edit"]='Alterações realizadas com sucesso!';
+
+
+        }else{
+
+            $objUsuario -> setName($dados_editar['nome'],$dados_editar['email']); 
+            $_SESSION["msg_edit"]='Alterações realizadas com sucesso!';
+
+        }
+        
+        if (strlen($_POST['senhaantiga']) > 0 and strlen($_POST['novasenha']) > 0 and strlen($_POST['confirmarnovasenha']) > 0 )
+        {
+            
+
+            if ($_POST['novasenha'] == $_POST['confirmarnovasenha']){
+                $objUsuario -> setPasswordByEmail($dados_editar['email'],$_POST['novasenha']); 
+                $_SESSION["msg_edit"]='Alterações realizadas com sucesso!';
+            
+                
+            }else{
+                
+                $erro = true;
+
+            } 
+        } 
+        else
+        {
+            $erro = true; 
+        } 
+
+        if(isset($_POST['email'])){
+    
+            if(strlen($_POST['email']) > 0 and strlen($_POST['matricula']) > 0){
+        
+        
+                try{
+        
+                    $dadosByEmail     = Usuario::getDadosByEmail($_POST['email']);
+                    $dadosByMatricula = Usuario::getDadosByMatricula($_POST['matricula']);
+        
+        
+                    if(empty($dadosByEmail) || empty($dadosByMatricula)){
+        
+                        if(empty($dadosByEmail)){
+                            
+                            Usuario::setEmail($_GET['id_user'],$_POST['email']);
+                            $_SESSION["msg_edit"]='Alterações realizadas com sucesso!';
+            
+                        }else{
+                            // retornar que E-Mail ja esta sendo utilizado por outro usuario
+                        }
+                        
+                        if(empty($dadosByMatricula)){ 
+        
+                            Usuario::setMatricula($_GET['id_user'],$_POST['matricula']);
+        
+                            $_SESSION["msg_edit"]='Alterações realizadas com sucesso!';
+                        
+                        }else{
+                            // retornar que matricula ja esta sendo utilizado por outro usuario
+                        }
+        
+                    }
+                    
+                }catch(PDOException $e){
+                    echo($e->getMessage());
+                }
+        
+            }
+        }
+
+        
+        
+        
+    }
+
+    if(isset($_SESSION['msg_edit'])){
+        echo"<script>modalStatus('Alterações realizadas com sucesso!','success',()=>{
+            location.href='editar_usuario.php'
+        })</script>";
+        
+        unset($_SESSION['msg_edit']);
+    }
 
 
 }else{
+
+    $sla = '<h1 class="titulo-perfil">Editar Usuário</h1>';
+
+    $voltar = '<a href="visualizar_usuario.php" class="botao-voltar-submit" >VOLTAR</a>';
 
     $area_edit = '
     <section class="editar_senha">
@@ -71,6 +191,7 @@ if(!isset($_GET['id_user'])){
         <section class="centralizar_input_alterar_senha">
 
             <div class="input_senha_group field">
+                <i class="bi bi-pencil-square kkk"></i>
                 <input name="email" type="text" class="input_senha_field" placeholder="Name" value="'.$dados_editar['email'].'">
                 <label for="name" class="input_senha_label">E-Mail</label> <!--Alterar para o nome do input-->
             </div>
@@ -87,6 +208,7 @@ if(!isset($_GET['id_user'])){
         <section class="centralizar_input_alterar_senha">
 
             <div class="input_senha_group field">
+                <i class="bi bi-pencil-square kkk"></i>
                 <input name="matricula" type="text" class="input_senha_field" placeholder="Name" value="'.$dados_editar['matricula'].'">
                 <label for="name" class="input_senha_label">Número de Matrícula</label> <!--Alterar para o nome do input-->
             </div>
@@ -94,13 +216,9 @@ if(!isset($_GET['id_user'])){
         </section> 
     </div> 
 
-</section>
-    
-    
-    ';
+    </section>';
 
-}
-
+    
 
 if(isset($_FILES['foto'])){
 
@@ -117,7 +235,7 @@ if(isset($_FILES['foto'])){
         $objUsuario->setImage($dados_editar['email'],$new_name);
         // header("Location: Refresh: 0");
 
-        $_SESSION["msg_edit"]='Salvo com sucesso!';
+        $_SESSION["msg_edit"]='Alterações realizadas com sucesso!';
 
     }
 }
@@ -131,13 +249,13 @@ if(isset($_POST['btn_submit'])){
 
         $objUsuario -> setName($_POST['nome'],$dados_editar['email']);  
         // header("Location: {$_SERVER['PHP_SELF']}");
-        $_SESSION["msg_edit"]='Salvo com sucesso!';
+        $_SESSION["msg_edit"]='Alterações realizadas com sucesso!';
 
 
     }else{
 
         $objUsuario -> setName($dados_editar['nome'],$dados_editar['email']); 
-        $_SESSION["msg_edit"]='Salvo com sucesso!';
+        $_SESSION["msg_edit"]='Alterações realizadas com sucesso!';
 
     }
     
@@ -147,8 +265,13 @@ if(isset($_POST['btn_submit'])){
 
         if ($_POST['novasenha'] == $_POST['confirmarnovasenha']){
             $objUsuario -> setPasswordByEmail($dados_editar['email'],$_POST['novasenha']); 
-            $_SESSION["msg_edit"]='Salvo com sucesso!';
+            $_SESSION["msg_edit"]='Alterações realizadas com sucesso!';
           
+             
+            $name_img = $_FILES['foto']['name'];
+            $new_name  = uniqid(). '-' . substr($name_img, 0, 20);
+            $path = '../assets/imgs/users/';
+            move_uploaded_file($_FILES['foto']['tmp_name'], $path.$new_name);
             
         }else{
             
@@ -177,17 +300,14 @@ if(isset($_POST['btn_submit'])){
                     if(empty($dadosByEmail)){
                         
                         Usuario::setEmail($_GET['id_user'],$_POST['email']);
-                        $_SESSION["msg_edit"]='Salvo com sucesso!';
+                        $_SESSION["msg_edit"]='Alterações realizadas com sucesso!';
         
-                    }else{
-                        // retornar que E-Mail ja esta sendo utilizado por outro usuario
-                    }
-                    
-                    if(empty($dadosByMatricula)){ 
+            $objUsuario->setImage($dados_editar['email'],$new_name);
+            // header("Location: Refresh: 0");
     
                         Usuario::setMatricula($_GET['id_user'],$_POST['matricula']);
     
-                        $_SESSION["msg_edit"]='Salvo com sucesso!';
+                        $_SESSION["msg_edit"]='Alterações realizadas com sucesso!';
                     
                     }else{
                         // retornar que matricula ja esta sendo utilizado por outro usuario
@@ -201,11 +321,103 @@ if(isset($_POST['btn_submit'])){
     
         }
     }
+    if(isset($_POST['btn_submit'])){
+         
+        // setar nome 
+        
+         
+        if(isset($_POST['nome'])){
+    
+    
+            $objUsuario -> setName($_POST['nome'],$dados_editar['email']);  
+            // header("Location: {$_SERVER['PHP_SELF']}");
+            $_SESSION["msg_edit"]='Alterações realizadas com sucesso!';
+    
+    
+        }else{
+    
+            $objUsuario -> setName($dados_editar['nome'],$dados_editar['email']); 
+            $_SESSION["msg_edit"]='Alterações realizadas com sucesso!';
+    
+        }
+        
+        // if (strlen($_POST['senhaantiga']) > 0 and strlen($_POST['novasenha']) > 0 and strlen($_POST['confirmarnovasenha']) > 0 )
+        // {
+             
+    
+        //     if ($_POST['novasenha'] == $_POST['confirmarnovasenha']){
+        //         $objUsuario -> setPasswordByEmail($dados_editar['email'],$_POST['novasenha']); 
+        //         $_SESSION["msg_edit"]='Alterações realizadas com sucesso!';
+              
+                
+        //     }else{
+                
+        //         $erro = true;
+    
+        //     } 
+        // } 
+        // else
+        // {
+        //     $erro = true; 
+        // } 
+    
+        if(isset($_POST['email'])){
+     
+            if(strlen($_POST['email']) > 0 and strlen($_POST['matricula']) > 0){
+        
+        
+                try{
+        
+                    $dadosByEmail     = Usuario::getDadosByEmail($_POST['email']);
+                    $dadosByMatricula = Usuario::getDadosByMatricula($_POST['matricula']);
+        
+         
+                    if(empty($dadosByEmail) || empty($dadosByMatricula)){
+        
+                        if(empty($dadosByEmail)){
+                            
+                            Usuario::setEmail($_GET['id_user'],$_POST['email']);
+                            $_SESSION["msg_edit"]='Alterações realizadas com sucesso!';
+            
+                        }else{
+                            // retornar que E-Mail ja esta sendo utilizado por outro usuario
+                        }
+                        
+                        if(empty($dadosByMatricula)){ 
+        
+                            Usuario::setMatricula($_GET['id_user'],$_POST['matricula']);
+        
+                            $_SESSION["msg_edit"]='Alterações realizadas com sucesso!';
+                        
+                        }else{
+                            // retornar que matricula ja esta sendo utilizado por outro usuario
+                        }
+        
+                    }
+                     
+                }catch(PDOException $e){
+                    echo($e->getMessage());
+                }
+        
+            }
+        }
+    
+        
+        
+        
+    }
 
-    
-    
-    
-}
+    if(isset($_SESSION['msg_edit'])){
+        echo"<script>modalStatus('Alterações realizadas com sucesso!','success',()=>{
+            location.href='visualizar_usuario.php'
+        })</script>";
+        
+        unset($_SESSION['msg_edit']);
+    }
+
+
+}}
+
 
 
 require("../includes/header/header.php"); 
@@ -213,7 +425,7 @@ include_once("../includes/menu.php");
 require("../includes/main/main_editar_usuario.php");
 
 if(isset($_SESSION['msg_edit'])){
-    echo"<script>modalStatus('Salvo com sucesso!','success',()=>{
+    echo"<script>modalStatus('Alterações realizadas com sucesso!','success',()=>{
         location.href='editar_usuario.php'
     })</script>";
     
@@ -224,7 +436,3 @@ if(isset($_SESSION['msg_edit'])){
 require("../includes/footer/footer.php");
 ?>
 
-
-<!-- echo"<script>modalStatus('Salvo com sucesso!','success',()=>{
-            location.reload()
-        })</script>"; -->

@@ -36,7 +36,7 @@ async function listar_users(){
     for(let i = 0; i < dados_users.length; i++){
          
         let li_each = $("<li></li>")
-        li_each.html('<div class="titulo_gp"> <div class="card_perfil"> <div class="card_nome"> <h2 class="tipo_perfil">'+dados_users[i]["nome"]+'</h2> </div> <a href="./editar_usuario.php?id_user='+dados_users[i]["id"]+'"><img src="../assets/imgs/icons/icon_editar.png" alt="icone_editar" class="icone_editar"></a> <i class="bi bi-trash" id="btn_excluir_user" id_user="'+ dados_users[i]["id"] + '" href="actions/perfil_delete_action.php?id='+dados_users[i]["id"]+'"></i> </div> </div>')
+        li_each.html('<div class="titulo_gp"> <div class="card_perfil"> <div class="card_nome"> <h2 class="tipo_perfil">'+dados_users[i]["nome"]+'</h2> </div> <div class="icons-question1"><a href="./editar_usuario.php?id_user='+dados_users[i]["id"]+'"><i class="bi bi-pencil-square"></i></a> <i class="bi bi-trash" id="btn_excluir_user" id_user="'+ dados_users[i]["id"] + '" href="actions/perfil_delete_action.php?id='+dados_users[i]["id"]+'"></i> </div></div> </div>')
         $(".cardsgerenc").append(li_each)
     }
 
