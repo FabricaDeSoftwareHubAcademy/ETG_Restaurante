@@ -9,28 +9,16 @@ use Exception;
 class AcaoCorretiva 
 {
     
-    private string $id;
-    private string $id_nao_conformidade;
-    private string $descricao;
-    private string $img_1;
-    private string $img_2;
-    private string $img_3;
+    private $id;
+    private $id_nao_conformidade;
+    private $descricao;
+    private $img_1;
+    private $img_2;
+    private $img_3;
     private Banco $conn;
 
 
-    public function __construct(
-        string $id_nao_conformidade,
-        string $descricao,
-        string $img_1,
-        string $img_2 = "",
-        string $img_3 = ""
-    ) {
-        $this->$id_nao_conformidade = $id_nao_conformidade;
-        $this->$descricao = $descricao;
-        $this->$img_1 = $img_1;
-        $this->$img_2 = $img_2;
-        $this->$img_3 = $img_3;
-
+    public function __construct() {
         $this->conn = new Banco("reg_correcao");
     }
     
@@ -39,9 +27,9 @@ class AcaoCorretiva
             $dados = [
                 "reg_NC_id" => $this->id_nao_conformidade,
                 "descricao" => $this->descricao,
-                "img_1" => $this->img_1,
-                "img_2" => $this->img_2,
-                "img_3" => $this->img_3
+                "img1" => $this->img_1,
+                "img2" => $this->img_2,
+                "img3" => $this->img_3
             ];
             $this->conn->insert($dados);
             return true;
@@ -51,6 +39,10 @@ class AcaoCorretiva
         catch (Exception $e) {
             throw $e->getMessage();
         }
+    }
+
+    public function setIdNaoConformidade(String $id_nao_conformidade) {
+        $this->id_nao_conformidade = $id_nao_conformidade;
     }
 
     public function setDescricao($descricao) {
