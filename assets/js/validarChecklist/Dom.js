@@ -105,7 +105,7 @@ export class Dom {
 
         function descerNormal()
         {
-            console.log(self_1.dataNaoConf)
+            // console.log(self_1.dataNaoConf)
             labelDiv.classList.add("active");
             if (labelDiv.classList.contains("label_checklist-wrong")) {
                 labelDiv.style.backgroundColor = 'transparent';
