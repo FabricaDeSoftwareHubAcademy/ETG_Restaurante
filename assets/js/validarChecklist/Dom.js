@@ -105,7 +105,7 @@ export class Dom {
 
         function descerNormal()
         {
-            // console.log(self_1.dataNaoConf)
+            console.log(self_1.dataNaoConf)
             labelDiv.classList.add("active");
             if (labelDiv.classList.contains("label_checklist-wrong")) {
                 labelDiv.style.backgroundColor = 'transparent';
@@ -168,7 +168,8 @@ export class Dom {
             }
             for (var i = 0; i < self_1.dataNaoConf.length; i++) {
                 var Nconf = self_1.dataNaoConf[i];
-                if (Nconf["idPergunta"] == idPergunta) {
+                // console.log(Nconf);
+                if (Nconf["id_pergunta"] == idPergunta) {
                     self_1.dataNaoConf.splice(i, 1);
                     // console.log("AAAAAAAAAAAAAAAAAAAAAAAAAA")
                 }
