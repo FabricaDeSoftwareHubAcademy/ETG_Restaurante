@@ -135,10 +135,9 @@ export class Dom {
                     
                     let img_element = document.createElement('img')
                     if(img_base64.startsWith('data:image')){
-
                         img_element.src = img_base64
                     }else{
-                        img_element.src = '../storage/salas/'+img_base64
+                        img_element.src = '../storage/n_conformidade/'+img_base64
                     }
                     img_element.style.width = '30%'
                     img_element.classList.add('beluga')
