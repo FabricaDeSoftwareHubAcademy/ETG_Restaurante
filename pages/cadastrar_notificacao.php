@@ -16,7 +16,7 @@ use App\Entity\Funcoes;
 
 if (isset($_POST['btn_submit']))
 {
-    $id_remetente = '1'; //VAI PEGAR DA SESSION O ID DO USUARIO
+    $id_remetente = $_SESSION["id_user"]; //VAI PEGAR DA SESSION O ID DO USUARIO
     $email_destinatario = $_POST['email_destinatario']; //email 
     $texto = $_POST['descricao'];
     
