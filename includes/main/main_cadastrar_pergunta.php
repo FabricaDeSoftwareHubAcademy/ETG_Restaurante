@@ -37,9 +37,6 @@
                     </div>
                 </div>
 
-                
-
-            
             <!-- PARTE DO FILTRO -->
 
             <section class="filtro">
@@ -106,7 +103,7 @@
                 <!-- DIV DOS BOTÕES (cancelar e confirmar) -->
                 <div class="botoes">
                     <button class="botao-cancelar-submit" id="btn_cancelar_cad_pergunta" value="CANCELAR"  >CANCELAR</button>
-                    <button class="botao-confirmar-submit" id="btn_cad_pergunta" value="CONFIRMAR">CONFIRMAR</button>
+                    <button name="abc" class="botao-confirmar-submit" id="btn_cad_pergunta" value="CONFIRMAR">CONFIRMAR</button>
                 </div>
             </div>
         </form>

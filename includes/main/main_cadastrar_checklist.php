@@ -1,14 +1,14 @@
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<script defer src="../assets/js/pop_up_CadastroPergunta.js"></script>
-<script defer src="../assets/js/ajax_checklist.js"></script>
-<script defer src="../assets/js/modais.js"></script>
 <link rel="stylesheet" href="estilo_perfil.css">
 <link rel="stylesheet" href="https/cdnjs.cloudflare.comlibs/font-awesome/6.4.0/css/all.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <link rel="stylesheet" href="../assets/css/cadastrar_checklist/input-checklist.css">
 <link rel="stylesheet" href="../assets/css/cadastrar_checklist/posicao.css">
 <link rel="stylesheet" href="../assets/css/cadastrar_checklist/caixa_pergunta.css">
 <link rel="stylesheet" href="../assets/css/cadastrar_checklist/botões-checklist.css">
+<script defer src="../assets/js/modais.js"></script>
+<script defer src="../assets/js/ajax_checklist.js"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 
 
@@ -54,8 +54,6 @@
     </div>
 
     <main class="todo-projeto">
-        
-        
 
         <form class="cadastro-checklist" method="POST" name="form-perguntas" id="meuFormulario">
 
@@ -71,7 +69,9 @@
                 <div class="input_group field">
                     <input type="text" id="ajaxPergunta" class="input_field" placeholder="" maxlength="45">
                     <label for="name" class="input_label">Pesquisa a Pergunta</label> <!--Alterar para o nome do input-->
+
                 </div>
+
             </div>
 
             <!-- Menu das abas -->
@@ -82,6 +82,55 @@
                 <div class="adicionar_pergunta">
                     <a id="add_pergunta" onclick="openPopup1()"><i class="fa-solid fa-plus" id="icon_add"></i></a>
                 </div>
+
+
+                <!-- POPUP DE CADASTRAR PERGUNTA -->
+
+                <form id='form_cad_pergunta' class="overlay" style="opacity: 1;">
+                    <div class="popup_cadastrar" id="popup-cadastro-pergunta">
+                        <h4>Cadastrar pergunta:</h4>
+
+                        <textarea maxlength="210" name="nova_pergunta" id="nova_pergunta"  class="nova_pergunta" placeholder= "Escreva a pergunta"cols="30" rows="10" autocomplete= "off"></textarea>
+
+                        <h4>Selecione a categoria da pergunta:</h4>
+
+                        <!-- DIV DAS 2 CHECKBOX'S -->
+                        
+                        <div class="checks">
+                            <div class="check1">
+                                <input type="checkbox" name="antes_da_aula" id="check1"> Pré-Aula
+                            </div>
+                            <div class="check2">
+                                <input type="checkbox" name="depois_da_aula" id="check2"> Pós-Aula
+                            </div>
+                        </div>
+
+                        <!-- DIV DOS BOTÕES (cancelar e confirmar) -->
+                        <div class="botoes">
+                            <button class="botao-cancelar-submit" id="btn_cancelar_cad_pergunta" value="CANCELAR" onclick="closePopup1()">CANCELAR</button>
+                            <button class="botao-confirmar-submit" id="btn_cad_pergunta" value="CONFIRMAR">CONFIRMAR</button>
+                        </div>
+                    </div>
+                </form>
+
+                <script>
+                    const btn = document.getElementById("btn_cad_pergunta");
+
+                    btn.addEventListener("click",function(event){
+                        event.preventDefault();
+                        
+                        const text = document.getElementById("nova_pergunta");
+                        const c1 = document.getElementById("check1");
+                        const c2 = document.getElementById("check2");
+
+                        console.log(text.value);
+
+                    })
+                </script>
+
+                <form class="overlay" id="overlay" style="opacity: 1;"></form>
+
+
             </ul>
             <!-- Conteúdo das abas -->
             <div id="tab1" class="tab" style="display: block;">
@@ -188,12 +237,26 @@
                     </div>
                 </div>
             </div>
-            
+            <script>
+
+                // SCRIPT DO POPUP DE CADASTRAR PERGUNTAS
+
+                let popup_cadastro_pergunta = document.getElementById("popup-cadastro-pergunta");
+                function openPopup1(){
+
+                    document.getElementById("overlay").style.visibility="visible";
+                    popup_cadastro_pergunta.classList.add("open-popup1");
+                    
+                }
+                function closePopup1(){ 
+                    
+                    document.getElementById("overlay").style.visibility= 'hidden';
+                    popup_cadastro_pergunta.classList.remove("open-popup1");
+                }
+
+            </script>
+
         </form>
-      
-
-        
-
     </main>
 
 </body>

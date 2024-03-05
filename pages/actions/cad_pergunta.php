@@ -23,6 +23,8 @@ if(isset($_POST['antes_da_aula'],$_POST['depois_da_aula'])){
     $obPergunta->cadastrar('1');
 }
   
-echo(json_encode($_POST));
+$resp = ['status' => 'SUCCESS'];
+
+echo json_encode($resp);
 
 ?>
