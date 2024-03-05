@@ -1,0 +1,6 @@
+#crie um arquivo "config.ini" na raiz do projeto com basse neste
+[database]
+host="localhost"
+user="root"
+password="123456"
+db_name="myBank"

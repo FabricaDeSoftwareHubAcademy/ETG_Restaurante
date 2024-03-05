@@ -9,6 +9,5 @@ vendor/composer/LICENSE
 /storage/salas/*
 /storage/n_conformidade/*
 /storage/acao_corretiva
-
-
+config.ini
 

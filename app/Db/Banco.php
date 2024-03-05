@@ -6,21 +6,34 @@ use PDOException;
 class Banco{
   
     //Variaveis referentes a conexao com o banco de dados
-    const HOST = '127.0.0.1';
-  
-    const DB_NAME = 'etg';
-    const USER = 'root';
-    const PASS = '159357';
+    private $config;
+    private $ini_file_path = __DIR__."/../../config.ini";
+
+    private $db_hostname;
+    private $db_name;
+    private $db_user;
+    private $db_password;
+    
     private $table;//variavel que vai falar sobre qual tabela do banco esta sendo tratada
     private $conexao;
     public function __construct($table = null)
     { 
+        $this->config = parse_ini_file($this->ini_file_path, true);
+        $this->db_hostname = $this->config["database"]["host"];
+        $this->db_name = $this->config["database"]["db_name"];
+        $this->db_user = $this->config["database"]["user"];
+        $this->db_password = $this->config["database"]["password"];
+
+
         $this -> table = $table; 
     }
     private function conectar(){
         try
         {
-            $this -> conexao = new PDO('mysql:host='.self::HOST.';dbname='.self::DB_NAME, self::USER, self::PASS);
+            $string_conexao = "mysql:host=".$this->db_hostname;
+            $string_conexao .= ";";
+            $string_conexao .= "dbname=".$this->db_name;
+            $this -> conexao = new PDO($string_conexao, $this->db_user, $this->db_password);
         }
         catch(PDOException $e)
         {
@@ -202,4 +215,6 @@ class Banco{
         return $this ->  executarQuery($query);
     }    
 }
+
+$banco = new Banco("reg_correcao");
 ?>
