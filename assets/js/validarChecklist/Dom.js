@@ -314,7 +314,7 @@ export class Dom {
 
     save(textAreaContent, images, dadosPergunta) {
         var data = {};
-        var imagesToPHP = {};
+        var imagesToPHP = [];
     
         // ARMAZENANDO AS IMAGENS
         for (let i = 0; i < images.length; i++) {
