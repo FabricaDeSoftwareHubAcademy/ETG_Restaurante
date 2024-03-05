@@ -4,7 +4,7 @@ import { Dom } from './Dom.js';
 // Obtenha o array armazenado no sessionStorage
 var dadosGetStorage = JSON.parse(sessionStorage.getItem('NaoConformidades'));
 var AcoesCorretivas = [];
-// console.log(dadosGetStorage);
+console.log(dadosGetStorage);
 const DOM = new Dom(dadosGetStorage, AcoesCorretivas);
 
 
@@ -13,8 +13,8 @@ document.querySelector("#btn-cadastrar-acao-corretiva").addEventListener("click"
 
     var dadosAjax = []
     // AcoesCorretivas
-    dadosAjax.push(AcoesCorretivas);
     // console.log(dadosAjax);
+    dadosAjax.push(AcoesCorretivas);
     ajaxHTTP(dadosAjax);
 })
 
