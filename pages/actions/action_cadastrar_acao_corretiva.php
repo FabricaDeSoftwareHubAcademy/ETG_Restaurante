@@ -21,29 +21,36 @@ $response = ["status" => true];
 
 $objeto_acao_corretiva = new AcaoCorretiva();
 
+
+$img_1 = "";
+$img_2 = "";
+$img_3 = "";
+
 foreach ($data[0] as $AcaoCorretiva) {
     $id_nao_conformidade = $AcaoCorretiva["id_nao_conformidade"];
     $descricao = $AcaoCorretiva["textAreaContent"];
-    $img_1 = ($AcaoCorretiva["imagesToPHP"][0] != "") ? $AcaoCorretiva["imagesToPHP"][0] : "";
-    $img_2 = ($AcaoCorretiva["imagesToPHP"][1] != "") ? $AcaoCorretiva["imagesToPHP"][1] : "";
-    $img_3 = ($AcaoCorretiva["imagesToPHP"][2] != "") ? $AcaoCorretiva["imagesToPHP"][2] : "";
+    $img_1 = (isset($AcaoCorretiva["imagesToPHP"][0])) ? $AcaoCorretiva["imagesToPHP"][0] : "";
+    $img_2 = (isset($AcaoCorretiva["imagesToPHP"][1])) ? $AcaoCorretiva["imagesToPHP"][1] : "";
+    $img_3 = (isset($AcaoCorretiva["imagesToPHP"][2])) ? $AcaoCorretiva["imagesToPHP"][2] : "";
 
     $img_1 = ($img_1 != "") ? convert_base64_png($img_1) : "";
     $img_2 = ($img_2 != "") ? convert_base64_png($img_2) : "";
     $img_3 = ($img_3 != "") ? convert_base64_png($img_3) : "";
 
-    // $teste = [];
-    // $teste["img1"] = $img_1;
-    // $teste["img2"] = $img_2;
-    // $teste["img3"] = $img_3;
+    $teste = [];
+    $teste["img1"] = $img_1;
+    $teste["img2"] = $img_2;
+    $teste["img3"] = $img_3;
     
-    $objeto_acao_corretiva->setIdNaoConformidade($id_nao_conformidade);
-    $objeto_acao_corretiva->setDescricao($descricao);
+    
     $objeto_acao_corretiva->setImg_1($img_1);
     $objeto_acao_corretiva->setImg_2($img_2);
     $objeto_acao_corretiva->setImg_3($img_3);
+    $objeto_acao_corretiva->setIdNaoConformidade($id_nao_conformidade);
+    $objeto_acao_corretiva->setDescricao($descricao);
     
     $responseDB = $objeto_acao_corretiva->save();
+    // echo json_encode($responseDB);
     
     if(!$responseDB) {
                 //ARMAZENAR NO LOG

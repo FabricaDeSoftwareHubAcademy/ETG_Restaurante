@@ -46,19 +46,19 @@ class AcaoCorretiva
     }
 
     public function setDescricao($descricao) {
-        $this->$descricao = $descricao;
+        $this->descricao = $descricao;
     }
 
-    public function setImg_1($img_1) {
-        $this->$img_1 = $img_1;
+    public function setImg_1($img) {
+        $this->img_1 = $img;
     }
 
-    public function setImg_2($img_2) {
-        $this->$img_2 = $img_2;
+    public function setImg_2($img) {
+        $this->img_2 = $img;
     }
 
-    public function setImg_3($img_3) {
-        $this->$img_3 = $img_3;
+    public function setImg_3($img) {
+        $this->img_3 = $img;
     }
 
 

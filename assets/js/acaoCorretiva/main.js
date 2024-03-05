@@ -32,8 +32,8 @@ async function ajaxHTTP(dados) {
     console.log(response)
 
     if (response["status"] == true) {
-        // window.location.href = "./listar_checklist_concluidas.php";
-        console.log(response["data"])
+        //MODAL
+        window.location.href = "./listar_checklist_concluidas.php";
     }
 }
 
