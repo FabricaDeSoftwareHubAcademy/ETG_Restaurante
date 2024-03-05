@@ -334,9 +334,9 @@ export class Dom {
         data["textAreaContent"] = textAreaContent;
         data["tipo"] = dadosPergunta ["tipo"];
         data["imagesToPHP"] = imagesToPHP;
-
+        data["id_realizacao"] = dadosPergunta ["id_realizacao"];
         this.dataNaoConf.push(data);
-        // console.log(this.dataNaoConf)
+        // console.log(data)
 
     }
 

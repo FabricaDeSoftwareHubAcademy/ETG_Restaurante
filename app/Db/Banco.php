@@ -214,7 +214,32 @@ class Banco{
         JOIN cadastro_perfil ON cadastro_usuario.id_perfil = cadastro_perfil.id';
         return $this ->  executarQuery($query);
     }    
+
+    public function reg_nc_last_insert_id($dados) {        
+        try
+        {
+            $sql_insert = "INSERT INTO reg_nc (id_realiza, id_logistica, id_pergu, descricao_NC, img1, img2, img3";
+            $sql_insert .= " VALUES (?, ?, ?, ?, ?, ?, ?)";
+            //abrindo conexao
+            $this -> conectar();
+            //criando statement e preparando a query que foi passada como argumento
+            $statement = $this -> conexao -> prepare($sql_insert);
+            $statement -> execute($dados);
+            $ultimo_id = $this -> conexao -> lastInsertId();
+            
+            //fechando conexao
+            //var_dump($statement); exit;
+            //retornando o resultado da query
+            $this -> conexao = null;
+            return $ultimo_id;
+        }
+        catch (PDOException $e)
+        {
+            echo('Erro3: ' . $e -> getMessage());
+            return false;
+        }
+
+    }
 }
 
-$banco = new Banco("reg_correcao");
 ?>

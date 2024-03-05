@@ -10,12 +10,13 @@ $idResponderCheck = $_GET["id_realizacao"];
 $objValidarChecklist = new ValidarChecklist();  
 $idSala = $objValidarChecklist -> getIdSala(idResponderCheck: $idResponderCheck);
 $perguntas = $objValidarChecklist -> getPerguntas(idSala: $idSala);
+// $perguntas["id_realizacao"] = $idResponderCheck;
 // var_dump($perguntas);exit;
 
 foreach ($perguntas as &$row) {
     $NaoConformidade = $objValidarChecklist -> hasNaoConf(idPergunta: $row["id_pergunta"], idRealiza: $idResponderCheck);
+    $row["id_realizacao"] = $idResponderCheck;
     if ($NaoConformidade != false) {
-        
         // var_dump($NaoConformidade);exit;
         $row["textAreaContent"] = $NaoConformidade[1]["descricao_NC"];
         $row["imagesToPHP"] = [
@@ -31,7 +32,6 @@ foreach ($perguntas as &$row) {
 
 }
 // var_dump($perguntas);exit;
- 
 $perguntasJson = json_encode($perguntas);
 
 require("../includes/modais/nao_conformidade_logistica.php");

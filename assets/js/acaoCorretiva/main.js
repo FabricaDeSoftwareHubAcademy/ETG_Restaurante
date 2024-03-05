@@ -4,7 +4,7 @@ import { Dom } from './Dom.js';
 // Obtenha o array armazenado no sessionStorage
 var dadosGetStorage = JSON.parse(sessionStorage.getItem('NaoConformidades'));
 var AcoesCorretivas = [];
-console.log(dadosGetStorage);
+// console.log(dadosGetStorage);
 const DOM = new Dom(dadosGetStorage, AcoesCorretivas);
 
 
@@ -12,8 +12,9 @@ document.querySelector("#btn-cadastrar-acao-corretiva").addEventListener("click"
     event.preventDefault();
 
     var dadosAjax = []
-
+    // AcoesCorretivas
     dadosAjax.push(AcoesCorretivas);
+    // console.log(dadosAjax);
     ajaxHTTP(dadosAjax);
 })
 
@@ -31,10 +32,10 @@ async function ajaxHTTP(dados) {
     var response = await request.json();
     console.log(response)
 
-    if (response["status"] == true) {
-        //MODAL
-        window.location.href = "./listar_checklist_concluidas.php";
-    }
+    // if (response["status"] == true) {
+    //     //MODAL
+    //     window.location.href = "./listar_checklist_concluidas.php";
+    // }
 }
 
 DOM.showPerguntas();

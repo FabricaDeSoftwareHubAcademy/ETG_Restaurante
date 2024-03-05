@@ -1,4 +1,5 @@
 
+
 export class Dom {     
     constructor(dataNaoConf, dataAcaoCorretiva) {
         this.dataNaoConf = dataNaoConf;
@@ -316,6 +317,10 @@ export class Dom {
             imagesToPHP[i] = src;
         }
         
+        if (dataNaoConformidade["id_nao_conformidade"] == undefined) {
+            dataAcaoCorretiva["data_nao_conformidade"] = dataNaoConformidade
+        }
+
         dataAcaoCorretiva["acaoCorretiva"] = true;
         dataAcaoCorretiva["id_pergunta"] = dataNaoConformidade["id_pergunta"];
         dataAcaoCorretiva["textAreaContent"] = textArea_AcaoCorretiva;
