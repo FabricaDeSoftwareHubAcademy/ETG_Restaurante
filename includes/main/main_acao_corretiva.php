@@ -9,7 +9,7 @@
 <body class="container_checklist">
 
     <!-- TITULO DA PAGINA -->
-    <h1 class="titulo_checklist">Validar Checklist</h1>
+    <h1 class="titulo_checklist">Acão Corretiva</h1>
 
     <!-- TIULO DA SALA (importado do banco) -->
     <h2 class="nome_sala"><?=isset($dados_sala[0]['nome']) ? $dados_sala[0]['nome'] : ''?></h2>
@@ -30,7 +30,7 @@
                     <a href="listar_salas.php" class="botao-voltar-link" id="buttonBackModalNaoConf">Voltar</a>
                 </div>
                 <div class="botao-padrao-cadastrar">
-                    <button name="btn_submit" type="submit" class="botao-cadastrar-submit" id="botao-cadastrar-submit" value="CADASTRAR">Ação Corretiva</button>
+                    <button name="btn_submit" type="submit" class="botao-cadastrar-submit" id="btn-cadastrar-acao-corretiva" value="CADASTRAR">Ação Corretiva</button>
                 </div>
             </div>
 

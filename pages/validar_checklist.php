@@ -1,14 +1,11 @@
 <?php
 require __DIR__."/../vendor/autoload.php";
-use App\Entity\Pergunta;
-use App\Entity\Checklist;
-use App\Entity\NaoConformidade;
-use App\Entity\ValidarChecklist;
 session_start();
+use App\Entity\ValidarChecklist;
 $dados_sala = isset($dados_sala) ? $dados_sala : null;
 
 include_once("../includes/menu.php");
-// $titulo_page = 'Validar checklist';
+$titulo_page = 'Validar checklist';
 $idResponderCheck = $_GET["id_realizacao"];
 $objValidarChecklist = new ValidarChecklist();  
 $idSala = $objValidarChecklist -> getIdSala(idResponderCheck: $idResponderCheck);

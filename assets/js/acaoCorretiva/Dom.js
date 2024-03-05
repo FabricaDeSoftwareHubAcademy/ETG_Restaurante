@@ -1,15 +1,16 @@
 
 export class Dom {     
-    constructor(dataNaoConf) {
+    constructor(dataNaoConf, dataAcaoCorretiva) {
         this.dataNaoConf = dataNaoConf;
+        this.dataAcaoCorretiva = dataAcaoCorretiva
     }
 
     showPerguntas() {
         for (var pergunta of this.dataNaoConf) {
-            console.log(pergunta)
+            // console.log(pergunta)
              
             
-            this.createOneRedElement(pergunta["textAreaContent"], pergunta["idPergunta"]); //checando se a pergunta tem uma nao conformidade 
+            this.createOneRedElement(pergunta["textAreaContent"], pergunta["id_pergunta"]); //checando se a pergunta tem uma nao conformidade 
          }
     }
 
@@ -90,7 +91,15 @@ export class Dom {
                     var textAreaContent = document.querySelector(".descricao_nao_conf").value
                     var varPreview = document.querySelector(".upload-img");
                     var images = varPreview.querySelectorAll("img");
-                    self_2.save(textAreaContent, images, idPergunta);
+                    // console.log(self_2.self_2.dataNaoConf)
+                    for (let i = 0; i < self_2.dataNaoConf.length; i++) {
+                        let id_nao_conf = self_2.dataNaoConf[i]["id_pergunta"]
+                        if (id_nao_conf == idPergunta) {
+                            self_2.save(textAreaContent, images, self_2.dataNaoConf[i]);
+                            break;
+                        }
+                    }
+
                     self_2.close();
                 }
             }
@@ -102,13 +111,14 @@ export class Dom {
         }
 
         function encontrarObjetoPorId(array, id) {
-            return array.find(objeto => objeto.idPergunta === id);
+            return array.find(objeto => objeto.id_pergunta === id);
         }
 
         function descerNormal()
         {
             montarBotoes();
             labelDiv.classList.add("active");
+            // console.log(self_1.dataAcaoCorretiva);
 
             if (labelDiv.classList.contains("label_checklist-wrong")) {
                 labelDiv.style.backgroundColor = 'transparent';
@@ -164,15 +174,17 @@ export class Dom {
             if (labelDiv.classList.contains("incorrect")) {
                 labelDiv.classList.remove("incorrect");
             }
-            // for (var i = 0; i < self_1.dataNaoConf.length; i++) {
-            //     var Nconf = self_1.dataNaoConf[i];
-            //     if (Nconf["idPergunta"] == idPergunta) {
-            //         self_1.dataNaoConf.splice(i, 1);
-            //         // console.log("AAAAAAAAAAAAAAAAAAAAAAAAAA")
-            //     }
-            // }
-            console.log(self_1.dataNaoConf);
+            console.log(self_1.dataAcaoCorretiva);
+            for (var i = 0; i < self_1.dataAcaoCorretiva.length; i++) {
+                var Acorretiva = self_1.dataAcaoCorretiva[i];
+                
+                // console.log(Acorretiva);
+                if (Acorretiva["id_pergunta"] == idPergunta) {
+                    self_1.dataAcaoCorretiva.splice(i, 1);
+                    // console.log("AAAAAAAAAAAAAAAAAAAAAAAAAA")
+                }
 
+            }
         }
 
         function subirNormal()
@@ -223,12 +235,12 @@ export class Dom {
             else if (labelDiv.classList.contains("active") && !labelDiv.classList.contains("correct") && !labelDiv.classList.contains("incorrect"))
             {
                 subirNormal();
-                console.log("subiu normal transparente");
+                // console.log("subiu normal transparente");
             }
             else
             {
                 descerNormal();
-                console.log("desceu normal transparente");
+                // console.log("desceu normal transparente");
             }
         }
 
@@ -289,22 +301,34 @@ export class Dom {
         }
         }
 
-    save(textAreaContent, images, idPergunta) {
-        var data = {};
+    save(textArea_AcaoCorretiva, images_AcaoCorretiva, dataNaoConformidade) {
+        // console.log(dataNaoConformidade);
+        var dataAcaoCorretiva = {};
         var imagesToPHP = [];
     
         // ARMAZENANDO AS IMAGENS
-        for (let i = 0; i < images.length; i++) {
-            var src = images[i].getAttribute("src");
+        for (let i = 0; i < images_AcaoCorretiva.length; i++) {
+            var src = images_AcaoCorretiva[i].getAttribute("src");
             imagesToPHP[i] = src;
         }
-    
-        data["idPergunta"] = idPergunta;
-        data["textAreaContent"] = textAreaContent;
-        data["imagesToPHP"] = imagesToPHP;
+        
+        dataAcaoCorretiva["acaoCorretiva"] = true;
+        dataAcaoCorretiva["id_pergunta"] = dataNaoConformidade["id_pergunta"];
+        dataAcaoCorretiva["textAreaContent"] = textArea_AcaoCorretiva;
+        dataAcaoCorretiva["imagesToPHP"] = imagesToPHP;
 
-        this.dataNaoConf.push(data);
-        console.log(this.dataNaoConf)
+        // console.log(dadosPergunta)
+        dataAcaoCorretiva["id_nao_conformidade"] = dataNaoConformidade["id_nao_conformidade"];
+        dataAcaoCorretiva["id_sala"] = dataNaoConformidade["id_sala"];
+        
+        dataAcaoCorretiva["nome_check"] = dataNaoConformidade["nome_check"];
+        dataAcaoCorretiva["nome_sala"] = dataNaoConformidade["nome_sala"];
+        dataAcaoCorretiva["pergunta"] = dataNaoConformidade["pergunta"];
+        dataAcaoCorretiva["responsavel"] = "logistica";
+        dataAcaoCorretiva["tipo"] = dataNaoConformidade["tipo"];
+
+        this.dataAcaoCorretiva.push(dataAcaoCorretiva);
+        // console.log(this.dataAcaoCorretiva)
 
     }
 
