@@ -171,8 +171,9 @@ $ifreaac = $perfil['realizar_acao_corretiva'] == '1';
                                 
                                 <ul class="sub-menu4">
                                 '.
-                                ($ifgensala ? '<li class="iten-submenu4"><a href="../pages/cadastrar_sala.php" id="fonte-submenu">Cadastrar  Salas</a></li>' : '').
-                                ($ifperfil ? '<li class="iten-submenu4"><a href="../pages/cadastrar_perfil.php" id="fonte-submenu2">Cadastrar  Perfil</a></li>' : '')
+                                ($ifgensala ? '<li class="iten-submenu4"><a href="../pages/relatorio_user.php" id="fonte-submenu">Usuarios</a></li>' : '').
+                                ($ifperfil ? '<li class="iten-submenu4"><a href="#" id="fonte-submenu2">Perfis</a></li>' : '').
+                                ($ifperfil ? '<li class="iten-submenu4"><a href="#" id="fonte-submenu2">Sala</a></li>' : '')
                                 .'
                                 </ul>
                             </li> ';
@@ -354,3 +355,4 @@ document.addEventListener("DOMContentLoaded", function() {
 
 </script>       
 
+    
