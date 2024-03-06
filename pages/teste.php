@@ -3,7 +3,7 @@
 require __DIR__."/../vendor/autoload.php";
 use App\Entity\Sala; 
 
-Sala::setStatusSala( '1' , 'B' );
+Sala::setStatusSala( '2' , 'L' );
 
 
 ?>
