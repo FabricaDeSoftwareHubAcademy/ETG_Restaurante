@@ -6,8 +6,7 @@ var dadosGetStorage = JSON.parse(sessionStorage.getItem('NaoConformidades'));
 var id_realizacao = JSON.parse(sessionStorage.getItem('id_realizacao'));
 var id_sala = JSON.parse(sessionStorage.getItem('id_sala'));
 var AcoesCorretivas = [];
-console.log(dadosGetStorage);
-// console.log(id_realizacao);
+ // console.log(id_realizacao);
 const DOM = new Dom(dadosGetStorage, AcoesCorretivas);
 
 

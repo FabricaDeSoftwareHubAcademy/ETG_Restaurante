@@ -22,7 +22,7 @@ buttonSubmit.addEventListener("click", function(event) {
     event.preventDefault();
 
     //pegando o id_realizacao do get
-    console.log(preenchidas);
+    // console.log(preenchidas);
     let aprovado = true;
     for (let i = 0; i < preenchidas.length; i++) {
         if (preenchidas[i]["preenchido"] == false) {
@@ -31,6 +31,7 @@ buttonSubmit.addEventListener("click", function(event) {
         }
     }
 
+    // console.log(aprovado);
     if (aprovado) {
         var url = new URLSearchParams(window.location.search)
         var id_realizacao = url.get("id_realizacao")
@@ -39,6 +40,7 @@ buttonSubmit.addEventListener("click", function(event) {
             // console.log("tudo certo por aqui");
             window.location.href = "actions/action_cadastrar_acao_corretiva.php?id_realizacao="+id_realizacao + "&tudo_correto=" + true + "&id_sala=" + id_sala;
         } else {
+            sessionStorage.clear()
             // console.log(NaoConformidades)
             sessionStorage.setItem('NaoConformidades', JSON.stringify(NaoConformidades));
             sessionStorage.setItem('id_realizacao', id_realizacao);
@@ -46,8 +48,7 @@ buttonSubmit.addEventListener("click", function(event) {
             window.location.href = "acao_corretiva.php";
         }
     } else {
-        alert("PREENCHE TUDO AE VEI")
+        alert("preenche tudo ai")
     }
 
-
-});
+})

@@ -19,6 +19,8 @@
             </div>
         <div class="botoes">              
         </div>
+
+        <button id='btn_reset_imgs'><i class="bi bi-arrow-clockwise" id="right-button-label"></i> Resetar</button>
         
         <div class = "upload-img">
             <input type="file" id="input-file" accept="image/*" multiple style="display: none;">

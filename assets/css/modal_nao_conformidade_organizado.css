@@ -306,5 +306,11 @@ figcaption{
     background-color: var(--cor-primaria-botao-green);
     color: var(--cor-primaria-botao-white);
 }
+#btn_reset_imgs{
 
+    margin-top: 10px;
+    padding: 5px;
+    border-radius: 8px;
+
+}
 
