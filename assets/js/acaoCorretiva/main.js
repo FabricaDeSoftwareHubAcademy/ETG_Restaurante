@@ -44,7 +44,7 @@ document.querySelector("#btn-cadastrar-acao-corretiva").addEventListener("click"
         dadosAjax.push(AcoesCorretivas);
         ajaxHTTP(dadosAjax);
     } else {
-        alert("preenche tudo aiii");
+        modalStatus("Preencha todos os campos", "error")
     }
     
 })

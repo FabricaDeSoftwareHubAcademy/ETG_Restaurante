@@ -20,9 +20,8 @@ DOM.showPerguntas();
 var buttonSubmit = document.querySelector("#botao-cadastrar-submit");
 buttonSubmit.addEventListener("click", function(event) {
     event.preventDefault();
-
     //pegando o id_realizacao do get
-    // console.log(preenchidas);
+    //console.log(preenchidas);
     let aprovado = true;
     for (let i = 0; i < preenchidas.length; i++) {
         if (preenchidas[i]["preenchido"] == false) {
@@ -48,7 +47,7 @@ buttonSubmit.addEventListener("click", function(event) {
             window.location.href = "acao_corretiva.php";
         }
     } else {
-        alert("preenche tudo ai")
+        modalStatus("Preencha todos os campos", "error")
     }
 
 })
