@@ -1,7 +1,8 @@
 import { Pergunta } from './Pergunta.js';
 
 export class Dom {     
-    constructor(dataNaoConf) {
+    constructor(dataNaoConf, preenchidas) {
+        this.preenchidas = preenchidas
         this.dataNaoConf = dataNaoConf;
         this.objPergunta = new Pergunta(perguntasJson);
         this.dataPerguta = this.objPergunta.getAll();
@@ -87,7 +88,17 @@ export class Dom {
             buttonSubmit.className = "botao-cadastrar-submit-label";
             buttonSubmit.textContent = "Correto";
             buttonSubmit.type = "button";
+            self_2 = self_1
             buttonSubmit.onclick = function() {
+                // console.log(self_2.preenchidas.length)
+                for (let i = 0; i < self_2.preenchidas.length; i++) {
+                    // console.log(i);
+                    if (self_2.preenchidas[i]["id_pergunta"] == idPergunta) {
+                        self_2.preenchidas[i]["preenchido"] = true 
+                    }
+                }
+        
+
                 if (labelDiv.classList.contains("label_checklist-wrong") && labelDiv.classList.contains("active")) {
                     vermelho();
                 }
@@ -105,6 +116,12 @@ export class Dom {
 
         function descerNormal()
         {
+            for (let i = 0; i < self_1.preenchidas.length; i++) {
+                // console.log(i);
+                if (self_1.preenchidas[i]["id_pergunta"] == idPergunta) {
+                    self_1.preenchidas[i]["preenchido"] = false 
+                }
+            }
             // console.log(self_1.dataNaoConf)
             labelDiv.classList.add("active");
             if (labelDiv.classList.contains("label_checklist-wrong")) {
