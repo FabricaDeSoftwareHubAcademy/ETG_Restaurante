@@ -63,7 +63,7 @@ class Sala
     //READ
     public static function getDados()
     {
-        $obj_banco = new Banco('quem_abriu');
+        $obj_banco = new Banco('cadastro_sala');
 
         $salas = $obj_banco -> select(order:"status ASC") -> fetchAll(PDO::FETCH_ASSOC);
 

@@ -1,4 +1,5 @@
 
+
 export class Dom {     
     constructor(dataNaoConf, dataAcaoCorretiva) {
         this.dataNaoConf = dataNaoConf;
@@ -139,10 +140,10 @@ export class Dom {
                 // console.log(encontrarObjetoPorId(self_1.dataNaoConf,idPergunta))
                 let dataPergunta = encontrarObjetoPorId(self_1.dataNaoConf,idPergunta)
                 let imgsPergunta = dataPergunta['imagesToPHP']
-
+                // console.log(eBase64)
+                //SIMOES QQ VC TEM NA CABECA MENOR, ESSE FOR É PRA IMAGEM QUE NAO É BASE 64 ENT PQ DIABOS SE TA USANDO UMA ARROW CHAMADA BASE64 EM EM EM 
 
                 imgsPergunta.forEach(img_base64 => {
-                    
                     let img_element = document.createElement('img')
                     if(img_base64.startsWith('data:image')){
                         img_element.src = img_base64
@@ -154,6 +155,10 @@ export class Dom {
                     imagens.appendChild(img_element)
 
                 }); 
+
+
+
+
  
                 let nextDivToInsert = document.querySelector(".alinar-botoes-label");
                 let dadElement = labelDiv;
@@ -312,6 +317,10 @@ export class Dom {
             imagesToPHP[i] = src;
         }
         
+        if (dataNaoConformidade["id_nao_conformidade"] == undefined) {
+            dataAcaoCorretiva["data_nao_conformidade"] = dataNaoConformidade
+        }
+
         dataAcaoCorretiva["acaoCorretiva"] = true;
         dataAcaoCorretiva["id_pergunta"] = dataNaoConformidade["id_pergunta"];
         dataAcaoCorretiva["textAreaContent"] = textArea_AcaoCorretiva;

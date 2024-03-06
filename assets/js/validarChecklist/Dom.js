@@ -314,7 +314,7 @@ export class Dom {
 
     save(textAreaContent, images, dadosPergunta) {
         var data = {};
-        var imagesToPHP = {};
+        var imagesToPHP = [];
     
         // ARMAZENANDO AS IMAGENS
         for (let i = 0; i < images.length; i++) {
@@ -334,9 +334,9 @@ export class Dom {
         data["textAreaContent"] = textAreaContent;
         data["tipo"] = dadosPergunta ["tipo"];
         data["imagesToPHP"] = imagesToPHP;
-
+        data["id_realizacao"] = dadosPergunta ["id_realizacao"];
         this.dataNaoConf.push(data);
-        // console.log(this.dataNaoConf)
+        // console.log(data)
 
     }
 
