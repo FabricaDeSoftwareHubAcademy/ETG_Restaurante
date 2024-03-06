@@ -6,22 +6,48 @@ var dadosGetStorage = JSON.parse(sessionStorage.getItem('NaoConformidades'));
 var id_realizacao = JSON.parse(sessionStorage.getItem('id_realizacao'));
 var id_sala = JSON.parse(sessionStorage.getItem('id_sala'));
 var AcoesCorretivas = [];
- // console.log(id_realizacao);
-const DOM = new Dom(dadosGetStorage, AcoesCorretivas);
+// console.log(id_realizacao);
+
+// console.log(dadosGetStorage)
+var preenchidas = []
+for (let i = 0; i < dadosGetStorage.length; i++) {
+    // console.log(dadosGetStorage[i])
+    preenchidas[i] = {"id_pergunta": dadosGetStorage[i]["id_pergunta"],
+    "preenchido": false}
+}
+console.log(preenchidas)
+
+
+
+
+const DOM = new Dom(dadosGetStorage, AcoesCorretivas, preenchidas);
 
 
 document.querySelector("#btn-cadastrar-acao-corretiva").addEventListener("click", function(event){
     event.preventDefault();
+    console.log(preenchidas);
 
-    var dadosAjax = []
-    // AcoesCorretivas
-    // console.log(dadosAjax);
-    dadosAjax.push(AcoesCorretivas);
-    ajaxHTTP(dadosAjax);
+    
+    let aprovado = true;
+    for (let i = 0; i < preenchidas.length; i++) {
+        if (preenchidas[i]["preenchido"] == false) {
+            aprovado = false;
+            break;
+        }
+    }
+    
+    if (aprovado) {
+        var dadosAjax = []
+        // AcoesCorretivas
+        // console.log("foii")
+        console.log(dadosAjax);
+        dadosAjax.push(AcoesCorretivas);
+        ajaxHTTP(dadosAjax);
+    } else {
+        alert("preenche tudo aiii");
+    }
+    
 })
-
-
-
 
 async function ajaxHTTP(dados) {
     var request = await fetch("actions/action_cadastrar_acao_corretiva.php?id_realizacao="+id_realizacao+"&id_sala="+id_sala, {

@@ -1,7 +1,8 @@
 
 
 export class Dom {     
-    constructor(dataNaoConf, dataAcaoCorretiva) {
+    constructor(dataNaoConf, dataAcaoCorretiva, preenchidas) {
+        this.preenchidas = preenchidas
         this.dataNaoConf = dataNaoConf;
         this.dataAcaoCorretiva = dataAcaoCorretiva
     }
@@ -88,6 +89,12 @@ export class Dom {
                 self_2.call(pergunta)
                 var buttonConfirmNaoConf = document.querySelector(".botao-confirmar-submit");
                 buttonConfirmNaoConf.onclick = function() {
+                    for (let i = 0; i < self_2.preenchidas.length; i++) {
+                        if (self_2.preenchidas[i]["id_pergunta"] == idPergunta) {
+                            self_2.preenchidas[i]["preenchido"] = true
+                        }
+                    }
+
                     verde();
                     var textAreaContent = document.querySelector(".descricao_nao_conf").value
                     var varPreview = document.querySelector(".upload-img");
@@ -117,6 +124,12 @@ export class Dom {
 
         function descerNormal()
         {
+            for (let i = 0; i < self_1.preenchidas.length; i++) {
+                if (self_1.preenchidas[i]["id_pergunta"] == idPergunta) {
+                    self_1.preenchidas[i]["preenchido"] = false
+                }
+            }
+
             montarBotoes();
             labelDiv.classList.add("active");
             // console.log(self_1.dataAcaoCorretiva);
