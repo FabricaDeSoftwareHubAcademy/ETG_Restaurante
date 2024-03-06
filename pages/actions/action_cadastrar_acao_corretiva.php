@@ -4,12 +4,23 @@ require __DIR__."/../../vendor/autoload.php";
 use App\Entity\AcaoCorretiva;
 use App\Entity\NaoConformidade;
 use App\Entity\ResponderChecklist;
+use App\Entity\Sala;
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
-
-if ($_GET["tudo_correto"] == true) {
+//setar
+if (isset($_GET["tudo_correto"])) {
+    $tudo_correto = $_GET["tudo_correto"];
+} else {
+    $tudo_correto = false;
+}
+if (isset($_GET["id_sala"])) {
+    $id_sala_get = isset($_GET["id_sala"]);
+}
+if ($tudo_correto == true) {
     ResponderChecklist::setConf_logis($_GET["id_realizacao"]);
+    // die($id_sala);
+    Sala::setStatusSala($id_sala_get, "L");
     header("Location: ../listar_checklist_concluidas.php");
 }
 
@@ -100,7 +111,8 @@ foreach ($data[0] as $AcaoCorretiva) {
 if ($response["status"] == true) {
     // 'conf_logis = "'.$id_responder_checklist.'"'
     ResponderChecklist::setConf_logis($_GET["id_realizacao"]);
-
+    //setar
+    Sala::setStatusSala($id_sala_get, "L");
 }
 echo json_encode($response["status"]);
     

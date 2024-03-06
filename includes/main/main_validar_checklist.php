@@ -4,7 +4,8 @@
 
 
 <script>
-    var perguntasJson = <?php echo $perguntasJson;?>
+    var perguntasJson = <?php echo $perguntasJson;?>;
+    var id_sala = <?php echo $id_sala;?>
 </script>
 
 <!-- GERAL -->
