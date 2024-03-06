@@ -59,6 +59,23 @@ class Sala
         return true;
     }
 
+    public static function setStatusSala($id_sala, $status){
+
+        try{
+            $objSala = new Banco('cadastro_sala');
+            $dados = [
+                'status'=> $status
+            ];
+    
+            $objSala -> update('id = "'.$id_sala.'"', $dados);
+
+            return true;
+        }catch(PDOException $e){ 
+            return $e->getMessage(); 
+        } 
+
+    }
+
 
     //READ
     public static function getDados()

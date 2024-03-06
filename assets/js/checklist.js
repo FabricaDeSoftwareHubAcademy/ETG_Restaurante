@@ -5,20 +5,14 @@ var ids = document.getElementById('')
 var id_atual = 0; 
 var dados = Array();
 var somadados = Array();
-
-console.log(perguntasPre)
-
+ 
 // status true é quando é conforme  
-let listaData = { 
-
+let listaData = {  
     // '8':{
     //     'status':true,
     //     'descricao':'as panelas estavam sujas' ,
     //     'imgs': []
-    // }
-
-
-
+    // } 
 }
 
 function atualizarValor(id, bool, descPergunta)

@@ -1,11 +1,9 @@
 <?php 
 
 require __DIR__."/../vendor/autoload.php";
-use App\Entity\Pergunta;
-use App\Entity\Checklist;
+use App\Entity\Sala; 
 
-$ob_checklist = new Checklist(12);
-echo($ob_checklist->checklistResp(1))
+Sala::setStatusSala( '1' , 'B' );
 
 
 ?>

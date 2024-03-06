@@ -6,8 +6,11 @@ vendor/composer/LICENSE
 .modell
 .modell-usb
 .version
+
 /storage/salas/*
+!storage/salas/caramelo.jpg
 /storage/n_conformidade/*
 /storage/acao_corretiva
+
 config.ini
 

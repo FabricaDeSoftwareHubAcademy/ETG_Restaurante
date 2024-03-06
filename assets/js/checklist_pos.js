@@ -188,7 +188,7 @@ btn_submit.addEventListener('click', async (e) => {
             btn_submit.parentNode.replaceChild(novoBotao, btn_submit);
 
             modalStatus('Checklist efetuado com Sucesso!','success',() => { 
-                location.href = 'visualizar_sala.php?id_sala='+id_sala 
+                location.href = 'listar_salas.php'
             })
 
         }
