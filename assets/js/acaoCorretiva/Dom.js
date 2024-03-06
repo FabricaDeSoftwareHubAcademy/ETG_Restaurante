@@ -144,15 +144,21 @@ export class Dom {
                 //SIMOES QQ VC TEM NA CABECA MENOR, ESSE FOR É PRA IMAGEM QUE NAO É BASE 64 ENT PQ DIABOS SE TA USANDO UMA ARROW CHAMADA BASE64 EM EM EM 
 
                 imgsPergunta.forEach(img_base64 => {
-                    let img_element = document.createElement('img')
-                    if(img_base64.startsWith('data:image')){
-                        img_element.src = img_base64
-                    }else{
-                        img_element.src = '../storage/n_conformidade/'+img_base64
+
+                    if(img_base64.length > 0){
+
+                        let img_element = document.createElement('img')
+                        if(img_base64.startsWith('data:image')){
+                            img_element.src = img_base64
+                            
+                        }else{
+                            img_element.src = '../storage/n_conformidade/'+img_base64
+                        }
+                        img_element.style.width = '30%'
+                        img_element.classList.add('beluga')
+                        imagens.appendChild(img_element)
+
                     }
-                    img_element.style.width = '30%'
-                    img_element.classList.add('beluga')
-                    imagens.appendChild(img_element)
 
                 }); 
 
@@ -179,8 +185,7 @@ export class Dom {
             if (labelDiv.classList.contains("incorrect")) {
                 labelDiv.classList.remove("incorrect");
             }
-            console.log(self_1.dataAcaoCorretiva);
-            for (var i = 0; i < self_1.dataAcaoCorretiva.length; i++) {
+             for (var i = 0; i < self_1.dataAcaoCorretiva.length; i++) {
                 var Acorretiva = self_1.dataAcaoCorretiva[i];
                 
                 // console.log(Acorretiva);
@@ -372,6 +377,8 @@ export class Dom {
 
         const MAX_IMAGES = 3;
         const IMAGES_TO_PROCESS = Math.min(MAX_IMAGES, MULTIPLE_FILES.length);
+
+        
     
         for (let i = 0; i < IMAGES_TO_PROCESS; i++) {
             const FILE = MULTIPLE_FILES[i];
@@ -395,23 +402,34 @@ export class Dom {
             
             var container_img = document.createElement("div");
     
-            const BUTTON_DELETE_IMAGE = document.createElement("button");
-    
-            BUTTON_DELETE_IMAGE.textContent = "EXCLUIR";
-            BUTTON_DELETE_IMAGE.addEventListener("click", function() {
-                var varPreview = document.querySelector(".upload-img");
-                while(varPreview.firstChild) {
-                    varPreview.removeChild(varPreview.firstChild);
-                }
-            });
+            // const BUTTON_DELETE_IMAGE = document.createElement("button");
+            // BUTTON_DELETE_IMAGE.textContent = "EXCLUIR";
+            // BUTTON_DELETE_IMAGE.addEventListener("click", function() {
+            //     var varPreview = document.querySelector(".upload-img");
+            //     while(varPreview.firstChild) {
+            //         varPreview.removeChild(varPreview.firstChild);
+            //     }
+            // });
     
             container_img.appendChild(IMG);
-            container_img.appendChild(BUTTON_DELETE_IMAGE);
-    
+            // container_img.appendChild(BUTTON_DELETE_IMAGE);
+            container_img.className = 'img_nc_lista' 
+
             var varPreview = document.querySelector(".upload-img");
             varPreview.appendChild(container_img);
         }
-    }
+
+
+        const BUTTON_DELETE_IMAGE = document.querySelector('#btn_reset_imgs')
+
+        
+        BUTTON_DELETE_IMAGE.addEventListener("click", function() {
+            var varPreview = document.querySelector(".upload-img");
+            while(varPreview.firstChild) {
+                varPreview.removeChild(varPreview.firstChild);
+            }
+        });
+     }
 
 
 }   
