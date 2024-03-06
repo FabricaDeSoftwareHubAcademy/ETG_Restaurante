@@ -60,9 +60,10 @@ async function ajaxHTTP(dados) {
     var response = await request.json();
     console.log(response)
 
-    if (response == true) {
+    if (response == true || response == "true") {
         //MODAL
-        window.location.href = "./listar_checklist_concluidas.php";
+        modalStatus("Sucesso", "success", () => {window.location.href = "./listar_checklist_concluidas.php";});
+        
     }
 }
 

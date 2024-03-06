@@ -82,6 +82,12 @@ export class Dom {
                         return false;
                     }
                     // console.log(images);
+                    for (let i = 0; i < self_2.preenchidas.length; i++) {
+                        // console.log(i);
+                        if (self_2.preenchidas[i]["id_pergunta"] == idPergunta) {
+                            self_2.preenchidas[i]["preenchido"] = true 
+                        }
+                    }
                     vermelho();
                     self_2.save(textAreaContent, images, dadosPergunta);
                     self_2.close();
@@ -124,7 +130,7 @@ export class Dom {
         function descerNormal()
         {
             for (let i = 0; i < self_1.preenchidas.length; i++) {
-                // console.log(i);
+                // console.log(self_1.preenchidas[i]);
                 if (self_1.preenchidas[i]["id_pergunta"] == idPergunta) {
                     self_1.preenchidas[i]["preenchido"] = false 
                 }

@@ -5,9 +5,9 @@ use App\Entity\AcaoCorretiva;
 use App\Entity\NaoConformidade;
 use App\Entity\ResponderChecklist;
 use App\Entity\Sala;
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
+// ini_set('display_errors', 1);
+// ini_set('display_startup_errors', 1);
+// error_reporting(E_ALL);
 //setar
 if (isset($_GET["tudo_correto"])) {
     $tudo_correto = $_GET["tudo_correto"];
