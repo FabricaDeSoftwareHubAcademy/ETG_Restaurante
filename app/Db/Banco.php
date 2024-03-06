@@ -18,13 +18,11 @@ class Banco{
     private $conexao;
     public function __construct($table = null)
     { 
-        // $this->config = parse_ini_file($this->ini_file_path, true);
-        $this->db_hostname = 'localhost';
-        $this->db_name = 'etg';
-        $this->db_user = 'fabrica';
-        $this->db_password = 'fabrica@2022';
-
-
+        $this->config = parse_ini_file($this->ini_file_path, true);
+        $this->db_hostname = $this->config["database"]["host"];
+        $this->db_name = $this->config["database"]["db_name"];
+        $this->db_user = $this->config["database"]["user"];
+        $this->db_password = $this->config["database"]["password"];
         $this -> table = $table; 
     }
     private function conectar(){
