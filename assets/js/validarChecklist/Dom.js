@@ -16,7 +16,6 @@ export class Dom {
             if (pergunta["NaoConformidade"]) {
                 this.addNaoConfToDataNaoConf(pergunta);
                 this.createOneRedElement(pergunta["pergunta"], pergunta["id_pergunta"], pergunta); //checando se a pergunta tem uma nao conformidade
-                // console.log(pergunta);
                 continue;
             }
             this.createOneGreenElement(pergunta["pergunta"], pergunta["id_pergunta"], pergunta);
@@ -115,14 +114,10 @@ export class Dom {
                 
                 let imagens = document.createElement("div");
                 imagens.className = "imagens-container";
-                // imagens.style.backgroundColor = "red";
                 imagens.style.width = "100%";
                 imagens.style.height = "300px";
-                // imagens.style.marginBottom = "10px";
                 imagens.style.display = "flex";
-                // imagens.style.justifyContent = "space-between";
                 imagens.style.alignItems = "center";
-                // imagens.style.justifyContent = "center";
                 
                 for (let i = 0; i < 3; i++) {
                     let divImg = document.createElement("div");
@@ -138,19 +133,14 @@ export class Dom {
                         let imgNameInServer = dadosPergunta["imagesToPHP"][i];
                         let basepath = "../storage/n_conformidade/";
                         let caminhoAbsoluto = basepath + imgNameInServer;
-                        // img.src = basepath + "65de2c242e07b_nc.png"; //teste
                         img.src = caminhoAbsoluto;
-                        // console.log(dadosPergunta["imagesToPHP"][i])
                         divImg.appendChild(img);
                         imagens.appendChild(divImg)
                     }
                 }
                 
                 labelDiv.appendChild(imagens)
-                // let nextDivToInsert = document.querySelector(".alinar-botoes-label");
-                // let dadElement = nextDivToInsert.parentNode;
                 
-                // dadElement.insertBefore(imagens, nextDivToInsert);
             }
             else if (labelDiv.classList.contains("label_checklist-right")) {
                 montarBotoes();
@@ -168,13 +158,10 @@ export class Dom {
             }
             for (var i = 0; i < self_1.dataNaoConf.length; i++) {
                 var Nconf = self_1.dataNaoConf[i];
-                // console.log(Nconf);
                 if (Nconf["id_pergunta"] == idPergunta) {
                     self_1.dataNaoConf.splice(i, 1);
-                    // console.log("AAAAAAAAAAAAAAAAAAAAAAAAAA")
                 }
             }
-            // console.log(self_1.dataNaoConf);
 
         }
 
@@ -267,21 +254,7 @@ export class Dom {
         var confirmButton = document.createElement("button");
         confirmButton.className = "botao-confirmar-submit";
         confirmButton.textContent = "Confirmar";
-        // confirmButton.onclick = function() {
-        //     labelDiv = document.querySelector("#label-div");
-        //     labelDiv.classList.add("incorrect");
-            //vermelho
-            // labelDiv.style.backgroundColor = 'red';
-            // labelDiv.classList.add("incorrect");
-            // buttonBIBI.className = "bi bi-arrow-clockwise";
-
-        //     var textAreaContent = document.querySelector(".descricao_nao_conf").value
-        //     var varPreview = document.querySelector(".upload-img");
-        //     var images = varPreview.querySelectorAll("img");
-        //     self.save(textAreaContent, images);
-        //     self.close();
-        // }
-
+ 
         divBotoes.appendChild(cancelButton);
         divBotoes.appendChild(confirmButton);
 
@@ -324,7 +297,6 @@ export class Dom {
             imagesToPHP[i] = src;
         }
         
-        // console.log(dadosPergunta)
         data["responsavel"] = "logistica";
         data["NaoConformidade"] = true;
         data["nome_check"] = dadosPergunta["nome_check"];
@@ -337,7 +309,6 @@ export class Dom {
         data["imagesToPHP"] = imagesToPHP;
         data["id_realizacao"] = dadosPergunta ["id_realizacao"];
         this.dataNaoConf.push(data);
-        // console.log(data)
 
     }
 
@@ -369,54 +340,63 @@ export class Dom {
     loadImagesToPreview(event) {
         const MULTIPLE_FILES = event.target.files;
 
-        const MAX_IMAGES = 3;
-        const IMAGES_TO_PROCESS = Math.min(MAX_IMAGES, MULTIPLE_FILES.length);
-    
-        for (let i = 0; i < IMAGES_TO_PROCESS; i++) {
-            const FILE = MULTIPLE_FILES[i];
+        if(MULTIPLE_FILES.length > 3){
 
+
+            modalStatus('teste','success')
+        }else{
+
+
+
+            const MAX_IMAGES = 3;
+            const IMAGES_TO_PROCESS = Math.min(MAX_IMAGES, MULTIPLE_FILES.length);
             
-            if (!FILE.type.startsWith("image/")) {
-                continue;
+        
+            for (let i = 0; i < IMAGES_TO_PROCESS; i++) {
+                const FILE = MULTIPLE_FILES[i];
+    
+                
+                if (!FILE.type.startsWith("image/")) {
+                    continue;
+                }
+        
+                const IMG = document.createElement("img");
+                IMG.className = "beluga"; 
+    
+                let reader = new FileReader();
+    
+                reader.onload = (e) => {
+        
+                    IMG.src = e.target.result
+                 }
+    
+                reader.readAsDataURL(FILE)  
+                
+                var container_img = document.createElement("div");
+        
+                
+        
+                container_img.appendChild(IMG);
+        
+                var varPreview = document.querySelector(".upload-img");
+                varPreview.appendChild(container_img);
             }
     
-            const IMG = document.createElement("img");
-            IMG.className = "beluga";
+            const BUTTON_DELETE_IMAGE = document.querySelector('#btn_reset_imgs')
+    
             
-            
+            BUTTON_DELETE_IMAGE.addEventListener("click", function() {
+                var varPreview = document.querySelector(".upload-img");
+                while(varPreview.firstChild) {
+                    varPreview.removeChild(varPreview.firstChild);
+                }
+            });
 
-            let reader = new FileReader();
-
-            reader.onload = (e) => {
-    
-                IMG.src = e.target.result
-             }
-
-            reader.readAsDataURL(FILE)  
-            
-            var container_img = document.createElement("div");
-    
-            
-    
-            container_img.appendChild(IMG);
-    
-            var varPreview = document.querySelector(".upload-img");
-            varPreview.appendChild(container_img);
         }
 
-        const BUTTON_DELETE_IMAGE = document.querySelector('#btn_reset_imgs')
-
-        
-        BUTTON_DELETE_IMAGE.addEventListener("click", function() {
-            var varPreview = document.querySelector(".upload-img");
-            while(varPreview.firstChild) {
-                varPreview.removeChild(varPreview.firstChild);
-            }
-        });
-    }
-
+    } 
 
 }   
-
+ 
 
 
