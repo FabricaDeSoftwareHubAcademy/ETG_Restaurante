@@ -77,7 +77,8 @@ export class Dom {
                     let tamanho = images.length
                     // console.log(tamanho)
                     if (textAreaContent == "" || tamanho == 0 || tamanho > 3) {
-                        alert("Preencha os dados corretamente")
+                        // alert("Preencha os dados corretamente")
+                        modalStatus("Preencha os dados corretamente", "error")
                         return false;
                     }
                     // console.log(images);
