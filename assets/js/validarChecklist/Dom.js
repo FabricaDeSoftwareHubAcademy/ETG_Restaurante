@@ -396,22 +396,23 @@ export class Dom {
             
             var container_img = document.createElement("div");
     
-            const BUTTON_DELETE_IMAGE = document.createElement("button");
-    
-            BUTTON_DELETE_IMAGE.textContent = "EXCLUIR";
-            BUTTON_DELETE_IMAGE.addEventListener("click", function() {
-                var varPreview = document.querySelector(".upload-img");
-                while(varPreview.firstChild) {
-                    varPreview.removeChild(varPreview.firstChild);
-                }
-            });
+            
     
             container_img.appendChild(IMG);
-            container_img.appendChild(BUTTON_DELETE_IMAGE);
     
             var varPreview = document.querySelector(".upload-img");
             varPreview.appendChild(container_img);
         }
+
+        const BUTTON_DELETE_IMAGE = document.querySelector('#btn_reset_imgs')
+
+        
+        BUTTON_DELETE_IMAGE.addEventListener("click", function() {
+            var varPreview = document.querySelector(".upload-img");
+            while(varPreview.firstChild) {
+                varPreview.removeChild(varPreview.firstChild);
+            }
+        });
     }
 
 
