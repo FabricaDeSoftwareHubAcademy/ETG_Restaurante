@@ -19,12 +19,6 @@ class ValidarChecklist
     }
 
     public function hasNaoConf($idPergunta, $idRealiza) {
-        return NaoConformidade::getNaoConfByIdPerguntaAndIdRealiza(idPergunta: $idPergunta, idRealiza: $idRealiza);
-        // var_dump($naoConf);exit;
-        // if ($hasNaoConf) {
-        //     return true;
-        // } else {
-        //     return false;
-        // }
+        return NaoConformidade::getNaoConfByIdPerguntaAndIdRealiza(idPergunta: $idPergunta, idRealiza: $idRealiza); 
     }
 }

@@ -219,6 +219,7 @@ export class Dom {
             {
                 //vermelho
                 labelDiv.style.backgroundColor = 'red';
+                labelDiv.style.border = '3px solid red';
                 labelDiv.classList.add("incorrect");
                 button.className = "bi bi-arrow-clockwise";
             }
