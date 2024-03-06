@@ -15,11 +15,12 @@ let listaData = {
     // } 
 }
 
-function atualizarValor(id, bool, descPergunta)
+function atualizarValor(id, bool)
 
 
 {
     id_atual = id;
+    
     
 
     if(bool)
@@ -39,7 +40,7 @@ function atualizarValor(id, bool, descPergunta)
     }
     else
     {
-        console.log()
+        
         if(listaData[id_atual] !== undefined){ 
             $('#descricao_nao_conf').val(listaData[id_atual].descricao)
             loadImgs()
@@ -53,12 +54,18 @@ function atualizarValor(id, bool, descPergunta)
             }
 
         }
+
+        let descricao_pergunta_click = dadosPerguntas.find((e) => e.id_pergunta == id_atual)
+        console.log(descricao_pergunta_click)
+        $('.pergunta_nao_conf').text(descricao_pergunta_click.pergunta)
+
+
         let  green = document.getElementById('green'+id)
         let  red = document.getElementById('red'+id)
         green.classList = 'bi bi-check'
         red.classList = 'bi bi-x-circle'
         respondidas[id] = false
-        acao(id, descPergunta)
+        acao(id)
 
 
     }

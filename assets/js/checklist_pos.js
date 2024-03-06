@@ -59,6 +59,11 @@ function atualizarValor(id, bool)
             }
 
         }
+
+        let descricao_pergunta_click = dadosPerguntas.find((e) => e.id_pergunta == id_atual)
+        console.log(descricao_pergunta_click)
+        $('.pergunta_nao_conf').text(descricao_pergunta_click.pergunta)
+
         let  green = document.getElementById('green'+id)
         let  red = document.getElementById('red'+id)
         green.classList = 'bi bi-check'
