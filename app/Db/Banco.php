@@ -214,7 +214,7 @@ class Banco{
         JOIN cadastro_perfil ON cadastro_usuario.id_perfil = cadastro_perfil.id';
         return $this ->  executarQuery($query);
     }    
+
 }
 
-$banco = new Banco("reg_correcao");
 ?>

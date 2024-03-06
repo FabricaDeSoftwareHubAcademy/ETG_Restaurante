@@ -14,6 +14,7 @@ $dados = Sala::getDados();
 $count = 0;
 if($ifgensala){
     foreach($dados as $sala){
+        // var_dump($dados);exit;
         
         
         $img_sala = '';

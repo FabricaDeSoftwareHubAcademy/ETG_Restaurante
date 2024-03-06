@@ -211,4 +211,10 @@ class ResponderChecklist
 
         
     }
+
+    public static function setConf_logis($id_responder_checklist) {
+        $obj_banco = new Banco('responder_check');
+        $dados = ["conf_logis" => "s"];
+        $obj_banco -> update('id = "'.$id_responder_checklist.'"', $dados);
+    }
 }

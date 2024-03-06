@@ -28,4 +28,9 @@ class NaoConformidade
         } 
     }
 
+    public static function saveAndGetLastId(array $dados) {
+        $obj_banco = new Banco('reg_nc');
+        return $obj_banco -> insertRecoverId($dados);
+    }
+
 }
