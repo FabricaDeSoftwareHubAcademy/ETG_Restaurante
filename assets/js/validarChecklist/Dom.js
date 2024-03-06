@@ -72,10 +72,17 @@ export class Dom {
                 self_2.call(pergunta)
                 var buttonConfirmNaoConf = document.querySelector(".botao-confirmar-submit");
                 buttonConfirmNaoConf.onclick = function() {
-                    vermelho();
                     var textAreaContent = document.querySelector(".descricao_nao_conf").value
                     var varPreview = document.querySelector(".upload-img");
                     var images = varPreview.querySelectorAll("img");
+                    let tamanho = images.length
+                    // console.log(tamanho)
+                    if (textAreaContent == "" || tamanho == 0 || tamanho > 3) {
+                        alert("Preencha os dados corretamente")
+                        return false;
+                    }
+                    // console.log(images);
+                    vermelho();
                     self_2.save(textAreaContent, images, dadosPergunta);
                     self_2.close();
                 }

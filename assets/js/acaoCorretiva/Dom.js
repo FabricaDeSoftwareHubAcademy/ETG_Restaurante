@@ -85,10 +85,20 @@ export class Dom {
             buttonSubmit.type = "button";
             buttonSubmit.onclick = function() {
                 // verde();
-
                 self_2.call(pergunta)
                 var buttonConfirmNaoConf = document.querySelector(".botao-confirmar-submit");
                 buttonConfirmNaoConf.onclick = function() {
+                    var textAreaContent = document.querySelector(".descricao_nao_conf").value
+                    var varPreview = document.querySelector(".upload-img");
+                    var images = varPreview.querySelectorAll("img");
+                    let tamanho = images.length
+
+                    if (textAreaContent == "" || tamanho == 0 || tamanho > 3) {
+                        // alert("Preencha os dados corretamente")
+                        modalStatus("Preencha os dados corretamente", "error")
+                        return false;
+                    }
+
                     for (let i = 0; i < self_2.preenchidas.length; i++) {
                         if (self_2.preenchidas[i]["id_pergunta"] == idPergunta) {
                             self_2.preenchidas[i]["preenchido"] = true
@@ -96,9 +106,7 @@ export class Dom {
                     }
 
                     verde();
-                    var textAreaContent = document.querySelector(".descricao_nao_conf").value
-                    var varPreview = document.querySelector(".upload-img");
-                    var images = varPreview.querySelectorAll("img");
+
                     // console.log(self_2.self_2.dataNaoConf)
                     for (let i = 0; i < self_2.dataNaoConf.length; i++) {
                         let id_nao_conf = self_2.dataNaoConf[i]["id_pergunta"]
