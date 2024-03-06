@@ -3,9 +3,15 @@ session_start();
 require __DIR__."/../../vendor/autoload.php";
 use App\Entity\AcaoCorretiva;
 use App\Entity\NaoConformidade;
+use App\Entity\ResponderChecklist;
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
+
+if ($_GET["tudo_correto"] == true) {
+    ResponderChecklist::setConf_logis($_GET["id_realizacao"]);
+    header("Location: ../listar_checklist_concluidas.php");
+}
 
 function convert_base64_png($img) {
     //LOGICA DA IMAGEM
@@ -89,6 +95,12 @@ foreach ($data[0] as $AcaoCorretiva) {
 
     
     
+}
+//desbloqueando sala
+if ($response["status"] == true) {
+    // 'conf_logis = "'.$id_responder_checklist.'"'
+    ResponderChecklist::setConf_logis($_GET["id_realizacao"]);
+
 }
 echo json_encode($response["status"]);
     

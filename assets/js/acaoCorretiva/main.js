@@ -3,8 +3,10 @@ import { Dom } from './Dom.js';
  
 // Obtenha o array armazenado no sessionStorage
 var dadosGetStorage = JSON.parse(sessionStorage.getItem('NaoConformidades'));
+var id_realizacao = JSON.parse(sessionStorage.getItem('id_realizacao'));
 var AcoesCorretivas = [];
 console.log(dadosGetStorage);
+// console.log(id_realizacao);
 const DOM = new Dom(dadosGetStorage, AcoesCorretivas);
 
 
@@ -22,7 +24,7 @@ document.querySelector("#btn-cadastrar-acao-corretiva").addEventListener("click"
 
 
 async function ajaxHTTP(dados) {
-    var request = await fetch("actions/action_cadastrar_acao_corretiva.php", {
+    var request = await fetch("actions/action_cadastrar_acao_corretiva.php?id_realizacao="+id_realizacao, {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
