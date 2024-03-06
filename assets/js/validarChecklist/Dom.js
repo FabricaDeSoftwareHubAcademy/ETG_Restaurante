@@ -1,7 +1,8 @@
 import { Pergunta } from './Pergunta.js';
 
 export class Dom {     
-    constructor(dataNaoConf) {
+    constructor(dataNaoConf, preenchidas) {
+        this.preenchidas = preenchidas
         this.dataNaoConf = dataNaoConf;
         this.objPergunta = new Pergunta(perguntasJson);
         this.dataPerguta = this.objPergunta.getAll();
@@ -70,10 +71,17 @@ export class Dom {
                 self_2.call(pergunta)
                 var buttonConfirmNaoConf = document.querySelector(".botao-confirmar-submit");
                 buttonConfirmNaoConf.onclick = function() {
-                    vermelho();
                     var textAreaContent = document.querySelector(".descricao_nao_conf").value
                     var varPreview = document.querySelector(".upload-img");
                     var images = varPreview.querySelectorAll("img");
+                    let tamanho = images.length
+                    // console.log(tamanho)
+                    if (textAreaContent == "" || tamanho == 0 || tamanho > 3) {
+                        alert("Preencha os dados corretamente")
+                        return false;
+                    }
+                    // console.log(images);
+                    vermelho();
                     self_2.save(textAreaContent, images, dadosPergunta);
                     self_2.close();
                 }
@@ -86,7 +94,17 @@ export class Dom {
             buttonSubmit.className = "botao-cadastrar-submit-label";
             buttonSubmit.textContent = "Correto";
             buttonSubmit.type = "button";
+            self_2 = self_1
             buttonSubmit.onclick = function() {
+                // console.log(self_2.preenchidas.length)
+                for (let i = 0; i < self_2.preenchidas.length; i++) {
+                    // console.log(i);
+                    if (self_2.preenchidas[i]["id_pergunta"] == idPergunta) {
+                        self_2.preenchidas[i]["preenchido"] = true 
+                    }
+                }
+        
+
                 if (labelDiv.classList.contains("label_checklist-wrong") && labelDiv.classList.contains("active")) {
                     vermelho();
                 }
@@ -104,6 +122,12 @@ export class Dom {
 
         function descerNormal()
         {
+            for (let i = 0; i < self_1.preenchidas.length; i++) {
+                // console.log(i);
+                if (self_1.preenchidas[i]["id_pergunta"] == idPergunta) {
+                    self_1.preenchidas[i]["preenchido"] = false 
+                }
+            }
             // console.log(self_1.dataNaoConf)
             labelDiv.classList.add("active");
             if (labelDiv.classList.contains("label_checklist-wrong")) {
