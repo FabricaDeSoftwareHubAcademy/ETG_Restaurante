@@ -3,7 +3,7 @@ session_start();
  
 
 require "./vendor/autoload.php";
-// require("includes/main/main_index.php");
+require("includes/main/main_index.php");
 
 use App\Entity\Usuario;
 
