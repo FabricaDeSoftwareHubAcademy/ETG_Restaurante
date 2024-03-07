@@ -10,10 +10,10 @@ if(!$ifreacheck){
 use App\Entity\Checklist;
 use App\Entity\Pergunta;
 use App\Entity\Sala;
-$cond = Sala::getDados('responsavel, status','id = '.$_GET['id_sala']);
-if(($_SESSION['id_user'] != $cond[0]['responsavel'] && !$ifreaac) || $cond[0]['status'] != 'A'){
-    header("Location: ./listar_recados.php");
-}
+// $cond = Sala::getDados('responsavel, status','id = '.$_GET['id_sala']);
+// if(($_SESSION['id_user'] != $cond[0]['responsavel'] && !$ifreaac) || $cond[0]['status'] != 'A'){
+//     header("Location: ./listar_recados.php");
+// }
 $obj_checklist = new Checklist();
 $obj_pergunta = new Pergunta();
 $dados_imprimir = "";
