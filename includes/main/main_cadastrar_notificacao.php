@@ -16,7 +16,7 @@
             <form action="" method="POST" class="form_enviar_notificacao">
 
                 <div class="input_group field">
-                    <input name="email_destinatario" id="nome" type="email" class="input_field" placeholder="Name" required="">
+                    <input name="email_destinatario" id="nome1" type="email" class="input_field" placeholder="Name" required="">
                     <label for="name"  class="input_label">Para:</label> <!--Alterar para o nome do input-->
                 </div>
 

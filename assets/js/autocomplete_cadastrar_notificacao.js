@@ -1,4 +1,4 @@
-$("#nome").autocomplete({
+$("#nome1").autocomplete({
     source: function(request, response) {
         // Fetch data
         $.ajax({
