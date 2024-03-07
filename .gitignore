@@ -9,7 +9,11 @@ vendor/composer/LICENSE
 
 /storage/salas/*
 !storage/salas/caramelo.jpg
+
 /storage/n_conformidade/*
+!storage/n_conformidade/default.65b15311d4f37.jpg
+
 /storage/acao_corretiva
+!storage/acao_corretiva/default.jpg
 
 
