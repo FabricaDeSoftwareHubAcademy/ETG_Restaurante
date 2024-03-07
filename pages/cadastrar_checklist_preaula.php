@@ -10,6 +10,10 @@ if(!$ifreacheck){
 use App\Entity\Checklist;
 use App\Entity\Pergunta;
 use App\Entity\Sala;
+$cond = Sala::getDados('status','id = '.$_GET['id_sala']);
+if($cond[0]['status'] != 'L'){
+    header("Location: ./listar_recados.php");
+}
 $obj_checklist = new Checklist();
 $obj_pergunta = new Pergunta();
 $dados_imprimir = "";
