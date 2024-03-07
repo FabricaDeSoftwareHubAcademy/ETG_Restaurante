@@ -48,6 +48,8 @@
     </div>
 </div>
 <!-- Script -->
+<script defer src="../assets/js/cadastrar_notificacao.js"></script>
+<script src="../assets/js/modais.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
 <!-- jQuery UI -->

@@ -14,25 +14,25 @@ use App\Entity\Usuario;
 use App\Entity\Funcoes;
 
 
-if (isset($_POST['btn_submit']))
-{
-    $id_remetente = $_SESSION["id_user"]; //VAI PEGAR DA SESSION O ID DO USUARIO
-    $email_destinatario = $_POST['email_destinatario']; //email 
-    $texto = $_POST['descricao'];
+// if (isset($_POST['btn_submit']))
+// {
+//     $id_remetente = $_SESSION["id_user"]; //VAI PEGAR DA SESSION O ID DO USUARIO
+//     $email_destinatario = $_POST['email_destinatario']; //email 
+//     $texto = $_POST['descricao'];
     
-    $usuarios = Usuario::getDadosByEmail($email_destinatario);
-    if($usuarios)
-    {
-        $id_destinatario = $usuarios[0]['id'];
-        Notificacao::cadastrar($id_remetente ,$id_destinatario, $texto);
-        header("Location: listar_salas.php");
-    }
-    else
-    {
-        die('ESTE EMAIL NAO EXISTE'); //pop up
-    }
+//     $usuarios = Usuario::getDadosByEmail($email_destinatario);
+//     if($usuarios)
+//     {
+//         $id_destinatario = $usuarios[0]['id'];
+//         Notificacao::cadastrar($id_remetente ,$id_destinatario, $texto);
+//         header("Location: listar_salas.php");
+//     }
+//     else
+//     {
+//         die('ESTE EMAIL NAO EXISTE'); //pop up
+//     }
     
-} 
+// } 
 
 
 require("../includes/main/main_cadastrar_notificacao.php");
