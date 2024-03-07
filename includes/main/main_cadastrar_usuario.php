@@ -110,6 +110,7 @@ button.addEventListener('click', async (e) =>{
 
                 //recupera o array que veio do PHP
                 let resposta = await dados_php.json()
+
                 console.log(resposta)
                 console.log(resposta.status)
     
@@ -126,7 +127,7 @@ button.addEventListener('click', async (e) =>{
     
             }
             else{
-                modalStatus('Ocorreu um erro, tente novamente mais tarde!','error')
+                modalStatus(resposta.status,'error')
             }
 
         }else{

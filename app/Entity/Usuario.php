@@ -63,13 +63,14 @@ class Usuario
         $validacao_email = $objBanco -> select('email = "'.$email.'"') -> fetchAll(PDO::FETCH_ASSOC);
         if ($validacao_email)
         {
-            die('email ja existe'); //modal para email errado return false
+           
+            return [false, 'Email já existe']; //modal para email errado return false
         }
 
         $validacao_matricula = $objBanco -> select('matricula = '.$matricula) -> fetchAll(PDO::FETCH_ASSOC);
         if ($validacao_matricula)
         {
-            die('matricula ja existe'); //modal para matricula errado return false
+            return [false, 'Matrícula já existe']; //modal para matricula errado return false
         }
         else if (!$validacao_email && !$validacao_matricula)
         {
@@ -82,7 +83,7 @@ class Usuario
                                 'senha'             =>      $senha,
                                 'id_perfil'         =>      $id_perfil,
                                 ]);
-            return true;
+            return [true,'a'];
         }
 
 
