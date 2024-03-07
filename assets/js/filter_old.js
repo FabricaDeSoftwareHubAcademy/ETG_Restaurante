@@ -73,16 +73,18 @@ $("#btn_cad_pergunta").click(async function(event){
             body: formData
         })
         let response = await dados_php.json()
- 
+
         closePopup1()
         $("#nova_pergunta").val('')
         $('#check1').prop('checked',false)
         $('#check2').prop('checked',false)
 
-        modalStatus('cadastrado com sucesso!','success')
+        modalStatus('cadastrado com Sucesso!','success')
+        
+        listarPerguntass() 
 
-        listarPerguntas()
-    }else{
+
+     }else{
       modalStatus('preencha todos os dados corretamente!','error')
         
     } 
@@ -108,7 +110,7 @@ $("#botao-sim-submit").on('click',async function(event){
     console.log(response)
     if(response.status){ 
 
-        listarPerguntas()
+        listarPerguntass()
           modalStatus('Pergunta excluída com sucesso!','success')
 
     }else{
@@ -166,7 +168,7 @@ $("#botao_confirmar_editar").on('click',async function(e){
         let response = await dados_php.json()
         if(response.status){
  
-            listarPerguntas()
+            listarPerguntass()
 
             closePopup2()
             closePopup1()

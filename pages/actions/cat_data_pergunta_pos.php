@@ -8,6 +8,7 @@ session_start();
 require __DIR__."/../../vendor/autoload.php";
 use App\Entity\ResponderChecklist;
 use App\Entity\Checklist;
+use App\Entity\Sala;
 
 
 
@@ -24,6 +25,9 @@ try {
     
     $data_last_insert = Checklist::getLastCheck($id_sala)[0] ;
 
+    // Bloqueando a sala 
+    Sala::setStatusSala( $id_sala , 'B' );
+    
     $response=ResponderChecklist::cadastrarPos($data_last_insert['id'], $dados);
 
     $status = $response ;

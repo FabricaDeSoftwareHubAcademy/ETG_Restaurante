@@ -59,6 +59,10 @@ function atualizarValor(id, bool)
             }
 
         }
+
+        let descricao_pergunta_click = dadosPerguntas.find((e) => e.id_pergunta == id_atual)
+        $('.pergunta_nao_conf').text(descricao_pergunta_click.pergunta)
+
         let  green = document.getElementById('green'+id)
         let  red = document.getElementById('red'+id)
         green.classList = 'bi bi-check'
@@ -181,32 +185,17 @@ btn_submit.addEventListener('click', async (e) => {
         });
         
         let res = await data_php.json()
-        if(res.status){
-             
+        if(res.status){ 
 
             var novoBotao = btn_submit.cloneNode(true);
             btn_submit.parentNode.replaceChild(novoBotao, btn_submit);
 
             modalStatus('Checklist efetuado com Sucesso!','success',() => { 
-                location.href = 'visualizar_sala.php?id_sala='+id_sala 
+                location.href = 'listar_salas.php'
             })
 
         }
-        
-        // if(res.status == true){
-
-        //     modalStatus('Checklist efetuado com Sucesso!','success',() => { 
-        //         location.href = 'visualizar_sala.php?id_sala='+id_sala 
-        //     })
-
-        // }else{
-
-        //     modalStatus('Aconteceu, tente novamente mais tarde','error',() => { 
-        //         location.href = 'visualizar_sala.php?id_sala='+id_sala 
-        //     })
-
-        // }
-
+         
 
     }else{
 

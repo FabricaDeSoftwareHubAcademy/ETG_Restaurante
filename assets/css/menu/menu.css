@@ -671,11 +671,13 @@
   } 
 }
 
-@media (max-height:642px){
+@media (max-height:664px){
   .container-menu.active {
-    height: 90vh;
+    height: 100vh;
+    position: absolute;
   }
 }
+
 
 
 @media (max-width:720px){

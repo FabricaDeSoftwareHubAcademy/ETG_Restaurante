@@ -400,11 +400,7 @@ if(isset($_POST['btn_submit'])){
                 }
         
             }
-        }
-    
-        
-        
-        
+        }  
     }
 
     if(isset($_SESSION['msg_edit'])){

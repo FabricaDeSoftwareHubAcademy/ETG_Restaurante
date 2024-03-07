@@ -173,6 +173,7 @@ $ifreaac = $perfil['realizar_acao_corretiva'] == '1';
                                     <li class="iten-submenu4"><a href="../pages/cadastrar_sala.php" id="fonte-submenu">relatorio geral</a></li>
                                     <li class="iten-submenu4"><a href="../pages/relatorio_usuarios.php" id="fonte-submenu">relatorio usuarios</a></li>
                                     <li class="iten-submenu4"><a href="../pages/relatorio.php" id="fonte-submenu">relatorio salas</a></li>
+
                                 </ul>
                             </li> ';
                         }
@@ -353,3 +354,4 @@ document.addEventListener("DOMContentLoaded", function() {
 
 </script>       
 
+    

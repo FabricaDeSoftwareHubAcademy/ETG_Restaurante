@@ -70,6 +70,7 @@ foreach($perguntaPre as $perguntaOb ){
 echo('  <script>
             let id_checklist = '.$dados_sala[0]['id_check'].'
             let perguntasPre = '.json_encode($idsPergPre).'
+            let dadosPerguntas = '.json_encode($dados_pergunta).'
         </script>');
 
 $dados_imprimir .= '

@@ -1,15 +1,18 @@
 
+
 export class Dom {     
-    constructor(dataNaoConf) {
+    constructor(dataNaoConf, dataAcaoCorretiva, preenchidas) {
+        this.preenchidas = preenchidas
         this.dataNaoConf = dataNaoConf;
+        this.dataAcaoCorretiva = dataAcaoCorretiva
     }
 
     showPerguntas() {
         for (var pergunta of this.dataNaoConf) {
-            console.log(pergunta)
+            // console.log(pergunta)
              
             
-            this.createOneRedElement(pergunta["textAreaContent"], pergunta["idPergunta"]); //checando se a pergunta tem uma nao conformidade 
+            this.createOneRedElement(pergunta["textAreaContent"], pergunta["id_pergunta"]); //checando se a pergunta tem uma nao conformidade 
          }
     }
 
@@ -82,15 +85,37 @@ export class Dom {
             buttonSubmit.type = "button";
             buttonSubmit.onclick = function() {
                 // verde();
-
                 self_2.call(pergunta)
                 var buttonConfirmNaoConf = document.querySelector(".botao-confirmar-submit");
                 buttonConfirmNaoConf.onclick = function() {
-                    verde();
                     var textAreaContent = document.querySelector(".descricao_nao_conf").value
                     var varPreview = document.querySelector(".upload-img");
                     var images = varPreview.querySelectorAll("img");
-                    self_2.save(textAreaContent, images, idPergunta);
+                    let tamanho = images.length
+
+                    if (textAreaContent == "" || tamanho == 0 || tamanho > 3) {
+                        // alert("Preencha os dados corretamente")
+                        modalStatus("Preencha os dados corretamente", "error")
+                        return false;
+                    }
+
+                    for (let i = 0; i < self_2.preenchidas.length; i++) {
+                        if (self_2.preenchidas[i]["id_pergunta"] == idPergunta) {
+                            self_2.preenchidas[i]["preenchido"] = true
+                        }
+                    }
+
+                    verde();
+
+                    // console.log(self_2.self_2.dataNaoConf)
+                    for (let i = 0; i < self_2.dataNaoConf.length; i++) {
+                        let id_nao_conf = self_2.dataNaoConf[i]["id_pergunta"]
+                        if (id_nao_conf == idPergunta) {
+                            self_2.save(textAreaContent, images, self_2.dataNaoConf[i]);
+                            break;
+                        }
+                    }
+
                     self_2.close();
                 }
             }
@@ -102,13 +127,20 @@ export class Dom {
         }
 
         function encontrarObjetoPorId(array, id) {
-            return array.find(objeto => objeto.idPergunta === id);
+            return array.find(objeto => objeto.id_pergunta === id);
         }
 
         function descerNormal()
         {
+            for (let i = 0; i < self_1.preenchidas.length; i++) {
+                if (self_1.preenchidas[i]["id_pergunta"] == idPergunta) {
+                    self_1.preenchidas[i]["preenchido"] = false
+                }
+            }
+
             montarBotoes();
             labelDiv.classList.add("active");
+            // console.log(self_1.dataAcaoCorretiva);
 
             if (labelDiv.classList.contains("label_checklist-wrong")) {
                 labelDiv.style.backgroundColor = 'transparent';
@@ -129,21 +161,31 @@ export class Dom {
                 // console.log(encontrarObjetoPorId(self_1.dataNaoConf,idPergunta))
                 let dataPergunta = encontrarObjetoPorId(self_1.dataNaoConf,idPergunta)
                 let imgsPergunta = dataPergunta['imagesToPHP']
-
+                // console.log(eBase64)
+                //SIMOES QQ VC TEM NA CABECA MENOR, ESSE FOR É PRA IMAGEM QUE NAO É BASE 64 ENT PQ DIABOS SE TA USANDO UMA ARROW CHAMADA BASE64 EM EM EM 
 
                 imgsPergunta.forEach(img_base64 => {
-                    
-                    let img_element = document.createElement('img')
-                    if(img_base64.startsWith('data:image')){
-                        img_element.src = img_base64
-                    }else{
-                        img_element.src = '../storage/n_conformidade/'+img_base64
+
+                    if(img_base64.length > 0){
+
+                        let img_element = document.createElement('img')
+                        if(img_base64.startsWith('data:image')){
+                            img_element.src = img_base64
+                            
+                        }else{
+                            img_element.src = '../storage/n_conformidade/'+img_base64
+                        }
+                        img_element.style.width = '30%'
+                        img_element.classList.add('beluga')
+                        imagens.appendChild(img_element)
+
                     }
-                    img_element.style.width = '30%'
-                    img_element.classList.add('beluga')
-                    imagens.appendChild(img_element)
 
                 }); 
+
+
+
+
  
                 let nextDivToInsert = document.querySelector(".alinar-botoes-label");
                 let dadElement = labelDiv;
@@ -164,15 +206,16 @@ export class Dom {
             if (labelDiv.classList.contains("incorrect")) {
                 labelDiv.classList.remove("incorrect");
             }
-            // for (var i = 0; i < self_1.dataNaoConf.length; i++) {
-            //     var Nconf = self_1.dataNaoConf[i];
-            //     if (Nconf["idPergunta"] == idPergunta) {
-            //         self_1.dataNaoConf.splice(i, 1);
-            //         // console.log("AAAAAAAAAAAAAAAAAAAAAAAAAA")
-            //     }
-            // }
-            console.log(self_1.dataNaoConf);
+             for (var i = 0; i < self_1.dataAcaoCorretiva.length; i++) {
+                var Acorretiva = self_1.dataAcaoCorretiva[i];
+                
+                // console.log(Acorretiva);
+                if (Acorretiva["id_pergunta"] == idPergunta) {
+                    self_1.dataAcaoCorretiva.splice(i, 1);
+                    // console.log("AAAAAAAAAAAAAAAAAAAAAAAAAA")
+                }
 
+            }
         }
 
         function subirNormal()
@@ -202,6 +245,7 @@ export class Dom {
         {
             //verde
             labelDiv.style.backgroundColor = 'green';
+            labelDiv.style.border = '3px solid green';
             labelDiv.classList.add("correct");
             button.className = "bi bi-arrow-clockwise";
         }
@@ -223,12 +267,12 @@ export class Dom {
             else if (labelDiv.classList.contains("active") && !labelDiv.classList.contains("correct") && !labelDiv.classList.contains("incorrect"))
             {
                 subirNormal();
-                console.log("subiu normal transparente");
+                // console.log("subiu normal transparente");
             }
             else
             {
                 descerNormal();
-                console.log("desceu normal transparente");
+                // console.log("desceu normal transparente");
             }
         }
 
@@ -289,22 +333,38 @@ export class Dom {
         }
         }
 
-    save(textAreaContent, images, idPergunta) {
-        var data = {};
+    save(textArea_AcaoCorretiva, images_AcaoCorretiva, dataNaoConformidade) {
+        // console.log(dataNaoConformidade);
+        var dataAcaoCorretiva = {};
         var imagesToPHP = [];
     
         // ARMAZENANDO AS IMAGENS
-        for (let i = 0; i < images.length; i++) {
-            var src = images[i].getAttribute("src");
+        for (let i = 0; i < images_AcaoCorretiva.length; i++) {
+            var src = images_AcaoCorretiva[i].getAttribute("src");
             imagesToPHP[i] = src;
         }
-    
-        data["idPergunta"] = idPergunta;
-        data["textAreaContent"] = textAreaContent;
-        data["imagesToPHP"] = imagesToPHP;
+        
+        if (dataNaoConformidade["id_nao_conformidade"] == undefined) {
+            dataAcaoCorretiva["data_nao_conformidade"] = dataNaoConformidade
+        }
 
-        this.dataNaoConf.push(data);
-        console.log(this.dataNaoConf)
+        dataAcaoCorretiva["acaoCorretiva"] = true;
+        dataAcaoCorretiva["id_pergunta"] = dataNaoConformidade["id_pergunta"];
+        dataAcaoCorretiva["textAreaContent"] = textArea_AcaoCorretiva;
+        dataAcaoCorretiva["imagesToPHP"] = imagesToPHP;
+
+        // console.log(dadosPergunta)
+        dataAcaoCorretiva["id_nao_conformidade"] = dataNaoConformidade["id_nao_conformidade"];
+        dataAcaoCorretiva["id_sala"] = dataNaoConformidade["id_sala"];
+        
+        dataAcaoCorretiva["nome_check"] = dataNaoConformidade["nome_check"];
+        dataAcaoCorretiva["nome_sala"] = dataNaoConformidade["nome_sala"];
+        dataAcaoCorretiva["pergunta"] = dataNaoConformidade["pergunta"];
+        dataAcaoCorretiva["responsavel"] = "logistica";
+        dataAcaoCorretiva["tipo"] = dataNaoConformidade["tipo"];
+
+        this.dataAcaoCorretiva.push(dataAcaoCorretiva);
+        // console.log(this.dataAcaoCorretiva)
 
     }
 
@@ -338,6 +398,8 @@ export class Dom {
 
         const MAX_IMAGES = 3;
         const IMAGES_TO_PROCESS = Math.min(MAX_IMAGES, MULTIPLE_FILES.length);
+
+        
     
         for (let i = 0; i < IMAGES_TO_PROCESS; i++) {
             const FILE = MULTIPLE_FILES[i];
@@ -361,23 +423,34 @@ export class Dom {
             
             var container_img = document.createElement("div");
     
-            const BUTTON_DELETE_IMAGE = document.createElement("button");
-    
-            BUTTON_DELETE_IMAGE.textContent = "EXCLUIR";
-            BUTTON_DELETE_IMAGE.addEventListener("click", function() {
-                var varPreview = document.querySelector(".upload-img");
-                while(varPreview.firstChild) {
-                    varPreview.removeChild(varPreview.firstChild);
-                }
-            });
+            // const BUTTON_DELETE_IMAGE = document.createElement("button");
+            // BUTTON_DELETE_IMAGE.textContent = "EXCLUIR";
+            // BUTTON_DELETE_IMAGE.addEventListener("click", function() {
+            //     var varPreview = document.querySelector(".upload-img");
+            //     while(varPreview.firstChild) {
+            //         varPreview.removeChild(varPreview.firstChild);
+            //     }
+            // });
     
             container_img.appendChild(IMG);
-            container_img.appendChild(BUTTON_DELETE_IMAGE);
-    
+            // container_img.appendChild(BUTTON_DELETE_IMAGE);
+            container_img.className = 'img_nc_lista' 
+
             var varPreview = document.querySelector(".upload-img");
             varPreview.appendChild(container_img);
         }
-    }
+
+
+        const BUTTON_DELETE_IMAGE = document.querySelector('#btn_reset_imgs')
+
+        
+        BUTTON_DELETE_IMAGE.addEventListener("click", function() {
+            var varPreview = document.querySelector(".upload-img");
+            while(varPreview.firstChild) {
+                varPreview.removeChild(varPreview.firstChild);
+            }
+        });
+     }
 
 
 }   

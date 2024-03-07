@@ -1,7 +1,8 @@
 import { Pergunta } from './Pergunta.js';
 
 export class Dom {     
-    constructor(dataNaoConf) {
+    constructor(dataNaoConf, preenchidas) {
+        this.preenchidas = preenchidas
         this.dataNaoConf = dataNaoConf;
         this.objPergunta = new Pergunta(perguntasJson);
         this.dataPerguta = this.objPergunta.getAll();
@@ -16,7 +17,6 @@ export class Dom {
             if (pergunta["NaoConformidade"]) {
                 this.addNaoConfToDataNaoConf(pergunta);
                 this.createOneRedElement(pergunta["pergunta"], pergunta["id_pergunta"], pergunta); //checando se a pergunta tem uma nao conformidade
-                // console.log(pergunta);
                 continue;
             }
             this.createOneGreenElement(pergunta["pergunta"], pergunta["id_pergunta"], pergunta);
@@ -71,10 +71,24 @@ export class Dom {
                 self_2.call(pergunta)
                 var buttonConfirmNaoConf = document.querySelector(".botao-confirmar-submit");
                 buttonConfirmNaoConf.onclick = function() {
-                    vermelho();
                     var textAreaContent = document.querySelector(".descricao_nao_conf").value
                     var varPreview = document.querySelector(".upload-img");
                     var images = varPreview.querySelectorAll("img");
+                    let tamanho = images.length
+                    // console.log(tamanho)
+                    if (textAreaContent == "" || tamanho == 0 || tamanho > 3) {
+                        // alert("Preencha os dados corretamente")
+                        modalStatus("Preencha os dados corretamente", "error")
+                        return false;
+                    }
+                    // console.log(images);
+                    for (let i = 0; i < self_2.preenchidas.length; i++) {
+                        // console.log(i);
+                        if (self_2.preenchidas[i]["id_pergunta"] == idPergunta) {
+                            self_2.preenchidas[i]["preenchido"] = true 
+                        }
+                    }
+                    vermelho();
                     self_2.save(textAreaContent, images, dadosPergunta);
                     self_2.close();
                 }
@@ -87,7 +101,17 @@ export class Dom {
             buttonSubmit.className = "botao-cadastrar-submit-label";
             buttonSubmit.textContent = "Correto";
             buttonSubmit.type = "button";
+            self_2 = self_1
             buttonSubmit.onclick = function() {
+                // console.log(self_2.preenchidas.length)
+                for (let i = 0; i < self_2.preenchidas.length; i++) {
+                    // console.log(i);
+                    if (self_2.preenchidas[i]["id_pergunta"] == idPergunta) {
+                        self_2.preenchidas[i]["preenchido"] = true 
+                    }
+                }
+        
+
                 if (labelDiv.classList.contains("label_checklist-wrong") && labelDiv.classList.contains("active")) {
                     vermelho();
                 }
@@ -105,6 +129,12 @@ export class Dom {
 
         function descerNormal()
         {
+            for (let i = 0; i < self_1.preenchidas.length; i++) {
+                // console.log(self_1.preenchidas[i]);
+                if (self_1.preenchidas[i]["id_pergunta"] == idPergunta) {
+                    self_1.preenchidas[i]["preenchido"] = false 
+                }
+            }
             // console.log(self_1.dataNaoConf)
             labelDiv.classList.add("active");
             if (labelDiv.classList.contains("label_checklist-wrong")) {
@@ -115,14 +145,10 @@ export class Dom {
                 
                 let imagens = document.createElement("div");
                 imagens.className = "imagens-container";
-                // imagens.style.backgroundColor = "red";
                 imagens.style.width = "100%";
                 imagens.style.height = "300px";
-                // imagens.style.marginBottom = "10px";
                 imagens.style.display = "flex";
-                // imagens.style.justifyContent = "space-between";
                 imagens.style.alignItems = "center";
-                // imagens.style.justifyContent = "center";
                 
                 for (let i = 0; i < 3; i++) {
                     let divImg = document.createElement("div");
@@ -138,19 +164,14 @@ export class Dom {
                         let imgNameInServer = dadosPergunta["imagesToPHP"][i];
                         let basepath = "../storage/n_conformidade/";
                         let caminhoAbsoluto = basepath + imgNameInServer;
-                        // img.src = basepath + "65de2c242e07b_nc.png"; //teste
                         img.src = caminhoAbsoluto;
-                        // console.log(dadosPergunta["imagesToPHP"][i])
                         divImg.appendChild(img);
                         imagens.appendChild(divImg)
                     }
                 }
                 
                 labelDiv.appendChild(imagens)
-                // let nextDivToInsert = document.querySelector(".alinar-botoes-label");
-                // let dadElement = nextDivToInsert.parentNode;
                 
-                // dadElement.insertBefore(imagens, nextDivToInsert);
             }
             else if (labelDiv.classList.contains("label_checklist-right")) {
                 montarBotoes();
@@ -168,13 +189,10 @@ export class Dom {
             }
             for (var i = 0; i < self_1.dataNaoConf.length; i++) {
                 var Nconf = self_1.dataNaoConf[i];
-                // console.log(Nconf);
                 if (Nconf["id_pergunta"] == idPergunta) {
                     self_1.dataNaoConf.splice(i, 1);
-                    // console.log("AAAAAAAAAAAAAAAAAAAAAAAAAA")
                 }
             }
-            // console.log(self_1.dataNaoConf);
 
         }
 
@@ -219,6 +237,7 @@ export class Dom {
             {
                 //vermelho
                 labelDiv.style.backgroundColor = 'red';
+                labelDiv.style.border = '3px solid red';
                 labelDiv.classList.add("incorrect");
                 button.className = "bi bi-arrow-clockwise";
             }
@@ -266,21 +285,7 @@ export class Dom {
         var confirmButton = document.createElement("button");
         confirmButton.className = "botao-confirmar-submit";
         confirmButton.textContent = "Confirmar";
-        // confirmButton.onclick = function() {
-        //     labelDiv = document.querySelector("#label-div");
-        //     labelDiv.classList.add("incorrect");
-            //vermelho
-            // labelDiv.style.backgroundColor = 'red';
-            // labelDiv.classList.add("incorrect");
-            // buttonBIBI.className = "bi bi-arrow-clockwise";
-
-        //     var textAreaContent = document.querySelector(".descricao_nao_conf").value
-        //     var varPreview = document.querySelector(".upload-img");
-        //     var images = varPreview.querySelectorAll("img");
-        //     self.save(textAreaContent, images);
-        //     self.close();
-        // }
-
+ 
         divBotoes.appendChild(cancelButton);
         divBotoes.appendChild(confirmButton);
 
@@ -314,7 +319,7 @@ export class Dom {
 
     save(textAreaContent, images, dadosPergunta) {
         var data = {};
-        var imagesToPHP = {};
+        var imagesToPHP = [];
     
         // ARMAZENANDO AS IMAGENS
         for (let i = 0; i < images.length; i++) {
@@ -323,7 +328,6 @@ export class Dom {
             imagesToPHP[i] = src;
         }
         
-        // console.log(dadosPergunta)
         data["responsavel"] = "logistica";
         data["NaoConformidade"] = true;
         data["nome_check"] = dadosPergunta["nome_check"];
@@ -334,9 +338,8 @@ export class Dom {
         data["textAreaContent"] = textAreaContent;
         data["tipo"] = dadosPergunta ["tipo"];
         data["imagesToPHP"] = imagesToPHP;
-
+        data["id_realizacao"] = dadosPergunta ["id_realizacao"];
         this.dataNaoConf.push(data);
-        // console.log(this.dataNaoConf)
 
     }
 
@@ -368,53 +371,63 @@ export class Dom {
     loadImagesToPreview(event) {
         const MULTIPLE_FILES = event.target.files;
 
-        const MAX_IMAGES = 3;
-        const IMAGES_TO_PROCESS = Math.min(MAX_IMAGES, MULTIPLE_FILES.length);
-    
-        for (let i = 0; i < IMAGES_TO_PROCESS; i++) {
-            const FILE = MULTIPLE_FILES[i];
+        if(MULTIPLE_FILES.length > 3){
 
+
+            modalStatus('teste','success')
+        }else{
+
+
+
+            const MAX_IMAGES = 3;
+            const IMAGES_TO_PROCESS = Math.min(MAX_IMAGES, MULTIPLE_FILES.length);
             
-            if (!FILE.type.startsWith("image/")) {
-                continue;
+        
+            for (let i = 0; i < IMAGES_TO_PROCESS; i++) {
+                const FILE = MULTIPLE_FILES[i];
+    
+                
+                if (!FILE.type.startsWith("image/")) {
+                    continue;
+                }
+        
+                const IMG = document.createElement("img");
+                IMG.className = "beluga"; 
+    
+                let reader = new FileReader();
+    
+                reader.onload = (e) => {
+        
+                    IMG.src = e.target.result
+                 }
+    
+                reader.readAsDataURL(FILE)  
+                
+                var container_img = document.createElement("div");
+        
+                
+        
+                container_img.appendChild(IMG);
+        
+                var varPreview = document.querySelector(".upload-img");
+                varPreview.appendChild(container_img);
             }
     
-            const IMG = document.createElement("img");
-            IMG.className = "beluga";
-            
-            
-
-            let reader = new FileReader();
-
-            reader.onload = (e) => {
+            const BUTTON_DELETE_IMAGE = document.querySelector('#btn_reset_imgs')
     
-                IMG.src = e.target.result
-             }
-
-            reader.readAsDataURL(FILE)  
             
-            var container_img = document.createElement("div");
-    
-            const BUTTON_DELETE_IMAGE = document.createElement("button");
-    
-            BUTTON_DELETE_IMAGE.textContent = "EXCLUIR";
             BUTTON_DELETE_IMAGE.addEventListener("click", function() {
                 var varPreview = document.querySelector(".upload-img");
                 while(varPreview.firstChild) {
                     varPreview.removeChild(varPreview.firstChild);
                 }
             });
-    
-            container_img.appendChild(IMG);
-            container_img.appendChild(BUTTON_DELETE_IMAGE);
-    
-            var varPreview = document.querySelector(".upload-img");
-            varPreview.appendChild(container_img);
-        }
-    }
 
+        }
+
+    } 
 
 }   
-
+ 
 
 
