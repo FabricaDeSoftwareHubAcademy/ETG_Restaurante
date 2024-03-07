@@ -21,31 +21,52 @@ $btn_checklist = '';
 
 $objCheck = new Checklist();
 $teste = $objCheck->getLastCheck($id_sala);
+$status = Sala::getDados(col:'status,responsavel',where:'id = '.$id_sala);
 
-if (isset($teste[0]["data_abertura"]) == null) {
+if($status[0]['status']=='L'){
     $btn_checklist = '
     <div class="botao-padrao-fazer-checklist">
         <a href="../pages/cadastrar_checklist_preaula.php?id_sala='.$_GET['id_sala'].'">
             <input type="submit" class="botao-fazer-checklist-submit" value="FAZER CHECKLIST">
         </a>
     </div>';
-}else{
-    
-    if($teste[0]["data_fechamento"] != null){
-    
+}
+elseif($status[0]['status']=='A'){
+    if($status[0]['responsavel'] ==$_SESSION['id_user'] || $ifreaac){
         $btn_checklist = '
-        <div class="botao-padrao-fazer-checklist">
-            <a href="../pages/cadastrar_checklist_preaula.php?id_sala='.$_GET['id_sala'].'"><input type="submit" class="botao-fazer-checklist-submit"  value="FAZER CHECKLIST"></a>
-        </div>';
-    }else{ 
-    
-        $btn_checklist = '
-        <div class="botao-padrao-fazer-checklist">
-            <a href="../pages/cadastrar_checklist_posaula.php?id_sala='.$_GET['id_sala'].'"><input type="submit" class="botao-fazer-checklist-submit"  value="PÓS AULA"></a>
-        </div>';
-    
+                <div class="botao-padrao-fazer-checklist">
+                    <a href="../pages/cadastrar_checklist_posaula.php?id_sala='.$_GET['id_sala'].'"><input type="submit" class="botao-fazer-checklist-submit"  value="PÓS AULA"></a>
+                </div>';
     }
 }
+
+
+
+
+// if (isset($teste[0]["data_abertura"]) == null) {
+//     $btn_checklist = '
+//     <div class="botao-padrao-fazer-checklist">
+//         <a href="../pages/cadastrar_checklist_preaula.php?id_sala='.$_GET['id_sala'].'">
+//             <input type="submit" class="botao-fazer-checklist-submit" value="FAZER CHECKLIST">
+//         </a>
+//     </div>';
+// }else{
+    
+//     if($teste[0]["data_fechamento"] != null){
+    
+//         $btn_checklist = '
+//         <div class="botao-padrao-fazer-checklist">
+//             <a href="../pages/cadastrar_checklist_preaula.php?id_sala='.$_GET['id_sala'].'"><input type="submit" class="botao-fazer-checklist-submit"  value="FAZER CHECKLIST"></a>
+//         </div>';
+//     }else{ 
+    
+//         $btn_checklist = '
+//         <div class="botao-padrao-fazer-checklist">
+//             <a href="../pages/cadastrar_checklist_posaula.php?id_sala='.$_GET['id_sala'].'"><input type="submit" class="botao-fazer-checklist-submit"  value="PÓS AULA"></a>
+//         </div>';
+    
+//     }
+// }
 
 // print_r($dados);
 // echo($dados['funcionamento']);
