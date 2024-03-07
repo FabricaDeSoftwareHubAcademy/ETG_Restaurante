@@ -91,7 +91,7 @@
                     </div>
                     <!--Botão Checklist -->
                     <?php
-                        if($ifreacheck || $ifreaac){
+                        if(($ifreacheck && $dados[0]['status']=='L')|| $ifreaac){
                             echo ($btn_checklist);
                         }
 
