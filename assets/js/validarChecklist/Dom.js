@@ -137,12 +137,13 @@ export class Dom {
             }
             // console.log(self_1.dataNaoConf)
             labelDiv.classList.add("active");
+
             if (labelDiv.classList.contains("label_checklist-wrong")) {
                 labelDiv.style.backgroundColor = 'transparent';
                 labelDiv.style.border = '3px solid red';
                 button.className = "bi bi-chevron-down"
-                labelDiv.style.height = (labelDiv.offsetHeight + 250) + "px";
-                
+                // labelDiv.style.height = (labelDiv.offsetHeight + 250) + "px";
+
                 let imagens = document.createElement("div");
                 imagens.className = "imagens-container";
                 imagens.style.width = "100%";
@@ -178,7 +179,8 @@ export class Dom {
                 labelDiv.style.backgroundColor = 'transparent';
                 labelDiv.style.border = '3px solid green';
                 button.className = "bi bi-chevron-down"
-                labelDiv.style.height = (labelDiv.offsetHeight + 125) + "px";
+                // labelDiv.style.height = (labelDiv.offsetHeight + 125) + "px";
+                
             }
 
             if (labelDiv.classList.contains("correct")) {
@@ -198,12 +200,13 @@ export class Dom {
 
         function subirNormal()
         {
+              
             if (labelDiv.querySelector(".imagens-container") !== null) {
                 labelDiv.querySelector(".imagens-container").remove();
-                labelDiv.style.height = (labelDiv.offsetHeight - 250) + "px";
+                // labelDiv.style.height = (labelDiv.offsetHeight - 250) + "px";
                 labelDiv.classList.remove("active");
             } else {
-                labelDiv.style.height = (labelDiv.offsetHeight - 125) + "px";
+                // labelDiv.style.height = (labelDiv.offsetHeight - 125) + "px";
                 labelDiv.classList.remove("active");
                 labelDiv.removeChild(motherButtons);
             }
@@ -214,6 +217,9 @@ export class Dom {
             if (labelDiv.classList.contains("incorrect")) {
                 labelDiv.classList.remove("incorrect");
             }
+
+
+       
         }
 
 

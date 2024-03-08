@@ -290,6 +290,12 @@ border-radius: 10px;
 
 }
 
+.active{
+
+  height: 400px;
+
+}
+
 @media(max-width:1400px){
   .botoes{
     margin-top: 10%;
