@@ -55,12 +55,22 @@ class Usuario
 
     
 
+    public function hasSameName($name) {
+        $objBanco = new Banco("cadastro_usuario");
+        $response = $objBanco -> select(where: "nome = '".$name."'");
+        if ($response->rowCount()) {
+            return true;
+        }
+    }
+
     public function cadastrar($nome = null , $email = null,  $matricula = null, $senha = null, $id_perfil = null)
     {
         $objBanco = new Banco('cadastro_usuario');
 
-
         $validacao_email = $objBanco -> select('email = "'.$email.'"') -> fetchAll(PDO::FETCH_ASSOC);
+        if ($this -> hasSameName($nome)) {
+            return [false, "Nome já existe"];
+        }
         if ($validacao_email)
         {
            
