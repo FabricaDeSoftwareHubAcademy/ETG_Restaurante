@@ -45,7 +45,7 @@ max-height: 65vh
 .cardsgerenc{
 display: flex;
 flex-direction: column;
-width: 92%;
+width: 94%;
 height: 50vh;
 max-width: 832px;
 background-color: rgb(255, 255, 255);

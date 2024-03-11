@@ -151,7 +151,7 @@ body{
 
 .pesquisa{
     display: block;
-    width: 85%;
+    width: 92%;
     height: 9vh;
     background-color: rgb(255, 255, 255);
 }
@@ -247,7 +247,7 @@ body{
 /* CARDS DAS PERGUNTAS */
 
 .perguntas{
-    width: 85%;    
+    width: 94%;    
     height:50vh;
     max-width: 832px;
     background-color: rgb(255, 255, 255);
