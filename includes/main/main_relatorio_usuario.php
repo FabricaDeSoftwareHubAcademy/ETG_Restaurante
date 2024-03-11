@@ -1,4 +1,3 @@
-
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
     <link rel="stylesheet" href="../assets/css/relatorio_user.css">
@@ -14,17 +13,6 @@
             <div class="testePrimeiraSecao">
                     <div id="user_relatorio" class="user_relatorio">
                         <!-- <div class="user-report"><i class="bi bi-person-square"></i>Usuários<i class="fa fa-chevron-down"></i></div> -->
-                        <select name="" id="" class="link">
-                        <option selected>Usuários</option>
-                        <?php
-                            foreach($dadosUsuario as $row) {
-                                echo 
-                                "
-                                <option>".$row["nome"]."</option>
-                                ";
-                            }
-                            ?>
-                        </select>
                     </div>
                         <div class="btn-filter">
                             <button type="submit" class="limpar-filtros">Limpar filtros</button>
@@ -52,10 +40,6 @@
                 </div>
             
         </section>
-
-
-
-       
             <div class="card_grafic">
                     <div class="grafico_conf">
                         <canvas id="myChart"></canvas>
@@ -74,6 +58,9 @@
    
     </main>
         <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <script>
+            const JSON_FROM_PHP = <?=$php_data?>
+        </script>
 </body>
 
 </html>

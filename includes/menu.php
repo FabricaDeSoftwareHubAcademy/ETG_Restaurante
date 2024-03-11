@@ -168,7 +168,7 @@ $ifreaac = $perfil['realizar_acao_corretiva'] == '1';
                             <ul class="sub-menu4">
                             <li class="iten-submenu4"><a href="../pages/cadastrar_sala.php" id="fonte-submenu">relatorio geral</a></li>
                             <li class="iten-submenu4"><a href="../pages/relatorio.php" id="fonte-submenu">relatorio salas</a></li>
-                            <li class="iten-submenu4"><a href="../pages/relatorio_usuarios.php" id="fonte-submenu">relatorio usuarios</a></li>
+                            <li class="iten-submenu4"><a href="../pages/relatorio_user.php" id="fonte-submenu">relatorio usuarios</a></li>
                             
                             </ul>
                             </li> ';

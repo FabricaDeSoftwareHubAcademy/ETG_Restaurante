@@ -15,10 +15,14 @@ $relatorio = new Relatorio();
 $usuario = new Usuario();
 $sala = new Sala();
 
+$php_data = [];
 $dadosRelatorio = $relatorio -> getAll();
 $dadosUsuario = $relatorio::getUsers();
 $dadosSala = $sala::getDados();
-
+$php_data["dadosRelatorio"] = $dadosRelatorio;
+$php_data["dadosUsuario"] = $dadosUsuario;
+$php_data["dadosSala"] = $dadosSala;
+$php_data = json_encode($php_data);
 // foreach($dadosSala as $row) {
 //     var_dump($row["nome"]);
 //     echo "<br>";
