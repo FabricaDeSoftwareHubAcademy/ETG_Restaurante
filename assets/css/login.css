@@ -441,3 +441,22 @@ body{
     }
 
 }
+
+#icon-notificacao{
+    margin-left: 5px;
+    display: flex;
+    margin-top: 80%;
+    font-size: 30px;
+    color: rgb(5, 0, 62);
+}
+
+#icon-notificacao:hover{
+    color: rgb(207, 124, 0);
+}
+
+#link-sobre{
+
+    list-style: none;
+    text-decoration: none;
+    color: inherit;
+}

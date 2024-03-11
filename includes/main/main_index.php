@@ -1,7 +1,7 @@
  
  
 
- 
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
 <link type="text/css" rel="stylesheet" href="assets/css/login.css" media="screen"/> 
 <body>
     
@@ -84,9 +84,10 @@
                      
                     <input type="submit" value="Entrar" name="btn_sub" class="btn_sub_login">
 
-                 </div>
-
+                </div>
+                
             </form>
+            <a href="#" id="link-sobre"><i id="icon-notificacao" class="bi bi-info-circle"  style="--i:3"></i></a>
         </div>
     </section>
 </body>
