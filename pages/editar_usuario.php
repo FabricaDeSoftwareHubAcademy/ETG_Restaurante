@@ -258,9 +258,13 @@ if(isset($_POST['btn_submit'])){
         $_SESSION["msg_edit"]='Alterações realizadas com sucesso!';
 
     }
-    
+    $_POST['senhaantiga'] = isset($_POST['senhaantiga']) ? $_POST['senhaantiga'] : "";
+    $_POST['novasenha'] = isset($_POST['novasenha']) ? $_POST['novasenha'] : "";
+    $_POST['confirmarnovasenha'] = isset($_POST['confirmarnovasenha']) ? $_POST['confirmarnovasenha'] : "";
+    $new_name = isset($new_name) ? $new_name : "";
     if (strlen($_POST['senhaantiga']) > 0 and strlen($_POST['novasenha']) > 0 and strlen($_POST['confirmarnovasenha']) > 0 )
     {
+        
          
 
         if ($_POST['novasenha'] == $_POST['confirmarnovasenha']){

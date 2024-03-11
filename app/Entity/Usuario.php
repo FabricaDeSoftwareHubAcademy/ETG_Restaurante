@@ -254,7 +254,7 @@ class Usuario
         $obj_banco = new Banco('cadastro_usuario');
         $obj_banco -> update('email = "'.$email.'"', ['foto' => $name_img]);
      
-        return True;
+        return true;
 
     }catch(Exception $e){
         echo $e->getMessage();
