@@ -120,32 +120,25 @@ $ifreaac = $perfil['realizar_acao_corretiva'] == '1';
                     ?>
                 </li>
 
-
-                <li class="li-menu">                    
-                    <a href="#" class="link-menu">
-                        <i id="icon-notificacao" class="bi bi-info-circle"  style="--i:3"></i>  
-                        <h5 class="titulo-info" id="titulo-noti" style="--i:3">Sobre nós</h5>              
-                    </a>
-                </li>   
-                    
+                
                 <li class="li-menu">
                     <a href="listar_salas.php" class="link-menu">
                         <i id="icon-vizualizar" class="bi bi-person-video3"  style="--i:4"></i>     
                         <h5 class="titulo-info" id="titulo-not" style="--i:4">Salas</h5>              
                     </a>  
                 </li>      
-                    
-                    
+                
+                
                 <li class="link_submenu"> 
                     <?php
                         if($ifgensala || $ifgencheck || $ifgenperg || $ifgennot || $ifuser || $ifperfil){
                             echo '
                             <li class="li-menu">   
-                                <a href="#" class="link-menu">
-                                    <i class="bi bi-list-check" id="btnsubmenu" onclick="openSubmenu()" style="--i:5"></i>
-                                    <h5 class="titulo-info" id="titulo-cad" style="--i:5">Cadastros</h5>
-                                </a>
-                                
+                            <a href="#" class="link-menu">
+                            <i class="bi bi-list-check" id="btnsubmenu" onclick="openSubmenu()" style="--i:5"></i>
+                            <h5 class="titulo-info" id="titulo-cad" style="--i:5">Cadastros</h5>
+                            </a>
+                            
                                 <ul class="sub-menu">
                                 '.
                                 ($ifgencheck ? '<li class="iten-submenu"><a href="../pages/cadastrar_checklist.php" id="fonte-submenu">Cadastrar Checklist</a></li>' : '').
@@ -156,9 +149,9 @@ $ifreaac = $perfil['realizar_acao_corretiva'] == '1';
                                 ($ifuser ? '<li class="iten-submenu"><a href="../pages/cadastrar_usuario.php" id="fonte-submenu2">Cadastrar  Usuário</a></li>' : '')
                                 .'
                                 </ul>
-                            </li> ';
-                        }
-                    ?>         
+                                </li> ';
+                            }
+                            ?>         
                 </li>       
                 
                 
@@ -167,24 +160,31 @@ $ifreaac = $perfil['realizar_acao_corretiva'] == '1';
                         if($ifreaac){
                             echo '
                             <li class="li-menu">   
-                                <a href="#" class="link-menu">
-                                    <i class="bi bi-graph-up" id="btnsubmenu4" onclick="openSubmenu4()" style="--i:6"></i>
-                                    <h5 class="titulo-info" id="titulo-cad" style="--i:6">Relatório</h5>
-                                </a>
-                                
-                                <ul class="sub-menu4">
-                                    <li class="iten-submenu4"><a href="../pages/cadastrar_sala.php" id="fonte-submenu">relatorio geral</a></li>
-                                    <li class="iten-submenu4"><a href="../pages/relatorio.php" id="fonte-submenu">relatorio salas</a></li>
-                                    <li class="iten-submenu4"><a href="../pages/relatorio_usuarios.php" id="fonte-submenu">relatorio usuarios</a></li>
-
-                                </ul>
+                            <a href="#" class="link-menu">
+                            <i class="bi bi-graph-up" id="btnsubmenu4" onclick="openSubmenu4()" style="--i:6"></i>
+                            <h5 class="titulo-info" id="titulo-cad" style="--i:6">Relatório</h5>
+                            </a>
+                            
+                            <ul class="sub-menu4">
+                            <li class="iten-submenu4"><a href="../pages/cadastrar_sala.php" id="fonte-submenu">relatorio geral</a></li>
+                            <li class="iten-submenu4"><a href="../pages/relatorio.php" id="fonte-submenu">relatorio salas</a></li>
+                            <li class="iten-submenu4"><a href="../pages/relatorio_usuarios.php" id="fonte-submenu">relatorio usuarios</a></li>
+                            
+                            </ul>
                             </li> ';
                         }
-                    ?>         
+                        ?>         
                 </li>       
                 
 
-
+                <li class="li-menu">                    
+                    <a href="#" class="link-menu">
+                        <i id="icon-notificacao" class="bi bi-info-circle"  style="--i:3"></i>  
+                        <h5 class="titulo-info" id="titulo-noti" style="--i:3">Sobre nós</h5>              
+                    </a>
+                </li>   
+                
+                
                 <li class="saida">
                     <button class="btnOpenmodal-menu" onclick="openModal()">  
                         <a href="actions/sair.php" class="link-menu">
@@ -193,12 +193,12 @@ $ifreaac = $perfil['realizar_acao_corretiva'] == '1';
                         </a>
                     </button>
                 </li>        
-                    
+                
                 <div class="modal-container-menu">
                     <div class="modal-menu">
-                    
+                        
                         <h3 class="text-popmenu">
-                        Tem Certeza que Deseja Sair?
+                            Tem Certeza que Deseja Sair?
                         </h3>
                         <div class="btns-menu">
                             <button class="btnOk-menu" onclick="closeModal(0)" > NÃO</button>
@@ -207,24 +207,24 @@ $ifreaac = $perfil['realizar_acao_corretiva'] == '1';
                     </div>
                 </div>                     
             </ul>
-
+            
         </div>
-
-
+        
+        
         <div class="container-logo">
             <div class="logo">
                 <ul class="cabecalho_logo"><img src="../assets/imgs/logos/senacFec_colored.png" alt="Carregando" id = "img-logo"></ul>
             </div>
-
+            
             <div class="fitas">
                 <ul class="sub-fita"><div id="bloc1"></div></ul>
                 <ul class="sub-fita"><div id="bloc2"></div></ul>
             </div>
         </div>
         
-    
+        
     </div>
-
+    
 </body>
 
 
