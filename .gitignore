@@ -8,7 +8,8 @@ vendor/composer/LICENSE
 .version
 
 /storage/salas/*
-!storage/salas/caramelo.jpg
+!storage/salas/imagempadrao.jpg
+!storage/salas/gifpadrao.gif
 
 /storage/n_conformidade/*
 !storage/n_conformidade/default.65b15311d4f37.jpg
