@@ -301,20 +301,30 @@ class Usuario
      
   }
 
-  public static function deleteById($id)
-    { 
+    public static function deleteById($id) { 
         $obj_banco = new Banco('cadastro_usuario'); 
         $row_user = $obj_banco -> select('id = '.$id);
 
-        if($row_user -> rowCount() > 0)
+        if($row_user -> rowCount())
         {
-            $obj_banco -> delete($id,'id'); 
-            return true;
+            return $obj_banco -> delete($id,'id'); 
+            // return true;
         }
         else
         {
             return false;
         } 
+    }
+
+    public static function canDelete($id_usuario) {
+        $obj_banco = new Banco('cadastro_usuario'); 
+        $row_user = $obj_banco -> usuario_tem_participacao_fluxo_checklist($id_usuario);
+        $response = $row_user -> rowCount();
+        if ($response == 1) {
+            return false;
+        } else {
+            return true;
+        }
     }
 
 

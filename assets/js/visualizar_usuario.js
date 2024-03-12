@@ -1,29 +1,12 @@
     
 var id_atual 
 $(document).ready(function(){
-
-    // $('[id="btn_trash_excluir"]').on('click',async function(){
-
-    //     let formData = new FormData()
-    //     formData.append('id_usuario',$(this).attr('btn_excluir'))
-
-    //     let dados_php = await fetch('../pages/actions/usuario_delete_action.php',{ 
-    //         method:"POST",
-    //         body:formData 
-    //     })
-    //     let response = await dados_php.json()
-
-    //     $(".close-btn").on('click',function(){
-
-    //         window.location.reload()
-
-    //     })
-         
-
-    // }) 
     listar_users()
 })
 
+async function canDelete() {
+    await fetch("../pages/actions/action_user_delete.php")
+}
 
 
 async function listar_users(){
@@ -43,7 +26,7 @@ async function listar_users(){
     $("[id='btn_excluir_user']").on('click',function() {
 
         const idUserValue = $(this).attr("id_user");
-        console.log(idUserValue);
+        // console.log(idUserValue);
         id_atual = idUserValue
         openModal2()
 
@@ -71,15 +54,14 @@ $(".open-btn-excluir").on("click",function(e){
 
 var excluirUser = async (id_user) => {
 
-    console.log(id_user)
     let data = await fetch('../pages/actions/action_user_delete.php?id_user='+id_user)
-    let dados_php = await data.json()
-
-    console.log(dados_php)
-    if(dados_php){
-
+    let response = await data.json()
+    if (response == true) {
         listar_users()
         changeIconAndMessage()
+    } else {
+        //NAO PODE DELETAR PQ O USUARIO ESTA CADASTRADO EM ALGUMA PARTE DO FLUXO DO CHECKLIST, OU FEZ O CHECKLIST OU FEZ NAO CONFORMIDADE OU FEZ ACAO CORRETIVA
+        alert("NAO PODE DELETAR PQ O USUARIO ESTA CADASTRADO EM ALGUMA PARTE DO FLUXO DO CHECKLIST, OU FEZ O CHECKLIST OU FEZ NAO CONFORMIDADE OU FEZ ACAO CORRETIVA")
     }
 
 }

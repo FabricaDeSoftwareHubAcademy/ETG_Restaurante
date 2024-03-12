@@ -160,7 +160,7 @@ button.show-modal:hover{
             const modal2 = document.querySelector('.modal-box');
 
             function openModal2() {
-                console.log('teste')
+                // console.log('teste')
                 overlay.style.opacity = '1';
                 overlay.style.pointerEvents = 'auto';
                 modal2.style.opacity = '1';
@@ -168,7 +168,7 @@ button.show-modal:hover{
             }   
 
             function closeModalExcluir() {
-                console.log('teste')
+                // console.log('teste')
                 overlay.style.opacity = '0';
                 overlay.style.pointerEvents = 'none';
                 modal2.style.opacity = '0';

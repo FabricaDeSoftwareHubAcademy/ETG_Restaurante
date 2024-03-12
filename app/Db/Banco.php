@@ -57,7 +57,7 @@ class Banco{
         }
         catch (PDOException $e)
         {
-            echo('Erro3: ' . $e -> getMessage());
+            // echo('Erro3: ' . $e -> getMessage());
             return false;
         }
     }
@@ -213,6 +213,34 @@ class Banco{
         return $this ->  executarQuery($query);
     }    
 
+    public function usuario_tem_participacao_fluxo_checklist($id_usuario) : mixed {
+        $query = 'SELECT 1 AS result
+        WHERE EXISTS (
+            SELECT 1
+            FROM cadastro_usuario
+            RIGHT JOIN etg2.responder_check ON etg2.cadastro_usuario.id = etg2.responder_check.id_usuario
+            WHERE etg2.cadastro_usuario.id = '.$id_usuario.'
+        )
+        OR EXISTS (
+            SELECT 1
+            FROM cadastro_usuario
+            RIGHT JOIN etg2.reg_nc ON etg2.cadastro_usuario.id = etg2.reg_nc.id_prof
+            WHERE etg2.cadastro_usuario.id = '.$id_usuario.'
+        )
+        OR EXISTS (
+            SELECT 1
+            FROM cadastro_usuario
+            RIGHT JOIN etg2.reg_nc ON etg2.cadastro_usuario.id = etg2.reg_nc.id_logistica
+            WHERE etg2.cadastro_usuario.id = '.$id_usuario.'
+        )
+        OR EXISTS (
+            SELECT 1
+            FROM cadastro_usuario
+            RIGHT JOIN etg2.reg_correcao ON etg2.cadastro_usuario.id = etg2.reg_correcao.id_usuario
+            WHERE etg2.cadastro_usuario.id = '.$id_usuario.'
+        );';
+        return $this -> executarQuery($query);
+    }
 }
 
 ?>
