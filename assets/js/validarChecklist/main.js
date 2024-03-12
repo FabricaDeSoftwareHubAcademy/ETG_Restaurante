@@ -1,7 +1,6 @@
 import { Dom } from './Dom.js';
 
-console.log(perguntasJson)
-var preenchidas = [];
+ var preenchidas = [];
 // console.log(preenchidas);
 for (let i = 0; i < perguntasJson.length; i++) {
     if (perguntasJson[i]["NaoConformidade"] == true) {
@@ -15,7 +14,7 @@ for (let i = 0; i < perguntasJson.length; i++) {
     }
 
 }
-console.log(preenchidas);
+ 
 // console.log(preenchidas)
 var NaoConformidades = [];
 const DOM = new Dom(NaoConformidades, preenchidas);
@@ -24,10 +23,10 @@ DOM.showPerguntas();
 
 
 var buttonSubmit = document.querySelector("#botao-cadastrar-submit");
-buttonSubmit.addEventListener("click", function(event) {
+buttonSubmit.addEventListener("click", async function(event) {
     event.preventDefault();
     //pegando o id_realizacao do get
-    console.log(preenchidas);
+    // console.log(preenchidas);
     let aprovado = true;
     for (let i = 0; i < preenchidas.length; i++) {
         if (preenchidas[i]["preenchido"] == false) {
@@ -48,6 +47,13 @@ buttonSubmit.addEventListener("click", function(event) {
         } else {
             sessionStorage.clear()
             // console.log(NaoConformidades)
+            
+            
+            let luizNaoCadastra = await fetch('./actions/action_cadastrar_nao_conformidade_logistica.php?id_docente='+id_docente_resp+'&id_sala='+id_sala);
+            let res = await luizNaoCadastra.json()
+            console.log(res)
+
+
             sessionStorage.setItem('NaoConformidades', JSON.stringify(NaoConformidades));
             sessionStorage.setItem('id_realizacao', id_realizacao);
             sessionStorage.setItem('id_sala', id_sala);

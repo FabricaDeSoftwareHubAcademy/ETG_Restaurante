@@ -9,9 +9,9 @@ use App\Entity\Checklist;
 
 class ValidarChecklist
 {
-    public function getIdSala($idResponderCheck) : string {
+    public function getIdSala($idResponderCheck)  {
         $data = Checklist::getDataById(id: $idResponderCheck);
-        return $data[0]['id_sala'];
+        return $data[0];
     }
 
     public function getPerguntas($idSala) : array {
