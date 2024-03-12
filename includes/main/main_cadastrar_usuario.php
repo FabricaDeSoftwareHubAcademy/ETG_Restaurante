@@ -128,7 +128,7 @@ button.addEventListener('click', async (e) =>{
                 $('#senhas').val('') 
 
                 modalStatus('Usuário cadastrado com Sucesso!','success',()=>{
-                    window.location.href= './visualizar_usuario.php';
+                    window.location.href= './visualizar_usuario.php'; 
                 })
             }
             else{
