@@ -1,5 +1,6 @@
 <?php
 
+
 require __DIR__."/../../vendor/autoload.php";
 use App\Entity\Usuario;
 $objUsuario = new Usuario();
@@ -21,3 +22,4 @@ if($result[0]){
 echo json_encode($arr);
 
 
+?>
