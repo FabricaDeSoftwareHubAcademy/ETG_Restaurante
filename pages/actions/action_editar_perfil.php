@@ -17,7 +17,8 @@ $dados = [
         'gerenciar_recados' => (isset($_POST['gerenciar_recados']) ? 1 : 0),
         'gerenciar_notificacoes' => (isset($_POST['gerenciar_notificacoes']) ? 1 : 0),
         'gerenciar_usuarios' => (isset($_POST['gerenciar_usuarios']) ? 1 : 0),
-        'gerenciar_perfis' => (isset($_POST['gerenciar_perfis']) ? 1 : 0)
+        'gerenciar_perfis' => (isset($_POST['gerenciar_perfis']) ? 1 : 0),
+        'ver_relatorios' => (isset($_POST['ver_relatorios']) ? 1 : 0)
         ];
 
 
