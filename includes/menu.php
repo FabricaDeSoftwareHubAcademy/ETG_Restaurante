@@ -28,6 +28,7 @@ $ifgennot = $perfil['gerenciar_notificacoes'] == '1';
 $ifgenrec = $perfil['gerenciar_recados'] == '1';
 $ifreacheck = $perfil['realizar_checklist'] == '1';
 $ifreaac = $perfil['realizar_acao_corretiva'] == '1';
+$ifrel = $perfil['relatorios'] == '1';
 ?>
 
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
@@ -157,7 +158,7 @@ $ifreaac = $perfil['realizar_acao_corretiva'] == '1';
                 
                 <li class="link_submenu4"> 
                     <?php
-                        if($ifreaac){
+                        if($ifrel){
                             echo '
                             <li class="li-menu">   
                             <a href="#" class="link-menu">

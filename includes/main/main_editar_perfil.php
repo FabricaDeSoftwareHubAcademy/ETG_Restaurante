@@ -65,6 +65,10 @@
                         <label class="label_permissao">Nao conformidade e Acao corretiva</label>
                         <input type="checkbox" class="checkbox_permissoes" name="realizar_nao_conformidade" id="realizar_nao_conformidade" autocomplete="off" <?php echo $realizar_acao_corretiva == 1 ? "checked" : "";?>/>
                     </div>
+                    <div class="permissoes_salas_itens">
+                        <label class="label_permissao">ver relatorios</label>
+                        <input type="checkbox" class="checkbox_permissoes" name="ver_relatorios" id="realizar_nao_conformidade" autocomplete="off" <?php echo $ver_relatorios == 1 ? "checked" : "";?>/>
+                    </div>
                 </div>
             </div>
         </form>

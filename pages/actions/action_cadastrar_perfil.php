@@ -17,7 +17,8 @@ $dados =  [
     'gerenciar_recados' => (isset($_POST['gerenciar_recados']) ? 1 : 0),
     'realizar_acao_corretiva' => (isset($_POST['realizar_nao_conformidade']) ? 1 : 0),
     'realizar_checklist' => (isset($_POST['realizar_checklist']) ? 1 : 0),
-    'gerenciar_perguntas' => (isset($_POST['gerenciar_perguntas']) ? 1 : 0)
+    'gerenciar_perguntas' => (isset($_POST['gerenciar_perguntas']) ? 1 : 0),
+    'ver_relatorios' => (isset($_POST['ver_relatorios']) ? 1 : 0)
 ];
 
 
