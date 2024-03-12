@@ -199,6 +199,22 @@ if(!isset($_GET['id_user'])){
         </section> 
     </div> 
 
+    <section class="titulo_alterar_senha">
+        <h1>Perfil</h1>
+    </section>
+
+    <div class="centralizar-back"> 
+        <section class="centralizar_input_alterar_senha">
+
+            <div class="input_senha_group field">
+                <i class="bi bi-pencil-square kkk"></i>
+                <input name="matricula" type="text" class="input_senha_field" placeholder="Name" value="'.$dados_editar['matricula'].'">
+                <label for="name" class="input_senha_label">Perfil do Usuário</label> <!--Alterar para o nome do input-->
+            </div>
+
+        </section> 
+    </div> 
+
 
     <section class="titulo_alterar_senha">
         <h1>Matrícula</h1>

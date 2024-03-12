@@ -53,6 +53,8 @@ if ($dados_pergunta)
                     </div>
                 </div>
             </div>';
+
+            $observacao_card = '<div class="observacao"></div>';
         }  
     }
 }
