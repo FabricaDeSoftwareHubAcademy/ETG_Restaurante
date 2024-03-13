@@ -26,7 +26,7 @@
                     <label for="name" class="input_e-mail_label">E-mail</label> <!--Alterar para o nome do input-->
                 </div>
                 
-           
+                
                 <div class="ajusta-botao2">
 
                     <div class="dropdown-ck">
