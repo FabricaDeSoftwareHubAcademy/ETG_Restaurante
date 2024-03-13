@@ -198,14 +198,8 @@ body{
 
 
 @media screen and (max-width: 768px) {
-  .popup-mural {
-    width: 100%;
-}
-  .div-pop{
-    width: 90%;
-    left: 10%;
-    /* margin-top: 50px; */
-  }
+  
+  
   .edita_recado{
     right: 80%;
     width: 148vw;
@@ -219,9 +213,7 @@ body{
     margin-top: 10px;
     margin-bottom: 10px;
   }
-  .botao-padrao-voltar{
-    margin-top: 10px;
-  }
+  
   .botao-padrao-excluir{
     margin-top: 10px;
   }

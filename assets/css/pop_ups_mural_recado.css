@@ -182,9 +182,7 @@ body{
 
 
 @media screen and (max-width: 768px) {
-  .popup-mural-recado {
-    width: 90%;
-}
+
   .div-pop{
     width: 90%;
     left: 10%;
@@ -199,12 +197,8 @@ body{
     margin-top: 20px;
     width: 100%
   }
-  .botao-padrao-voltar{
-    margin-top: 10px;
-  }
-  .botao-padrao-cancelar{
-    margin-top: 10px;
-  }
+  
+  
 
   
 }
