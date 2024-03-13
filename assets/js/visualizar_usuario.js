@@ -56,12 +56,13 @@ var excluirUser = async (id_user) => {
 
     let data = await fetch('../pages/actions/action_user_delete.php?id_user='+id_user)
     let response = await data.json()
-    if (response == true) {
+    console.log(response)
+    if (response["status"] == true) {
         listar_users()
-        changeIconAndMessage()
+        changeIconAndMessage(response["message"])
     } else {
-        //NAO PODE DELETAR PQ O USUARIO ESTA CADASTRADO EM ALGUMA PARTE DO FLUXO DO CHECKLIST, OU FEZ O CHECKLIST OU FEZ NAO CONFORMIDADE OU FEZ ACAO CORRETIVA
-        alert("NAO PODE DELETAR PQ O USUARIO ESTA CADASTRADO EM ALGUMA PARTE DO FLUXO DO CHECKLIST, OU FEZ O CHECKLIST OU FEZ NAO CONFORMIDADE OU FEZ ACAO CORRETIVA")
+        modalStatus(response["message"], "error")
+        // alert(response["message"])
     }
 
 }

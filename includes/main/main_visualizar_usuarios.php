@@ -7,8 +7,8 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
 <script src="../assets/js/visualizar_usuario.js"></script>
+<script src="../assets/js/modais.js"></script>
 <link rel="stylesheet" href="../assets/css/visualizar_usuarios.css">
-
 
   
 
@@ -39,3 +39,5 @@
             </form>
         </main>
     </body>
+
+    

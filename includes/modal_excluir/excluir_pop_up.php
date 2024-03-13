@@ -175,7 +175,7 @@ button.show-modal:hover{
                 modal2.style.pointerEvents = 'none';
             }
 
-            function changeIconAndMessage() {
+            function changeIconAndMessage(message_parametro = "O item foi excluído com sucesso!") {
                 const icon = document.querySelector('.fa-solid.fa-question');
                 const title = document.querySelector('.titulo_pop_up');
                 const message = document.querySelector('.subtitulo_pop_up');
@@ -187,7 +187,7 @@ button.show-modal:hover{
                 icon.classList.add('fa-regular', 'fa-circle-check'); // Corrigindo a classe do ícone
 
                 title.textContent = 'Excluído com sucesso';
-                message.textContent = 'O item foi excluído com sucesso!';
+                message.textContent = message_parametro;
 
                 cancelButton.style.display = 'none';
                 confirmButton.style.display = 'none';

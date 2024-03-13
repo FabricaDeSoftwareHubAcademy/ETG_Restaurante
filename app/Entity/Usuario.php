@@ -301,19 +301,19 @@ class Usuario
      
   }
 
-    public static function deleteById($id) { 
+    public static function deleteById($id) : mixed { 
         $obj_banco = new Banco('cadastro_usuario'); 
         $row_user = $obj_banco -> select('id = '.$id);
+        $usuario_existe = $row_user -> rowCount();
+        
+        if (!$usuario_existe) return ["response" => false, "message" => "Este usuário não está cadastrado no banco de dados"];
 
-        if($row_user -> rowCount())
-        {
-            return $obj_banco -> delete($id,'id'); 
-            // return true;
+        $deleted = $obj_banco -> delete($id, "id");
+
+        if ($deleted == false) {
+            return ["response" => false, "message" => "Este usuário não pode ser deletado pois já cadastrou algo no sistema"];
         }
-        else
-        {
-            return false;
-        } 
+        return ["response" => true, "message" => "O usuário foi excluido com sucesso"];
     }
 
     public static function canDelete($id_usuario) {
