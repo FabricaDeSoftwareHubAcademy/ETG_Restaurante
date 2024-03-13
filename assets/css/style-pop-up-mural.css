@@ -74,14 +74,14 @@ body{
   padding-top: 25px;
  
 }
-/* Estilos opcionais para o conteúdo do pop-up */
+/* Estilos opcionais para o conteúdo do pop-up  */
 
 
 .div-pop{
   margin-top: 20px;
   display: flex;
   width: 330px;
-  height: 150px;
+  height: 275px;
   justify-content: center;
   align-items: center;
   background-color: white;

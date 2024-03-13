@@ -42,8 +42,8 @@ button{
   
 .card{
 
-    width: 150px;
-    height: 200px;
+    width: 200px;
+    height: 300px;
     background-color: #064A8C;
     border-radius: 20px;
     box-shadow: 0px 5px 5px 0px #F7941D;
@@ -57,12 +57,12 @@ button{
 .msg_aviso{
 
     color: white;
-   
-    word-wrap:  break-word;
-    max-width: 130px;
+    word-wrap: break-word;
+    max-width: 200px;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-weight: bold;
     position: absolute;
+    padding: 10px;
 
 }
 
