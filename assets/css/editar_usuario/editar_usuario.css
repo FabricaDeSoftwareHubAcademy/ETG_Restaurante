@@ -219,8 +219,9 @@ right: 20px;
   height: 35px;
   border: none;
   font-size: 20px;
+  color: #747474;
 }
 .barra{
-  width: 100%;
-  border: solid black 1px;
+  width: 84%;
+  border: solid #9b9b9b 1px;
 }
