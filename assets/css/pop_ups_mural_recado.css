@@ -51,16 +51,16 @@ body{
 
 .popup-mural-recado {
   background: var(--gray-white, #FFF);
-    display: flex;
-    width: 395px;
-    height: 310px;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    /* position: relative; */
-    gap: 8px;
-    border-radius: 15px;
-    box-shadow: 0px 20px 20px 0px rgba(0, 0, 0, 0.08), 0px 0px 2px 0px rgba(0, 0, 0, 0.12);
+  display: flex;
+  width: 395px;
+  height: 425px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* position: relative; */
+  gap: 8px;
+  border-radius: 15px;
+  box-shadow: 0px 20px 20px 0px rgba(0, 0, 0, 0.08), 0px 0px 2px 0px rgba(0, 0, 0, 0.12);
 }
 
 /* Estilos opcionais para o conteúdo do pop-up */
@@ -88,17 +88,18 @@ body{
 .div-pop{
   margin-top: 20px;
   display: flex;
-  width: 550px;
-  height: 300px;
+  width: 330px;
+  height: 211px;
   justify-content: center;
   align-items: center;
   background-color: white;
   border-radius: 30px;
   border: 1px dashed #535353;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-
-
 }
+
+
+
 .text-descricao-pop-up{
   border: none;
   height: 100%;
@@ -113,12 +114,11 @@ body{
 /* CONTAINER DOS BOTOES */
 .container-pop-up-botaoes{
   display: flex;
-  align-items: center;
-  flex-direction: row;
-  justify-content: center;
-  margin-top: 20px;
-  gap: 10%;
-  margin-bottom: 10px;
+    align-items: center;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 11px;
+    gap: 10%;
 
 }
 
@@ -182,9 +182,7 @@ body{
 
 
 @media screen and (max-width: 768px) {
-  .popup-mural-recado {
-    width: 90%;
-}
+
   .div-pop{
     width: 90%;
     left: 10%;
@@ -199,12 +197,8 @@ body{
     margin-top: 20px;
     width: 100%
   }
-  .botao-padrao-voltar{
-    margin-top: 10px;
-  }
-  .botao-padrao-cancelar{
-    margin-top: 10px;
-  }
+  
+  
 
   
 }

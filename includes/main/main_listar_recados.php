@@ -36,7 +36,11 @@
 <?php
 // include_once('../includes/pop-ups/pop_ups_mural_novo_recado/pop_ups_mural_recado.php');
 if($ifgenrec){
+    // NOVO RECADO CSS
     include_once("../includes/pop-ups/pop_ups_mural_recados/pop_ups_mural_novo_recado/pop_ups_mural_recado.php");
+
+
+    // EDITAR RECADO CSS
     include_once('../includes/pop-ups/pop_ups_mural_recados/pop_ups mural_editar/pop-up-mural-recados.php');
 }
 
