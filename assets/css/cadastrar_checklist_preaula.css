@@ -29,8 +29,8 @@
   
 }
 .main_checklist{
-  width: 78%;
-  max-width: 80%;
+  width: 100%;
+  max-width: 95%;
   max-height: 728px;
   margin-right: 2%;
 
@@ -73,7 +73,7 @@
 }
 
 .observacao{
-  max-width: 625px;
+  max-width: 760px;
   height: 95px;
   flex-shrink: 0;
   border-radius: 20px;
@@ -95,7 +95,7 @@ h3{
 textarea.nova_observacao{
   background-color: #F9F8F8;
   width: 100%;
-  height: 10vh;
+  height: 11vh;
   font-family: 'Montserrat', sans-serif;
   font-size: 1rem;
   letter-spacing: 1px;
@@ -122,15 +122,14 @@ textarea.nova_observacao::-webkit-scrollbar {
   display: flex;
   flex-direction: row;
   align-items: center;
-  width: 80%;
-
+  width: 81%;
   margin: 5px;
 }
 
 
 
 .label_checklist{
-  max-width: 533px;
+  max-width: 634px;
   height: 104px;
   flex-shrink: 0;
   border-radius: 20px;
@@ -282,7 +281,7 @@ textarea.nova_observacao::-webkit-scrollbar {
   }
 
   .list-pre-aula{
-    max-height: 550px;
+    max-height: 445px;
     overflow: hidden;
     overflow-y: scroll
   }
@@ -291,8 +290,10 @@ textarea.nova_observacao::-webkit-scrollbar {
   .botoes-cadastro-checklist {
     display: flex;
     margin-top: 3vh;
-    justify-content: space-between;
+    justify-content: space-around;
     width: 100%;
   }
+
+  
 
 

@@ -9,8 +9,7 @@
 
     <!-- PARTE QUE IMPORTA A TELA DE NÃO CONFORMIDADE -->
     <?php        
-     include_once "../includes/main/main_cadastrar_nao_conformidade.php"; 
- 
+     include_once "../includes/main/main_cadastrar_nao_conformidade.php";
     ?>
 
 <!-- GERAL -->
@@ -28,7 +27,7 @@
         <form method="POST" class="checklist_pre_aula">
 
             <!-- PARTE DO CHECKLIST -->
-            <div class="list-pre-aula"> <?=$dados_imprimir ?> </div>
+            <div class="list-pre-aula"> <?=$dados_imprimir ?> <h3>Observações Adicionais:</h3> <?=$observacao_card?> </div>
 
             <!-- PARTE DOS BOTÕES -->
             <div class="botoes-cadastro-checklist">
