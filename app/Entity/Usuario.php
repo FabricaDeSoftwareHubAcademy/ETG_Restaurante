@@ -31,7 +31,12 @@ class Usuario
         $this->senha = $senha;
 
     }
+    public function setPerfil($id_usuario, $id_perfil){
+        $banco = new Banco("cadastro_usuario");
+        $dados_update = ["id_perfil"=>$id_perfil];
+        $banco -> update(dados: $dados_update, where: 'id = "'.$id_usuario.'"',);
 
+    }
     public function logar(){
 
        

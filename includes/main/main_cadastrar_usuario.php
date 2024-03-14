@@ -10,7 +10,7 @@
     <main class="tudo_esqueceu_senha1">
         <form method="POST" id="form_cad">
             <section class='titulo_cadastro_usuario'>
-                <h1>Cadastrar Usuário</h1>
+                <h1>Cadastrar Usuário.</h1>
             </section>
             
             <section class="centralizar_input_cadastrar_usuario">                

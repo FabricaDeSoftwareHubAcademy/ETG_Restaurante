@@ -659,3 +659,10 @@ select {
   }
 
 }
+
+
+.select_perfil{
+  width: 100%;
+  height: 35px;
+  border: none;
+}
