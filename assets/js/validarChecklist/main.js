@@ -46,13 +46,16 @@ buttonSubmit.addEventListener("click", async function(event) {
             
         } else {
             sessionStorage.clear()
-            // console.log(NaoConformidades)
             
             
-            let luizNaoCadastra = await fetch('./actions/action_cadastrar_nao_conformidade_logistica.php?id_docente='+id_docente_resp+'&id_sala='+id_sala);
+            let luizNaoCadastra = await fetch('./actions/action_cadastrar_nao_conformidade_logistica.php?id_docente='+id_docente_resp+'&id_sala='+id_sala,{
+                method:"POST",
+                body: JSON.stringify(NaoConformidades)
+            });
             let res = await luizNaoCadastra.json()
-            console.log(res)
-
+            
+            
+            console.log(res) 
 
             sessionStorage.setItem('NaoConformidades', JSON.stringify(NaoConformidades));
             sessionStorage.setItem('id_realizacao', id_realizacao);
