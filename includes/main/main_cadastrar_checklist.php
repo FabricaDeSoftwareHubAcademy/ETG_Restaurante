@@ -1,15 +1,14 @@
 <link rel="stylesheet" href="estilo_perfil.css">
 <link rel="stylesheet" href="https/cdnjs.cloudflare.comlibs/font-awesome/6.4.0/css/all.min.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <link rel="stylesheet" href="../assets/css/cadastrar_checklist/input-checklist.css">
 <link rel="stylesheet" href="../assets/css/cadastrar_checklist/posicao.css">
 <link rel="stylesheet" href="../assets/css/cadastrar_checklist/caixa_pergunta.css">
 <link rel="stylesheet" href="../assets/css/cadastrar_checklist/botões-checklist.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script defer src="../assets/js/modais.js"></script>
 <script defer src="../assets/js/ajax_checklist.js"></script>
-<link rel="preconnect" href="https://fonts.googleapis.com">
 
 
 <body class="pai_de_todos">
@@ -90,12 +89,12 @@
                     <div class="popup_cadastrar" id="popup-cadastro-pergunta">
                         <h4>Cadastrar pergunta:</h4>
 
-                        <textarea maxlength="210" name="nova_pergunta" id="nova_pergunta"  class="nova_pergunta" placeholder= "Escreva a pergunta"cols="30" rows="10" autocomplete= "off"></textarea>
+                        <textarea maxlength="210" name="nova_pergunta" id="nova_pergunta" class="nova_pergunta" placeholder="Escreva a pergunta" cols="30" rows="10" autocomplete="off"></textarea>
 
                         <h4>Selecione a categoria da pergunta:</h4>
 
                         <!-- DIV DAS 2 CHECKBOX'S -->
-                        
+
                         <div class="checks">
                             <div class="check1">
                                 <input type="checkbox" name="antes_da_aula" id="check1"> Pré-Aula
@@ -116,15 +115,43 @@
                 <script>
                     const btn = document.getElementById("btn_cad_pergunta");
 
-                    btn.addEventListener("click",function(event){
+                    btn.addEventListener("click", function(event) {
                         event.preventDefault();
-                        
+
                         const text = document.getElementById("nova_pergunta");
                         const c1 = document.getElementById("check1");
                         const c2 = document.getElementById("check2");
 
                         console.log(text.value);
 
+                    })
+                    
+                    $("#btn_cad_pergunta").click(async function(event) {
+                        event.preventDefault()
+
+                        // se todos os campos estiverem corretamente preenchidos
+                        if ((($('#nova_pergunta').val().trim().length) > 0) && ($('#check1').prop('checked') || $('#check2').prop('checked'))) {
+
+                            let formData = new FormData($('#form_cad_pergunta')[0])
+
+                            let dados_php = await fetch('./actions/cad_pergunta.php', {
+                                method: 'POST',
+                                body: formData
+                            })
+                            let response = await dados_php.json()
+
+                            closePopup1()
+                            $("#nova_pergunta").val('')
+                            $('#check1').prop('checked', false)
+                            $('#check2').prop('checked', false)
+
+                            modalStatus('cadastrado com sucesso!', 'success')
+
+                            listarPerguntas()
+                        } else {
+                            modalStatus('preencha todos os dados corretamente!', 'error')
+
+                        }
                     })
                 </script>
 
@@ -189,11 +216,7 @@
 
                     }
 
-
-
-
                 })
-
 
                 function showTab(tabId) {
 
@@ -238,22 +261,22 @@
                 </div>
             </div>
             <script>
-
                 // SCRIPT DO POPUP DE CADASTRAR PERGUNTAS
 
                 let popup_cadastro_pergunta = document.getElementById("popup-cadastro-pergunta");
-                function openPopup1(){
 
-                    document.getElementById("overlay").style.visibility="visible";
+                function openPopup1() {
+
+                    document.getElementById("overlay").style.visibility = "visible";
                     popup_cadastro_pergunta.classList.add("open-popup1");
-                    
+
                 }
-                function closePopup1(){ 
-                    
-                    document.getElementById("overlay").style.visibility= 'hidden';
+
+                function closePopup1() {
+
+                    document.getElementById("overlay").style.visibility = 'hidden';
                     popup_cadastro_pergunta.classList.remove("open-popup1");
                 }
-
             </script>
 
         </form>
