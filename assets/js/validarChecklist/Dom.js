@@ -21,6 +21,30 @@ export class Dom {
             }
             this.createOneGreenElement(pergunta["pergunta"], pergunta["id_pergunta"], pergunta)
         }
+        var campo_observacoes = document.createElement("div")
+        campo_observacoes.style.width = "100%"
+        campo_observacoes.style.minHeight = "100px"
+        campo_observacoes.style.display = "flex"
+        campo_observacoes.style.justifyContent = "flex-start"
+        var texto_observacoes = document.createElement("div")
+        texto_observacoes.style.border = "solid black 1px"
+        // texto_observacoes.style.backgroundColor = "red"
+        texto_observacoes.style.borderRadius = "15px"
+        texto_observacoes.style.width = "80%"
+        texto_observacoes.style.height = "100%"
+        texto_observacoes.style.textAlign = "justify"
+        texto_observacoes.style.padding = "15px"
+
+        var texto_que_realmente_e_texto_observacoes = document.createElement("p")
+        texto_que_realmente_e_texto_observacoes.style.width = "100%"
+        texto_que_realmente_e_texto_observacoes.style.height = "100%"
+        texto_que_realmente_e_texto_observacoes.style.wordWrap = "break-word"
+
+        
+        texto_que_realmente_e_texto_observacoes.textContent = "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+        texto_observacoes.appendChild(texto_que_realmente_e_texto_observacoes)
+        campo_observacoes.appendChild(texto_observacoes)
+        document.querySelector(".list-pre-aula").appendChild(campo_observacoes)
     }
 
     createOneGreenElement(pergunta, idPergunta, dadosPergunta) {
@@ -38,14 +62,14 @@ export class Dom {
         var labelDiv = document.createElement("div")
         labelDiv.id = "label-div"
         labelDiv.className = labelClass
-        
-        
-        var h1AndButtonDiv = document.createElement("div")
-        h1AndButtonDiv.className = "divH1andButton"
 
-        
-        var h1Title = document.createElement("h1")
-        h1Title.textContent = pergunta
+        var descricao_pergunta = document.createElement("p")
+        descricao_pergunta.textContent = pergunta
+        descricao_pergunta.style.textAlign = "justify"
+        descricao_pergunta.style.padding = "15px"          
+              
+              
+    
 
         var botoes_direita = document.createElement("div")
         botoes_direita.className = "botoes_direita"
@@ -281,7 +305,7 @@ export class Dom {
         
         // h1AndButtonDiv.appendChild(h1Title);
         // h1AndButtonDiv.appendChild(button);
-        // labelDiv.appendChild(h1AndButtonDiv);
+        labelDiv.appendChild(descricao_pergunta);
         botoes_direita.appendChild(botao_correto)
         botoes_direita.appendChild(botao_incorreto)
         mainDiv.appendChild(labelDiv)
