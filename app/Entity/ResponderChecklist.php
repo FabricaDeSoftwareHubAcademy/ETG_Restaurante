@@ -10,17 +10,19 @@ class ResponderChecklist
 
 
     public static function cadastrar($dadosResp = [], $id_sala = 1, $id_check)
-    {   
+    {          
         try{ 
             $responder_check = [
                 'id_usuario'     => $_SESSION['id_user'],
                 'id_sala'        => $id_sala,
-                'id_checklist'   => $id_check
+                'id_checklist'   => $id_check,
+                'observacao'     =>  $dadosResp["observacao"]//EU TAMBÉM NÃO SEI PQ É 30 PARCEIRO, SE VIRA AI
             ];
             $obj_banco = new Banco('responder_check');
             try{
                 // CADASTRAR NO BANCO QUE RESPONDEU 
                 $last_id = $obj_banco -> insertRecoverId($responder_check);
+                // return $obj_banco -> insertRecoverId($responder_check);
             }catch(PDOException $e){
                 echo(json_encode($e->getMessage()));
             }
@@ -28,7 +30,9 @@ class ResponderChecklist
             
             foreach ($dadosResp as $dataResp)
             {
-    
+                if (is_string($dataResp)) {
+                    continue;
+                }
                 // se for uma não conformidade  
                 if($dataResp['status'] == false){ 
     
@@ -79,8 +83,10 @@ class ResponderChecklist
             // adicionar valor na data de fechamento do checklist respondido  
             $obj_banco = new Banco('responder_check'); 
 
+            $observacao = $dadosResp["observacao"];
             $dados_update  =  [
-                'data_fechamento' => date('Y-m-d H:i:s')
+                'data_fechamento' => date('Y-m-d H:i:s'),
+                'observacao_pos' => $observacao
             ];
 
             $obj_banco -> update('id = "'.$id_last_insert.'"',$dados_update);
@@ -89,7 +95,9 @@ class ResponderChecklist
             
             foreach ($dadosResp as $dataResp)
             {
-    
+                if (is_string($dataResp)) {
+                    continue;
+                }
                 // se for uma não conformidade  
                 if($dataResp['status'] == false){ 
     
