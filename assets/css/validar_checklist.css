@@ -80,7 +80,7 @@ border-radius: 10px;
 /* ---------------------------------- */
 
 .label_checklist-right{
-  display: flex;
+  /* display: flex; */
   flex-direction: column;
   justify-content: space-between;
   /* max-width: 500px; */

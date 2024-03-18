@@ -13,13 +13,71 @@ export class Dom {
     }
 
     showPerguntas() {
+        var tipo_preaula = []
+        var tipo_posaula = []
+
+        for (let pergunta of this.dataPerguta) {
+            // console.log(pergunta["tipo"])
+            if (pergunta["tipo"] == "0") {
+                tipo_preaula.push(pergunta)
+                continue
+            }
+            else if (pergunta["tipo"] == "1") {
+                tipo_posaula.push(pergunta)
+                continue
+            }
+
+            else if (pergunta["tipo"] == "2") {
+                tipo_preaula.push(pergunta)
+                tipo_posaula.push(pergunta)
+            }
+
+        }
+
+
+        var div_perguntas_pre = document.createElement("div")
+        div_perguntas_pre.style.width = "100%"
+        div_perguntas_pre.style.height = "30px"
+        div_perguntas_pre.style.marginBottom = "20px"
+        // div_perguntas_pre.style.backgroundColor = "red"
+        var titulo_perguntas_pre = document.createElement("h2");
+        titulo_perguntas_pre.fontSize = "20px"
+        titulo_perguntas_pre.style.textAlign = "center"
+        titulo_perguntas_pre.textContent = "PRE AULA"
+        div_perguntas_pre.appendChild(titulo_perguntas_pre)
+        var container_pai = document.querySelector(".list-pre-aula")
+        container_pai.appendChild(div_perguntas_pre)
+
+        for (var pergunta of tipo_preaula) {
+            if (pergunta["NaoConformidade"]) {
+                this.addNaoConfToDataNaoConf(pergunta)
+                this.createOneRedElement(pergunta["pergunta"], pergunta["id_pergunta"], pergunta) //checando se a pergunta tem uma nao conformidade
+                continue
+            }
+            this.criarElementoRespondidoCerto(pergunta["pergunta"], pergunta["id_pergunta"], pergunta)
+        }
+
+
+        var div_perguntas_pos = document.createElement("div")
+        div_perguntas_pos.style.width = "100%"
+        div_perguntas_pos.style.height = "30px"
+        div_perguntas_pos.style.marginBottom = "20px"
+        // div_perguntas_pos.style.backgroundColor = "red"
+        var titulo_perguntas_pre = document.createElement("h2");
+        titulo_perguntas_pre.fontSize = "20px"
+        titulo_perguntas_pre.style.textAlign = "center"
+        titulo_perguntas_pre.textContent = "POS AULA"
+        div_perguntas_pos.appendChild(titulo_perguntas_pre)
+        var container_pai = document.querySelector(".list-pre-aula")
+        container_pai.appendChild(div_perguntas_pos)
+
         for (var pergunta of this.dataPerguta) {
             if (pergunta["NaoConformidade"]) {
                 this.addNaoConfToDataNaoConf(pergunta)
                 this.createOneRedElement(pergunta["pergunta"], pergunta["id_pergunta"], pergunta) //checando se a pergunta tem uma nao conformidade
                 continue
             }
-            this.createOneGreenElement(pergunta["pergunta"], pergunta["id_pergunta"], pergunta)
+            this.criarElementoRespondidoCerto(pergunta["pergunta"], pergunta["id_pergunta"], pergunta)
         }
         var campo_observacoes = document.createElement("div")
         campo_observacoes.style.width = "100%"
@@ -41,21 +99,21 @@ export class Dom {
         texto_que_realmente_e_texto_observacoes.style.wordWrap = "break-word"
 
         
-        texto_que_realmente_e_texto_observacoes.textContent = "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+        texto_que_realmente_e_texto_observacoes.textContent = "observacao"
         texto_observacoes.appendChild(texto_que_realmente_e_texto_observacoes)
         campo_observacoes.appendChild(texto_observacoes)
         document.querySelector(".list-pre-aula").appendChild(campo_observacoes)
     }
 
-    createOneGreenElement(pergunta, idPergunta, dadosPergunta) {
-        this.createLabelElement("label_checklist-right", pergunta, idPergunta, dadosPergunta)
+    criarElementoRespondidoCerto(pergunta, idPergunta, dadosPergunta) {
+        this.criarLabelCorreta("label_checklist-right", pergunta, idPergunta, dadosPergunta)
     }
 
-    createOneRedElement(pergunta, idPergunta, dadosPergunta) {
-        this.createLabelElement("label_checklist-wrong", pergunta, idPergunta, dadosPergunta)
-    }
+    // createOneRedElement(pergunta, idPergunta, dadosPergunta) {
+    //     this.createLabelElement("label_checklist-wrong", pergunta, idPergunta, dadosPergunta)
+    // }
 
-    createLabelElement(labelClass, pergunta, idPergunta, dadosPergunta) {
+    criarLabelCorreta(labelClass, pergunta, idPergunta, dadosPergunta) {
         var mainDiv = document.createElement("div")
         mainDiv.className = "input_checklist"
         
@@ -63,13 +121,20 @@ export class Dom {
         labelDiv.id = "label-div"
         labelDiv.className = labelClass
 
+        var teto_colorido = document.createElement("div")
+        teto_colorido.style.backgroundColor = "green"
+        teto_colorido.style.width = "100%"
+        teto_colorido.style.height = "10%"
+        teto_colorido.style.minHeight = "5px"
+        labelDiv.style.overflow = "hidden"
+        teto_colorido.style.borderTopLeftRadius = "20px"
+        teto_colorido.style.borderTopRightRadius = "20px"
+
         var descricao_pergunta = document.createElement("p")
         descricao_pergunta.textContent = pergunta
         descricao_pergunta.style.textAlign = "justify"
-        descricao_pergunta.style.padding = "15px"          
-              
-              
-    
+        descricao_pergunta.style.padding = "15px"
+        // descricao_pergunta.style.minHeight = "90%"     
 
         var botoes_direita = document.createElement("div")
         botoes_direita.className = "botoes_direita"
@@ -80,238 +145,311 @@ export class Dom {
         botoes_direita.style.display = "flex";
         botoes_direita.style.justifyContent = "center";
 
-        var botao_correto = document.createElement("i")
-        botao_correto.className = "bi bi-x"
-
         var botao_incorreto = document.createElement("i")
-        botao_incorreto.className = "bi bi-check"
+        botao_incorreto.className = "bi bi-x"
+        botao_incorreto.onclick = function() {
+            if (botao_incorreto.classList.contains("bi-x-circle")) {
+                botao_incorreto.className = "bi bi-x"
+                botao_incorreto.style.color = "black"
+            } else {
+                botao_incorreto.className = "bi-x-circle"
+                botao_incorreto.style.color = "red"
+            }
+        }
 
 
-        
-        //SLIDE EFFECT
-        // var self_1 = this;
-        // function montarBotoes()
-        // {
-        //     var self_2 = self_1
-        //     motherButtons = document.createElement("div");
-        //     motherButtons.className = "alinar-botoes-label";
 
-        //     var divBack = document.createElement("div");
-        //     divBack.className = "botao-padrao-voltar-label";
+        var botao_correto = document.createElement("i")
+        botao_correto.className = "bi bi-check"
+        botao_correto.onclick = function() {
+            if (botao_correto.classList.contains("bi-check-circle")) {
+                botao_correto.className = "bi bi-check"
+                botao_correto.style.color = "black"
+            } else {
+                botao_correto.className = "bi-check-circle"
+                botao_correto.style.color = "green"
+            }
+        }
 
-        //     var buttonIncorrect = document.createElement("button");
-        //     buttonIncorrect.className = "botao-voltar-link-label";
-        //     buttonIncorrect.textContent = "Incorreto";
-        //     buttonIncorrect.onclick = function() {
-        //         self_2.call(pergunta)
-        //         var buttonConfirmNaoConf = document.querySelector(".botao-confirmar-submit");
-        //         buttonConfirmNaoConf.onclick = function() {
-        //             var textAreaContent = document.querySelector(".descricao_nao_conf").value
-        //             var varPreview = document.querySelector(".upload-img");
-        //             var images = varPreview.querySelectorAll("img");
-        //             let tamanho = images.length
-        //             // console.log(tamanho)
-        //             if (textAreaContent == "" || tamanho == 0 || tamanho > 3) {
-        //                 // alert("Preencha os dados corretamente")
-        //                 modalStatus("Preencha os dados corretamente", "error")
-        //                 return false;
-        //             }
-        //             // console.log(images);
-        //             for (let i = 0; i < self_2.preenchidas.length; i++) {
-        //                 // console.log(i);
-        //                 if (self_2.preenchidas[i]["id_pergunta"] == idPergunta) {
-        //                     self_2.preenchidas[i]["preenchido"] = true 
-        //                 }
-        //             }
-        //             vermelho();
-        //             self_2.save(textAreaContent, images, dadosPergunta);
-        //             self_2.close();
-        //         }
-        //     }
+        var botao_estatico = document.createElement("i")
+        botao_estatico.className = "bi bi-check-circle"
+        botao_estatico.style.color = "green"
+        // botao_incorreto.className = "bi bi-check-circle"
+        // botao_incorreto.style.color = "green"
 
-        //     var divSubmit = document.createElement("div");
-        //     divSubmit.className = "botao-padrao-cadastrar-label";
-
-        //     var buttonSubmit = document.createElement("button");
-        //     buttonSubmit.className = "botao-cadastrar-submit-label";
-        //     buttonSubmit.textContent = "Correto";
-        //     buttonSubmit.type = "button";
-        //     self_2 = self_1
-        //     buttonSubmit.onclick = function() {
-        //         // console.log(self_2.preenchidas.length)
-        //         for (let i = 0; i < self_2.preenchidas.length; i++) {
-        //             // console.log(i);
-        //             if (self_2.preenchidas[i]["id_pergunta"] == idPergunta) {
-        //                 self_2.preenchidas[i]["preenchido"] = true 
-        //             }
-        //         }
-        
-
-        //         if (labelDiv.classList.contains("label_checklist-wrong") && labelDiv.classList.contains("active")) {
-        //             vermelho();
-        //         }
-        //         else
-        //         {
-        //             verde();
-        //         }
-        //     }
-        //     divBack.appendChild(buttonIncorrect);
-        //     divSubmit.appendChild(buttonSubmit);
-        //     motherButtons.appendChild(divBack);
-        //     motherButtons.appendChild(divSubmit);
-        //     labelDiv.appendChild(motherButtons);
-        // }
-
-        // function descerNormal()
-        // {
-        //     for (let i = 0; i < self_1.preenchidas.length; i++) {
-        //         // console.log(self_1.preenchidas[i]);
-        //         if (self_1.preenchidas[i]["id_pergunta"] == idPergunta) {
-        //             self_1.preenchidas[i]["preenchido"] = false 
-        //         }
-        //     }
-        //     // console.log(self_1.dataNaoConf)
-        //     labelDiv.classList.add("active");
-
-        //     if (labelDiv.classList.contains("label_checklist-wrong")) {
-        //         labelDiv.style.backgroundColor = 'transparent';
-        //         labelDiv.style.border = '3px solid red';
-        //         button.className = "bi bi-chevron-down"
-        //         // labelDiv.style.height = (labelDiv.offsetHeight + 250) + "px";
-
-        //         let imagens = document.createElement("div");
-        //         imagens.className = "imagens-container";
-        //         imagens.style.width = "100%";
-        //         imagens.style.height = "300px";
-        //         imagens.style.display = "flex";
-        //         imagens.style.alignItems = "center";
-                
-        //         for (let i = 0; i < 3; i++) {
-        //             let divImg = document.createElement("div");
-        //             divImg.style.display = "flex";
-        //             divImg.style.justifyContent = "center";
-                    
-        //             if (dadosPergunta["imagesToPHP"][i] != "") {
-        //                 let img = document.createElement("img");
-        //                 img.className = "beluga";
-        //                 img.style.width = "100%";
-
-
-        //                 let imgNameInServer = dadosPergunta["imagesToPHP"][i];
-        //                 let basepath = "../storage/n_conformidade/";
-        //                 let caminhoAbsoluto = basepath + imgNameInServer;
-        //                 img.src = caminhoAbsoluto;
-        //                 divImg.appendChild(img);
-        //                 imagens.appendChild(divImg)
-        //             }
-        //         }
-                
-        //         labelDiv.appendChild(imagens)
-                
-        //     }
-        //     else if (labelDiv.classList.contains("label_checklist-right")) {
-        //         montarBotoes();
-        //         labelDiv.style.backgroundColor = 'transparent';
-        //         labelDiv.style.border = '3px solid green';
-        //         button.className = "bi bi-chevron-down"
-        //         // labelDiv.style.height = (labelDiv.offsetHeight + 125) + "px";
-                
-        //     }
-
-        //     if (labelDiv.classList.contains("correct")) {
-        //         labelDiv.classList.remove("correct");
-        //     }
-        //     if (labelDiv.classList.contains("incorrect")) {
-        //         labelDiv.classList.remove("incorrect");
-        //     }
-        //     for (var i = 0; i < self_1.dataNaoConf.length; i++) {
-        //         var Nconf = self_1.dataNaoConf[i];
-        //         if (Nconf["id_pergunta"] == idPergunta) {
-        //             self_1.dataNaoConf.splice(i, 1);
-        //         }
-        //     }
-
-        // }
-
-        // function subirNormal()
-        // {
-              
-        //     if (labelDiv.querySelector(".imagens-container") !== null) {
-        //         labelDiv.querySelector(".imagens-container").remove();
-        //         // labelDiv.style.height = (labelDiv.offsetHeight - 250) + "px";
-        //         labelDiv.classList.remove("active");
-        //     } else {
-        //         // labelDiv.style.height = (labelDiv.offsetHeight - 125) + "px";
-        //         labelDiv.classList.remove("active");
-        //         labelDiv.removeChild(motherButtons);
-        //     }
-
-        //     if (labelDiv.classList.contains("correct")) {
-        //         labelDiv.classList.remove("correct");
-        //     }
-        //     if (labelDiv.classList.contains("incorrect")) {
-        //         labelDiv.classList.remove("incorrect");
-        //     }
-
-
-       
-        // }
-
-
-        // function verde()
-        // {
-        //     //verde
-        //     labelDiv.style.backgroundColor = 'green';
-        //     labelDiv.classList.add("correct");
-        //     button.className = "bi bi-arrow-clockwise";
-        // }
-
-        // function vermelho()
-        // {
-        //     if (labelDiv.classList.contains("label_checklist-wrong")) {
-        //         //vermelho
-        //         labelDiv.style.backgroundColor = 'red';
-        //         labelDiv.classList.add("correct");
-        //         button.className = "bi bi-arrow-clockwise";
-        //     }
-        //     else 
-        //     {
-        //         //vermelho
-        //         labelDiv.style.backgroundColor = 'red';
-        //         labelDiv.style.border = '3px solid red';
-        //         labelDiv.classList.add("incorrect");
-        //         button.className = "bi bi-arrow-clockwise";
-        //     }
-        // }
-
-        // var motherButtons;
-        // labelDiv.onclick = function() {
-        //     if (labelDiv.classList.contains("active") && labelDiv.classList.contains("correct")) 
-        //     {
-        //         subirNormal();
-        //     }
-        //     else if (labelDiv.classList.contains("active") && !labelDiv.classList.contains("correct") && !labelDiv.classList.contains("incorrect"))
-        //     {
-        //         subirNormal();
-        //         // console.log("subiu normal transparente");
-        //     }
-        //     else
-        //     {
-        //         descerNormal();
-        //         // console.log("desceu normal transparente");
-        //     }
-        // }
-
-        
-        // h1AndButtonDiv.appendChild(h1Title);
-        // h1AndButtonDiv.appendChild(button);
+        labelDiv.appendChild(teto_colorido)
         labelDiv.appendChild(descricao_pergunta);
+        botoes_direita.appendChild(botao_estatico)
         botoes_direita.appendChild(botao_correto)
         botoes_direita.appendChild(botao_incorreto)
         mainDiv.appendChild(labelDiv)
         mainDiv.appendChild(botoes_direita)
         document.querySelector(".list-pre-aula").appendChild(mainDiv)
     }
+
+    criarLabelIncorreta() {
+
+    }
+
+
+    // createLabelElement(labelClass, pergunta, idPergunta, dadosPergunta) {
+    //     var mainDiv = document.createElement("div")
+    //     mainDiv.className = "input_checklist"
+        
+    //     var labelDiv = document.createElement("div")
+    //     labelDiv.id = "label-div"
+    //     labelDiv.className = labelClass
+
+    //     var descricao_pergunta = document.createElement("p")
+    //     descricao_pergunta.textContent = pergunta
+    //     descricao_pergunta.style.textAlign = "justify"
+    //     descricao_pergunta.style.padding = "15px"          
+              
+              
+    
+
+    //     var botoes_direita = document.createElement("div")
+    //     botoes_direita.className = "botoes_direita"
+    //     botoes_direita.style.width = "20%";
+    //     botoes_direita.style.height = "100%";
+    //     // botoes_direita.style.background = "red";
+    //     botoes_direita.style.fontSize = "40px";
+    //     botoes_direita.style.display = "flex";
+    //     botoes_direita.style.justifyContent = "center";
+
+    //     var botao_correto = document.createElement("i")
+    //     botao_correto.className = "bi bi-x"
+
+    //     var botao_incorreto = document.createElement("i")
+    //     botao_incorreto.className = "bi bi-check"
+
+
+        
+    //     //SLIDE EFFECT
+    //     // var self_1 = this;
+    //     // function montarBotoes()
+    //     // {
+    //     //     var self_2 = self_1
+    //     //     motherButtons = document.createElement("div");
+    //     //     motherButtons.className = "alinar-botoes-label";
+
+    //     //     var divBack = document.createElement("div");
+    //     //     divBack.className = "botao-padrao-voltar-label";
+
+    //     //     var buttonIncorrect = document.createElement("button");
+    //     //     buttonIncorrect.className = "botao-voltar-link-label";
+    //     //     buttonIncorrect.textContent = "Incorreto";
+    //     //     buttonIncorrect.onclick = function() {
+    //     //         self_2.call(pergunta)
+    //     //         var buttonConfirmNaoConf = document.querySelector(".botao-confirmar-submit");
+    //     //         buttonConfirmNaoConf.onclick = function() {
+    //     //             var textAreaContent = document.querySelector(".descricao_nao_conf").value
+    //     //             var varPreview = document.querySelector(".upload-img");
+    //     //             var images = varPreview.querySelectorAll("img");
+    //     //             let tamanho = images.length
+    //     //             // console.log(tamanho)
+    //     //             if (textAreaContent == "" || tamanho == 0 || tamanho > 3) {
+    //     //                 // alert("Preencha os dados corretamente")
+    //     //                 modalStatus("Preencha os dados corretamente", "error")
+    //     //                 return false;
+    //     //             }
+    //     //             // console.log(images);
+    //     //             for (let i = 0; i < self_2.preenchidas.length; i++) {
+    //     //                 // console.log(i);
+    //     //                 if (self_2.preenchidas[i]["id_pergunta"] == idPergunta) {
+    //     //                     self_2.preenchidas[i]["preenchido"] = true 
+    //     //                 }
+    //     //             }
+    //     //             vermelho();
+    //     //             self_2.save(textAreaContent, images, dadosPergunta);
+    //     //             self_2.close();
+    //     //         }
+    //     //     }
+
+    //     //     var divSubmit = document.createElement("div");
+    //     //     divSubmit.className = "botao-padrao-cadastrar-label";
+
+    //     //     var buttonSubmit = document.createElement("button");
+    //     //     buttonSubmit.className = "botao-cadastrar-submit-label";
+    //     //     buttonSubmit.textContent = "Correto";
+    //     //     buttonSubmit.type = "button";
+    //     //     self_2 = self_1
+    //     //     buttonSubmit.onclick = function() {
+    //     //         // console.log(self_2.preenchidas.length)
+    //     //         for (let i = 0; i < self_2.preenchidas.length; i++) {
+    //     //             // console.log(i);
+    //     //             if (self_2.preenchidas[i]["id_pergunta"] == idPergunta) {
+    //     //                 self_2.preenchidas[i]["preenchido"] = true 
+    //     //             }
+    //     //         }
+        
+
+    //     //         if (labelDiv.classList.contains("label_checklist-wrong") && labelDiv.classList.contains("active")) {
+    //     //             vermelho();
+    //     //         }
+    //     //         else
+    //     //         {
+    //     //             verde();
+    //     //         }
+    //     //     }
+    //     //     divBack.appendChild(buttonIncorrect);
+    //     //     divSubmit.appendChild(buttonSubmit);
+    //     //     motherButtons.appendChild(divBack);
+    //     //     motherButtons.appendChild(divSubmit);
+    //     //     labelDiv.appendChild(motherButtons);
+    //     // }
+
+    //     // function descerNormal()
+    //     // {
+    //     //     for (let i = 0; i < self_1.preenchidas.length; i++) {
+    //     //         // console.log(self_1.preenchidas[i]);
+    //     //         if (self_1.preenchidas[i]["id_pergunta"] == idPergunta) {
+    //     //             self_1.preenchidas[i]["preenchido"] = false 
+    //     //         }
+    //     //     }
+    //     //     // console.log(self_1.dataNaoConf)
+    //     //     labelDiv.classList.add("active");
+
+    //     //     if (labelDiv.classList.contains("label_checklist-wrong")) {
+    //     //         labelDiv.style.backgroundColor = 'transparent';
+    //     //         labelDiv.style.border = '3px solid red';
+    //     //         button.className = "bi bi-chevron-down"
+    //     //         // labelDiv.style.height = (labelDiv.offsetHeight + 250) + "px";
+
+    //     //         let imagens = document.createElement("div");
+    //     //         imagens.className = "imagens-container";
+    //     //         imagens.style.width = "100%";
+    //     //         imagens.style.height = "300px";
+    //     //         imagens.style.display = "flex";
+    //     //         imagens.style.alignItems = "center";
+                
+    //     //         for (let i = 0; i < 3; i++) {
+    //     //             let divImg = document.createElement("div");
+    //     //             divImg.style.display = "flex";
+    //     //             divImg.style.justifyContent = "center";
+                    
+    //     //             if (dadosPergunta["imagesToPHP"][i] != "") {
+    //     //                 let img = document.createElement("img");
+    //     //                 img.className = "beluga";
+    //     //                 img.style.width = "100%";
+
+
+    //     //                 let imgNameInServer = dadosPergunta["imagesToPHP"][i];
+    //     //                 let basepath = "../storage/n_conformidade/";
+    //     //                 let caminhoAbsoluto = basepath + imgNameInServer;
+    //     //                 img.src = caminhoAbsoluto;
+    //     //                 divImg.appendChild(img);
+    //     //                 imagens.appendChild(divImg)
+    //     //             }
+    //     //         }
+                
+    //     //         labelDiv.appendChild(imagens)
+                
+    //     //     }
+    //     //     else if (labelDiv.classList.contains("label_checklist-right")) {
+    //     //         montarBotoes();
+    //     //         labelDiv.style.backgroundColor = 'transparent';
+    //     //         labelDiv.style.border = '3px solid green';
+    //     //         button.className = "bi bi-chevron-down"
+    //     //         // labelDiv.style.height = (labelDiv.offsetHeight + 125) + "px";
+                
+    //     //     }
+
+    //     //     if (labelDiv.classList.contains("correct")) {
+    //     //         labelDiv.classList.remove("correct");
+    //     //     }
+    //     //     if (labelDiv.classList.contains("incorrect")) {
+    //     //         labelDiv.classList.remove("incorrect");
+    //     //     }
+    //     //     for (var i = 0; i < self_1.dataNaoConf.length; i++) {
+    //     //         var Nconf = self_1.dataNaoConf[i];
+    //     //         if (Nconf["id_pergunta"] == idPergunta) {
+    //     //             self_1.dataNaoConf.splice(i, 1);
+    //     //         }
+    //     //     }
+
+    //     // }
+
+    //     // function subirNormal()
+    //     // {
+              
+    //     //     if (labelDiv.querySelector(".imagens-container") !== null) {
+    //     //         labelDiv.querySelector(".imagens-container").remove();
+    //     //         // labelDiv.style.height = (labelDiv.offsetHeight - 250) + "px";
+    //     //         labelDiv.classList.remove("active");
+    //     //     } else {
+    //     //         // labelDiv.style.height = (labelDiv.offsetHeight - 125) + "px";
+    //     //         labelDiv.classList.remove("active");
+    //     //         labelDiv.removeChild(motherButtons);
+    //     //     }
+
+    //     //     if (labelDiv.classList.contains("correct")) {
+    //     //         labelDiv.classList.remove("correct");
+    //     //     }
+    //     //     if (labelDiv.classList.contains("incorrect")) {
+    //     //         labelDiv.classList.remove("incorrect");
+    //     //     }
+
+
+       
+    //     // }
+
+
+    //     // function verde()
+    //     // {
+    //     //     //verde
+    //     //     labelDiv.style.backgroundColor = 'green';
+    //     //     labelDiv.classList.add("correct");
+    //     //     button.className = "bi bi-arrow-clockwise";
+    //     // }
+
+    //     // function vermelho()
+    //     // {
+    //     //     if (labelDiv.classList.contains("label_checklist-wrong")) {
+    //     //         //vermelho
+    //     //         labelDiv.style.backgroundColor = 'red';
+    //     //         labelDiv.classList.add("correct");
+    //     //         button.className = "bi bi-arrow-clockwise";
+    //     //     }
+    //     //     else 
+    //     //     {
+    //     //         //vermelho
+    //     //         labelDiv.style.backgroundColor = 'red';
+    //     //         labelDiv.style.border = '3px solid red';
+    //     //         labelDiv.classList.add("incorrect");
+    //     //         button.className = "bi bi-arrow-clockwise";
+    //     //     }
+    //     // }
+
+    //     // var motherButtons;
+    //     // labelDiv.onclick = function() {
+    //     //     if (labelDiv.classList.contains("active") && labelDiv.classList.contains("correct")) 
+    //     //     {
+    //     //         subirNormal();
+    //     //     }
+    //     //     else if (labelDiv.classList.contains("active") && !labelDiv.classList.contains("correct") && !labelDiv.classList.contains("incorrect"))
+    //     //     {
+    //     //         subirNormal();
+    //     //         // console.log("subiu normal transparente");
+    //     //     }
+    //     //     else
+    //     //     {
+    //     //         descerNormal();
+    //     //         // console.log("desceu normal transparente");
+    //     //     }
+    //     // }
+
+        
+    //     // h1AndButtonDiv.appendChild(h1Title);
+    //     // h1AndButtonDiv.appendChild(button);
+    //     labelDiv.appendChild(descricao_pergunta);
+    //     botoes_direita.appendChild(botao_correto)
+    //     botoes_direita.appendChild(botao_incorreto)
+    //     mainDiv.appendChild(labelDiv)
+    //     mainDiv.appendChild(botoes_direita)
+    //     document.querySelector(".list-pre-aula").appendChild(mainDiv)
+    // }
+
 
     buildButtons() {
         self = this

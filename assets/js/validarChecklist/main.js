@@ -1,6 +1,6 @@
 import { Dom } from './Dom.js';
 
-console.log(perguntasJson)
+// console.log(perguntasJson)
 var preenchidas = [];
 // console.log(preenchidas);
 for (let i = 0; i < perguntasJson.length; i++) {
@@ -15,7 +15,7 @@ for (let i = 0; i < perguntasJson.length; i++) {
     }
 
 }
-console.log(preenchidas);
+// console.log(preenchidas);
 // console.log(preenchidas)
 var NaoConformidades = [];
 const DOM = new Dom(NaoConformidades, preenchidas);
