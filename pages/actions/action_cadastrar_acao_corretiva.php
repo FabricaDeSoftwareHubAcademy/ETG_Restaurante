@@ -20,7 +20,7 @@ if (isset($_GET["id_sala"])) {
 if ($tudo_correto == true) {
     ResponderChecklist::setConf_logis($_GET["id_realizacao"]);
     // die($id_sala);
-    Sala::setStatusSala($id_sala_get, "L");
+    // Sala::setStatusSala($id_sala_get, "L");
     header("Location: ../listar_checklist_concluidas.php");
 }
 
