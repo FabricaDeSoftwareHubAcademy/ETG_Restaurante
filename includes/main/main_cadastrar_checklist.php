@@ -125,7 +125,9 @@
                         console.log(text.value);
 
                     })
-                    
+
+                    // botao de confirmar cadastro de pergunta 
+
                     $("#btn_cad_pergunta").click(async function(event) {
                         event.preventDefault()
 
@@ -152,6 +154,16 @@
                             modalStatus('preencha todos os dados corretamente!', 'error')
 
                         }
+                    })
+
+                    $("#btn_cancelar_cad_pergunta").click(async function(event) {
+                        event.preventDefault()
+
+                        closePopup1()
+                        $("#nova_pergunta").val('')
+                        $('#check1').prop('checked', false)
+                        $('#check2').prop('checked', false)
+
                     })
                 </script>
 
