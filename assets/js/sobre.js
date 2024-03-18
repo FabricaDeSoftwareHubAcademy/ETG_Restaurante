@@ -89,9 +89,9 @@ function showPrev() {
 nextDom.onclick = showNext;
 prevDom.onclick = showPrev;
 
-function autoNext() {
-    nextDom.click();
-    setTimeout(autoNext, 5000);
-}
+// function autoNext() {
+//     nextDom.click();
+//     setTimeout(autoNext, 5000);
+// }
 
 autoNext();
