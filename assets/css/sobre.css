@@ -19,6 +19,21 @@ a{
     position: relative;
 }
 
+.link-contato{
+    text-decoration: none;
+}
+
+#icon{
+    padding: 5px;
+    color: inherit;
+    color: #eee;
+    font-size: 35px;
+}
+
+#icon:hover{
+    color: #f1683a;
+}
+
 .carousel .list .item{
     width: 100%;
     height: 100%;
@@ -55,21 +70,21 @@ a{
 .carousel .list .item .topic{
     color: #f1683a;
 }
-.carousel .list .item .buttons{
+.carousel .list .item .area-items{
     display: grid;
     grid-template-columns: repeat(2, 130px);
     grid-template-rows: 40px;
     gap: 5px;
     margin-top: 20px;
 }
-.carousel .list .item .buttons button{
+.carousel .list .item .area-items{
     border: none;
     background-color: #eee;
     letter-spacing: 3px;
     font-family: Poppins;
     font-weight: 500;
 }
-.carousel .list .item .buttons button:nth-child(2){
+.carousel .list .item .area-items{
     background-color: transparent;
     border: 1px solid #fff;
     color: #eee;
