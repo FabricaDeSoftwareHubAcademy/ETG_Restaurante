@@ -70,11 +70,11 @@
 
                     <h3 class="alinar_titulo_h3">Dias de Funcionamento </h3>
 
-                    <div class="area_Dos_check_box">
+                    <div class="area_Dos_check_box" id="area_dos_dias">
 
                         <div class="Check_Box_individual">
                             <p class="coisa_tag_p">Segunda</p>
-                            <input name="segunda" class="espaco_check_box" type="checkbox" />
+                            <input name="segunda" class="espaco_check_box" type="checkbox"/>
                         </div>
                         <div class="Check_Box_individual">
                             <p class="coisa_tag_p">Terça</p>
@@ -106,7 +106,7 @@
 
 
                     <h3 class="alinar_titulo_h3">Turnos de Funcionamento </h3>
-                    <div class="area_Dos_check_box">
+                    <div class="area_Dos_check_box" id="area_turnos">
 
                         
                         
@@ -200,6 +200,13 @@
                     </div> -->
 
                     <script>
+                        
+
+
+
+
+
+
 
                         document.querySelectorAll('input[type="number"]').forEach(input=>{
                             input.oninput = () => {
@@ -242,6 +249,7 @@
                         button.addEventListener('click', async (e) => {
                             
                             e.preventDefault()
+                            
                           
 
                            
@@ -311,9 +319,40 @@
                             }else{
                                 checklist = false
                             }
+                            
+                            var div1Checkboxes = document.querySelectorAll('#area_dos_dias input[type="checkbox"]');
+                                var div2Checkboxes = document.querySelectorAll('#area_turnos input[type="checkbox"]');
+
+                                var div1Checked = false;
+                                var div2Checked = false;
+
+                                // Verifica se pelo menos um checkbox está marcado na primeira div
+                                div1Checkboxes.forEach(function(checkbox) {
+                                    if (checkbox.checked) {
+                                        div1Checked = true;
+                                    }
+                                });
+
+                                // Verifica se pelo menos um checkbox está marcado na segunda div
+                                div2Checkboxes.forEach(function(checkbox) {
+                                    if (checkbox.checked) {
+                                        div2Checked = true;
+                                    }
+                                });
+
+                                // Se em alguma div nenhum checkbox estiver marcado, exibe uma mensagem de alerta
+                                if ((!div1Checked == true) || (!div2Checked == true)) {
+                                    alert("Por favor, marque pelo menos um checkbox na primeira div.");
+                                }
+
+                                if (!div2Checked) {
+                                    alert("Por favor, marque pelo menos um checkbox na segunda div.");
+                                }
+
+                            
  
                                 
-                            if(nome_sala == true && codigo_sala == true && checklist == true){
+                            if(nome_sala == true && codigo_sala == true && checklist == true && div1Checked == true && div2Checked == true){
 
                                 let form = document.getElementById('form_cad')
                                 // console.log(form)
@@ -334,7 +373,7 @@
                                 }
 
                             }else{
-                                // console.log("deu merda piá");
+                                console.log("deu merda piá");
                             }  
                         }
                         )
