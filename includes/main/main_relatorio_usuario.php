@@ -64,11 +64,13 @@
                         <canvas id="Chart"></canvas>
                     </div>
    
-                <section class="area-botao">
-                    <div class="div-relatorio">
-                        <button class="btn-relatorio" type="submit">Gerar PDF</button>  
-
-                </section>
+                    <section class="area-botao">
+                        <div class="div-relatorio">
+                            <form action="../pages/nao_conformidade_user.php" method="post" target="_blank">
+                                <button class="btn-relatorio" type="submit">Gerar PDF</button>
+                            </form>
+                        </div>
+                    </section>
              
             </div>
    
