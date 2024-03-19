@@ -53,8 +53,9 @@ if ($dados_pergunta)
                     <div class="checkmark" onclick="atualizarValor('.$linha['id_pergunta'].',true)">
                         <i id="green'.$linha['id_pergunta'].'" class="bi bi-check"></i>
                     </div>
-                </div>
+                </div>              
             </div>';
+            $observacao_card = '<div class="observacao"><textarea maxlength="200" name="nova_observacao" id="nova_observacao"  class="nova_observacao" placeholder= "Escreva a observação, caso necessário."cols="30" rows="10" autocomplete= "off"></textarea></div>';
         }  
     }
 }

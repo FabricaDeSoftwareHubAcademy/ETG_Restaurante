@@ -204,7 +204,7 @@ btn_submit.addEventListener('click', async (e) => {
     
      
     if(todasPergResp()){
-
+        listaData["observacao"] = document.querySelector("#nova_observacao").value
         let data_php = await fetch('./actions/cat_data_pergunta.php?id_sala='+id_sala+'&id_checklist='+id_checklist, {
             method: 'POST',
             body: JSON.stringify(listaData) 
