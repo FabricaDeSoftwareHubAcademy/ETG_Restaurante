@@ -6,6 +6,7 @@ export class Dom {
         this.dataNaoConf = dataNaoConf
         this.objPergunta = new Pergunta(perguntasJson)
         this.dataPerguta = this.objPergunta.getAll()
+        this.manipulacao_botoes = []
     }
 
     addNaoConfToDataNaoConf(pergunta) {
@@ -27,10 +28,10 @@ export class Dom {
                 continue
             }
 
-            else if (pergunta["tipo"] == "2") {
-                tipo_preaula.push(pergunta)
-                tipo_posaula.push(pergunta)
-            }
+            // else if (pergunta["tipo"] == "2") {
+            //     tipo_preaula.push(pergunta)
+            //     tipo_posaula.push(pergunta)
+            // }
 
         }
 
@@ -44,6 +45,7 @@ export class Dom {
         titulo_perguntas_pre.fontSize = "20px"
         titulo_perguntas_pre.style.textAlign = "center"
         titulo_perguntas_pre.textContent = "PRE AULA"
+        titulo_perguntas_pre.style.textDecoration = "underline"
         div_perguntas_pre.appendChild(titulo_perguntas_pre)
         var container_pai = document.querySelector(".list-pre-aula")
         container_pai.appendChild(div_perguntas_pre)
@@ -51,7 +53,7 @@ export class Dom {
         for (var pergunta of tipo_preaula) {
             if (pergunta["NaoConformidade"]) {
                 this.addNaoConfToDataNaoConf(pergunta)
-                this.createOneRedElement(pergunta["pergunta"], pergunta["id_pergunta"], pergunta) //checando se a pergunta tem uma nao conformidade
+                this.criarElementoRespondidoErrado(pergunta["pergunta"], pergunta["id_pergunta"], pergunta) //checando se a pergunta tem uma nao conformidade
                 continue
             }
             this.criarElementoRespondidoCerto(pergunta["pergunta"], pergunta["id_pergunta"], pergunta)
@@ -63,35 +65,41 @@ export class Dom {
         div_perguntas_pos.style.height = "30px"
         div_perguntas_pos.style.marginBottom = "20px"
         // div_perguntas_pos.style.backgroundColor = "red"
-        var titulo_perguntas_pre = document.createElement("h2");
-        titulo_perguntas_pre.fontSize = "20px"
-        titulo_perguntas_pre.style.textAlign = "center"
-        titulo_perguntas_pre.textContent = "POS AULA"
-        div_perguntas_pos.appendChild(titulo_perguntas_pre)
+        var titulo_perguntas_pos = document.createElement("h2");
+        titulo_perguntas_pos.fontSize = "20px"
+        titulo_perguntas_pos.style.textAlign = "center"
+        titulo_perguntas_pos.style.textDecoration = "underline"
+        titulo_perguntas_pos.textContent = "POS AULA"
+        div_perguntas_pos.appendChild(titulo_perguntas_pos)
         var container_pai = document.querySelector(".list-pre-aula")
         container_pai.appendChild(div_perguntas_pos)
 
-        for (var pergunta of this.dataPerguta) {
+        for (var pergunta of tipo_posaula) {
+
             if (pergunta["NaoConformidade"]) {
                 this.addNaoConfToDataNaoConf(pergunta)
-                this.createOneRedElement(pergunta["pergunta"], pergunta["id_pergunta"], pergunta) //checando se a pergunta tem uma nao conformidade
+                this.criarElementoRespondidoErrado(pergunta["pergunta"], pergunta["id_pergunta"], pergunta) //checando se a pergunta tem uma nao conformidade
                 continue
             }
             this.criarElementoRespondidoCerto(pergunta["pergunta"], pergunta["id_pergunta"], pergunta)
+            
         }
         var campo_observacoes = document.createElement("div")
         campo_observacoes.style.width = "100%"
         campo_observacoes.style.minHeight = "100px"
-        campo_observacoes.style.display = "flex"
-        campo_observacoes.style.justifyContent = "flex-start"
+        // campo_observacoes.style.display = "flex"
+        // campo_observacoes.style.justifyContent = "flex-start"
         var texto_observacoes = document.createElement("div")
         texto_observacoes.style.border = "solid black 1px"
         // texto_observacoes.style.backgroundColor = "red"
         texto_observacoes.style.borderRadius = "15px"
-        texto_observacoes.style.width = "80%"
+        texto_observacoes.style.width = "75%"
         texto_observacoes.style.height = "100%"
-        texto_observacoes.style.textAlign = "justify"
+        // texto_observacoes.style.textAlign = "justify"
         texto_observacoes.style.padding = "15px"
+        texto_observacoes.style.marginLeft = "53px"
+
+
 
         var texto_que_realmente_e_texto_observacoes = document.createElement("p")
         texto_que_realmente_e_texto_observacoes.style.width = "100%"
@@ -99,7 +107,7 @@ export class Dom {
         texto_que_realmente_e_texto_observacoes.style.wordWrap = "break-word"
 
         
-        texto_que_realmente_e_texto_observacoes.textContent = "observacao"
+        texto_que_realmente_e_texto_observacoes.textContent = "observacaoobservacaoobservacaoobservacaoobservacaoobservacaoobservacaoobservacaoobservacao"
         texto_observacoes.appendChild(texto_que_realmente_e_texto_observacoes)
         campo_observacoes.appendChild(texto_observacoes)
         document.querySelector(".list-pre-aula").appendChild(campo_observacoes)
@@ -109,11 +117,13 @@ export class Dom {
         this.criarLabelCorreta("label_checklist-right", pergunta, idPergunta, dadosPergunta)
     }
 
-    // createOneRedElement(pergunta, idPergunta, dadosPergunta) {
-    //     this.createLabelElement("label_checklist-wrong", pergunta, idPergunta, dadosPergunta)
-    // }
+    criarElementoRespondidoErrado(pergunta, idPergunta, dadosPergunta) {
+        this.criarLabelIncorreta("label_checklist-wrong", pergunta, idPergunta, dadosPergunta)
+    }
 
     criarLabelCorreta(labelClass, pergunta, idPergunta, dadosPergunta) {
+        this.manipulacao_botoes.push({"id": idPergunta, "certo": 0, "errado": 0})
+        var manipulacao_botoes = this.manipulacao_botoes
         var mainDiv = document.createElement("div")
         mainDiv.className = "input_checklist"
         
@@ -147,13 +157,22 @@ export class Dom {
 
         var botao_incorreto = document.createElement("i")
         botao_incorreto.className = "bi bi-x"
+
+        
         botao_incorreto.onclick = function() {
+            for (let i = 0; i < manipulacao_botoes; i++) {
+                console.log(manipulacao_botoes)
+            }
             if (botao_incorreto.classList.contains("bi-x-circle")) {
                 botao_incorreto.className = "bi bi-x"
                 botao_incorreto.style.color = "black"
             } else {
                 botao_incorreto.className = "bi-x-circle"
                 botao_incorreto.style.color = "red"
+                if (botao_correto.classList.contains("bi-check-circle")) {
+                    botao_correto.className = "bi-check"
+                    botao_correto.style.color = "black"
+                }
             }
         }
 
@@ -162,33 +181,132 @@ export class Dom {
         var botao_correto = document.createElement("i")
         botao_correto.className = "bi bi-check"
         botao_correto.onclick = function() {
+
+
+            
             if (botao_correto.classList.contains("bi-check-circle")) {
                 botao_correto.className = "bi bi-check"
                 botao_correto.style.color = "black"
             } else {
                 botao_correto.className = "bi-check-circle"
                 botao_correto.style.color = "green"
+                if (botao_incorreto.classList.contains("bi-x-circle")) {
+                    botao_incorreto.className = "bi-x"
+                    botao_incorreto.style.color = "black"
+                }
             }
         }
 
         var botao_estatico = document.createElement("i")
         botao_estatico.className = "bi bi-check-circle"
         botao_estatico.style.color = "green"
+        botao_estatico.style.fontSize = "40px"
+        botao_estatico.style.marginRight = "20px"
         // botao_incorreto.className = "bi bi-check-circle"
         // botao_incorreto.style.color = "green"
 
         labelDiv.appendChild(teto_colorido)
         labelDiv.appendChild(descricao_pergunta);
-        botoes_direita.appendChild(botao_estatico)
         botoes_direita.appendChild(botao_correto)
         botoes_direita.appendChild(botao_incorreto)
+        mainDiv.appendChild(botao_estatico)
         mainDiv.appendChild(labelDiv)
         mainDiv.appendChild(botoes_direita)
         document.querySelector(".list-pre-aula").appendChild(mainDiv)
     }
 
-    criarLabelIncorreta() {
+    criarLabelIncorreta(labelClass, pergunta, idPergunta, dadosPergunta) {
+        this.manipulacao_botoes.push({"id": idPergunta, "certo": 0, "errado": 0})
+        var manipulacao_botoes = this.manipulacao_botoes
+        var mainDiv = document.createElement("div")
+        mainDiv.className = "input_checklist"
+        
+        var labelDiv = document.createElement("div")
+        labelDiv.id = "label-div"
+        labelDiv.className = labelClass
 
+        var teto_colorido = document.createElement("div")
+        teto_colorido.style.backgroundColor = "red"
+        teto_colorido.style.width = "100%"
+        teto_colorido.style.height = "10%"
+        teto_colorido.style.minHeight = "5px"
+        labelDiv.style.overflow = "hidden"
+        teto_colorido.style.borderTopLeftRadius = "20px"
+        teto_colorido.style.borderTopRightRadius = "20px"
+
+        var descricao_pergunta = document.createElement("p")
+        descricao_pergunta.textContent = pergunta
+        descricao_pergunta.style.textAlign = "justify"
+        descricao_pergunta.style.padding = "15px"
+        // descricao_pergunta.style.minHeight = "90%"     
+
+        var botoes_direita = document.createElement("div")
+        botoes_direita.className = "botoes_direita"
+        botoes_direita.style.width = "20%";
+        botoes_direita.style.height = "100%";
+        // botoes_direita.style.background = "red";
+        botoes_direita.style.fontSize = "40px";
+        botoes_direita.style.display = "flex";
+        botoes_direita.style.justifyContent = "center";
+
+        var botao_incorreto = document.createElement("i")
+        botao_incorreto.className = "bi bi-x"
+
+        
+        botao_incorreto.onclick = function() {
+            for (let i = 0; i < manipulacao_botoes; i++) {
+                console.log(manipulacao_botoes)
+            }
+            if (botao_incorreto.classList.contains("bi-x-circle")) {
+                botao_incorreto.className = "bi bi-x"
+                botao_incorreto.style.color = "black"
+            } else {
+                botao_incorreto.className = "bi-x-circle"
+                botao_incorreto.style.color = "red"
+                if (botao_correto.classList.contains("bi-check-circle")) {
+                    botao_correto.className = "bi-check"
+                    botao_correto.style.color = "black"
+                }
+            }
+        }
+
+
+
+        var botao_correto = document.createElement("i")
+        botao_correto.className = "bi bi-check"
+        botao_correto.onclick = function() {
+
+
+            
+            if (botao_correto.classList.contains("bi-check-circle")) {
+                botao_correto.className = "bi bi-check"
+                botao_correto.style.color = "black"
+            } else {
+                botao_correto.className = "bi-check-circle"
+                botao_correto.style.color = "green"
+                if (botao_incorreto.classList.contains("bi-x-circle")) {
+                    botao_incorreto.className = "bi-x"
+                    botao_incorreto.style.color = "black"
+                }
+            }
+        }
+
+        var botao_estatico = document.createElement("i")
+        botao_estatico.className = "bi bi-x-circle"
+        botao_estatico.style.color = "red"
+        botao_estatico.style.fontSize = "40px"
+        botao_estatico.style.marginRight = "20px"
+        // botao_incorreto.className = "bi bi-check-circle"
+        // botao_incorreto.style.color = "green"
+
+        labelDiv.appendChild(teto_colorido)
+        labelDiv.appendChild(descricao_pergunta);
+        botoes_direita.appendChild(botao_correto)
+        botoes_direita.appendChild(botao_incorreto)
+        mainDiv.appendChild(botao_estatico)
+        mainDiv.appendChild(labelDiv)
+        mainDiv.appendChild(botoes_direita)
+        document.querySelector(".list-pre-aula").appendChild(mainDiv)
     }
 
 
