@@ -53,13 +53,13 @@ body{
   background: var(--gray-white, #FFF);
   display: flex;
   width: 393px;
-  height: 425px;
+  height: 360px;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   /* position: relative; */
   gap: 8px;
-  border-radius: 15px;
+  border-radius: 6px;
   box-shadow: 0px 20px 20px 0px rgba(0, 0, 0, 0.08), 0px 0px 2px 0px rgba(0, 0, 0, 0.12);
 }
 
@@ -71,36 +71,11 @@ body{
   align-items: center;
   padding-left: 50px;
   font-size: 20px;
+  font-family: 'Montserrat';
   /* padding-top: 25px; */
  
 }
-/* Estilos opcionais para o conteúdo do pop-up  */
 
-
-.div-pop{
-  margin-top: 20px;
-  display: flex;
-  width: 330px;
-  height: 275px;
-  justify-content: center;
-  align-items: center;
-  background-color: white;
-  border-radius: 30px;
-  border: 1px dashed #535353;
-  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-
-
-}
-.text-descricao-pop-up{
-  border: none;
-  height: 100%;
-  width: 100%;
-  resize: none;
-  border-radius:30px;
-  padding: 20px;
-  outline: none;
-
-}
 /* CONTAINER DOS BOTOES */
 .container-pop-up-botaoes{
   display: flex;
@@ -156,9 +131,9 @@ body{
   cursor: pointer;
   color: var(--cor-primaria-botao-yellow);
   font-style: normal;
-  font-size: 'Montserrat';
+  font-family: 'Montserrat';
   font-weight: 580;
-  font-size: 15px;
+  font-size: 14px;
 
 }
 
@@ -184,9 +159,9 @@ body{
   cursor: pointer;
   color: var(--cor-primaria-botao-green);
   font-style: normal;
-  font-size: 'Montserrat';
+  font-family: 'Montserrat';
   font-weight: 580;
-  font-size: 15px;
+  font-size: 14px;
 }
 
 .botao-salvar-submit:hover{
