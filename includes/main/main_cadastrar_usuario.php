@@ -73,6 +73,11 @@
     </main>
 <script>
 
+// function redirecionarParaPagina() {
+//     window.location.href = 'http://192.168.22.9/etg_escola_homologacao/pages/visualizar_usuario.php';
+// } 
+
+
 let button =document.getElementById('botao-confirmar-submit')
         
 button.addEventListener('click', async (e) =>{
@@ -84,6 +89,7 @@ button.addEventListener('click', async (e) =>{
     const options = document.getElementById('options').value;
     const matricula = document.getElementById('matricula').value;
     const senhas = document.getElementById('senhas').value;
+ 
     // console.log(nomes);
     
     // if (nomes.length > 0) {
@@ -114,17 +120,16 @@ button.addEventListener('click', async (e) =>{
                 console.log(resposta)
                 console.log(resposta.status)
     
-            if(resposta.status == "OK"){ 
+            if(resposta.status == "OK"){
 
                 $('#nomes').val('')
                 $('#emails').val('')
                 $('#matricula').val('')
                 $('#senhas').val('') 
 
-
-
-                modalStatus('Usuário cadastrado com Sucesso!','success')
-    
+                modalStatus('Usuário cadastrado com Sucesso!','success',()=>{
+                    window.location.href= './visualizar_usuario.php'; 
+                })
             }
             else{
                 modalStatus(resposta.status,'error')
