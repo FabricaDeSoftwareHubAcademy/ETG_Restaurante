@@ -2,40 +2,14 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
 <link rel="stylesheet" href="../assets/css/cadastrar_editar_sala.css"> 
 <script src="https://code.jquery.com/jquery-3.7.0.js"integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM="crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="../assets/js/modais.js"></script>
 
 <body class="tela-cadastro-salas"> 
 
-<?php
-
-    include_once("../includes/modais/modal_editar_sala.php");
-            
-?>
 
 
-<div class="container-pop-up-notificacao">
-        <!-- <button type="submit" class="btn-pop-up-notificacao" id="submit-btn-notificacao" onclick="openPopupValidar()">Submit</button> -->
-        <!-- <div class="popup-notificacao" id="popup-up-notificacao">
-            <div class="div-img">
-                <img src="../includes/pop-ups/img/Check_ring.png" alt="carregando" id="img_check">
-                <p>Alteração Salva Com Sucesso! </p>
-            </div>
-            <div class="botao-padrao-ok">
-                <script>
-                    function closePopupValidar() {
-                                    let popup = document.getElementById("popup-up-notificacao");
-                                    let btn = document.getElementById("submit-btn-notificacao");
 
-                                    // btn.style.display = "block";
-
-                                    popup.classList.remove("open-popup");
-                                }
-                </script>
-                <a href="listar_salas.php"><input type="submit" class="botao-ok-submit" onclick="closePopupValidar()" value="OK"></a>
-            </div>
-        </div> -->
-
-        
+<div class="container-pop-up-notificacao">       
     </div>
     <section class="container">
         
@@ -117,7 +91,7 @@
                     
                         <h3 class="alinar_titulo_h3">Dias De Funcionamento </h3>
 
-                        <div class="area_Dos_check_box">
+                        <div class="area_Dos_check_box" id="area_dos_dias">
                             
                             <div class="Check_Box_individual">
                                 <p class="coisa_tag_p">Segunda</p>
@@ -154,7 +128,7 @@
 
 
                         <h3 class="alinar_titulo_h3">Turnos De Funcionamento </h3>
-                        <div class="area_Dos_check_box">
+                        <div class="area_Dos_check_box" id="area_turnos">
 
                             
                             
@@ -260,19 +234,7 @@
 
                         let button = document.getElementById("botao-cadastrar-submit") 
 
-                        const showModalnovoBtn = document.querySelector('.botao-cadastrar-submit');
-                        const closeModalnovoBtn = document.querySelector('.close-btn');
-                        // const openModalBtn = document.querySelector('.open-btn');
-                        const overlaynovo = document.querySelector('.overlay-modal');
-                        const modalnovo = document.querySelector('.modal-box');
-                        function openModal2() {
-                            console.log("qual quer coisa ai");
-                            overlaynovo.style.opacity = '1';
-                            overlaynovo.style.pointerEvents = 'auto';
-                            modalnovo.style.opacity = '1';
-                            modalnovo.style.pointerEvents = 'auto';
-                        }
-
+                        
                         button.addEventListener('click', async (e) => {
                             
                             e.preventDefault()
@@ -338,9 +300,36 @@
                             }else{
                                 checklist = false
                             }
- 
-                                
-                            if(nome_sala == true && codigo_sala == true && checklist == true){
+
+                            if(checklist)
+                            
+                                var div1Checkboxes = document.querySelectorAll('#area_dos_dias input[type="checkbox"]');
+                                    var div2Checkboxes = document.querySelectorAll('#area_turnos input[type="checkbox"]');
+
+                                    var div1Checked = false;
+                                    var div2Checked = false;
+
+                                    // Verifica se pelo menos um checkbox está marcado na primeira div
+                                    div1Checkboxes.forEach(function(checkbox) {
+                                        if (checkbox.checked) {
+                                            div1Checked = true;
+                                        }
+                                    });
+
+                                    // Verifica se pelo menos um checkbox está marcado na segunda div
+                                    div2Checkboxes.forEach(function(checkbox) {
+                                        if (checkbox.checked) {
+                                            div2Checked = true;
+                                        }
+                                    });
+
+                                    // Se em alguma div nenhum checkbox estiver marcado, exibe uma mensagem de alerta
+                                    if ((!div1Checked == true) || (!div2Checked == true)) {
+                                        
+                                        modalStatus("Escolha pelo menos um dia de Funcionamento e um periodo de funcionamento.","error")
+                                    }
+                               
+                            if(nome_sala == true && codigo_sala == true && checklist == true && div1Checked == true && div2Checked == true){
 
                                 let form = document.getElementById('form_cad')
                                 // console.log(form)
@@ -352,7 +341,7 @@
                                 
                                 if(response){
                                                                       
-                                    openModal2()
+                                    modalStatus("Sala editada com sucesso.","success",()=>{window.location.href="./listar_salas.php"})
                                 
                                 }else{
                                     console.log("2")
