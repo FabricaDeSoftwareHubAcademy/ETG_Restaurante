@@ -15,8 +15,6 @@
     <div class="carousel">
         <!-- list item -->
 
-        
-
         <div class="carousel">
             <div class="list">
             </div>
@@ -32,7 +30,9 @@
             <div class="time"></div>
         </div>
         <div class="time"></div>
+
     </div>
+    
 
     <script src="../assets/js/sobre.js"></script>
 </body>

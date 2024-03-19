@@ -38,7 +38,7 @@ function addPhotoToSlider(photo) {
                 <a class="link-contato" href="${photo.link2}"><i id="icon" class="bi bi-github"></i></a>
                 <a class="link-contato" href="#"><i id="icon" class="bi bi-envelope-at-fill"></i></a>
             </div>
-  
+
         </div>
     `;
     SliderDom.appendChild(item);
@@ -47,7 +47,7 @@ function addPhotoToSlider(photo) {
 function updateThumbnailGallery() {
     thumbnailBorderDom.innerHTML = ""; 
 
-    for (let i = currentIndex; i < currentIndex + 5; i++) {
+    for (let i = currentIndex; i < currentIndex + 4; i++) {
         let index = i % photos.length; 
         let photo = photos[index]; 
 
