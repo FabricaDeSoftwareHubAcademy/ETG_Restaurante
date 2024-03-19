@@ -104,6 +104,9 @@
                                 }
                             ?>
                         </select> 
+                        <a href="cadastrar_checklist.php" style="color: black;">
+                            <i class="bi bi-plus-circle " style="font-size: 30px; opacity: 0.7;"></i>
+                        </a>
 
                     </div>
 
