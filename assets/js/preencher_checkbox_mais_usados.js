@@ -76,7 +76,7 @@
         {
             checkbox1.checked = false;
             checkbox2.checked = false;
-            checkbox3.checked = false;
+            checkbox3.checked = true;
             checkbox6.checked = false;
 
             checkbox4.checked = true;
@@ -88,6 +88,7 @@
         else
         {
             checkbox4.checked = false;
+            checkbox3.checked = false;
             checkbox5.checked = false;
             checkbox7.checked = false;
 
