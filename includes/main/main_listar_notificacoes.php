@@ -1,5 +1,5 @@
 <link rel="stylesheet" href="../assets/css/listar_notificacoes.css">
-<link rel="stylesheet" href="../assets/css/estilo_botões_padronizados.css">
+<!-- <link rel="stylesheet" href="../assets/css/estilo_botões_padronizados.css"> -->
 <link href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@4/dark.css" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
 
@@ -24,16 +24,16 @@
                     <a href="listar_salas.php" class="botao-voltar-link">VOLTAR</a>
                 </div>
 
-                <?= $ifgennot ? '
+                <div class="botao-padrao-cadastrar">
+                    <a href="cadastrar_notificacao.php"><input type="submit" class="botao-cadastrar-submit"  value="CADASTRAR"></a>
+                </div>
+
+                <!-- <?= $ifgennot ? '
                 <div class="botao-padrao-cadastrar">
                     <a href="cadastrar_notificacao.php"><input type="submit" class="botao-cadastrar-submit"  value="CADASTRAR"></a>
                 </div>': ''
-                ?>
+                ?>  -->
 
-                <!-- <div class="botao-padrao-cadastrar">
-                    <a href="cadastrar_notificacao.php"><input type="submit" class="botao-cadastrar-submit"  value="CADASTRAR"></a>
-                </div> -->
-            
             </div>
     
     <script> 

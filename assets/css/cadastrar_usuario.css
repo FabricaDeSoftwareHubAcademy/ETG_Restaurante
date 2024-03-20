@@ -40,7 +40,7 @@
 /* Css Botão Voltar */
 
 .botao-padrao-voltar{
-  width: 25%;
+  width: 32%;
   display: flex;
   justify-content: center;
 }
@@ -485,6 +485,7 @@ select {
   display: flex;
   flex-direction: column;
 }
+
 
 /* RESPONSIVIDADE DA TELA */
 
