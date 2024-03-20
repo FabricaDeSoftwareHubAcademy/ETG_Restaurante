@@ -114,8 +114,8 @@
                 </form>
 
                 <script type="text/javascript">
-                    let new_form_questions = document.getElementById("novo_form_cadastrar_pergunta");
-                    console.log(new_form_questions);
+                     let new_form_questions = document.getElementById("novo_form_cadastrar_pergunta");
+                     console.log(new_form_questions);
                 </script>
 
                 <form class="overlay" id="overlay" style="opacity: 1;"></form>
@@ -256,49 +256,42 @@
         //botao de confirmar cadastro de pergunta 
 
         btn.addEventListener("click", async function(event) {
-            event.preventDefault()
-            let bot1 = false;
-            let bot2 = false;
-            let pergunta = document.getElementById("nova_pergunta");
-            const check1 = document.getElementById("check1");
-            const check2 = document.getElementById("check2");
+                    event.preventDefault()
+                    let bot1 = false;
+                    let bot2 = false;
+                    let pergunta =document.getElementById("nova_pergunta");
+                    const check1 = document.getElementById("check1");
+                    const check2 = document.getElementById("check2");
+                    
+                
+                    if(check1.checked) {
+                        bot1 = true;
+                    }
+                    if(check2.checked) {
+                        bot2 = true;
+                    }
+                    
+                    let formData = new FormData()
+                    formData.append("nova_pergunta", pergunta.value);
+                    formData.append("antes_da_aula", bot1);
+                    formData.append("depois_da_aula", bot2);
 
-            if (pergunta.value.trim() === "") {
-                modalStatus('Preencha todos os campos!', 'error')
-                return; 
-            }
+                    let dados_php = await fetch('./actions/cad_pergunta_modal.php', {
+                    method: 'POST',
+                    body: formData })
 
-            if (check1.checked) {
-                bot1 = true;
-            }
-            if (check2.checked) {
-                bot2 = true;
-            }
+                    let response = await dados_php.json()
+                    console.log(response.status)
 
-            let formData = new FormData()
-            formData.append("nova_pergunta", pergunta.value);
-            formData.append("antes_da_aula", bot1);
-            formData.append("depois_da_aula", bot2);
-
-            let dados_php = await fetch('./actions/cad_pergunta_modal.php', {
-                method: 'POST',
-                body: formData
-            })
-
-            let response = await dados_php.json()
-            console.log(response.status)
-
-            if (response.status == "OK") {
-                closePopup1()
-            } else {
-                modalStatus('Preencha todos os campos!', 'error')
-            }
+                    if(response.status == "OK") {
+                        closePopup1()
+                    }
         })
 
         // $("#btn_cad_pergunta").click(function(event) {
         //     event.preventDefault()
 
-
+       
 
         //     // se todos os campos estiverem corretamente preenchidos
         //     if ((($('#nova_pergunta').val().trim().length) > 0) && ($('#check1').prop('checked') || $('#check2').prop('checked'))) {
