@@ -55,6 +55,8 @@ function cadastrarAcaoCorretiva($AcaoCorretiva, $objeto_acao_corretiva) {
     $objeto_acao_corretiva->setImg_3($img_3);
     $objeto_acao_corretiva->setIdNaoConformidade($id_nao_conformidade);
     $objeto_acao_corretiva->setDescricao($descricao);
+    $objeto_acao_corretiva->setIdUsuario($_SESSION['id_user']);
+
     
     $responseDB = $objeto_acao_corretiva->save();
     // echo json_encode($responseDB);

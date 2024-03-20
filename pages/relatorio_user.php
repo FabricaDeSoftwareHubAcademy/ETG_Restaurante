@@ -19,13 +19,5 @@ $dadosRelatorio = $relatorio -> getAll();
 $dadosUsuario = $relatorio::getUsers();
 $dadosSala = $sala::getDados();
 
-// foreach($dadosSala as $row) {
-//     var_dump($row["nome"]);
-//     echo "<br>";
-//     echo "<br>";
-//     echo "<br>";
-//     echo "<br>";    
-
-// }exit;
-// var_dump($dados);exit;
+ 
 require("../includes/main/main_relatorio_usuario.php");

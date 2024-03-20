@@ -1,0 +1,10 @@
+SELECT responder_check.id_usuario,cad_user2.id as id_responsavel,cad_user2.nome as nome_responsavel ,cad_user1.nome, reg_nc.id as id_nc, reg_nc.id_pergu , reg_correcao.descricao, responder_check.id as id_responder_check 
+FROM responder_check
+JOIN reg_nc 
+on reg_nc.id_realiza = responder_check.id
+JOIN reg_correcao 
+on reg_correcao.reg_NC_id = reg_nc.id
+JOIN cadastro_usuario as cad_user1
+on cad_user1.id = responder_check.id_usuario
+JOIN cadastro_usuario as cad_user2
+on cad_user2.id = reg_correcao.id_usuario;
