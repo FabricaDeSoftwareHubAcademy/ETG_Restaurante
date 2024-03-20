@@ -9,17 +9,18 @@
 </head>
 
 <body>
-
+        
 
     <!-- carousel DE CIMA GRANDÃO -->
     <div class="carousel">
         <!-- list item -->
-
+        
         <div class="carousel">
             <div class="list">
-            </div>
+                </div>
+                
+                <div class="thumbnail"> 
 
-            <div class="thumbnail"> 
             </div>
 
             <div class="arrows">
