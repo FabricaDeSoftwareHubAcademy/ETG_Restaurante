@@ -8,7 +8,7 @@
 <body class="Pai-de-todos">
     
     <main class="tudo_esqueceu_senha1">
-        <form method="POST" id="form_cad">
+        <form method="POST" id="form_cad" class="slaaaaa">
             <section class='titulo_cadastro_usuario'>
                 <h1>Cadastrar Usuário.</h1>
             </section>
@@ -60,7 +60,7 @@
         <section class="centralizar_botoes_cadastrar_usuario">
             <!--Botão voltar-->
             <div class="botao-padrao-voltar">
-                <a href="listar_recados.php"><input class="botao-voltar-submit" value="VOLTAR"></a>
+                <a href="listar_recados.php" class="botao-voltar-submit" value="VOLTAR">VOLTAR</a>
             </div>
             
             <!--Botão Confirmar-->
@@ -73,6 +73,11 @@
     </main>
 <script>
 
+// function redirecionarParaPagina() {
+//     window.location.href = 'http://192.168.22.9/etg_escola_homologacao/pages/visualizar_usuario.php';
+// } 
+
+
 let button =document.getElementById('botao-confirmar-submit')
         
 button.addEventListener('click', async (e) =>{
@@ -84,6 +89,7 @@ button.addEventListener('click', async (e) =>{
     const options = document.getElementById('options').value;
     const matricula = document.getElementById('matricula').value;
     const senhas = document.getElementById('senhas').value;
+ 
     // console.log(nomes);
     
     // if (nomes.length > 0) {
@@ -114,17 +120,16 @@ button.addEventListener('click', async (e) =>{
                 console.log(resposta)
                 console.log(resposta.status)
     
-            if(resposta.status == "OK"){ 
+            if(resposta.status == "OK"){
 
                 $('#nomes').val('')
                 $('#emails').val('')
                 $('#matricula').val('')
                 $('#senhas').val('') 
 
-
-
-                modalStatus('Usuário cadastrado com Sucesso!','success')
-    
+                modalStatus('Usuário cadastrado com Sucesso!','success',()=>{
+                    window.location.href= './visualizar_usuario.php'; 
+                })
             }
             else{
                 modalStatus(resposta.status,'error')
