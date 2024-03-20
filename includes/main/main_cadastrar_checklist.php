@@ -218,7 +218,6 @@
 
                     <!--Botão Cadastrar-->
                     <div class="botao-padrao-cadastrar">
-                        <!-- <a href="#"><input type="submit" class="botao-cadastrar-submit" name="btn_cadastrar" value="CADASTRAR"></a> -->
                         <button name="btn_cadastrar" type="submit" class="botao-cadastrar-submit" id="btn_cadastrar" value="CADASTRAR"> CADASTRAR </button>
                     </div>
                 </div>
@@ -249,9 +248,7 @@
         }
 
         const btn = document.getElementById("btn_cad_pergunta");
-        console.log(btn);
         const formulario = document.getElementById("form_cad_pergunta");
-        console.log(formulario);
 
         //botao de confirmar cadastro de pergunta 
 
