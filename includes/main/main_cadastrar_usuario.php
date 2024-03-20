@@ -8,7 +8,7 @@
 <body class="Pai-de-todos">
     
     <main class="tudo_esqueceu_senha1">
-        <form method="POST" id="form_cad">
+        <form method="POST" id="form_cad" class="slaaaaa">
             <section class='titulo_cadastro_usuario'>
                 <h1>Cadastrar Usuário.</h1>
             </section>
@@ -60,7 +60,7 @@
         <section class="centralizar_botoes_cadastrar_usuario">
             <!--Botão voltar-->
             <div class="botao-padrao-voltar">
-                <a href="listar_recados.php"><input class="botao-voltar-submit" value="VOLTAR"></a>
+                <a href="listar_recados.php" class="botao-voltar-submit" value="VOLTAR">VOLTAR</a>
             </div>
             
             <!--Botão Confirmar-->
