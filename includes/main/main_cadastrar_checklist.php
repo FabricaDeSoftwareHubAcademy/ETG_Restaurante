@@ -9,7 +9,6 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script defer src="../assets/js/modais.js"></script>
 <script defer src="../assets/js/ajax_checklist.js"></script>
-<script defer src="../assets/js/modal_pergunta_checklist.js"></script>
 
 
 <body class="pai_de_todos">
@@ -86,7 +85,7 @@
 
                 <!-- POPUP DE CADASTRAR PERGUNTA -->
 
-                <form class="overlay" id='novo_form_cadastrar_pergunta' style="opacity: 1;">
+                <form id='form_cad_pergunta' class="overlay" style="opacity: 1;">
                     <div class="popup_cadastrar" id="popup-cadastro-pergunta">
                         <h4>Cadastrar pergunta:</h4>
 
@@ -113,9 +112,59 @@
                     </div>
                 </form>
 
-                <script type="text/javascript">
-                     let new_form_questions = document.getElementById("novo_form_cadastrar_pergunta");
-                     console.log(new_form_questions);
+                <script>
+                    const btn = document.getElementById("btn_cad_pergunta");
+
+                    btn.addEventListener("click", function(event) {
+                        event.preventDefault();
+
+                        const text = document.getElementById("nova_pergunta");
+                        const c1 = document.getElementById("check1");
+                        const c2 = document.getElementById("check2");
+
+                        console.log(text.value);
+
+                    })
+
+                    // botao de confirmar cadastro de pergunta 
+
+                    $("#btn_cad_pergunta").click(async function(event) {
+                        event.preventDefault()
+
+                        // se todos os campos estiverem corretamente preenchidos
+                        if ((($('#nova_pergunta').val().trim().length) > 0) && ($('#check1').prop('checked') || $('#check2').prop('checked'))) {
+
+                            let formData = new FormData($('#form_cad_pergunta')[0])
+
+                            let dados_php = await fetch('./actions/cad_pergunta.php', {
+                                method: 'POST',
+                                body: formData
+                            })
+                            let response = await dados_php.json()
+
+                            closePopup1()
+                            $("#nova_pergunta").val('')
+                            $('#check1').prop('checked', false)
+                            $('#check2').prop('checked', false)
+
+                            modalStatus('cadastrado com sucesso!', 'success')
+
+                            listarPerguntas()
+                        } else {
+                            modalStatus('preencha todos os dados corretamente!', 'error')
+
+                        }
+                    })
+
+                    $("#btn_cancelar_cad_pergunta").click(async function(event) {
+                        event.preventDefault()
+
+                        closePopup1()
+                        $("#nova_pergunta").val('')
+                        $('#check1').prop('checked', false)
+                        $('#check2').prop('checked', false)
+
+                    })
                 </script>
 
                 <form class="overlay" id="overlay" style="opacity: 1;"></form>
@@ -223,113 +272,26 @@
                     </div>
                 </div>
             </div>
+            <script>
+                // SCRIPT DO POPUP DE CADASTRAR PERGUNTAS
 
+                let popup_cadastro_pergunta = document.getElementById("popup-cadastro-pergunta");
+
+                function openPopup1() {
+
+                    document.getElementById("overlay").style.visibility = "visible";
+                    popup_cadastro_pergunta.classList.add("open-popup1");
+
+                }
+
+                function closePopup1() {
+
+                    document.getElementById("overlay").style.visibility = 'hidden';
+                    popup_cadastro_pergunta.classList.remove("open-popup1");
+                }
+            </script>
 
         </form>
     </main>
 
-
-
-    <script>
-        // SCRIPT DO POPUP DE CADASTRAR PERGUNTAS
-
-        let popup_cadastro_pergunta = document.getElementById("popup-cadastro-pergunta");
-
-        function openPopup1() {
-
-            document.getElementById("overlay").style.visibility = "visible";
-            popup_cadastro_pergunta.classList.add("open-popup1");
-
-        }
-
-        function closePopup1() {
-
-            document.getElementById("overlay").style.visibility = 'hidden';
-            popup_cadastro_pergunta.classList.remove("open-popup1");
-        }
-
-        const btn = document.getElementById("btn_cad_pergunta");
-        console.log(btn);
-        const formulario = document.getElementById("form_cad_pergunta");
-        console.log(formulario);
-
-        //botao de confirmar cadastro de pergunta 
-
-        btn.addEventListener("click", async function(event) {
-                    event.preventDefault()
-                    let bot1 = false;
-                    let bot2 = false;
-                    let pergunta =document.getElementById("nova_pergunta");
-                    const check1 = document.getElementById("check1");
-                    const check2 = document.getElementById("check2");
-                    
-                
-                    if(check1.checked) {
-                        bot1 = true;
-                    }
-                    if(check2.checked) {
-                        bot2 = true;
-                    }
-                    
-                    let formData = new FormData()
-                    formData.append("nova_pergunta", pergunta.value);
-                    formData.append("antes_da_aula", bot1);
-                    formData.append("depois_da_aula", bot2);
-
-                    let dados_php = await fetch('./actions/cad_pergunta_modal.php', {
-                    method: 'POST',
-                    body: formData })
-
-                    let response = await dados_php.json()
-                    console.log(response.status)
-
-                    if(response.status == "OK") {
-                        closePopup1()
-                    }
-        })
-
-        // $("#btn_cad_pergunta").click(function(event) {
-        //     event.preventDefault()
-
-       
-
-        //     // se todos os campos estiverem corretamente preenchidos
-        //     if ((($('#nova_pergunta').val().trim().length) > 0) && ($('#check1').prop('checked') || $('#check2').prop('checked'))) {
-
-        //         let formData = new FormData($('#form_cad_pergunta')[0])
-
-        //         console.log(formData.value, form)
-
-        //         // let dados_php = await fetch('./actions/cad_pergunta_modal.php', {
-        //         //     method: 'POST',
-        //         //     body: formData
-        //         // })
-        //         // let response = await dados_php.json()
-        //         // console.log(response)
-
-        //         closePopup1()
-        //         $("#nova_pergunta").val('')
-        //         $('#check1').prop('checked', false)
-        //         $('#check2').prop('checked', false)
-
-        //         modalStatus('cadastrado com sucesso!', 'success')
-
-        //         listarPerguntas()
-
-        //     } else {
-        //         modalStatus('preencha todos os dados corretamente!', 'error')
-
-        //     }
-        // })
-
-        $("#btn_cancelar_cad_pergunta").click(async function(event) {
-            event.preventDefault()
-
-            closePopup1()
-            $("#nova_pergunta").val('')
-            $('#check1').prop('checked', false)
-            $('#check2').prop('checked', false)
-
-        })
-    </script>
 </body>
