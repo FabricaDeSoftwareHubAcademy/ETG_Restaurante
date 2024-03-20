@@ -3,22 +3,23 @@
 require __DIR__."/../../vendor/autoload.php";
 use App\Entity\Pergunta; 
 
-
 $pergunta = filter_input(INPUT_POST, 'nova_pergunta', FILTER_SANITIZE_SPECIAL_CHARS);
- 
+$check1 = $_POST['antes_da_aula'];
+$check2 = $_POST['depois_da_aula'];
+
 $obPergunta = new Pergunta($pergunta);
 $resposta = '';
 
-if(isset($_POST['antes_da_aula'],$_POST['depois_da_aula'])){
+if($check1 == 'true' && $check2 == 'true'){
     // ambas 
     $resposta = $obPergunta->cadastrar('2');
 
-}elseif(isset($_POST['antes_da_aula'])){
+}elseif($check1 == 'true'){
     // apenas antes 
     $resposta =   $obPergunta->cadastrar('0');
 
 
-}elseif(isset($_POST['depois_da_aula'])){
+}elseif($check2  == 'true'){
     // apenas depois 
     $resposta =  $obPergunta->cadastrar('1');
 }
@@ -31,5 +32,3 @@ if($resposta){
 }
 
 echo json_encode($resp);
-
-?>
