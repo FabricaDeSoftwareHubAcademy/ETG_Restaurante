@@ -29,7 +29,7 @@ function modalStatus(texto, tipo, callbackFunction = null){
         linkElement.href = '../assets/css/modalSucesso.css';
         document.head.appendChild(linkElement);
 
-        htmlModal = '<section class="section_modal"> <span class="overlay-modal"></span> <div class="modal-box">'+icon_modal+' <h2 class="titulo_pop_up">'+tit_modal+'</h2> <h3 class="subtitulo_pop_up">'+texto+'</h3> <div class="buttons-pop_up"> <div class="container_dos_btns"> <button class="close-btn" style="background-color: '+color_btn_modal+'">Ok</button> </div> </div> </div> </section>'
+        htmlModal = '<section class="section_modal"> <span class="overlay-modal"></span> <div class="modal-box">'+icon_modal+' <h2 class="titulo_pop_up">'+tit_modal+'</h2> <h3 class="subtitulo_pop_up">'+texto+'</h3> <div class="buttons-pop_up"> <div class="container_dos_btns"> <button id="confirmarOK" class="close-btn" style="background-color: '+color_btn_modal+'">Ok</button> </div> </div> </div> </section>'
 
 
     }else if(tipo == "question"){
@@ -39,7 +39,7 @@ function modalStatus(texto, tipo, callbackFunction = null){
         linkElement.href = '../assets/css/modalQuestion.css';
         document.head.appendChild(linkElement);
 
-        htmlModal = '<span class="overlay-modal"></span> <div class="modal-box"> <i class="fa-solid fa-question" id="icon-pergunta"></i> <h2 class="titulo_pop_up">Tem certeza</h2> <h3 class="subtitulo_pop_up">'+texto+'</h3> <div class="buttons-pop_up"> <button class="close-btn" id="close-btn-exclur">Cancelar</button> <button class="open-btn-excluir" >Sim</button> <!-- Adicionando um botão de fechar --> <button class="close-modal-btn" style="display: none;">Fechar</button> </div> </div>'
+        htmlModal = '<span class="overlay-modal"></span> <div class="modal-box"> <i class="fa-solid fa-question" id="icon-pergunta"></i> <h2 class="titulo_pop_up">Tem certeza</h2> <h3 class="subtitulo_pop_up">'+texto+'</h3> <div class="buttons-pop_up"> <button  id="confirmarOK" class="close-btn" id="close-btn-exclur">Cancelar</button> <button class="open-btn-excluir" >Sim</button> <!-- Adicionando um botão de fechar --> <button class="close-modal-btn" style="display: none;">Fechar</button> </div> </div>'
 
     }
 
@@ -131,6 +131,8 @@ function modalStatus(texto, tipo, callbackFunction = null){
     } 
     openModal() 
 } 
+
+
 
 function resetModalSections(){
 
