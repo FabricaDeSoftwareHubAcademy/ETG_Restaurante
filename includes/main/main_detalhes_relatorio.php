@@ -1,20 +1,21 @@
 <link rel="stylesheet" href="../assets/css/detalhes_relatorio.css">
 <body class="tela_detalhes">
-<div class="titulo"><p class="texto_titulo">Detalhes</p></div>
+<div class="titulo"><p class="texto_titulo">Detalhes Do Checklist</p></div>
          
 <section>
 
 
-                                                                                                                    <div class="dados_responsavel">
+                                                                                                                    <!-- <div class="dados_responsavel">
         
         <div class="esquerda"><p>Nome: Professor
         <p>Sala: Cozinha 1 </p>
         </div>  
         
         <div class="direita"><p>Nome: Professor</p><p>hora: 14:00 data: 21/03/2024</p></div>
-                                                                                                                  </div>
-                                                                                                                  <div class="area_nao_conformidade">
-                                                                                                <div class="nao_conformidade">
+                                                                                                                    </div> -->
+                                                                                                                    <?= $dados_responsavel ?>                                                                                                              <div class="area_nao_conformidade">
+                                                                                                                    <?= $nao_conformidade ?>
+                                                                                                <!-- <div class="nao_conformidade">
             <P class="texto_nao_conformidade"> nao confordade dsadsadsa sa dsaddsda dsadsadsadsadas dsadsad dsadsa das dsa dsad asdasdsadsa dsadsadsad dsad  dsadsadsa dsadsad dsadsadsad dsadsadsa dsadsadsadsad sadsadsadsad dsadsadsadsad1 </P>
 
             <div class="area_imagens">
@@ -34,7 +35,7 @@
                 
             </div>
                                                                                                                         </div>
-                                                                                                                >                                                                                                                <div class="nao_conformidade">
+                                                                                                                                                                                                                                <div class="nao_conformidade">
             <P class="texto_nao_conformidade"> nao confordade 3</P>
 
             <div class="area_imagens">
@@ -62,19 +63,25 @@
                 <img class="imagem_nao_conformidade" src="" alt="">  
                 
             </div>
-                                                                                                                        </div>
+                                                                                                                        </div> -->
                                                                                                                 
                                                                                                                     </div>
                                                                                                                 </section>
                                                                                                                 <div class="area_botões">
-                                                                                                                    <div class="area_voltar">
-                                                                                                                        <button class="voltar">Voltar</button>
+                                                                                                                    <div class="area_voltar2">
+                                                                                                                        <div class="botao-padrao-voltar2">
+                            <a href="listar_salas.php" class="botao-voltar-link2">VOLTAR</a>
+                        </div>
+                                                                                                                    </div>
+
+                                                                                                                    <div class="gerar_relatorio">
+                                                                                                                        <div class="imprimir">
+                            <a href="listar_salas.php" class="botao-voltar-link2">Imprimir</a>
+                        </div>
                                                                                                                     </div>
 
                                                                                                                 
-                                                                                                                    <div class="area_gerar_relatorio">
-                                                                                                                        <!-- <button class="gerar_relatorio">Gerar Relatorio</button> -->
-                                                                                                                    </div>
+                                                                                                                   
                                                                                                                                                                                                                
                                                                                                                 </div>                                                                                                                                                                                                         
 </body>

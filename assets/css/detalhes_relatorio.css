@@ -6,7 +6,8 @@
 .titulo{
     width: 100%;
     text-align: center;
-    font-size: 26px;
+    font-size: 32px;
+    margin-bottom: 20px;
     
 }
 .dados_responsavel{
@@ -85,30 +86,46 @@
 .area_botões{
     width: 100%;
     display: flex;
-    justify-content:space-around;
-    /* margin-top: 5%; */
-    height: 35px;
+    flex-direction: row;
+    justify-content: space-around;
 }
-
-.area_voltar{
-    width: 40%;
+.botao-padrao-voltar2{
+    width: 100%;
+    border-radius: 20px;
+    border: solid black 1px;
+    background-color: #F28920;
     display: flex;
+    align-items: center;
     justify-content: center;
-}
-
-.voltar{
-    width: 40%;
-    background-color: rgb(249, 221, 2);
-}
-
-.area_gerar_relatorio{
-    width: 40%;
+  }
+  .gerar_relatorio{
+    margin-right: 8%;
+  }
+  .imprimir{
+    width: 100%;
+    border-radius: 20px;
+    border: solid black 1px;
+    background-color: #249e24;
     display: flex;
+    align-items: center;
     justify-content: center;
+  } 
+
+.botao-voltar-link2{
+      /* width: 110px; */
+    display: inline-block;
+    padding: 10px 60px;
+    background-color: var(--cor-primaria-botao-white);
+    border: 3px solid var(--cor-primaria-botao-yellow);
+    border-radius: 20px;
+    cursor: pointer;
+    color: var(--cor-primaria-botao-yellow);
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    font-size: 15px;
+    text-decoration: none;
 }
 
-.gerar_relatorio{
-    width: 40%;
-    background-color: green;
-}
+
+
 
