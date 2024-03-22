@@ -8,7 +8,7 @@
 
 <body class="paidetodos">
 <main class="report_principal">
-        <h1 class="titulo_filtros">Relatório Salas</h1>
+        <h1 class="titulo_filtros">Relatório Ação Corretiva</h1>
 
         <section class="teste">
             <div class="testePrimeiraSecao">
