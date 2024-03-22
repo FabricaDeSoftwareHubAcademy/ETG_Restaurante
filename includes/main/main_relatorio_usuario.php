@@ -25,6 +25,17 @@
                             }
                             ?>
                         </select>
+                            <select name="" id="" class="check_relatorio">
+                            <option selected>Checklist</option>
+                            <?php
+                                foreach($dadosUsuario as $row) {
+                                    echo 
+                                    "
+                                    <option>".$row["nome"]."</option>
+                                    ";
+                                }
+                                ?>
+                            </select>
                     </div>
                         <div class="btn-filter">
                             <button type="submit" class="limpar-filtros">Limpar filtros</button>
@@ -50,11 +61,8 @@
                         </div>
                     </div>
                 </div>
-            
+           
         </section>
-
-
-
        
             <div class="card_grafic">
                     <div class="grafico_conf">
@@ -65,13 +73,17 @@
                     </div>
    
                     <section class="area-botao">
-                        <div class="div-relatorio">
-                            <form action="../pages/nao_conformidade_user.php" method="post" target="_blank">
+                        <div class="detalhes">
+                            <form action="" method="post" target="_blank">
+                                <button class="btn-detalhes" type="submit">Detalhes</button>
+                            </form>
+                        </div>
+                        <div class="dev-relatorio">
+                            <form action="../pages/nao_conformidade_user.php" method="post" target="_blanck">
                                 <button class="btn-relatorio" type="submit">Gerar PDF</button>
                             </form>
                         </div>
                     </section>
-             
             </div>
    
     </main>
