@@ -158,17 +158,28 @@ export class Dom {
         var botao_incorreto = document.createElement("i")
         botao_incorreto.className = "bi bi-x"
 
-        
+        var self_0=this
         botao_incorreto.onclick = function() {
-            for (let i = 0; i < manipulacao_botoes; i++) {
-                console.log(manipulacao_botoes)
-            }
-            if (botao_incorreto.classList.contains("bi-x-circle")) {
-                botao_incorreto.className = "bi bi-x"
+            console.log(self_0.manipulacao_botoes)
+            if (botao_incorreto.classList.contains("bi-check-circle")) {
+                botao_incorreto.className = "bi bi-check"
                 botao_incorreto.style.color = "black"
+                for (let i = 0; i < self_0.manipulacao_botoes.length; i++) {
+                    if (self_0.manipulacao_botoes[i]["id"] == idPergunta) {
+                        self_0.manipulacao_botoes[i]["errado"] = 0
+                        self_0.manipulacao_botoes[i]["certo"] = 0
+                    }
+                }
             } else {
-                botao_incorreto.className = "bi-x-circle"
+                botao_incorreto.className = "bi-check-circle"
                 botao_incorreto.style.color = "red"
+                self_0.chamar_modal_nao_conf(dadosPergunta, botao_incorreto, idPergunta)
+                for (let i = 0; i < self_0.manipulacao_botoes.length; i++) {
+                    if (self_0.manipulacao_botoes[i]["id"] == idPergunta) {
+                        self_0.manipulacao_botoes[i]["errado"] = 1
+                        self_0.manipulacao_botoes[i]["certo"] = 0
+                    }
+                }
                 if (botao_correto.classList.contains("bi-check-circle")) {
                     botao_correto.className = "bi-check"
                     botao_correto.style.color = "black"
@@ -216,14 +227,22 @@ export class Dom {
     }
 
     criarLabelIncorreta(labelClass, pergunta, idPergunta, dadosPergunta) {
+        var self_0 = this
         this.manipulacao_botoes.push({"id": idPergunta, "certo": 0, "errado": 0})
+        // this.nao_conformidade_docente.push()
         var manipulacao_botoes = this.manipulacao_botoes
+
         var mainDiv = document.createElement("div")
         mainDiv.className = "input_checklist"
         
         var labelDiv = document.createElement("div")
         labelDiv.id = "label-div"
         labelDiv.className = labelClass
+        labelDiv.style.display = "flex"
+
+        var div_esquerda_labelDiv = document.createElement("div")
+        div_esquerda_labelDiv.style.width = "80%"
+        div_esquerda_labelDiv.style.height = "100%"
 
         var teto_colorido = document.createElement("div")
         teto_colorido.style.backgroundColor = "red"
@@ -232,13 +251,42 @@ export class Dom {
         teto_colorido.style.minHeight = "5px"
         labelDiv.style.overflow = "hidden"
         teto_colorido.style.borderTopLeftRadius = "20px"
-        teto_colorido.style.borderTopRightRadius = "20px"
+        teto_colorido.style.borderRadius = "20px"
+
+
+        var debaixo_teto_colorido = document.createElement("div")
+        // debaixo_teto_colorido.style.backgroundColor = "blue"
+        debaixo_teto_colorido.style.minHeight = "95px"
+        debaixo_teto_colorido.style.height = "90%"
+        debaixo_teto_colorido.style.width = "100%"
 
         var descricao_pergunta = document.createElement("p")
         descricao_pergunta.textContent = pergunta
         descricao_pergunta.style.textAlign = "justify"
         descricao_pergunta.style.padding = "15px"
         // descricao_pergunta.style.minHeight = "90%"     
+
+
+        var div_direita_labelDiv = document.createElement("div")
+        div_direita_labelDiv.style.width = "20%"
+        div_direita_labelDiv.style.height = "100%"
+        // div_direita_labelDiv.style.backgroundColor = "blue"
+        div_direita_labelDiv.style.minHeight = "100px"
+        // div_direita_labelDiv.style.border = "solid black 5px"
+        div_direita_labelDiv.style.borderTopRightRadius = "20px"
+        div_direita_labelDiv.style.borderBottomRightRadius = "20px"
+        div_direita_labelDiv.style.display = "flex"
+        div_direita_labelDiv.style.justifyContent = "center"
+        div_direita_labelDiv.style.alignItems = "center"
+
+        var olhinho_div_direita = document.createElement("i")
+        olhinho_div_direita.className = "bi bi-eye"
+        olhinho_div_direita.style.cursor = "pointer"
+        olhinho_div_direita.style.fontSize = "50px"
+        olhinho_div_direita.onclick = function() {
+            self_0.chamar_visualizar_nao_conformidade(dadosPergunta)
+        }
+
 
         var botoes_direita = document.createElement("div")
         botoes_direita.className = "botoes_direita"
@@ -251,18 +299,28 @@ export class Dom {
 
         var botao_incorreto = document.createElement("i")
         botao_incorreto.className = "bi bi-x"
-
         
         botao_incorreto.onclick = function() {
-            for (let i = 0; i < manipulacao_botoes; i++) {
-                console.log(manipulacao_botoes)
-            }
+            console.log(self_0.manipulacao_botoes)
             if (botao_incorreto.classList.contains("bi-x-circle")) {
                 botao_incorreto.className = "bi bi-x"
                 botao_incorreto.style.color = "black"
+                for (let i = 0; i < self_0.manipulacao_botoes.length; i++) {
+                    if (self_0.manipulacao_botoes[i]["id"] == idPergunta) {
+                        self_0.manipulacao_botoes[i]["errado"] = 0
+                        self_0.manipulacao_botoes[i]["certo"] = 0
+                    }
+                }
             } else {
                 botao_incorreto.className = "bi-x-circle"
                 botao_incorreto.style.color = "red"
+                self_0.chamar_modal_nao_conf(dadosPergunta, botao_incorreto, idPergunta)
+                for (let i = 0; i < self_0.manipulacao_botoes.length; i++) {
+                    if (self_0.manipulacao_botoes[i]["id"] == idPergunta) {
+                        self_0.manipulacao_botoes[i]["errado"] = 1
+                        self_0.manipulacao_botoes[i]["certo"] = 0
+                    }
+                }
                 if (botao_correto.classList.contains("bi-check-circle")) {
                     botao_correto.className = "bi-check"
                     botao_correto.style.color = "black"
@@ -275,15 +333,25 @@ export class Dom {
         var botao_correto = document.createElement("i")
         botao_correto.className = "bi bi-check"
         botao_correto.onclick = function() {
-
-
-            
+            console.log(self_0.manipulacao_botoes)
             if (botao_correto.classList.contains("bi-check-circle")) {
                 botao_correto.className = "bi bi-check"
                 botao_correto.style.color = "black"
+                for (let i = 0; i < self_0.manipulacao_botoes.length; i++) {
+                    if (self_0.manipulacao_botoes[i]["id"] == idPergunta) {
+                        self_0.manipulacao_botoes[i]["certo"] = 0
+                        self_0.manipulacao_botoes[i]["errado"] = 0
+                    }
+                }
             } else {
                 botao_correto.className = "bi-check-circle"
                 botao_correto.style.color = "green"
+                for (let i = 0; i < self_0.manipulacao_botoes.length; i++) {
+                    if (self_0.manipulacao_botoes[i]["id"] == idPergunta) {
+                        self_0.manipulacao_botoes[i]["certo"] = 1
+                        self_0.manipulacao_botoes[i]["errado"] = 0
+                    }
+                }
                 if (botao_incorreto.classList.contains("bi-x-circle")) {
                     botao_incorreto.className = "bi-x"
                     botao_incorreto.style.color = "black"
@@ -299,8 +367,12 @@ export class Dom {
         // botao_incorreto.className = "bi bi-check-circle"
         // botao_incorreto.style.color = "green"
 
-        labelDiv.appendChild(teto_colorido)
-        labelDiv.appendChild(descricao_pergunta);
+        debaixo_teto_colorido.appendChild(descricao_pergunta)
+        div_esquerda_labelDiv.appendChild(teto_colorido)
+        div_esquerda_labelDiv.appendChild(debaixo_teto_colorido)
+        div_direita_labelDiv.appendChild(olhinho_div_direita)
+        labelDiv.appendChild(div_esquerda_labelDiv)
+        labelDiv.appendChild(div_direita_labelDiv)
         botoes_direita.appendChild(botao_correto)
         botoes_direita.appendChild(botao_incorreto)
         mainDiv.appendChild(botao_estatico)
@@ -309,268 +381,27 @@ export class Dom {
         document.querySelector(".list-pre-aula").appendChild(mainDiv)
     }
 
+    chamar_modal_nao_conf(pergunta, botao_incorreto, idPergunta) {
+        var self_0 = this
+        var modal = document.querySelector(".mom")
+        modal.style.display = "block"
+        modal.style.position = "fixed"
+        modal.style.padding = "200px"
+        modal.style.display = 'flex'
+        modal.style.zIndex = "1";
+        modal.style.backgroundColor = "rgba(255, 255, 255, 1)"
+        document.querySelector(".meio").style.margin = "0px 0px 0px 0px"
+        modal.style.justifyContent = "center"
 
-    // createLabelElement(labelClass, pergunta, idPergunta, dadosPergunta) {
-    //     var mainDiv = document.createElement("div")
-    //     mainDiv.className = "input_checklist"
+        var perguntaMae = document.querySelector(".pergunta_nao_conf")
+        var descricaoPergunta = document.createElement("h6")
+        descricaoPergunta.innerText = pergunta["pergunta"]
+        perguntaMae.appendChild(descricaoPergunta)
+        this.onclickToUploadArea()
+        var modal = document.querySelector(".mom")
+        var descricaoPergunta = document.createElement("h6")
+        perguntaMae.appendChild(descricaoPergunta)
         
-    //     var labelDiv = document.createElement("div")
-    //     labelDiv.id = "label-div"
-    //     labelDiv.className = labelClass
-
-    //     var descricao_pergunta = document.createElement("p")
-    //     descricao_pergunta.textContent = pergunta
-    //     descricao_pergunta.style.textAlign = "justify"
-    //     descricao_pergunta.style.padding = "15px"          
-              
-              
-    
-
-    //     var botoes_direita = document.createElement("div")
-    //     botoes_direita.className = "botoes_direita"
-    //     botoes_direita.style.width = "20%";
-    //     botoes_direita.style.height = "100%";
-    //     // botoes_direita.style.background = "red";
-    //     botoes_direita.style.fontSize = "40px";
-    //     botoes_direita.style.display = "flex";
-    //     botoes_direita.style.justifyContent = "center";
-
-    //     var botao_correto = document.createElement("i")
-    //     botao_correto.className = "bi bi-x"
-
-    //     var botao_incorreto = document.createElement("i")
-    //     botao_incorreto.className = "bi bi-check"
-
-
-        
-    //     //SLIDE EFFECT
-    //     // var self_1 = this;
-    //     // function montarBotoes()
-    //     // {
-    //     //     var self_2 = self_1
-    //     //     motherButtons = document.createElement("div");
-    //     //     motherButtons.className = "alinar-botoes-label";
-
-    //     //     var divBack = document.createElement("div");
-    //     //     divBack.className = "botao-padrao-voltar-label";
-
-    //     //     var buttonIncorrect = document.createElement("button");
-    //     //     buttonIncorrect.className = "botao-voltar-link-label";
-    //     //     buttonIncorrect.textContent = "Incorreto";
-    //     //     buttonIncorrect.onclick = function() {
-    //     //         self_2.call(pergunta)
-    //     //         var buttonConfirmNaoConf = document.querySelector(".botao-confirmar-submit");
-    //     //         buttonConfirmNaoConf.onclick = function() {
-    //     //             var textAreaContent = document.querySelector(".descricao_nao_conf").value
-    //     //             var varPreview = document.querySelector(".upload-img");
-    //     //             var images = varPreview.querySelectorAll("img");
-    //     //             let tamanho = images.length
-    //     //             // console.log(tamanho)
-    //     //             if (textAreaContent == "" || tamanho == 0 || tamanho > 3) {
-    //     //                 // alert("Preencha os dados corretamente")
-    //     //                 modalStatus("Preencha os dados corretamente", "error")
-    //     //                 return false;
-    //     //             }
-    //     //             // console.log(images);
-    //     //             for (let i = 0; i < self_2.preenchidas.length; i++) {
-    //     //                 // console.log(i);
-    //     //                 if (self_2.preenchidas[i]["id_pergunta"] == idPergunta) {
-    //     //                     self_2.preenchidas[i]["preenchido"] = true 
-    //     //                 }
-    //     //             }
-    //     //             vermelho();
-    //     //             self_2.save(textAreaContent, images, dadosPergunta);
-    //     //             self_2.close();
-    //     //         }
-    //     //     }
-
-    //     //     var divSubmit = document.createElement("div");
-    //     //     divSubmit.className = "botao-padrao-cadastrar-label";
-
-    //     //     var buttonSubmit = document.createElement("button");
-    //     //     buttonSubmit.className = "botao-cadastrar-submit-label";
-    //     //     buttonSubmit.textContent = "Correto";
-    //     //     buttonSubmit.type = "button";
-    //     //     self_2 = self_1
-    //     //     buttonSubmit.onclick = function() {
-    //     //         // console.log(self_2.preenchidas.length)
-    //     //         for (let i = 0; i < self_2.preenchidas.length; i++) {
-    //     //             // console.log(i);
-    //     //             if (self_2.preenchidas[i]["id_pergunta"] == idPergunta) {
-    //     //                 self_2.preenchidas[i]["preenchido"] = true 
-    //     //             }
-    //     //         }
-        
-
-    //     //         if (labelDiv.classList.contains("label_checklist-wrong") && labelDiv.classList.contains("active")) {
-    //     //             vermelho();
-    //     //         }
-    //     //         else
-    //     //         {
-    //     //             verde();
-    //     //         }
-    //     //     }
-    //     //     divBack.appendChild(buttonIncorrect);
-    //     //     divSubmit.appendChild(buttonSubmit);
-    //     //     motherButtons.appendChild(divBack);
-    //     //     motherButtons.appendChild(divSubmit);
-    //     //     labelDiv.appendChild(motherButtons);
-    //     // }
-
-    //     // function descerNormal()
-    //     // {
-    //     //     for (let i = 0; i < self_1.preenchidas.length; i++) {
-    //     //         // console.log(self_1.preenchidas[i]);
-    //     //         if (self_1.preenchidas[i]["id_pergunta"] == idPergunta) {
-    //     //             self_1.preenchidas[i]["preenchido"] = false 
-    //     //         }
-    //     //     }
-    //     //     // console.log(self_1.dataNaoConf)
-    //     //     labelDiv.classList.add("active");
-
-    //     //     if (labelDiv.classList.contains("label_checklist-wrong")) {
-    //     //         labelDiv.style.backgroundColor = 'transparent';
-    //     //         labelDiv.style.border = '3px solid red';
-    //     //         button.className = "bi bi-chevron-down"
-    //     //         // labelDiv.style.height = (labelDiv.offsetHeight + 250) + "px";
-
-    //     //         let imagens = document.createElement("div");
-    //     //         imagens.className = "imagens-container";
-    //     //         imagens.style.width = "100%";
-    //     //         imagens.style.height = "300px";
-    //     //         imagens.style.display = "flex";
-    //     //         imagens.style.alignItems = "center";
-                
-    //     //         for (let i = 0; i < 3; i++) {
-    //     //             let divImg = document.createElement("div");
-    //     //             divImg.style.display = "flex";
-    //     //             divImg.style.justifyContent = "center";
-                    
-    //     //             if (dadosPergunta["imagesToPHP"][i] != "") {
-    //     //                 let img = document.createElement("img");
-    //     //                 img.className = "beluga";
-    //     //                 img.style.width = "100%";
-
-
-    //     //                 let imgNameInServer = dadosPergunta["imagesToPHP"][i];
-    //     //                 let basepath = "../storage/n_conformidade/";
-    //     //                 let caminhoAbsoluto = basepath + imgNameInServer;
-    //     //                 img.src = caminhoAbsoluto;
-    //     //                 divImg.appendChild(img);
-    //     //                 imagens.appendChild(divImg)
-    //     //             }
-    //     //         }
-                
-    //     //         labelDiv.appendChild(imagens)
-                
-    //     //     }
-    //     //     else if (labelDiv.classList.contains("label_checklist-right")) {
-    //     //         montarBotoes();
-    //     //         labelDiv.style.backgroundColor = 'transparent';
-    //     //         labelDiv.style.border = '3px solid green';
-    //     //         button.className = "bi bi-chevron-down"
-    //     //         // labelDiv.style.height = (labelDiv.offsetHeight + 125) + "px";
-                
-    //     //     }
-
-    //     //     if (labelDiv.classList.contains("correct")) {
-    //     //         labelDiv.classList.remove("correct");
-    //     //     }
-    //     //     if (labelDiv.classList.contains("incorrect")) {
-    //     //         labelDiv.classList.remove("incorrect");
-    //     //     }
-    //     //     for (var i = 0; i < self_1.dataNaoConf.length; i++) {
-    //     //         var Nconf = self_1.dataNaoConf[i];
-    //     //         if (Nconf["id_pergunta"] == idPergunta) {
-    //     //             self_1.dataNaoConf.splice(i, 1);
-    //     //         }
-    //     //     }
-
-    //     // }
-
-    //     // function subirNormal()
-    //     // {
-              
-    //     //     if (labelDiv.querySelector(".imagens-container") !== null) {
-    //     //         labelDiv.querySelector(".imagens-container").remove();
-    //     //         // labelDiv.style.height = (labelDiv.offsetHeight - 250) + "px";
-    //     //         labelDiv.classList.remove("active");
-    //     //     } else {
-    //     //         // labelDiv.style.height = (labelDiv.offsetHeight - 125) + "px";
-    //     //         labelDiv.classList.remove("active");
-    //     //         labelDiv.removeChild(motherButtons);
-    //     //     }
-
-    //     //     if (labelDiv.classList.contains("correct")) {
-    //     //         labelDiv.classList.remove("correct");
-    //     //     }
-    //     //     if (labelDiv.classList.contains("incorrect")) {
-    //     //         labelDiv.classList.remove("incorrect");
-    //     //     }
-
-
-       
-    //     // }
-
-
-    //     // function verde()
-    //     // {
-    //     //     //verde
-    //     //     labelDiv.style.backgroundColor = 'green';
-    //     //     labelDiv.classList.add("correct");
-    //     //     button.className = "bi bi-arrow-clockwise";
-    //     // }
-
-    //     // function vermelho()
-    //     // {
-    //     //     if (labelDiv.classList.contains("label_checklist-wrong")) {
-    //     //         //vermelho
-    //     //         labelDiv.style.backgroundColor = 'red';
-    //     //         labelDiv.classList.add("correct");
-    //     //         button.className = "bi bi-arrow-clockwise";
-    //     //     }
-    //     //     else 
-    //     //     {
-    //     //         //vermelho
-    //     //         labelDiv.style.backgroundColor = 'red';
-    //     //         labelDiv.style.border = '3px solid red';
-    //     //         labelDiv.classList.add("incorrect");
-    //     //         button.className = "bi bi-arrow-clockwise";
-    //     //     }
-    //     // }
-
-    //     // var motherButtons;
-    //     // labelDiv.onclick = function() {
-    //     //     if (labelDiv.classList.contains("active") && labelDiv.classList.contains("correct")) 
-    //     //     {
-    //     //         subirNormal();
-    //     //     }
-    //     //     else if (labelDiv.classList.contains("active") && !labelDiv.classList.contains("correct") && !labelDiv.classList.contains("incorrect"))
-    //     //     {
-    //     //         subirNormal();
-    //     //         // console.log("subiu normal transparente");
-    //     //     }
-    //     //     else
-    //     //     {
-    //     //         descerNormal();
-    //     //         // console.log("desceu normal transparente");
-    //     //     }
-    //     // }
-
-        
-    //     // h1AndButtonDiv.appendChild(h1Title);
-    //     // h1AndButtonDiv.appendChild(button);
-    //     labelDiv.appendChild(descricao_pergunta);
-    //     botoes_direita.appendChild(botao_correto)
-    //     botoes_direita.appendChild(botao_incorreto)
-    //     mainDiv.appendChild(labelDiv)
-    //     mainDiv.appendChild(botoes_direita)
-    //     document.querySelector(".list-pre-aula").appendChild(mainDiv)
-    // }
-
-
-    buildButtons() {
-        self = this
         var divBotoes = document.querySelector(".botoes")
 
         var cancelButton = document.createElement("button")
@@ -578,7 +409,18 @@ export class Dom {
         cancelButton.textContent = "Cancelar"
         
         cancelButton.onclick = function() {
-            self.close()
+            cancelButton.remove()
+            confirmButton.remove()
+            modal.style.display = "none"
+            botao_incorreto.className = "bi bi-x"
+            botao_incorreto.style.color = "black"
+            for (let i = 0; i < self_0.manipulacao_botoes.length; i++) {
+                if (self_0.manipulacao_botoes[i]["id"] == idPergunta) {
+                    self_0.manipulacao_botoes[i]["certo"] = 0
+                    self_0.manipulacao_botoes[i]["errado"] = 0
+                }
+            }
+            console.log(self_0.manipulacao_botoes)
         }
 
         var confirmButton = document.createElement("button")
@@ -587,36 +429,11 @@ export class Dom {
  
         divBotoes.appendChild(cancelButton)
         divBotoes.appendChild(confirmButton)
-
     }
 
-    call(pergunta) {
-        var perguntaMae = document.querySelector(".pergunta_nao_conf")
-        var descricaoPergunta = document.createElement("h6")
-        descricaoPergunta.innerText = pergunta
-        perguntaMae.appendChild(descricaoPergunta)
-        this.onclickToUploadArea()
-        this.buildButtons()
-        var modal = document.querySelector(".mom")
-        modal.style.display = "block"
-    }
 
-    close() {
-        var varPreview = document.querySelector(".upload-img")
-        varPreview.innerHTML = ""
-        var textAreaContent = document.querySelector(".descricao_nao_conf")
-        textAreaContent.value = ""
-        var divBotoes = document.querySelector(".botoes")
-        divBotoes.innerHTML = ""
-        var modal = document.querySelector(".mom")
-        modal.style.display = "none"
-        var childs = document.querySelector(".pergunta_nao_conf").childNodes 
-        for (var i = childs.length - 1; i >= 0; i--) {
-            document.querySelector(".pergunta_nao_conf").removeChild(childs[i])
-        }
-    }
-
-    save(textAreaContent, images, dadosPergunta) {
+    salvar_modal_nao_conf(textAreaContent, images, dadosPergunta) {
+        
         var data = {}
         var imagesToPHP = []
     
@@ -726,7 +543,18 @@ export class Dom {
 
     } 
 
+    chamar_visualizar_nao_conformidade(nao_conformidade) {
+
+        var modal_mostrar_nao_conformidade = document.querySelector("#mostrar-nao-conformidade")
+        modal_mostrar_nao_conformidade.style.display = "block"
+        var botao_sair = document.querySelector(".bi-x-circle")
+        botao_sair.onclick = function() {
+            modal_mostrar_nao_conformidade.style.display = "none" 
+        }
+        
+    }
 }   
+
  
 
 

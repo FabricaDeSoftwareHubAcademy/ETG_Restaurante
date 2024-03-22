@@ -1,5 +1,6 @@
 import { Dom } from './Dom.js';
 
+console.log(perguntasJson)
 var preenchidas = [];
 // console.log(preenchidas);
 for (let i = 0; i < perguntasJson.length; i++) {
