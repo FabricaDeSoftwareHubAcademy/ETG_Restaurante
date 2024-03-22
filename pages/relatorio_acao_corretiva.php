@@ -28,4 +28,4 @@ $dadosSala = $sala::getDados();
 
 // }exit;
 // var_dump($dados);exit;
-require("../includes/main/main_relatorio_salas.php");
+require("../includes/main/main_relatorio_acao_corretiva.php");
