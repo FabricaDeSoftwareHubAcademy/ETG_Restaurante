@@ -16,10 +16,17 @@
 
     <main class="main_listar_relatorio">
 
-            <section class="titulos">
-            <a class="btn btn-primary" href="index.php">Relatórios</a>
-             <a class="btn btn-primary " href="login.html">Atualização</a>
-            </section>
+        <section class="section_titulo">
+            <h1>Listar Relatórios</h1>
+        </section>
+
+            <section class="titulos d-flex justify-content-start align-items-end">
+            <div class="d-flex flex-column">
+                <a class="btn btn-primary mb-2" href="index.php">Relatórios</a>
+                <a class="btn btn-primary" href="login.html">Atualização</a>
+            </div>
+        </section>
+
 
             <section class="section_table">
 
