@@ -46,12 +46,25 @@
                         <tbody>
 
                             <td>
-                                <div class="div-td">
-                                    <img src="../assets/imgs/others/camera.png" alt="img" class="img-td">
-                                    <p>Nome da sala</p>
-                                </div>
+                                <?=$sala_lista?>
                             </td>
 
+                            <td>
+                                
+                                <?=$status_sala?>
+                            </td>
+
+                            <td>
+                            <?=$data?>
+                            </td>
+
+                            <td>
+                                <?=$status_sala?>
+                            </td>
+
+                            <td>
+                                <?=$docente?>
+                            </td>
                         </tbody>
 
                     </table>
@@ -74,3 +87,5 @@
 
 </body>
 </html>
+
+
