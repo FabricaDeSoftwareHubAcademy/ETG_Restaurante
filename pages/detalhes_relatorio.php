@@ -26,14 +26,17 @@ $dados_responsavel .= '<div class="dados_responsavel">
 </div>';
 $nao_conformidade = '';
 foreach ($busca as $sala) {
+    $img1=strlen($sala["img1"])>0?'<img class="imagem_nao_conformidade imagem_preview" src="../storage/n_conformidade/' . $sala["img1"] . '" alt="">':"";
+    $img2=strlen($sala["img2"])>0?'<img class="imagem_nao_conformidade imagem_preview" src="../storage/n_conformidade/' . $sala["img2"] . '" alt="">':"";
+    $img3=strlen($sala["img3"])>0?'<img class="imagem_nao_conformidade imagem_preview" src="../storage/n_conformidade/' . $sala["img3"] . '" alt="">':"";
+    
     $nao_conformidade .= '<div class="nao_conformidade">
     <P class="texto_nao_conformidade" >' . $sala["descricao_NC"] . ' </P>
-
+    
     <div class="area_imagens">
-        <img class="imagem_nao_conformidade imagem_preview" src="../storage/n_conformidade/' . $sala["img1"] . '" alt="">
-        <img class="imagem_nao_conformidade imagem_preview" src="../storage/n_conformidade/' . $sala["img2"] . '" alt="">
-        <img class="imagem_nao_conformidade imagem_preview" src="../storage/n_conformidade/' . $sala["img3"] . '" alt="">  
-        
+         '.$img1.'
+         '.$img2.'
+         '.$img3.'       
     </div>
 </div>';
 }
