@@ -174,8 +174,8 @@ class Checklist
     public static function getDetalhes($id_usuario = 0,$id_checklist = 0)
     {
         $obj_banco = new Banco('responder_check');
-        $id_usuario=2;
-        $id_checklist=2;
+        // $id_usuario=2;
+        // $id_checklist=2;
         $query = $obj_banco -> getdetalhes_amanhecer($id_usuario,$id_checklist)->fetchAll(PDO::FETCH_ASSOC);
         return $query;
     }

@@ -177,7 +177,7 @@
    
                         
                         <div class="botao-padrao-cadastrar">
-                            <!-- <a><input name="btn_submit" type="submit" class="botao-cadastrar-submit" id="botao-cadastrar-submit" value="CADASTRAR"></a> -->
+                        
 
                             <button name="btn_submit" type="submit" class="botao-cadastrar-submit" id="botao-cadastrar-submit" value="CADASTRAR"> CADASTRAR </button>
 

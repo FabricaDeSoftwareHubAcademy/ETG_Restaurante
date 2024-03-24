@@ -1,11 +1,14 @@
 <link rel="stylesheet" href="../assets/css/detalhes_relatorio.css">
+
 <body class="tela_detalhes">
-<div class="titulo"><p class="texto_titulo">Detalhes Do Checklist</p></div>
-         
-<section>
+    <div class="titulo">
+        <p class="texto_titulo">Detalhes Do Checklist</p>
+    </div>
+
+    <section>
 
 
-                                                                                                                    <!-- <div class="dados_responsavel">
+        <!-- <div class="dados_responsavel">
         
         <div class="esquerda"><p>Nome: Professor
         <p>Sala: Cozinha 1 </p>
@@ -13,76 +16,74 @@
         
         <div class="direita"><p>Nome: Professor</p><p>hora: 14:00 data: 21/03/2024</p></div>
                                                                                                                     </div> -->
-                                                                                                                    <?= $dados_responsavel ?>                                                                                                              <div class="area_nao_conformidade">
-                                                                                                                    <?= $nao_conformidade ?>
-                                                                                                <!-- <div class="nao_conformidade">
-            <P class="texto_nao_conformidade"> nao confordade dsadsadsa sa dsaddsda dsadsadsadsadas dsadsad dsadsa das dsa dsad asdasdsadsa dsadsadsad dsad  dsadsadsa dsadsad dsadsadsad dsadsadsa dsadsadsadsad sadsadsadsad dsadsadsadsad1 </P>
+        <?= $dados_responsavel ?> <div class="area_nao_conformidade">
+            <?= $nao_conformidade ?>
+            <!-- <div class="nao_conformidade">
+            <P class="texto_nao_conformidade"> 1 </P>
 
             <div class="area_imagens">
                 <img class="imagem_nao_conformidade" src="https://img.freepik.com/fotos-gratis/respingo-colorido-abstrato-3d-background-generativo-ai-background_60438-2509.jpg?w=1380&t=st=1711047503~exp=1711048103~hmac=472fc498b2cc8b6fc96e3d1ea8b51e8f89d95596e7d51017a70e16de77cd9338" alt="">
                 <img class="imagem_nao_conformidade" src="https://img.freepik.com/fotos-gratis/fundo-de-textura-com-diferentes-folhas-exoticas-generativas-al_169016-28564.jpg?w=1380&t=st=1711049255~exp=1711049855~hmac=11ede85c779d48caf54dc71d4ee8391caa28f240d852aa8197a07a35fd8748a0" alt="">
                 <img class="imagem_nao_conformidade" src="https://img.freepik.com/fotos-gratis/mistura-de-pigmentos-brilhantes_23-2147763561.jpg?w=1380&t=st=1711049279~exp=1711049879~hmac=f11cc832dd8cdd575ef2bbc6fedb4da0ddfa28a66ad863b2185009752dbc3db6" alt="">  
             </div>
-                                                                                                                        </div>
+                                                                                                                        </div>-->
 
-                                                                                                                                                                                                                                <div class="nao_conformidade">
-            <P class="texto_nao_conformidade" > nao confordade 2</P>
 
-            <div class="area_imagens">
-                <img class="imagem_nao_conformidade" src="" alt="">
-                <img class="imagem_nao_conformidade" src="" alt="">
-                <img class="imagem_nao_conformidade" src="" alt="">  
-                
+        </div>
+    </section>
+    <div class="area_botões">
+        <div class="area_voltar">
+            <div class="botao-padrao-voltar">
+                <a href="listar_salas.php" class="botao-voltar-link">VOLTAR</a>
             </div>
-                                                                                                                        </div>
-                                                                                                                                                                                                                                <div class="nao_conformidade">
-            <P class="texto_nao_conformidade"> nao confordade 3</P>
+        </div>
 
-            <div class="area_imagens">
-                <img class="imagem_nao_conformidade" src="" alt="">
-                <img class="imagem_nao_conformidade" src="" alt="">
-                <img class="imagem_nao_conformidade" src="" alt="">  
-                
+        <div class="gerar_relatorio">
+            <div class="imprimir">
+                <a href="listar_salas.php" class="botao-voltar-link">Imprimir</a>
             </div>
-                                                                                                                        </div>
-                                                                                                                                                                                                                                <div class="nao_conformidade">
-            <P class="texto_nao_conformidade"> nao confordade 4</P>
+        </div>
 
-            <div class="area_imagens">
-                <img class="imagem_nao_conformidade" src="" alt="">
-                <img class="imagem_nao_conformidade" src="" alt="">
-                <img class="imagem_nao_conformidade" src="" alt="">    
-            </div>
-                                                                                                                        </div>
-                                                                                                                                                                                                                               <div class="nao_conformidade">
-            <P class="texto_nao_conformidade"> nao confordade 4</P>
 
-            <div class="area_imagens">
-                <img class="imagem_nao_conformidade" src="" alt="">
-                <img class="imagem_nao_conformidade" src="" alt="">
-                <img class="imagem_nao_conformidade" src="" alt="">  
-                
-            </div>
-                                                                                                                        </div> -->
-                                                                                                                
-                                                                                                                    </div>
-                                                                                                                </section>
-                                                                                                                <div class="area_botões">
-                                                                                                                    <div class="area_voltar2">
-                                                                                                                        <div class="botao-padrao-voltar2">
-                            <a href="listar_salas.php" class="botao-voltar-link2">VOLTAR</a>
-                        </div>
-                                                                                                                    </div>
 
-                                                                                                                    <div class="gerar_relatorio">
-                                                                                                                        <div class="imprimir">
-                            <a href="listar_salas.php" class="botao-voltar-link2">Imprimir</a>
-                        </div>
-                                                                                                                    </div>
 
-                                                                                                                
-                                                                                                                   
-                                                                                                                                                                                                               
-                                                                                                                </div>                                                                                                                                                                                                         
+    </div>
+    <script>
+        var imagens = document.querySelectorAll(".imagem_nao_conformidade");
+
+        for (let i = 0; i < imagens.length; i++) {
+            // console.log(imagens[i].src);
+            imagens[i].addEventListener("click", (e) => {
+                // console.log(e.target.src)
+                var area_imagem = document.createElement("div");
+                area_imagem.className = "view_imagem";
+                var imgview = document.createElement("img")
+                imgview.src = e.target.src
+                imgview.className = "imagem_expandida"
+                area_imagem.appendChild(imgview)
+                document.body.appendChild(area_imagem);
+            })
+        }    
+        function fecha_imagem() {
+            var imagens_expandidas = document.querySelectorAll(".view_imagem");
+            imagens_expandidas.forEach(function(imagem_expandida) {
+                imagem_expandida.style.display = "none";
+                var divsParaDeletar = document.querySelectorAll(".view_imagem");
+                divsParaDeletar.forEach(function(div) {
+                    div.remove();
+                });
+            });
+        }
+        document.addEventListener("click", function(event) {
+            if (event.target.classList.contains("view_imagem")) {
+                event.target.style.display = "none";
+                var divsParaDeletar = document.querySelectorAll(".view_imagem");
+                divsParaDeletar.forEach(function(div) {
+                    div.remove();
+                });
+            }
+        });
+    </script>
 </body>
+
 </html>

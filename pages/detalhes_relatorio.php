@@ -4,7 +4,14 @@ require __DIR__."/../vendor/autoload.php";
 use App\Entity\Checklist;
 
 $objCheck = new Checklist();
-$busca = Checklist::getDetalhes();
+if(isset($_GET['id_usuario']) && $_GET['id_checklist']){
+
+    $id_usuario=$_GET['id_usuario'];
+    $id_checklist=$_GET['id_checklist'];
+    // echo("entrou no if !");
+     }
+    
+$busca = Checklist::getDetalhes($id_usuario,$id_checklist);
 // echo '<pre>';
 // echo print_r($busca);
 // echo '</pre>';
@@ -39,17 +46,6 @@ foreach($busca as $sala){
                                                                                                                 </div>';
 }
 
-if(isset($_GET['id_usuario']) && $_GET['id_checklist']){
-
-$id_usuario=$_GET['id_usuario'];
-$id_checklist=$_GET['id_checklist'];
-echo("entrou no if !");
-
-
-
-
-
-}
 
 
 
@@ -62,7 +58,7 @@ echo("entrou no if !");
 
 include_once("../includes/menu.php"); 
 require("../includes/main/main_detalhes_relatorio.php");
-require("../includes/footer/footer.php");
+// require("../includes/footer/footer.php");
 
 
 
