@@ -9,6 +9,7 @@
 <script src="../assets/js/modais.js"></script>
 <script src="../assets/js/checklist.js" defer></script>
 <script src="../assets/js/script_tela_nao_conf.js"></script>
+<script src="../assets/js/imagem_preview.js" defer></script>
 
 
 
