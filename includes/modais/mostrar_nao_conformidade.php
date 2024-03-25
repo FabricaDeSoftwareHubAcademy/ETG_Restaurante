@@ -10,19 +10,19 @@
                     <p>Descrição Não Conformidade</p>
                 </div>
                 <div id="texto_em_agora_n_conf">
-                    <p id="text-nao-conformidade">AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</p>
+                    <p></p>
                 </div>
             </div>
             <div class="images-nao-conformidade">
                 <div class="imgs">
-                    <img src="https://is1-ssl.mzstatic.com/image/thumb/Music112/v4/fc/94/08/fc94088c-1722-28ed-a3db-32bc6a146589/artwork.jpg/400x400cc.jpg" alt="">
+                    <img alt="" id="img__0">
                 </div>
                 <div class="imgs">
-                    <img src="https://is1-ssl.mzstatic.com/image/thumb/Music112/v4/fc/94/08/fc94088c-1722-28ed-a3db-32bc6a146589/artwork.jpg/400x400cc.jpg" alt="">
+                    <img  id="img__1" alt="">
                 </div>
 
                 <div class="imgs">
-                    <img src="https://is1-ssl.mzstatic.com/image/thumb/Music112/v4/fc/94/08/fc94088c-1722-28ed-a3db-32bc6a146589/artwork.jpg/400x400cc.jpg" alt="">
+                    <img id="img__2" alt="">
                 </div>
             </div>
         </div>

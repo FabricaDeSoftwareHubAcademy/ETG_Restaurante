@@ -7,6 +7,7 @@ export class Dom {
         this.objPergunta = new Pergunta(perguntasJson)
         this.dataPerguta = this.objPergunta.getAll()
         this.manipulacao_botoes = []
+        this.fotos = []
     }
 
     addNaoConfToDataNaoConf(pergunta) {
@@ -157,6 +158,7 @@ export class Dom {
 
         var botao_incorreto = document.createElement("i")
         botao_incorreto.className = "bi bi-x"
+        botao_incorreto.style.cursor = "pointer"
 
         var self_0=this
         botao_incorreto.onclick = function() {
@@ -191,6 +193,7 @@ export class Dom {
 
         var botao_correto = document.createElement("i")
         botao_correto.className = "bi bi-check"
+        botao_correto.style.cursor = "pointer"
         botao_correto.onclick = function() {
 
 
@@ -299,6 +302,7 @@ export class Dom {
 
         var botao_incorreto = document.createElement("i")
         botao_incorreto.className = "bi bi-x"
+        botao_incorreto.style.cursor = "pointer"
         
         botao_incorreto.onclick = function() {
             console.log(self_0.manipulacao_botoes)
@@ -332,6 +336,7 @@ export class Dom {
 
         var botao_correto = document.createElement("i")
         botao_correto.className = "bi bi-check"
+        botao_correto.style.cursor = "pointer"
         botao_correto.onclick = function() {
             console.log(self_0.manipulacao_botoes)
             if (botao_correto.classList.contains("bi-check-circle")) {
@@ -386,7 +391,8 @@ export class Dom {
         var modal = document.querySelector(".mom")
         modal.style.display = "block"
         modal.style.position = "fixed"
-        modal.style.padding = "200px"
+        modal.style.margin = "150px 0px 0px 0px"
+        modal.style.width = "100vw"
         modal.style.display = 'flex'
         modal.style.zIndex = "1";
         modal.style.backgroundColor = "rgba(255, 255, 255, 1)"
@@ -408,6 +414,7 @@ export class Dom {
         cancelButton.className = "botao-cancelar-submit"
         cancelButton.textContent = "Cancelar"
         
+        
         cancelButton.onclick = function() {
             cancelButton.remove()
             confirmButton.remove()
@@ -422,10 +429,33 @@ export class Dom {
             }
             console.log(self_0.manipulacao_botoes)
         }
-
+        
         var confirmButton = document.createElement("button")
         confirmButton.className = "botao-confirmar-submit"
         confirmButton.textContent = "Confirmar"
+        confirmButton.onclick = function() {
+            if (document.querySelector(".descricao_nao_conf").value.trim().length == 0) {                
+                modalStatus("Preencha a descrição", "error", () => {})
+                return
+            }
+            if (document.querySelector(".upload-img").querySelectorAll("div").length == 0) {
+                modalStatus("Preencha ao menos uma imagem", "error", () => {})
+                return 
+            }
+
+            cancelButton.remove()
+            confirmButton.remove()
+            modal.style.display = "none"
+            botao_incorreto.className = "bi bi-x-circle"
+            botao_incorreto.style.color = "red"
+            for (let i = 0; i < self_0.manipulacao_botoes.length; i++) {
+                if (self_0.manipulacao_botoes[i]["id"] == idPergunta) {
+                    self_0.manipulacao_botoes[i]["certo"] = 0
+                    self_0.manipulacao_botoes[i]["errado"] = 1
+                }
+            }
+            console.log(self_0.manipulacao_botoes)
+        }
  
         divBotoes.appendChild(cancelButton)
         divBotoes.appendChild(confirmButton)
@@ -485,71 +515,107 @@ export class Dom {
     }
 
     loadImagesToPreview(event) {
+        var self_0 = this
         const MULTIPLE_FILES = event.target.files
-
-        if(MULTIPLE_FILES.length > 3){
-
-
-            modalStatus('teste','success')
-        }else{
-
-
-
-            const MAX_IMAGES = 3
-            const IMAGES_TO_PROCESS = Math.min(MAX_IMAGES, MULTIPLE_FILES.length)
+        const IMAGES_TO_PROCESS = MULTIPLE_FILES.length
+        if (IMAGES_TO_PROCESS >= 3) {
+            modalStatus("Selecione uma imagem de cada vez", "error", () => {})
+            return 
+        }
+        for (let i = 0; i < IMAGES_TO_PROCESS; i++) {
+            const FILE = MULTIPLE_FILES[i]
             
-        
-            for (let i = 0; i < IMAGES_TO_PROCESS; i++) {
-                const FILE = MULTIPLE_FILES[i]
-    
-                
-                if (!FILE.type.startsWith("image/")) {
-                    continue
-                }
-        
-                const IMG = document.createElement("img")
-                IMG.className = "beluga" 
-    
-                let reader = new FileReader()
-    
-                reader.onload = (e) => {
-        
-                    IMG.src = e.target.result
-                 }
-    
-                reader.readAsDataURL(FILE)  
-                
-                var container_img = document.createElement("div")
-        
-                
-        
-                container_img.appendChild(IMG)
-        
-                var varPreview = document.querySelector(".upload-img")
-                varPreview.appendChild(container_img)
+            if (!FILE.type.startsWith("image/")) {
+                continue
             }
-    
-            const BUTTON_DELETE_IMAGE = document.querySelector('#btn_reset_imgs')
-    
             
-            BUTTON_DELETE_IMAGE.addEventListener("click", function() {
-                var varPreview = document.querySelector(".upload-img")
-                while(varPreview.firstChild) {
-                    varPreview.removeChild(varPreview.firstChild)
-                }
-            })
+            const IMG = document.createElement("img")
+            IMG.className = "beluga" 
+            
+            let reader = new FileReader()
+
+            reader.onload = (e) => {
+                IMG.src = e.target.result
+            }
+
+            reader.readAsDataURL(FILE)  
+            
+            
+            
+            var container_img = document.createElement("div")
+            var botao_de_cada_foto = document.createElement("div")
+            let butao = document.createElement("i")
+            var varPreview = document.querySelector(".upload-img")
+            container_img.style.display = "flex"
+            container_img.style.justifyContent = "center"
+            container_img.style.alignItems = "center"
+            container_img.style.margin = "30px 0px 0px 0px"
+            container_img.style.position = "relative"
+            botao_de_cada_foto.style.position = "absolute"
+            botao_de_cada_foto.style.borderRadius = "15px"
+            botao_de_cada_foto.style.width = "6vw"
+            botao_de_cada_foto.style.height = "40px"
+            botao_de_cada_foto.style.backgroundColor = "black"
+            botao_de_cada_foto.style.top = "0%"
+            botao_de_cada_foto.style.right = "0%"
+            botao_de_cada_foto.style.cursor = "pointer"
+            botao_de_cada_foto.style.display = "flex"
+            botao_de_cada_foto.style.justifyContent = "center"
+            botao_de_cada_foto.style.alignItems = "center"
+            
+            
+            IMG.style.maxWidth = "100%"
+            
+            
+            butao.classList.add("bi", "bi-x")
+            butao.style.fontSize = "35px"
+            butao.style.color = "white"
+            // butao.style.fontWeight = "bold"
+            container_img.appendChild(IMG)
+            container_img.appendChild(botao_de_cada_foto)
+            botao_de_cada_foto.appendChild(butao)
+            
+            
+            
+            varPreview.appendChild(container_img)
+            botao_de_cada_foto.onclick = function () {
+                container_img.remove()
+            }
 
         }
 
-    } 
-
+    }
+    
+    
+    
     chamar_visualizar_nao_conformidade(nao_conformidade) {
-
+        
+        console.log(nao_conformidade)
         var modal_mostrar_nao_conformidade = document.querySelector("#mostrar-nao-conformidade")
         modal_mostrar_nao_conformidade.style.display = "block"
+        
+
+        for (let i = 0; i < nao_conformidade["imagesToPHP"].length; i++) {
+            if (nao_conformidade["imagesToPHP"][i].length == 0) {
+                continue
+            }
+            var nome_img = "img__"+i
+            var img = document.querySelector("#"+nome_img)
+            img.src = nao_conformidade["imagesToPHP"][i] = "../storage/n_conformidade/"+nao_conformidade["imagesToPHP"][i]
+        }
+        var div_descricao_nao_conformidade = document.querySelector("#texto_em_agora_n_conf p")
+        div_descricao_nao_conformidade.innerText = nao_conformidade["descricao_nao_confirmidade_docente"]
         var botao_sair = document.querySelector(".bi-x-circle")
         botao_sair.onclick = function() {
-            modal_mostrar_nao_conformidade.style.display = "none" 
+            modal_mostrar_nao_conformidade.style.display = "none"
+
+            var divpai = document.querySelector(".images-nao-conformidade")
+            var divsfilhas = divpai.querySelectorAll(".imgs")
+            
+            document.querySelector("#img__0").src = ""
+            document.querySelector("#img__1").src = ""
+            document.querySelector("#img__2").src = ""
+            nome_img = ""
         }
         
     }
