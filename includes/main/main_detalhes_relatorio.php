@@ -32,17 +32,19 @@
         </div>
     </section>
     <div class="area_botões">
-        <div class="area_voltar">
-            <div class="botao-padrao-voltar">
-                <a href="listar_salas.php" class="botao-voltar-link">VOLTAR</a>
-            </div>
+        <div class="botao-padrao-voltar">
+            <a href="#" class="botao-voltar-link">VOLTAR</a>
         </div>
 
         <div class="gerar_relatorio">
             <div class="imprimir">
-                <button class="botao-voltar-link" onclick="print()">Imprimir</button>
+                <button class="botao-cadastrar-link" onclick="print()">IMPRIMIR</button>
                 <!-- <a href="listar_salas.php" class="botao-voltar-link">Imprimir</a> -->
             </div>
+              <!--Botão Cadastrar-->
+            <!-- <div class="botao-padrao-cadastrar">
+                <a href="#"><input type="submit" class="botao-cadastrar-link"  value="CADASTRAR"></a>
+            </div> -->
         </div>
     </div>
     <!-- <script>
