@@ -164,7 +164,6 @@ function loadImgs(){
 
 function carregarImg(img64,index){
 
-   
     let html = `
         <div class = "uploaded-img" btn_rm="${index}">
             <img  src = "${img64}" class = "beluga">
