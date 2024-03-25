@@ -12,7 +12,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-<body class="body">
+<body class="body-listar-relatorio">
 
     <main class="main_listar_relatorio">
 
@@ -20,12 +20,10 @@
             <h1>Listar Relatórios</h1>
         </section>
 
-            <section class="titulos d-flex justify-content-start align-items-end">
-            <div class="d-flex flex-column">
-                <a class="btn btn-primary mb-2" href="index.php">Relatórios</a>
-                <a class="btn btn-primary" href="login.html">Atualização</a>
-            </div>
-        </section>
+        <section class="titulos d-flex justify-content-start align-items-end">
+        <a class="btn btn-dark me-2" href="index.php">Relatórios</a>
+        <a class="btn btn-dark" href="login.html">Atualização</a>
+    </section>
 
 
             <section class="section_table">
@@ -48,22 +46,96 @@
                             <td>
                                 <?=$sala_lista?>
                             </td>
-
                             <td>
-                                
-                                <?=$status_sala?>
+                                <div class="div-td">
+                                    <i class="bi bi-circle-fill"> Em atraso</i>
+                                    <p class="p-status">Atualização de Status...</p>
+                                </div>
                             </td>
-
                             <td>
-                            <?=$data?>
+                                <div class="div-td">
+                                    <p class="p-data">00/00/0000</p>
+                                </div>
                             </td>
-
                             <td>
-                                <?=$status_sala?>
+                                <div class="div-td">
+                                    <div class="progress-bar">
+                                        <div class="progress"></div>
+                                    </div>
+                                    <p class="p-progress">Aguardando Logística</p>
+                                </div>
                             </td>
-
                             <td>
-                                <?=$docente?>
+                                <div class="div-td">
+                                   <p class="p-docente">nome_docente</p>
+                                </div>
+                            </td>
+                            
+                        </tbody>
+
+                        <tbody>
+                        <td>
+                                <div class="div-td">
+                                    <img src="../assets/imgs/others/camera.png" alt="img" class="img-td">
+                                    <p>Nome da sala</p>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="div-td">
+                                    <i class="bi bi-circle-fill-yellow"> Em alerta</i>
+                                    <p class="p-status-alerta">Atualização de Status - 10 jun - Cheklist não foi finalizado pelo docente ...</p>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="div-td">
+                                    <p class="p-data">00/00/0000</p>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="div-td">
+                                    <div class="progress-bar-alerta">
+                                        <div class="progress-alerta"></div>
+                                    </div>
+                                    <p class="p-progress">Resolvido com intervenção</p>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="div-td">
+                                   <p class="p-docente">nome_docente</p>
+                                </div>
+                            </td>
+                        </tbody>
+
+                        <tbody>
+                        <td>
+                                <div class="div-td">
+                                    <img src="../assets/imgs/others/camera.png" alt="img" class="img-td">
+                                    <p>Nome da sala</p>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="div-td">
+                                    <i class="bi bi-circle-fill-green"> Em dia</i>
+                                    <p class="p-status-dia">Atualização de Status - 10 jun</p>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="div-td">
+                                    <p class="p-data">00/00/0000</p>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="div-td">
+                                    <div class="progress-bar-dia">
+                                        <div class="progress-dia"></div>
+                                    </div>
+                                    <p class="p-progress">Sem intervenção</p>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="div-td">
+                                   <p class="p-docente">nome_docente</p>
+                                </div>
                             </td>
                         </tbody>
 
