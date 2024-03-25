@@ -53,6 +53,7 @@ foreach($dados as $sala){
         </tbody>';
     }
 
+    // isset($sala["tem_nao_conformidade"])
     if($sala['status'] == 'B'){
         $salas_lista .='
             <tbody>
