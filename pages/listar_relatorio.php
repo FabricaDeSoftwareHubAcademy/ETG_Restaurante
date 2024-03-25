@@ -17,71 +17,142 @@ foreach($dados as $sala){
     $status_sala = $sala['status'];
 
         // var_dump($dados);exit;
+
     if($sala['status'] == 'L'){
-
-        
-        $sala['status'] = 'Desativada';
-
-    
-    
-    
-    $img_sala = '';
-    if($sala['img_sala'] == ''){
-
-        $img_sala = 'https://iili.io/JI1SMfR.png';
-
-    }else{
-
-        $img_sala = "../storage/salas/".$sala['img_sala'];
-
+    $salas_lista .='
+        <tbody>
+            <td>
+                <div class="div-td">
+                    <img src="../storage/salas/'.$sala['img_sala'].'" alt="img" class="img-td">
+                    <p>'.$sala['nome_sala'].'</p>
+                </div>
+            </td>
+            <td>
+                <div class="div-td">
+                    <i class="bi bi-circle-fill-green"> Em dia</i>
+                </div>
+            </td>
+            <td>
+                <div class="div-td">
+                    <p class="p-data">'.$sala['data_fechamento'].'</p>
+                </div>
+            </td>
+            <td>
+                <div class="div-td">
+                    <div class="progress-bar-dia">
+                        <div class="progress-dia"></div>
+                    </div>
+                    <p class="p-progress">Sem intervenção</p>
+                </div>
+            </td>
+            <td>
+                <div class="div-td">
+                <p class="p-docente">'.$sala['nome_responsavel'].'</p>
+                </div>
+            </td>
+        </tbody>';
     }
 
-    $status = [
-        'D' => 'Desativada',
-        'L' => 'Livre',
-        'A' => 'Em uso',
-        'B' => 'Bloqueada'
-    ];
-    $classes = [
-        'D' => 'desativado',
-        'L' => 'livre',
-        'A' => 'em-uso',
-        'B' => 'block'
-    ];
-    $classes2 = [
-        'D' => 'desativado2',
-        'L' => 'livre2',
-        'A' => 'em-uso2',
-        'B' => 'block2'
-    ];
-
-    if($count == 0){
-
-        $sala_lista .= ' <div class="div-td">
-                            <img class="img-td" src="../storage/salas/'.$sala['img_sala'].'" alt="">
-                            <p class="title_sala2">'.$sala['nome'].'</p>
-                        </div>';
-
-        $status_lista .= '<p class="'.$classes2[$sala['status']].'">'.$status[$sala['status']].'</p>';
-
-        $count = 1;
-    }
-    
-    else    
-    {
-
-        $sala_lista .= ' <div class="div-td">
-                            <img class="img-td" src="../storage/salas/'.$sala['img_sala'].'" alt="">
-                            <p class="title_sala2">'.$sala['nome'].'</p>
-                        </div>';
-        
-        $status_sala .= '<p class="'.$classes2[$sala['status']].'">'.$status[$sala['status']].'</p>';
-
-        $count = 0;
-    }
-    }
+    if($sala['status'] == 'B'){
+        $salas_lista .='
+            <tbody>
+                <td>
+                    <div class="div-td">
+                        <img src="../storage/salas/'.$sala['img_sala'].'" alt="img" class="img-td">
+                        <p>'.$sala['nome_sala'].'</p>
+                    </div>
+                </td>
+                <td>
+                    <div class="div-td">
+                        <i class="bi bi-circle-fill"> Em atraso</i>
+                    </div>
+                </td>
+                <td>
+                    <div class="div-td">
+                        <p class="p-data">'.$sala['data_fechamento'].'</p>
+                    </div>
+                </td>
+                <td>
+                <div class="div-td">
+                        <div class="progress-bar">
+                            <div class="progress"></div>
+                        </div>
+                    <p class="p-progress">Aguardando Logística</p>
+                </div>
+                </td>
+                <td>
+                    <div class="div-td">
+                    <p class="p-docente">'.$sala['nome_responsavel'].'</p>
+                    </div>
+                </td>
+            </tbody>';
+        }
+        if($sala['status'] == 'A'){
+            $salas_lista .='
+                <tbody>
+                    <td>
+                        <div class="div-td">
+                            <img src="../storage/salas/'.$sala['img_sala'].'" alt="img" class="img-td">
+                            <p>'.$sala['nome_sala'].'</p>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="div-td">
+                            <i class="bi bi-circle-fill"> Em atraso</i>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="div-td">
+                            <p class="p-data">'.$sala['data_fechamento'].'</p>
+                        </div>
+                    </td>
+                    <td>
+                    <div class="div-td">
+                            <div class="progress-bar">
+                                <div class="progress"></div>
+                            </div>
+                        <p class="p-progress">Aguardando Logística</p>
+                    </div>
+                    </td>
+                    <td>
+                        <div class="div-td">
+                        <p class="p-docente">'.$sala['nome_responsavel'].'</p>
+                        </div>
+                    </td>
+                </tbody>';
+            }
+            if($sala['status'] == 'D'){
+                $salas_lista .='
+                    <tbody>
+                        <td>
+                            <div class="div-td">
+                                <img src="../storage/salas/'.$sala['img_sala'].'" alt="img" class="img-td">
+                                <p>'.$sala['nome_sala'].'</p>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="div-td">
+                                <i>DESATIVADA</i>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="div-td">
+                                <p class="p-data">'.$sala['data_fechamento'].'</p>
+                            </div>
+                        </td>
+                        <td>
+                        <div class="div-td">
+                            <p class="p-progress">DESATIVADA</p>
+                        </div>
+                        </td>
+                        <td>
+                            <div class="div-td">
+                            <p class="p-docente">'.$sala['nome_responsavel'].'</p>
+                            </div>
+                        </td>
+                    </tbody>';
+                }
 }
-
 
 
 
