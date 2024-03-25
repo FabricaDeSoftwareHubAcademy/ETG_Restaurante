@@ -39,7 +39,7 @@ function fecharImagemMaior() {
 //     
 //     imagemExpandida.style.visibility="visible";
 //     document.getElementById("overlay_imagem").style.visibility="visible";
-// }
+// } 
 // function fecharImagemMaior() {
 //    
 //     var imagemExpandida = document.getElementById("imagemExpandida");

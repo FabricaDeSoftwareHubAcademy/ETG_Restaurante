@@ -107,6 +107,7 @@ h1.nome-sala{
     height: 99%;
     object-fit: cover;
     border-radius: 7px;
+    cursor: pointer;
 }
 
 .texto_card{
