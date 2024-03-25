@@ -8,10 +8,10 @@ use App\Entity\Relatorio;
 $salas = "";
 $dados = Relatorio::getTudo();
 
-echo '<pre>';
-print_r($dados);
-echo '</pre>';
-exit;
+// echo '<pre>';
+// print_r($dados);
+// echo '</pre>';
+// exit;
 
 foreach($dados as $sala){
     $status_sala = $sala['status'];
@@ -21,6 +21,8 @@ foreach($dados as $sala){
 
         
         $sala['status'] = 'Desativada';
+
+    
     
     
     $img_sala = '';
