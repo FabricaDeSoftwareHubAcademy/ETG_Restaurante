@@ -11,6 +11,7 @@ class AcaoCorretiva
     
     private $id;
     private $id_nao_conformidade;
+    private $id_usuario;
     private $descricao;
     private $img_1;
     private $img_2;
@@ -26,6 +27,7 @@ class AcaoCorretiva
         try {
             $dados = [
                 "reg_NC_id" => $this->id_nao_conformidade,
+                "id_usuario" => $this->id_usuario,
                 "descricao" => $this->descricao,
                 "img1" => $this->img_1,
                 "img2" => $this->img_2,
@@ -37,12 +39,17 @@ class AcaoCorretiva
             throw new Exception($e->getMessage());
         } 
         catch (Exception $e) {
-            throw $e->getMessage();
+            return $e->getMessage();
         }
     }
 
     public function setIdNaoConformidade(String $id_nao_conformidade) {
         $this->id_nao_conformidade = $id_nao_conformidade;
+    }
+
+
+    public function setIdUsuario( $id_usuario) {
+            $this->id_usuario = $id_usuario;
     }
 
     public function setDescricao($descricao) {
