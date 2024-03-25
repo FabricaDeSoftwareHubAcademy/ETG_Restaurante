@@ -3,210 +3,80 @@ session_start();
 $titulo_page = 'Mural Recados'; 
 include_once("../includes/menu.php");
 
-use App\Entity\Sala;
-use App\Entity\Checklist;
+use App\Entity\Relatorio;
 
 $salas = "";
-$dados = Sala::getDados();
+$dados = Relatorio::getTudo();
 
 echo '<pre>';
 print_r($dados);
 echo '</pre>';
 exit;
 
-
-$count = 0;
-if($ifgensala){
-    foreach($dados as $sala){
-        $status_sala = $sala['status'];
+foreach($dados as $sala){
+    $status_sala = $sala['status'];
 
         // var_dump($dados);exit;
-        if($sala['status'] == 'L'){
+    if($sala['status'] == 'L'){
 
-            
-            $sala['status'] = 'Desativada';
         
-        
-        $img_sala = '';
-        if($sala['img_sala'] == ''){
+        $sala['status'] = 'Desativada';
+    
+    
+    $img_sala = '';
+    if($sala['img_sala'] == ''){
 
-            $img_sala = 'https://iili.io/JI1SMfR.png';
+        $img_sala = 'https://iili.io/JI1SMfR.png';
 
-        }else{
+    }else{
 
-            $img_sala = "../storage/salas/".$sala['img_sala'];
+        $img_sala = "../storage/salas/".$sala['img_sala'];
 
-        }
-
-        $status = [
-            'D' => 'Desativada',
-            'L' => 'Livre',
-            'A' => 'Em uso',
-            'B' => 'Bloqueada'
-        ];
-        $classes = [
-            'D' => 'desativado',
-            'L' => 'livre',
-            'A' => 'em-uso',
-            'B' => 'block'
-        ];
-        $classes2 = [
-            'D' => 'desativado2',
-            'L' => 'livre2',
-            'A' => 'em-uso2',
-            'B' => 'block2'
-        ];
-
-        if($count == 0){
-
-            $sala_lista .= ' <div class="div-td">
-                                <img class="img-td" src="../storage/salas/'.$sala['img_sala'].'" alt="">
-                                <p class="title_sala2">'.$sala['nome'].'</p>
-                            </div>';
-
-            $status_lista .= '<p class="'.$classes2[$sala['status']].'">'.$status[$sala['status']].'</p>';
-
-            $count = 1;
-        }
-        
-        else    
-        {
-
-            $sala_lista .= ' <div class="div-td">
-                                <img class="img-td" src="../storage/salas/'.$sala['img_sala'].'" alt="">
-                                <p class="title_sala2">'.$sala['nome'].'</p>
-                            </div>';
-            
-            $status_sala .= '<p class="'.$classes2[$sala['status']].'">'.$status[$sala['status']].'</p>';
-
-            $count = 0;
-        }
-        
-        
     }
-}
-else
-{
-    foreach($dados as $sala){
-        
-        
-        $img_sala = '';
-        if($sala['img_sala'] == ''){
 
-            $img_sala = 'https://iili.io/JI1SMfR.png';
+    $status = [
+        'D' => 'Desativada',
+        'L' => 'Livre',
+        'A' => 'Em uso',
+        'B' => 'Bloqueada'
+    ];
+    $classes = [
+        'D' => 'desativado',
+        'L' => 'livre',
+        'A' => 'em-uso',
+        'B' => 'block'
+    ];
+    $classes2 = [
+        'D' => 'desativado2',
+        'L' => 'livre2',
+        'A' => 'em-uso2',
+        'B' => 'block2'
+    ];
 
-        }else{
+    if($count == 0){
 
-            $img_sala = "../storage/salas/".$sala['img_sala'];
+        $sala_lista .= ' <div class="div-td">
+                            <img class="img-td" src="../storage/salas/'.$sala['img_sala'].'" alt="">
+                            <p class="title_sala2">'.$sala['nome'].'</p>
+                        </div>';
 
-        }
-         
-        $link_view_sala = '';
-        $status = [
-            'D' => 'Desativada',
-            'L' => 'Livre',
-            'A' => 'Em uso',
-            'B' => 'Bloqueada'
-        ];
-        $classes = [
-            'D' => 'desativado',
-            'L' => 'livre',
-            'A' => 'em-uso',
-            'B' => 'block'
-        ];
-        $classes2 = [
-            'D' => 'desativado2',
-            'L' => 'livre2',
-            'A' => 'em-uso2',
-            'B' => 'block2'
-        ];
-        
-              
-        if($count == 0){
-            
-            $sala_lista .= ' <div class="div-td">
-                                <img class="img-td" src="../storage/salas/'.$sala['img_sala'].'" alt="">
-                                <p class="title_sala2">'.$sala['nome'].'</p>
-                            </div>';
-            
-            $status_sala .= '<p class="'.$classes2[$sala['status']].'">'.$status[$sala['status']].'</p>';
+        $status_lista .= '<p class="'.$classes2[$sala['status']].'">'.$status[$sala['status']].'</p>';
 
-            $count = 1;
-        }
-        
-        else    
-        {
-
-
-            $sala_lista .= ' <div class="div-td">
-                                <img class="img-td" src="../storage/salas/'.$sala['img_sala'].'" alt="">
-                                <p class="title_sala2">'.$sala['nome'].'</p>
-                            </div>';
-            
-            $status_sala .= '<p class="'.$classes2[$sala['status']].'">'.$status[$sala['status']].'</p>';
-
-            $count = 0;
-        }
-        
-        
+        $count = 1;
     }
-}
+    
+    else    
+    {
 
-$checks = "";
-$dados_checks = Checklist::getData();
-// var_dump($dados_checks[0]);exit;
-$counts = 0;    
-if($ifcheck){
-    foreach($dados_checks as $checks){
-        // var_dump($dados);exit;
+        $sala_lista .= ' <div class="div-td">
+                            <img class="img-td" src="../storage/salas/'.$sala['img_sala'].'" alt="">
+                            <p class="title_sala2">'.$sala['nome'].'</p>
+                        </div>';
         
-        if($counts == 0){
+        $status_sala .= '<p class="'.$classes2[$sala['status']].'">'.$status[$sala['status']].'</p>';
 
-            $data .= '<p>'.$checks['data_abertura'].'</p>';
-
-            $docente .= '<p>'.strtok($checks['nome'],' ').'</p>';
-
-            $counts = 1;
-        }
-        
-        else    
-        {
-            $data .= '<p>'.$checks['data_abertura'].'</p>';
-
-            $docente .= '<p>'.strtok($checks['nome'],' ').'</p>';
-
-            $counts = 0;
-        }
-        
-        
+        $count = 0;
     }
-}
-else
-{
-    foreach($dados_checks as $checks){
-        
-              
-        if($counts == 0){
-            
-            $data .= '<p>'.$checks['data_abertura'].'</p>';
-
-            $docente .= '<p>'.strtok($checks['nome'],' ').'</p>';
-
-            $counts = 1;
-        }
-        
-        else    
-        {
-
-
-            $data .= '<p>'.$checks['data_abertura'].'</p>';
-
-            $docente .= '<p>'.strtok($checks['nome'],' ').'</p>';
-
-            $counts = 0;
-        }
-        
-        
     }
 }
 
