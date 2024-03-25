@@ -35,14 +35,24 @@ class NaoConformidade
 
 
 
-    public static function getNCLogistica($id_prof){
+    public static function getNCLogistica($id_prof = '', $id_checklist = ''){
 
-        $obBanco = new Banco('nc_user_logistica');
-        $nc_user = $obBanco->select('id_responsavel = "'.$id_prof.'"');
-        return $nc_user->rowCount();
-
+        $filterIdUser = strlen($id_prof) > 0 ? ' id_user = "'.$id_prof.'" ' : '';
+        $filterIdChecklist = strlen($id_checklist) > 0 ? ' AND id_checklist = "'.$id_checklist.'" ' : '';
         
-         
+        $whereFilter = $filterIdUser . $filterIdChecklist;
+
+        $obBanco = new Banco('quantidade_nc_user');
+        $nc_user = $obBanco->select(' '.$whereFilter.' ')->fetchAll(PDO::FETCH_ASSOC);
+
+        $countNC = 0;
+        $countC = 0;
+        foreach($nc_user as $row){
+
+            $row['qnt_nc'] > 0  ? $countNC += 1 : $countC += 1; 
+
+        }
+        return [$nc_user, ['countNC' => $countNC, 'countC' => $countC]];
     }
 
 }
