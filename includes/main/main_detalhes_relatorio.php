@@ -5,7 +5,7 @@
         <p class="texto_titulo">Detalhes Do Checklist</p>
     </div>
 
-    <section>
+    <section class="todas_nao_conf">
 
 
         <!-- <div class="dados_responsavel">
