@@ -14,11 +14,9 @@ $dados = Relatorio::getTudo();
 // exit;
 
 foreach($dados as $sala){
-    $status_sala = $sala['status'];
+       // var_dump($dados);exit;
 
-        // var_dump($dados);exit;
-
-    if($sala['status'] == 'L'){
+    if($sala['qnt_nc'] == 0){
     $salas_lista .='
         <tbody>
             <td>
@@ -47,14 +45,14 @@ foreach($dados as $sala){
             </td>
             <td>
                 <div class="div-td">
-                <p class="p-docente">'.$sala['nome_responsavel'].'</p>
+                <p class="p-docente">'.$sala['nome'].'</p>
                 </div>
             </td>
         </tbody>';
     }
 
     // isset($sala["tem_nao_conformidade"])
-    if($sala['status'] == 'B'){
+    if($sala['qnt_nc'] > 0){
         $salas_lista .='
             <tbody>
                 <td>
@@ -83,12 +81,12 @@ foreach($dados as $sala){
                 </td>
                 <td>
                     <div class="div-td">
-                    <p class="p-docente">'.$sala['nome_responsavel'].'</p>
+                    <p class="p-docente">'.$sala['nome'].'</p>
                     </div>
                 </td>
             </tbody>';
         }
-        if($sala['status'] == 'A'){
+        if($sala['qnt_nc'] > 0){
             $salas_lista .='
                 <tbody>
                     <td>
@@ -117,12 +115,12 @@ foreach($dados as $sala){
                     </td>
                     <td>
                         <div class="div-td">
-                        <p class="p-docente">'.$sala['nome_responsavel'].'</p>
+                        <p class="p-docente">'.$sala['nome'].'</p>
                         </div>
                     </td>
                 </tbody>';
             }
-            if($sala['status'] == 'D'){
+            if($sala['qnt_nc'] > 0){
                 $salas_lista .='
                     <tbody>
                         <td>
@@ -148,7 +146,7 @@ foreach($dados as $sala){
                         </td>
                         <td>
                             <div class="div-td">
-                            <p class="p-docente">'.$sala['nome_responsavel'].'</p>
+                            <p class="p-docente">'.$sala['nome'].'</p>
                             </div>
                         </td>
                     </tbody>';
