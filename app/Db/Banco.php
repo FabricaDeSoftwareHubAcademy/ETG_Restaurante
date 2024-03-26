@@ -224,15 +224,10 @@ class Banco{
         OR EXISTS (
             SELECT 1
             FROM cadastro_usuario
-            RIGHT JOIN etg2.reg_nc ON etg2.cadastro_usuario.id = etg2.reg_nc.id_prof
+            RIGHT JOIN etg2.reg_nc ON etg2.cadastro_usuario.id = etg2.reg_nc.id_user
             WHERE etg2.cadastro_usuario.id = '.$id_usuario.'
         )
-        OR EXISTS (
-            SELECT 1
-            FROM cadastro_usuario
-            RIGHT JOIN etg2.reg_nc ON etg2.cadastro_usuario.id = etg2.reg_nc.id_logistica
-            WHERE etg2.cadastro_usuario.id = '.$id_usuario.'
-        )
+        
         OR EXISTS (
             SELECT 1
             FROM cadastro_usuario
