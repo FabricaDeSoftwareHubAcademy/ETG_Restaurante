@@ -3,6 +3,7 @@ namespace App\Entity;
 
 use App\Db\Banco;
 use App\Entity\NaoConformidade;
+use DateTimeZone;
 use PDOException;
 
 class ResponderChecklist
@@ -84,8 +85,16 @@ class ResponderChecklist
             $obj_banco = new Banco('responder_check'); 
 
             $observacao = $dadosResp["observacao"];
+            
+            $data_hoje = new \DateTime("now");
+            $zona = new \DateTimeZone("Brazil/East");
+
+            $data_hoje->setTimezone($zona);
+            $data_hoje = $data_hoje->format('Y-m-d H:i:s');
+            
+            
             $dados_update  =  [
-                'data_fechamento' => date('Y-m-d H:i:s'),
+                'data_fechamento' => $data_hoje,
                 'observacao_pos' => $observacao
             ];
 
