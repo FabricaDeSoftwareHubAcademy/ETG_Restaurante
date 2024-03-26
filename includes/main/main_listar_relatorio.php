@@ -20,40 +20,25 @@
             <h1>Listar Relatórios</h1>
         </section>
 
-        <!-- <section class="titulos d-flex justify-content-start align-items-end">
-        <a class="btn btn-dark me-2" href="index.php">Relatórios</a>
-        <a class="btn btn-dark" href="login.html">Atualização</a>
-    </section> -->
+        <section class="section_table">
 
 
-            <section class="section_table">
+            <div class="container_tabela">
+                <table class="tabela_nc">
+                    <thead>
+                        <tr class="tr-tabela">
+                            <th id="txt-titulo" scope="col">Nome da sala</th>
+                            <th id="txt-titulo" scope="col">Status</th>
+                            <th id="txt-titulo" scope="col">Datas</th>
+                            <th id="txt-titulo" scope="col">Intervenção</th>
+                            <th id="txt-titulo" scope="col">Docente</th>
+                        </tr>
+                    </thead>
+                        <?=$salas_lista;?>
+                </table>
+            </div>   
 
-
-                <div class="container d-flex p-5">
-                    <table class="table table-white table-striped w-100 h-100">
-                        <thead>
-                            <tr>
-                                <th id="txt-titulo" scope="col">Nome da sala</th>
-                                <th id="txt-titulo" scope="col">Status</th>
-                                <th id="txt-titulo" scope="col">Datas</th>
-                                <th id="txt-titulo" scope="col">Intervenção</th>
-                                <th id="txt-titulo" scope="col">Docente</th>
-                            </tr>
-                        </thead>
-                         <?=$salas_lista?>
-
-                    </table>
-                </div>
-
-
-    </div>
-
-    
-    
-    
-    
-    
-</section>
+        </section>
 
 
 </main>

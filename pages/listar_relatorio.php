@@ -13,13 +13,14 @@ $dados = Relatorio::getTudo();
 // echo '</pre>';
 // exit;
 
+$salas_lista = '';
 foreach($dados as $sala){
-       // var_dump($dados);exit;
 
-    if($sala['qnt_nc'] == 0){
+
+    if($sala['qnt_nc'] == 0 and $sala['conf_logis'] == 's'){
     $salas_lista .='
-        <tbody>
-            <td>
+        <tbody class="body-tabela">
+            <td class="area-sala">
                 <div class="div-td">
                     <img src="../storage/salas/'.$sala['img_sala'].'" alt="img" class="img-td">
                     <p>'.$sala['nome_sala'].'</p>
@@ -32,7 +33,7 @@ foreach($dados as $sala){
             </td>
             <td>
                 <div class="div-td">
-                    <p class="p-data">'.$sala['data_fechamento'].'</p>
+                    <p class="p-data">'.date('d/m/Y', strtotime($sala['data_fechamento'])).'</p>
                 </div>
             </td>
             <td>
@@ -52,10 +53,10 @@ foreach($dados as $sala){
     }
 
     // isset($sala["tem_nao_conformidade"])
-    if($sala['qnt_nc'] > 0){
+    if($sala['conf_logis'] == 'n'){
         $salas_lista .='
-            <tbody>
-                <td>
+            <tbody class="body-tabela">
+                <td class="area-sala">
                     <div class="div-td">
                         <img src="../storage/salas/'.$sala['img_sala'].'" alt="img" class="img-td">
                         <p>'.$sala['nome_sala'].'</p>
@@ -68,7 +69,7 @@ foreach($dados as $sala){
                 </td>
                 <td>
                     <div class="div-td">
-                        <p class="p-data">'.$sala['data_fechamento'].'</p>
+                        <p class="p-data">'.date('d/m/Y', strtotime($sala['data_fechamento'])).'</p>
                     </div>
                 </td>
                 <td>
@@ -86,71 +87,41 @@ foreach($dados as $sala){
                 </td>
             </tbody>';
         }
-        if($sala['qnt_nc'] > 0){
+        if($sala['qnt_nc'] > 0 and $sala['conf_logis'] == 's'){
             $salas_lista .='
-                <tbody>
-                    <td>
-                        <div class="div-td">
-                            <img src="../storage/salas/'.$sala['img_sala'].'" alt="img" class="img-td">
-                            <p>'.$sala['nome_sala'].'</p>
-                        </div>
-                    </td>
-                    <td>
-                        <div class="div-td">
-                            <i class="bi bi-circle-fill"> Em atraso</i>
-                        </div>
-                    </td>
-                    <td>
-                        <div class="div-td">
-                            <p class="p-data">'.$sala['data_fechamento'].'</p>
-                        </div>
-                    </td>
-                    <td>
+            <tbody class="body-tabela">
+                <td class="area-sala">
                     <div class="div-td">
-                            <div class="progress-bar">
-                                <div class="progress"></div>
-                            </div>
-                        <p class="p-progress">Aguardando Logística</p>
+                        <img src="../storage/salas/'.$sala['img_sala'].'" alt="img" class="img-td">
+                        <p>'.$sala['nome_sala'].'</p>
                     </div>
-                    </td>
-                    <td>
-                        <div class="div-td">
-                        <p class="p-docente">'.$sala['nome'].'</p>
+                </td>
+                <td>
+                    <div class="div-td">
+                        <i class="bi bi-circle-fill-yellow"> Em alerta</i>
+                    </div>
+                </td>
+                <td>
+                   <div class="div-td">
+                    <p class="p-data">'.date('d/m/Y', strtotime($sala['data_fechamento'])).'</p>
+                </div>
+                </td>
+                <td>
+                    <div class="div-td">
+                        <div class="progress-bar-alerta">
+                            <div class="progress-alerta"></div>
                         </div>
-                    </td>
-                </tbody>';
+                        <p class="p-progress">Resolvido com intervenção</p>
+                    </div>
+                </td>
+                <td>
+                    <div class="div-td">
+                <p class="p-docente">'.$sala['nome'].'</p>
+                </div>
+                </td>
+            </tbody>';
             }
-            if($sala['qnt_nc'] > 0){
-                $salas_lista .='
-                    <tbody>
-                        <td>
-                            <div class="div-td">
-                                <img src="../storage/salas/'.$sala['img_sala'].'" alt="img" class="img-td">
-                                <p>'.$sala['nome_sala'].'</p>
-                            </div>
-                        </td>
-                        <td>
-                            <div class="div-td">
-                                <i>DESATIVADA</i>
-                            </div>
-                        </td>
-                        <td>
-                            <div class="div-td">
-                                <p class="p-data">'.$sala['data_fechamento'].'</p>
-                            </div>
-                        </td>
-                        <td>
-                        <div class="div-td">
-                            <p class="p-progress">DESATIVADA</p>
-                        </div>
-                        </td>
-                        <td>
-                            <div class="div-td">
-                            <p class="p-docente">'.$sala['nome'].'</p>
-                            </div>
-                        </td>
-                    </tbody>';
-                }
+
 }
 
 
