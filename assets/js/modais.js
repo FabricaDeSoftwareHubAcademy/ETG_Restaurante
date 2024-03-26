@@ -124,10 +124,10 @@ function modalStatus(texto, tipo, callbackFunction = null){
             closeModal() 
         })
 
-        document.querySelector('#close-btn-exclur').addEventListener('click',function(){ 
+        // document.querySelector('#close-btn-excluir').addEventListener('click',function(){ 
             
-            closeModal() 
-        }) 
+        //     closeModal() 
+        // }) 
     } 
     openModal() 
 } 
