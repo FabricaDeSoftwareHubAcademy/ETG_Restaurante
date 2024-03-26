@@ -8,11 +8,12 @@ export class Dom {
         this.dataPerguta = this.objPergunta.getAll()
         this.manipulacao_botoes = []
         this.fotos = []
+        this.contador_limite_fotos_nao_conformidade = 0
     }
 
-    addNaoConfToDataNaoConf(pergunta) {
-        this.dataNaoConf.push(pergunta)
-    }
+    // addNaoConfToDataNaoConf(pergunta) {
+    //     this.dataNaoConf.push(pergunta)
+    // }
 
     showPerguntas() {
         var tipo_preaula = []
@@ -53,7 +54,7 @@ export class Dom {
 
         for (var pergunta of tipo_preaula) {
             if (pergunta["NaoConformidade"]) {
-                this.addNaoConfToDataNaoConf(pergunta)
+                // this.addNaoConfToDataNaoConf(pergunta)  
                 this.criarElementoRespondidoErrado(pergunta["pergunta"], pergunta["id_pergunta"], pergunta) //checando se a pergunta tem uma nao conformidade
                 continue
             }
@@ -78,7 +79,7 @@ export class Dom {
         for (var pergunta of tipo_posaula) {
 
             if (pergunta["NaoConformidade"]) {
-                this.addNaoConfToDataNaoConf(pergunta)
+                // this.addNaoConfToDataNaoConf(pergunta)
                 this.criarElementoRespondidoErrado(pergunta["pergunta"], pergunta["id_pergunta"], pergunta) //checando se a pergunta tem uma nao conformidade
                 continue
             }
@@ -195,7 +196,12 @@ export class Dom {
         botao_correto.className = "bi bi-check"
         botao_correto.style.cursor = "pointer"
         botao_correto.onclick = function() {
-
+            console.log(self_0.dataNaoConf)
+            for (let i = 0; i < self_0.dataNaoConf.length; i++) {
+                if (self_0.dataNaoConf[i]["id_pergunta"] == idPergunta) {
+                    self_0.dataNaoConf.splice(i, 1)
+                }
+            }
 
             
             if (botao_correto.classList.contains("bi-check-circle")) {
@@ -305,6 +311,13 @@ export class Dom {
         botao_incorreto.style.cursor = "pointer"
         
         botao_incorreto.onclick = function() {
+            console.log(self_0.dataNaoConf)
+            for (let i = 0; i < self_0.dataNaoConf.length; i++) {
+                if (self_0.dataNaoConf[i]["id_pergunta"] == idPergunta) {
+                    self_0.chamar_modal_nao_conf(dadosPergunta, botao_incorreto, idPergunta)
+                }
+            }
+
             console.log(self_0.manipulacao_botoes)
             if (botao_incorreto.classList.contains("bi-x-circle")) {
                 botao_incorreto.className = "bi bi-x"
@@ -338,7 +351,14 @@ export class Dom {
         botao_correto.className = "bi bi-check"
         botao_correto.style.cursor = "pointer"
         botao_correto.onclick = function() {
-            console.log(self_0.manipulacao_botoes)
+            console.log(self_0.dataNaoConf)
+            for (let i = 0; i < self_0.dataNaoConf.length; i++) {
+                if (self_0.dataNaoConf[i]["id_pergunta"] == idPergunta) {
+                    self_0.dataNaoConf.splice(i, 1)
+                }
+            }
+            
+
             if (botao_correto.classList.contains("bi-check-circle")) {
                 botao_correto.className = "bi bi-check"
                 botao_correto.style.color = "black"
@@ -416,6 +436,7 @@ export class Dom {
         
         
         cancelButton.onclick = function() {
+
             cancelButton.remove()
             confirmButton.remove()
             modal.style.display = "none"
@@ -427,13 +448,14 @@ export class Dom {
                     self_0.manipulacao_botoes[i]["errado"] = 0
                 }
             }
-            console.log(self_0.manipulacao_botoes)
         }
         
         var confirmButton = document.createElement("button")
         confirmButton.className = "botao-confirmar-submit"
         confirmButton.textContent = "Confirmar"
         confirmButton.onclick = function() {
+            
+
             if (document.querySelector(".descricao_nao_conf").value.trim().length == 0) {                
                 modalStatus("Preencha a descrição", "error", () => {})
                 return
@@ -443,18 +465,41 @@ export class Dom {
                 return 
             }
 
+
             cancelButton.remove()
             confirmButton.remove()
             modal.style.display = "none"
             botao_incorreto.className = "bi bi-x-circle"
             botao_incorreto.style.color = "red"
+            
+            var lista_dados = []
+            // lista_dados["imagens"] = []
+            // lista_dados["dados_pergunta"] = []
+            
+            var imageszinhas = []
+            var div_pai = document.querySelector(".upload-img")
+            var divs_filhas = div_pai.getElementsByTagName("div")
+            for (let i = 0; i < divs_filhas.length; i++) {
+                var img = divs_filhas[i].getElementsByTagName('img')[0];
+                if (img){
+                    imageszinhas.push(img.src);
+                }
+            } 
+            
+            
+            lista_dados["images"] = imageszinhas
+            lista_dados["descricao_n_conf"] = document.querySelector(".descricao_nao_conf").value
+            lista_dados["id_pergunta"] = idPergunta
+            // lista_dados["dados_pergunta"][] = pergunta
+
+            self_0.salvar_modal_nao_conf(lista_dados)
+
             for (let i = 0; i < self_0.manipulacao_botoes.length; i++) {
                 if (self_0.manipulacao_botoes[i]["id"] == idPergunta) {
                     self_0.manipulacao_botoes[i]["certo"] = 0
                     self_0.manipulacao_botoes[i]["errado"] = 1
                 }
             }
-            console.log(self_0.manipulacao_botoes)
         }
  
         divBotoes.appendChild(cancelButton)
@@ -462,30 +507,18 @@ export class Dom {
     }
 
 
-    salvar_modal_nao_conf(textAreaContent, images, dadosPergunta) {
-        
-        var data = {}
+    salvar_modal_nao_conf(param) {
+        var imagens = param["images"]
+        var data = []
         var imagesToPHP = []
     
-        // ARMAZENANDO AS IMAGENS
-        for (let i = 0; i < images.length; i++) {
-            var src = images[i].getAttribute("src")
+        // ARMAZENANDO AS IMAGENScriarLabelIncorreta
 
-            imagesToPHP[i] = src
-        }
-        
-        data["responsavel"] = "logistica"
-        data["NaoConformidade"] = true
-        data["nome_check"] = dadosPergunta["nome_check"]
-        data["id_sala"] = dadosPergunta ["id_sala"]
-        data["id_pergunta"] = dadosPergunta ["id_pergunta"]
-        data["nome_sala"] = dadosPergunta ["nome_sala"]
-        data["pergunta"] = dadosPergunta ["pergunta"]
-        data["textAreaContent"] = textAreaContent
-        data["tipo"] = dadosPergunta ["tipo"]
-        data["imagesToPHP"] = imagesToPHP
-        data["id_realizacao"] = dadosPergunta ["id_realizacao"]
+        data["descricao_n_conformidade"] = param["descricao_n_conf"]
+        data["id_pergunta"] = param["id_pergunta"]
+        data["imagens"] = imagens
         this.dataNaoConf.push(data)
+        console.log(this.dataNaoConf)
 
     }
 
@@ -515,74 +548,82 @@ export class Dom {
     }
 
     loadImagesToPreview(event) {
+        var div_pai = document.querySelector(".upload-img")
+        var divs_filhas = div_pai.getElementsByTagName("div")
+        console.log(divs_filhas.length)
+        if (divs_filhas.length > 4) {
+            modalStatus("Apenas um máximo de três imagens pode ser inserido.", "error", () => {})
+            return
+        }
+
         var self_0 = this
         const MULTIPLE_FILES = event.target.files
         const IMAGES_TO_PROCESS = MULTIPLE_FILES.length
-        if (IMAGES_TO_PROCESS >= 3) {
+        if (IMAGES_TO_PROCESS > 1) {
             modalStatus("Selecione uma imagem de cada vez", "error", () => {})
             return 
         }
-        for (let i = 0; i < IMAGES_TO_PROCESS; i++) {
-            const FILE = MULTIPLE_FILES[i]
-            
-            if (!FILE.type.startsWith("image/")) {
-                continue
-            }
-            
-            const IMG = document.createElement("img")
-            IMG.className = "beluga" 
-            
-            let reader = new FileReader()
 
-            reader.onload = (e) => {
-                IMG.src = e.target.result
-            }
-
-            reader.readAsDataURL(FILE)  
-            
-            
-            
-            var container_img = document.createElement("div")
-            var botao_de_cada_foto = document.createElement("div")
-            let butao = document.createElement("i")
-            var varPreview = document.querySelector(".upload-img")
-            container_img.style.display = "flex"
-            container_img.style.justifyContent = "center"
-            container_img.style.alignItems = "center"
-            container_img.style.margin = "30px 0px 0px 0px"
-            container_img.style.position = "relative"
-            botao_de_cada_foto.style.position = "absolute"
-            botao_de_cada_foto.style.borderRadius = "15px"
-            botao_de_cada_foto.style.width = "6vw"
-            botao_de_cada_foto.style.height = "40px"
-            botao_de_cada_foto.style.backgroundColor = "black"
-            botao_de_cada_foto.style.top = "0%"
-            botao_de_cada_foto.style.right = "0%"
-            botao_de_cada_foto.style.cursor = "pointer"
-            botao_de_cada_foto.style.display = "flex"
-            botao_de_cada_foto.style.justifyContent = "center"
-            botao_de_cada_foto.style.alignItems = "center"
-            
-            
-            IMG.style.maxWidth = "100%"
-            
-            
-            butao.classList.add("bi", "bi-x")
-            butao.style.fontSize = "35px"
-            butao.style.color = "white"
-            // butao.style.fontWeight = "bold"
-            container_img.appendChild(IMG)
-            container_img.appendChild(botao_de_cada_foto)
-            botao_de_cada_foto.appendChild(butao)
-            
-            
-            
-            varPreview.appendChild(container_img)
-            botao_de_cada_foto.onclick = function () {
-                container_img.remove()
-            }
-
+        const FILE = MULTIPLE_FILES[0]
+        
+        if (!FILE.type.startsWith("image/")) {
+            return 
         }
+        
+        const IMG = document.createElement("img")
+        IMG.className = "beluga"
+        
+        let reader = new FileReader()
+
+        reader.onload = (e) => {
+            IMG.src = e.target.result
+        }
+
+        reader.readAsDataURL(FILE)  
+        
+        
+        
+        var container_img = document.createElement("div")
+        var botao_de_cada_foto = document.createElement("div")
+        let butao = document.createElement("i")
+        var varPreview = document.querySelector(".upload-img")
+        container_img.style.display = "flex"
+        container_img.style.justifyContent = "center"
+        container_img.style.alignItems = "center"
+        container_img.style.margin = "30px 0px 0px 0px"
+        container_img.style.position = "relative"
+        botao_de_cada_foto.style.position = "absolute"
+        botao_de_cada_foto.style.borderRadius = "15px"
+        botao_de_cada_foto.style.width = "6vw"
+        botao_de_cada_foto.style.height = "40px"
+        botao_de_cada_foto.style.backgroundColor = "black"
+        botao_de_cada_foto.style.top = "0%"
+        botao_de_cada_foto.style.right = "0%"
+        botao_de_cada_foto.style.cursor = "pointer"
+        botao_de_cada_foto.style.display = "flex"
+        botao_de_cada_foto.style.justifyContent = "center"
+        botao_de_cada_foto.style.alignItems = "center"
+        
+        
+        IMG.style.maxWidth = "100%"
+        
+        
+        butao.classList.add("bi", "bi-x")
+        butao.style.fontSize = "35px"
+        butao.style.color = "white"
+        // butao.style.fontWeight = "bold"
+        container_img.appendChild(IMG)
+        container_img.appendChild(botao_de_cada_foto)
+        botao_de_cada_foto.appendChild(butao)
+        
+        
+        
+        varPreview.appendChild(container_img)
+        botao_de_cada_foto.onclick = function () {
+            container_img.remove()
+        }
+
+        
 
     }
     

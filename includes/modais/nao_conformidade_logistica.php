@@ -19,7 +19,7 @@
             </div>
         <div class="botoes"></div>
         <div class = "upload-img">
-            <input type="file" id="input-file" accept="image/*" multiple style="display: none;">
+            
         </div>
     </div>
 </main>
