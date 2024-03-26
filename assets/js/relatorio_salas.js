@@ -36,7 +36,7 @@ document.addEventListener("DOMContentLoaded", function() {
       data: {
           labels: ['Não Conforme', 'Conforme', 'Intervenção'],
           datasets: [{
-          data: [5, 2, 3 ],
+          data: [50, 30, 3 ],
           backgroundColor: ['#CB1010','#609437' ,'#F3B33D' ],
           borderWidth: 1
           }]
