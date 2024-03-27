@@ -133,7 +133,6 @@
   font-size: 90%;
 }
 
-
 .bi-circle-fill-yellow::before {
   content: "\f287";
   color: #FAA916;
@@ -178,6 +177,7 @@
 }
 
 .body-tabela, th, td {
+  font-size: 15px;
   padding: 8px;
   text-align: left;
   border-bottom: 1px solid #ddd;
