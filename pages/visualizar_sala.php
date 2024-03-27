@@ -34,20 +34,45 @@ $hora_atual=$data_hora[0]["now()"];
 var_dump($hora_atual);
 
 
+
+
+
+
+
+// Duas timestamps de exemplo
+$timestamp1 = strtotime($data_abertura);
+$timestamp2 = strtotime($hora_atual);
+
+// Calcula a diferença em segundos
+$diferenca_segundos = abs($timestamp2 - $timestamp1);
+
+// Converte a diferença para minutos
+$diferenca_minutos = $diferenca_segundos / 60;
+
+// Verifica se a diferença é maior ou igual a 40 minutos
+// if ($diferenca_minutos >= 40) {
+//     echo "A diferença entre as timestamps é igual ou maior que 40 minutos.";
+// } 
+
+
+
+
 if($status[0]['status']=='L'){
-    $btn_checklist = '
-    <div class="botao-padrao-fazer-checklist">
-        <a href="../pages/cadastrar_checklist_preaula.php?id_sala='.$_GET['id_sala'].'">
-            <input type="submit" class="botao-fazer-checklist-submit" value="FAZER CHECKLIST">
-        </a>
-    </div>';
+    if ($diferenca_minutos >= 40) {
+        $btn_checklist = '
+        <div class="botao-padrao-fazer-checklist">
+            <a href="../pages/cadastrar_checklist_preaula.php?id_sala='.$_GET['id_sala'].'">
+                <input type="submit" class="botao-fazer-checklist-submit" value="FAZER CHECKLIST">
+            </a>
+        </div>';
+    }
+    else {
+        echo "A diferença entre as timestamps é menor que 40 minutos.";
+    }
+   
 }
 elseif($status[0]['status']=='A'){
-    if($data_abertura-$hora_atual == 40){
-        // aqui fica a validação do tempo 
-        print("asdsadsa");
-        
-    };
+   
     if($status[0]['responsavel'] ==$_SESSION['id_user'] || $ifreaac){
         $btn_checklist = '
                 <div class="botao-padrao-fazer-checklist">
