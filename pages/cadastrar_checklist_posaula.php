@@ -33,6 +33,7 @@ $perguntaPos = [];
 
 if ($dados_pergunta)
 {
+    
     foreach ($dados_pergunta as $linha)
     { 
         if ($linha["tipo"] == "1" || $linha['tipo'] == '2')

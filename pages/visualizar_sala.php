@@ -23,6 +23,13 @@ $btn_checklist = '';
 $objCheck = new Checklist();
 $teste = $objCheck->getLastCheck($id_sala);
 $status = Sala::getDados(col:'status,responsavel',where:'id = '.$id_sala);
+$responsavel=$status[0]["responsavel"];
+
+
+$data_hora = $objCheck->validar_40_minutos($id_sala,$responsavel);
+var_dump($data_hora);
+$data_abertura=$data_hora[0]["data_abertura"];
+var_dump($data_abertura);
 
 if($status[0]['status']=='L'){
     $btn_checklist = '
@@ -33,12 +40,19 @@ if($status[0]['status']=='L'){
     </div>';
 }
 elseif($status[0]['status']=='A'){
+    if($data_hora){
+        // aqui fica a validação do tempo 
+        
+    };
     if($status[0]['responsavel'] ==$_SESSION['id_user'] || $ifreaac){
         $btn_checklist = '
                 <div class="botao-padrao-fazer-checklist">
                     <a href="../pages/cadastrar_checklist_posaula.php?id_sala='.$_GET['id_sala'].'"><input type="submit" class="botao-fazer-checklist-submit"  value="PÓS AULA"></a>
                 </div>';
-    }
+    };
+    // else(
+    //     //modal de falta tempo ainda !
+    // ){};
 }
 
 
