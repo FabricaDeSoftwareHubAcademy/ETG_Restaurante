@@ -13,7 +13,6 @@
         <section class="teste">
             <div class="testePrimeiraSecao">
                     <div id="user_relatorio" class="user_relatorio">
-                        <!-- <div class="user-report"><i class="bi bi-person-square"></i>Usuários<i class="fa fa-chevron-down"></i></div> -->
                         <select name="" id="" class="link">
                         <option selected>Usuários</option>
                         <?php
@@ -70,6 +69,13 @@
                     </div>
                     <div class="grafico_qtd">
                         <canvas id="Chart"></canvas>
+                    </div>
+
+                    <div class="dashboard-card">
+                        <div class="dashboard-card-content">
+                            <h3>3,536</h3>
+                            <p>Checklists</p>
+                        </div>
                     </div>
    
                     <section class="area-botao">
