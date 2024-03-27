@@ -1,8 +1,12 @@
 import { Dom } from './Dom.js';
 
- var preenchidas = perguntasJson.length;
-// console.log(preenchidas);
-console.log(perguntasJson)
+var preenchidas = perguntasJson.length;
+for (let i = 0; i < perguntasJson.length; i++) {
+    if (perguntasJson[i]["tipo"] == 2) {
+        preenchidas++
+    }
+}
+console.log(preenchidas)
 var NaoConformidades = [];
 const DOM = new Dom(NaoConformidades);
 
@@ -16,10 +20,10 @@ buttonSubmit.addEventListener("click", async function(event) {
     var todas_n_conf = document.querySelectorAll('.bi-x-circle[id="este_e_da_pergunta"]')
     var todas_corretas = document.querySelectorAll('.bi-check-circle[id="este_e_da_pergunta"]')
     var total = (todas_n_conf.length + todas_corretas.length)
-    // console.log(total)
+    console.log(total)
     // console.log(todas_n_conf);
     console.log(todas_corretas);
-    if (total != preenchidas) {
+    if (!(total >= preenchidas)) {
         modalStatus("Responda todas as perguntas", "error")
     } else {
         modalStatus("DEU CERTO", "success")
