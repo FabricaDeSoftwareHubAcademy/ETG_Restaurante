@@ -257,7 +257,7 @@
             if (response.status == "OK") {
                 modalStatus('Pergunta cadastrada com sucesso!', 'success');
                 closePopup1()
-                listarPerguntas()
+                listarPerguntas()   
                 atualizarPagina() 
 
             } else {
