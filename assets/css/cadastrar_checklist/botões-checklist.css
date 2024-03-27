@@ -75,4 +75,49 @@
       color: var(--cor-primaria-botao-white);
   }
   
-  
+
+@media (max-width: 600px) {
+    .botao-cadastrar-submit{
+        width: 155px;
+        height: 40px;
+    }
+    .botao-voltar-submit{
+        width: 155px;
+        height: 40px;
+    }
+}
+
+@media (max-width: 560px) {
+    .botao-cadastrar-submit{
+        width: 135px;
+        height: 40px;
+        font-size: 13px;
+    }
+    .botao-voltar-submit{
+        width: 135px;
+        height: 40px;
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 415px) {
+    .botao-cadastrar-submit{
+        width: 120px;
+    }
+    .botao-voltar-submit{
+        width: 120px;
+    }
+}
+
+@media (max-width: 360px) {
+    .botao-cadastrar-submit{
+        width: 105px;
+        height: 39px;
+        font-size: 12px;
+    }
+    .botao-voltar-submit{
+        width: 105px;
+        height: 39px;
+        font-size: 12px;
+    }
+}
