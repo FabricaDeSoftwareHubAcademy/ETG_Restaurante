@@ -27,11 +27,11 @@ $responsavel=$status[0]["responsavel"];
 
 
 $data_hora = $objCheck->validar_40_minutos($id_sala,$responsavel);
-var_dump($data_hora);
+// var_dump($data_hora);
 $data_abertura=$data_hora[0]["data_abertura"];
-var_dump($data_abertura);
+// var_dump($data_abertura);
 $hora_atual=$data_hora[0]["now()"];
-var_dump($hora_atual);
+// var_dump($hora_atual);
 
 
 
@@ -57,63 +57,35 @@ $diferenca_minutos = $diferenca_segundos / 60;
 
 
 
+
+//A partir da qui é antes do copiar e colar. 
+
 if($status[0]['status']=='L'){
-    if ($diferenca_minutos >= 40) {
-        $btn_checklist = '
-        <div class="botao-padrao-fazer-checklist">
-            <a href="../pages/cadastrar_checklist_preaula.php?id_sala='.$_GET['id_sala'].'">
-                <input type="submit" class="botao-fazer-checklist-submit" value="FAZER CHECKLIST">
-            </a>
-        </div>';
-    }
-    else {
-        echo "A diferença entre as timestamps é menor que 40 minutos.";
-    }
-   
+    $btn_checklist = '
+    <div class="botao-padrao-fazer-checklist">
+        <a href="../pages/cadastrar_checklist_preaula.php?id_sala='.$_GET['id_sala'].'">
+            <input type="submit" class="botao-fazer-checklist-submit" value="FAZER CHECKLIST">
+        </a>
+    </div>';
 }
 elseif($status[0]['status']=='A'){
-   
-    if($status[0]['responsavel'] ==$_SESSION['id_user'] || $ifreaac){
+    // if($diferenca_minutos >= 40){
+    //     // print("entrou no if ");
+    //     // var_dump($diferenca_minutos);
+        
+    // };
+    if($status[0]['responsavel'] ==$_SESSION['id_user'] || $ifreaac && $diferenca_minutos >= 40 ){
+        print("entrou no if ");
         $btn_checklist = '
                 <div class="botao-padrao-fazer-checklist">
                     <a href="../pages/cadastrar_checklist_posaula.php?id_sala='.$_GET['id_sala'].'"><input type="submit" class="botao-fazer-checklist-submit"  value="PÓS AULA"></a>
                 </div>';
     };
-    // else(
-    //     //modal de falta tempo ainda !
-    // ){};
+    else(
+        echo "<script>modalStatus()</script>";
+    ){};
 }
 
-
-
-
-// if (isset($teste[0]["data_abertura"]) == null) {
-//     $btn_checklist = '
-//     <div class="botao-padrao-fazer-checklist">
-//         <a href="../pages/cadastrar_checklist_preaula.php?id_sala='.$_GET['id_sala'].'">
-//             <input type="submit" class="botao-fazer-checklist-submit" value="FAZER CHECKLIST">
-//         </a>
-//     </div>';
-// }else{
-    
-//     if($teste[0]["data_fechamento"] != null){
-    
-//         $btn_checklist = '
-//         <div class="botao-padrao-fazer-checklist">
-//             <a href="../pages/cadastrar_checklist_preaula.php?id_sala='.$_GET['id_sala'].'"><input type="submit" class="botao-fazer-checklist-submit"  value="FAZER CHECKLIST"></a>
-//         </div>';
-//     }else{ 
-    
-//         $btn_checklist = '
-//         <div class="botao-padrao-fazer-checklist">
-//             <a href="../pages/cadastrar_checklist_posaula.php?id_sala='.$_GET['id_sala'].'"><input type="submit" class="botao-fazer-checklist-submit"  value="PÓS AULA"></a>
-//         </div>';
-    
-//     }
-// }
-
-// print_r($dados);
-// echo($dados['funcionamento']);
 $funcionamento = json_decode($dados[0]['horarios'], true);
 // print_r($funcionamento);
 
