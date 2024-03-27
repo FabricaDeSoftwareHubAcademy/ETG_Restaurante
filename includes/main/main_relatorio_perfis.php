@@ -1,29 +1,26 @@
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
-<link rel="stylesheet" href="../assets/css/relatorio_user.css">
-<link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
-<script src="../assets/js/relatorio_user.js" defer></script>
-<script src="../assets/js/modais.js"></script>
-
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../assets/css/relatorio_perfis.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <script src="../assets/js/relatorio_perfis.js" defer></script>
     
 
 <body class="paidetodos">
 <main class="report_principal">
-        <h1 class="titulo_filtros">Relatório Usuários</h1>
+        <h1 class="titulo_filtros">Relatório Perfis</h1>
 
         <section class="teste">
             <div class="testePrimeiraSecao">
                     <div id="user_relatorio" class="user_relatorio">
+                        <!-- <div class="user-report"><i class="bi bi-person-square"></i>Usuários<i class="fa fa-chevron-down"></i></div> -->
                         <select name="" id="" class="link">
-                        <option selected>Selecione o Usuário</option>
+                        <option selected>Perfis</option>
                         <?php
                             foreach($dadosUsuario as $row) {
                                 echo 
                                 "
-                                <option value=31>".$row["nome"]."</option>
+                                <option>".$row["nome"]."</option>
                                 ";
                             }
                             ?>
@@ -61,10 +58,10 @@
                         </div>
 
 
+                        </div>
                     </div>
-            </div>
-        </div>
-            
+                </div>
+           
         </section>
        
             <div class="card_grafic">
@@ -73,13 +70,6 @@
                     </div>
                     <div class="grafico_qtd">
                         <canvas id="Chart"></canvas>
-                    </div>
-
-                    <div class="dashboard-card">
-                        <div class="dashboard-card-content">
-                            <h3>3,536</h3>
-                            <p>Checklists</p>
-                        </div>
                     </div>
    
                     <section class="area-botao">
