@@ -21,6 +21,7 @@ export class Dom {
 
         for (let pergunta of this.dataPerguta) {
             // console.log(pergunta["tipo"])
+
             if (pergunta["tipo"] == "0") {
                 tipo_preaula.push(pergunta)
                 continue
@@ -36,7 +37,8 @@ export class Dom {
             // }
 
         }
-
+        var observacao_pre_aula = this.dataPerguta[0]["observacao"]
+        var observacao_pos_aula = this.dataPerguta[0]["observacao_pos"]
 
         var div_perguntas_pre = document.createElement("div")
         div_perguntas_pre.style.width = "100%"
@@ -86,9 +88,22 @@ export class Dom {
             this.criarElementoRespondidoCerto(pergunta["pergunta"], pergunta["id_pergunta"], pergunta)
             
         }
+        var div_do_titulo = document.createElement("div")
+        div_do_titulo.style.display = "flex"
+        div_do_titulo.style.justifyContent = "center"
+        div_do_titulo.style.alignItems = "center"
+        div_do_titulo.style.width = "75%"
+        div_do_titulo.style.padding = "15px"
+        div_do_titulo.style.marginLeft = "53px"
+        var titulo_observacao_pre = document.createElement("p")
+        titulo_observacao_pre.textContent = "Observação Pré Aula"
+        titulo_observacao_pre.style.fontSize = "20px"
+        titulo_observacao_pre.style.fontWeight = "bold"
+        div_do_titulo.appendChild(titulo_observacao_pre)
         var campo_observacoes = document.createElement("div")
         campo_observacoes.style.width = "100%"
         campo_observacoes.style.minHeight = "100px"
+        campo_observacoes.appendChild(div_do_titulo)
         // campo_observacoes.style.display = "flex"
         // campo_observacoes.style.justifyContent = "flex-start"
         var texto_observacoes = document.createElement("div")
@@ -101,7 +116,44 @@ export class Dom {
         texto_observacoes.style.padding = "15px"
         texto_observacoes.style.marginLeft = "53px"
 
+        var texto_que_realmente_e_texto_observacoes = document.createElement("p")
+        texto_que_realmente_e_texto_observacoes.style.width = "100%"
+        texto_que_realmente_e_texto_observacoes.style.height = "100%"
+        texto_que_realmente_e_texto_observacoes.style.wordWrap = "break-word"
 
+        
+        texto_que_realmente_e_texto_observacoes.textContent = observacao_pre_aula
+        texto_observacoes.appendChild(texto_que_realmente_e_texto_observacoes)
+        campo_observacoes.appendChild(texto_observacoes)
+        document.querySelector(".list-pre-aula").appendChild(campo_observacoes)
+
+        var div_do_titulo = document.createElement("div")
+        div_do_titulo.style.display = "flex"
+        div_do_titulo.style.justifyContent = "center"
+        div_do_titulo.style.alignItems = "center"
+        div_do_titulo.style.width = "75%"
+        div_do_titulo.style.padding = "15px"
+        div_do_titulo.style.marginLeft = "53px"
+        var titulo_observacao_pre = document.createElement("p")
+        titulo_observacao_pre.textContent = "Observação Pos Aula"
+        titulo_observacao_pre.style.fontSize = "20px"
+        titulo_observacao_pre.style.fontWeight = "bold"
+        div_do_titulo.appendChild(titulo_observacao_pre)
+        var campo_observacoes = document.createElement("div")
+        campo_observacoes.style.width = "100%"
+        campo_observacoes.style.minHeight = "100px"
+        campo_observacoes.appendChild(div_do_titulo)
+        // campo_observacoes.style.display = "flex"
+        // campo_observacoes.style.justifyContent = "flex-start"
+        var texto_observacoes = document.createElement("div")
+        texto_observacoes.style.border = "solid black 1px"
+        // texto_observacoes.style.backgroundColor = "red"
+        texto_observacoes.style.borderRadius = "15px"
+        texto_observacoes.style.width = "75%"
+        texto_observacoes.style.height = "100%"
+        // texto_observacoes.style.textAlign = "justify"
+        texto_observacoes.style.padding = "15px"
+        texto_observacoes.style.marginLeft = "53px"
 
         var texto_que_realmente_e_texto_observacoes = document.createElement("p")
         texto_que_realmente_e_texto_observacoes.style.width = "100%"
@@ -109,7 +161,7 @@ export class Dom {
         texto_que_realmente_e_texto_observacoes.style.wordWrap = "break-word"
 
         
-        texto_que_realmente_e_texto_observacoes.textContent = "observacaoobservacaoobservacaoobservacaoobservacaoobservacaoobservacaoobservacaoobservacao"
+        texto_que_realmente_e_texto_observacoes.textContent = observacao_pos_aula
         texto_observacoes.appendChild(texto_que_realmente_e_texto_observacoes)
         campo_observacoes.appendChild(texto_observacoes)
         document.querySelector(".list-pre-aula").appendChild(campo_observacoes)
