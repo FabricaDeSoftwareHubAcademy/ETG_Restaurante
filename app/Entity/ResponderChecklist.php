@@ -4,6 +4,7 @@ namespace App\Entity;
 use App\Db\Banco;
 use App\Entity\NaoConformidade;
 use PDOException;
+use PDO ;
 
 class ResponderChecklist
 {
@@ -216,5 +217,10 @@ class ResponderChecklist
         $obj_banco = new Banco('responder_check');
         $dados = ["conf_logis" => "s"];
         $obj_banco -> update('id = "'.$id_responder_checklist.'"', $dados);
+    }
+
+    public static function getObservacao($id_realiza) {
+        $obj_banco = new Banco('responder_check');
+        return [$obj_banco->select("id = ".$id_realiza)->fetchAll(PDO::FETCH_ASSOC)["observacao"], $obj_banco->select("id = ".$id_realiza)->fetchAll(PDO::FETCH_ASSOC)["observacao_pos"]];
     }
 }
