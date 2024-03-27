@@ -1,8 +1,8 @@
 *{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Montserrat";
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat";
 }
 
 .body-listar-relatorio{
@@ -14,18 +14,18 @@
 
 
 .main_listar_relatorio{
-    margin-top: 2%; /* 50px*/
-    overflow-y: scroll;
-    overflow-x: hidden;
-    scrollbar-color: #F28920;
-    max-height: 60vh; /*60vh*/
-}
+  margin-top: 2%; 
+  overflow-y: scroll;
+  overflow-x: hidden;
+  scrollbar-color: #F28920;
+  max-height: 60vh; 
+} 
 
 .main_listar_relatorio::-webkit-scrollbar{
-    width: 8px;
-    background-color: #eeeeee;
-    border-radius: 10px;
-  }
+  width: 8px;
+  background-color: #eeeeee;
+  border-radius: 10px;
+}
   
   .main_listar_relatorio::-webkit-scrollbar-thumb{
   background-color: #F28920;
@@ -33,23 +33,25 @@
   } 
 
 .titulos{
-    display: flex;
-    justify-content: space-evenly;    
+  display: flex;
+  justify-content: space-evenly;    
 }
 
 .img-td{
-    width: 50px;
-    height: 50px;
+  width: 80px;
+  height: 70px;
+  border-radius: 15px;
 }
 
 .div-td{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+  display: flex;
+  width: 90%;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
-.titulos {
+.titulos{
   display: flex;
   justify-content: flex-start;
   align-items: flex-end;
@@ -72,39 +74,15 @@
 
 .p-status{
   margin-top: 3%;
-}
+} 
 
 .section_table {
-  background-color: white; /* Troca o cinza pelo branco */
-}
-
-.table {
-  border-collapse: collapse; /* Remove a separação entre as células */
-  width: 100%;
-}
-
-.table th,
-.table td {
-  border: 1px solid #dddddd; /* Adiciona linhas para separar as células */
-  padding: 8px;
+  background-color: white; 
 }
 
 .table th {
-  background-color: #f2f2f2; /* Cor de fundo das células de cabeçalho */
-  color: black; /* Cor do texto do cabeçalho */
-}
-
-.table-striped tbody tr:nth-of-type(odd) {
-  background-color: #f9f9f9; /* Cor de fundo das linhas ímpares */
-}
-
-.table-striped>tbody>tr:nth-of-type(odd)>* {
-  --bs-table-color-type: var(--bs-table-striped-color);
-  --bs-table-bg-type: white;
-}
-
-.p-data{
-  margin-top: 15%;
+  background-color: #f2f2f2; 
+  color: black; 
 }
 
 .progress-bar {
@@ -155,7 +133,6 @@
   font-size: 90%;
 }
 
-
 .bi-circle-fill-yellow::before {
   content: "\f287";
   color: #FAA916;
@@ -187,4 +164,28 @@
   height: 100%;
   background-color: #609437; 
   transition: width 0.5s ease-in-out;
+}
+
+.container_tabela{
+  margin-top: 5%;
+}
+
+.tabela_nc{
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.body-tabela, th, td {
+  font-size: 15px;
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+
+@media screen and (max-width: 600px) {
+  .body-tabel, th, td {
+    padding: 4px;
+  }
 }
