@@ -97,13 +97,13 @@ class NaoConformidade
                 foreach($nc_user as $row){
 
                     $row['qnt_nc'] > 0  ? $countNC += 1 : $countC += 1; 
-                    // $obRegC = new Banco('reg_correcao');
-                    // $regsCorrecao = $obRegC->select('reg_NC_id = "'.$nc_user[].'"');
+                    $row['qnt_c'] > 0 ? $countCorrecao += 1 : $countCorrecao+= 0;
+                  
 
                 }
-                return [$nc_user, ['countNC' => $countNC, 'countC' => $countC]];
+                return [$nc_user, ['countNC' => $countNC, 'countC' => $countC, 'countCorrecao' => $countCorrecao]];
             }else{
-                return [[], ['countNC' => 0, 'countC' => 0]];
+                return [[], ['countNC' => 0, 'countC' => 0, 'countCorrecao' => 0]];
             } 
             
         } 

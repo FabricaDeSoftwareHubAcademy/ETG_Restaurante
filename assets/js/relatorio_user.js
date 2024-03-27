@@ -23,8 +23,8 @@ document.addEventListener("DOMContentLoaded", function() {
   
     usersAccordionItems.forEach(item => {
         item.addEventListener('click', function() {
-            const submenu = this.nextElementSibling;
-            toggleSubmenu(submenu);
+          const submenu = this.nextElementSibling;
+          toggleSubmenu(submenu);
         });
     });
   });
@@ -36,7 +36,7 @@ document.addEventListener("DOMContentLoaded", function() {
       data: {
           labels: ['Não Conforme', 'Conforme', 'Intervenção'],
           datasets: [{
-          data: [countNC, countC, 3 ],
+          data: [countNC, countC, countCorrecao],
           backgroundColor: ['#CB1010','#609437' ,'#F3B33D' ],
           borderWidth: 1
           }]
@@ -52,7 +52,7 @@ document.addEventListener("DOMContentLoaded", function() {
           labels: ['Não Conforme', 'Conforme', 'Intervenção'],
           datasets: [{
             label: 'Vizualizar quantidade',
-            data: [12, 19, 3],
+            data: [countNC, countC, countCorrecao],
             backgroundColor: ['#CB1010','#609437' ,'#F3B33D' ],
             borderWidth: 1
           }]
@@ -69,9 +69,11 @@ document.addEventListener("DOMContentLoaded", function() {
   
   var xhr = new XMLHttpRequest();
   
-  
-  
-  
+$('#select_user').on('change',(e)=>{
+
+  console.log(e.target.value)
+
+})
   
   
   

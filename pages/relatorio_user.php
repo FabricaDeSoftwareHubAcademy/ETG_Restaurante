@@ -24,6 +24,7 @@ $dados_checklist = Checklist::getChecklist();
 
 $qntNC = 0;
 $qntC = 0 ;
+$qntCorrecao = 0;
 
 if(isset($_POST['btn_submit_relatorio'])){
 
@@ -41,6 +42,7 @@ if(isset($_POST['btn_submit_relatorio'])){
     if($result){ 
         $qntC = $result[1]['countC'];
         $qntNC = $result[1]['countNC'];
+        $qntCorrecao = $result[1]['countCorrecao'];
     }
      
     
@@ -48,7 +50,7 @@ if(isset($_POST['btn_submit_relatorio'])){
 
 
 }
-
+ 
 
  
 require("../includes/main/main_relatorio_usuario.php");
