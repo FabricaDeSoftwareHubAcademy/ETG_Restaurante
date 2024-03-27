@@ -30,6 +30,9 @@ $data_hora = $objCheck->validar_40_minutos($id_sala,$responsavel);
 var_dump($data_hora);
 $data_abertura=$data_hora[0]["data_abertura"];
 var_dump($data_abertura);
+$hora_atual=$data_hora["now()"];
+var_dump($hora_atual);
+
 
 if($status[0]['status']=='L'){
     $btn_checklist = '
@@ -40,7 +43,7 @@ if($status[0]['status']=='L'){
     </div>';
 }
 elseif($status[0]['status']=='A'){
-    if($data_hora){
+    if($data_abertura){
         // aqui fica a validação do tempo 
         
     };
