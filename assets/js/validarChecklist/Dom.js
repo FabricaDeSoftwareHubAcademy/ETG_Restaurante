@@ -23,17 +23,21 @@ export class Dom {
 
             if (pergunta["tipo"] == "0") {
                 tipo_preaula.push(pergunta)
+
                 continue
             }
             else if (pergunta["tipo"] == "1") {
                 tipo_posaula.push(pergunta)
+
                 continue
             }
 
-            // else if (pergunta["tipo"] == "2") {
-            //     tipo_preaula.push(pergunta)
-            //     tipo_posaula.push(pergunta)
-            // }
+            else if (pergunta["tipo"] == "2") {
+
+                tipo_preaula.push(pergunta)
+                tipo_posaula.push(pergunta)
+            }
+
 
         }
         
@@ -54,7 +58,9 @@ export class Dom {
         var container_pai = document.querySelector(".list-pre-aula")
         container_pai.appendChild(div_perguntas_pre)
 
+        var coutador_pre = 0
         for (var pergunta of tipo_preaula) {
+            coutador_pre++
             if (pergunta["NaoConformidade"]) {
                 // this.addNaoConfToDataNaoConf(pergunta)  
                 this.criarElementoRespondidoErrado(pergunta["pergunta"], pergunta["id_pergunta"], pergunta) //checando se a pergunta tem uma nao conformidade
@@ -62,7 +68,6 @@ export class Dom {
             }
             this.criarElementoRespondidoCerto(pergunta["pergunta"], pergunta["id_pergunta"], pergunta)
         }
-
 
         var div_perguntas_pos = document.createElement("div")
         div_perguntas_pos.style.width = "100%"
