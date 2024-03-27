@@ -20,6 +20,7 @@ $dadosSala = Sala::getDadosById($idSala)[0];
 
 $perguntas = $objValidarChecklist -> getPerguntas(idSala: $idSala);
 $observacao = ResponderChecklist::getObservacao($idResponderCheck);
+// var_dump($observacao);exit;
 // $perguntas["id_realizacao"] = $idResponderCheck;
 $id_sala = 0;
 foreach ($perguntas as &$row) {

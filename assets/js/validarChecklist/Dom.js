@@ -36,8 +36,9 @@ export class Dom {
             // }
 
         }
-        var observacao_pre_aula = this.dataPerguta[0]["observacao"]
-        var observacao_pos_aula = this.dataPerguta[0]["observacao_pos"]
+        
+        var observacao_pre_aula = this.dataPerguta[0]["observacoes"][0]
+        var observacao_pos_aula = this.dataPerguta[0]["observacoes"][1]
 
         var div_perguntas_pre = document.createElement("div")
         div_perguntas_pre.style.width = "100%"

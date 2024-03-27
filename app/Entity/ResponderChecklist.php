@@ -238,6 +238,8 @@ class ResponderChecklist
 
     public static function getObservacao($id_realiza) {
         $obj_banco = new Banco('responder_check');
-        return [$obj_banco->select("id = ".$id_realiza)->fetchAll(PDO::FETCH_ASSOC)["observacao"], $obj_banco->select("id = ".$id_realiza)->fetchAll(PDO::FETCH_ASSOC)["observacao_pos"]];
+        $pre = $obj_banco->select("id = ".$id_realiza)->fetchAll(PDO::FETCH_ASSOC)[0]["observacao"];
+        $pos = $obj_banco->select("id = ".$id_realiza)->fetchAll(PDO::FETCH_ASSOC)[0]["observacao_pos"];
+        return [$pre, $pos];
     }
 }
