@@ -7,8 +7,12 @@
 <link rel="stylesheet" href="../assets/css/editar_usuario/editar_usuario.css">
 <script src="https://code.jquery.com/jquery-3.7.0.js"integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM="crossorigin="anonymous"></script>
 <script scr="../assets/js/modais.js"></script>
+<script defer src="../assets/js/exibir_foto.js"></script>
 
 <body class="pai-de-todos1">
+    <div id="overlay_imagem">
+        <div id="imagemExpandida" onclick="fecharImagemMaior()"></div>
+    </div>
     <main class="pai-de-todos">
         <form  class="form-minha-conta" method="POST" enctype="multipart/form-data">
             <section class="titulo">
@@ -19,7 +23,7 @@
             <div>
                 <section class="quadrado-perfil">
                     <div class="foto-perfil">
-                        <img id="img_user" src="../assets/imgs/users/<?=$foto?>" alt="">
+                        <img class="img_user" id="imagem" onclick="exibirImagemMaior()" src="../assets/imgs/users/<?=$foto?>" alt="">
                     </div>
                 </section>
                 
