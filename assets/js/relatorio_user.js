@@ -30,13 +30,13 @@ document.addEventListener("DOMContentLoaded", function() {
   });
   
   const ctx = document.getElementById('myChart');
-            
+      
       new Chart(ctx, {
       type: 'doughnut',
       data: {
           labels: ['Não Conforme', 'Conforme', 'Intervenção'],
           datasets: [{
-          data: [5, 2, 3 ],
+          data: [countNC, countC, 3 ],
           backgroundColor: ['#CB1010','#609437' ,'#F3B33D' ],
           borderWidth: 1
           }]
