@@ -17,7 +17,12 @@
     <main class="main_listar_relatorio">
 
         <section class="section_titulo">
-            <h1>Listar Relatórios</h1>
+            <h1 class="titulo-tela">Informações administrativas</h1>
+        </section>
+
+        <section class="buttons-up">
+            <button class="buttons-upp"><a href="../pages/relatorio.php">Relatórios</a></button>
+            <button class="buttons-upp" onClick="window.location.reload()">Atualizar</button>
         </section>
 
         <section class="section_table">
@@ -40,8 +45,14 @@
 
         </section>
 
-
-</main>
+        
+    </main>
+    <section class="buttons">
+                <!--Botão Voltar-->
+        <div class="botao-padrao-voltar">
+            <a href="../pages/listar_recados.php"><input type="submit" class="botao-voltar-link"  value="VOLTAR"></a>
+        </div>
+    </section>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 
