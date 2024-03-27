@@ -3,15 +3,24 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Montserrat";
+  text-decoration: none;
 }
+
+:root{
+  --cor-primaria-botao-white: white; 
+  --cor-primaria-botao-green: green;
+  --cor-primaria-botao-red:   red;
+  --cor-primaria-botao-yellow:rgba(255, 199, 0, 1);
+  --cor-primaria-botao-blue:  rgba(6, 74, 140, 1);
+  ;
+}
+
 
 .body-listar-relatorio{
   max-width: 832px;
   margin: 0 auto;
   position: relative;
 }
-
-
 
 .main_listar_relatorio{
   margin-top: 2%; 
@@ -133,7 +142,6 @@
   font-size: 90%;
 }
 
-
 .bi-circle-fill-yellow::before {
   content: "\f287";
   color: #FAA916;
@@ -178,11 +186,74 @@
 }
 
 .body-tabela, th, td {
+  font-size: 15px;
   padding: 8px;
   text-align: left;
   border-bottom: 1px solid #ddd;
 }
 
+
+.titulo-tela{
+  font-size: 180%;
+}
+
+.buttons{
+  margin-top: 10%;
+}
+
+.botao-padrao-voltar {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.botao-voltar-link {
+  /* width: 110px; */
+  display: inline-block;
+  padding: 12px 60px;
+  background-color: var(--cor-primaria-botao-white);
+  border: 3px solid var(--cor-primaria-botao-yellow);
+  border-radius: 20px;
+  cursor: pointer;
+  color: var(--cor-primaria-botao-yellow);
+  font-family: 'Montserrat', sans-serif; /* Corrigir a propriedade font-family */
+  font-weight: bold;
+  font-size: 15px;
+  text-decoration: none; /* Adicionar sublinhado ao texto do link */
+}
+
+.botao-voltar-link:hover {
+  transition: all 0.4s;
+  background-color: var(--cor-primaria-botao-yellow);
+  color: var(--cor-primaria-botao-white);
+} -->
+
+.buttons-up{
+  margin-top: 5%;
+}
+
+.buttons-upp{
+  border-radius: 20px;
+  width: 20%;
+  height: 40px;
+  background-color: rgb(87, 83, 83);
+  color: white;
+  font-weight: bold;
+  font-family: "Montserrat";
+  border: 2px solid rgb(87, 83, 83) ; 
+  text-decoration: none;
+}
+
+
+.buttons-upp:hover{
+  background-color: rgb(151, 149, 149);
+  border: 2px solid rgb(87, 83, 83) ;
+}
+
+a{
+  color: white;
+}
 
 @media screen and (max-width: 600px) {
   .body-tabel, th, td {
