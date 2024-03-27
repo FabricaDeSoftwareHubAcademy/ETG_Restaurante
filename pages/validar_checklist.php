@@ -47,7 +47,7 @@ foreach ($perguntas as &$row) {
 
 // var_dump($perguntas);exit;
 $perguntasJson = json_encode($perguntas);
-//não tenho tempo pra estruturar então vou só mandar por aqui mesmo
+// não tenho tempo pra estruturar então vou só mandar por aqui mesmo
 $id_sala = json_decode($id_sala);
  
 
