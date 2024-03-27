@@ -25,17 +25,19 @@ foreach ($perguntas as &$row) {
     $id_sala = $row["id_sala"]; 
     $NaoConformidade = $objValidarChecklist -> hasNaoConf(idPergunta: $row["id_pergunta"], idRealiza: $idResponderCheck);
     $row["id_realizacao"] = $idResponderCheck;
-    if ($NaoConformidade != false) {
-        // var_dump($NaoConformidade);exit;
-        $row["textAreaContent"] = $NaoConformidade[1]["descricao_NC"];
+    if ($NaoConformidade[0] == true) {
+        $dados = $NaoConformidade[1];
+        // var_dump($dados);exit;
         $row["imagesToPHP"] = [
-            0 => $NaoConformidade[1]["img1"],
-            1 => $NaoConformidade[1]["img2"],
-            2 => $NaoConformidade[1]["img3"]
+            0 => $dados["img1"],
+            1 => $dados["img2"],
+            2 => $dados["img3"]
         ];
-        $row["id_nao_conformidade"] = $NaoConformidade[1]["id"];
+        $row["descricao_nao_confirmidade_docente"] = $dados["descricao_NC"];
+        $row["id_nao_conformidade"] = $dados["id"];
         $row["NaoConformidade"] = true;
         $row["responsavel"] = "docente";
+
     }
 
 
@@ -52,6 +54,7 @@ echo('<script>
       </script>');
 
 require("../includes/modais/nao_conformidade_logistica.php");
+require("../includes/modais/mostrar_nao_conformidade.php");
 require("../includes/main/main_validar_checklist.php");
 require("../includes/footer/footer.php");
 ?>
