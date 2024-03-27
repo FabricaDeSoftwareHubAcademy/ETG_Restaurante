@@ -163,9 +163,17 @@ export class Dom {
 
         var self_0=this
         botao_incorreto.onclick = function() {
-            console.log(self_0.manipulacao_botoes)
-            if (botao_incorreto.classList.contains("bi-check-circle")) {
-                botao_incorreto.className = "bi bi-check"
+            console.log(self_0.dataNaoConf)
+            for (let i = 0; i < self_0.dataNaoConf.length; i++) {
+                if (self_0.dataNaoConf[i]["id_pergunta"] == idPergunta) {
+                    self_0.dataNaoConf.splice(i, 1)
+                }
+            }
+        
+
+
+            if (botao_incorreto.classList.contains("bi-x-circle")) {
+                botao_incorreto.className = "bi bi-x"
                 botao_incorreto.style.color = "black"
                 for (let i = 0; i < self_0.manipulacao_botoes.length; i++) {
                     if (self_0.manipulacao_botoes[i]["id"] == idPergunta) {
@@ -174,7 +182,7 @@ export class Dom {
                     }
                 }
             } else {
-                botao_incorreto.className = "bi-check-circle"
+                botao_incorreto.className = "bi-x-circle"
                 botao_incorreto.style.color = "red"
                 self_0.chamar_modal_nao_conf(dadosPergunta, botao_incorreto, idPergunta)
                 for (let i = 0; i < self_0.manipulacao_botoes.length; i++) {
@@ -188,6 +196,8 @@ export class Dom {
                     botao_correto.style.color = "black"
                 }
             }
+
+
         }
 
 
@@ -314,11 +324,13 @@ export class Dom {
             console.log(self_0.dataNaoConf)
             for (let i = 0; i < self_0.dataNaoConf.length; i++) {
                 if (self_0.dataNaoConf[i]["id_pergunta"] == idPergunta) {
-                    self_0.chamar_modal_nao_conf(dadosPergunta, botao_incorreto, idPergunta)
+                    self_0.dataNaoConf.splice(i, 1)
                 }
             }
 
-            console.log(self_0.manipulacao_botoes)
+
+
+
             if (botao_incorreto.classList.contains("bi-x-circle")) {
                 botao_incorreto.className = "bi bi-x"
                 botao_incorreto.style.color = "black"
