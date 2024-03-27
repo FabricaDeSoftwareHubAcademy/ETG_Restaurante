@@ -1,8 +1,7 @@
 import { Pergunta } from './Pergunta.js'
 
 export class Dom {     
-    constructor(dataNaoConf, preenchidas) {
-        this.preenchidas = preenchidas
+    constructor(dataNaoConf) {
         this.dataNaoConf = dataNaoConf
         this.objPergunta = new Pergunta(perguntasJson)
         this.dataPerguta = this.objPergunta.getAll()
@@ -212,18 +211,23 @@ export class Dom {
         var botao_incorreto = document.createElement("i")
         botao_incorreto.className = "bi bi-x"
         botao_incorreto.style.cursor = "pointer"
+        botao_incorreto.id = "este_e_da_pergunta"
 
         var self_0=this
         botao_incorreto.onclick = function() {
+            
+
+
+
             console.log(self_0.dataNaoConf)
             for (let i = 0; i < self_0.dataNaoConf.length; i++) {
                 if (self_0.dataNaoConf[i]["id_pergunta"] == idPergunta) {
                     self_0.dataNaoConf.splice(i, 1)
                 }
             }
+
+
         
-
-
             if (botao_incorreto.classList.contains("bi-x-circle")) {
                 botao_incorreto.className = "bi bi-x"
                 botao_incorreto.style.color = "black"
@@ -234,6 +238,7 @@ export class Dom {
                     }
                 }
             } else {
+
                 botao_incorreto.className = "bi-x-circle"
                 botao_incorreto.style.color = "red"
                 self_0.chamar_modal_nao_conf(dadosPergunta, botao_incorreto, idPergunta)
@@ -257,6 +262,7 @@ export class Dom {
         var botao_correto = document.createElement("i")
         botao_correto.className = "bi bi-check"
         botao_correto.style.cursor = "pointer"
+        botao_correto.id = "este_e_da_pergunta"
         botao_correto.onclick = function() {
             console.log(self_0.dataNaoConf)
             for (let i = 0; i < self_0.dataNaoConf.length; i++) {
@@ -265,11 +271,12 @@ export class Dom {
                 }
             }
 
-            
+
             if (botao_correto.classList.contains("bi-check-circle")) {
                 botao_correto.className = "bi bi-check"
                 botao_correto.style.color = "black"
             } else {
+
                 botao_correto.className = "bi-check-circle"
                 botao_correto.style.color = "green"
                 if (botao_incorreto.classList.contains("bi-x-circle")) {
@@ -371,7 +378,7 @@ export class Dom {
         var botao_incorreto = document.createElement("i")
         botao_incorreto.className = "bi bi-x"
         botao_incorreto.style.cursor = "pointer"
-        
+        botao_incorreto.id = "este_e_da_pergunta"
         botao_incorreto.onclick = function() {
             console.log(self_0.dataNaoConf)
             for (let i = 0; i < self_0.dataNaoConf.length; i++) {
@@ -386,6 +393,7 @@ export class Dom {
             if (botao_incorreto.classList.contains("bi-x-circle")) {
                 botao_incorreto.className = "bi bi-x"
                 botao_incorreto.style.color = "black"
+
                 for (let i = 0; i < self_0.manipulacao_botoes.length; i++) {
                     if (self_0.manipulacao_botoes[i]["id"] == idPergunta) {
                         self_0.manipulacao_botoes[i]["errado"] = 0
@@ -393,8 +401,10 @@ export class Dom {
                     }
                 }
             } else {
+
                 botao_incorreto.className = "bi-x-circle"
                 botao_incorreto.style.color = "red"
+                botao_incorreto.id = "este_e_da_pergunta"
                 self_0.chamar_modal_nao_conf(dadosPergunta, botao_incorreto, idPergunta)
                 for (let i = 0; i < self_0.manipulacao_botoes.length; i++) {
                     if (self_0.manipulacao_botoes[i]["id"] == idPergunta) {
@@ -414,6 +424,7 @@ export class Dom {
         var botao_correto = document.createElement("i")
         botao_correto.className = "bi bi-check"
         botao_correto.style.cursor = "pointer"
+        botao_correto.id = "este_e_da_pergunta"
         botao_correto.onclick = function() {
             console.log(self_0.dataNaoConf)
             for (let i = 0; i < self_0.dataNaoConf.length; i++) {
@@ -426,6 +437,7 @@ export class Dom {
             if (botao_correto.classList.contains("bi-check-circle")) {
                 botao_correto.className = "bi bi-check"
                 botao_correto.style.color = "black"
+
                 for (let i = 0; i < self_0.manipulacao_botoes.length; i++) {
                     if (self_0.manipulacao_botoes[i]["id"] == idPergunta) {
                         self_0.manipulacao_botoes[i]["certo"] = 0
@@ -433,6 +445,7 @@ export class Dom {
                     }
                 }
             } else {
+
                 botao_correto.className = "bi-check-circle"
                 botao_correto.style.color = "green"
                 for (let i = 0; i < self_0.manipulacao_botoes.length; i++) {
