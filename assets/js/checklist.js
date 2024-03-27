@@ -225,6 +225,22 @@ btn_submit.addEventListener('click', async (e) => {
 
     e.preventDefault();
     JSON.stringify()
+    if (todasPergResp()) {
+
+        modalStatus('Deseja confirmar o Checklist? <br>Essa alteração não poderá ser desfeita!','question',(e) =>{
+    
+            cadastrar_checkl() 
+        })
+
+    }else{
+
+        modalStatus('Responda todo o formulário!', 'error')
+    }
+
+});
+
+
+async function cadastrar_checkl(){
 
     const urlParams = new URLSearchParams(window.location.search);
     const id_sala = urlParams.get('id_sala');
@@ -240,6 +256,7 @@ btn_submit.addEventListener('click', async (e) => {
         let res = await data_php.json()
 
         if (res.status == true) {
+ 
 
             modalStatus('Checklist efetuado com Sucesso!', 'success', () => {
                 location.href = 'visualizar_sala.php?id_sala=' + id_sala
@@ -259,19 +276,5 @@ btn_submit.addEventListener('click', async (e) => {
         modalStatus('Responda todo o formulário!', 'error')
 
     }
-
-
-    // let response = await data_php.json();
-
-
-
-    // if(response){
-    //     modalStatus("Cadastrado com sucesso!","success",() => {
-    //         location.href="listar_salas.php"
-
-    //     });
-    // }
-
-
-
-});
+ 
+}

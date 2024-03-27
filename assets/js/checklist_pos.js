@@ -2,14 +2,14 @@
 // let awser = "";
 // const red = document.getElementById('red')
 var ids = document.getElementById('')
-var id_atual = 0; 
+var id_atual = 0;
 var dados = Array();
 var somadados = Array();
 
 // console.log(perguntasPos)
 
 // status true é quando é conforme  
-let listaData = { 
+let listaData = {
 
     // '8':{
     //     'status':true,
@@ -21,41 +21,36 @@ let listaData = {
 
 }
 
-function atualizarValor(id, bool)
-
-
-{
+function atualizarValor(id, bool) {
     id_atual = id;
-    
 
-    if(bool)
-    {
+
+    if (bool) {
         listaData[id_atual] = {
-            'status':true,
+            'status': true,
             'descricao': '',
             'imgs': [],
-            'id_pergunta':id_atual
+            'id_pergunta': id_atual
         }
 
-        let  green = document.getElementById('green'+id)
-        let  red = document.getElementById('red'+id)
+        let green = document.getElementById('green' + id)
+        let red = document.getElementById('red' + id)
         green.classList = 'bi bi-check-circle'
         red.classList = 'bi bi-x'
-        
+
     }
-    else
-    {
+    else {
         console.log()
-        if(listaData[id_atual] !== undefined){ 
+        if (listaData[id_atual] !== undefined) {
             $('#descricao_nao_conf').val(listaData[id_atual].descricao)
             loadImgs()
-        }else{
+        } else {
 
             listaData[id_atual] = {
-                'status':true,
+                'status': true,
                 'descricao': '',
                 'imgs': [],
-                'id_pergunta':id_atual
+                'id_pergunta': id_atual
             }
 
         }
@@ -63,8 +58,8 @@ function atualizarValor(id, bool)
         let descricao_pergunta_click = dadosPerguntas.find((e) => e.id_pergunta == id_atual)
         $('.pergunta_nao_conf').text(descricao_pergunta_click.pergunta)
 
-        let  green = document.getElementById('green'+id)
-        let  red = document.getElementById('red'+id)
+        let green = document.getElementById('green' + id)
+        let red = document.getElementById('red' + id)
         green.classList = 'bi bi-check'
         red.classList = 'bi bi-x-circle'
         respondidas[id] = false
@@ -74,69 +69,69 @@ function atualizarValor(id, bool)
     }
 }
 
-$("#btn_confirm_cad").on('click',(e) => {
+$("#btn_confirm_cad").on('click', (e) => {
     e.preventDefault()
-    if(($('#descricao_nao_conf').val().length > 0 ) && (listaData[id_atual].imgs.length > 0)){
+    if (($('#descricao_nao_conf').val().length > 0) && (listaData[id_atual].imgs.length > 0)) {
 
         listaData[id_atual].descricao = $('#descricao_nao_conf').val()
         listaData[id_atual].status = false
 
         fecharModal()
 
-    }else{
-        modalStatus('Preencha todos os campos!','error')
+    } else {
+        modalStatus('Preencha todos os campos!', 'error')
     }
 
 
 })
 
-function fecharModal(){
- 
-    
+function fecharModal() {
+
+
     $(".upload-img").empty()
     $("#descricao_nao_conf").val('')
     let modal = document.querySelector('.mom')
     modal.classList.remove('active');
- 
+
 }
 
-function cancelarNc(){
+function cancelarNc() {
 
     delete listaData[id_atual]
     fecharModal()
 
-    let  red = document.getElementById('red'+currentID)
+    let red = document.getElementById('red' + currentID)
     red.classList = 'bi bi-x'
 
 }
 
- 
-function loadImgs(){
+
+function loadImgs() {
     let count = 0
 
-    if(id_atual != 0){
+    if (id_atual != 0) {
         $(".upload-img").empty()
-        
+
         listaData[id_atual].imgs.forEach(element => {
 
-             
-            carregarImg(element,count)
-            count+=1
+
+            carregarImg(element, count)
+            count += 1
         });
-       
+
         return true
 
-    }else{
+    } else {
         return false
     }
-    
+
 
 }
 
 
-function carregarImg(img64,index){
+function carregarImg(img64, index) {
 
-   
+
     let html = `
         <div class = "uploaded-img" btn_rm="${index}">
             <img  src = "${img64}" class = "beluga imagem_preview">
@@ -181,19 +176,19 @@ function carregarImg(img64,index){
 
 }
 
-function todasPergResp(){
+function todasPergResp() {
 
     let todasResp = true
 
-    perguntasPos.forEach((e) => { 
-        if(listaData[e] == undefined){ 
-            todasResp = false 
+    perguntasPos.forEach((e) => {
+        if (listaData[e] == undefined) {
+            todasResp = false
         }
     })
 
     return todasResp
 
-    
+
 
 }
 
@@ -205,40 +200,53 @@ btn_submit.addEventListener('click', async (e) => {
     e.preventDefault();
     JSON.stringify()
 
+    
+    if (todasPergResp()) {
+        
+        modalStatus('Deseja confirmar o Checklist? <br>Essa alteração não poderá ser desfeita!', 'question', (e) => {
+            cadastrar_checkl()
+        })
+        
+    }
+    else {
+        modalStatus('Responda todo o formulário!', 'error')
+    }
+    
+});
+
+async function cadastrar_checkl(){
+
     const urlParams = new URLSearchParams(window.location.search);
     const id_sala = urlParams.get('id_sala');
     
-     
-    if(todasPergResp()){
+    if (todasPergResp()) {
         listaData["observacao"] = document.querySelector("#nova_observacao").value
-        
-        
-        
-        let data_php = await fetch('./actions/cat_data_pergunta_pos.php?id_sala='+id_sala+'&id_checklist='+id_checklist, {
-            method: 'POST',
-            body: JSON.stringify(listaData) 
-        });
-        
-        let res = await data_php.json()
-        if(res.status){ 
+        let data_php = await fetch('./actions/cat_data_pergunta_pos.php?id_sala=' + id_sala + '&id_checklist=' + id_checklist, {
+        method: 'POST',
+        body: JSON.stringify(listaData)
+    });
 
-            var novoBotao = btn_submit.cloneNode(true);
-            btn_submit.parentNode.replaceChild(novoBotao, btn_submit);
+    let res = await data_php.json()
+    if (res.status) {
 
-            modalStatus('Checklist efetuado com Sucesso!','success',() => { 
-                location.href = 'listar_salas.php'
-            })
+        var novoBotao = btn_submit.cloneNode(true);
+        btn_submit.parentNode.replaceChild(novoBotao, btn_submit);
 
-        }
+        modalStatus('Checklist efetuado com Sucesso!', 'success', () => {
+            location.href = 'listar_salas.php'
+    })
+
+
          
 
-    }else{
+    }else {
 
-        modalStatus('Responda todo o formulário!','error')
+        modalStatus('Aconteceu, tente novamente mais tarde', 'error', () => {
+            location.href = 'visualizar_sala.php?id_sala=' + id_sala
 
-    }
-    
+    });
 
+}}}
     // let response = await data_php.json();
 
 
@@ -246,11 +254,10 @@ btn_submit.addEventListener('click', async (e) => {
     // if(response){
     //     modalStatus("Cadastrado com sucesso!","success",() => {
     //         location.href="listar_salas.php"
-        
+
     //     });
     // }
 
   
        
-    });
- 
+    

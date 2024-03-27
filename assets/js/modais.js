@@ -123,11 +123,14 @@ function modalStatus(texto, tipo, callbackFunction = null){
             } 
             closeModal() 
         })
+        document.querySelector('.close-btn').addEventListener('click',function(){
 
-        // document.querySelector('#close-btn-excluir').addEventListener('click',function(){ 
-            
-        //     closeModal() 
-        // }) 
+            closeModal() 
+
+
+        })
+
+     
     } 
     openModal() 
 } 
