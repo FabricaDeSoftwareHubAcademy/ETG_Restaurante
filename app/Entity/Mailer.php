@@ -49,9 +49,9 @@ class Mailer
         }
     } 
 
-    static function sendEmailNotificacao($emailparam, $content, $remetente, $destinatario )
+    public function sendEmailNotificacao($emailparam, $content, $remetente, $destinatario )
     {
-    
+        
         $email = new PHPMailer();
         $email->isSMTP();
         $email->Host = "smtp.gmail.com";
@@ -64,7 +64,72 @@ class Mailer
         $email->Subject = "=?UTF-8?B?".base64_encode("Notificação enviada por ".$remetente['nome'])."?=";
         $email->setFrom("fabrica.hub.academy@gmail.com","=?UTF-8?B?".base64_encode("Fábrica de Software")."?="); 
 
-        $email->Body = '<!DOCTYPE html>
+        $email->Body = $this->createEmbedMail('Notificação Recebida', $destinatario['nome'], $content, 'Ver Notificação', '#007bff');
+        $email->addAddress($emailparam); 
+        $email->isHTML(true);
+
+        
+        if($email->Send())
+        {
+            $email->smtpClose();
+            return true;
+        }
+        else
+        {
+            $email->smtpClose();
+            return false;
+        }
+    } 
+
+
+    public function sendEmailNConformidade($emailparam, $content, $remetente, $destinatario, $imgs, $textNConformidade )
+    {
+        
+        $email = new PHPMailer();
+        $email->isSMTP();
+        $email->Host = "smtp.gmail.com";
+        $email->SMTPAuth = "true";
+        $email->SMTPSecure = "tls";
+        $email->Port ="587";
+        $email->Username = "fabrica.hub.academy@gmail.com";
+        $email->Password = "ciaiabsuzjimabht";
+
+        $email->CharSet = 'UTF-8'; // Definir a codificação para UTF-8
+
+        $email->Subject = "=?UTF-8?B?".base64_encode("Não Conformidade Registrada")."?=";
+        $email->setFrom("fabrica.hub.academy@gmail.com","=?UTF-8?B?".base64_encode("Fábrica de Software")."?="); 
+
+        $email->Body = $this->createEmbedMail('Não Conformidade', $destinatario['nome'], $content, 'Ver Não Conformidade', '#ff5050',$imgs, textNConformidade: $textNConformidade);
+        $email->addAddress($emailparam); 
+        $email->isHTML(true);
+
+        foreach($imgs as $img){
+          
+            $resource = base64_decode(str_replace(" ", "+", substr($img, strpos($img, ","))));
+            $email->addStringAttachment($resource, "Filename.png");
+
+        }
+
+
+
+        if($email->Send())
+        {
+            $email->smtpClose();
+            return true;
+        }
+        else
+        {
+            $email->smtpClose();
+            return false;
+        }
+    } 
+
+    private function createEmbedMail($titulo, $nome_destinatario, $descricao,$nome_btn, $cor_btn, $imgs = null, $textNConformidade = null){
+        
+        $textNC = $textNConformidade != null ? '<h3 class="textNC">"'.$textNConformidade.'"</h3>' : '';
+
+         
+        $embed = '<!DOCTYPE html>
         <html lang="en">
         <head>
             <meta charset="UTF-8">
@@ -92,7 +157,7 @@ class Mailer
                 }
                 .btn {
                     display: inline-block;
-                    background-color: #007bff;
+                    background-color: '.$cor_btn.';
                     color: #fff;
                     text-decoration: none;
                     padding: 10px 20px;
@@ -104,14 +169,20 @@ class Mailer
                     text-align: center;
                     color: #999;
                 }
+                .textNC{
+                    font-weight: 900;
+                    font-style: italic;
+                }
             </style>
         </head>
         <body>
             <div class="container">
-                <h1>Notificação Recebida</h1>
-                <p>Olá, '.$destinatario['nome'].'</p>
-                <p>'.$content.'</p>
-                <a href="http://192.168.22.9/etg_escola" class="btn">Ver Notificação</a>
+                <h1>'.$titulo.'</h1>
+                <p>Olá, '.$nome_destinatario.'</p>
+                <p>'.$descricao.'</p>
+                '.$textNC.'
+                <a style="color:white;" href="http://192.168.22.9/etg_escola" class="btn">'.$nome_btn.'</a>
+                
             </div>
             <div class="footer">
                 <p>Feito por Fábrica de Software 276 ;)</p>
@@ -119,19 +190,13 @@ class Mailer
         </body>
         </html>
         ';
-        $email->addAddress($emailparam); 
-        $email->isHTML(true);
 
-        
-        if($email->Send())
-        {
-            $email->smtpClose();
-            return true;
-        }
-        else
-        {
-            $email->smtpClose();
-            return false;
-        }
-    } 
+        return $embed;
+
+    }
+
+
+
+
+
 }

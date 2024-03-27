@@ -224,15 +224,10 @@ class Banco{
         OR EXISTS (
             SELECT 1
             FROM cadastro_usuario
-            RIGHT JOIN etg2.reg_nc ON etg2.cadastro_usuario.id = etg2.reg_nc.id_prof
+            RIGHT JOIN etg2.reg_nc ON etg2.cadastro_usuario.id = etg2.reg_nc.id_user
             WHERE etg2.cadastro_usuario.id = '.$id_usuario.'
         )
-        OR EXISTS (
-            SELECT 1
-            FROM cadastro_usuario
-            RIGHT JOIN etg2.reg_nc ON etg2.cadastro_usuario.id = etg2.reg_nc.id_logistica
-            WHERE etg2.cadastro_usuario.id = '.$id_usuario.'
-        )
+        
         OR EXISTS (
             SELECT 1
             FROM cadastro_usuario
@@ -240,6 +235,17 @@ class Banco{
             WHERE etg2.cadastro_usuario.id = '.$id_usuario.'
         );';
         return $this -> executarQuery($query);
+    }
+    public function getdetalhes_amanhecer($id_usuario,$id_checklist){
+        $query = "SELECT responder_check.id_usuario, cadastro_usuario.nome AS nome_usuario, cadastro_sala.nome AS nome_sala, responder_check.id, responder_check.data_abertura, responder_check.data_fechamento, reg_nc.*";
+        $query .= " FROM responder_check";
+        $query .= " INNER JOIN cadastro_usuario ON cadastro_usuario.id = responder_check.id_usuario";
+        $query .= " INNER JOIN cadastro_sala ON cadastro_sala.id = responder_check.id_sala";
+        $query .= " INNER JOIN reg_nc ON reg_nc.id_realiza = responder_check.id";
+        $query .= " WHERE responder_check.id = $id_checklist";
+        $query .= " AND responder_check.id_usuario = $id_usuario";
+        // die($query);
+        return $this->executarQuery($query);
     }
 }
 

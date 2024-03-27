@@ -9,7 +9,7 @@
 <body class="container_checklist">
 
     <!-- TITULO DA PAGINA -->
-    <h1 class="titulo_checklist">Acão Corretiva</h1>
+    <h1 class="titulo_checklist">Ação Corretiva</h1>
 
     <!-- TIULO DA SALA (importado do banco) -->
     <h2 class="nome_sala"><?=isset($dados_sala[0]['nome']) ? $dados_sala[0]['nome'] : ''?></h2>

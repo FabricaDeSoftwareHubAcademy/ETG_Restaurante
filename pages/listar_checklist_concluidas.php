@@ -19,7 +19,7 @@ $checklist = $checklist[0];
 $list = '';
 foreach($checklist as $row){
     $row['data_abertura'] = date('d/m/Y H:i', strtotime($row['data_abertura']));
-    $row['data_fechamento'] = date('d/m/Y H:i', strtotime($row['data_fechamento']));
+    $row['data_fechamento']!=null ? $row['data_fechamento'] = date('d/m/Y H:i', strtotime($row['data_fechamento'])) : $row['data_fechamento']='';
     $row['conf_logis'] = ($row['conf_logis']=='n') ? '<i class="bi bi-exclamation-octagon"></i>' : '<i class="bi bi-check-square"></i>';
     $list .= '<a href="validar_checklist.php?id_realizacao='.$row['id_responder'].'" class="card">
                 <div class="card_detalhes">

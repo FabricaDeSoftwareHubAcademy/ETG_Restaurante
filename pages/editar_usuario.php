@@ -10,19 +10,46 @@ require __DIR__."/../vendor/autoload.php";
 $titulo_page = 'Minha Conta';
 
 //REGRAS DE NEGOCIO ABAIXO 
- 
+
+use App\Entity\Perfil; 
 
 use App\Entity\Usuario;
  
 $objUsuario = new Usuario();
+$perfil= new Perfil();
 $erro = false;
 
 $area_edit = '';
-
+// var_dump($_GET);exit;
 $id_modificar = isset($_GET['id_user']) ? $_GET['id_user'] : $_SESSION['id_user'];
 
 $dados_editar = $objUsuario->getDadosById($id_modificar)[0];  
 $foto = $dados_editar['foto'];
+
+// var_dump($dados_editar);
+
+$id_perfil = $dados_editar["id_perfil"];
+// echo($id_perfil);
+
+$dados_perfil = $perfil->getDados();
+// var_dump($dados_perfil);exit;
+$option_perfis="";
+foreach($dados_perfil as $elemento) {
+	if($id_perfil==$elemento["id"]){
+		$option_perfis .= '<option value="'.$elemento["id"].'" selected>'.$elemento["nome"].'</option>';
+		continue;
+	}
+	$option_perfis .= '<option value="'.$elemento["id"].'">'.$elemento["nome"].'</option>';
+	// var_dump($elemento);
+	// echo("<br>");
+	// echo("<br>");
+	// echo("<br>");
+}
+// echo($option_perfis);
+// exit;
+
+
+
 
 
 if(!isset($_GET['id_user'])){
@@ -59,7 +86,6 @@ if(!isset($_GET['id_user'])){
         </div> 
 
     </section>';
-
     
     if(isset($_FILES['foto'])){
 
@@ -74,7 +100,6 @@ if(!isset($_GET['id_user'])){
             // unlink($path . $dados_editar['foto']);
         
             $objUsuario->setImage($dados_editar['email'],$new_name);
-            // header("Location: Refresh: 0");
 
             $_SESSION["msg_edit"]='Alterações realizadas com sucesso!';
 
@@ -83,8 +108,11 @@ if(!isset($_GET['id_user'])){
     if(isset($_POST['btn_submit'])){
         
         // setar nome 
-        
-        
+			
+
+
+
+
         if(isset($_POST['nome'])){
 
 
@@ -199,6 +227,23 @@ if(!isset($_GET['id_user'])){
         </section> 
     </div> 
 
+    <section class="titulo_alterar_senha">
+        <h1>Perfil</h1>
+    </section>
+
+    <div class="centralizar-back"> 
+        <section class="centralizar_input_alterar_senha">
+
+            <div class="input_senha_group field">
+				<select class="select_perfil" name="select_perfil" id="">
+					'.$option_perfis.'
+				</select>
+            </div>
+			<div class="barra"></div> 
+
+        </section> 
+    </div> 
+
 
     <section class="titulo_alterar_senha">
         <h1>Matrícula</h1>
@@ -242,14 +287,15 @@ if(isset($_FILES['foto'])){
 if(isset($_POST['btn_submit'])){
      
     // setar nome 
-    
+	$id_perfil_select = $_POST["select_perfil"];
+	$objUsuario->setPerfil(id_usuario: $id_modificar, id_perfil: $id_perfil_select);
      
     if(isset($_POST['nome'])){
 
 
-        $objUsuario -> setName($_POST['nome'],$dados_editar['email']);  
-        // header("Location: {$_SERVER['PHP_SELF']}");
-        $_SESSION["msg_edit"]='Alterações realizadas com sucesso!';
+	$objUsuario -> setName($_POST['nome'],$dados_editar['email']);  
+	// header("Location: {$_SERVER['PHP_SELF']}");
+	$_SESSION["msg_edit"]='Alterações realizadas com sucesso!';
 
 
     }else{
@@ -326,8 +372,9 @@ if(isset($_POST['btn_submit'])){
         }
     }
     if(isset($_POST['btn_submit'])){
-         
-        // setar nome 
+		
+        // setar nome
+
         
          
         if(isset($_POST['nome'])){

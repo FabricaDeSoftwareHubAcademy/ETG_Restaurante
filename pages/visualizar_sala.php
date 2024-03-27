@@ -4,6 +4,7 @@ require __DIR__."/../vendor/autoload.php";
 include_once("../includes/menu.php"); 
 $titulo_page = 'Visualizar Sala';
 require("../includes/header/header.php");
+
  
 use App\Entity\Sala;
 use App\Entity\Checklist;

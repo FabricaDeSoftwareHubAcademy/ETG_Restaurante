@@ -33,4 +33,16 @@ class NaoConformidade
         return $obj_banco -> insertRecoverId($dados);
     }
 
+
+
+    public static function getNCLogistica($id_prof){
+
+        $obBanco = new Banco('nc_user_logistica');
+        $nc_user = $obBanco->select('id_responsavel = "'.$id_prof.'"');
+        return $nc_user->rowCount();
+
+        
+         
+    }
+
 }

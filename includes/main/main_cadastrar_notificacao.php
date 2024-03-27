@@ -26,7 +26,7 @@
                     <textarea maxlength="250" name="descricao" class="quadrado_text" name="story" rows="5" cols="33"></textarea>
                 </div>
 
-            </section>
+            </section>  
 
             <!--Botões-->
 

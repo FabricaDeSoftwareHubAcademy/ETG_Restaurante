@@ -7,19 +7,22 @@
 
 <!-- LINK DO CSS "visualizar_sala.css" -->
 <link rel="stylesheet" href="../assets/css/visualizar_sala.css">
-
+<script defer src="../assets/js/exibir_foto.js"></script>
 
 <body class="visualizar_sala">
+            <div id="overlay_imagem">
+                <div id="imagemExpandida" onclick="fecharImagemMaior()"></div>
+            </div>
 
             <div class="nome_da_sala" id="nome_da_sala"> <h1>Visualizar Sala</h1> </div>
         
             <section class="area_card">
             
-                <div class="card">
+                <div class="card" >
 
                     <!-- PARTE QUE PEGA A IMAGEM DA SALA -->
                     <div class="imagem_card">
-                        <img src="../storage/salas/<?= $dados[0]['img_sala']?>" alt="" id="img_config">
+                        <img src="../storage/salas/<?= $dados[0]['img_sala']?>" id="imagem" onclick="exibirImagemMaior()" alt="" class="img_config">
                     </div>
 
                     <!-- TUDO O QUE TA ESCRITO CARD-->
@@ -35,7 +38,6 @@
 
                                 <!-- PARTE QUE PEGA A IMAGEM DA SALA -->
                                 <p class="texto-descricao"> <?=$dados[0]['descricao']?></p>
-                                
                                 
                             </div>
 
@@ -71,7 +73,6 @@
                                     echo $matutino.' ';
                                     echo $vespertino.' '; 
                                     echo $noturno.' ';
-
                                 
                                 ?></p>
                                 
@@ -101,7 +102,7 @@
                     </div> -->
 
                 </div>
-        </section>
+        </section>  
 </body>
 
 

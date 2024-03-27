@@ -9,6 +9,7 @@
 <script src="../assets/js/modais.js"></script>
 <script src="../assets/js/checklist.js" defer></script>
 <script src="../assets/js/script_tela_nao_conf.js"></script>
+<script src="../assets/js/imagem_preview.js" defer></script>
 
 
 
@@ -17,8 +18,8 @@
 
         include_once "../includes/main/main_cadastrar_nao_conformidade.php";
 
-    //MODAL DE CHECKLIST CADASTRADO//
-        // include_once "../includes/modais/checklist_criado.php";
+        //MODAL DE CHECKLIST CADASTRADO//
+            // include_once "../includes/modais/checklist_criado.php";
     ?>
 
 <!-- GERAL -->
@@ -36,11 +37,11 @@
         <form method="POST" class="checklist_pre_aula"> 
  
             <!-- PARTE DO CHECKLIST -->
-            <div class="list-pre-aula"> <?=$dados_imprimir ?> </div>
+            <div class="list-pre-aula"> <?=$dados_imprimir ?> <h3>Observações Adicionais:</h3> <?=$observacao_card?> </div>
 
             <!-- PARTE DOS BOTÕES -->
             <div class="botoes-cadastro-checklist">
-
+                
                 <!-- BOTÃO VOLTAR -->
                 <div class="botao-padrao-voltar"><a href="./visualizar_sala.php?id_sala=<?=$dados_sala[0]['id']?>" class="botao-voltar-submit">CANCELAR</a>
                 </div>

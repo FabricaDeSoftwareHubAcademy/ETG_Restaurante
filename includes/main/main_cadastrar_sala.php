@@ -5,7 +5,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="../assets/css/cadastrar_editar_sala.css"> 
 <!-- <link rel="stylesheet" href="../../assets/css/pop_ups/pop-up-verification.css"> -->
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="../assets/js/modais.js"></script>
+
 
 
 <body class="tela-cadastro-salas">
@@ -70,11 +71,11 @@
 
                     <h3 class="alinar_titulo_h3">Dias de Funcionamento </h3>
 
-                    <div class="area_Dos_check_box">
+                    <div class="area_Dos_check_box" id="area_dos_dias">
 
                         <div class="Check_Box_individual">
                             <p class="coisa_tag_p">Segunda</p>
-                            <input name="segunda" class="espaco_check_box" type="checkbox" />
+                            <input name="segunda" class="espaco_check_box" type="checkbox"/>
                         </div>
                         <div class="Check_Box_individual">
                             <p class="coisa_tag_p">Terça</p>
@@ -106,7 +107,7 @@
 
 
                     <h3 class="alinar_titulo_h3">Turnos de Funcionamento </h3>
-                    <div class="area_Dos_check_box">
+                    <div class="area_Dos_check_box" id="area_turnos">
 
                         
                         
@@ -176,31 +177,14 @@
    
                         
                         <div class="botao-padrao-cadastrar">
-                            <!-- <a><input name="btn_submit" type="submit" class="botao-cadastrar-submit" id="botao-cadastrar-submit" value="CADASTRAR"></a> -->
+                        
 
                             <button name="btn_submit" type="submit" class="botao-cadastrar-submit" id="botao-cadastrar-submit" value="CADASTRAR"> CADASTRAR </button>
 
                         </div>
-                            <!-- onclick="abrir_modal()" -->
-
-
                     </div>  
-
-                    <!-- <div class="container-pop-up-notificacao">
-                        <button type="submit" class="btn-pop-up-notificacao" id="submit-btn-notificacao" onclick="openPopupValidar()">Submit</button>
-                        <div class="popup-notificacao" id="popup-up-notificacao">
-                            <div class="div-img">
-                                <img src="img/erro.png" alt="carregando" id="img_check">
-                                <p>Recado excluído com sucesso! </p>
-                            </div>
-                            <div class="botao-padrao-ok">
-                                <a href="#"><input type="submit" class="botao-ok-submit" onclick="closePopupValidar()" value="OK"></a>
-                            </div>
-                        </div>
-                    </div> -->
-
                     <script>
-
+                        
                         document.querySelectorAll('input[type="number"]').forEach(input=>{
                             input.oninput = () => {
                                 if(input.value.length>input.maxLength) input.value = input.value.slice(0,input.maxLength);
@@ -226,27 +210,10 @@
 
                         let button = document.getElementById("botao-cadastrar-submit") 
 
-                        const showModalnovoBtn = document.querySelector('.botao-cadastrar-submit');
-                        const closeModalnovoBtn = document.querySelector('.close-btn');
-                        // const openModalBtn = document.querySelector('.open-btn');
-                        const overlaynovo = document.querySelector('.overlay-modal');
-                        const modalnovo = document.querySelector('.modal-box');
-                        function openModal2() {
-                            console.log("qual quer coisa ai");
-                            overlaynovo.style.opacity = '1';
-                            overlaynovo.style.pointerEvents = 'auto';
-                            modalnovo.style.opacity = '1';
-                            modalnovo.style.pointerEvents = 'auto';
-                        }
-
                         button.addEventListener('click', async (e) => {
                             
                             e.preventDefault()
-                          
-
-                           
-
-
+                                                      
                             let nome_sala = document.getElementById('nome_sala')
 
                             if(nome_sala.value.length > 0){
@@ -265,12 +232,7 @@
                             }
 
                             let codigo_sala = document.getElementById('codigo_sala')
-                           // codigo_sala.addEventListener(){
-                            //     function 
-                            // }
-
-
-                            
+                                                     
                             if(nome_sala){
                                 
                                 if((codigo_sala.value.length > 0)){
@@ -311,9 +273,36 @@
                             }else{
                                 checklist = false
                             }
- 
-                                
-                            if(nome_sala == true && codigo_sala == true && checklist == true){
+
+                            if(checklist)
+                            
+                                var div1Checkboxes = document.querySelectorAll('#area_dos_dias input[type="checkbox"]');
+                                    var div2Checkboxes = document.querySelectorAll('#area_turnos input[type="checkbox"]');
+
+                                    var div1Checked = false;
+                                    var div2Checked = false;
+
+                                    // Verifica se pelo menos um checkbox está marcado na primeira div
+                                    div1Checkboxes.forEach(function(checkbox) {
+                                        if (checkbox.checked) {
+                                            div1Checked = true;
+                                        }
+                                    });
+
+                                    // Verifica se pelo menos um checkbox está marcado na segunda div
+                                    div2Checkboxes.forEach(function(checkbox) {
+                                        if (checkbox.checked) {
+                                            div2Checked = true;
+                                        }
+                                    });
+
+                                    // Se em alguma div nenhum checkbox estiver marcado, exibe uma mensagem de alerta
+                                    if ((!div1Checked == true) || (!div2Checked == true)) {
+                                        
+                                        modalStatus("Escolha pelo menos um dia de Funcionamento e um periodo de funcionamento.","error")
+                                    }
+                               
+                            if(nome_sala == true && codigo_sala == true && checklist == true && div1Checked == true && div2Checked == true){
 
                                 let form = document.getElementById('form_cad')
                                 // console.log(form)
@@ -327,14 +316,14 @@
                                 
                                 if(response){
                                                                       
-                                    openModal2()
+                                    modalStatus("Escolha pelo menos um dia de Funcionamento e um periodo de funcionamento.","success",()=>{window.location.href="./listar_salas.php"})
                                 
                                 }else{
                                     console.log("2")
                                 }
 
                             }else{
-                                // console.log("deu merda piá");
+                                console.log("deu merda piá");
                             }  
                         }
                         )
