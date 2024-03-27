@@ -16,7 +16,7 @@
             <p class="edita-recado-mural">Novo recado:</p>
           </div>
           <div class="div-pop">
-              <textarea maxlength="100"  placeholder="Digite seu recado: " name="descricao_sala" id="texto_novo_recado" cols="70" rows="10" class="text-descricao-pop-up"></textarea>
+              <textarea maxlength="255"  placeholder="Digite seu recado: " name="descricao_sala" id="texto_novo_recado" cols="90" rows="20" class="text-descricao-pop-up"></textarea>
           </div>
           <section class="container-pop-up-botaoes">
             <div class="botao-padrao-cancelar">

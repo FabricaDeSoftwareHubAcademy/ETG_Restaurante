@@ -35,7 +35,8 @@ class CadastroChecklist
     public static function cadastrarPergunta($dados, $idCheck){
         try{
 
-
+            $dados = explode(',', $dados);
+ 
             $obBanco = new Banco("relacao_pergunta_checklist");
             $pergJaCad = [];
     

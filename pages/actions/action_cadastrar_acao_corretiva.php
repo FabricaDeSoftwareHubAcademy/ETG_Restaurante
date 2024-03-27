@@ -20,7 +20,7 @@ if (isset($_GET["id_sala"])) {
 if ($tudo_correto == true) {
     ResponderChecklist::setConf_logis($_GET["id_realizacao"]);
     // die($id_sala);
-    Sala::setStatusSala($id_sala_get, "L");
+    // Sala::setStatusSala($id_sala_get, "L");
     header("Location: ../listar_checklist_concluidas.php");
 }
 
@@ -55,6 +55,8 @@ function cadastrarAcaoCorretiva($AcaoCorretiva, $objeto_acao_corretiva) {
     $objeto_acao_corretiva->setImg_3($img_3);
     $objeto_acao_corretiva->setIdNaoConformidade($id_nao_conformidade);
     $objeto_acao_corretiva->setDescricao($descricao);
+    $objeto_acao_corretiva->setIdUsuario($_SESSION['id_user']);
+
     
     $responseDB = $objeto_acao_corretiva->save();
     // echo json_encode($responseDB);
@@ -83,7 +85,7 @@ foreach ($data[0] as $AcaoCorretiva) {
         
         $dados = [
             "id_realiza" => $nao_conformidade_sem_id["id_realizacao"],
-            "id_logistica" => $_SESSION["id_user"],
+            "id_user" => $_SESSION["id_user"],
             "id_pergu" => $nao_conformidade_sem_id["id_pergunta"],
             "descricao_NC" => $nao_conformidade_sem_id["textAreaContent"],
             "img1" => $img_1,

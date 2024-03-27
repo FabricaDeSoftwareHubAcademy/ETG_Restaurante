@@ -1,9 +1,13 @@
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="../assets/css/relatorio_user.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
-    <script src="../assets/js/relatorio_user.js" defer></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
+<link rel="stylesheet" href="../assets/css/relatorio_user.css">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+<script src="../assets/js/relatorio_user.js" defer></script>
+<script src="../assets/js/modais.js"></script>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     
 
 <body class="paidetodos">
@@ -13,18 +17,28 @@
         <section class="teste">
             <div class="testePrimeiraSecao">
                     <div id="user_relatorio" class="user_relatorio">
-                        <!-- <div class="user-report"><i class="bi bi-person-square"></i>Usuários<i class="fa fa-chevron-down"></i></div> -->
                         <select name="" id="" class="link">
-                        <option selected>Usuários</option>
+                        <option selected>Selecione o Usuário</option>
                         <?php
                             foreach($dadosUsuario as $row) {
                                 echo 
                                 "
-                                <option>".$row["nome"]."</option>
+                                <option value=31>".$row["nome"]."</option>
                                 ";
                             }
                             ?>
                         </select>
+                            <select name="" id="" class="check_relatorio">
+                            <option selected>Checklist</option>
+                            <?php
+                                foreach($dadosUsuario as $row) {
+                                    echo 
+                                    "
+                                    <option>".$row["nome"]."</option>
+                                    ";
+                                }
+                                ?>
+                            </select>
                     </div>
                         <div class="btn-filter">
                             <button type="submit" class="limpar-filtros">Limpar filtros</button>
@@ -47,14 +61,11 @@
                         </div>
 
 
-                        </div>
                     </div>
-                </div>
+            </div>
+        </div>
             
         </section>
-
-
-
        
             <div class="card_grafic">
                     <div class="grafico_conf">
@@ -64,12 +75,18 @@
                         <canvas id="Chart"></canvas>
                     </div>
    
-                <section class="area-botao">
-                    <div class="div-relatorio">
-                        <button class="btn-relatorio" type="submit">Gerar PDF</button>  
-
-                </section>
-             
+                    <section class="area-botao">
+                        <div class="detalhes">
+                            <form action="" method="post" target="_blank">
+                                <button class="btn-detalhes" type="submit">Detalhes</button>
+                            </form>
+                        </div>
+                        <div class="dev-relatorio">
+                            <form action="../pages/nao_conformidade_user.php" method="post" target="_blanck">
+                                <button class="btn-relatorio" type="submit">Gerar PDF</button>
+                            </form>
+                        </div>
+                    </section>
             </div>
    
     </main>

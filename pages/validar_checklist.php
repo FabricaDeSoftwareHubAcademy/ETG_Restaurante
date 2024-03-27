@@ -4,13 +4,20 @@ session_start();
 
 use App\Entity\ResponderChecklist;
 use App\Entity\ValidarChecklist;
+use App\Entity\Sala;
+
 $dados_sala = isset($dados_sala) ? $dados_sala : null;
 // var_dump($dados_sala);exit;
 include_once("../includes/menu.php");
 $titulo_page = 'Validar checklist';
 $idResponderCheck = $_GET["id_realizacao"];
 $objValidarChecklist = new ValidarChecklist();  
-$idSala = $objValidarChecklist -> getIdSala(idResponderCheck: $idResponderCheck);
+$dadosSalaNEmail = $objValidarChecklist -> getIdSala(idResponderCheck: $idResponderCheck);
+$idSala = $dadosSalaNEmail['id_sala'];
+
+$dadosSala = Sala::getDadosById($idSala)[0];
+ 
+
 $perguntas = $objValidarChecklist -> getPerguntas(idSala: $idSala);
 $observacao = ResponderChecklist::getObservacao($idResponderCheck);
 // $perguntas["id_realizacao"] = $idResponderCheck;
@@ -42,6 +49,12 @@ foreach ($perguntas as &$row) {
 $perguntasJson = json_encode($perguntas);
 //não tenho tempo pra estruturar então vou só mandar por aqui mesmo
 $id_sala = json_decode($id_sala);
+ 
+
+echo('<script>
+            var id_docente_resp = '.$dadosSalaNEmail['id_usuario'].' 
+            var id_sala = '.json_encode($dadosSala['id']).' 
+      </script>');
 
 require("../includes/modais/nao_conformidade_logistica.php");
 require("../includes/modais/mostrar_nao_conformidade.php");

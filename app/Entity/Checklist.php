@@ -32,14 +32,14 @@ class Checklist
     }
 
     public static function getData() {
-        $obj_banco = new Banco('responder_check');
+        $obj_banco = new Banco('check_concluidas');
         $data = $obj_banco -> select() -> fetchAll(PDO::FETCH_ASSOC);
         return $data;
     }
 
     public static function getDoneCheck($inicio = 0) {
         $obj_banco = new Banco('check_concluidas');
-        $data = [$obj_banco -> select(limit: "$inicio, 5",order:'conf_logis DESC') -> fetchAll(PDO::FETCH_ASSOC), $obj_banco -> select(campos: 'count(*) as total') -> fetch(PDO::FETCH_ASSOC)];
+        $data = [$obj_banco -> select(limit: "$inicio, 5") -> fetchAll(PDO::FETCH_ASSOC), $obj_banco -> select(campos: 'count(*) as total') -> fetch(PDO::FETCH_ASSOC)];
         return $data;
     }
     public static function getChecklist()
@@ -170,6 +170,16 @@ class Checklist
         $data = $obj_banco -> select(where:'id = '.$id.'') -> fetchAll(PDO::FETCH_ASSOC);
         return $data;
     }
+
+    public static function getDetalhes($id_usuario = 0,$id_checklist = 0)
+    {
+        $obj_banco = new Banco('responder_check');
+        // $id_usuario=2;
+        // $id_checklist=2;
+        $query = $obj_banco -> getdetalhes_amanhecer($id_usuario,$id_checklist)->fetchAll(PDO::FETCH_ASSOC);
+        return $query;
+    }
+
 
 
 

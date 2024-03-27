@@ -31,14 +31,15 @@ if (isset($_POST['btn_submit']))
  
 
 
-        Mailer::sendEmailNotificacao($email_destinatario,$texto,$dados_remetente, $usuarios[0]);
+        $obMail = new Mailer();
+        $obMail->sendEmailNotificacao($email_destinatario, $texto, $dados_remetente, $usuarios[0]);
 
-        $_SESSION['msg_notificacao'] = "Notificação enviada com sucesso para ". $usuarios[0]['nome'];
+        $_SESSION['msg_notificacao'] = ["Notificação enviada com sucesso para ". $usuarios[0]['nome'], 'success', './listar_notificacoes.php'];
 
     }
     else
     {
-        die('ESTE EMAIL NAO EXISTE'); //pop up
+        $_SESSION['msg_notificacao'] = ["O Email Inserido não existe.", 'error', './cadastrar_notificacao.php'];
     }
     
 } 
@@ -49,7 +50,7 @@ require("../includes/main/main_cadastrar_notificacao.php");
 if(isset($_SESSION['msg_notificacao'])){
 
     echo('
-    <script>modalStatus("'.$_SESSION['msg_notificacao'].'","success",() => { window.location.href = "./listar_notificacoes.php" })</script>
+    <script>modalStatus("'.$_SESSION['msg_notificacao'][0].'","'.$_SESSION['msg_notificacao'][1].'",() => { window.location.href = "'.$_SESSION['msg_notificacao'][2].'" })</script>
     ');
 
     unset($_SESSION['msg_notificacao']);

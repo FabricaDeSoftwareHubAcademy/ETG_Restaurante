@@ -15,7 +15,7 @@
                 <?=$sla?>
             </section>
             
-            
+           
             <div>
                 <section class="quadrado-perfil">
                     <div class="foto-perfil">
