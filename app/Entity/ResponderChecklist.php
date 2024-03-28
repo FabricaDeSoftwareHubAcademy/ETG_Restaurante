@@ -17,7 +17,8 @@ class ResponderChecklist
                 'id_usuario'     => $_SESSION['id_user'],
                 'id_sala'        => $id_sala,
                 'id_checklist'   => $id_check,
-                'observacao'     =>  $dadosResp["observacao"]//EU TAMBÉM NÃO SEI PQ É 30 PARCEIRO, SE VIRA AI
+                'observacao'     =>  $dadosResp["observacao"],//EU TAMBÉM NÃO SEI PQ É 30 PARCEIRO, SE VIRA AI
+                'data_fechamento'=>null
             ];
             $obj_banco = new Banco('responder_check');
             try{

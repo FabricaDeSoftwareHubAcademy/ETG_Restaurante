@@ -47,7 +47,7 @@ elseif($status[0]['status']=='A'){
     // Aqui está uma gambiarra para resolver diferença de hora kkkkkkk
     // print($diferenca_minutos);
     $diferenca_minutos=$diferenca_minutos-60;
-    // print($diferenca_minutos);
+    print($diferenca_minutos);
     if(($status[0]['responsavel'] == $_SESSION['id_user'] || $ifreaac) && $diferenca_minutos >= 40 ){
         // print("entrou no if ");
         $btn_checklist = '
