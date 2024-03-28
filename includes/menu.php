@@ -181,9 +181,9 @@ $ifrel = $perfil['relatorios'] == '1';
                             </a>
                             
                             <ul class="sub-menu4">
-                            <li class="iten-submenu4"><a href="../pages/cadastrar_sala.php" id="fonte-submenu">relatorio geral</a></li>
-                            <li class="iten-submenu4"><a href="../pages/relatorio.php" id="fonte-submenu">relatorio salas</a></li>
-                            <li class="iten-submenu4"><a href="../pages/relatorio_usuarios.php" id="fonte-submenu">relatorio usuarios</a></li>
+                            <li class="iten-submenu4"><a href="../pages/listar_relatorio.php" id="fonte-submenu">Informações administrativas</a></li>
+                            <li class="iten-submenu4"><a href="../pages/relatorio_salas.php" id="fonte-submenu">Relatorio salas</a></li>
+                            <li class="iten-submenu4"><a href="../pages/relatorio_user.php" id="fonte-submenu">Relatorio usuarios</a></li>
                             
                             </ul>
                             </li> ';
