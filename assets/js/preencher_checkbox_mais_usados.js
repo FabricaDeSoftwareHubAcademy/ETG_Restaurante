@@ -16,6 +16,7 @@
     const checkbox7 = document.getElementById("realizar_nao_conformidade");
     const checkbox8 = document.getElementById("gerenciar_usuarios");
     const checkbox9 = document.getElementById("gerenciar_perfis");
+    const checkbox10 = document.getElementById("ver_relatorios");
 
     //Verifica se algum dos mais usados ja esta checado
 
@@ -33,6 +34,7 @@
             checkbox7.checked = true;
             checkbox8.checked = true;
             checkbox9.checked = true;
+            checkbox10.checked = true;
             mais_usados_docente.checked = false;
             mais_usados_logistica.checked = false;
         }
@@ -47,6 +49,7 @@
             checkbox7.checked = false;
             checkbox8.checked = false;
             checkbox9.checked = false;
+            checkbox10.checked = false;
 
         }
     });
@@ -62,6 +65,7 @@
             checkbox7.checked = false;
 
             checkbox6.checked = true;
+            checkbox10.checked = true;
             mais_usados_administrador.checked = false;
             mais_usados_logistica.checked = false;
         }
