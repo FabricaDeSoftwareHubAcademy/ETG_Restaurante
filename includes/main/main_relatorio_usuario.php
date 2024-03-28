@@ -87,7 +87,7 @@
 
             <div class="dashboard-card">
                         <div class="dashboard-card-content">
-                            <h3>3,536</h3>
+                            <h3 id="qnt_checklist"><?=$qntC + $qntNC?></h3>
                             <p>Checklists</p>
                         </div>
             </div>

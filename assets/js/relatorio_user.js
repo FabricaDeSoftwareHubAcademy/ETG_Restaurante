@@ -104,7 +104,7 @@ $("#bnt_gerar_pdf").on('click', (e) => {
 
   let dados = localStorage.getItem('dadosPDFUser')
   // let dadosObjetos = JSON.parse(dados);
-  console.log(dados);
+  
   window.location.href = './nao_conformidade_user.php'
   
 })
