@@ -85,7 +85,8 @@ elseif($status[0]['status']=='A'){
                 </div>';
     }
     else{
-        return json_encode(true);
+        echo '<script src="../assets/js/modais.js"></script>
+        <script>modalStatus("Só é possivel realizar checklist Pós aula apos 40 minutos.","error")</script>';
     };
     
 }
