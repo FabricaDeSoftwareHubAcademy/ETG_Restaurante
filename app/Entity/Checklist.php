@@ -56,7 +56,24 @@ class Checklist
         } 
     }
 
-    
+    public static function getRespostasChecklist($id_user = null){
+
+        $obBanco = new Banco('checklist_respondidas');
+       
+        if($id_user != null){
+
+            $dadosSelect = $obBanco->select('id_user = "'.$id_user.'"');
+        }else{
+            $dadosSelect = $obBanco->select(campos:' DISTINCT id_check, nome_check '); 
+        }
+        $ids_checklists = [];
+        $dadosSelect = $dadosSelect->fetchAll(PDO::FETCH_ASSOC);
+        foreach($dadosSelect as $row){
+            array_push($ids_checklists,[$row['id_check'],$row['nome_check']]);
+        }
+        
+        return ['result'=> $dadosSelect,'checklists' => $ids_checklists];
+    }
     public function updateChecklist($ids_perguntas, $nome = null){
 
         try{

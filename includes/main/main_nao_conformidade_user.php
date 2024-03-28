@@ -2,6 +2,8 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
         body {
@@ -28,30 +30,79 @@
         th {
             background-color: #ddd;
         }
+        .area_btn{
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: end;
+            padding-bottom: 15px;
+        }
+        .area_btn button{
+            margin-right: 20px;
+            background-color: #064A8C;
+            border-radius: 10px;
+            padding: 5px;
+            color: #fff;
+            font-size: 20px;
+            font-family: "Montsserat";
+            cursor: pointer;
+
+        }
+        @media print {
+            .cabecalho-menu{
+                display: none;
+            }
+            .area_btn{
+                display: none;
+            }
+        }
     </style>
     <title>Relatório de não conformidades</title>
 </head>
 <body>
-    <h2>Relatório de não conformidades: Enilda - fevereiro/2024</h2>
+    <h2 id='nome_titulo'>Relatório de Usuários</h2>
+    <div class="area_btn">
+        <button id='btn_imprimir'>Imprimir</button>
+    </div>
+
     <table>
         <thead>
             <tr>
                 <th>Data</th>
-                <th>Descrição</th>
-                <th>Usuário</th>
-                <th>Perfil</th>
+                <th>Nome</th>
+                <th>Sala</th>
+                <th>Checklist</th>
+                <th>Não Conforme</th>
+                <th>Intervenção</th>
             </tr>
         </thead>
-        <tbody>
-            <tr>
-                <td>04/04/2023</td>
-                <td>Chão da cozinha sujo.</td>
-                <td>Enilda</td>
-                <td>Docente</td>
-            </tr>
-            <tr>
-                <td>09/04/2023</td>
-                <td>Toalhas de papel faltando no dispenser.</td>
-                <td>Enilda </td>
-                <td>Docente</td>
+        <tbody id="tbody_pdf">
+             
+             
+        </tbody>
+    </table>
+</body>
+<script>
+
     
+    var dadosPDF = JSON.parse(localStorage.getItem('dadosPDFUser')) 
+    console.log(dadosPDF)
+    dadosPDF.forEach(element => {
+        
+        let td =document.createElement('tr')
+        td.innerHTML = `
+                <td>${element.data_fechamento}</td>
+                <td>${element.nome}</td>
+                <td>${element.nome_sala}</td>
+                <td>${element.nome_check}</td>
+                <td>${element.qnt_nc > 0 ? 'Sim': 'Não'}</td>
+                <td>${element.qnt_c > 0 ? 'Sim': 'Não'}</td>`
+        $('#tbody_pdf').append(td)
+
+    });
+    
+    $('#btn_imprimir').on('click',(e) => {
+        print()
+    })
+
+</script>
