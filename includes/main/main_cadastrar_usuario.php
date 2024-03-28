@@ -60,7 +60,7 @@
         <section class="centralizar_botoes_cadastrar_usuario">
             <!--Botão voltar-->
             <div class="botao-padrao-voltar">
-                <a href="listar_recados.php" class="botao-voltar-submit" value="VOLTAR">VOLTAR</a>
+                <a onclick="voltarPagina()" class="botao-voltar-submit" value="VOLTAR">VOLTAR</a>
             </div>
             
             <!--Botão Confirmar-->
@@ -78,6 +78,9 @@
 // } 
 
 
+function voltarPagina() {
+    window.history.back();
+}
 let button =document.getElementById('botao-confirmar-submit')
         
 button.addEventListener('click', async (e) =>{
