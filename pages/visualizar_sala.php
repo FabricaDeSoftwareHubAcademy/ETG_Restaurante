@@ -17,27 +17,6 @@ $teste = $objCheck->getLastCheck($id_sala);
 $status = Sala::getDados(col:'status,responsavel',where:'id = '.$id_sala);
 $responsavel=$status[0]["responsavel"];
 
-$data_hora = $objCheck->validar_40_minutos($id_sala,$responsavel);
-var_dump($data_hora);
-$data_abertura=$data_hora[0]["data_abertura"];
-// var_dump($data_hora[0]["NOW()"]);
-$hora_atual=$data_hora[0]["NOW()"];
-// var_dump($hora_atual);
-
-
-// Duas timestamps de exemplo
-$timestamp1 = strtotime($data_abertura);
-$timestamp2 = strtotime($hora_atual);
-
-// Calcula a diferença em segundos
-$diferenca_segundos = abs($timestamp2 - $timestamp1);
-
-// Converte a diferença para minutos
-$diferenca_minutos = $diferenca_segundos / 60;
-
-// Verifica se a diferença é maior ou igual a 40 minutos
-
-//A partir da qui é antes do copiar e colar. 
 
 if($status[0]['status']=='L'){
     $btn_checklist = '
@@ -46,6 +25,23 @@ if($status[0]['status']=='L'){
             <input type="submit" class="botao-fazer-checklist-submit" value="FAZER CHECKLIST">
         </a>
     </div>';
+
+
+$data_hora = $objCheck->validar_40_minutos($id_sala,$responsavel);
+// var_dump($data_hora);
+$data_abertura=$data_hora[0]["data_abertura"];
+var_dump($data_hora[0]["NOW()"]);
+$hora_atual=$data_hora[0]["NOW()"];
+// var_dump($hora_atual);
+// Duas timestamps de exemplo
+$timestamp1 = strtotime($data_abertura);
+$timestamp2 = strtotime($hora_atual);
+// Calcula a diferença em segundos
+$diferenca_segundos = abs($timestamp2 - $timestamp1);
+// Converte a diferença para minutos
+$diferenca_minutos = $diferenca_segundos / 60;
+// Verifica se a diferença é maior ou igual a 40 minutos
+//A partir da qui é antes do copiar e colar. 
 }
 elseif($status[0]['status']=='A'){
     // Aqui está uma gambiarra para resolver diferença de hora kkkkkkk
