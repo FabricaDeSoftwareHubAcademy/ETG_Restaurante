@@ -71,10 +71,41 @@ document.addEventListener("DOMContentLoaded", function() {
   
 $('#select_user').on('change',(e)=>{
 
-  console.log(e.target.value)
+   
+  filter_checklist_user(e.target.value)
 
 })
+
+async function filter_checklist_user(id_user){
+  $('#select_checks').empty()
+
+
+  let data = await fetch('./actions/action_get_respostas_checklist.php?id_user='+id_user)
+  let dados = await data.json()
+
+  let optionDefault = document.createElement('option')
+  optionDefault.innerText = 'Selecione o Checklist'
+  $('#select_checks').append(optionDefault)
+
+  dados.checklists.forEach((e) => {
+    let optionVar = document.createElement('option')
+    optionVar.value = e[0]
+    optionVar.innerText = e[1]
+
+    $('#select_checks').append(optionVar)
+
+  })
+}
   
+$("#bnt_gerar_pdf").on('click', (e) => {
+
+  localStorage.setItem('dadosPDFUser', JSON.stringify(dadosPDF));
+
+  let dados = localStorage.getItem('dadosPDFUser')
+  // let dadosObjetos = JSON.parse(dados);
+  console.log(dados);
+  window.location.href = './nao_conformidade_user.php'
   
+})
   
   

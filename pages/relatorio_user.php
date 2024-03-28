@@ -20,12 +20,13 @@ $sala = new Sala();
 $dadosRelatorio = $relatorio -> getAll();
 $dadosUsuario = $relatorio::getUsers();
 $dadosSala = $sala::getDados();
-$dados_checklist = Checklist::getChecklist();
+$dados_checklist = Checklist::getRespostasChecklist()['checklists'];
+
 
 $qntNC = 0;
 $qntC = 0 ;
 $qntCorrecao = 0;
-
+$dadosPDF = '';
 if(isset($_POST['btn_submit_relatorio'])){
 
     $user = isset($_POST['users_select']) ? $_POST['users_select'] != 'Selecione o Usuário' ? $_POST['users_select'] : '' : '';
@@ -39,16 +40,12 @@ if(isset($_POST['btn_submit_relatorio'])){
     $data = isset($_POST['data_inicial'],$_POST['data_final'])? [$_POST['data_inicial'],$_POST['data_final']] : [];
      
     $result = NaoConformidade::getNCLogistica(id_prof:$user,id_checklist:$check,datas:$data); 
+    $dadosPDF = json_encode($result[0]);
     if($result){ 
         $qntC = $result[1]['countC'];
         $qntNC = $result[1]['countNC'];
         $qntCorrecao = $result[1]['countCorrecao'];
     }
-     
-    
-
-
-
 }
  
 

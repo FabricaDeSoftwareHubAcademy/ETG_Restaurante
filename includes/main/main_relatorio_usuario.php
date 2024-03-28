@@ -2,7 +2,7 @@
     const countC = <?=$qntC?>;
     const countNC = <?=$qntNC?>;
     const countCorrecao = <?=$qntCorrecao?>;
-
+    const dadosPDF = <?=$dadosPDF?>
 
 </script>
 
@@ -37,20 +37,21 @@
                         }
                         ?>
                     </select>
-                    <select name="checks_select" id="" class="check_relatorio">
+                    <select name="checks_select" id="select_checks" class="check_relatorio">
                         <option selected>Selecione o Checklist</option>
                         <?php
                         foreach ($dados_checklist as $check) {
+                            echo($check);
                             echo
                                 "
-                                    <option value=".$check['id']."> " . $check["nome"] . "</option>
+                                    <option value=".$check[0]."> " . $check[1] . "</option>
                                 ";
                         }
                         ?>
                     </select>
                 </div>
                 <div class="btn-filter">
-                    <button type="submit" class="limpar-filtros">Limpar filtros</button>
+                    <button type="reset" class="limpar-filtros">Limpar filtros</button>
                     <button type="submit" name="btn_submit_relatorio" class="filtros">Filtrar</button>
                 </div>
             </div>
@@ -91,9 +92,9 @@
                     </form>
                 </div>
                 <div class="dev-relatorio">
-                    <form action="../pages/nao_conformidade_user.php" method="post" target="_blanck">
-                        <button class="btn-relatorio" type="submit">Gerar PDF</button>
-                    </form>
+                    
+                    <button class="btn-relatorio" id="bnt_gerar_pdf" type="submit">Gerar PDF</button>
+                    
                 </div>
             </section>
         </div>
