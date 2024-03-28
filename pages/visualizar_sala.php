@@ -5,6 +5,7 @@ include_once("../includes/menu.php");
 $titulo_page = 'Visualizar Sala';
 require("../includes/header/header.php");
 
+
  
 use App\Entity\Sala;
 use App\Entity\Checklist;
@@ -27,11 +28,11 @@ $responsavel=$status[0]["responsavel"];
 
 
 $data_hora = $objCheck->validar_40_minutos($id_sala,$responsavel);
-// var_dump($data_hora);
+var_dump($data_hora);
 $data_abertura=$data_hora[0]["data_abertura"];
-// var_dump($data_abertura);
-$hora_atual=$data_hora[0]["now()"];
-// var_dump($hora_atual);
+// var_dump($data_hora[0]["NOW()"]);
+$hora_atual=$data_hora[0]["NOW()"];
+var_dump($hora_atual);
 
 
 
@@ -69,21 +70,24 @@ if($status[0]['status']=='L'){
     </div>';
 }
 elseif($status[0]['status']=='A'){
-    // if($diferenca_minutos >= 40){
-    //     // print("entrou no if ");
-    //     // var_dump($diferenca_minutos);
-        
-    // };
-    if($status[0]['responsavel'] ==$_SESSION['id_user'] || $ifreaac && $diferenca_minutos >= 40 ){
+    
+
+
+    // Aqui está uma gambiarra para resolver diferença de hora kkkkkkk
+    // print($diferenca_minutos);
+    $diferenca_minutos=$diferenca_minutos-60;
+    print($diferenca_minutos);
+    if(($status[0]['responsavel'] == $_SESSION['id_user'] || $ifreaac) && $diferenca_minutos >= 40 ){
         print("entrou no if ");
         $btn_checklist = '
                 <div class="botao-padrao-fazer-checklist">
                     <a href="../pages/cadastrar_checklist_posaula.php?id_sala='.$_GET['id_sala'].'"><input type="submit" class="botao-fazer-checklist-submit"  value="PÓS AULA"></a>
                 </div>';
+    }
+    else{
+        return json_encode(true);
     };
-    else(
-        echo "<script>modalStatus()</script>";
-    ){};
+    
 }
 
 $funcionamento = json_decode($dados[0]['horarios'], true);

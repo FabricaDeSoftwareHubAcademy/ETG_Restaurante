@@ -248,12 +248,14 @@ class Banco{
         return $this->executarQuery($query);
     }
 
-    public function get_horario_pre($id_sala,$id_responsavel){
-        //retorna o horario que o checklist foi iniciado e a data de fechamento caso exista. 
-
-        $query="select data_abertura, data_fechamento, now()  from responder_check where id_usuario=$id_responsavel and id_sala=$id_sala
-        ;";
-        return $this->executarQuery($query);
+    public function get_horario_pre($id_sala, $id_responsavel){
+        // Retorna o horário que o checklist foi iniciado e a data de fechamento, se existir.
+    
+        // Preparar a consulta SQL com parâmetros
+        $query = "SELECT data_abertura, data_fechamento, NOW() FROM responder_check WHERE id_usuario = ? AND id_sala = ?";
+        
+        // Executar a consulta preparada com os parâmetros fornecidos
+        return $this->executarQuery($query, [$id_responsavel, $id_sala]);
     }
 }
 
