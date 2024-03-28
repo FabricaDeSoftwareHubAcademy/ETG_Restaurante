@@ -12,7 +12,6 @@
 <script defer src="../assets/js/modal_pergunta_checklist.js"></script>
 <script defer src="../assets/js/cadastro-checklist.js"></script>
 
-
 <body class="pai_de_todos">
     <?php include_once("../includes/menu.php"); ?>
     <div class="titulo-topo">

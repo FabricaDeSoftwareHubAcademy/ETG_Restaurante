@@ -58,7 +58,7 @@
     overflow: hidden;
     overflow-y: scroll;
     max-width: 800px;
-    max-height: 340px;
+    max-height: 250px;
 }
 
 .selecao-pergunta::-webkit-scrollbar {
@@ -390,7 +390,7 @@ textarea{
     padding: 1%;
     display: flex;
     flex-direction: row;
-    width: 100%;
+    /* width: 100%; */
     justify-content: space-evenly;
     margin-top: 1%;
 }
@@ -476,4 +476,28 @@ textarea{
     position: absolute;
     z-index: 999999;
 
+}
+
+@media (max-width: 600px) {
+    #titulo{
+        font-size: 26px;
+    }
+}
+
+@media (max-width: 370px) {
+    #titulo{
+        font-size: 24px;
+    }
+    #titulo-pergunta-pre, #titulo-pergunta-pos{
+        font-size: 13px;
+    }
+    .titulo-selecione-pergunta-pre{
+        padding-top:0;
+    }
+}
+
+@media(max-widht: 350px){
+    #titulo {
+        font-size: 23px;
+    }
 }

@@ -172,5 +172,29 @@ td {
   color: white;
 }
 
+@media (max-width: 370px) {
+  .tab-menu li{
+    font-size: 13px;
+  }
+}
 
+@media (max-width: 370px) {
+  .tab-menu .line{
+    width: 65px;
+  }
+  .line.active {
+    left: 65px;
+  }
+  .tab-menu li{
+    padding: 9px 5px;
+  }
+  .adicionar_pergunta {
+    height: 26px;
+    width: 26px;
+    margin-top: 4px;
+  }
+  #add_pergunta {
+    padding-top: 2px;
+  }
+}
  

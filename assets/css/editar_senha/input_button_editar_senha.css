@@ -189,7 +189,7 @@
 }
 
 .botao-confirmar-submit{
-  width: 44%; /* 44%*/
+  width: 50%; /* 44%*/
   height: 172%; /*170%*/
   background-color: var(--cor-primaria-botao-white);
   border: 3px solid var(--cor-primaria-botao-green);

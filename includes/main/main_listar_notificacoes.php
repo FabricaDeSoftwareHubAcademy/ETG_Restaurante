@@ -1,5 +1,5 @@
 <link rel="stylesheet" href="../assets/css/listar_notificacoes.css">
-<link rel="stylesheet" href="../assets/css/estilo_botões_padronizados.css">
+<!-- <link rel="stylesheet" href="../assets/css/estilo_botões_padronizados.css"> -->
 
 
 <body class="tela_notificacao"> 
