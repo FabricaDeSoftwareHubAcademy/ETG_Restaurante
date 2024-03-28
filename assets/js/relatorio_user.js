@@ -99,6 +99,7 @@ async function filter_checklist_user(id_user){
   
 $("#bnt_gerar_pdf").on('click', (e) => {
 
+  localStorage.clear()
   localStorage.setItem('dadosPDFUser', JSON.stringify(dadosPDF));
 
   let dados = localStorage.getItem('dadosPDFUser')
