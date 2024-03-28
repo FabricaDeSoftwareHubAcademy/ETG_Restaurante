@@ -21,7 +21,8 @@
         </section>
 
         <section class="buttons-up">
-            <button class="buttons-upp"><a href="../pages/relatorio_salas.php">Relatórios</a></button>
+
+            <a href="../pages/relatorio_salas.php"><button class="buttons-upp">Relatórios</button></a>
             <button class="buttons-upp" onClick="window.location.reload()">Atualizar</button>
         </section>
 
