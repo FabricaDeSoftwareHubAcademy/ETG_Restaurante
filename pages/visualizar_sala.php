@@ -30,7 +30,7 @@ if($status[0]['status']=='L'){
 $data_hora = $objCheck->validar_40_minutos($id_sala,$responsavel);
 // var_dump($data_hora);
 $data_abertura=$data_hora[0]["data_abertura"];
-var_dump($data_hora[0]["NOW()"]);
+// var_dump($data_hora[0]["NOW()"]);
 $hora_atual=$data_hora[0]["NOW()"];
 // var_dump($hora_atual);
 // Duas timestamps de exemplo
@@ -47,7 +47,7 @@ elseif($status[0]['status']=='A'){
     // Aqui está uma gambiarra para resolver diferença de hora kkkkkkk
     // print($diferenca_minutos);
     $diferenca_minutos=$diferenca_minutos-60;
-    print($diferenca_minutos);
+    // print($diferenca_minutos);
     if(($status[0]['responsavel'] == $_SESSION['id_user'] || $ifreaac) && $diferenca_minutos >= 40 ){
         // print("entrou no if ");
         $btn_checklist = '
