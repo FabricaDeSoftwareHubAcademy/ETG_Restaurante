@@ -85,6 +85,13 @@
                 <canvas id="Chart"></canvas>
             </div>
 
+            <div class="dashboard-card">
+                        <div class="dashboard-card-content">
+                            <h3>3,536</h3>
+                            <p>Checklists</p>
+                        </div>
+            </div>
+
             <section class="area-botao">
                 <div class="detalhes">
                     <form action="" method="post" target="_blank">
@@ -101,34 +108,7 @@
             
         </section>
        
-            <div class="card_grafic">
-                    <div class="grafico_conf">
-                        <canvas id="myChart"></canvas>
-                    </div>
-                    <div class="grafico_qtd">
-                        <canvas id="Chart"></canvas>
-                    </div>
-
-                    <div class="dashboard-card">
-                        <div class="dashboard-card-content">
-                            <h3>3,536</h3>
-                            <p>Checklists</p>
-                        </div>
-                    </div>
-   
-                    <section class="area-botao">
-                        <div class="detalhes">
-                            <form action="" method="post" target="_blank">
-                                <button class="btn-detalhes" type="submit">Detalhes</button>
-                            </form>
-                        </div>
-                        <div class="dev-relatorio">
-                            <form action="../pages/nao_conformidade_user.php" method="post" target="_blanck">
-                                <button class="btn-relatorio" type="submit">Gerar PDF</button>
-                            </form>
-                        </div>
-                    </section>
-            </div>
+           
    
     </main>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
