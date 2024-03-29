@@ -186,6 +186,12 @@ class Checklist
         return ($query);
     }
 
+    public static function validar_se_o_chechlist_foi_respondido(){
+        $obj_banco = new Banco('responder_check');
+        $data_hora=$obj_banco->saber_data_hora_banco();
+        
+    }
+
 
 
 }

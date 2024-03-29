@@ -17,9 +17,6 @@ $teste = $objCheck->getLastCheck($id_sala);
 $status = Sala::getDados(col:'status,responsavel',where:'id = '.$id_sala);
 $responsavel=$status[0]["responsavel"];
 
-
-
-
 $data_hora = $objCheck->validar_40_minutos($id_sala,$responsavel);
 // var_dump($data_hora);
 $data_abertura=$data_hora[count($data_hora)-1]["data_abertura"];

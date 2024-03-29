@@ -237,14 +237,17 @@ class Banco{
         return $this -> executarQuery($query);
     }
     public function getdetalhes_amanhecer($id_usuario,$id_checklist){
-        $query = "SELECT responder_check.id_usuario, cadastro_usuario.nome AS nome_usuario, cadastro_sala.nome AS nome_sala, responder_check.id, responder_check.data_abertura, responder_check.data_fechamento, reg_nc.*";
-        $query .= " FROM responder_check";
-        $query .= " INNER JOIN cadastro_usuario ON cadastro_usuario.id = responder_check.id_usuario";
-        $query .= " INNER JOIN cadastro_sala ON cadastro_sala.id = responder_check.id_sala";
-        $query .= " INNER JOIN reg_nc ON reg_nc.id_realiza = responder_check.id";
-        $query .= " WHERE responder_check.id = $id_checklist";
-        $query .= " AND responder_check.id_usuario = $id_usuario";
-        // die($query);
+        $query = 'SELECT 
+        *
+        FROM responder_check
+        JOIN reg_nc
+        on reg_nc.id_realiza = responder_check.id
+        JOIN cadastro_sala
+        ON responder_check.id_sala = cadastro_sala.id
+        JOIN cadastro_usuario
+        ON responder_check.id_usuario = cadastro_usuario.id
+        
+        WHERE responder_check.id_checklist = 1 AND responder_check.id_usuario = 1 ;';
         return $this->executarQuery($query);
     }
 
@@ -256,6 +259,11 @@ class Banco{
         
         // Executar a consulta preparada com os parâmetros fornecidos
         return $this->executarQuery($query, [$id_responsavel, $id_sala]);
+    }
+
+    public function saber_data_hora_banco(){
+        $query ="SELECT NOW()";
+        return $this->executarQuery($query);
     }
 }
 
