@@ -18,6 +18,25 @@ $status = Sala::getDados(col:'status,responsavel',where:'id = '.$id_sala);
 $responsavel=$status[0]["responsavel"];
 
 
+
+
+$data_hora = $objCheck->validar_40_minutos($id_sala,$responsavel);
+// var_dump($data_hora);
+$data_abertura=$data_hora[count($data_hora)-1]["data_abertura"];
+// var_dump($data_hora[0]["NOW()"]);
+$hora_atual=$data_hora[0]["NOW()"];
+// var_dump($hora_atual);
+// Duas timestamps de exemplo
+$timestamp1 = strtotime($data_abertura);
+$timestamp2 = strtotime($hora_atual);
+var_dump($data_hora[count($data_hora)-1]);
+// Calcula a diferença em segundos
+$diferenca_segundos = abs($timestamp2 - $timestamp1);
+// Converte a diferença para minutos
+$diferenca_minutos = $diferenca_segundos / 60;
+// Verifica se a diferença é maior ou igual a 40 minutos
+//A partir da qui é antes do copiar e colar. 
+
 if($status[0]['status']=='L'){
     $btn_checklist = '
     <div class="botao-padrao-fazer-checklist">
@@ -26,27 +45,12 @@ if($status[0]['status']=='L'){
         </a>
     </div>';
 
-
-$data_hora = $objCheck->validar_40_minutos($id_sala,$responsavel);
-// var_dump($data_hora);
-$data_abertura=$data_hora[0]["data_abertura"];
-// var_dump($data_hora[0]["NOW()"]);
-$hora_atual=$data_hora[0]["NOW()"];
-// var_dump($hora_atual);
-// Duas timestamps de exemplo
-$timestamp1 = strtotime($data_abertura);
-$timestamp2 = strtotime($hora_atual);
-// Calcula a diferença em segundos
-$diferenca_segundos = abs($timestamp2 - $timestamp1);
-// Converte a diferença para minutos
-$diferenca_minutos = $diferenca_segundos / 60;
-// Verifica se a diferença é maior ou igual a 40 minutos
-//A partir da qui é antes do copiar e colar. 
 }
+
 elseif($status[0]['status']=='A'){
     // Aqui está uma gambiarra para resolver diferença de hora kkkkkkk
     // print($diferenca_minutos);
-    $diferenca_minutos=$diferenca_minutos-60;
+    // $diferenca_minutos=$diferenca_minutos-60;
     print($diferenca_minutos);
     if(($status[0]['responsavel'] == $_SESSION['id_user'] || $ifreaac) && $diferenca_minutos >= 40 ){
         // print("entrou no if ");
