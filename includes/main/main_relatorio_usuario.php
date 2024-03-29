@@ -1,8 +1,8 @@
 <script>
-    const countC = <?=$qntC?>;
-    const countNC = <?=$qntNC?>;
-    const countCorrecao = <?=$qntCorrecao?>;
-    const dadosPDF = <?=$dadosPDF?>
+     countC = <?=$qntC?>;
+     countNC = <?=$qntNC?>;
+     countCorrecao = <?=$qntCorrecao?>;
+    dadosPDF = <?=$dadosPDF?>;
 
 </script>
 
@@ -94,9 +94,8 @@
 
             <section class="area-botao">
                 <div class="detalhes">
-                    <form action="" method="post" target="_blank">
-                        <button class="btn-detalhes" type="submit">Detalhes</button>
-                    </form>
+                    <button class="btn-detalhes" id="btn_detalhes_pdf_007" type="submit">Detalhes</button>
+                    
                 </div>
                 <div class="dev-relatorio">
                     

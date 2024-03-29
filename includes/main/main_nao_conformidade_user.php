@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
@@ -62,7 +64,7 @@
 <body>
     <h2 id='nome_titulo'>Relatório de Usuários</h2>
     <div class="area_btn">
-        <button id='btn_imprimir'>Imprimir</button>
+        <button id='btn_imprimir'><i class="fa-solid fa-print"></i> Imprimir</button>
     </div>
 
     <table>
@@ -85,21 +87,26 @@
 <script>
 
     
-    var dadosPDF = JSON.parse(localStorage.getItem('dadosPDFUser')) 
-    console.log(dadosPDF)
-    dadosPDF.forEach(element => {
-        
-        let td =document.createElement('tr')
-        td.innerHTML = `
-                <td>${element.data_fechamento}</td>
-                <td>${element.nome}</td>
-                <td>${element.nome_sala}</td>
-                <td>${element.nome_check}</td>
-                <td>${element.qnt_nc > 0 ? 'Sim': 'Não'}</td>
-                <td>${element.qnt_c > 0 ? 'Sim': 'Não'}</td>`
-        $('#tbody_pdf').append(td)
+    if(localStorage.getItem('dadosPDFUser') != 'undefined'){
 
-    });
+
+        var dadosPDF = JSON.parse(localStorage.getItem('dadosPDFUser')) 
+        console.log(dadosPDF)
+        dadosPDF.forEach(element => {
+            
+            let td =document.createElement('tr')
+            td.innerHTML = `
+                    <td>${element.data_fechamento}</td>
+                    <td>${element.nome}</td>
+                    <td>${element.nome_sala}</td>
+                    <td>${element.nome_check}</td>
+                    <td>${element.qnt_nc > 0 ? 'Sim': 'Não'}</td>
+                    <td>${element.qnt_c > 0 ? 'Sim': 'Não'}</td>`
+            $('#tbody_pdf').append(td)
+    
+        });
+
+    }
     
     $('#btn_imprimir').on('click',(e) => {
         print()

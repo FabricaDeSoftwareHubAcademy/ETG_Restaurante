@@ -1,3 +1,8 @@
+var countC ;
+var countNC ;
+var countCorrecao;
+var dadosPDF ;
+
 document.addEventListener("DOMContentLoaded", function() {
     const accordionItems = document.querySelectorAll('.accordion .link');
     const periodoAccordionItems = document.querySelectorAll('.periodo .periodo_report');
@@ -108,5 +113,18 @@ $("#bnt_gerar_pdf").on('click', (e) => {
   window.location.href = './nao_conformidade_user.php'
   
 })
+$("#btn_detalhes_pdf_007").on('click',(e) => {
+
+  let select_user = $('#select_user')[0].value
+  let select_check = $('#select_checks')[0].value
   
+  if((select_user != 'Selecione o Usuário') && (select_check != 'Selecione o Checklist')){
+
+    window.location.href = `./detalhes_relatorio.php?id_usuario=${select_user}&id_checklist=${select_check}`
+
+  }else{
+    modalStatus('Selecione um Usuário e um Checklist pelo menos','error')
+  }
+
+})
   
