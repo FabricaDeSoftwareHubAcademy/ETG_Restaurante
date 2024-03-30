@@ -238,7 +238,7 @@ class Banco{
     }
     public function getdetalhes_amanhecer($id_usuario,$id_checklist){
         $query = 'SELECT 
-        *
+        cadastro_sala.nome as nome_sala,responder_check.data_abertura, responder_check.data_fechamento, cadastro_usuario.nome as nome_usuario,reg_nc.descricao_NC,reg_nc.img1,reg_nc.img2,reg_nc.img3
         FROM responder_check
         JOIN reg_nc
         on reg_nc.id_realiza = responder_check.id
@@ -247,7 +247,7 @@ class Banco{
         JOIN cadastro_usuario
         ON responder_check.id_usuario = cadastro_usuario.id
         
-        WHERE responder_check.id_checklist = 1 AND responder_check.id_usuario = 1 ;';
+        WHERE responder_check.id_checklist = '.$id_checklist.' AND responder_check.id_usuario = '.$id_usuario.';';
         return $this->executarQuery($query);
     }
 

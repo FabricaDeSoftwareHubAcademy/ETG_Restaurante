@@ -13,6 +13,7 @@ if (isset($_GET['id_usuario']) && $_GET['id_checklist']) {
     $id_checklist = $_GET['id_checklist'];
 }
 $busca = Checklist::getDetalhes($id_usuario, $id_checklist);
+// var_dump($busca);
 $dados_responsavel = '';
 $dados_responsavel .= '<div class="dados_responsavel">       
 <div class="esquerda"><p class="nome">Nome: ' . $busca[0]["nome_usuario"] . '
