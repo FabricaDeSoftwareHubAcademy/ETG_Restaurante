@@ -1,5 +1,6 @@
 <?php
 session_start();
+$titulo_page = "Listar Checklist Concluídas";
 include_once("../includes/menu.php");
 if(!$ifgencheck){
     header("Location: ../pages/listar_recados.php");

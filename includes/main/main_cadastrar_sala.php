@@ -316,14 +316,12 @@
                                 })
 
                                 let response = await dados_php.json()
-
-                                if (response) {
-
-                                    modalStatus("Escolha pelo menos um dia de Funcionamento e um periodo de funcionamento.", "success", () => {
-                                        window.location.href = "./listar_salas.php"
-                                    })
-
-                                } else {
+                                
+                                if(response){
+                                                                      
+                                    modalStatus("Sala Cadastrada com sucesso.","success",()=>{window.location.href="./listar_salas.php"})
+                                
+                                }else{
                                     console.log("2")
                                 }
 

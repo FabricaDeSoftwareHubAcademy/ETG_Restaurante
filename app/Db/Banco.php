@@ -236,15 +236,38 @@ class Banco{
         );';
         return $this -> executarQuery($query);
     }
-    public function getdetalhes_amanhecer($id_usuario, $id_checklist){
-        $query = "SELECT responder_check.id_usuario, cadastro_usuario.nome AS nome_usuario, cadastro_sala.nome AS nome_sala, responder_check.id, responder_check.data_abertura, responder_check.data_fechamento, reg_nc.*";
-        $query .= " FROM responder_check";
-        $query .= " INNER JOIN cadastro_usuario ON cadastro_usuario.id = responder_check.id_usuario";
-        $query .= " INNER JOIN cadastro_sala ON cadastro_sala.id = responder_check.id_sala";
-        $query .= " INNER JOIN reg_nc ON reg_nc.id_realiza = responder_check.id";
-        $query .= " WHERE responder_check.id = $id_checklist";
-        $query .= " AND responder_check.id_usuario = $id_usuario";
-        // die($query);
+    public function getdetalhes_amanhecer($id_usuario,$id_checklist){
+        $query = 'SELECT 
+        cadastro_sala.nome as nome_sala,
+        responder_check.data_abertura,
+        cadastro_checklist.nome as nome_checklist, 
+        responder_check.data_fechamento, 
+        cadastro_usuario.nome as nome_usuario,
+        reg_nc.descricao_NC,
+        reg_nc.img1,
+        reg_nc.img2,
+        reg_nc.img3
+    FROM responder_check
+    JOIN reg_nc ON reg_nc.id_realiza = responder_check.id
+    JOIN cadastro_sala ON responder_check.id_sala = cadastro_sala.id
+    JOIN cadastro_usuario ON responder_check.id_usuario = cadastro_usuario.id
+    JOIN cadastro_checklist ON cadastro_checklist.id = responder_check.id_checklist 
+    WHERE responder_check.id_checklist = '.$id_checklist.' AND responder_check.id_usuario = '.$id_checklist.';';
+        return $this->executarQuery($query);
+    }
+
+    public function get_horario_pre($id_sala, $id_responsavel){
+        // Retorna o horário que o checklist foi iniciado e a data de fechamento, se existir.
+    
+        // Preparar a consulta SQL com parâmetros
+        $query = "SELECT data_abertura, data_fechamento, NOW() FROM responder_check WHERE id_usuario = ? AND id_sala = ?";
+        
+        // Executar a consulta preparada com os parâmetros fornecidos
+        return $this->executarQuery($query, [$id_responsavel, $id_sala]);
+    }
+
+    public function saber_data_hora_banco(){
+        $query ="SELECT NOW()";
         return $this->executarQuery($query);
     }
 }
