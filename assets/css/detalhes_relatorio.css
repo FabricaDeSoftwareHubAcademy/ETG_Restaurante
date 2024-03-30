@@ -164,6 +164,7 @@
 }
 
 .area_botões{
+    position: relative;
     width: 97%;
     display: flex;
     flex-direction: row;
@@ -219,7 +220,7 @@
     /* width: 110px; */
     display: inline-block;
     padding: 12px 60px;
-    background-color: var(--cor-primaria-botao-white);
+    background-color: transparent;
     border: 3px solid var(--cor-primaria-botao-yellow);
     border-radius: 20px;
     cursor: pointer;
@@ -247,7 +248,7 @@
     /* width: 110px; */
     display: inline-block;
     padding: 12px 57px;
-    background-color: var(--cor-primaria-botao-white);
+    background-color: transparent;
     border: 3px solid var(--cor-primaria-botao-green);
     border-radius: 20px;
     cursor: pointer;

@@ -1,4 +1,6 @@
 <link rel="stylesheet" href="../assets/css/detalhes_relatorio.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
 <script src="../assets/js/imagem_preview.js" defer></script>
 <body class="tela_detalhes">
     <div class="titulo">
@@ -33,12 +35,12 @@
     </section>
     <div class="area_botões">
         <div class="botao-padrao-voltar">
-            <a href="#" class="botao-voltar-link">VOLTAR</a>
+            <a href="./relatorio_user.php" class="botao-voltar-link">VOLTAR</a>
         </div>
 
         <div class="gerar_relatorio">
             <div class="imprimir">
-                <button class="botao-cadastrar-link" onclick="print()">IMPRIMIR</button>
+                <button class="botao-cadastrar-link" onclick="actionImprimir()">IMPRIMIR</button>
                 <!-- <a href="listar_salas.php" class="botao-voltar-link">Imprimir</a> -->
             </div>
               <!--Botão Cadastrar-->
@@ -85,5 +87,22 @@
         });
     </script> -->
 </body>
+<script>
+
+function actionImprimir(){
+
+    document.body.classList = ''
+    $(".darkmode-background").remove()
+    $(".darkmode-layer").remove()
+    $(".darkmode-toggle").remove()
+    darkModeProject('#fff')
+    print()
+
+}
+
+
+</script>
+
+
 
 </html>
