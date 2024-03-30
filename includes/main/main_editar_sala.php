@@ -79,7 +79,7 @@
                             ?>
                         </select> 
                         <a href="cadastrar_checklist.php" style="color: black;">
-                            <i class="bi bi-plus-circle " style="font-size: 30px; opacity: 0.7;"></i>
+                            <i class="bi bi-plus-circle darkModeEdit" style="font-size: 30px; opacity: 0.7;"></i>
                         </a>
 
                     </div>
@@ -94,32 +94,32 @@
                         <div class="area_Dos_check_box" id="area_dos_dias">
                             
                             <div class="Check_Box_individual">
-                                <p class="coisa_tag_p">Segunda</p>
+                                <p class="coisa_tag_p darkModeEdit">Segunda</p>
                                 <input name="segunda" class="espaco_check_box" type="checkbox" <?=($funcionamento['segunda'] == 'sim' ? 'checked' : NULL)?>/>
                             </div>
 
                             <div class="Check_Box_individual">
-                                <p class="coisa_tag_p">Terça</p>
+                                <p class="coisa_tag_p darkModeEdit">Terça</p>
                                 <input name="terca" class="espaco_check_box" type="checkbox" <?=($funcionamento['terca'] == 'sim' ? 'checked' : NULL)?>/>
                             </div>
 
                             <div class="Check_Box_individual">
-                                <p class="coisa_tag_p">Quarta</p>
+                                <p class="coisa_tag_p darkModeEdit">Quarta</p>
                                 <input name="quarta" class="espaco_check_box" type="checkbox" <?=($funcionamento['quarta'] == 'sim' ? 'checked' : NULL)?>/>
                             </div>
 
                             <div class="Check_Box_individual">
-                                <p class="coisa_tag_p">Quinta</p>
+                                <p class="coisa_tag_p darkModeEdit">Quinta</p>
                                 <input name="quinta" class="espaco_check_box" type="checkbox" <?=($funcionamento['quinta'] == 'sim' ? 'checked' : NULL)?>/>
                             </div>
 
                             <div class="Check_Box_individual">
-                                <p class="coisa_tag_p">Sexta</p>
+                                <p class="coisa_tag_p darkModeEdit">Sexta</p>
                                 <input name="sexta" class="espaco_check_box" type="checkbox" <?=($funcionamento['sexta'] == 'sim' ? 'checked' : NULL)?>/>
                             </div>
 
                             <div class="Check_Box_individual">
-                                <p class="coisa_tag_p">Sábado</p>
+                                <p class="coisa_tag_p darkModeEdit">Sábado</p>
                                 <input name="sabado" class="espaco_check_box" type="checkbox" <?=($funcionamento['sabado'] == 'sim' ? 'checked' : NULL)?>/>
                             </div>
 
@@ -133,17 +133,17 @@
                             
                             
                             <div class="Check_Box_individual">
-                                <p class="coisa_tag_p">Matutino</p>
+                                <p class="coisa_tag_p darkModeEdit">Matutino</p>
                                 <input name="matutino" class="espaco_check_box" type="checkbox" <?=($funcionamento['turnos']['matutino'] == 'sim' ? 'checked' : NULL)?>/>
                             </div>
 
                             <div class="Check_Box_individual">
-                                <p class="coisa_tag_p">Vespertino</p>
+                                <p class="coisa_tag_p darkModeEdit">Vespertino</p>
                                 <input name="vespertino" class="espaco_check_box" type="checkbox" <?=($funcionamento['turnos']['vespertino'] == 'sim' ? 'checked' : NULL)?>/>
                             </div>
 
                             <div class="Check_Box_individual">
-                                <p class="coisa_tag_p">Noturno</p>
+                                <p class="coisa_tag_p darkModeEdit">Noturno</p>
                                 <input name="noturno" class="espaco_check_box" type="checkbox" <?=($funcionamento['turnos']['noturno'] == 'sim' ? 'checked' : NULL)?>/>
                             </div>
 
@@ -159,7 +159,7 @@
 
 
                         <div class="text-area">
-                            <span id=descrição>Descrição</span>
+                            <span id=descrição class=" darkModeEdit">Descrição</span>
 
                             <textarea placeholder="Area de texto " name="descricao" id="textareajs" cols="70" rows="10" class="text-descricao" maxlength="254"><?=$dados_sala[0]['descricao']?></textarea>
                         </div>
@@ -167,23 +167,23 @@
                             <div class="alinar-img">
 
                                 <div class="coisas_enilda">
-                                    <span id="img-text"> Insira a imagem : </span>
-                                    <label id="botão-img" for="arquivo" >Selecionar Foto</label>
+                                    <span id="img-text" class=" darkModeEdit"> Insira a imagem : </span>
+                                    <label id="botão-img" class="btn_img_cadastrar_sala" for="arquivo" >Selecionar Foto</label>
                                 </div>
                                 
                                 
                                 <input type="file" name="img_sala" id="arquivo">
                                 <div class="area-anexo">
-                                    <img id="camera_imagem" class="imagem_aparecer_editar" src="../storage/salas/<?=$dados_sala[0]['img_sala']?>" alt="">
+                                    <img id="camera_imagem" class="imagem_aparecer_editar " src="../storage/salas/<?=$dados_sala[0]['img_sala']?>" alt="">
                                     <img  id="imagem_agora_vai" class="novo_css_imagem" src="" alt="">
                                 </div>
                                 
                             </div>    
                             <div class="alinar-botao-cor">
-                                <span id="selecao-cor-text">Cor da sala : </span> 
+                                <span id="selecao-cor-text" class="darkModeEdit">Cor da sala : </span> 
                                 <input value="<?=$dados_sala[0]['cor_itens']?>" class="botao-cor" name="cor_itens" type="color">
                                 
-                                <p class="texto_Status">Ativado/Desativado:</p>
+                                <p class="texto_Status darkModeEdit">Ativado/Desativado:</p>
                                 <label class="switch" for="">
                                 <input type="checkbox" name="status" <?php echo $dados_sala[0]['status']== "L" ? "checked" : "";?>>
 

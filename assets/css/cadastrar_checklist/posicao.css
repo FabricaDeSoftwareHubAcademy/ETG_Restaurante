@@ -110,6 +110,7 @@
 }
 
 .botoes-cadastro-checklist {
+    position: relative;
     display: flex;
     padding-top: 40px;
     justify-content: space-between;

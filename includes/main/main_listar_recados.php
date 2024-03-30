@@ -1,6 +1,10 @@
 <link rel="stylesheet" href="../assets/css/pop_ups_mural_recado.css">
 <link rel="stylesheet" href="../assets/css/style-pop-up-mural.css">
 <link rel="stylesheet" href="../assets/css/listar_recados.css"> 
+ 
+ 
+
+
 <script src="../assets/js/modais.js"></script>
 
 <body class="body_mural">

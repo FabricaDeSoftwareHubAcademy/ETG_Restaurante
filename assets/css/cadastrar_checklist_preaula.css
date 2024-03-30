@@ -162,11 +162,13 @@ textarea.nova_observacao::-webkit-scrollbar {
 }
 
 .bi-check-circle{
+  position: relative;
     color: #609437;
 }
 
 .bi-x-circle{
-    color: #CB1010;
+  position: relative;
+  color: #CB1010;
 }
 
 /* Css Botão Salvar */
@@ -182,7 +184,7 @@ textarea.nova_observacao::-webkit-scrollbar {
   .botao-salvar-submit{
     width: 180px;
     height: 45px;
-    background-color: var(--cor-primaria-botao-white);
+    background-color: transparent;
     border: 3px solid var(--cor-primaria-botao-green);
     border-radius: 20px;
     cursor: pointer;
@@ -241,7 +243,7 @@ textarea.nova_observacao::-webkit-scrollbar {
   .botao-voltar-submit{
     width: 180px;
     height: 45px;
-    background-color: var(--cor-primaria-botao-white);
+    background-color: transparent;
     border: 3px solid var(--cor-primaria-botao-yellow);
     border-radius: 20px;
     cursor: pointer;
@@ -289,6 +291,7 @@ textarea.nova_observacao::-webkit-scrollbar {
 
   /* Botão */
   .botoes-cadastro-checklist {
+    position: relative;
     display: flex;
     margin-top: 3vh;
     justify-content: space-between;

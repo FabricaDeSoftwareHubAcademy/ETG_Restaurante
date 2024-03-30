@@ -58,7 +58,7 @@
 
 
                         <a href="cadastrar_checklist.php" style="color: black;">
-                            <i class="bi bi-plus-circle " style="font-size: 30px; opacity: 0.7;"></i>
+                            <i class="bi bi-plus-circle  darkModeEdit" style="font-size: 30px; opacity: 0.7;"></i>
                         </a>
 
                     </div>
@@ -73,31 +73,31 @@
                     <div class="area_Dos_check_box" id="area_dos_dias">
 
                         <div class="Check_Box_individual">
-                            <p class="coisa_tag_p">Segunda</p>
+                            <p class="coisa_tag_p darkModeEdit">Segunda</p>
                             <input name="segunda" class="espaco_check_box" type="checkbox" />
                         </div>
                         <div class="Check_Box_individual">
-                            <p class="coisa_tag_p">Terça</p>
+                            <p class="coisa_tag_p darkModeEdit">Terça</p>
                             <input name="terca" class="espaco_check_box" type="checkbox" />
                         </div>
 
                         <div class="Check_Box_individual">
-                            <p class="coisa_tag_p">Quarta</p>
+                            <p class="coisa_tag_p darkModeEdit">Quarta</p>
                             <input name="quarta" class="espaco_check_box" type="checkbox" />
                         </div>
 
                         <div class="Check_Box_individual">
-                            <p class="coisa_tag_p">Quinta</p>
+                            <p class="coisa_tag_p darkModeEdit">Quinta</p>
                             <input name="quinta" class="espaco_check_box" type="checkbox" />
                         </div>
 
                         <div class="Check_Box_individual">
-                            <p class="coisa_tag_p">Sexta</p>
+                            <p class="coisa_tag_p darkModeEdit">Sexta</p>
                             <input name="sexta" class="espaco_check_box" type="checkbox" />
                         </div>
 
                         <div class="Check_Box_individual">
-                            <p class="coisa_tag_p">Sábado</p>
+                            <p class="coisa_tag_p darkModeEdit">Sábado</p>
                             <input name="sabado" class="espaco_check_box" type="checkbox" />
                         </div>
 
@@ -111,17 +111,17 @@
 
 
                         <div class="Check_Box_individual">
-                            <p class="coisa_tag_p">Matutino</p>
+                            <p class="coisa_tag_p darkModeEdit">Matutino</p>
                             <input name="matutino" class="espaco_check_box" type="checkbox" />
                         </div>
 
                         <div class="Check_Box_individual">
-                            <p class="coisa_tag_p">Vespertino</p>
+                            <p class="coisa_tag_p darkModeEdit">Vespertino</p>
                             <input name="vespertino" class="espaco_check_box" type="checkbox" />
                         </div>
 
                         <div class="Check_Box_individual">
-                            <p class="coisa_tag_p">Noturno</p>
+                            <p class="coisa_tag_p darkModeEdit">Noturno</p>
                             <input name="noturno" class="espaco_check_box" type="checkbox" />
                         </div>
 
@@ -130,7 +130,7 @@
                     <div class="img-area">
 
                         <div class="text-area">
-                            <span class="span_semmod" id=descrição>Descrição</span>
+                            <span class="span_semmod  darkModeEdit" id=descrição>Descrição</span>
 
                             <textarea placeholder="Area de texto " name="descricao_sala" id="" cols="70" rows="10" class="text-descricao" maxLength="254"></textarea>
                         </div>
@@ -138,9 +138,9 @@
                             <div class="alinar-img">
 
                                 <div class="coisas_enilda">
-                                    <span class="span_semmod" id="img-text"> Insira a imagem : Resolução 416x150 </span>
+                                    <span class="span_semmod darkModeEdit" id="img-text"> Insira a imagem : Resolução 416x150 </span>
 
-                                    <label id="botão-img" for="arquivo">Selecionar Foto</label>
+                                    <label id="botão-img" class="btn_img_cadastrar_sala" for="arquivo">Selecionar Foto</label>
                                 </div>
 
 
@@ -157,7 +157,7 @@
                                 </div>
                             </div>
                             <div class="alinar-botao-cor">
-                                <span class="span_semmod" id="selecao-cor-text">Cor da sala : </span>
+                                <span class="span_semmod  darkModeEdit" id="selecao-cor-text">Cor da sala : </span>
                                 <input class="botao-cor" name="cor_sala" type="color">
                             </div>
                         </div>

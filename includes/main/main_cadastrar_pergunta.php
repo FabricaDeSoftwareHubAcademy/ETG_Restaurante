@@ -29,9 +29,9 @@
 
                 <div class="pesquisa">
                     <div class="input_group field">
-                        <input type="input" id ="input" class="input_field" placeholder="." required="" name="nome-checklist" autocomplete="off">
-                        <label for="name" class="input_label">Pesquisar pergunta</label> 
-                        <i class="bi bi-search" id="lupa"></i>
+                        <input type="input" id ="input" class="input_field darkModeEditLineBottom" placeholder="." required="" name="nome-checklist" autocomplete="off">
+                        <label for="name" class="input_label darkModeEdit">Pesquisar pergunta</label> 
+                        <i class="bi bi-search darkModeEdit" id="lupa"></i>
                     </div>
                 </div>
 
@@ -40,20 +40,20 @@
             
             <!-- PARTE DO FILTRO -->
 
-            <section class="filtro">
+            <section class="filtro ">
 
                 <a class="text_filtro">SELECIONE:</a>
 
                 <label class="checkbox-container1">
                     <input class="custom-checkbox" id="checkPre" checked="" type="checkbox">
-                    <a class="text_filtro">Pré-Aula</a>
+                    <a class="text_filtro darkModeEdit">Pré-Aula</a>
                     <span class="checkmark"></span>
                 </label>
 
                 
                 <label class="checkbox-container2">
                     <input class="custom-checkbox" id="checkPos" checked="" type="checkbox">
-                    <a class="text_filtro">Pós-Aula</a>
+                    <a class="text_filtro darkModeEdit">Pós-Aula</a>
                     <span class="checkmark"></span>
                 </label>
 

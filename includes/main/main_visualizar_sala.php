@@ -18,7 +18,7 @@
         
             <section class="area_card">
             
-                <div class="card" >
+                <div class="card card_view_sala_dark" >
 
                     <!-- PARTE QUE PEGA A IMAGEM DA SALA -->
                     <div class="imagem_card">

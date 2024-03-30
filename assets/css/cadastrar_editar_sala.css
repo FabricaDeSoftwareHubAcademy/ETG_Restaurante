@@ -550,6 +550,7 @@
   width: 100%;
 }
 .botao-cor{
+  position: relative;
   display: flex;
 
   margin: 30px auto;
@@ -599,7 +600,7 @@ input[type="file"] {
 .botao-cadastrar-submit{
   width: 180px;
   height: 45px;
-  background-color: var(--cor-primaria-botao-white);
+  background-color: transparent;
   border: 3px solid var(--cor-primaria-botao-green);
   border-radius: 20px;
   cursor: pointer;
@@ -655,7 +656,7 @@ input[type="file"] {
     position: fixed;
     /* position: absolute; */
     bottom: 0px;
-    background: rgb(255, 255, 255);
+    background: transparent;
     height: 90px;
     max-width: 832px;
 }
@@ -1123,7 +1124,7 @@ box-shadow: none;
   /* width: 110px; */
   display: inline-block;
   padding: 10px 60px;
-  background-color: var(--cor-primaria-botao-white);
+  background-color: transparent;
   border: 3px solid var(--cor-primaria-botao-yellow);
   border-radius: 20px;
   cursor: pointer;

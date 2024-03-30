@@ -109,6 +109,12 @@
     }
     
     $('#btn_imprimir').on('click',(e) => {
+
+        document.body.classList = ''
+        $(".darkmode-background").remove()
+        $(".darkmode-layer").remove()
+        $(".darkmode-toggle").remove()
+        darkModeProject('#fff')
         print()
     })
 

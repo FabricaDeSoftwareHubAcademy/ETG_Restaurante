@@ -28,12 +28,12 @@ foreach($dados as $sala){
             </td>
             <td>
                 <div class="div-td">
-                    <i class="bi bi-circle-fill-green"> Em dia</i>
+                    <i class="bi bi-circle-fill-green darkModeEdit"> Em dia</i>
                 </div>
             </td>
             <td>
                 <div class="div-td">
-                    <p class="p-data">'.date('d/m/Y', strtotime($sala['data_fechamento'])).'</p>
+                    <p class="p-data darkModeEdit">'.date('d/m/Y', strtotime($sala['data_fechamento'])).'</p>
                 </div>
             </td>
             <td>
@@ -41,12 +41,12 @@ foreach($dados as $sala){
                     <div class="progress-bar-dia">
                         <div class="progress-dia"></div>
                     </div>
-                    <p class="p-progress">Sem intervenção</p>
+                    <p class="p-progress darkModeEdit">Sem intervenção</p>
                 </div>
             </td>
             <td>
                 <div class="div-td">
-                <p class="p-docente">'.$sala['nome'].'</p>
+                <p class="p-docente darkModeEdit">'.$sala['nome'].'</p>
                 </div>
             </td>
         </tbody>';
@@ -64,12 +64,12 @@ foreach($dados as $sala){
                 </td>
                 <td>
                     <div class="div-td">
-                        <i class="bi bi-circle-fill"> Em atraso</i>
+                        <i class="bi bi-circle-fill darkModeEdit"> Em atraso</i>
                     </div>
                 </td>
                 <td>
                     <div class="div-td">
-                        <p class="p-data">'.date('d/m/Y', strtotime($sala['data_fechamento'])).'</p>
+                        <p class="p-data darkModeEdit">'.date('d/m/Y', strtotime($sala['data_fechamento'])).'</p>
                     </div>
                 </td>
                 <td>
@@ -77,12 +77,12 @@ foreach($dados as $sala){
                         <div class="progress-bar">
                             <div class="progress"></div>
                         </div>
-                    <p class="p-progress">Aguardando Logística</p>
+                    <p class="p-progress darkModeEdit">Aguardando Logística</p>
                 </div>
                 </td>
                 <td>
                     <div class="div-td">
-                    <p class="p-docente">'.$sala['nome'].'</p>
+                    <p class="p-docente darkModeEdit">'.$sala['nome'].'</p>
                     </div>
                 </td>
             </tbody>';
@@ -98,12 +98,12 @@ foreach($dados as $sala){
                 </td>
                 <td>
                     <div class="div-td">
-                        <i class="bi bi-circle-fill-yellow"> Em alerta</i>
+                        <i class="bi bi-circle-fill-yellow darkModeEdit"> Em alerta</i>
                     </div>
                 </td>
                 <td>
                    <div class="div-td">
-                    <p class="p-data">'.date('d/m/Y', strtotime($sala['data_fechamento'])).'</p>
+                    <p class="p-data darkModeEdit">'.date('d/m/Y', strtotime($sala['data_fechamento'])).'</p>
                 </div>
                 </td>
                 <td>
@@ -111,12 +111,12 @@ foreach($dados as $sala){
                         <div class="progress-bar-alerta">
                             <div class="progress-alerta"></div>
                         </div>
-                        <p class="p-progress">Resolvido com intervenção</p>
+                        <p class="p-progress darkModeEdit">Resolvido com intervenção</p>
                     </div>
                 </td>
                 <td>
                     <div class="div-td">
-                <p class="p-docente">'.$sala['nome'].'</p>
+                <p class="p-docente darkModeEdit">'.$sala['nome'].'</p>
                 </div>
                 </td>
             </tbody>';

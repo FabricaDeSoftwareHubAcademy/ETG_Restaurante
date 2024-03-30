@@ -184,8 +184,11 @@
   border-collapse: collapse;
   border-spacing: 0;
 }
-
+.body-tabela{
+  position: relative;
+}
 .body-tabela, th, td {
+   
   font-size: 15px;
   padding: 8px;
   text-align: left;
@@ -210,9 +213,10 @@
 
 .botao-voltar-link {
   /* width: 110px; */
+  position: relative;
   display: inline-block;
   padding: 12px 60px;
-  background-color: var(--cor-primaria-botao-white);
+  background-color: transparent;
   border: 3px solid var(--cor-primaria-botao-yellow);
   border-radius: 20px;
   cursor: pointer;

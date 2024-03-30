@@ -56,7 +56,7 @@ document.addEventListener("DOMContentLoaded", function() {
         data: {
           labels: ['Não Conforme', 'Conforme', 'Intervenção'],
           datasets: [{
-            label: 'Vizualizar quantidade',
+            label: ['Vizualizar quantidade'],
             data: [countNC, countC, countCorrecao],
             backgroundColor: ['#CB1010','#609437' ,'#F3B33D' ],
             borderWidth: 1

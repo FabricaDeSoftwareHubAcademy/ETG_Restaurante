@@ -40,7 +40,7 @@
                 <div class="input_group field">
                     <input type="input" class="input_field" maxlength="45" id="input_name_cad" placeholder="Name" required="" name="nome" value="<?= $dados_editar["nome"] ?>" maxLength="105">
                     <label for="name" class="input_label"></label><!--Alterar para o nome do input-->
-                    <i class="bi bi-pencil-square" onclick="habilitar()" id="icon-input"></i>
+                    <i class="bi bi-pencil-square darkModeEdit" onclick="habilitar()" id="icon-input"></i>
                 </div>
 
                 <div class="area_btn_alterar_nome" id="area_btn_alterar_nome">

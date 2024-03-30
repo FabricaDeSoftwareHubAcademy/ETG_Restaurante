@@ -21,7 +21,7 @@
 
 <body class="paidetodos">
     <main class="report_principal">
-        <h1 class="titulo_filtros">Relatório Usuários</h1>
+        <h1 class="titulo_filtros darkModeEdit">Relatório Usuários</h1>
 
         <form method="POST" class="teste">
             <div class="testePrimeiraSecao">
@@ -59,14 +59,14 @@
             <div class="testeSegundaSecao">
                 <div class="form-group">
                     <div class="input-container">
-                        <label for="init_date" class="label-datas">Data inicial</label>
+                        <label for="init_date" class="label-datas  darkModeEdit">Data inicial</label>
                         <input type="date" class="data_inicial" name="data_inicial" id="init_date" required >
                     </div>
                 </div>
 
                 <div class="form-group">
                     <div class="input-container2">
-                        <label for="close_date" class="label-datas">Data final</label>
+                        <label for="close_date" class="label-datas darkModeEdit">Data final</label>
                         <input type="date" class="data_final" name="data_final" id="close_date" required>
                     </div>
 
