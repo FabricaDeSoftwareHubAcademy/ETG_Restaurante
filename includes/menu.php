@@ -40,6 +40,14 @@ $ifrel = $perfil['relatorios'] == '1';
     function darkModeProject(color) {
         // #1c1c1c ou #fff
 
+        if(color == '#1c1c1c'){
+            document.querySelector('#img-logo').style.filter = 'contrast(0) grayscale(1)'
+        }else{
+            
+            document.querySelector('#img-logo').style.filter = 'unset'
+        }
+
+
         document.querySelector('.container-menu').style.backgroundColor = color
         document.querySelector('.btnOpenmodal-menu').style.backgroundColor = color
 

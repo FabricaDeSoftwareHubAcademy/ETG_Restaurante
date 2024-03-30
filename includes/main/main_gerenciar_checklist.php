@@ -31,8 +31,8 @@
             <!-- PARTE DA PESQUISA  -->
 
                 <div class="pesquisa">
-                    <div class="input_group field">
-                        <input type="input" id ="input" class="input_field" placeholder="." required="" name="nome-checklist" autocomplete="off">
+                    <div class="input_group field darkModeEdit">
+                        <input type="input" id ="input" class="input_field darkModeEditLineBottom" placeholder="." required="" name="nome-checklist" autocomplete="off">
                         <label for="name" class="input_label">Pesquisar checklist</label> 
                         <i class="bi bi-search" id="lupa"></i>
                     </div>

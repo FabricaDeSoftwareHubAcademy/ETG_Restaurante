@@ -28,7 +28,7 @@
 
     width: 180px;
     height: 45px;
-    background-color: var(--cor-primaria-botao-white);
+    background-color: transparent;
     border: 3px solid var(--cor-primaria-botao-yellow);
     border-radius: 20px;
     cursor: pointer;
@@ -63,7 +63,7 @@
   .botao-cadastrar-submit{
       width: 180px;
       height: 45px;
-      background-color: var(--cor-primaria-botao-white);
+      background-color: transparent;
       border: 3px solid var(--cor-primaria-botao-green);
       border-radius: 20px;
       cursor: pointer;

@@ -115,6 +115,7 @@
     justify-content: space-between;
     width: 80vw;
     max-width: 832px;
+    position: relative;
 }
 
 /*-------------- Tabela de perguntas --------------*/
