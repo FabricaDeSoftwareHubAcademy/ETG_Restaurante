@@ -2,7 +2,7 @@
 <script src="../assets/js/imagem_preview.js" defer></script>
 <body class="tela_detalhes">
     <div class="titulo">
-        <p class="texto_titulo">Detalhes Do Checklist</p>
+        <p class="texto_titulo">Detalhes Das Não Conformidades</p>
     </div>
 
     <section class="todas_nao_conf">
