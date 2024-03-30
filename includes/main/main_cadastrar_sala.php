@@ -316,7 +316,7 @@
                                 
                                 if(response){
                                                                       
-                                    modalStatus("Escolha pelo menos um dia de Funcionamento e um periodo de funcionamento.","success",()=>{window.location.href="./listar_salas.php"})
+                                    modalStatus("Sala Cadastrada com sucesso.","success",()=>{window.location.href="./listar_salas.php"})
                                 
                                 }else{
                                     console.log("2")
