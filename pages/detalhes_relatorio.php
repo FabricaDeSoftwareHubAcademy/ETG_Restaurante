@@ -18,7 +18,8 @@ $busca = Checklist::getDetalhes($id_usuario, $id_checklist);
 $dados_responsavel = '';
 $dados_responsavel .= '<div class="dados_responsavel">       
 <div class="esquerda"><p class="nome">Nome: ' . $busca[0]["nome_usuario"] . '
-<p>Sala: ' . $busca[0]["nome_sala"] . ' </p>
+<p class="nome">Checklist: ' . $busca[0]["nome_checklist"] . '</p>
+
 </div>  
 
 </div>';
@@ -30,9 +31,10 @@ foreach ($busca as $sala) {
 
     $nao_conformidade .= '<div class="nao_conformidade">
     <div class="direita">
-    <p class="nome">Nome: ' . $busca[0]["nome_usuario"] . '</p>
-    <p class="data_abertura">Data Abertura: ' . $sala["data_abertura"] . '</p>
-    <p>Data Fechamento: ' . $sala["data_fechamento"] . '</p>
+    
+    <p>Sala: ' . $busca[0]["nome_sala"] . ' </p>
+    <p class="data_abertura">Abertura: ' . $sala["data_abertura"] . '</p>
+    <p>Fechamento: ' . $sala["data_fechamento"] . '</p>
     </div>
     
     <p class="texto_nao_conformidade">' . $sala["descricao_NC"] . '</p>
