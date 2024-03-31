@@ -252,7 +252,7 @@ class Banco{
     JOIN cadastro_sala ON responder_check.id_sala = cadastro_sala.id
     JOIN cadastro_usuario ON responder_check.id_usuario = cadastro_usuario.id
     JOIN cadastro_checklist ON cadastro_checklist.id = responder_check.id_checklist 
-    WHERE responder_check.id_checklist = '.$id_checklist.' AND responder_check.id_usuario = '.$id_checklist.';';
+    WHERE responder_check.id_checklist = '.$id_checklist.' AND responder_check.id_usuario = '.$id_usuario.';';
         return $this->executarQuery($query);
     }
 

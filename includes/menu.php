@@ -394,7 +394,7 @@ $ifrel = $perfil['relatorios'] == '1';
                             
                             <ul class="sub-menu4">
                             <li class="iten-submenu4"><a href="../pages/listar_relatorio.php" id="fonte-submenu">Informações administrativas</a></li>
-                            <li class="iten-submenu4"><a href="../pages/relatorio_salas.php" id="fonte-submenu">Relatorio salas</a></li>
+                            
                             <li class="iten-submenu4"><a href="../pages/relatorio_user.php" id="fonte-submenu">Relatorio usuarios</a></li>
                             
                             </ul>
