@@ -159,7 +159,7 @@ else
                             <a class="click_sala" '. $link_view_sala .'><img style="'.$style.'" class="img_card_sala" src="../storage/salas/'.$sala['img_sala'].'" alt=""><h3 class="cod_sala">'.$sala['codigo'].'</h3></a>
                            
                             <div class="area_title_sala">
-                                <h1 class="title_sala">'.$sala['nome'].'</h1>
+                                <h1 class="title_sala darkModeEdit">'.$sala['nome'].'</h1>
                             </div>
                             
                         </div>';
@@ -175,7 +175,7 @@ else
                             <a class="click_sala" '. $link_view_sala .' ><img style="'.$style.'" class="img_card_sala" src="../storage/salas/'.$sala['img_sala'].'" alt=""><h3 class="cod_sala">'.$sala['codigo'].'</h3></a>
                             
                             <div class="area_title_sala2">
-                                <h1 class="title_sala2">'.$sala['nome'].'</h1>
+                                <h1 class="title_sala2 darkModeEdit">'.$sala['nome'].'</h1>
                             </div>
                             
                         </div>';
