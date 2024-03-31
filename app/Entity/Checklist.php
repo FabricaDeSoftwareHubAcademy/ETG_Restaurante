@@ -39,10 +39,11 @@ class Checklist
 
     public static function getDoneCheck($inicio = 0) {
         $obj_banco = new Banco('check_concluidas');
-        $data = [$obj_banco -> select(limit: "$inicio, 5") -> fetchAll(PDO::FETCH_ASSOC), $obj_banco -> select(campos: 'count(*) as total') -> fetch(PDO::FETCH_ASSOC)];
+        $data = [$obj_banco -> select(limit: "$inicio, 5",order:'data_fechamento DESC') -> fetchAll(PDO::FETCH_ASSOC), $obj_banco -> select(campos: 'count(*) as total') -> fetch(PDO::FETCH_ASSOC)];
+        // print_r($obj_banco -> select(limit: "$inicio, 5") -> fetchAll(PDO::FETCH_ASSOC));
         return $data;
     }
-    public static function getChecklist()
+        public static function getChecklist()
     {
         $obj_banco = new Banco('cadastro_checklist');
         $dados = $obj_banco->select(order:"id DESC");
