@@ -87,7 +87,7 @@
                     </div>
                     <div class="permissoes_salas_itens">
                         <label class="label_permissao">ver relatórios</label>
-                        <input type="checkbox" class="checkbox_permissoes" name="ver_relatorios" id="realizar_nao_conformidade" autocomplete="off"/>
+                        <input type="checkbox" class="checkbox_permissoes" name="ver_relatorios" id="ver_relatorios" autocomplete="off"/>
                     </div>
                 </div>
             </div>
