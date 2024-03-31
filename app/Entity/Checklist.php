@@ -114,9 +114,10 @@ class Checklist
         
         try{ 
             $obBanco = new Banco('relacao_pergunta_checklist'); 
+            
             $obBanco->delete($this->id_checklist,'id_check'); 
-    
-            return CadastroChecklist::cadastrarPergunta($id_perguntas,$this->id_checklist);
+           
+            return CadastroChecklist::cadastrarPergunta($id_perguntas,$this->id_checklist, true);
 
         }catch(PDOException $e){ 
             return $e->getMessage(); 
