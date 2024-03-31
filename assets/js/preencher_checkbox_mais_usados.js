@@ -68,7 +68,6 @@
             checkbox10.checked = false;
 
             checkbox6.checked = true;
-            checkbox10.checked = true;
             mais_usados_administrador.checked = false;
             mais_usados_logistica.checked = false;
             
