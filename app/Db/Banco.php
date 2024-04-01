@@ -277,7 +277,7 @@ class Banco{
     public function os_300_solam_absolutamento_todo_mundo($id_realiza) {
         $query = "SELECT * FROM responder_check RIGHT JOIN reg_nc ON reg_nc.id_realiza = responder_check.id WHERE";
         $query .= " responder_check.id = ".$id_realiza;
-        $query .= " AND responder_check.conf_logis = 'p'";
+        $query .= " AND responder_check.conf_logis = 'p' OR responder_check.conf_logis = 'n'";
         // echo $query;exit;
         return $this->executarQuery($query);
     }
