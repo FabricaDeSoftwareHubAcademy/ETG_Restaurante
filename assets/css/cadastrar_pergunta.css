@@ -331,7 +331,7 @@ body{
   }
   
   .custom-checkbox:checked ~ .checkmark {
-    background-color: #F28920;
+    background-color: #FAA916;
     box-shadow: 0 3px 7px rgba(33, 150, 243, 0.3);
   }
   
@@ -409,7 +409,7 @@ body{
 }
 
 .perguntas::-webkit-scrollbar-thumb{
-  background-color: #F28920;
+  background-color: #FAA916;
   border-radius: 10px; 
 }
 
@@ -1023,7 +1023,7 @@ h4{
     background-color: #efefef;
     overflow: hidden;
     overflow-y: scroll;
-    border: 2px solid #064a8c;
+    border: 2px solid #064A8C;
 }
 
 .area_checklists::-webkit-scrollbar {
@@ -1033,7 +1033,7 @@ h4{
 }
 
 .area_checklists::-webkit-scrollbar-thumb {
-    background-color: #F28920;
+    background-color: #FAA916;
     border-radius: 10px;
 }
 

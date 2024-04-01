@@ -37,7 +37,7 @@
   }
   
   .container::-webkit-scrollbar-thumb{
-    background-color: #F28920;
+    background-color: #FAA916;
     border-radius: 10px; 
   } 
 
@@ -51,7 +51,7 @@
 }
 
 .bi.bi-heart-fill{
-    color:#F28920;
+    color:#FAA916;
 }
 
 .area_not{

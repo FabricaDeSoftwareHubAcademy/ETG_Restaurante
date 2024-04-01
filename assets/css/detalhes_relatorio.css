@@ -94,7 +94,7 @@
 }
     
 .area_nao_conformidade::-webkit-scrollbar-thumb{
-    background-color: #F28920;
+    background-color: #FAA916;
     border-radius: 10px; 
 } 
 
@@ -187,7 +187,7 @@
     width: 100%;
     border-radius: 20px;
     border: solid black 1px;
-    background-color: #F28920;
+    background-color: #FAA916;
     display: flex;
     align-items: center;
     justify-content: center;

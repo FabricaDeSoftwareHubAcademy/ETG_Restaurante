@@ -44,7 +44,7 @@
   margin-top: 2%; /* 50px*/
   overflow-y: scroll;
   overflow-x: hidden;
-  scrollbar-color: #F28920;
+  scrollbar-color: #FAA916;
   max-height: 60vh; /*60vh*/
 
 }
@@ -56,7 +56,7 @@
 }
 
 .form-minha-conta::-webkit-scrollbar-thumb{
-background-color: #F28920;
+background-color: #FAA916;
 border-radius: 10px; 
 } 
 .foto-perfil{

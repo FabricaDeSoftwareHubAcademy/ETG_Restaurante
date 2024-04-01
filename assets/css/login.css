@@ -8,7 +8,7 @@
 body{
     width: 100vw;
     height: 100vh;
-    background-image: linear-gradient(-215deg,#2579C5,black 70%);
+    background-image: linear-gradient(-215deg,#064A8C ,#000 70%);
     overflow: hidden;
 }
 .area_login{
@@ -318,7 +318,7 @@ body{
 }
 .btn_sub_login:hover{
 
-    background-color: #095bad;
+    background-color: #064A8C;
 
 }
 

@@ -38,7 +38,7 @@
   position: absolute;
   height: 5px;
   width: 108px;
-  background: #F28920;
+  background: #FAA916;
   left: 0;
   border-radius: 2px;
   bottom: 0;
@@ -140,7 +140,7 @@ td {
 }
 
 .primeira-caixa::-webkit-scrollbar-thumb{
-  background-color: #F28920;
+  background-color: #FAA916;
   border-radius: 10px; 
 } 
 .escondido{
@@ -163,11 +163,11 @@ td {
   font-family: 'Montserrat';
     text-decoration: none;
     font-size: medium;
-    color: #064a8c;
+    color: #064A8C;
     padding-top: 3px;
     width: 100%;
     border-radius: 100px;
-    border: 2px solid #064a8c;
+    border: 2px solid #064A8C;
 }
 
 
