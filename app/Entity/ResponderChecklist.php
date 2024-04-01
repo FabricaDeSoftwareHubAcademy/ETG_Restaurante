@@ -10,6 +10,26 @@ use PDO ;
 class ResponderChecklist
 {
 
+    public static function os_300_espartanos($id_realiza) {
+        //xerxes solado apenas leonidas pica dura demais 
+        $banco = new Banco("responder_check");
+
+        return $banco->os_300_solam_absolutamento_todo_mundo($id_realiza)->fetchAll(PDO::FETCH_ASSOC);
+        
+    }
+
+    public static function setConfLogis($id_realiza, $campo = "n") {
+        // adicionar valor na data de fechamento do checklist respondido  
+        $obj_banco = new Banco('responder_check'); 
+
+        $dados_update  =  [
+            'conf_logis' => $campo
+        ];
+
+        $obj_banco -> update('id = "'.$id_realiza.'"',$dados_update);
+        
+   
+    }
 
     public static function cadastrar($dadosResp = [], $id_sala = 1, $id_check)
     {          
@@ -242,5 +262,11 @@ class ResponderChecklist
         $pre = $obj_banco->select("id = ".$id_realiza)->fetchAll(PDO::FETCH_ASSOC)[0]["observacao"];
         $pos = $obj_banco->select("id = ".$id_realiza)->fetchAll(PDO::FETCH_ASSOC)[0]["observacao_pos"];
         return [$pre, $pos];
+    }
+
+    public static function getUserRealiza($id_realiza) {
+        $obj_banco = new Banco('responder_check');
+        $id = $obj_banco->select("id = ".$id_realiza)->fetchAll(PDO::FETCH_ASSOC)[0]["id_usuario"];
+        return $id;
     }
 }

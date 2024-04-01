@@ -1,8 +1,8 @@
 import { Pergunta } from './Pergunta.js'
 
 export class Dom {     
-    constructor(dataNaoConf) {
-        this.dataNaoConf = dataNaoConf
+    constructor() {
+        this.dataNaoConf = []
         this.objPergunta = new Pergunta(perguntasJson)
         this.dataPerguta = this.objPergunta.getAll()
         this.manipulacao_botoes = []
@@ -10,6 +10,9 @@ export class Dom {
         this.contador_limite_fotos_nao_conformidade = 0
     }
 
+    get_dataNaoConf() {
+        return this.dataNaoConf
+    }
     // addNaoConfToDataNaoConf(pergunta) {
     //     this.dataNaoConf.push(pergunta)
     // }
@@ -490,6 +493,12 @@ export class Dom {
     }
 
     chamar_modal_nao_conf(pergunta, botao_incorreto, idPergunta) {
+
+        document.querySelector(".pergunta_nao_conf").innerHTML = ""
+        document.querySelector(".descricao_nao_conf").value = ""
+        document.querySelector(".upload-img").innerHTML = ""
+
+
         var self_0 = this
         var modal = document.querySelector(".mom")
         modal.style.display = "block"
@@ -593,7 +602,6 @@ export class Dom {
     salvar_modal_nao_conf(param) {
         var imagens = param["images"]
         var data = []
-        var imagesToPHP = []
     
         // ARMAZENANDO AS IMAGENScriarLabelIncorreta
 
@@ -601,7 +609,6 @@ export class Dom {
         data["id_pergunta"] = param["id_pergunta"]
         data["imagens"] = imagens
         this.dataNaoConf.push(data)
-        console.log(this.dataNaoConf)
 
     }
 
