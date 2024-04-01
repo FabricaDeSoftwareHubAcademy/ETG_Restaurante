@@ -601,7 +601,7 @@ export class Dom {
 
     salvar_modal_nao_conf(param) {
         var imagens = param["images"]
-        var data = []
+        var data = {}
     
         // ARMAZENANDO AS IMAGENScriarLabelIncorreta
 
