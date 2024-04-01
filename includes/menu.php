@@ -4,6 +4,9 @@ if (!isset($_SESSION['id_user'])) {
     header('Location: ../');
 }
 
+$premiado = random_int(0, 200);
+
+
 ob_start();
 require __DIR__ . "/../vendor/autoload.php";
 include_once ("../includes/menu.php");
