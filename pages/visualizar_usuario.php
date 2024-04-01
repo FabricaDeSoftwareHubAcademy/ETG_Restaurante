@@ -32,7 +32,7 @@ foreach ($dados_user as $row_user)
             </div>
         </div>
     </li>';
-
+    
 }
                         
 require("../includes/main/main_visualizar_usuarios.php");
