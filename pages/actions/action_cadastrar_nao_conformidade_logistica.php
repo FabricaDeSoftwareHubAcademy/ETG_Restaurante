@@ -76,11 +76,11 @@ if ($email == "true") {
 
 
         $contentEmail = "Nova não conformidade registrada na sala ".$dadosSala['nome'] ." às ". $hratual . " por " . $dadosLogistica['nome'] . " (".$dadosLogistica['email'].").";
-        $obMailer -> sendEmailNConformidade('arthur2006.teixeira@gmail.com',$contentEmail, $dadosLogistica, $dadosDocente,$nConformidade['imagesToPHP'], $nConformidade['textAreaContent']);
+        $obMailer -> sendEmailNConformidade($dadosDocente['email'],$contentEmail, $dadosLogistica, $dadosDocente,$nConformidade['imagesToPHP'], $nConformidade['textAreaContent']);
    
 
     }
 
 }
 
-echo(json_encode($response));
+echo(json_encode($dadosNC));
