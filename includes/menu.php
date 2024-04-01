@@ -1,4 +1,5 @@
 <?php
+error_reporting(0);
 // Verifica se o usuário está logado
 if (!isset($_SESSION['id_user'])) {
     header('Location: ../');
