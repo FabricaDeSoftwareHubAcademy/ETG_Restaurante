@@ -17,14 +17,14 @@ document.querySelector(".botao-cadastrar-submit").addEventListener("click", func
     event.preventDefault();
 
     var todas_corretas = document.querySelectorAll('.bi-check-circle[id="este_e_da_pergunta"]')
-    // !(todas_corretas.length == preenchidas)
-    if (false) {
+    
+    if (!(todas_corretas.length == preenchidas)) {
         modalStatus("Responda todas as perguntas", "error") 
     } else {
         modalStatus("Você tem certeza que deseja cadastrar as ações corretivas? ", "question", () => {
             modalStatus("Ações corretivas cadastradas com sucesso! ", "success", () => {
                 cadastrar_acao_corretiva()
-                // window.location.href = "listar_checklist_concluidas.php"
+                window.location.href = "listar_checklist_concluidas.php"
             })
         })
     }
