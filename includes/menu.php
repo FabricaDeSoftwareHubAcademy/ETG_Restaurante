@@ -4,10 +4,6 @@ error_reporting(0);
 if (!isset($_SESSION['id_user'])) {
     header('Location: ../');
 }
-
-
-
-
 ob_start();
 require __DIR__ . "/../vendor/autoload.php";
 include_once ("../includes/menu.php");
