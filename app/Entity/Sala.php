@@ -76,6 +76,8 @@ class Sala
 
     }
 
+    
+
 
     //READ
     public static function getDados($col = '*', $where = null)

@@ -64,6 +64,11 @@ foreach ($data as $AcaoCorretiva) {
     $objeto_acao_corretiva = new AcaoCorretiva();
     cadastrarAcaoCorretiva($AcaoCorretiva, $objeto_acao_corretiva);
 }
+
+
+ResponderChecklist::setConfLogis($_GET['id_realizacao'], "s");
+
+
 echo json_encode(true);
 
 

@@ -24,7 +24,7 @@ document.querySelector(".botao-cadastrar-submit").addEventListener("click", func
         modalStatus("Você tem certeza que deseja cadastrar as ações corretivas? ", "question", () => {
             modalStatus("Ações corretivas cadastradas com sucesso! ", "success", () => {
                 cadastrar_acao_corretiva()
-                window.location.href = "listar_checklist_concluidas.php"
+                // window.location.href = "listar_checklist_concluidas.php"
             })
         })
     }
@@ -38,7 +38,15 @@ document.querySelector(".botao-voltar-link").addEventListener("click", function(
 }) 
 
 async function cadastrar_acao_corretiva() {
-    let url = "./actions/action_cadastrar_acao_corretiva.php?id_sala="+id_salaa
+
+    const queryString123 = window.location.search;  
+    const params123 = new URLSearchParams(queryString123); 
+    const id_realizacao = params123.get('id_realizacao');
+
+    console.log(id_realizacao)
+
+
+    let url = "./actions/action_cadastrar_acao_corretiva.php?id_sala="+id_salaa+"&id_realizacao="+id_realizacao
     let request = await fetch(url, {
         method: "POST",
         headers:{
