@@ -21,6 +21,7 @@ buttonSubmit.addEventListener("click", async function(event) {
     var todas_n_conf = document.querySelectorAll('.bi-x-circle[id="este_e_da_pergunta"]')
     var todas_corretas = document.querySelectorAll('.bi-check-circle[id="este_e_da_pergunta"]')
     var total = (todas_n_conf.length + todas_corretas.length)
+    // console.log(DOM.get_dataNaoConf())
     // console.log(total)
     // console.log(todas_n_conf);
     // console.log(todas_corretas);
