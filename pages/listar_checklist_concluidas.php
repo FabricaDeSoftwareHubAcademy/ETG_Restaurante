@@ -21,10 +21,7 @@ $list = '';
 foreach($checklist as $row){
     $row['data_abertura'] = date('d/m/Y H:i', strtotime($row['data_abertura']));
     $row['data_fechamento']!=null ? $row['data_fechamento'] = date('d/m/Y H:i', strtotime($row['data_fechamento'])) : $row['data_fechamento']='';
-    if ($row['conf_logis']=='n'){
-        $link='acao_corretiva.php?id_realizacao='
-    };
-    $link= ($row['conf_logis']=='p') ? 'acao_corretiva.php?id_realizacao=' : ($row['conf_logis']=='n') ? 'validar_checklist.php?id_realizacao=' : ;
+    $link= ($row['conf_logis']=='p') ? 'acao_corretiva.php?id_realizacao=' : ($row['conf_logis']=='n') ? 'validar_checklist.php?id_realizacao=' : '#';
     $row['conf_logis'] = ($row['conf_logis']=='n') ? '<i class="bi bi-exclamation-octagon"></i>' : (($row['conf_logis']=='s') ? '<i class="bi bi-check-square"></i>':'<i class="bi bi-exclamation-diamond"></i>');
 
     $list .= '<a href="'.$link.$row['id_responder'].'" class="card">
