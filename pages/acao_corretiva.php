@@ -18,9 +18,9 @@ $pular = false;
 
 if ($js == false) {
     $dados = ResponderChecklist::os_300_espartanos($oq_se_ta_querendo_ta_mole);
-    if (count($dados) == 0) {
-        header("Location: listar_checklist_concluidas.php");
-    }   
+    // if (count($dados) == 0) {
+    //     header("Location: listar_checklist_concluidas.php");
+    // }   
 }
 // var_dump($dados);exit;
 $perguntasJson = json_encode($dados);

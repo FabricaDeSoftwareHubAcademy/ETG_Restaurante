@@ -25,15 +25,23 @@ buttonSubmit.addEventListener("click", async function(event) {
     // console.log(todas_n_conf);
     // console.log(todas_corretas);
     if (!(total >= preenchidas)) {
-        modalStatus("Responda todas as perguntas", "error")
+        modalStatusAcaoCorretiva("Responda todas as perguntas", "error")
     }
     else {
-        modalStatus("Deseja enviar o email para coordenação? ", "question", () => {
-            // so_nao_conformidade(true)
+        modalStatusAcaoCorretiva("Deseja enviar o email para a coordenação ?", "question", () => {
+            so_nao_conformidade(true)
+            modalStatusAcaoCorretiva("Deseja realizar as ações corretivas agora?", "question", () => {
+                window.location.href = "./acao_corretiva.php?id_realizacao="+id_realizacao
+            }, () => {
+                window.location.href = "./listar_checklist_concluidas.php"
+            })
+        }, () => {
             so_nao_conformidade(false)
-            
-            modalStatus("Deseja realizar as ações corretivas agora? ", "question", () => {
-                window.location.href = "acao_corretiva.php?id_realizacao="+id_realizacao
+            modalStatusAcaoCorretiva("Deseja realizar as ações corretivas agora?", "question", () => {
+                console.log("DEVERIA ME REDIRECIORNAR")
+                window.location.href = "./acao_corretiva.php?id_realizacao="+id_realizacao
+            }, () => {
+                window.location.href = "./listar_checklist_concluidas.php"
             })
         })
     }
@@ -61,7 +69,7 @@ async function so_nao_conformidade(email = false) {
         let response = await request.json()
         console.log(response)
     } catch (error) {
-        modalStatus(error, "error", () => {window.location.href = "listar_checklist_concluidas.php"})
+        modalStatusAcaoCorretiva(error, "error", () => {window.location.href = "listar_checklist_concluidas.php"})
     }
 
 }
