@@ -179,7 +179,7 @@
   font-family: "Montsserat";
   font-style: normal;
   font-size: 11px; 
-  color: #F28920;
+  color: #FAA916;
 }
 
 .container-menu.active .navItems-menu .link-menu h5 {
@@ -555,7 +555,7 @@
 #bloc1 {
   width: 57px;
   height: 100px;
-  background:#F28920 ;
+  background:#FAA916 ;
   position: relative;
   animation-name: bloc1;
   animation-duration: 2.5s;  
@@ -566,14 +566,14 @@
 }
   
 @keyframes bloc1 {
-  from {height: 150px;top: 0px; background-color: #064A8C;}
+  from {height: 150px;top: 0px; background-color: #1c1c1c;}
   to {height: 100px;}    
 }
 
 #bloc2 {
   width: 57px;
   height: 137px;
-  background: #064A8C;
+  background: #1c1c1c;
   position: relative;
   animation-name: bloc2;
   animation-duration: 2.5s;  
@@ -592,11 +592,15 @@
 
 
 @keyframes bloc2 {
-  from {height: 90px;top: 0px; background-color:  #F28920 ;}
+  from {height: 90px;top: 0px; background-color:  #FAA916 ;}
   to {height: 137px;}
   
 }
+.darkmode-toggle{
 
+  z-index: 999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999;
+
+}
 .container-logo{
   width: 100%;
   display: flex;
@@ -617,7 +621,7 @@
 }
 
 .titulo-nome{
-  color: #F28920;
+  color: #FAA916;
   font-family: "Montsserat";
   font-style: normal;
   font-size: 13px;
@@ -696,7 +700,7 @@
     height: 70px;
   }
   @keyframes bloc1 {
-    from {height: 57px;top: 0px; background-color: #064A8C;}
+    from {height: 57px;top: 0px; background-color: #1c1c1c;}
     to {height: 70px;}  
   }
   #bloc2{
@@ -704,7 +708,7 @@
     height: 90px;
   }
   @keyframes bloc2 {
-    from {height: 67px;top: 0px; background-color: #064A8C;}
+    from {height: 67px;top: 0px; background-color: #1c1c1c;}
     to {height: 90px ;}   
   }
   #img-logo{

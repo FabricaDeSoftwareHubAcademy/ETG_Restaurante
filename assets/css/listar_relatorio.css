@@ -26,7 +26,7 @@
   margin-top: 2%; 
   overflow-y: scroll;
   overflow-x: hidden;
-  scrollbar-color: #F28920;
+  scrollbar-color: #FAA916;
   max-height: 60vh; 
 } 
 
@@ -37,7 +37,7 @@
 }
   
   .main_listar_relatorio::-webkit-scrollbar-thumb{
-  background-color: #F28920;
+  background-color: #FAA916;
   border-radius: 10px; 
   } 
 
@@ -122,7 +122,7 @@
 .progress-alerta{
   width: 75%; 
   height: 100%;
-  background-color: #FAA916; 
+  background-color: #064A8C; 
   transition: width 0.5s ease-in-out;
 }
 
@@ -144,7 +144,7 @@
 
 .bi-circle-fill-yellow::before {
   content: "\f287";
-  color: #FAA916;
+  color: #064A8C;
   margin-top: 3%;
 }
 

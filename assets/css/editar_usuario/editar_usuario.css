@@ -16,6 +16,12 @@
   font-weight: bold;
   font-size: 45px;
 }
+.imagem_user{
+
+  height: 100%;
+  width: 100%;
+  border-radius: 80px;
+}
 
 @media screen and (max-width:500px ){
 
@@ -38,7 +44,7 @@
   margin-top: 2%; /* 50px*/
   overflow-y: scroll;
   overflow-x: hidden;
-  scrollbar-color: #F28920;
+  scrollbar-color: #FAA916;
   max-height: 60vh; /*60vh*/
 
 }
@@ -50,7 +56,7 @@
 }
 
 .form-minha-conta::-webkit-scrollbar-thumb{
-background-color: #F28920;
+background-color: #FAA916;
 border-radius: 10px; 
 } 
 .foto-perfil{
